@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивная карта психологических механизмов и доказательств PMM.">
+  <title>PMM · Psychological Mechanisms Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,650&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="brand" href="#" aria-label="PMM, начало">
+        <span class="brand-mark" aria-hidden="true">ψ</span>
+        <span>PMM <small>v0.1</small></span>
+      </a>
+      <div class="masthead-copy">
+        <p class="eyebrow">Evidence-aware knowledge map</p>
+        <h1>Психика как карта<br><em>проверяемых механизмов</em></h1>
+      </div>
+      <a class="repo-link" href="https://github.com/nebuhtit/psychological-mechanisms-map" target="_blank" rel="noreferrer">Исходные данные ↗</a>
+    </header>
+
+    <main>
+      <section class="control-deck" aria-label="Управление картой">
+        <div class="family-strip" id="family-strip" role="tablist" aria-label="Семейство механизма"></div>
+        <div class="filter-row">
+          <p id="family-description"></p>
+          <div class="filter-group" aria-label="Фильтр утверждений">
+            <button class="filter-button is-active" type="button" data-filter="all">Все</button>
+            <button class="filter-button" type="button" data-filter="causal_effect">Причинные</button>
+            <button class="filter-button" type="button" data-filter="hypothesis">Гипотезы</button>
+            <button class="filter-button" type="button" data-filter="contested">Оспариваются</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-layout">
+        <div class="map-stage">
+          <div class="map-meta" aria-live="polite">
+            <span id="visible-count"></span>
+            <span class="legend-item"><i class="legend-dot supported"></i>поддержано</span>
+            <span class="legend-item"><i class="legend-dot mixed"></i>смешано</span>
+            <span class="legend-item"><i class="legend-dot proposed"></i>предложено</span>
+          </div>
+          <svg id="knowledge-map" role="img" aria-labelledby="map-title map-description">
+            <title id="map-title">Карта психологических механизмов</title>
+            <desc id="map-description">Интерактивный граф объектов и научных утверждений. Выберите узел для подробностей.</desc>
+          </svg>
+          <p class="map-hint">Выберите узел. Сплошная линия — структурная связь; стрелка через ромб — научное утверждение.</p>
+        </div>
+
+        <aside class="inspector" id="inspector" aria-live="polite">
+          <div class="inspector-empty">
+            <span class="empty-index">01</span>
+            <h2>Выберите узел карты</h2>
+            <p>Здесь появятся определение, научный статус, ограничения и связанные источники.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <p>PMM не является диагностическим инструментом. Карта различает наблюдение, измерение, гипотезу и причинный вывод.</p>
+      <span id="build-version"></span>
+    </footer>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>

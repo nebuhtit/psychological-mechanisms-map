@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction validate-habit validate-reappraisal test export verify clean
+.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction validate-habit validate-reappraisal site-data test export verify clean
 
 PYTHON := .venv/bin/python
 
@@ -30,7 +30,10 @@ validate-reappraisal:
 test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
 
-export:
+site-data:
+	$(PYTHON) scripts/build_site_data.py
+
+export: site-data
 	$(PYTHON) scripts/pmm_v03.py export data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/stress-test-mechanisms-v0.3.yaml build/stress-test-mechanisms-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-negative-reinforcement-v0.3.yaml build/evidence-pack-negative-reinforcement-v0.3.json
@@ -39,7 +42,7 @@ export:
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-cognitive-reappraisal-v0.3.yaml build/evidence-pack-cognitive-reappraisal-v0.3.json
 
 verify: validate validate-stress validate-pack validate-extinction validate-habit validate-reappraisal test export
-	git diff --exit-code -- build
+	git diff --exit-code -- build site/data/pmm-data.json
 
 clean:
 	$(PYTHON) scripts/pmm_v03.py clean build

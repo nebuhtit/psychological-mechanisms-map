@@ -1,6 +1,6 @@
 # Psychological Mechanisms Map (PMM)
 
-PMM is a versioned, evidence-aware knowledge model for psychological mechanisms. The canonical source is human-editable YAML; validated JSON is a build artifact for later graph, JSON-LD, RDF, or OWL projections. No visual map is built yet.
+PMM is a versioned, evidence-aware knowledge model for psychological mechanisms. The canonical source is human-editable YAML; validated JSON is a build artifact for graph and interface projections. An early interactive map is generated from those artifacts rather than maintained as a separate scientific dataset.
 
 **Current version:** PMM Schema v0.3. Version 0.2 is preserved as a historical snapshot, not silently overwritten.
 
@@ -27,6 +27,8 @@ data/evidence-pack-cognitive-reappraisal-v0.3.yaml
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
+scripts/build_site_data.py           Deterministic interactive-map data bundle
+site/                                Static interactive map v0.1
 tests/test_pmm_v03.py                Valid and deliberately invalid fixtures
 ```
 
@@ -52,11 +54,17 @@ make validate-reappraisal
 make test
 make export
 make verify
+python3 -m http.server 8000 --directory site
 ```
 
 `make setup` creates a local `.venv`. Validation applies the complete JSON Schema and additional cross-record constraints. Export produces deterministic JSON in `build/`.
 
 GitHub Actions runs `make verify` on every push and pull request. The command validates all v0.3 datasets, runs the test suite, rebuilds JSON, and fails if generated JSON differs from the committed artifacts.
+
+The interactive map is a read-only projection. It exposes object types, reified
+Claims, Evidence, confidence, limitations, and source links without converting
+visual proximity into a scientific assertion. GitHub Pages deploys the `site/`
+directory after changes reach `main`.
 
 ## ID convention
 

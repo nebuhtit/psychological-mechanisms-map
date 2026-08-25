@@ -1,0 +1,3297 @@
+{
+  "families": [
+    {
+      "claims": [
+        {
+          "claim_type": "definition",
+          "confidence": {
+            "level": "not_applicable",
+            "rationale": "This is terminology provenance from the current official RDoC definition, not an empirical effect estimate."
+          },
+          "defined_object_id": "pmm:construct:rdoc-potential-threat-anxiety",
+          "epistemic_status": "not_assessed",
+          "evidence_ids": [],
+          "id": "pmm:claim:rdoc-potential-threat-definition",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:uncertain-threat"
+            ],
+            "population": "RDoC dimensional research across normal-to-abnormal human functioning.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Potential rather than acute imminent threat."
+          },
+          "source_ids": [
+            "pmm:source:rdoc-definitions"
+          ],
+          "statement": "RDoC Potential Threat (Anxiety) concerns responses when harm may occur but is distant, ambiguous, or uncertain in probability."
+        },
+        {
+          "claim_type": "definition",
+          "confidence": {
+            "level": "not_applicable",
+            "rationale": "This defines the experimental contingency and does not assert that learning or later response increase occurred."
+          },
+          "defined_object_id": "pmm:contingency:avoidance-response-outcome",
+          "epistemic_status": "not_assessed",
+          "evidence_ids": [],
+          "id": "pmm:claim:active-avoidance-contingency-definition",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:controlled-instrumental-avoidance"
+            ],
+            "population": "Human and non-human experimental subjects.",
+            "species": [
+              "mixed"
+            ],
+            "temporal_scope": "Within-trial response-consequence interval."
+          },
+          "source_ids": [
+            "pmm:source:punishment-mechanisms-review"
+          ],
+          "statement": "In an active-avoidance contingency, a specified response changes the programmed aversive consequence relative to a comparator."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "low",
+            "rationale": "Multiple reviews support the broad association, but no pooled comparable estimate has been extracted and constructs vary."
+          },
+          "confounding_note": "Threat severity, controllability, expected value, learning history, goals, social constraints, and measurement method can influence both variables.",
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "positive",
+            "metric": "qualitative direction across reviews",
+            "notes": "No pooled magnitude is asserted.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_ids": [
+            "pmm:evidence:hofmann-hay-anxiety-avoidance",
+            "pmm:evidence:ball-gunaydin-maladaptive-avoidance"
+          ],
+          "exposure_id": "pmm:state:anxiety-response",
+          "id": "pmm:claim:anxiety-avoidance-association",
+          "limitations": [
+            "The association does not establish a universal anxiety-to-avoidance causal path."
+          ],
+          "outcome_id": "pmm:behavior:avoidance-response",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Anxiety may occur without avoidance and avoidance may occur without reported anxiety."
+            ],
+            "context_ids": [
+              "pmm:context:uncertain-threat"
+            ],
+            "population": "Human nonclinical and anxiety-related clinical samples.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Concurrent or short-lag association."
+          },
+          "statement": "Anxiety-related responding and avoidance are positively associated on average, with substantial heterogeneity across tasks, people, and contexts."
+        },
+        {
+          "causal_estimand": "Difference in probability of selecting the action assigned lower versus higher monetary-loss probability under counterbalanced task assignments.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Controlled within-task probabilities and counterbalancing support a scoped causal interpretation; the sample was small and the claim does not identify the neural or psychological reinforcer."
+          },
+          "epistemic_status": "supported",
+          "evidence_ids": [
+            "pmm:evidence:kim-2006-avoidance-choice"
+          ],
+          "exposure_id": "pmm:contingency:avoidance-response-outcome",
+          "id": "pmm:claim:assigned-loss-probability-changes-choice",
+          "identification_strategy": "controlled_contingency",
+          "limitations": [
+            "This effect does not prove that subjective relief or medial OFC activity caused learning.",
+            "Sixteen healthy adults provide limited population generalizability."
+          ],
+          "outcome_id": "pmm:behavior:avoidance-response",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Restricted to probabilistic monetary-loss avoidance in the cited task."
+            ],
+            "context_ids": [
+              "pmm:context:controlled-instrumental-avoidance"
+            ],
+            "population": "Sixteen healthy adult participants in the specified monetary instrumental task.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Across two sessions of repeated instrumental choices."
+          },
+          "statement": "In the Kim et al. instrumental choice task, assigning one action a lower probability of monetary loss increased preference for that action across trials.",
+          "temporal_ordering": "Outcome probabilities were assigned to actions and preference developed over repeated trials."
+        },
+        {
+          "claim_type": "mechanism_hypothesis",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Instrumental learning is established, but the precise controlling representation differs across paradigms and stages of training."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:krypotos-avoidance-learning-review",
+            "pmm:evidence:punishment-review-active-avoidance"
+          ],
+          "exposure_id": "pmm:contingency:avoidance-response-outcome",
+          "falsifiable_boundary": "The hypothesis is weakened where contingency manipulation does not alter later responding or where devaluation identifies a different controlling outcome.",
+          "id": "pmm:claim:negative-reinforcement-mechanism-hypothesis",
+          "limitations": [
+            "A mechanism hypothesis is not promoted to a universal causal effect."
+          ],
+          "mechanism_id": "pmm:mechanism:negative-reinforcement",
+          "outcome_id": "pmm:behavior:avoidance-response",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:controlled-instrumental-avoidance"
+            ],
+            "population": "Human and non-human active-avoidance learners.",
+            "species": [
+              "mixed"
+            ],
+            "temporal_scope": "Across acquisition and maintenance trials."
+          },
+          "statement": "Response-contingent aversive-outcome omission contributes to increased later avoidance through negative reinforcement learning, while safety signaling and habit may also control performance.",
+          "temporal_ordering": "Response-contingent consequence change follows current responding and precedes measured later response selection."
+        },
+        {
+          "causal_estimand": "Longitudinal change in context-matched avoidance attributable to response-contingent short-term aversive reduction.",
+          "claim_type": "causal_hypothesis",
+          "confidence": {
+            "level": "low",
+            "rationale": "Components are plausible, but the complete longitudinal human pathway is not directly identified across disorders and contexts."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:hofmann-hay-anxiety-avoidance",
+            "pmm:evidence:brown-uncertainty-anxiety"
+          ],
+          "exposure_id": "pmm:contingency:avoidance-response-outcome",
+          "falsifiable_boundary": "The pathway is weakened when measured contingent consequence change does not predict later avoidance or when contingency manipulation leaves persistence unchanged.",
+          "id": "pmm:claim:clinical-maintenance-loop-hypothesis",
+          "limitations": [
+            "This is not a statistical mediation claim.",
+            "RDoC and HiTOP alignment do not validate the causal pathway."
+          ],
+          "outcome_id": "pmm:behavior:avoidance-response",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Does not apply when avoidance is adaptive or mainly controlled by other consequences."
+            ],
+            "context_ids": [
+              "pmm:context:uncertain-threat"
+            ],
+            "population": "Humans with persistent maladaptive anxiety-related avoidance.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Repeated episodes over days to years."
+          },
+          "statement": "In some anxiety contexts, avoidance followed by short-term aversive reduction increases later avoidance and reduces opportunities for corrective learning, contributing to persistence.",
+          "temporal_ordering": "Avoidance precedes consequence change, which precedes later context-matched avoidance."
+        }
+      ],
+      "dataset_id": "pmm:dataset:anxiety-avoidance-pilot-v0-3",
+      "description": "How threat, action, omission, relief, and reinforcement remain distinct.",
+      "evidence": [
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:assigned-loss-probability-changes-choice"
+          ],
+          "design": "Within-participant probabilistic instrumental choice task with counterbalanced fractal assignments and reward, avoidance, and neutral conditions.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "limited",
+            "replication": "unreplicated",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "preference for action associated with lower aversive-outcome probability",
+            "notes": "Reported t(15)=1.9, one-tailed p<0.05; no confidence interval reported.",
+            "value_status": "reported"
+          },
+          "evidence_kind": "controlled_experiment",
+          "extraction_locator": "Materials and Methods, Stimuli and task; Results, Behavioral Results.",
+          "id": "pmm:evidence:kim-2006-avoidance-choice",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Small sample and one-tailed test.",
+            "Neural activity does not establish that the measured region causally reinforced behavior."
+          ],
+          "population": "Sixteen healthy right-handed adults without reported neurological or psychiatric history.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "sample_size": 16,
+          "source_id": "pmm:source:kim-2006-avoidance",
+          "species": [
+            "human"
+          ],
+          "summary": "Participants preferentially selected the action assigned a lower probability of monetary loss over repeated trials.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:anxiety-avoidance-association",
+            "pmm:claim:clinical-maintenance-loop-hypothesis"
+          ],
+          "design": "Clinical and translational narrative review.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "partially_indirect",
+            "precision": "not_reported",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "Sections Skinnerian Operant Conditioning, Mowrer-Miller Two-factor Theory, and Conclusion.",
+          "id": "pmm:evidence:hofmann-hay-anxiety-avoidance",
+          "inference_support": "association",
+          "limitations": [
+            "Narrative synthesis does not supply a pooled effect estimate."
+          ],
+          "population": "Human anxiety-related clinical contexts with translational animal literature.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_id": "pmm:source:hofmann-hay-2018",
+          "species": [
+            "human",
+            "mixed"
+          ],
+          "summary": "Avoidance is associated with anxiety but can be adaptive or maladaptive depending on function and context.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:anxiety-avoidance-association"
+          ],
+          "design": "Translational review of avoidance paradigms and candidate neurobehavioral processes.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "partially_indirect",
+            "precision": "not_reported",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "A neurobehavioral model of maladaptive avoidance behavior and Conclusion.",
+          "id": "pmm:evidence:ball-gunaydin-maladaptive-avoidance",
+          "inference_support": "association",
+          "limitations": [
+            "Paradigms and clinical populations are heterogeneous."
+          ],
+          "population": "Human and non-human avoidance research, including clinical anxiety-related conditions.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_id": "pmm:source:ball-gunaydin-2022",
+          "species": [
+            "human",
+            "mixed"
+          ],
+          "summary": "Maladaptive avoidance is heterogeneous and may reflect threat appraisal, habitual avoidance, or trait avoidance tendency.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:negative-reinforcement-mechanism-hypothesis"
+          ],
+          "design": "Theoretical and empirical review of avoidance-learning models.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "partially_indirect",
+            "precision": "not_reported",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "Principles of avoidance learning and Conclusions.",
+          "id": "pmm:evidence:krypotos-avoidance-learning-review",
+          "inference_support": "mechanism",
+          "limitations": [
+            "Review-level extraction does not adjudicate every candidate mechanism."
+          ],
+          "population": "Human and non-human avoidance-learning research.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_id": "pmm:source:krypotos-2015",
+          "species": [
+            "mixed"
+          ],
+          "summary": "Instrumental contingencies contribute to avoidance acquisition and maintenance, while models differ about controlling representations.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:negative-reinforcement-mechanism-hypothesis"
+          ],
+          "design": "Review distinguishing response-dependent active avoidance, punishment, and Pavlovian fear.",
+          "domains": {
+            "consistency": "consistent",
+            "directness": "partially_indirect",
+            "precision": "not_reported",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "Different forms of aversive learning, Table 1 and active-avoidance discussion.",
+          "id": "pmm:evidence:punishment-review-active-avoidance",
+          "inference_support": "mechanism",
+          "limitations": [
+            "Review-level evidence does not identify one universal psychological representation."
+          ],
+          "population": "Human and non-human aversive-learning experiments.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_id": "pmm:source:punishment-mechanisms-review",
+          "species": [
+            "mixed"
+          ],
+          "summary": "Active avoidance is an instrumental response-to-no-aversive-outcome contingency and differs from punishment and Pavlovian fear.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:clinical-maintenance-loop-hypothesis"
+          ],
+          "design": "Integrative neurocomputational and clinical review proposing an uncertainty-learning framework.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "indirect",
+            "precision": "not_reported",
+            "replication": "not_assessed",
+            "risk_of_bias": "some_concerns"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "Avoidance and anxiety; Integrating maladaptive aversive uncertainty learning, avoidance, and exposure therapy.",
+          "id": "pmm:evidence:brown-uncertainty-anxiety",
+          "inference_support": "mechanism",
+          "limitations": [
+            "The proposed framework is not a direct test of the complete maintenance loop."
+          ],
+          "population": "Adults with and without anxiety-related clinical conditions.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_id": "pmm:source:brown-2023",
+          "species": [
+            "human"
+          ],
+          "summary": "The review proposes that uncertainty-sensitive learning and explore/exploit decisions contribute to maladaptive avoidance.",
+          "support_direction": "supports"
+        }
+      ],
+      "id": "avoidance",
+      "objects": [
+        {
+          "boundary_notes": [
+            "This record represents the RDoC construct, not a threat cue, context, diagnosis, or individual anxiety episode.",
+            "Acute imminent threat belongs to a different RDoC construct."
+          ],
+          "construct_kind": "neurobehavioral",
+          "curation_status": "accepted",
+          "definition": "A dimensional neurobehavioral construct concerning responses when harm may occur but is distant, ambiguous, or uncertain in probability.",
+          "external_mappings": [
+            {
+              "accessed_at": "2026-08-26",
+              "external_iri": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs",
+              "external_label": "Potential Threat (Anxiety)",
+              "mapping_relation": "close_match",
+              "mapping_status": "label_verified",
+              "rationale": "The official page and label are verified; RDoC does not expose a stable term IRI for this construct on the cited page.",
+              "system": "RDoC"
+            }
+          ],
+          "id": "pmm:construct:rdoc-potential-threat-anxiety",
+          "label": "RDoC Potential Threat (Anxiety) construct",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "The context is not itself anxiety and does not imply that every person responds anxiously."
+          ],
+          "context_kind": "composite",
+          "curation_status": "accepted",
+          "definition": "A context in which possible harm is temporally distant, ambiguous, or uncertain in probability.",
+          "dimensions": {
+            "harm_probability": "uncertain",
+            "imminence": "non-imminent-or-ambiguous",
+            "valence": "aversive"
+          },
+          "id": "pmm:context:uncertain-threat",
+          "label": "Uncertain-threat context",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "scope": "Experimental or naturalistic contexts involving possible rather than acute imminent harm.",
+          "type": "Context"
+        },
+        {
+          "context_kind": "experimental",
+          "curation_status": "accepted",
+          "definition": "An experimental context in which response-consequence probabilities are assigned or manipulated and later response selection is observed.",
+          "dimensions": {
+            "comparison": "alternative-response-or-noncontingent-control",
+            "contingency_control": "experimenter-assigned",
+            "repeated_opportunities": true
+          },
+          "id": "pmm:context:controlled-instrumental-avoidance",
+          "label": "Controlled instrumental-avoidance experiment",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "scope": "Human or non-human active-avoidance and escape-learning experiments with explicit response-consequence contingencies.",
+          "type": "Context"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "This is not a diagnosis and is not identical to the RDoC Potential Threat construct.",
+            "Self-report, physiology, and behavior may dissociate."
+          ],
+          "curation_status": "provisional",
+          "definition": "A time-bounded pattern of anxious apprehension, vigilance, arousal, or related responses in a person; no single measurement exhausts the state.",
+          "id": "pmm:state:anxiety-response",
+          "label": "Anxiety response state",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "state_kind": "affective",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "actor_scope": "organism",
+          "behavior_kind": "response_pattern",
+          "boundary_notes": [
+            "Escape terminates an ongoing aversive event; avoidance prevents or reduces an anticipated event.",
+            "Adaptive and maladaptive avoidance are not ontologically identical."
+          ],
+          "curation_status": "accepted",
+          "definition": "An action or operationally identified omission that changes contact with an anticipated threat or aversive outcome; its avoidance function requires a demonstrated response-consequence relation.",
+          "function_note": "Topography alone is insufficient to classify a behavior as avoidance.",
+          "id": "pmm:behavior:avoidance-response",
+          "label": "Avoidance response",
+          "observability": "operationally_inferred",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "response_topography": "Task- and context-specific action or omission.",
+          "type": "Behavior"
+        },
+        {
+          "boundary_notes": [
+            "The outcome must be operationally specified; subjective aversion and programmed valence can dissociate."
+          ],
+          "curation_status": "accepted",
+          "definition": "A specified event whose occurrence, probability, intensity, or duration is treated as aversive in the study design or by the organism.",
+          "id": "pmm:outcome:aversive-event",
+          "label": "Aversive event outcome",
+          "ontological_level": "type",
+          "outcome_kind": "event_occurrence",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "type": "Outcome",
+          "valence": "aversive"
+        },
+        {
+          "boundary_notes": [
+            "Outcome omission is not identical to subjective relief or to reinforcement."
+          ],
+          "curation_status": "accepted",
+          "definition": "Non-occurrence of an expected or programmed aversive event on a specified trial or interval.",
+          "event_kind": "consequence_omission",
+          "id": "pmm:event:aversive-outcome-omission",
+          "label": "Aversive-outcome omission",
+          "ontological_level": "type",
+          "participant_ids": [
+            "pmm:outcome:aversive-event"
+          ],
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "temporal_scale": "seconds",
+          "type": "Event"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "Relief is a measured subjective state and cannot be inferred from objective outcome omission alone.",
+            "Relief alone does not establish reinforcement unless later behavior increases under the contingency."
+          ],
+          "curation_status": "provisional",
+          "definition": "A time-bounded experienced reduction in aversive affect or tension relative to a prior state.",
+          "id": "pmm:state:subjective-relief",
+          "label": "Subjective relief",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "state_kind": "affective",
+          "temporal_scale": "momentary",
+          "type": "State"
+        },
+        {
+          "antecedent_ids": [
+            "pmm:context:controlled-instrumental-avoidance"
+          ],
+          "boundary_notes": [
+            "A programmed contingency is part of the experimental design, not by itself evidence that learning occurred."
+          ],
+          "comparator": "Alternative response, no response, or noncontingent/yoked consequence schedule.",
+          "consequence_id": "pmm:event:aversive-outcome-omission",
+          "curation_status": "accepted",
+          "definition": "An n-ary dependency in which a specified response changes the probability, intensity, or duration of a specified aversive consequence relative to a comparator.",
+          "id": "pmm:contingency:avoidance-response-outcome",
+          "label": "Avoidance response-outcome contingency",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "response_dependency": "manipulated",
+          "response_id": "pmm:behavior:avoidance-response",
+          "schedule": "Must be reported for each study rather than assumed universal.",
+          "temporal_relation": "Response precedes consequence omission or reduction; future responding is observed on later opportunities.",
+          "type": "Contingency"
+        },
+        {
+          "boundary_notes": [
+            "Negative denotes removal or reduction, not harmfulness.",
+            "Outcome omission, relief, safety signaling, action-outcome knowledge, and habit must remain distinguishable candidate processes."
+          ],
+          "curation_status": "accepted",
+          "definition": "Instrumental learning process in which a response-contingent removal, reduction, or prevention of an aversive consequence increases later probability or rate of the response under relevant conditions.",
+          "id": "pmm:mechanism:negative-reinforcement",
+          "label": "Negative reinforcement learning",
+          "mechanism_kind": "learning",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "realization_conditions": [
+            "The consequence change is contingent on the specified response relative to a comparator.",
+            "Later probability or rate of the target response increases under relevant conditions.",
+            "Temporal adjacency without contingency is insufficient."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:behavior:avoidance-response",
+              "role": "target-response"
+            },
+            {
+              "object_id": "pmm:contingency:avoidance-response-outcome",
+              "role": "response-consequence-contingency"
+            },
+            {
+              "object_id": "pmm:outcome:aversive-event",
+              "role": "aversive-consequence"
+            }
+          ],
+          "type": "Mechanism"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Proportion or count of eligible trials on which the predefined avoidance action is selected.",
+          "id": "pmm:measurement:avoidance-selection-rate",
+          "label": "Avoidance-action selection rate",
+          "measurement_kind": "behavioral_task",
+          "method": "Report the response definition, eligible trials, denominator, and contingency assigned to each option.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:behavior:avoidance-response"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "behavior"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Estimated or programmed p(aversive outcome | response option) for each response and comparator.",
+          "id": "pmm:measurement:conditional-aversive-outcome-probability",
+          "label": "Conditional aversive-outcome probability",
+          "measurement_kind": "behavioral_task",
+          "method": "Report p(O|R) for every response option and any noncontingent control.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:contingency:avoidance-response-outcome",
+            "pmm:outcome:aversive-event"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "paradigm"
+        },
+        {
+          "curation_status": "provisional",
+          "definition": "A declared combination of self-report, physiological, and/or behavioral indicators without assuming their interchangeability.",
+          "id": "pmm:measurement:anxiety-multimethod",
+          "label": "Multimethod anxiety-response assessment",
+          "measurement_kind": "self_report",
+          "method": "Report each indicator separately and justify any composite score.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:state:anxiety-response"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "self_report"
+        }
+      ],
+      "relations": [
+        {
+          "id": "pmm:relation:anxiety-occurs-in-uncertain-threat",
+          "object_id": "pmm:context:uncertain-threat",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "subject_id": "pmm:state:anxiety-response"
+        },
+        {
+          "id": "pmm:relation:anxiety-measured-by-multimethod",
+          "object_id": "pmm:measurement:anxiety-multimethod",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "subject_id": "pmm:state:anxiety-response"
+        },
+        {
+          "id": "pmm:relation:avoidance-measured-by-selection-rate",
+          "object_id": "pmm:measurement:avoidance-selection-rate",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "subject_id": "pmm:behavior:avoidance-response"
+        },
+        {
+          "id": "pmm:relation:contingency-has-avoidance-response",
+          "object_id": "pmm:behavior:avoidance-response",
+          "predicate": "has_participant",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "subject_id": "pmm:contingency:avoidance-response-outcome"
+        },
+        {
+          "id": "pmm:relation:contingency-has-outcome-omission",
+          "object_id": "pmm:event:aversive-outcome-omission",
+          "predicate": "has_participant",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "subject_id": "pmm:contingency:avoidance-response-outcome"
+        }
+      ],
+      "sources": [
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Official source for the current Potential Threat (Anxiety) label and definition.",
+          "id": "pmm:source:rdoc-definitions",
+          "organization": "National Institute of Mental Health",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_type": "official_framework",
+          "title": "Definitions of the RDoC Domains and Constructs",
+          "url": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs"
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Controlled human instrumental-choice experiment with explicitly programmed reward, avoidance, and neutral conditions.",
+          "authors": [
+            "Hackjin Kim",
+            "Shinsuke Shimojo",
+            "John P. O'Doherty"
+          ],
+          "doi": "10.1371/journal.pbio.0040233",
+          "id": "pmm:source:kim-2006-avoidance",
+          "pmid": "16802856",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Is Avoiding an Aversive Outcome Rewarding? Neural Substrates of Avoidance Learning in the Human Brain",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1484497/",
+          "year": 2006
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Clinical review emphasizing functional and contextual heterogeneity of avoidance.",
+          "authors": [
+            "Stefan G. Hofmann",
+            "Aleena C. Hay"
+          ],
+          "doi": "10.1016/j.janxdis.2018.03.004",
+          "id": "pmm:source:hofmann-hay-2018",
+          "pmid": "29550689",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Rethinking Avoidance: Toward a Balanced Approach to Avoidance in Treating Anxiety Disorders",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5879019/",
+          "year": 2018
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Translational review of avoidance measurement and candidate neurobehavioral processes.",
+          "authors": [
+            "Tali M. Ball",
+            "Lisa A. Gunaydin"
+          ],
+          "doi": "10.1038/s41386-021-01263-4",
+          "id": "pmm:source:ball-gunaydin-2022",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Measuring maladaptive avoidance: from animal models to clinical anxiety",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8938494/",
+          "year": 2022
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Review of theoretical models and experimental evidence on avoidance learning.",
+          "authors": [
+            "Angelos-Miltiadis Krypotos",
+            "Marieke Effting",
+            "Merel Kindt",
+            "Tom Beckers"
+          ],
+          "doi": "10.3389/fnbeh.2015.00189",
+          "id": "pmm:source:krypotos-2015",
+          "pmid": "26257618",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Avoidance learning: a review of theoretical models and recent developments",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4508580/",
+          "year": 2015
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Review explicitly distinguishing active avoidance, punishment, and Pavlovian fear by contingency.",
+          "authors": [
+            "Philip Jean-Richard-Dit-Bressel",
+            "Simon Killcross",
+            "Gavan P. McNally"
+          ],
+          "doi": "10.1038/s41386-018-0047-3",
+          "id": "pmm:source:punishment-mechanisms-review",
+          "pmid": "29703994",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Behavioral and neurobiological mechanisms of punishment: implications for psychiatric disorders",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006171/",
+          "year": 2018
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Integrative review proposing an uncertainty-learning framework; treated as indirect support only.",
+          "authors": [
+            "Vanessa M. Brown",
+            "Rebecca Price",
+            "Alexandre Y. Dombrovski"
+          ],
+          "doi": "10.3758/s13415-023-01080-w",
+          "id": "pmm:source:brown-2023",
+          "pmid": "36869259",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Anxiety as a disorder of uncertainty: implications for understanding maladaptive anxiety, anxious avoidance, and exposure therapy",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10475148/",
+          "year": 2023
+        }
+      ],
+      "title": "Threat and avoidance",
+      "version": "0.3.0"
+    },
+    {
+      "claims": [
+        {
+          "causal_estimand": "Difference in conditioned responding when testing occurs outside versus inside the extinction context.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Controlled context manipulations support a narrow causal effect, with convergence across startle, skin conductance, and ratings but limited generalization beyond laboratory samples."
+          },
+          "epistemic_status": "supported",
+          "evidence_ids": [
+            "pmm:evidence:alvarez-2007-aba-renewal",
+            "pmm:evidence:huff-2009-context-renewal"
+          ],
+          "exposure_id": "pmm:context:return-of-fear-test",
+          "id": "pmm:claim:context-shift-causes-renewal",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "Context manipulations differ substantially between studies."
+          ],
+          "outcome_id": "pmm:behavior:return-of-conditioned-response",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Effect magnitude depends on context contrast, timing, and measurement channel.",
+              "Laboratory renewal is not identical to clinical relapse."
+            ],
+            "context_ids": [
+              "pmm:context:extinction-training",
+              "pmm:context:return-of-fear-test"
+            ],
+            "population": "Healthy adults in differential aversive-conditioning experiments.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Immediate or delayed testing after successful within-session extinction."
+          },
+          "statement": "Testing outside the extinction context can increase previously extinguished conditioned responding in human laboratory paradigms.",
+          "temporal_ordering": "Acquisition and extinction precede randomized or counterbalanced test-context exposure."
+        },
+        {
+          "causal_estimand": "Change from late extinction to delayed test in differential conditioned responding.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Human experiments demonstrate recovery after a delay, while its magnitude and sensitivity to acquisition-to-extinction timing vary."
+          },
+          "epistemic_status": "supported",
+          "evidence_ids": [
+            "pmm:evidence:huff-2009-spontaneous-recovery",
+            "pmm:evidence:coelho-2015-deepened-extinction"
+          ],
+          "exposure_id": "pmm:context:return-of-fear-test",
+          "id": "pmm:claim:time-allows-spontaneous-recovery",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "A time contrast cannot uniquely identify decay, temporal-context change, or memory competition."
+          ],
+          "outcome_id": "pmm:behavior:return-of-conditioned-response",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Recovery depends on procedural timing and the selected response measure."
+            ],
+            "context_ids": [
+              "pmm:context:return-of-fear-test"
+            ],
+            "population": "Healthy adults in laboratory threat-conditioning paradigms.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Approximately 24 hours after extinction."
+          },
+          "statement": "Under the tested timing arrangements, conditioned responding can recover after successful within-session extinction.",
+          "temporal_ordering": "Extinction response reduction precedes the delayed recovery test."
+        },
+        {
+          "claim_type": "mechanism_hypothesis",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Renewal and spontaneous recovery are difficult to reconcile with complete erasure, but behavioral return-of-fear effects do not uniquely identify the internal representation or neural mechanism."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:alvarez-2007-aba-renewal",
+            "pmm:evidence:huff-2009-context-renewal",
+            "pmm:evidence:huff-2009-spontaneous-recovery",
+            "pmm:evidence:coelho-2015-deepened-extinction"
+          ],
+          "exposure_id": "pmm:event:aversive-outcome-omission-during-extinction",
+          "falsifiable_boundary": "The broad account would be weakened by reliable, general, measurement-independent elimination of conditioned responding across context, time, and reinstatement tests after ordinary cue-only extinction.",
+          "id": "pmm:claim:extinction-memory-mechanism-hypothesis",
+          "limitations": [
+            "Evidence is indirect with respect to latent memory contents."
+          ],
+          "mechanism_id": "pmm:mechanism:extinction-memory-formation",
+          "outcome_id": "pmm:state:conditioned-defensive-response",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Some procedures may also modify original learning.",
+              "The hypothesis does not require a single unitary inhibitory trace."
+            ],
+            "context_ids": [
+              "pmm:context:extinction-training",
+              "pmm:context:return-of-fear-test"
+            ],
+            "population": "Humans in laboratory Pavlovian threat-conditioning paradigms.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Extinction acquisition and later retrieval."
+          },
+          "statement": "Extinction commonly adds context-sensitive learning that competes with conditioned responding rather than completely erasing the original cue-outcome learning.",
+          "temporal_ordering": "Outcome omission occurs during extinction before later retrieval or return-of-fear testing."
+        },
+        {
+          "causal_estimand": "Between-group difference in later conditioned-response recovery for reactivation-extinction versus standard extinction.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "A high-powered registered direct replication found no benefit, and reanalysis found weak support for the original between-group claim."
+          },
+          "epistemic_status": "unsupported",
+          "evidence_ids": [
+            "pmm:evidence:chalkia-2020-registered-replication"
+          ],
+          "exposure_id": "pmm:intervention:reactivation-extinction-procedure",
+          "id": "pmm:claim:reactivation-extinction-prevents-return",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "Null advantage in one protocol is not proof that memory updating is impossible."
+          ],
+          "outcome_id": "pmm:behavior:return-of-conditioned-response",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "This does not rule out every reconsolidation-based protocol or boundary condition."
+            ],
+            "context_ids": [
+              "pmm:context:extinction-training",
+              "pmm:context:return-of-fear-test"
+            ],
+            "population": "Healthy adults meeting conditioning and extinction inclusion criteria.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Reminder approximately ten minutes before extinction and recovery testing one day later."
+          },
+          "statement": "Reactivation followed by extinction within ten minutes does not currently show a robust advantage over ordinary extinction for preventing later fear recovery in humans.",
+          "temporal_ordering": "Randomized reminder timing precedes extinction and delayed recovery testing."
+        }
+      ],
+      "dataset_id": "pmm:dataset:fear-extinction-primary-evidence-v0-3",
+      "description": "Why response reduction is not the same as erasure or extinction memory.",
+      "evidence": [
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:context-shift-causes-renewal",
+            "pmm:claim:extinction-memory-mechanism-hypothesis"
+          ],
+          "design": "Within-participant ABA renewal test in distinct virtual-reality contexts after short-delay extinction.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "not_reported",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "renewal contrast across acquisition and extinction test contexts",
+            "notes": "Renewal was observed in fear-potentiated startle, skin conductance, and fear ratings.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "controlled_experiment",
+          "extraction_locator": "Abstract; Results; Discussion.",
+          "id": "pmm:evidence:alvarez-2007-aba-renewal",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Exact standardized effects were not extracted in this pilot."
+          ],
+          "population": "Healthy human volunteers completing differential aversive conditioning and extinction.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:alvarez-johnson-grillon-2007",
+          "species": [
+            "human"
+          ],
+          "summary": "Conditioned responding returned when testing moved from the extinction context, despite short-delay extinction.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:context-shift-causes-renewal",
+            "pmm:claim:extinction-memory-mechanism-hypothesis"
+          ],
+          "design": "Fully crossed context-shift and acquisition-to-extinction-delay experiment with next-day testing in the acquisition context.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "limited",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "context specificity of differential skin-conductance fear return",
+            "notes": "Fear return was more selective to CS+ in context-shift than same-context groups, F(1,61)=4.94, p=.03.",
+            "value": 4.94,
+            "value_status": "reported"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Participants; Fear renewal test; Results, Figure 3.",
+          "id": "pmm:evidence:huff-2009-context-renewal",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Differential attrition and responder availability reduced some phase-specific samples."
+          ],
+          "population": "Sixty-six recruited healthy young adults; complete-case counts varied by analysis.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:huff-hernandez-blanding-labar-2009",
+          "species": [
+            "human"
+          ],
+          "summary": "Returning to the acquisition context produced selective renewal relative to remaining in the extinction context.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:time-allows-spontaneous-recovery",
+            "pmm:claim:extinction-memory-mechanism-hypothesis"
+          ],
+          "design": "Immediate versus 24-hour delayed extinction crossed with same versus shifted physical context.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "limited",
+            "replication": "unreplicated",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "mixed",
+            "metric": "main effect of acquisition-to-extinction interval on fear-relapse difference score",
+            "notes": "F(1,61)=6.93, p<.01; spontaneous recovery appeared after immediate but not delayed extinction, while delayed context-shift renewal was transient.",
+            "value": 6.93,
+            "value_status": "reported"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Results, fear renewal test; Discussion.",
+          "id": "pmm:evidence:huff-2009-spontaneous-recovery",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Timing manipulation changes more than one possible memory process."
+          ],
+          "population": "Sixty-six recruited healthy young adults; complete-case counts varied by analysis.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:huff-hernandez-blanding-labar-2009",
+          "species": [
+            "human"
+          ],
+          "summary": "Delayed testing revealed return of responding, but its form depended on acquisition-to-extinction timing and physical context.",
+          "support_direction": "mixed"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:time-allows-spontaneous-recovery",
+            "pmm:claim:extinction-memory-mechanism-hypothesis"
+          ],
+          "design": "Standard cue-only extinction versus compound deepened extinction with 24-hour spontaneous-recovery test.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "limited",
+            "replication": "unreplicated",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "negative",
+            "metric": "between-group spontaneous-recovery contrast",
+            "notes": "Deepened extinction reduced recovery of skin conductance and was associated with lower shock expectancy than standard extinction.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Abstract; Participants; Results, spontaneous recovery.",
+          "id": "pmm:evidence:coelho-2015-deepened-extinction",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "The study does not directly observe an inhibitory memory trace.",
+            "Exclusions based on acquisition and extinction performance can affect generalizability."
+          ],
+          "population": "Healthy adult volunteers; 51 participants contributed to the reported expectancy comparison after exclusions.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:coelho-dunsmoor-phelps-2015",
+          "species": [
+            "human"
+          ],
+          "summary": "Changing the extinction procedure altered next-day return of responding, consistent with extinction being modifiable learning rather than mere fatigue.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:reactivation-extinction-prevents-return"
+          ],
+          "design": "High-powered preregistered direct replication of the critical reactivation-extinction conditions from Schiller et al. 2010 Experiment 1.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "low"
+          },
+          "effect": {
+            "direction": "null",
+            "metric": "reactivation-extinction versus standard-extinction difference in fear recovery",
+            "notes": "The registered replication found no evidence that reactivation-extinction persistently attenuated fear recovery.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Abstract; Methods; Results; Discussion.",
+          "id": "pmm:evidence:chalkia-2020-registered-replication",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Results delimit this protocol and do not test every reconsolidation boundary condition."
+          ],
+          "population": "Healthy adults in a three-day differential fear-conditioning experiment.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:chalkia-2020-registered-replication",
+          "species": [
+            "human"
+          ],
+          "summary": "The preregistered direct replication did not reproduce the claimed advantage of the ten-minute reactivation-extinction procedure.",
+          "support_direction": "challenges"
+        }
+      ],
+      "id": "extinction",
+      "objects": [
+        {
+          "context_kind": "experimental",
+          "curation_status": "accepted",
+          "definition": "Human laboratory context in which one cue predicts an aversive outcome more often than a comparison cue.",
+          "dimensions": {
+            "aversive_outcome": "electric shock or loud noise",
+            "conditioned_cues": "CS+ and CS-",
+            "paradigm": "Pavlovian differential conditioning"
+          },
+          "external_mappings": [
+            {
+              "accessed_at": "2026-08-26",
+              "external_iri": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/acute-threat-fear",
+              "external_label": "Acute Threat (Fear)",
+              "mapping_relation": "related_match",
+              "mapping_status": "label_verified",
+              "rationale": "The paradigms operationalize defensive responses within the RDoC Acute Threat domain but are not identical to the construct.",
+              "system": "RDoC"
+            }
+          ],
+          "id": "pmm:context:differential-threat-conditioning",
+          "label": "Differential threat-conditioning context",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Healthy-adult laboratory paradigms represented in this pilot.",
+          "type": "Context"
+        },
+        {
+          "context_kind": "experimental",
+          "curation_status": "accepted",
+          "definition": "Repeated presentation of a previously reinforced cue without the aversive outcome.",
+          "dimensions": {
+            "cue": "previously reinforced CS+",
+            "outcome": "omitted",
+            "repetitions": "multiple"
+          },
+          "id": "pmm:context:extinction-training",
+          "label": "Extinction-training context",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Laboratory extinction procedures; this record does not imply a particular learning mechanism.",
+          "type": "Context"
+        },
+        {
+          "context_kind": "experimental",
+          "curation_status": "accepted",
+          "definition": "Test after extinction in which context, time, or unsignaled aversive outcomes permit renewed conditioned responding to be assessed.",
+          "dimensions": {
+            "comparison": "late extinction or control condition",
+            "tests": "renewal, spontaneous recovery, or reinstatement"
+          },
+          "id": "pmm:context:return-of-fear-test",
+          "label": "Return-of-fear test context",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Human laboratory tests; return of a measured response is not equivalent to clinical relapse.",
+          "type": "Context"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "Skin conductance, startle, expectancy, and self-report are noninterchangeable indicators.",
+            "The state should not be identified with a single measurement channel."
+          ],
+          "curation_status": "accepted",
+          "definition": "Time-indexed defensive responding elicited by a cue with an aversive learning history.",
+          "id": "pmm:state:conditioned-defensive-response",
+          "label": "Conditioned defensive-response state",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "physiological",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Non-occurrence of the previously expected aversive outcome after presentation of the conditioned cue.",
+          "event_kind": "consequence_omission",
+          "id": "pmm:event:aversive-outcome-omission-during-extinction",
+          "label": "Aversive-outcome omission during extinction",
+          "ontological_level": "type",
+          "participant_ids": [
+            "pmm:state:conditioned-defensive-response"
+          ],
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "temporal_scale": "seconds",
+          "type": "Event"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "response_pattern",
+          "curation_status": "accepted",
+          "definition": "Observable reduction in a conditioned response across nonreinforced cue presentations within an extinction session.",
+          "function_note": "This performance pattern does not by itself identify erasure, inhibition, habituation, or durable extinction retention.",
+          "id": "pmm:behavior:within-session-response-decrement",
+          "label": "Within-session conditioned-response decrement",
+          "observability": "operationally_inferred",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Behavior"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "response_pattern",
+          "curation_status": "accepted",
+          "definition": "Increase in conditioned responding after prior within-session extinction, relative to the relevant late-extinction or control contrast.",
+          "function_note": "Renewal, spontaneous recovery, and reinstatement require distinct test arrangements.",
+          "id": "pmm:behavior:return-of-conditioned-response",
+          "label": "Return of conditioned responding",
+          "observability": "operationally_inferred",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Behavior"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Experimental delivery of repeated conditioned-cue presentations without the aversive outcome.",
+          "delivery": "Repeated unreinforced CS presentations after differential threat conditioning.",
+          "id": "pmm:intervention:cue-only-extinction-procedure",
+          "intended_direction": "decrease",
+          "intervention_kind": "experimental_manipulation",
+          "label": "Cue-only extinction procedure",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:state:conditioned-defensive-response",
+            "pmm:behavior:within-session-response-decrement"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "boundary_notes": [
+            "A timing protocol is not evidence that reconsolidation was engaged."
+          ],
+          "curation_status": "provisional",
+          "definition": "A reminder presentation followed by extinction training within a proposed reconsolidation window.",
+          "delivery": "Single CS reminder followed approximately ten minutes later by extinction training.",
+          "id": "pmm:intervention:reactivation-extinction-procedure",
+          "intended_direction": "decrease",
+          "intervention_kind": "experimental_manipulation",
+          "label": "Reactivation-extinction procedure",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:state:conditioned-defensive-response",
+            "pmm:behavior:return-of-conditioned-response"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "boundary_notes": [
+            "This integrative mechanism is compatible with several formal learning models.",
+            "Return-of-fear effects argue against complete erasure but do not uniquely prove one inhibitory representation."
+          ],
+          "curation_status": "provisional",
+          "definition": "Proposed learning process in which aversive-outcome omission supports a new memory that reduces conditioned responding when later retrieved.",
+          "id": "pmm:mechanism:extinction-memory-formation",
+          "label": "Extinction-memory formation and retrieval",
+          "mechanism_kind": "learning",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "realization_conditions": [
+            "The conditioned cue is presented without the expected aversive outcome.",
+            "Later performance depends on retrieval conditions including physical and temporal context."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:event:aversive-outcome-omission-during-extinction",
+              "role": "omission experience"
+            },
+            {
+              "object_id": "pmm:state:conditioned-defensive-response",
+              "role": "conditioned response"
+            },
+            {
+              "object_id": "pmm:behavior:within-session-response-decrement",
+              "role": "performance change"
+            }
+          ],
+          "type": "Mechanism"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Electrodermal response contrast between conditioned and comparison cues.",
+          "id": "pmm:measurement:skin-conductance-differential",
+          "label": "Differential skin-conductance response",
+          "measurement_kind": "physiology",
+          "method": "Compare event-related skin-conductance amplitudes for CS+ and CS- or across test phases.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:state:conditioned-defensive-response",
+            "pmm:behavior:return-of-conditioned-response"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "physiology"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Increase in the startle reflex during a threat-associated cue relative to an appropriate baseline or safety cue.",
+          "id": "pmm:measurement:fear-potentiated-startle",
+          "label": "Fear-potentiated startle",
+          "measurement_kind": "physiology",
+          "method": "Record blink electromyography after acoustic startle probes during conditioned cues and contexts.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:state:conditioned-defensive-response",
+            "pmm:behavior:return-of-conditioned-response"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "physiology"
+        }
+      ],
+      "relations": [
+        {
+          "id": "pmm:relation:defensive-response-measured-by-scr",
+          "object_id": "pmm:measurement:skin-conductance-differential",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:state:conditioned-defensive-response"
+        },
+        {
+          "id": "pmm:relation:defensive-response-measured-by-startle",
+          "object_id": "pmm:measurement:fear-potentiated-startle",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:state:conditioned-defensive-response"
+        },
+        {
+          "id": "pmm:relation:response-decrement-occurs-in-extinction",
+          "object_id": "pmm:context:extinction-training",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:behavior:within-session-response-decrement"
+        },
+        {
+          "id": "pmm:relation:return-response-occurs-in-test",
+          "object_id": "pmm:context:return-of-fear-test",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:behavior:return-of-conditioned-response"
+        }
+      ],
+      "sources": [
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Primary human controlled experiment with multimodal ABA renewal outcomes.",
+          "authors": [
+            "Ruben P. Alvarez",
+            "Linda Johnson",
+            "Christian Grillon"
+          ],
+          "doi": "10.1101/lm.493707",
+          "id": "pmm:source:alvarez-johnson-grillon-2007",
+          "pmid": "17412963",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Contextual-specificity of short-delay extinction in humans: Renewal of fear-potentiated startle in a virtual environment",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2216529/",
+          "year": 2007
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Primary randomized human experiment crossing physical context and extinction timing.",
+          "authors": [
+            "Nicole C. Huff",
+            "Jose Alba Hernandez",
+            "Nineequa Q. Blanding",
+            "Kevin S. LaBar"
+          ],
+          "doi": "10.1037/a0016511",
+          "id": "pmm:source:huff-hernandez-blanding-labar-2009",
+          "pmid": "19634943",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Delayed Extinction Attenuates Conditioned Fear Renewal and Spontaneous Recovery in Humans",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2749460/",
+          "year": 2009
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Primary randomized human experiment comparing standard and deepened extinction.",
+          "authors": [
+            "Cesar A. O. Coelho",
+            "Joseph E. Dunsmoor",
+            "Elizabeth A. Phelps"
+          ],
+          "doi": "10.1101/lm.039479.115",
+          "id": "pmm:source:coelho-dunsmoor-phelps-2015",
+          "pmid": "26572649",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Compound stimulus extinction reduces spontaneous recovery in humans",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4749731/",
+          "year": 2015
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Preregistered, high-powered, independent direct replication preserving a null result central to mechanism assessment.",
+          "authors": [
+            "Anastasia Chalkia",
+            "Tom Beckers",
+            "Angelos-Miltiadis Kyriazos",
+            "Jan De Houwer"
+          ],
+          "doi": "10.1016/j.cognition.2019.104031",
+          "id": "pmm:source:chalkia-2020-registered-replication",
+          "pmid": "31816576",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "No persistent attenuation of fear memories in humans: A registered replication of the reactivation-extinction effect",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7115861/",
+          "year": 2020
+        }
+      ],
+      "title": "Fear extinction",
+      "version": "0.3.0"
+    },
+    {
+      "claims": [
+        {
+          "causal_estimand": "Difference between extended and moderate training in the valued-versus-devalued response contrast.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "One influential experiment reported the predicted interaction, while a larger preregistered four-laboratory study found no statistical effect of training duration."
+          },
+          "epistemic_status": "mixed",
+          "evidence_ids": [
+            "pmm:evidence:tricomi-2009-overtraining",
+            "pmm:evidence:pool-2022-multilab-training"
+          ],
+          "exposure_id": "pmm:intervention:extended-instrumental-training",
+          "id": "pmm:claim:extended-training-causes-outcome-insensitivity",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "Food satiation may incompletely or nonspecifically alter outcome value."
+          ],
+          "outcome_id": "pmm:behavior:outcome-insensitive-responding",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Selective satiation must actually alter outcome value for each participant.",
+              "Null training effects do not establish absence of every form of habit learning."
+            ],
+            "context_ids": [
+              "pmm:context:instrumental-outcome-devaluation-task"
+            ],
+            "population": "Healthy adults completing free-operant food outcome-devaluation tasks.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "One versus multiple training sessions followed by devaluation and extinction testing."
+          },
+          "statement": "Extended instrumental training has not shown a robust general causal effect on outcome-insensitive responding in humans.",
+          "temporal_ordering": "Training assignment precedes outcome devaluation and the extinction test."
+        },
+        {
+          "causal_estimand": "Stress-versus-control difference in responding for devalued relative to valued outcomes.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Both experiments successfully induced stress but failed to support the predicted stress-by-devaluation effect; interpretation was limited by poor goal-directed differentiation in controls."
+          },
+          "epistemic_status": "unsupported",
+          "evidence_ids": [
+            "pmm:evidence:smeets-2023-replication-1",
+            "pmm:evidence:smeets-2023-replication-2"
+          ],
+          "exposure_id": "pmm:intervention:acute-stress-induction",
+          "id": "pmm:claim:acute-stress-causes-habit-shift",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "Indifferent control-group responding made the intended mechanistic contrast difficult to interpret."
+          ],
+          "outcome_id": "pmm:behavior:outcome-insensitive-responding",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "The result does not exclude stress effects under other tasks, stressors, or timing arrangements."
+            ],
+            "context_ids": [
+              "pmm:context:instrumental-outcome-devaluation-task"
+            ],
+            "population": "Healthy adults in food-reward instrumental-learning tasks.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Stress before or immediately after learning, followed by satiation and extinction testing."
+          },
+          "statement": "Acute stress did not reliably increase outcome-insensitive responding in two preregistered exact human replications.",
+          "temporal_ordering": "Stress assignment occurs before the post-devaluation test."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "A large Registered Report tested six paradigms and found no overlap across experimental approaches or with real-life habit self-report."
+          },
+          "confounding_note": "Cross-sectional score associations can be attenuated by measurement error, restricted variance, and task-specific processes.",
+          "epistemic_status": "unsupported",
+          "estimate": {
+            "direction": "null",
+            "metric": "preregistered cross-task correlations and measurement-model fit",
+            "notes": "The study reported no evidence for overlap across experimental habit measures or self-reported real-life habits.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_ids": [
+            "pmm:evidence:nebe-2024-cross-task-convergence"
+          ],
+          "exposure_id": "pmm:measurement:cross-task-habit-convergence",
+          "id": "pmm:claim:habit-measures-converge",
+          "outcome_id": "pmm:construct:habit-measurement-convergence",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "A young convenience sample and task reliability can constrain correlations."
+            ],
+            "context_ids": [
+              "pmm:context:multi-paradigm-habit-assessment"
+            ],
+            "population": "208 healthy young adults contributing to cross-task analyses.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Five-day laboratory assessment plus online measures."
+          },
+          "statement": "Scores from different laboratory and self-report habit paradigms did not show evidence of a common convergent habit measure."
+        },
+        {
+          "claim_type": "mechanism_hypothesis",
+          "confidence": {
+            "level": "low",
+            "rationale": "Outcome-insensitive behavior is theoretically diagnostic only after effective devaluation and comprehension checks, while human induction and measurement results remain inconsistent."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:tricomi-2009-overtraining",
+            "pmm:evidence:pool-2022-multilab-training"
+          ],
+          "exposure_id": "pmm:intervention:selective-outcome-devaluation",
+          "falsifiable_boundary": "The operational account is challenged when purported habit effects disappear after individual verification of devaluation, task knowledge, baseline responding, and response opportunity.",
+          "id": "pmm:claim:habitual-control-mechanism-hypothesis",
+          "limitations": [
+            "Current evidence does not identify a unitary human habit mechanism across paradigms."
+          ],
+          "mechanism_id": "pmm:mechanism:habitual-action-control",
+          "outcome_id": "pmm:behavior:outcome-insensitive-responding",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Does not equate habits with repetition, speed, automaticity, model-free choice, or procedural skill."
+            ],
+            "context_ids": [
+              "pmm:context:instrumental-outcome-devaluation-task",
+              "pmm:context:multi-paradigm-habit-assessment"
+            ],
+            "population": "Humans in controlled instrumental-learning tasks.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Instrumental training followed by a diagnostic test without corrective feedback."
+          },
+          "statement": "A cue-linked control process can contribute to instrumental responding without immediate use of current outcome value.",
+          "temporal_ordering": "Instrumental learning and verified devaluation precede the outcome-sensitivity test."
+        }
+      ],
+      "dataset_id": "pmm:dataset:habit-control-primary-evidence-v0-3",
+      "description": "Goal-directed and habitual control with failed devaluation kept visible.",
+      "evidence": [
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:extended-training-causes-outcome-insensitivity",
+            "pmm:claim:habitual-control-mechanism-hypothesis"
+          ],
+          "design": "One-day versus three-day free-operant food training followed by selective satiation and an extinction test.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "limited",
+            "replication": "unreplicated",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "training-duration by outcome-devaluation interaction",
+            "notes": "F(1,29)=7.9, p<.05; the three-day group persisted more for the devalued food outcome.",
+            "value": 7.9,
+            "value_status": "reported"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Behavioral results; Figure 2; Discussion.",
+          "id": "pmm:evidence:tricomi-2009-overtraining",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Small sample and incomplete separation of devaluation effectiveness from habitual control.",
+            "Neural correlates do not establish the causal mechanism."
+          ],
+          "population": "Healthy adults; behavioral interaction reported with 31 analyzed participants.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 31,
+          "source_id": "pmm:source:tricomi-balleine-odoherty-2009",
+          "species": [
+            "human"
+          ],
+          "summary": "Extended training was associated with reduced behavioral sensitivity to selective satiation in the original experiment.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:extended-training-causes-outcome-insensitivity",
+            "pmm:claim:habitual-control-mechanism-hypothesis"
+          ],
+          "design": "Preregistered four-laboratory moderate-versus-extended training study adapting the Tricomi free-operant task.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "low"
+          },
+          "effect": {
+            "direction": "null",
+            "metric": "preregistered main effect of training amount on habit expression",
+            "notes": "No statistical evidence was found for a main effect of training amount; stress moderation was exploratory.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Abstract; preregistered analyses; Discussion.",
+          "id": "pmm:evidence:pool-2022-multilab-training",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Selective satiation and baseline outcome sensitivity remained important interpretive constraints."
+          ],
+          "population": "Healthy adult participants recruited across four laboratories.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:pool-2022-multilaboratory",
+          "species": [
+            "human"
+          ],
+          "summary": "The multilaboratory study did not reproduce a general increase in outcome-insensitive responding after extended training.",
+          "support_direction": "challenges"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:acute-stress-causes-habit-shift"
+          ],
+          "design": "Preregistered exact replication with acute stress before instrumental learning and a post-satiation extinction test.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "low"
+          },
+          "effect": {
+            "direction": "null",
+            "metric": "stress by outcome-value interaction on high-probability choices",
+            "notes": "Stress induction succeeded, but Bayesian analyses supported the null habit-shift hypothesis.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Study 1 Methods and Results; General Discussion.",
+          "id": "pmm:evidence:smeets-2023-replication-1",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Control participants did not clearly differentiate valued from devalued outcomes at test."
+          ],
+          "population": "Healthy adults assigned to stress or no-stress control.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:smeets-2023-stress-replications",
+          "species": [
+            "human"
+          ],
+          "summary": "Stress before learning did not increase devalued responding relative to control.",
+          "support_direction": "challenges"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:acute-stress-causes-habit-shift"
+          ],
+          "design": "Preregistered exact replication with acute stress immediately after instrumental learning and a post-satiation extinction test.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "low"
+          },
+          "effect": {
+            "direction": "null",
+            "metric": "stress by outcome-value interaction on high-probability choices",
+            "notes": "The second experiment also failed to support stress-induced habitual responding.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Study 2 Methods and Results; General Discussion.",
+          "id": "pmm:evidence:smeets-2023-replication-2",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Indiscriminate devaluation weakened the intended diagnostic comparison."
+          ],
+          "population": "Healthy adults assigned to stress or no-stress control.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:smeets-2023-stress-replications",
+          "species": [
+            "human"
+          ],
+          "summary": "Stress after learning did not produce the predicted shift toward devalued responding.",
+          "support_direction": "challenges"
+        },
+        {
+          "causal_support": "none",
+          "claim_ids": [
+            "pmm:claim:habit-measures-converge"
+          ],
+          "design": "Five-day Registered Report with six experimental habit paradigms, computational analyses, and real-life habit self-report.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "unreplicated",
+            "risk_of_bias": "low"
+          },
+          "effect": {
+            "direction": "null",
+            "metric": "cross-paradigm convergence",
+            "notes": "No evidence for overlap among experimental habit approaches or with self-reported real-life habits.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "controlled_experiment",
+          "extraction_locator": "Registered Report abstract; Participants; validity of habit tasks; RQ3-RQ5.",
+          "id": "pmm:evidence:nebe-2024-cross-task-convergence",
+          "inference_support": "association",
+          "limitations": [
+            "Young convenience sample and reliability differences can attenuate cross-task associations."
+          ],
+          "population": "220 healthy adults in the full sample; 208 in cross-task analyses.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 208,
+          "source_id": "pmm:source:nebe-2024-characterizing-habits",
+          "species": [
+            "human"
+          ],
+          "summary": "Different operationalizations did not behave as interchangeable measures of one common habit construct.",
+          "support_direction": "challenges"
+        }
+      ],
+      "id": "habit",
+      "objects": [
+        {
+          "context_kind": "experimental",
+          "curation_status": "accepted",
+          "definition": "Laboratory task in which actions first produce valued outcomes and responding is later tested after one outcome loses value.",
+          "dimensions": {
+            "acquisition": "action-outcome training",
+            "manipulation": "selective outcome devaluation",
+            "test": "commonly conducted without outcome feedback"
+          },
+          "id": "pmm:context:instrumental-outcome-devaluation-task",
+          "label": "Instrumental outcome-devaluation task",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Human food or monetary outcome-devaluation paradigms.",
+          "type": "Context"
+        },
+        {
+          "context_kind": "experimental",
+          "curation_status": "accepted",
+          "definition": "Study context administering several laboratory habit tasks and self-report measures to test convergence across operationalizations.",
+          "dimensions": {
+            "laboratory_paradigms": "six",
+            "training_duration": "multiple days",
+            "validation_target": "cross-task convergence"
+          },
+          "id": "pmm:context:multi-paradigm-habit-assessment",
+          "label": "Multi-paradigm habit assessment",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Nebe et al. 2024 Registered Report in healthy young adults.",
+          "type": "Context"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "Programmed devaluation does not guarantee that subjective value changed for every participant.",
+            "Value of one outcome must remain distinguishable from generalized satiety or disengagement."
+          ],
+          "curation_status": "accepted",
+          "definition": "Time-indexed motivational value of a particular action outcome for a person.",
+          "id": "pmm:state:current-outcome-value",
+          "label": "Current outcome value",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "motivational",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "action",
+          "curation_status": "accepted",
+          "definition": "Observable action performed in a specified action-outcome contingency.",
+          "function_note": "Repetition or speed alone does not establish habitual control.",
+          "id": "pmm:behavior:instrumental-response",
+          "label": "Instrumental response",
+          "observability": "direct",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "response_topography": "Task-specific button press, key choice, or response withholding.",
+          "type": "Behavior"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "response_pattern",
+          "curation_status": "provisional",
+          "definition": "Continued instrumental responding after a demonstrated reduction in the value of its specific outcome, relative to an appropriate valued-outcome comparison.",
+          "function_note": "This pattern is compatible with habit but can also arise from failed devaluation, misunderstanding, low baseline responding, or measurement error.",
+          "id": "pmm:behavior:outcome-insensitive-responding",
+          "label": "Outcome-insensitive response pattern",
+          "observability": "operationally_inferred",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Behavior"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Experimental assignment to substantially more repetitions or sessions of an action-outcome contingency.",
+          "delivery": "Multiple instrumental-training sessions compared with a shorter-training condition.",
+          "id": "pmm:intervention:extended-instrumental-training",
+          "intended_direction": "increase",
+          "intervention_kind": "experimental_manipulation",
+          "label": "Extended instrumental training",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:behavior:instrumental-response",
+            "pmm:behavior:outcome-insensitive-responding"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Experimental manipulation intended to reduce the current value of one trained action outcome while preserving the value of another.",
+          "delivery": "Outcome-specific satiation, taste aversion, instruction, or conversion of reward to loss.",
+          "id": "pmm:intervention:selective-outcome-devaluation",
+          "intended_direction": "decrease",
+          "intervention_kind": "experimental_manipulation",
+          "label": "Selective outcome devaluation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:state:current-outcome-value"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Controlled experimental procedure designed to increase acute subjective and physiological stress before or after instrumental learning.",
+          "delivery": "Cold pressor or comparable stress protocol with a nonstress control condition.",
+          "id": "pmm:intervention:acute-stress-induction",
+          "intended_direction": "test",
+          "intervention_kind": "experimental_manipulation",
+          "label": "Acute stress induction",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:behavior:outcome-insensitive-responding"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "curation_status": "provisional",
+          "definition": "Proposed action-selection process that uses action-outcome knowledge and current outcome value to guide responding.",
+          "id": "pmm:mechanism:goal-directed-action-control",
+          "label": "Goal-directed action control",
+          "mechanism_kind": "learning",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "realization_conditions": [
+            "The actor has usable knowledge of the action-outcome relation.",
+            "Current outcome value can influence action selection before responding."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:behavior:instrumental-response",
+              "role": "candidate action"
+            },
+            {
+              "object_id": "pmm:state:current-outcome-value",
+              "role": "current outcome value"
+            }
+          ],
+          "type": "Mechanism"
+        },
+        {
+          "boundary_notes": [
+            "Automaticity, repetition, procedural skill, and model-free choice are not exact synonyms.",
+            "Outcome insensitivity supports habitual control only when devaluation and task comprehension are verified."
+          ],
+          "curation_status": "provisional",
+          "definition": "Proposed cue-linked action-selection process whose momentary expression is relatively insensitive to the current value of the action outcome.",
+          "id": "pmm:mechanism:habitual-action-control",
+          "label": "Habitual action control",
+          "mechanism_kind": "learning",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "realization_conditions": [
+            "A learned cue-response relation is available in the test context.",
+            "Outcome value has changed effectively and is not required for immediate response selection."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:behavior:instrumental-response",
+              "role": "elicited action"
+            },
+            {
+              "object_id": "pmm:behavior:outcome-insensitive-responding",
+              "role": "diagnostic response pattern"
+            }
+          ],
+          "type": "Mechanism"
+        },
+        {
+          "curation_status": "provisional",
+          "definition": "Contrast in responding for still-valued versus effectively devalued trained outcomes.",
+          "id": "pmm:measurement:devaluation-sensitivity-index",
+          "label": "Outcome-devaluation sensitivity index",
+          "measurement_kind": "behavioral_task",
+          "method": "Compare response rates or choices after outcome-specific devaluation, ideally with individual manipulation checks.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:behavior:instrumental-response",
+            "pmm:behavior:outcome-insensitive-responding"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "behavior"
+        },
+        {
+          "curation_status": "provisional",
+          "definition": "Correlation or latent convergence among scores from distinct laboratory and self-report habit measures.",
+          "id": "pmm:measurement:cross-task-habit-convergence",
+          "label": "Cross-task habit-measure convergence",
+          "measurement_kind": "psychometric_scale",
+          "method": "Estimate preregistered correlations and measurement models across multiple habit operationalizations.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:construct:habit-measurement-convergence"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "person"
+        },
+        {
+          "boundary_notes": [
+            "Lack of convergence can reflect different mechanisms, low reliability, or restricted variance."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "Degree to which distinct habit measures behave as indicators of a shared latent attribute or process.",
+          "id": "pmm:construct:habit-measurement-convergence",
+          "label": "Habit-measurement convergence",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        }
+      ],
+      "relations": [
+        {
+          "id": "pmm:relation:outcome-insensitivity-measured-by-devaluation",
+          "object_id": "pmm:measurement:devaluation-sensitivity-index",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:behavior:outcome-insensitive-responding"
+        },
+        {
+          "id": "pmm:relation:habit-convergence-measured-by-cross-task",
+          "object_id": "pmm:measurement:cross-task-habit-convergence",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:construct:habit-measurement-convergence"
+        },
+        {
+          "id": "pmm:relation:instrumental-response-occurs-in-devaluation-task",
+          "object_id": "pmm:context:instrumental-outcome-devaluation-task",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:behavior:instrumental-response"
+        }
+      ],
+      "sources": [
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Influential primary experiment reporting training-dependent human outcome insensitivity.",
+          "authors": [
+            "Elizabeth Tricomi",
+            "Bernard W. Balleine",
+            "John P. O'Doherty"
+          ],
+          "doi": "10.1111/j.1460-9568.2009.06796.x",
+          "id": "pmm:source:tricomi-balleine-odoherty-2009",
+          "pmid": "19490086",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "A specific role for posterior dorsolateral striatum in human habit learning",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2758609/",
+          "year": 2009
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Preregistered four-laboratory investigation of the critical training-duration effect.",
+          "authors": [
+            "Eva R. Pool",
+            "Rani Gera",
+            "Aniek Fransen",
+            "Omar D. Perez",
+            "Anna Cremer",
+            "Mladena Aleksic",
+            "Sandy Tanwisuth",
+            "Stephanie Quail",
+            "Ahmet O. Ceceli",
+            "Dylan A. Manfredi",
+            "Gideon Nave",
+            "Elizabeth Tricomi",
+            "Bernard Balleine",
+            "Tom Schonberg",
+            "Lars Schwabe",
+            "John P. O'Doherty"
+          ],
+          "doi": "10.1101/lm.053413.121",
+          "id": "pmm:source:pool-2022-multilaboratory",
+          "pmid": "34911800",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Determining the effects of training duration on the behavioral expression of habitual control in humans: a multilaboratory investigation",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8686594/",
+          "year": 2022
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Two preregistered exact replications preserving null stress effects and manipulation failures.",
+          "authors": [
+            "Tom Smeets",
+            "Stephanie M. Ashton",
+            "Simone J. A. A. Roelands",
+            "Conny W. E. M. Quaedflieg"
+          ],
+          "doi": "10.1016/j.ynstr.2023.100528",
+          "id": "pmm:source:smeets-2023-stress-replications",
+          "pmid": "36861028",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Does stress consistently favor habits over goal-directed behaviors? Data from two preregistered exact replication studies",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9969070/",
+          "year": 2023
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Large Registered Report directly testing convergence across six laboratory habit paradigms and self-report.",
+          "authors": [
+            "Stephan Nebe",
+            "Andre Kretzschmar",
+            "Maike C. Brandt",
+            "Philippe N. Tobler"
+          ],
+          "doi": "10.1525/collabra.92949",
+          "id": "pmm:source:nebe-2024-characterizing-habits",
+          "pmid": "38463460",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Characterizing Human Habits in the Lab",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7615722/",
+          "year": 2024
+        }
+      ],
+      "title": "Habit control",
+      "version": "0.3.0"
+    },
+    {
+      "claims": [
+        {
+          "causal_estimand": "Difference in reported negative-emotion intensity under assigned reappraisal versus watch instructions.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Randomized experiments across films and images converge on lower subjective negative emotion, although strategies, comparisons, and demand characteristics differ."
+          },
+          "epistemic_status": "supported",
+          "evidence_ids": [
+            "pmm:evidence:gross-1998-reappraisal-experience",
+            "pmm:evidence:wolgast-2011-subjective-distress",
+            "pmm:evidence:hamza-2024-subjective-emotion"
+          ],
+          "exposure_id": "pmm:intervention:reappraisal-instruction",
+          "id": "pmm:claim:reappraisal-reduces-reported-negative-emotion",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "Lower ratings do not identify meaning reinterpretation as the unique mediator."
+          ],
+          "outcome_id": "pmm:state:negative-emotional-experience",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Does not establish durable skill acquisition or everyday effectiveness.",
+              "Self-report can be influenced by interpretation of task demands."
+            ],
+            "context_ids": [
+              "pmm:context:aversive-stimulus-reappraisal-task"
+            ],
+            "population": "Healthy adults viewing aversive films or images.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Immediate instructed regulation during a laboratory emotion episode."
+          },
+          "statement": "Assigned cognitive reappraisal instructions can reduce self-reported negative emotional experience relative to natural viewing in brief laboratory tasks.",
+          "temporal_ordering": "Regulation instruction precedes stimulus-period or poststimulus emotion rating."
+        },
+        {
+          "causal_estimand": "Reappraisal-versus-control difference in channel-specific autonomic response during emotional stimulation.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Some randomized experiments report physiological reductions, while a recent experiment found subjective benefit without corresponding heart-rate, skin-conductance, or pupil differences."
+          },
+          "epistemic_status": "mixed",
+          "evidence_ids": [
+            "pmm:evidence:wolgast-2011-physiological-response",
+            "pmm:evidence:hamza-2024-psychophysiology"
+          ],
+          "exposure_id": "pmm:intervention:reappraisal-instruction",
+          "id": "pmm:claim:reappraisal-reduces-autonomic-reactivity",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "Physiological channels cannot be pooled as if they measured one interchangeable response."
+          ],
+          "outcome_id": "pmm:state:autonomic-emotional-reactivity",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Results vary by channel, baseline, trial duration, and comparator."
+            ],
+            "context_ids": [
+              "pmm:context:aversive-stimulus-reappraisal-task"
+            ],
+            "population": "Healthy adults in aversive film or image tasks.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Autonomic responding during brief instructed regulation."
+          },
+          "statement": "Effects of assigned cognitive reappraisal on autonomic emotional reactivity are mixed and channel-dependent.",
+          "temporal_ordering": "Instruction assignment precedes physiological recording during the emotion task."
+        },
+        {
+          "claim_type": "mediation",
+          "confidence": {
+            "level": "low",
+            "rationale": "Multilevel mediation identified reproducible statistical pathways within one experiment, but temporal resolution, unmeasured mediator-outcome confounding, and absence of neural manipulation prevent a causal mediation interpretation."
+          },
+          "epistemic_status": "supported",
+          "evidence_ids": [
+            "pmm:evidence:wager-2008-neural-mediation"
+          ],
+          "exposure_id": "pmm:intervention:reappraisal-instruction",
+          "id": "pmm:claim:neural-response-statistically-mediates-reappraisal",
+          "indirect_effect": {
+            "direction": "mixed",
+            "metric": "multilevel mediation effect",
+            "notes": "Distinct prefrontal-subcortical pathways showed opposing associations with reported negative emotion.",
+            "value_status": "qualitative_only"
+          },
+          "limitations": [
+            "Statistical mediation is not causal mediation without stronger identification assumptions or intervention on the mediator."
+          ],
+          "mediator_id": "pmm:measurement:reappraisal-bold-response",
+          "outcome_id": "pmm:state:negative-emotional-experience",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "The mediator is a measured BOLD pattern, not a directly manipulated neural process."
+            ],
+            "context_ids": [
+              "pmm:context:aversive-stimulus-reappraisal-task"
+            ],
+            "population": "Healthy adults completing the specified fMRI reappraisal task.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Trial-level reappraisal, BOLD response, and posttrial emotion rating."
+          },
+          "statement": "Trial-level prefrontal and subcortical BOLD patterns statistically mediated the relation between reappraisal condition and reported negative emotion in Wager et al. 2008.",
+          "temporal_ordering": "Instruction and stimulus presentation preceded posttrial emotion ratings, but BOLD timing does not establish mediator-outcome causal order."
+        },
+        {
+          "claim_type": "mechanism_hypothesis",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Randomized instructions alter reported experience and sometimes expression or physiology, but most studies do not independently manipulate or directly verify the proposed change in meaning."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:gross-1998-reappraisal-experience",
+            "pmm:evidence:wolgast-2011-subjective-distress",
+            "pmm:evidence:hamza-2024-subjective-emotion"
+          ],
+          "exposure_id": "pmm:intervention:reappraisal-instruction",
+          "falsifiable_boundary": "The mechanism account is weakened when verified changes in construed meaning do not precede or predict emotional change, or when equivalent effects persist after interpretation change is experimentally prevented.",
+          "id": "pmm:claim:meaning-reinterpretation-mechanism-hypothesis",
+          "limitations": [
+            "Current evidence supports intervention efficacy more directly than the internal mechanism."
+          ],
+          "mechanism_id": "pmm:mechanism:meaning-reinterpretation",
+          "outcome_id": "pmm:state:negative-emotional-experience",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Does not generalize automatically to habitual use, clinical improvement, or every reappraisal tactic."
+            ],
+            "context_ids": [
+              "pmm:context:aversive-stimulus-reappraisal-task",
+              "pmm:context:negative-emotion-episode"
+            ],
+            "population": "Humans using instructed reinterpretation or distancing in laboratory emotion tasks.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Seconds to minutes during instructed regulation."
+          },
+          "statement": "Reappraisal can alter emotional experience by changing the construed meaning of an eliciting situation before the full response is expressed.",
+          "temporal_ordering": "The proposed reinterpretation occurs after instruction and before or during construction of the measured emotional response."
+        }
+      ],
+      "dataset_id": "pmm:dataset:cognitive-reappraisal-primary-evidence-v0-3",
+      "description": "Instruction, proposed reinterpretation, experience, physiology, and BOLD.",
+      "evidence": [
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:reappraisal-reduces-reported-negative-emotion",
+            "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
+          ],
+          "design": "Reappraisal, expressive-suppression, and watch groups viewing a disgust-eliciting film with experiential, behavioral, and physiological recording.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "negative",
+            "metric": "reappraisal-versus-watch difference in reported disgust experience",
+            "notes": "Reappraisal decreased reported disgust experience; both reappraisal and suppression reduced expressive behavior, while suppression increased sympathetic activation.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Abstract; Method; Results for experience and expressive behavior.",
+          "id": "pmm:evidence:gross-1998-reappraisal-experience",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Participants could infer the intended direction of the rating effect.",
+            "The instruction combines reinterpretation with a goal to feel less emotion."
+          ],
+          "population": "120 adult participants assigned across three instruction conditions.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 120,
+          "source_id": "pmm:source:gross-1998-emotion-regulation",
+          "species": [
+            "human"
+          ],
+          "summary": "Assigned reappraisal reduced reported disgust and expressive behavior relative to watching naturally.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:reappraisal-reduces-reported-negative-emotion",
+            "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
+          ],
+          "design": "Reappraisal, acceptance, and watch groups viewing aversive film clips.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "negative",
+            "metric": "between-group subjective-distress contrast",
+            "notes": "Reappraisal and acceptance both reduced subjective distress relative to watch; few contrasts differentiated the two active strategies.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Abstract; Methods; subjective distress results.",
+          "id": "pmm:evidence:wolgast-2011-subjective-distress",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Common instruction, expectancy, or engagement effects may contribute to both active conditions."
+          ],
+          "population": "Ninety-four randomized adult participants.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 94,
+          "source_id": "pmm:source:wolgast-lundh-viborg-2011",
+          "species": [
+            "human"
+          ],
+          "summary": "Reappraisal reduced subjective distress, but was often not distinguishable from acceptance.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:reappraisal-reduces-autonomic-reactivity"
+          ],
+          "design": "Randomized comparison of reappraisal, acceptance, and watch with skin conductance and other responses to aversive films.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "negative",
+            "metric": "active-strategy versus watch physiological-response contrast",
+            "notes": "Reappraisal and acceptance reduced measured physiological reactions relative to control.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Abstract; physiological reactions results.",
+          "id": "pmm:evidence:wolgast-2011-physiological-response",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "The abstract-level extraction does not imply uniform effects across every physiological channel."
+          ],
+          "population": "Ninety-four randomized adult participants.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 94,
+          "source_id": "pmm:source:wolgast-lundh-viborg-2011",
+          "species": [
+            "human"
+          ],
+          "summary": "The experiment found physiological reductions under reappraisal, although active strategies rarely differed.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:neural-response-statistically-mediates-reappraisal"
+          ],
+          "design": "Within-participant fMRI reappraisal task with trial-level negative-emotion ratings and multilevel mediation effect parametric mapping.",
+          "domains": {
+            "consistency": "single_source",
+            "directness": "indirect",
+            "precision": "limited",
+            "replication": "unreplicated",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "mixed",
+            "metric": "multilevel indirect association through BOLD response patterns",
+            "notes": "Two partially independent prefrontal-subcortical pathways showed opposing relations with reported regulation success.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "controlled_experiment",
+          "extraction_locator": "Summary; multilevel mediation analyses; Discussion.",
+          "id": "pmm:evidence:wager-2008-neural-mediation",
+          "inference_support": "mediation",
+          "limitations": [
+            "Sequential ignorability for the mediator-outcome relation was not established.",
+            "BOLD spatial patterns are measurements, not mechanism entities."
+          ],
+          "population": "Healthy adult participants in a laboratory neuroimaging experiment.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:wager-2008-neural-pathways",
+          "species": [
+            "human"
+          ],
+          "summary": "BOLD patterns statistically mediated the instruction-rating association, without experimental manipulation of the neural mediator.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:reappraisal-reduces-reported-negative-emotion",
+            "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
+          ],
+          "design": "Reappraisal, acceptance, or watch instruction crossed with acute-stress or control exposure before viewing distressing IAPS images.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "negative",
+            "metric": "assigned-strategy difference in visual-analog negative-emotion rating",
+            "notes": "Reappraisal lowered subjectively experienced negative emotion; prior stress and trait moderation effects were not supported.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Abstract; subjective emotion results.",
+          "id": "pmm:evidence:hamza-2024-subjective-emotion",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Strategy use was instructed rather than directly observed."
+          ],
+          "population": "Ninety-eight healthy adults aged 18-40.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 98,
+          "source_id": "pmm:source:hamza-2024-reappraisal-stress",
+          "species": [
+            "human"
+          ],
+          "summary": "Reappraisal reduced subjective negative-emotion ratings in a recent randomized experiment.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:reappraisal-reduces-autonomic-reactivity"
+          ],
+          "design": "Strategy instruction and acute-stress factorial experiment with multimodal psychophysiology.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "null",
+            "metric": "group differences in heart rate, skin conductance, and pupil response",
+            "notes": "Subjective reappraisal differences were not supported by the psychophysiological indicators.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "randomized_experiment",
+          "extraction_locator": "Abstract; heart-rate, skin-conductance, and pupil-response results.",
+          "id": "pmm:evidence:hamza-2024-psychophysiology",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Null channel effects do not prove equivalence without channel-specific precision estimates."
+          ],
+          "population": "Ninety-eight healthy adults aged 18-40.",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 98,
+          "source_id": "pmm:source:hamza-2024-reappraisal-stress",
+          "species": [
+            "human"
+          ],
+          "summary": "The recent experiment found subjective benefit without corresponding psychophysiological group differences.",
+          "support_direction": "challenges"
+        }
+      ],
+      "id": "reappraisal",
+      "objects": [
+        {
+          "context_kind": "experimental",
+          "curation_status": "accepted",
+          "definition": "Laboratory context in which participants view aversive films or images under assigned emotion-regulation instructions.",
+          "dimensions": {
+            "comparison": "watch, acceptance, or suppression instruction",
+            "elicitor": "aversive film or image",
+            "response_channels": "self-report, expression, physiology, or fMRI"
+          },
+          "id": "pmm:context:aversive-stimulus-reappraisal-task",
+          "label": "Aversive-stimulus reappraisal task",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Brief instructed regulation in human laboratory studies; not habitual real-world strategy use.",
+          "type": "Context"
+        },
+        {
+          "context_kind": "composite",
+          "curation_status": "provisional",
+          "definition": "Time-bounded situation in which an eliciting stimulus is appraised as emotionally negative.",
+          "dimensions": {
+            "appraisal": "negative",
+            "duration": "seconds to minutes",
+            "elicitor": "present"
+          },
+          "id": "pmm:context:negative-emotion-episode",
+          "label": "Negative-emotion episode context",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Experimental episodes represented in this pilot.",
+          "type": "Context"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "Subjective experience is not interchangeable with autonomic activity or facial expression."
+          ],
+          "curation_status": "accepted",
+          "definition": "Time-indexed subjective experience of negative affect during or after an eliciting event.",
+          "id": "pmm:state:negative-emotional-experience",
+          "label": "Negative emotional experience",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "affective",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "Different autonomic channels need not change in the same direction."
+          ],
+          "curation_status": "accepted",
+          "definition": "Time-indexed cardiovascular, electrodermal, respiratory, or pupillary response during an emotional episode.",
+          "id": "pmm:state:autonomic-emotional-reactivity",
+          "label": "Autonomic emotional reactivity",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "physiological",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "response_pattern",
+          "curation_status": "accepted",
+          "definition": "Observable facial or bodily behavior coded as expression of emotion during an eliciting event.",
+          "function_note": "Reduced expression does not by itself imply reduced subjective emotion.",
+          "id": "pmm:behavior:emotion-expressive-behavior",
+          "label": "Emotion-expressive behavior",
+          "observability": "direct",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "response_topography": "Facial and bodily expressions coded from recorded behavior.",
+          "type": "Behavior"
+        },
+        {
+          "boundary_notes": [
+            "Appraisal content must be operationalized rather than inferred solely from lower emotion ratings."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "The interpreted meaning and significance assigned to an emotion-eliciting situation.",
+          "id": "pmm:construct:situational-meaning-appraisal",
+          "label": "Situational meaning appraisal",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Experimental instruction to reinterpret or psychologically distance from an eliciting situation so as to alter its emotional impact.",
+          "delivery": "Verbal or written instruction before or during aversive stimulus presentation.",
+          "id": "pmm:intervention:reappraisal-instruction",
+          "intended_direction": "decrease",
+          "intervention_kind": "experimental_manipulation",
+          "label": "Cognitive reappraisal instruction",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:construct:situational-meaning-appraisal",
+            "pmm:state:negative-emotional-experience"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Experimental comparison instruction to attend naturally to the emotional stimulus without assigned regulation.",
+          "delivery": "Natural viewing instruction during the same class of stimuli.",
+          "id": "pmm:intervention:watch-instruction",
+          "intended_direction": "test",
+          "intervention_kind": "experimental_manipulation",
+          "label": "Watch instruction",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:state:negative-emotional-experience"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "boundary_notes": [
+            "Successful instruction assignment does not verify that reinterpretation occurred.",
+            "Distancing, reinterpretation, distraction, acceptance, and suppression should remain distinguishable strategies."
+          ],
+          "curation_status": "provisional",
+          "definition": "Proposed cognitive process that changes the construed meaning of an eliciting situation and thereby changes later emotional responding.",
+          "id": "pmm:mechanism:meaning-reinterpretation",
+          "label": "Meaning reinterpretation",
+          "mechanism_kind": "cognitive",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "realization_conditions": [
+            "The participant generates or adopts an alternative interpretation of the eliciting situation.",
+            "The reinterpretation occurs early enough to influence the measured emotional response."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:construct:situational-meaning-appraisal",
+              "role": "interpreted meaning"
+            },
+            {
+              "object_id": "pmm:state:negative-emotional-experience",
+              "role": "emotional consequence"
+            },
+            {
+              "object_id": "pmm:context:negative-emotion-episode",
+              "role": "eliciting context"
+            }
+          ],
+          "type": "Mechanism"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Self-reported intensity of negative emotional experience after an eliciting stimulus.",
+          "id": "pmm:measurement:negative-emotion-rating",
+          "label": "Trial-level negative-emotion rating",
+          "measurement_kind": "self_report",
+          "method": "Visual analog, Likert, or comparable rating after watch or regulation trials.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:state:negative-emotional-experience"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "self_report"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Recording of heart rate, skin conductance, respiration, or pupil response during emotion regulation.",
+          "id": "pmm:measurement:autonomic-response-recording",
+          "label": "Autonomic response recording",
+          "measurement_kind": "physiology",
+          "method": "Channel-specific psychophysiological recording time-locked to emotional stimuli.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:state:autonomic-emotional-reactivity"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "physiology"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Observer coding of facial and bodily expressive behavior during emotional stimulation.",
+          "id": "pmm:measurement:expressive-behavior-coding",
+          "label": "Emotion-expression coding",
+          "measurement_kind": "observation",
+          "method": "Blind or standardized coding of recorded behavior.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:behavior:emotion-expressive-behavior"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "behavior"
+        },
+        {
+          "boundary_notes": [
+            "BOLD association or mediation is not equivalent to a causal neural mechanism."
+          ],
+          "curation_status": "provisional",
+          "definition": "Task-related blood-oxygen-level-dependent signal contrast during reappraisal relative to a comparison instruction.",
+          "id": "pmm:measurement:reappraisal-bold-response",
+          "label": "Reappraisal-related BOLD response",
+          "measurement_kind": "circuit",
+          "method": "fMRI contrast and multilevel mediation analysis across trials and participants.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:construct:situational-meaning-appraisal",
+            "pmm:state:negative-emotional-experience"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "circuits"
+        }
+      ],
+      "relations": [
+        {
+          "id": "pmm:relation:negative-experience-measured-by-rating",
+          "object_id": "pmm:measurement:negative-emotion-rating",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:state:negative-emotional-experience"
+        },
+        {
+          "id": "pmm:relation:autonomic-reactivity-measured-by-recording",
+          "object_id": "pmm:measurement:autonomic-response-recording",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:state:autonomic-emotional-reactivity"
+        },
+        {
+          "id": "pmm:relation:expression-measured-by-coding",
+          "object_id": "pmm:measurement:expressive-behavior-coding",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:behavior:emotion-expressive-behavior"
+        },
+        {
+          "id": "pmm:relation:reappraisal-occurs-in-aversive-task",
+          "object_id": "pmm:context:aversive-stimulus-reappraisal-task",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:intervention:reappraisal-instruction"
+        }
+      ],
+      "sources": [
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Foundational randomized experiment separating experience, expression, and physiological response channels.",
+          "authors": [
+            "James J. Gross"
+          ],
+          "doi": "10.1037/0022-3514.74.1.224",
+          "id": "pmm:source:gross-1998-emotion-regulation",
+          "pmid": "9457784",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Antecedent- and response-focused emotion regulation: divergent consequences for experience, expression, and physiology",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9457784/",
+          "year": 1998
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Randomized multimodal comparison of reappraisal, acceptance, and natural viewing.",
+          "authors": [
+            "Martin Wolgast",
+            "Lars-Gunnar Lundh",
+            "Gardar Viborg"
+          ],
+          "doi": "10.1016/j.brat.2011.09.011",
+          "id": "pmm:source:wolgast-lundh-viborg-2011",
+          "pmid": "21999941",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Cognitive reappraisal and acceptance: an experimental comparison of two emotion regulation strategies",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21999941/",
+          "year": 2011
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Primary fMRI experiment applying multilevel mediation, included with explicit noncausal interpretation limits.",
+          "authors": [
+            "Tor D. Wager",
+            "Matthew L. Davidson",
+            "Brent L. Hughes",
+            "Martin A. Lindquist",
+            "Kevin N. Ochsner"
+          ],
+          "doi": "10.1016/j.neuron.2008.09.006",
+          "id": "pmm:source:wager-2008-neural-pathways",
+          "pmid": "18817740",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Neural mechanisms of emotion regulation: Evidence for two independent prefrontal-subcortical pathways",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2742320/",
+          "year": 2008
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Recent randomized multimodal experiment preserving divergence between subjective and psychophysiological outcomes.",
+          "authors": [
+            "Josef Hamza",
+            "Simona Vytykacova",
+            "Katarina Jansakova",
+            "Jakub Rajcani"
+          ],
+          "doi": "10.1002/smi.3469",
+          "id": "pmm:source:hamza-2024-reappraisal-stress",
+          "pmid": "39229764",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Cognitive reappraisal and acceptance following acute stress",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39229764/",
+          "year": 2024
+        }
+      ],
+      "title": "Cognitive reappraisal",
+      "version": "0.3.0"
+    }
+  ],
+  "interface_version": "0.1.0",
+  "pmm_version": "0.3.0"
+}
