@@ -1,0 +1,649 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://pmm.local/schema/pmm-v0.3.schema.json
+title: Psychological Mechanisms Map Schema v0.3
+description: >-
+  Evidence-aware knowledge model with an abstract Entity base, explicit
+  constructs/events/outcomes/contingencies, structural Relations, and reified
+  empirical Claims.
+type: object
+additionalProperties: false
+required: [pmm_version, document_type, dataset_id, metadata, namespaces, objects, relations, claims, evidence, sources]
+properties:
+  pmm_version:
+    const: 0.3.0
+  document_type:
+    const: pmm_dataset
+  dataset_id:
+    $ref: '#/$defs/pmmId'
+  metadata:
+    $ref: '#/$defs/datasetMetadata'
+  namespaces:
+    type: object
+    minProperties: 1
+    additionalProperties:
+      type: string
+      format: uri
+  objects:
+    type: array
+    items:
+      oneOf:
+        - $ref: '#/$defs/construct'
+        - $ref: '#/$defs/mechanism'
+        - $ref: '#/$defs/state'
+        - $ref: '#/$defs/behavior'
+        - $ref: '#/$defs/intervention'
+        - $ref: '#/$defs/measurement'
+        - $ref: '#/$defs/context'
+        - $ref: '#/$defs/event'
+        - $ref: '#/$defs/outcome'
+        - $ref: '#/$defs/contingency'
+        - $ref: '#/$defs/observation'
+  relations:
+    type: array
+    items:
+      $ref: '#/$defs/relation'
+  claims:
+    type: array
+    items:
+      $ref: '#/$defs/claim'
+  evidence:
+    type: array
+    items:
+      $ref: '#/$defs/evidence'
+  sources:
+    type: array
+    items:
+      $ref: '#/$defs/source'
+
+$defs:
+  pmmId:
+    type: string
+    pattern: '^pmm:(dataset|construct|mechanism|state|behavior|intervention|measurement|context|event|outcome|contingency|observation|relation|claim|evidence|source):[a-z0-9]+(?:-[a-z0-9]+)*$'
+  objectId:
+    type: string
+    pattern: '^pmm:(construct|mechanism|state|behavior|intervention|measurement|context|event|outcome|contingency|observation):[a-z0-9]+(?:-[a-z0-9]+)*$'
+  nonEmptyString:
+    type: string
+    minLength: 1
+  stringList:
+    type: array
+    items:
+      $ref: '#/$defs/nonEmptyString'
+    uniqueItems: true
+  provenance:
+    type: object
+    additionalProperties: false
+    required: [record_version, created_at, modified_at, created_by, review_status]
+    properties:
+      record_version:
+        type: string
+        pattern: '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'
+      created_at:
+        type: string
+        format: date-time
+      modified_at:
+        type: string
+        format: date-time
+      created_by:
+        $ref: '#/$defs/stringList'
+      reviewed_by:
+        $ref: '#/$defs/stringList'
+      review_status:
+        enum: [unreviewed, machine_validated, expert_reviewed, deprecated]
+      source_snapshot_date:
+        type: string
+        format: date
+      change_note:
+        type: string
+      supersedes_id:
+        $ref: '#/$defs/pmmId'
+  datasetMetadata:
+    type: object
+    additionalProperties: false
+    required: [title, description, status, language, license, schema_path, provenance]
+    properties:
+      title:
+        $ref: '#/$defs/nonEmptyString'
+      description:
+        $ref: '#/$defs/nonEmptyString'
+      status:
+        enum: [draft, pilot, reviewed, deprecated]
+      language:
+        type: string
+      license:
+        type: string
+      schema_path:
+        type: string
+      provenance:
+        $ref: '#/$defs/provenance'
+  externalMapping:
+    type: object
+    additionalProperties: false
+    required: [system, external_iri, mapping_relation, mapping_status, rationale, accessed_at]
+    properties:
+      system:
+        enum: [RDoC, CognitiveAtlas, MF, NBO, HiTOP, Other]
+      external_iri:
+        type: string
+        format: uri
+      external_label:
+        type: string
+      mapping_relation:
+        enum: [exact_match, close_match, broad_match, narrow_match, related_match]
+      mapping_status:
+        enum: [identifier_verified, label_verified, provisional, rejected]
+      rationale:
+        $ref: '#/$defs/nonEmptyString'
+      accessed_at:
+        type: string
+        format: date
+  entityBase:
+    description: Abstract properties inherited by every PMM domain object; Entity is not directly instantiated.
+    type: object
+    required: [id, type, label, definition, ontological_level, curation_status, provenance]
+    properties:
+      id:
+        $ref: '#/$defs/objectId'
+      type:
+        enum: [Construct, Mechanism, State, Behavior, Intervention, Measurement, Context, Event, Outcome, Contingency, Observation]
+      label:
+        $ref: '#/$defs/nonEmptyString'
+      definition:
+        $ref: '#/$defs/nonEmptyString'
+      aliases:
+        $ref: '#/$defs/stringList'
+      ontological_level:
+        enum: [type, instance]
+      curation_status:
+        enum: [draft, provisional, accepted, deprecated]
+      boundary_notes:
+        $ref: '#/$defs/stringList'
+      external_mappings:
+        type: array
+        items:
+          $ref: '#/$defs/externalMapping'
+      provenance:
+        $ref: '#/$defs/provenance'
+  roleBinding:
+    type: object
+    additionalProperties: false
+    required: [role, object_id]
+    properties:
+      role:
+        $ref: '#/$defs/nonEmptyString'
+      object_id:
+        $ref: '#/$defs/objectId'
+
+  construct:
+    description: Theoretical or operational construct used to organize observations; not a concrete state, event, or mechanism occurrence.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [construct_kind]
+        properties:
+          type: {const: Construct}
+          construct_kind:
+            enum: [neurobehavioral, psychological, clinical_dimension, computational, physiological, social, other]
+  mechanism:
+    description: Process type or process instance that produces change through specified participant roles under realization conditions.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [mechanism_kind, role_bindings, realization_conditions]
+        properties:
+          type: {const: Mechanism}
+          mechanism_kind:
+            enum: [learning, cognitive, computational, affective, motivational, social, physiological, developmental, integrative]
+          role_bindings:
+            type: array
+            minItems: 2
+            items:
+              $ref: '#/$defs/roleBinding'
+          realization_conditions:
+            $ref: '#/$defs/stringList'
+  state:
+    description: Time-indexed condition borne by a person, organism, group, environment, or interaction.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [state_kind, bearer_scope, temporal_scale]
+        properties:
+          type: {const: State}
+          state_kind:
+            enum: [affective, cognitive, motivational, physiological, environmental, social]
+          bearer_scope:
+            enum: [person, organism, group, environment, interaction]
+          temporal_scale:
+            enum: [momentary, episode, day, chronic, developmental, unspecified]
+  behavior:
+    description: Observable or operationally inferred action, omission, or response pattern; its function is not determined by topography alone.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [behavior_kind, observability, actor_scope]
+        properties:
+          type: {const: Behavior}
+          behavior_kind:
+            enum: [action, omission, response_pattern, verbal_behavior, physiological_response]
+          observability:
+            enum: [direct, operationally_inferred]
+          actor_scope:
+            enum: [person, organism, group]
+          response_topography:
+            type: string
+          function_note:
+            type: string
+  intervention:
+    description: Deliberate manipulation; efficacy and mechanism are represented by Claims, not by the intervention record.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [intervention_kind, target_ids, delivery, intended_direction]
+        properties:
+          type: {const: Intervention}
+          intervention_kind:
+            enum: [psychological, pharmacological, behavioral, environmental, digital, policy, experimental_manipulation]
+          target_ids:
+            type: array
+            minItems: 1
+            items: {$ref: '#/$defs/objectId'}
+            uniqueItems: true
+          delivery: {$ref: '#/$defs/nonEmptyString'}
+          intended_direction:
+            enum: [increase, decrease, stabilize, disrupt, test]
+  measurement:
+    description: Procedure that yields observations about a target; validity is represented by separate Claims.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [measurement_kind, target_ids, method, unit_of_analysis, result_type]
+        properties:
+          type: {const: Measurement}
+          measurement_kind:
+            enum: [self_report, behavioral_task, observation, physiology, circuit, molecular, genetic, clinical_rating, computational_parameter]
+          target_ids:
+            type: array
+            minItems: 1
+            items: {$ref: '#/$defs/objectId'}
+            uniqueItems: true
+          method: {$ref: '#/$defs/nonEmptyString'}
+          unit_of_analysis:
+            enum: [genes, molecules, cells, circuits, physiology, behavior, self_report, paradigm, clinical_record]
+          result_type:
+            enum: [binary, count, continuous, ordinal, nominal, time_to_event, model_parameter]
+  context:
+    description: Conditions that bound an object or Claim; a Context is not itself a psychological construct.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [context_kind, dimensions, scope]
+        properties:
+          type: {const: Context}
+          context_kind:
+            enum: [experimental, clinical, social, developmental, cultural, physical, temporal, composite]
+          dimensions:
+            type: object
+            minProperties: 1
+            additionalProperties: true
+          scope: {$ref: '#/$defs/nonEmptyString'}
+  event:
+    description: Occurrent with temporal boundaries, including cue presentation, consequence delivery/omission, or state transition.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [event_kind, participant_ids, temporal_scale]
+        properties:
+          type: {const: Event}
+          event_kind:
+            enum: [cue_presentation, consequence_delivery, consequence_omission, state_transition, intervention_delivery, other]
+          participant_ids:
+            type: array
+            items: {$ref: '#/$defs/objectId'}
+            uniqueItems: true
+          temporal_scale:
+            enum: [milliseconds, seconds, minutes, hours, days, longer, unspecified]
+  outcome:
+    description: Consequence type valued or evaluated relative to a response, exposure, or intervention; not the numerical change estimate itself.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [outcome_kind, valence]
+        properties:
+          type: {const: Outcome}
+          outcome_kind:
+            enum: [event_occurrence, event_probability, intensity, duration, performance, symptom, physiological, other]
+          valence:
+            enum: [aversive, appetitive, neutral, mixed, not_applicable]
+  contingency:
+    description: N-ary dependency among antecedent, response, consequence, comparator, and temporal schedule.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [response_id, consequence_id, response_dependency, comparator, temporal_relation]
+        properties:
+          type: {const: Contingency}
+          antecedent_ids:
+            type: array
+            items: {$ref: '#/$defs/objectId'}
+            uniqueItems: true
+          response_id: {$ref: '#/$defs/objectId'}
+          consequence_id: {$ref: '#/$defs/objectId'}
+          response_dependency:
+            enum: [required, probabilistic, absent, manipulated]
+          comparator: {$ref: '#/$defs/nonEmptyString'}
+          temporal_relation: {$ref: '#/$defs/nonEmptyString'}
+          schedule:
+            type: string
+  observation:
+    description: Measurement result instance; it does not replace the measured target or the Claim interpreting it.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/entityBase'
+      - type: object
+        required: [measurement_id, observed_object_id, value]
+        properties:
+          type: {const: Observation}
+          measurement_id: {$ref: '#/$defs/objectId'}
+          observed_object_id: {$ref: '#/$defs/objectId'}
+          value:
+            type: [string, number, boolean]
+          unit:
+            type: string
+
+  relation:
+    description: Structural, taxonomic, contextual, temporal, or operational edge. Statistical and causal assertions must be Claims.
+    type: object
+    additionalProperties: false
+    required: [id, subject_id, predicate, object_id, provenance]
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:relation:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      subject_id: {$ref: '#/$defs/objectId'}
+      predicate:
+        enum: [is_a, instantiates, part_of, occurs_in_context, measured_by, operationalizes, has_participant, realizes, precedes]
+      object_id: {$ref: '#/$defs/objectId'}
+      context_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:context:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      claim_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:claim:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      provenance: {$ref: '#/$defs/provenance'}
+  estimate:
+    type: object
+    additionalProperties: false
+    required: [metric, value_status]
+    properties:
+      metric: {$ref: '#/$defs/nonEmptyString'}
+      value_status:
+        enum: [reported, qualitative_only, not_extracted, not_reported]
+      value:
+        type: number
+      direction:
+        enum: [positive, negative, null, mixed, not_applicable]
+      interval:
+        type: object
+        additionalProperties: false
+        required: [level, lower, upper]
+        properties:
+          level: {type: number, exclusiveMinimum: 0, exclusiveMaximum: 1}
+          lower: {type: number}
+          upper: {type: number}
+      notes:
+        type: string
+  scope:
+    type: object
+    additionalProperties: false
+    required: [population, context_ids, temporal_scope]
+    properties:
+      population: {$ref: '#/$defs/nonEmptyString'}
+      species:
+        type: array
+        items:
+          enum: [human, nonhuman_primate, rodent, other, mixed]
+        uniqueItems: true
+      context_ids:
+        type: array
+        minItems: 1
+        items:
+          type: string
+          pattern: '^pmm:context:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      temporal_scope: {$ref: '#/$defs/nonEmptyString'}
+      boundary_conditions: {$ref: '#/$defs/stringList'}
+  causalAssumptions:
+    type: object
+    additionalProperties: false
+    required: [consistency, exchangeability, positivity, interference, assessment]
+    properties:
+      consistency: {type: string}
+      exchangeability: {type: string}
+      positivity: {type: string}
+      interference: {type: string}
+      assessment:
+        enum: [plausible, partly_tested, unverified, violated]
+  claim:
+    description: Reified definition, statistical result, causal effect, or explicitly proposed hypothesis.
+    type: object
+    additionalProperties: false
+    required: [id, claim_type, statement, epistemic_status, confidence, scope, evidence_ids, provenance]
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:claim:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      claim_type:
+        enum: [definition, association, prediction, mediation, moderation, causal_effect, causal_hypothesis, mechanism_hypothesis]
+      statement: {$ref: '#/$defs/nonEmptyString'}
+      epistemic_status:
+        enum: [not_assessed, supported, mixed, unsupported, refuted, proposed]
+      confidence:
+        type: object
+        additionalProperties: false
+        required: [level, rationale]
+        properties:
+          level:
+            enum: [high, moderate, low, very_low, not_applicable]
+          rationale: {$ref: '#/$defs/nonEmptyString'}
+      scope: {$ref: '#/$defs/scope'}
+      defined_object_id: {$ref: '#/$defs/objectId'}
+      source_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:source:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      exposure_id: {$ref: '#/$defs/objectId'}
+      outcome_id: {$ref: '#/$defs/objectId'}
+      mediator_id: {$ref: '#/$defs/objectId'}
+      moderator_id: {$ref: '#/$defs/objectId'}
+      mechanism_id: {$ref: '#/$defs/objectId'}
+      estimate: {$ref: '#/$defs/estimate'}
+      predictive_metric: {$ref: '#/$defs/estimate'}
+      validation_strategy: {type: string}
+      indirect_effect: {$ref: '#/$defs/estimate'}
+      interaction_term: {$ref: '#/$defs/estimate'}
+      confounding_note: {type: string}
+      causal_estimand: {type: string}
+      identification_strategy:
+        enum: [randomized_intervention, controlled_contingency, natural_experiment, instrumental_variable, regression_discontinuity, difference_in_differences, longitudinal_adjustment, other]
+      temporal_ordering: {type: string}
+      causal_assumptions: {$ref: '#/$defs/causalAssumptions'}
+      integrated_claim_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:claim:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      falsifiable_boundary: {type: string}
+      evidence_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:evidence:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      limitations: {$ref: '#/$defs/stringList'}
+      provenance: {$ref: '#/$defs/provenance'}
+    allOf:
+      - if: {properties: {claim_type: {const: definition}}}
+        then:
+          required: [defined_object_id, source_ids]
+          not:
+            anyOf:
+              - required: [exposure_id]
+              - required: [causal_estimand]
+              - required: [estimate]
+      - if: {properties: {claim_type: {const: association}}}
+        then:
+          required: [exposure_id, outcome_id, estimate, confounding_note]
+          not:
+            anyOf:
+              - required: [causal_estimand]
+              - required: [predictive_metric]
+              - required: [mediator_id]
+              - required: [moderator_id]
+      - if: {properties: {claim_type: {const: prediction}}}
+        then:
+          required: [exposure_id, outcome_id, validation_strategy, predictive_metric]
+          not:
+            anyOf:
+              - required: [causal_estimand]
+              - required: [estimate]
+              - required: [mediator_id]
+              - required: [moderator_id]
+      - if: {properties: {claim_type: {const: mediation}}}
+        then:
+          required: [exposure_id, mediator_id, outcome_id, indirect_effect, temporal_ordering]
+          not:
+            anyOf:
+              - required: [moderator_id]
+              - required: [interaction_term]
+      - if: {properties: {claim_type: {const: moderation}}}
+        then:
+          required: [exposure_id, moderator_id, outcome_id, interaction_term]
+          not:
+            anyOf:
+              - required: [mediator_id]
+              - required: [indirect_effect]
+      - if: {properties: {claim_type: {const: causal_effect}}}
+        then:
+          required: [exposure_id, outcome_id, causal_estimand, identification_strategy, temporal_ordering, causal_assumptions]
+          properties:
+            epistemic_status:
+              enum: [supported, mixed, unsupported, refuted]
+            evidence_ids:
+              minItems: 1
+          not:
+            anyOf:
+              - required: [predictive_metric]
+              - required: [mediator_id]
+              - required: [moderator_id]
+      - if: {properties: {claim_type: {const: causal_hypothesis}}}
+        then:
+          required: [exposure_id, outcome_id, causal_estimand, temporal_ordering, causal_assumptions, falsifiable_boundary]
+          properties:
+            epistemic_status: {const: proposed}
+          not:
+            anyOf:
+              - required: [predictive_metric]
+              - required: [mediator_id]
+              - required: [moderator_id]
+      - if: {properties: {claim_type: {const: mechanism_hypothesis}}}
+        then:
+          required: [mechanism_id, exposure_id, outcome_id, temporal_ordering, falsifiable_boundary]
+          properties:
+            epistemic_status: {const: proposed}
+          not:
+            anyOf:
+              - required: [predictive_metric]
+              - required: [mediator_id]
+              - required: [moderator_id]
+  evidence:
+    description: One source-specific extraction supporting or challenging one or more Claims.
+    type: object
+    additionalProperties: false
+    required: [id, claim_ids, source_id, extraction_locator, evidence_kind, design, population, inference_support, support_direction, causal_support, domains, summary, provenance]
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:evidence:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      claim_ids:
+        type: array
+        minItems: 1
+        items:
+          type: string
+          pattern: '^pmm:claim:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      source_id:
+        type: string
+        pattern: '^pmm:source:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      extraction_locator: {$ref: '#/$defs/nonEmptyString'}
+      evidence_kind:
+        enum: [systematic_review, meta_analysis, narrative_review, randomized_experiment, controlled_experiment, longitudinal_observational, cross_sectional_observational, computational_model, expert_consensus]
+      design: {$ref: '#/$defs/nonEmptyString'}
+      population: {$ref: '#/$defs/nonEmptyString'}
+      species:
+        type: array
+        items:
+          enum: [human, nonhuman_primate, rodent, other, mixed]
+        uniqueItems: true
+      sample_size:
+        type: integer
+        minimum: 1
+      inference_support:
+        enum: [association, prediction, mediation, moderation, causal_effect, mechanism]
+      support_direction:
+        enum: [supports, challenges, mixed, neutral]
+      causal_support:
+        enum: [none, indirect, direct]
+      effect: {$ref: '#/$defs/estimate'}
+      domains:
+        type: object
+        additionalProperties: false
+        required: [directness, risk_of_bias, consistency, precision, replication]
+        properties:
+          directness: {enum: [direct, partially_indirect, indirect]}
+          risk_of_bias: {enum: [low, some_concerns, high, not_assessed]}
+          consistency: {enum: [consistent, mostly_consistent, mixed, single_source, not_assessed]}
+          precision: {enum: [adequate, limited, very_limited, not_reported]}
+          replication: {enum: [independent_replication, conceptual_replication, unreplicated, not_applicable, not_assessed]}
+      summary: {$ref: '#/$defs/nonEmptyString'}
+      limitations: {$ref: '#/$defs/stringList'}
+      provenance: {$ref: '#/$defs/provenance'}
+  source:
+    type: object
+    additionalProperties: false
+    required: [id, title, source_type, url, accessed_at, authority_note, provenance]
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:source:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      title: {$ref: '#/$defs/nonEmptyString'}
+      source_type:
+        enum: [official_framework, ontology_release, peer_reviewed_article, book, dataset, preprint, other]
+      authors: {$ref: '#/$defs/stringList'}
+      organization: {type: string}
+      year: {type: integer, minimum: 1800, maximum: 2100}
+      doi: {type: string, pattern: '^10\.[0-9]{4,9}/\S+$'}
+      pmid: {type: string, pattern: '^[0-9]+$'}
+      version: {type: string}
+      url: {type: string, format: uri}
+      accessed_at: {type: string, format: date}
+      authority_note: {$ref: '#/$defs/nonEmptyString'}
+      provenance: {$ref: '#/$defs/provenance'}

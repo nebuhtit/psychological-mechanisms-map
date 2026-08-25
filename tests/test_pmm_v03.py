@@ -1,0 +1,64 @@
+from __future__ import annotations
+
+import copy
+import sys
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import pmm_v03  # noqa: E402
+
+
+class PMMV03ValidationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(ROOT / "data" / "pilot-anxiety-avoidance-v0.3.yaml")
+
+    def test_pilot_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_schema_forbids_causal_fields_on_association(self) -> None:
+        document = copy.deepcopy(self.document)
+        claim = next(item for item in document["claims"] if item["claim_type"] == "association")
+        claim["causal_estimand"] = "An invalid causal interpretation"
+        self.assertTrue(pmm_v03.validate(document))
+
+    def test_abstract_entity_cannot_be_instantiated(self) -> None:
+        document = copy.deepcopy(self.document)
+        document["objects"][0]["type"] = "Entity"
+        document["objects"][0]["id"] = "pmm:entity:invalid"
+        self.assertTrue(pmm_v03.validate(document))
+
+    def test_relation_domain_and_range_are_checked(self) -> None:
+        document = copy.deepcopy(self.document)
+        measured_by = next(item for item in document["relations"] if item["predicate"] == "measured_by")
+        measured_by["object_id"] = "pmm:behavior:avoidance-response"
+        errors = pmm_v03.validate(document)
+        self.assertTrue(any("does not allow object type Behavior" in error for error in errors))
+
+    def test_causal_effect_requires_direct_evidence(self) -> None:
+        document = copy.deepcopy(self.document)
+        evidence = next(item for item in document["evidence"] if item["causal_support"] == "direct")
+        evidence["causal_support"] = "indirect"
+        errors = pmm_v03.validate(document)
+        self.assertTrue(any("requires linked direct causal evidence" in error for error in errors))
+
+    def test_exact_external_mapping_requires_verified_identifier(self) -> None:
+        document = copy.deepcopy(self.document)
+        mapping = document["objects"][0]["external_mappings"][0]
+        mapping["mapping_relation"] = "exact_match"
+        errors = pmm_v03.validate(document)
+        self.assertTrue(any("identifier_verified" in error for error in errors))
+
+    def test_evidence_backlink_is_checked(self) -> None:
+        document = copy.deepcopy(self.document)
+        document["evidence"][0]["claim_ids"] = []
+        errors = pmm_v03.validate(document)
+        self.assertTrue(any("does not link back" in error for error in errors))
+
+
+if __name__ == "__main__":
+    unittest.main()

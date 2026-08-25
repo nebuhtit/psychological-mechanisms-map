@@ -1,0 +1,725 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://pmm.example.org/schema/pmm-v0.2.schema.json
+title: Psychological Mechanisms Map Schema v0.2
+description: >-
+  Evidence-aware schema for psychological entities, mechanisms, relations,
+  claims, evidence records, sources, contexts, states, behaviors,
+  interventions, and measurements. YAML is the authoring syntax; the document
+  is valid JSON Schema and can be serialized losslessly to JSON.
+type: object
+additionalProperties: false
+required:
+  - pmm_version
+  - document_type
+  - dataset_id
+  - metadata
+  - namespaces
+  - objects
+  - relations
+  - claims
+  - evidence
+  - sources
+properties:
+  pmm_version:
+    const: 0.2.0
+  document_type:
+    const: pmm_dataset
+  dataset_id:
+    $ref: '#/$defs/pmmId'
+  metadata:
+    $ref: '#/$defs/datasetMetadata'
+  namespaces:
+    type: object
+    minProperties: 1
+    additionalProperties:
+      type: string
+      format: uri
+  objects:
+    type: array
+    items:
+      oneOf:
+        - $ref: '#/$defs/entity'
+        - $ref: '#/$defs/mechanism'
+        - $ref: '#/$defs/state'
+        - $ref: '#/$defs/behavior'
+        - $ref: '#/$defs/intervention'
+        - $ref: '#/$defs/measurement'
+        - $ref: '#/$defs/context'
+  relations:
+    type: array
+    items:
+      $ref: '#/$defs/relation'
+  claims:
+    type: array
+    items:
+      $ref: '#/$defs/claim'
+  evidence:
+    type: array
+    items:
+      $ref: '#/$defs/evidence'
+  sources:
+    type: array
+    items:
+      $ref: '#/$defs/source'
+
+$defs:
+  pmmId:
+    type: string
+    pattern: '^pmm:(dataset|entity|mechanism|state|behavior|intervention|measurement|context|relation|claim|evidence|source):[a-z0-9]+(?:-[a-z0-9]+)*$'
+  objectId:
+    type: string
+    pattern: '^pmm:(entity|mechanism|state|behavior|intervention|measurement|context):[a-z0-9]+(?:-[a-z0-9]+)*$'
+  nonEmptyString:
+    type: string
+    minLength: 1
+  timestamp:
+    type: string
+    format: date-time
+  date:
+    type: string
+    format: date
+  stringList:
+    type: array
+    items:
+      $ref: '#/$defs/nonEmptyString'
+    uniqueItems: true
+
+  datasetMetadata:
+    type: object
+    additionalProperties: false
+    required: [title, description, status, language, license, provenance]
+    properties:
+      title:
+        $ref: '#/$defs/nonEmptyString'
+      description:
+        $ref: '#/$defs/nonEmptyString'
+      status:
+        enum: [draft, pilot, reviewed, deprecated]
+      language:
+        type: string
+        pattern: '^[a-z]{2,3}(-[A-Z]{2})?$'
+      license:
+        $ref: '#/$defs/nonEmptyString'
+      schema_path:
+        $ref: '#/$defs/nonEmptyString'
+      provenance:
+        $ref: '#/$defs/provenance'
+
+  provenance:
+    type: object
+    additionalProperties: false
+    required: [record_version, created_at, modified_at, created_by, review_status]
+    properties:
+      record_version:
+        type: string
+        pattern: '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'
+      created_at:
+        $ref: '#/$defs/timestamp'
+      modified_at:
+        $ref: '#/$defs/timestamp'
+      created_by:
+        $ref: '#/$defs/stringList'
+      reviewed_by:
+        $ref: '#/$defs/stringList'
+      review_status:
+        enum: [unreviewed, machine_validated, expert_reviewed, deprecated]
+      source_snapshot_date:
+        $ref: '#/$defs/date'
+      derived_from_ids:
+        type: array
+        items:
+          $ref: '#/$defs/pmmId'
+        uniqueItems: true
+      change_note:
+        type: string
+      supersedes_id:
+        $ref: '#/$defs/pmmId'
+      deprecated:
+        type: boolean
+        default: false
+
+  externalMapping:
+    type: object
+    additionalProperties: false
+    required: [system, external_id, mapping_relation, mapping_status, rationale, accessed_at]
+    properties:
+      system:
+        enum: [RDoC, CognitiveAtlas, MF, NBO, HiTOP, DOI, PMID, PMCID, Other]
+      external_id:
+        $ref: '#/$defs/nonEmptyString'
+      label:
+        type: string
+      url:
+        type: string
+        format: uri
+      mapping_relation:
+        enum: [exact_match, close_match, broad_match, narrow_match, related_match]
+      mapping_status:
+        enum: [verified, provisional, rejected]
+      rationale:
+        $ref: '#/$defs/nonEmptyString'
+      accessed_at:
+        $ref: '#/$defs/date'
+
+  baseObjectProperties:
+    type: object
+    required: [id, type, label, definition, knowledge_status, provenance]
+    properties:
+      id:
+        $ref: '#/$defs/objectId'
+      type:
+        enum: [Entity, Mechanism, State, Behavior, Intervention, Measurement, Context]
+      label:
+        $ref: '#/$defs/nonEmptyString'
+      definition:
+        $ref: '#/$defs/nonEmptyString'
+      aliases:
+        $ref: '#/$defs/stringList'
+      knowledge_status:
+        enum:
+          - operational_definition
+          - established_empirical
+          - supported_empirical
+          - mixed_empirical
+          - proposed_integrative
+          - refuted
+          - unknown
+      boundary_notes:
+        type: array
+        items:
+          $ref: '#/$defs/nonEmptyString'
+      external_mappings:
+        type: array
+        items:
+          $ref: '#/$defs/externalMapping'
+      provenance:
+        $ref: '#/$defs/provenance'
+
+  entity:
+    description: Abstract base record for a construct, process, disposition, event, outcome, agent, or other referent that is not represented by a more specific PMM type.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/baseObjectProperties'
+      - type: object
+        properties:
+          type:
+            const: Entity
+          entity_kind:
+            enum: [construct, process, disposition, event, outcome, agent, other]
+        required: [entity_kind]
+
+  mechanism:
+    description: A process or organized disposition that transforms declared inputs into outputs under stated conditions; an association alone is not a mechanism.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/baseObjectProperties'
+      - type: object
+        properties:
+          type:
+            const: Mechanism
+          process_kind:
+            enum: [learning, cognitive, affective, motivational, social, physiological, developmental, integrative]
+          input_ids:
+            type: array
+            items:
+              $ref: '#/$defs/objectId'
+            uniqueItems: true
+          output_ids:
+            type: array
+            items:
+              $ref: '#/$defs/objectId'
+            uniqueItems: true
+          necessary_conditions:
+            $ref: '#/$defs/stringList'
+          sufficient_conditions:
+            $ref: '#/$defs/stringList'
+        required: [process_kind, input_ids, output_ids, necessary_conditions]
+
+  state:
+    description: A time-indexed condition borne by a person, organism, group, environment, or interaction.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/baseObjectProperties'
+      - type: object
+        properties:
+          type:
+            const: State
+          state_kind:
+            enum: [affective, cognitive, motivational, physiological, environmental, outcome]
+          bearer_scope:
+            enum: [person, organism, group, environment, interaction]
+          temporal_scale:
+            enum: [momentary, episode, day, chronic, developmental, unspecified]
+        required: [state_kind, bearer_scope, temporal_scale]
+
+  behavior:
+    description: An observable action, omission, or response pattern; behavioral function is represented separately from response topography.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/baseObjectProperties'
+      - type: object
+        properties:
+          type:
+            const: Behavior
+          behavior_kind:
+            enum: [action, omission, response_pattern, verbal_behavior, physiological_response]
+          observable:
+            type: boolean
+          actor_scope:
+            enum: [person, organism, group]
+          response_topography:
+            type: string
+          function_note:
+            type: string
+        required: [behavior_kind, observable, actor_scope]
+
+  intervention:
+    description: A deliberate manipulation with specified targets, delivery, and intended direction; efficacy requires a separate Claim.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/baseObjectProperties'
+      - type: object
+        properties:
+          type:
+            const: Intervention
+          intervention_kind:
+            enum: [psychological, pharmacological, behavioral, environmental, digital, policy, experimental_manipulation]
+          target_ids:
+            type: array
+            minItems: 1
+            items:
+              $ref: '#/$defs/objectId'
+            uniqueItems: true
+          delivery:
+            $ref: '#/$defs/nonEmptyString'
+          intended_direction:
+            enum: [increase, decrease, stabilize, disrupt, test]
+        required: [intervention_kind, target_ids, delivery, intended_direction]
+
+  measurement:
+    description: An operational method that produces an observation about one or more target objects at a declared unit of analysis.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/baseObjectProperties'
+      - type: object
+        properties:
+          type:
+            const: Measurement
+          measurement_kind:
+            enum: [self_report, behavioral_task, observation, physiology, circuit, molecular, genetic, clinical_rating, computational_parameter]
+          target_ids:
+            type: array
+            minItems: 1
+            items:
+              $ref: '#/$defs/objectId'
+            uniqueItems: true
+          method:
+            $ref: '#/$defs/nonEmptyString'
+          unit_of_analysis:
+            enum: [genes, molecules, cells, circuits, physiology, behavior, self_report, paradigm, clinical_record]
+          result_type:
+            enum: [binary, count, continuous, ordinal, nominal, time_to_event, model_parameter]
+          psychometric_notes:
+            type: string
+        required: [measurement_kind, target_ids, method, unit_of_analysis, result_type]
+
+  context:
+    description: Experimental, clinical, social, developmental, cultural, physical, temporal, or composite conditions that bound an object or Claim.
+    unevaluatedProperties: false
+    allOf:
+      - $ref: '#/$defs/baseObjectProperties'
+      - type: object
+        properties:
+          type:
+            const: Context
+          context_kind:
+            enum: [experimental, clinical, social, developmental, cultural, physical, temporal, composite]
+          dimensions:
+            type: object
+            minProperties: 1
+            additionalProperties: true
+          scope:
+            $ref: '#/$defs/nonEmptyString'
+        required: [context_kind, dimensions, scope]
+
+  relation:
+    description: A graph-ready semantic edge whose empirical interpretation is reified in one or more Claims.
+    type: object
+    additionalProperties: false
+    required: [id, subject_id, predicate, object_id, epistemic_scope, provenance]
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:relation:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      subject_id:
+        $ref: '#/$defs/objectId'
+      predicate:
+        enum:
+          - is_a
+          - part_of
+          - occurs_in_context
+          - measured_by
+          - operationalizes
+          - precedes
+          - associated_with
+          - predicts
+          - increases_probability_of
+          - decreases_probability_of
+          - reduces
+          - prevents
+          - causes
+          - mediates
+          - moderates
+          - reinforces
+          - close_match
+      object_id:
+        $ref: '#/$defs/objectId'
+      epistemic_scope:
+        enum: [definitional, empirical, integrative, mapping]
+      context_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:context:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      claim_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:claim:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      qualifiers:
+        type: object
+        additionalProperties: true
+      provenance:
+        $ref: '#/$defs/provenance'
+    allOf:
+      - if:
+          properties:
+            epistemic_scope:
+              enum: [empirical, integrative]
+        then:
+          required: [claim_ids]
+          properties:
+            claim_ids:
+              minItems: 1
+      - if:
+          properties:
+            predicate:
+              enum: [causes, prevents, reinforces]
+        then:
+          properties:
+            epistemic_scope:
+              const: empirical
+
+  claim:
+    description: A scoped, testable statement with an explicit inference type, epistemic status, confidence rationale, evidence links, and provenance.
+    type: object
+    additionalProperties: false
+    required:
+      - id
+      - statement
+      - inference_type
+      - knowledge_status
+      - confidence
+      - scope
+      - evidence_ids
+      - provenance
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:claim:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      statement:
+        $ref: '#/$defs/nonEmptyString'
+      inference_type:
+        enum: [descriptive, correlation, prediction, mediation, moderation, causation]
+      knowledge_status:
+        enum:
+          - operational_definition
+          - established_empirical
+          - supported_empirical
+          - mixed_empirical
+          - proposed_integrative
+          - refuted
+          - unknown
+      confidence:
+        type: object
+        additionalProperties: false
+        required: [level, rationale]
+        properties:
+          level:
+            enum: [high, moderate, low, very_low, not_applicable]
+          rationale:
+            $ref: '#/$defs/nonEmptyString'
+      scope:
+        type: object
+        additionalProperties: false
+        required: [population, context_ids, temporal_scope]
+        properties:
+          population:
+            $ref: '#/$defs/nonEmptyString'
+          species:
+            type: array
+            items:
+              enum: [human, nonhuman_primate, rodent, other, mixed]
+            uniqueItems: true
+          context_ids:
+            type: array
+            minItems: 1
+            items:
+              type: string
+              pattern: '^pmm:context:[a-z0-9]+(?:-[a-z0-9]+)*$'
+            uniqueItems: true
+          temporal_scope:
+            $ref: '#/$defs/nonEmptyString'
+          boundary_conditions:
+            $ref: '#/$defs/stringList'
+      exposure_id:
+        $ref: '#/$defs/objectId'
+      outcome_id:
+        $ref: '#/$defs/objectId'
+      mediator_id:
+        $ref: '#/$defs/objectId'
+      moderator_id:
+        $ref: '#/$defs/objectId'
+      association_estimate:
+        $ref: '#/$defs/estimate'
+      predictive_metric:
+        $ref: '#/$defs/estimate'
+      validation_strategy:
+        type: string
+      indirect_effect:
+        $ref: '#/$defs/estimate'
+      mediation_path:
+        type: string
+      interaction_term:
+        $ref: '#/$defs/estimate'
+      causal_estimand:
+        type: string
+      identification_strategy:
+        enum: [randomized_intervention, controlled_contingency, natural_experiment, instrumental_variable, regression_discontinuity, difference_in_differences, longitudinal_adjustment, other]
+      temporal_ordering:
+        type: string
+      causal_assumptions:
+        type: object
+        additionalProperties: false
+        required: [consistency, exchangeability, positivity, interference, assessment]
+        properties:
+          consistency:
+            type: string
+          exchangeability:
+            type: string
+          positivity:
+            type: string
+          interference:
+            type: string
+          assessment:
+            enum: [plausible, partly_tested, unverified, violated]
+      confounding_note:
+        type: string
+      evidence_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:evidence:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      integrated_claim_ids:
+        type: array
+        items:
+          type: string
+          pattern: '^pmm:claim:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      falsifiable_boundary:
+        type: string
+      limitations:
+        $ref: '#/$defs/stringList'
+      provenance:
+        $ref: '#/$defs/provenance'
+    allOf:
+      - if:
+          properties:
+            inference_type:
+              const: correlation
+        then:
+          required: [exposure_id, outcome_id, association_estimate, confounding_note]
+      - if:
+          properties:
+            inference_type:
+              const: prediction
+        then:
+          required: [exposure_id, outcome_id, validation_strategy, predictive_metric]
+      - if:
+          properties:
+            inference_type:
+              const: mediation
+        then:
+          required: [exposure_id, mediator_id, outcome_id, indirect_effect, mediation_path, temporal_ordering]
+      - if:
+          properties:
+            inference_type:
+              const: moderation
+        then:
+          required: [exposure_id, moderator_id, outcome_id, interaction_term]
+      - if:
+          properties:
+            inference_type:
+              const: causation
+        then:
+          required: [exposure_id, outcome_id, causal_estimand, identification_strategy, temporal_ordering, causal_assumptions]
+      - if:
+          properties:
+            knowledge_status:
+              const: proposed_integrative
+        then:
+          required: [integrated_claim_ids, falsifiable_boundary]
+          properties:
+            integrated_claim_ids:
+              minItems: 2
+
+  estimate:
+    type: object
+    additionalProperties: false
+    required: [metric, value_status]
+    properties:
+      metric:
+        $ref: '#/$defs/nonEmptyString'
+      value_status:
+        enum: [reported, qualitative_only, not_reported]
+      value:
+        type: number
+      interval:
+        type: object
+        additionalProperties: false
+        required: [level, lower, upper]
+        properties:
+          level:
+            type: number
+            exclusiveMinimum: 0
+            exclusiveMaximum: 1
+          lower:
+            type: number
+          upper:
+            type: number
+      direction:
+        enum: [positive, negative, null, mixed, not_applicable]
+      notes:
+        type: string
+
+  evidence:
+    description: A source-linked extraction describing a study or synthesis, its design and population, supported inference, uncertainty domains, and limitations.
+    type: object
+    additionalProperties: false
+    required:
+      - id
+      - claim_ids
+      - source_ids
+      - evidence_kind
+      - design
+      - population
+      - supports_inference
+      - domains
+      - causal_support
+      - summary
+      - provenance
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:evidence:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      claim_ids:
+        type: array
+        minItems: 1
+        items:
+          type: string
+          pattern: '^pmm:claim:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      source_ids:
+        type: array
+        minItems: 1
+        items:
+          type: string
+          pattern: '^pmm:source:[a-z0-9]+(?:-[a-z0-9]+)*$'
+        uniqueItems: true
+      evidence_kind:
+        enum: [authoritative_framework, ontology, systematic_review, meta_analysis, narrative_review, randomized_experiment, controlled_experiment, longitudinal_observational, cross_sectional_observational, computational_model, expert_consensus]
+      design:
+        $ref: '#/$defs/nonEmptyString'
+      population:
+        $ref: '#/$defs/nonEmptyString'
+      species:
+        type: array
+        items:
+          enum: [human, nonhuman_primate, rodent, other, mixed]
+        uniqueItems: true
+      sample_size:
+        type: integer
+        minimum: 1
+      supports_inference:
+        enum: [descriptive, correlation, prediction, mediation, moderation, causation]
+      effect:
+        $ref: '#/$defs/estimate'
+      domains:
+        type: object
+        additionalProperties: false
+        required: [directness, risk_of_bias, consistency, precision, replication]
+        properties:
+          directness:
+            enum: [direct, partially_indirect, indirect]
+          risk_of_bias:
+            enum: [low, some_concerns, high, not_assessed]
+          consistency:
+            enum: [consistent, mostly_consistent, mixed, single_source, not_assessed]
+          precision:
+            enum: [adequate, limited, very_limited, not_reported]
+          replication:
+            enum: [independent_replication, conceptual_replication, unreplicated, not_applicable, not_assessed]
+      causal_support:
+        type: boolean
+      summary:
+        $ref: '#/$defs/nonEmptyString'
+      limitations:
+        $ref: '#/$defs/stringList'
+      extracted_by:
+        $ref: '#/$defs/stringList'
+      provenance:
+        $ref: '#/$defs/provenance'
+
+  source:
+    description: A bibliographic, framework, ontology-release, or dataset provenance record pinned by URL, access date, and version when available.
+    type: object
+    additionalProperties: false
+    required: [id, title, source_type, url, accessed_at, authority_note, provenance]
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:source:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      title:
+        $ref: '#/$defs/nonEmptyString'
+      source_type:
+        enum: [official_framework, ontology_release, peer_reviewed_article, book, dataset, preprint, other]
+      authors:
+        $ref: '#/$defs/stringList'
+      organization:
+        type: string
+      year:
+        type: integer
+        minimum: 1800
+        maximum: 2100
+      doi:
+        type: string
+        pattern: '^10\.[0-9]{4,9}/\S+$'
+      pmid:
+        type: string
+        pattern: '^[0-9]+$'
+      version:
+        type: string
+      url:
+        type: string
+        format: uri
+      accessed_at:
+        $ref: '#/$defs/date'
+      authority_note:
+        $ref: '#/$defs/nonEmptyString'
+      license:
+        type: string
+      provenance:
+        $ref: '#/$defs/provenance'

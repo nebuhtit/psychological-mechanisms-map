@@ -1,0 +1,128 @@
+vocabulary_id: pmm:vocabulary:relations-v0-2
+version: 0.2.0
+title: PMM relationship vocabulary
+description: >-
+  Predicates are semantic edges, not automatic causal assertions. Predicates with
+  evidence_required=true must cite at least one Claim.
+
+predicates:
+  - id: is_a
+    category: taxonomic
+    definition: The subject is a subtype of the object.
+    directional: true
+    transitive: true
+    evidence_required: false
+  - id: part_of
+    category: mereological
+    definition: The subject is a component of the object in the stated context.
+    directional: true
+    transitive: context_dependent
+    evidence_required: false
+  - id: occurs_in_context
+    category: contextual
+    definition: The subject is instantiated or evaluated within the object Context.
+    directional: true
+    transitive: false
+    evidence_required: false
+  - id: measured_by
+    category: operational
+    definition: The subject is operationalized or observed using the object Measurement.
+    directional: true
+    transitive: false
+    evidence_required: false
+  - id: operationalizes
+    category: operational
+    definition: The subject Measurement implements an observable indicator of the object.
+    directional: true
+    transitive: false
+    evidence_required: false
+  - id: precedes
+    category: temporal
+    definition: The subject occurs before the object within the specified episode or design.
+    directional: true
+    transitive: context_dependent
+    evidence_required: true
+  - id: associated_with
+    category: statistical
+    definition: Subject and object covary; direction and causation are not implied.
+    directional: false
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [correlation]
+  - id: predicts
+    category: statistical
+    definition: Information about the subject improves prediction of the object in held-out, prospective, or otherwise declared validation data.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [prediction]
+  - id: increases_probability_of
+    category: functional
+    definition: Higher subject values or presence are linked to a higher probability of the object; causal meaning depends on the cited Claim.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [correlation, prediction, mediation, moderation, causation]
+  - id: decreases_probability_of
+    category: functional
+    definition: Higher subject values or presence are linked to a lower probability of the object; causal meaning depends on the cited Claim.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [correlation, prediction, mediation, moderation, causation]
+  - id: reduces
+    category: functional
+    definition: The subject lowers the level, duration, intensity, or probability of the object under stated conditions.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [correlation, mediation, moderation, causation]
+  - id: prevents
+    category: functional
+    definition: The subject lowers the object occurrence to zero in the stated operational context; do not generalize beyond that context.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [causation]
+  - id: causes
+    category: causal
+    definition: An intervention on the subject is claimed to change the object under an identified causal model and stated assumptions.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [causation]
+  - id: mediates
+    category: mechanistic-statistical
+    definition: The subject is modeled as transmitting part of an exposure effect to an outcome; causality is not implied without causal identification.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [mediation]
+  - id: moderates
+    category: interaction
+    definition: The subject changes the magnitude or direction of a focal predictor-outcome association.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [moderation]
+  - id: reinforces
+    category: learning
+    definition: A response-contingent consequence increases the future probability or rate of the target behavior under specified conditions.
+    directional: true
+    transitive: false
+    evidence_required: true
+    allowed_inference_types: [causation]
+  - id: close_match
+    category: mapping
+    definition: Subject and object are sufficiently similar for navigation but not interchangeable.
+    directional: false
+    transitive: false
+    evidence_required: false
+
+edge_rules:
+  - Every empirical edge cites one or more claim_ids.
+  - A causes, prevents, or reinforces edge must cite a causation claim.
+  - A mediates edge must cite a mediation claim with exposure, mediator, and outcome roles.
+  - A moderates edge must cite a moderation claim with predictor, moderator, outcome, and interaction estimate.
+  - associated_with is symmetric; predicts and all causal/functional predicates are directional.
+  - No relation inherits causal force through graph transitivity.

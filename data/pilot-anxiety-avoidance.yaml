@@ -1,0 +1,943 @@
+pmm_version: 0.2.0
+document_type: pmm_dataset
+dataset_id: pmm:dataset:anxiety-avoidance-pilot
+metadata:
+  title: Anxiety, threat, avoidance, and negative reinforcement pilot
+  description: >-
+    A deliberately small pilot separating potential threat/anxiety, observable
+    avoidance, response-contingent aversive-outcome reduction, and the negative
+    reinforcement learning mechanism.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.2.schema.yaml
+  provenance:
+    record_version: 0.2.0
+    created_at: '2026-08-26T00:00:00+03:00'
+    modified_at: '2026-08-26T00:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+    change_note: Initial PMM v0.2 pilot.
+
+namespaces:
+  pmm: https://pmm.example.org/id/
+  rdoc: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/
+  cogatlas: https://www.cognitiveatlas.org/
+  mf: http://purl.obolibrary.org/obo/MF_
+  nbo: http://purl.obolibrary.org/obo/NBO_
+  hitop: https://www.hitop-system.org/
+  doi: https://doi.org/
+
+objects:
+  - id: pmm:context:controlled-active-avoidance
+    type: Context
+    label: Controlled active-avoidance contingency
+    definition: >-
+      An experimental context in which a specified response changes the
+      probability, duration, or intensity of a specified aversive outcome.
+    knowledge_status: operational_definition
+    context_kind: experimental
+    dimensions:
+      contingency: response-dependent
+      comparison: response versus no response or yoked/noncontingent control
+      outcome_valence: aversive
+      acquisition: repeated trials
+    scope: Human or non-human active-avoidance and escape-learning paradigms with an explicit response-outcome contingency.
+    boundary_notes:
+      - Passive Pavlovian threat responding is outside this context unless an instrumental response changes the outcome.
+      - Avoidance, escape, punishment, and extinction must not be treated as synonyms.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:context:human-anxiety
+    type: Context
+    label: Human anxiety context
+    definition: >-
+      Human functioning in which possible harm is distant, ambiguous, or
+      uncertain and anxiety or anxious apprehension is measured dimensionally.
+    knowledge_status: supported_empirical
+    context_kind: composite
+    dimensions:
+      species: human
+      threat_probability: uncertain-or-ambiguous
+      clinical_scope: transdiagnostic-and-nonclinical
+      measurement: dimensional
+    scope: Human research across nonclinical and anxiety-related clinical samples; not a diagnostic rule.
+    external_mappings:
+      - system: RDoC
+        external_id: RDoC:Potential-Threat-Anxiety
+        label: Potential Threat (Anxiety)
+        url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs
+        mapping_relation: close_match
+        mapping_status: verified
+        rationale: RDoC defines potential threat as possible harm that is distant, ambiguous, or uncertain in probability.
+        accessed_at: '2026-08-26'
+      - system: HiTOP
+        external_id: HiTOP:internalizing-spectrum
+        label: Internalizing spectrum
+        url: https://www.hitop-system.org/
+        mapping_relation: related_match
+        mapping_status: provisional
+        rationale: HiTOP is relevant to dimensional clinical phenotype organization, not to the learning mechanism itself.
+        accessed_at: '2026-08-26'
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+      source_snapshot_date: '2026-08-26'
+
+  - id: pmm:entity:potential-threat
+    type: Entity
+    label: Potential threat
+    definition: A represented or encountered possibility of harm that is temporally distant, ambiguous, or uncertain in probability.
+    aliases: [uncertain threat]
+    knowledge_status: operational_definition
+    entity_kind: construct
+    boundary_notes:
+      - Distinguish potential threat/anxiety from acute threat/fear in RDoC.
+      - A threat cue does not by itself establish subjective anxiety or avoidance.
+    external_mappings:
+      - system: RDoC
+        external_id: RDoC:Potential-Threat-Anxiety
+        label: Potential Threat (Anxiety)
+        url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs
+        mapping_relation: close_match
+        mapping_status: verified
+        rationale: PMM adopts the RDoC potential-threat boundary while keeping threat representation separate from measured state response.
+        accessed_at: '2026-08-26'
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:state:anxiety-response
+    type: State
+    label: Anxiety response state
+    definition: >-
+      A time-bounded pattern of anxious apprehension, vigilance, arousal, or
+      related responses under potential threat; no single indicator is assumed
+      to exhaust the state.
+    aliases: [anxious apprehension]
+    knowledge_status: supported_empirical
+    state_kind: affective
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes:
+      - This is a state, not a diagnosis and not the RDoC construct itself.
+      - Self-report, physiology, and behavior may dissociate and should remain separate measurements.
+    external_mappings:
+      - system: RDoC
+        external_id: RDoC:Potential-Threat-Anxiety
+        label: Potential Threat (Anxiety)
+        url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs
+        mapping_relation: related_match
+        mapping_status: verified
+        rationale: The PMM state can be one manifestation measured within the broader RDoC construct.
+        accessed_at: '2026-08-26'
+      - system: CognitiveAtlas
+        external_id: CognitiveAtlas:anxiety
+        label: anxiety
+        url: https://www.cognitiveatlas.org/concepts
+        mapping_relation: close_match
+        mapping_status: provisional
+        rationale: Label-level match found; a stable concept identifier and definition require release-pinned review.
+        accessed_at: '2026-08-26'
+      - system: MF
+        external_id: MF:mental-process-or-quality
+        label: mental process or quality
+        url: https://bioportal.bioontology.org/ontologies/MF
+        mapping_relation: broad_match
+        mapping_status: provisional
+        rationale: MF provides upper-level mental-functioning classes, but no exact anxiety term was asserted in this pilot.
+        accessed_at: '2026-08-26'
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:behavior:avoidance-response
+    type: Behavior
+    label: Avoidance response
+    definition: >-
+      An action or omission selected in relation to anticipated aversive
+      consequences that increases distance from, prevents, terminates, or
+      reduces contact with a specified threat or aversive outcome.
+    aliases: [active avoidance, avoidance behavior]
+    knowledge_status: established_empirical
+    behavior_kind: response_pattern
+    observable: true
+    actor_scope: organism
+    response_topography: Task- and context-specific; may include locomotion, choice, withdrawal, refusal, or a safety behavior.
+    function_note: Functional classification requires evidence about the response-outcome contingency; topography alone is insufficient.
+    boundary_notes:
+      - Adaptive avoidance of real harm and maladaptive generalized avoidance are distinct scopes.
+      - Escape terminates an ongoing aversive event; avoidance prevents or reduces an anticipated event.
+    external_mappings:
+      - system: NBO
+        external_id: NBO:avoidance-behavior
+        label: avoidance behavior
+        url: https://bioportal.bioontology.org/ontologies/NBO
+        mapping_relation: related_match
+        mapping_status: provisional
+        rationale: NBO covers behavioral processes and phenotypes; exact release term must be confirmed before promotion.
+        accessed_at: '2026-08-26'
+      - system: CognitiveAtlas
+        external_id: CognitiveAtlas:action-outcome-learning
+        label: action-outcome learning
+        url: https://www.cognitiveatlas.org/concepts
+        mapping_relation: related_match
+        mapping_status: provisional
+        rationale: Cognitive Atlas lists action-outcome learning; avoidance is a response class rather than the same concept.
+        accessed_at: '2026-08-26'
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:state:aversive-outcome-reduction
+    type: State
+    label: Aversive-outcome reduction
+    definition: >-
+      A measured decrease in the probability, intensity, or duration of an
+      aversive event or state relative to an explicit counterfactual or control
+      condition.
+    aliases: [aversive outcome omission, short-term relief]
+    knowledge_status: operational_definition
+    state_kind: outcome
+    bearer_scope: interaction
+    temporal_scale: momentary
+    boundary_notes:
+      - Objective outcome omission and subjective relief are different measurements.
+      - Reduction must be attributed to avoidance only when response contingency is identified.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:mechanism:negative-reinforcement
+    type: Mechanism
+    label: Negative reinforcement
+    definition: >-
+      Instrumental learning in which a response-contingent removal, reduction,
+      or prevention of an aversive event increases the future probability or
+      rate of that response under relevant conditions.
+    knowledge_status: established_empirical
+    process_kind: learning
+    input_ids:
+      - pmm:behavior:avoidance-response
+      - pmm:state:aversive-outcome-reduction
+    output_ids:
+      - pmm:behavior:avoidance-response
+    necessary_conditions:
+      - A specified response is followed by removal, reduction, or prevention of a specified aversive event relative to a comparator.
+      - The future probability or rate of the response increases under relevant conditions.
+      - The response-outcome relation is contingent rather than merely temporally adjacent.
+    sufficient_conditions:
+      - Within the operational scope, demonstrated response contingency plus increased future responding is sufficient to classify the process as negative reinforcement.
+    boundary_notes:
+      - Negative means removal or reduction, not that the mechanism is harmful.
+      - Reinforcement is defined by increased behavior, not by subjective pleasantness.
+      - Outcome omission, fear reduction, safety signaling, and habit may each contribute; PMM does not collapse them into one latent process.
+    external_mappings:
+      - system: CognitiveAtlas
+        external_id: CognitiveAtlas:action-outcome-learning
+        label: action-outcome learning
+        url: https://www.cognitiveatlas.org/concepts
+        mapping_relation: broad_match
+        mapping_status: provisional
+        rationale: Negative reinforcement is one form of instrumental action-outcome learning.
+        accessed_at: '2026-08-26'
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:measurement:avoidance-response-rate
+    type: Measurement
+    label: Avoidance response rate
+    definition: Count or proportion of opportunities on which the predefined avoidance response occurs.
+    knowledge_status: operational_definition
+    measurement_kind: behavioral_task
+    target_ids: [pmm:behavior:avoidance-response]
+    method: Count avoidance responses and divide by eligible trials or observation time; report response definition and denominator.
+    unit_of_analysis: behavior
+    result_type: continuous
+    psychometric_notes: Reliability and validity are paradigm-specific; rate alone does not establish the response function.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:measurement:aversive-outcome-probability
+    type: Measurement
+    label: Conditional aversive-outcome probability
+    definition: Estimated probability of the aversive outcome conditional on response and on no response.
+    knowledge_status: operational_definition
+    measurement_kind: behavioral_task
+    target_ids:
+      - pmm:behavior:avoidance-response
+      - pmm:state:aversive-outcome-reduction
+    method: Estimate p(O|R) and p(O|not R) or experimentally set these contingencies and report both.
+    unit_of_analysis: paradigm
+    result_type: continuous
+    psychometric_notes: The contrast p(O|R) - p(O|not R) identifies the programmed instrumental contingency, not every psychological process controlling behavior.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:intervention:exposure-response-prevention
+    type: Intervention
+    label: Exposure with response prevention
+    definition: >-
+      A psychological or experimental procedure that presents a feared or
+      threat-related cue while preventing or reducing the target avoidance or
+      safety response so new outcome information can be observed.
+    knowledge_status: supported_empirical
+    intervention_kind: psychological
+    target_ids:
+      - pmm:behavior:avoidance-response
+      - pmm:state:anxiety-response
+    delivery: Repeated, planned contact with a specified cue or situation while the defined avoidance response is reduced or prevented.
+    intended_direction: decrease
+    boundary_notes:
+      - This pilot does not assert one protocol or efficacy estimate across diagnoses.
+      - Ethical and clinical use requires individualized assessment and is outside PMM's current scope.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+relations:
+  - id: pmm:relation:potential-threat-precedes-anxiety
+    subject_id: pmm:entity:potential-threat
+    predicate: precedes
+    object_id: pmm:state:anxiety-response
+    epistemic_scope: empirical
+    context_ids: [pmm:context:human-anxiety]
+    claim_ids: [pmm:claim:potential-threat-anxiety-response]
+    qualifiers:
+      direction: temporally-scoped
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:relation:anxiety-associated-with-avoidance
+    subject_id: pmm:state:anxiety-response
+    predicate: increases_probability_of
+    object_id: pmm:behavior:avoidance-response
+    epistemic_scope: empirical
+    context_ids: [pmm:context:human-anxiety]
+    claim_ids: [pmm:claim:anxiety-avoidance-association]
+    qualifiers:
+      causal_interpretation: prohibited
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:relation:avoidance-reduces-aversive-outcome
+    subject_id: pmm:behavior:avoidance-response
+    predicate: reduces
+    object_id: pmm:state:aversive-outcome-reduction
+    epistemic_scope: empirical
+    context_ids: [pmm:context:controlled-active-avoidance]
+    claim_ids: [pmm:claim:avoidance-causes-outcome-reduction]
+    qualifiers:
+      comparator: no-response or noncontingent control
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:relation:outcome-reduction-reinforces-avoidance
+    subject_id: pmm:state:aversive-outcome-reduction
+    predicate: reinforces
+    object_id: pmm:behavior:avoidance-response
+    epistemic_scope: empirical
+    context_ids: [pmm:context:controlled-active-avoidance]
+    claim_ids: [pmm:claim:contingent-reduction-reinforces-avoidance]
+    qualifiers:
+      future_behavior: true
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:relation:negative-reinforcement-maintains-avoidance
+    subject_id: pmm:mechanism:negative-reinforcement
+    predicate: increases_probability_of
+    object_id: pmm:behavior:avoidance-response
+    epistemic_scope: integrative
+    context_ids: [pmm:context:human-anxiety]
+    claim_ids: [pmm:claim:clinical-maintenance-loop]
+    qualifiers:
+      universality: not-asserted
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:relation:avoidance-measured-by-rate
+    subject_id: pmm:behavior:avoidance-response
+    predicate: measured_by
+    object_id: pmm:measurement:avoidance-response-rate
+    epistemic_scope: definitional
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+claims:
+  - id: pmm:claim:potential-threat-anxiety-response
+    statement: Potential threat is a neurobehavioral construct characterized by anxiety-related responses to possible harm that is distant, ambiguous, or uncertain.
+    inference_type: descriptive
+    knowledge_status: established_empirical
+    confidence:
+      level: high
+      rationale: Current official RDoC definition; used here as a construct boundary, not as a claim that every threat cue produces the same response.
+    scope:
+      population: Humans studied dimensionally across normal-to-abnormal functioning.
+      species: [human]
+      context_ids: [pmm:context:human-anxiety]
+      temporal_scope: Episode of anticipated possible harm.
+      boundary_conditions:
+        - Does not include acute, imminent threat by definition.
+    evidence_ids: [pmm:evidence:rdoc-potential-threat-definition]
+    limitations:
+      - RDoC is an evolving research framework and not a diagnostic system.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:claim:anxiety-avoidance-association
+    statement: Higher anxiety or anxious threat responding is generally associated with a greater probability or extent of avoidance, with substantial task, person, and context heterogeneity.
+    inference_type: correlation
+    knowledge_status: supported_empirical
+    confidence:
+      level: moderate
+      rationale: Reviews converge on the association and clinical relevance, but operationalizations vary and this pilot contains no pooled effect estimate.
+    scope:
+      population: Human nonclinical and anxiety-related clinical samples.
+      species: [human]
+      context_ids: [pmm:context:human-anxiety]
+      temporal_scope: Concurrent or short-lag association.
+      boundary_conditions:
+        - Adaptive avoidance of genuine danger is included only when separately identified.
+        - Anxiety can occur without avoidance and avoidance can occur without self-reported anxiety.
+    exposure_id: pmm:state:anxiety-response
+    outcome_id: pmm:behavior:avoidance-response
+    association_estimate:
+      metric: qualitative direction across reviewed literature
+      value_status: qualitative_only
+      direction: positive
+      notes: No pooled magnitude is asserted.
+    confounding_note: Threat severity, controllability, expected value, learning history, trait differences, and measurement method can affect both anxiety and avoidance.
+    evidence_ids: [pmm:evidence:human-anxiety-avoidance-reviews]
+    limitations:
+      - Association does not establish that anxiety causes avoidance in every case.
+      - Avoidance is heterogeneous and may be adaptive, goal-directed, habitual, Pavlovian, or socially constrained.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:claim:avoidance-causes-outcome-reduction
+    statement: In a controlled active-avoidance contingency, performing the specified avoidance response reduces, prevents, or terminates the programmed aversive outcome relative to the specified comparator.
+    inference_type: causation
+    knowledge_status: established_empirical
+    confidence:
+      level: high
+      rationale: The response-outcome contingency is experimentally assigned; the claim is deliberately restricted to the programmed outcome and paradigm.
+    scope:
+      population: Participants or organisms in controlled active-avoidance or escape paradigms.
+      species: [human, rodent, mixed]
+      context_ids: [pmm:context:controlled-active-avoidance]
+      temporal_scope: Immediate response-to-outcome interval within a trial.
+      boundary_conditions:
+        - Requires a verified response-contingent difference in the aversive outcome.
+        - Does not establish long-term clinical benefit or harm.
+    exposure_id: pmm:behavior:avoidance-response
+    outcome_id: pmm:state:aversive-outcome-reduction
+    causal_estimand: Difference in aversive-outcome probability, intensity, or duration under assigned response-contingent avoidance versus the declared control condition.
+    identification_strategy: controlled_contingency
+    temporal_ordering: The specified response occurs before programmed omission, reduction, or termination of the aversive outcome.
+    causal_assumptions:
+      consistency: The avoidance response and aversive outcome are operationally specified and delivered as programmed.
+      exchangeability: Established by experimental control or assignment for the within-paradigm contingency.
+      positivity: Both response/control contingencies are observable or experimentally available in the design.
+      interference: One participant's response does not alter another participant's programmed outcome.
+      assessment: plausible
+    evidence_ids: [pmm:evidence:instrumental-avoidance-contingency]
+    limitations:
+      - The programmed contingency does not identify whether fear reduction, safety value, action-outcome knowledge, or habit controls later behavior.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:claim:contingent-reduction-reinforces-avoidance
+    statement: Under active-avoidance learning conditions, response-contingent omission, reduction, or termination of an aversive outcome can increase the future probability of the avoidance response.
+    inference_type: causation
+    knowledge_status: established_empirical
+    confidence:
+      level: moderate
+      rationale: Instrumental negative reinforcement is well established, but the controlling representation and generalization from laboratory tasks to clinical behavior vary.
+    scope:
+      population: Participants or organisms exposed to repeated response-outcome contingencies.
+      species: [human, rodent, mixed]
+      context_ids: [pmm:context:controlled-active-avoidance]
+      temporal_scope: Across learning trials under the relevant discriminative context.
+      boundary_conditions:
+        - Future responding must increase; short-term relief alone is not sufficient.
+        - The aversive change must be contingent on the response.
+    exposure_id: pmm:state:aversive-outcome-reduction
+    outcome_id: pmm:behavior:avoidance-response
+    causal_estimand: Change in future avoidance-response probability under contingent aversive-outcome reduction versus noncontingent or absent reduction.
+    identification_strategy: controlled_contingency
+    temporal_ordering: The contingent consequence follows a response and future response probability is measured on later opportunities.
+    causal_assumptions:
+      consistency: The consequence and target response remain sufficiently stable across acquisition trials.
+      exchangeability: Experimental contingency assignment separates response-dependent from response-independent outcome changes.
+      positivity: Participants have opportunities to emit and withhold the response under comparable cues.
+      interference: Learning contingencies are individual and do not cross participants.
+      assessment: partly_tested
+    evidence_ids:
+      - pmm:evidence:instrumental-avoidance-contingency
+      - pmm:evidence:avoidance-learning-review
+    limitations:
+      - Safety signals, Pavlovian defensive responses, and habits can also maintain avoidance.
+      - The exact reinforcer may be outcome omission, relief, perceived control, or conditioned safety depending on design.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:claim:clinical-maintenance-loop
+    statement: In some human anxiety contexts, heightened potential-threat responding promotes avoidance; short-term aversive-outcome reduction then negatively reinforces avoidance and reduces opportunities for corrective learning, contributing to persistence.
+    inference_type: causation
+    knowledge_status: proposed_integrative
+    confidence:
+      level: low
+      rationale: Each component has empirical support, but the complete causal chain is not directly identified as a universal mechanism across disorders, people, and contexts.
+    scope:
+      population: Humans with persistent or maladaptive anxiety-related avoidance.
+      species: [human]
+      context_ids: [pmm:context:human-anxiety]
+      temporal_scope: Repeated episodes over days to years.
+      boundary_conditions:
+        - Applies only where avoidance is response-contingently followed by aversive reduction and later avoidance increases.
+        - Does not apply when avoidance is adaptive, externally constrained, or maintained mainly by other consequences.
+    exposure_id: pmm:state:anxiety-response
+    outcome_id: pmm:behavior:avoidance-response
+    causal_estimand: Longitudinal change in context-matched avoidance attributable to the full anxiety-to-contingent-relief learning pathway.
+    identification_strategy: other
+    temporal_ordering: Potential-threat response precedes avoidance; consequence follows avoidance; later avoidance is measured prospectively.
+    causal_assumptions:
+      consistency: Anxiety, avoidance, relief/outcome reduction, and later behavior must be operationalized separately and comparably over time.
+      exchangeability: Unmeasured threat severity, goals, social constraints, and treatment exposure would need control or randomization.
+      positivity: Comparable opportunities for avoidance and approach must exist across relevant contexts.
+      interference: Social reinforcement and shared environments may violate no-interference assumptions.
+      assessment: unverified
+    evidence_ids: [pmm:evidence:human-anxiety-avoidance-reviews]
+    integrated_claim_ids:
+      - pmm:claim:anxiety-avoidance-association
+      - pmm:claim:avoidance-causes-outcome-reduction
+      - pmm:claim:contingent-reduction-reinforces-avoidance
+    falsifiable_boundary: The model is weakened where anxiety predicts avoidance but measured response-contingent reduction does not predict increased future avoidance, or where manipulating the contingency does not alter persistence.
+    limitations:
+      - Statistical mediation has not been asserted or encoded without an indirect-effect estimate.
+      - HiTOP alignment locates relevant clinical dimensions but does not validate this mechanism.
+      - RDoC alignment locates potential threat but does not imply a complete maintenance chain.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+evidence:
+  - id: pmm:evidence:rdoc-potential-threat-definition
+    claim_ids: [pmm:claim:potential-threat-anxiety-response]
+    source_ids:
+      - pmm:source:rdoc-about
+      - pmm:source:rdoc-definitions
+    evidence_kind: authoritative_framework
+    design: NIMH-maintained research framework and construct definition.
+    population: Dimensional mental-health research spanning normal to abnormal functioning.
+    species: [human]
+    supports_inference: descriptive
+    domains:
+      directness: direct
+      risk_of_bias: low
+      consistency: consistent
+      precision: not_reported
+      replication: not_applicable
+    causal_support: false
+    summary: RDoC places potential threat/anxiety in Negative Valence Systems and defines it around possible harm that is distant, ambiguous, or uncertain.
+    limitations:
+      - Framework authority establishes terminology, not the magnitude of an empirical effect.
+    extracted_by: [OpenAI Codex]
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+      source_snapshot_date: '2026-08-26'
+
+  - id: pmm:evidence:human-anxiety-avoidance-reviews
+    claim_ids:
+      - pmm:claim:anxiety-avoidance-association
+      - pmm:claim:clinical-maintenance-loop
+    source_ids:
+      - pmm:source:rethinking-avoidance
+      - pmm:source:uncertainty-anxiety-avoidance
+      - pmm:source:measuring-maladaptive-avoidance
+    evidence_kind: narrative_review
+    design: Integrative reviews of human clinical, experimental, and translational avoidance research.
+    population: Human nonclinical and anxiety-related clinical populations, with some translational animal evidence.
+    species: [human, mixed]
+    supports_inference: correlation
+    effect:
+      metric: qualitative convergence
+      value_status: qualitative_only
+      direction: positive
+      notes: Reviews support a broad anxiety-avoidance link but do not provide one pooled effect.
+    domains:
+      directness: partially_indirect
+      risk_of_bias: some_concerns
+      consistency: mostly_consistent
+      precision: not_reported
+      replication: conceptual_replication
+    causal_support: false
+    summary: Avoidance is prominent in anxiety and may be maintained by several learning and decision processes; its adaptiveness and controlling function vary by context.
+    limitations:
+      - Narrative synthesis and heterogeneous measures limit quantitative confidence.
+      - Clinical generalization from laboratory tasks remains incomplete.
+    extracted_by: [OpenAI Codex]
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:evidence:instrumental-avoidance-contingency
+    claim_ids:
+      - pmm:claim:avoidance-causes-outcome-reduction
+      - pmm:claim:contingent-reduction-reinforces-avoidance
+    source_ids: [pmm:source:punishment-mechanisms-review]
+    evidence_kind: narrative_review
+    design: Review of controlled instrumental aversive-learning paradigms and their response-outcome contingencies.
+    population: Human and non-human experimental subjects.
+    species: [human, rodent, mixed]
+    supports_inference: causation
+    effect:
+      metric: programmed and observed response-outcome contingency
+      value_status: qualitative_only
+      direction: negative
+      notes: p(aversive outcome | response) is lower than p(aversive outcome | no response) in active avoidance.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: consistent
+      precision: not_reported
+      replication: conceptual_replication
+    causal_support: true
+    summary: Active avoidance is instrumental negative reinforcement when a specified response prevents or halts an aversive event and later responding increases.
+    limitations:
+      - This record summarizes a review; future versions should extract representative experiments and effect estimates.
+    extracted_by: [OpenAI Codex]
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:evidence:avoidance-learning-review
+    claim_ids: [pmm:claim:contingent-reduction-reinforces-avoidance]
+    source_ids:
+      - pmm:source:avoidance-learning-review
+      - pmm:source:surviving-threats-taxonomy
+    evidence_kind: narrative_review
+    design: Cross-species theoretical and empirical review of active avoidance, expectancy, safety signals, habits, and defensive behavior.
+    population: Human and non-human experimental subjects.
+    species: [human, rodent, mixed]
+    supports_inference: causation
+    domains:
+      directness: partially_indirect
+      risk_of_bias: some_concerns
+      consistency: mostly_consistent
+      precision: not_reported
+      replication: conceptual_replication
+    causal_support: true
+    summary: Instrumental contingencies can acquire and maintain active avoidance, while multiple representations and circuits can control performance after learning.
+    limitations:
+      - Competing models agree on some behavioral facts but differ on what is learned.
+    extracted_by: [OpenAI Codex]
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+sources:
+  - id: pmm:source:rdoc-about
+    title: About RDoC
+    source_type: official_framework
+    organization: National Institute of Mental Health
+    url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/about-rdoc
+    accessed_at: '2026-08-26'
+    authority_note: Current official NIMH description of RDoC's dimensional, multi-unit, developmental, and environmental research framework.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+      source_snapshot_date: '2026-08-26'
+
+  - id: pmm:source:rdoc-definitions
+    title: Definitions of the RDoC Domains and Constructs
+    source_type: official_framework
+    organization: National Institute of Mental Health
+    url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs
+    accessed_at: '2026-08-26'
+    authority_note: Current official source for Negative Valence Systems and Potential Threat (Anxiety) terminology.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+      source_snapshot_date: '2026-08-26'
+
+  - id: pmm:source:cognitive-atlas-about
+    title: About the Cognitive Atlas
+    source_type: official_framework
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/about
+    accessed_at: '2026-08-26'
+    authority_note: Official description of concepts, tasks, and assertions in the collaborative cognitive-science knowledge base.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:source:cognitive-atlas-paper
+    title: 'The Cognitive Atlas: Toward a Knowledge Foundation for Cognitive Neuroscience'
+    source_type: peer_reviewed_article
+    authors: [Russell A. Poldrack, Aniket Kittur, Donald Kalar, et al.]
+    year: 2011
+    doi: 10.3389/fninf.2011.00017
+    url: https://doi.org/10.3389/fninf.2011.00017
+    accessed_at: '2026-08-26'
+    authority_note: Foundational peer-reviewed description of the Cognitive Atlas ontology design.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:source:mental-functioning-ontology
+    title: Mental Functioning Ontology release
+    source_type: ontology_release
+    organization: OBO / NCBO BioPortal
+    year: 2025
+    version: '2025-07-08'
+    url: https://bioportal.bioontology.org/ontologies/MF
+    accessed_at: '2026-08-26'
+    authority_note: Current indexed MF release; MF is alpha and grounded in BFO/OGMS, so exact mappings remain provisional in the pilot.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+      source_snapshot_date: '2026-08-26'
+
+  - id: pmm:source:neuro-behavior-ontology
+    title: Neuro Behavior Ontology release
+    source_type: ontology_release
+    organization: OBO / NCBO BioPortal
+    year: 2023
+    version: '2023-07-04'
+    url: https://bioportal.bioontology.org/ontologies/NBO
+    accessed_at: '2026-08-26'
+    authority_note: Production OWL ontology covering behavioral processes and normal/abnormal behavioral phenotypes.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+      source_snapshot_date: '2026-08-26'
+
+  - id: pmm:source:hitop-consensus
+    title: 'The Hierarchical Taxonomy of Psychopathology (HiTOP): A Quantitative Nosology Based on Consensus of Evidence'
+    source_type: peer_reviewed_article
+    authors: [Roman Kotov, Robert F. Krueger, David Watson, et al.]
+    year: 2021
+    doi: 10.1146/annurev-clinpsy-081219-093304
+    pmid: '33577350'
+    url: https://doi.org/10.1146/annurev-clinpsy-081219-093304
+    accessed_at: '2026-08-26'
+    authority_note: HiTOP Consortium consensus review of the hierarchical dimensional nosology; used only for phenotype alignment.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:source:punishment-mechanisms-review
+    title: 'Behavioral and neurobiological mechanisms of punishment: implications for psychiatric disorders'
+    source_type: peer_reviewed_article
+    authors: [Philip Jean-Richard-Dit-Bressel, Simon Killcross, Gavan P. McNally]
+    year: 2018
+    doi: 10.1038/s41386-018-0047-3
+    pmid: '29703994'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6006171/
+    accessed_at: '2026-08-26'
+    authority_note: Peer-reviewed synthesis that explicitly distinguishes active avoidance/negative reinforcement, punishment, and Pavlovian fear by contingency.
+    license: CC-BY-4.0
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:source:avoidance-learning-review
+    title: 'Avoidance learning: a review of theoretical models and recent developments'
+    source_type: peer_reviewed_article
+    authors: [Angelos-Miltiadis Krypotos, Marieke Effting, Merel Kindt, Tom Beckers]
+    year: 2015
+    doi: 10.3389/fnbeh.2015.00189
+    url: https://doi.org/10.3389/fnbeh.2015.00189
+    accessed_at: '2026-08-26'
+    authority_note: Broad peer-reviewed review of avoidance-learning models and experimental findings.
+    license: CC-BY
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:source:surviving-threats-taxonomy
+    title: 'Surviving threats: neural circuit and computational implications of a new taxonomy of defensive behaviour'
+    source_type: peer_reviewed_article
+    authors: [Joseph E. LeDoux, Nathaniel D. Daw]
+    year: 2018
+    doi: 10.1038/nrn.2018.22
+    url: https://doi.org/10.1038/nrn.2018.22
+    accessed_at: '2026-08-26'
+    authority_note: Authoritative review distinguishing threat detection, defensive behavior, and active avoidance.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:source:rethinking-avoidance
+    title: 'Rethinking Avoidance: Toward a Balanced Approach to Avoidance in Treating Anxiety Disorders'
+    source_type: peer_reviewed_article
+    authors: [Stefan G. Hofmann, Aleena C. Hay]
+    year: 2018
+    doi: 10.1016/j.janxdis.2018.03.004
+    pmid: '29550689'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5879019/
+    accessed_at: '2026-08-26'
+    authority_note: Clinical review emphasizing that avoidance function and adaptiveness vary and should not be treated uniformly.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:source:uncertainty-anxiety-avoidance
+    title: 'Anxiety as a disorder of uncertainty: implications for understanding maladaptive anxiety, anxious avoidance, and exposure therapy'
+    source_type: peer_reviewed_article
+    authors: [Vanessa M. Brown, Rebecca Price, Alexandre Y. Dombrovski]
+    year: 2023
+    doi: 10.3758/s13415-023-01080-w
+    pmid: '36869259'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10475148/
+    accessed_at: '2026-08-26'
+    authority_note: Recent integrative review of uncertainty, anxiety, avoidance, and exposure-related mechanisms.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated
+
+  - id: pmm:source:measuring-maladaptive-avoidance
+    title: 'Measuring maladaptive avoidance: from animal models to clinical anxiety'
+    source_type: peer_reviewed_article
+    authors: [Tali M. Ball, Lisa A. Gunaydin]
+    year: 2022
+    doi: 10.1038/s41386-021-01263-4
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8938494/
+    accessed_at: '2026-08-26'
+    authority_note: Translational review of paradigms and measurement limitations for maladaptive avoidance.
+    provenance:
+      record_version: 0.2.0
+      created_at: '2026-08-26T00:00:00+03:00'
+      modified_at: '2026-08-26T00:00:00+03:00'
+      created_by: [OpenAI Codex]
+      review_status: machine_validated

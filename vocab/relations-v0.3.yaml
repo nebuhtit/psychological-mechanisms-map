@@ -1,0 +1,46 @@
+vocabulary_id: pmm:vocabulary:relations-v0-3
+version: 0.3.0
+description: >-
+  Relations are structural or operational. Statistical and causal assertions
+  are represented only as Claims.
+predicates:
+  - id: is_a
+    subject_types: [Construct, Mechanism, State, Behavior, Intervention, Measurement, Context, Event, Outcome, Contingency]
+    object_types: [Construct, Mechanism, State, Behavior, Intervention, Measurement, Context, Event, Outcome, Contingency]
+    claim_required: false
+  - id: instantiates
+    subject_types: [Mechanism, State, Behavior, Intervention, Context, Event, Outcome, Contingency, Observation]
+    object_types: [Construct, Mechanism, State, Behavior, Intervention, Context, Event, Outcome, Contingency]
+    claim_required: false
+  - id: part_of
+    subject_types: [Construct, Mechanism, State, Behavior, Event, Outcome, Contingency]
+    object_types: [Construct, Mechanism, State, Behavior, Event, Outcome, Contingency]
+    claim_required: false
+  - id: occurs_in_context
+    subject_types: [Mechanism, State, Behavior, Intervention, Event, Outcome, Contingency, Observation]
+    object_types: [Context]
+    claim_required: false
+  - id: measured_by
+    subject_types: [Construct, Mechanism, State, Behavior, Event, Outcome, Contingency]
+    object_types: [Measurement]
+    claim_required: false
+  - id: operationalizes
+    subject_types: [Measurement]
+    object_types: [Construct, Mechanism, State, Behavior, Event, Outcome, Contingency]
+    claim_required: false
+  - id: has_participant
+    subject_types: [Mechanism, Event, Contingency]
+    object_types: [Construct, State, Behavior, Event, Outcome, Context]
+    claim_required: false
+  - id: realizes
+    subject_types: [Event, Contingency]
+    object_types: [Mechanism]
+    claim_required: true
+  - id: precedes
+    subject_types: [Event, State, Behavior, Intervention, Outcome]
+    object_types: [Event, State, Behavior, Outcome]
+    claim_required: true
+rules:
+  - A Relation never encodes correlation, prediction, mediation, moderation, or causation.
+  - Domain and range are checked by the semantic validator.
+  - Predicates marked claim_required must cite a compatible Claim.

@@ -1,0 +1,9 @@
+vocabulary_id: pmm:vocabulary:evidence-v0-3
+version: 0.3.0
+rules:
+  - Definitions cite Sources directly and are not graded as empirical Evidence.
+  - Each Evidence record extracts one result from one Source.
+  - A causal_effect Claim requires at least one linked Evidence record with causal_support=direct.
+  - Narrative reviews may support scope or mechanism plausibility but are not direct causal evidence.
+  - Epistemic status belongs to Claims; ontology objects use curation_status only.
+  - Hypotheses must be marked proposed and include a falsifiable boundary.

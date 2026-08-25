@@ -1,0 +1,1428 @@
+{
+  "claims": [
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Recent review supports the phenomenon while identifying multiple encoding and retrieval accounts."
+      },
+      "defined_object_id": "pmm:construct:proactive-interference",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:proactive-interference-definition",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:successive-memory-task"
+        ],
+        "population": "Humans studied with laboratory memory paradigms.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Within or across experimental learning episodes."
+      },
+      "source_ids": [
+        "pmm:source:proactive-interference-review-2020"
+      ],
+      "statement": "Proactive interference is impaired memory for newer information associated with previously learned information; it is not a unique mechanism label."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "low",
+        "rationale": "Reviews support retrieval competition as one account but also identify encoding contributions and task dependence."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:proactive-interference-review"
+      ],
+      "exposure_id": "pmm:state:prior-memory-traces",
+      "falsifiable_boundary": "The account is weakened where interference remains after retrieval competition is eliminated and is fully explained by encoding-stage differences.",
+      "id": "pmm:claim:retrieval-competition-hypothesis",
+      "mechanism_id": "pmm:mechanism:retrieval-competition",
+      "outcome_id": "pmm:outcome:target-retrieval-performance",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Does not assert that all proactive-interference effects arise at retrieval."
+        ],
+        "context_ids": [
+          "pmm:context:successive-memory-task"
+        ],
+        "population": "Humans in successive memory tasks with competing material.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "During target retrieval."
+      },
+      "statement": "Activated prior traces can reduce current target retrieval through competition at retrieval.",
+      "temporal_ordering": "Prior traces are activated before or during the current retrieval attempt."
+    },
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "high",
+        "rationale": "The computational term is well defined, although neural interpretations remain model-dependent."
+      },
+      "defined_object_id": "pmm:construct:reward-prediction-error",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:reward-prediction-error-definition",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:reinforcement-learning-task"
+        ],
+        "population": "Computational and neurobehavioral reinforcement-learning models.",
+        "species": [
+          "mixed"
+        ],
+        "temporal_scope": "Trial-wise learning."
+      },
+      "source_ids": [
+        "pmm:source:rpe-perspective-2024"
+      ],
+      "statement": "Reward prediction error is a model-defined discrepancy term used to update expected value."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Strong as a formal model relation, but correspondence with a unique biological process is not assumed."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:rpe-perspective"
+      ],
+      "exposure_id": "pmm:outcome:received-reward",
+      "falsifiable_boundary": "The hypothesis fails for a dataset if a preregistered temporal-difference model cannot predict held-out choice updates better than specified alternatives.",
+      "id": "pmm:claim:temporal-difference-update-hypothesis",
+      "mechanism_id": "pmm:mechanism:temporal-difference-value-update",
+      "outcome_id": "pmm:state:expected-action-value",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Applies only when the specified model provides an adequate account of choices."
+        ],
+        "context_ids": [
+          "pmm:context:reinforcement-learning-task"
+        ],
+        "population": "Agents or organisms modeled with temporal-difference reinforcement learning.",
+        "species": [
+          "mixed"
+        ],
+        "temporal_scope": "Across successive feedback trials."
+      },
+      "statement": "A reward prediction-error term changes later action-value estimates under a temporal-difference update rule.",
+      "temporal_ordering": "Outcome and prediction error on trial t precede the updated value used on a later trial."
+    },
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Physiological review supports multiple feedback sites and receptor contributions rather than one simple loop."
+      },
+      "defined_object_id": "pmm:mechanism:glucocorticoid-negative-feedback",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:hpa-negative-feedback-definition",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:hpa-regulation"
+        ],
+        "population": "Mammalian HPA-axis physiology.",
+        "species": [
+          "mixed"
+        ],
+        "temporal_scope": "Basal ultradian and stress-response regulation."
+      },
+      "source_ids": [
+        "pmm:source:hpa-feedback-review-2018"
+      ],
+      "statement": "Glucocorticoid negative feedback comprises receptor-linked processes that regulate subsequent HPA activity and contribute to pulsatile dynamics."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Broad mechanism is established physiologically, but this generic PMM record does not identify site, receptor, timing, or estimand."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:hpa-feedback-review"
+      ],
+      "exposure_id": "pmm:state:circulating-glucocorticoid-level",
+      "falsifiable_boundary": "A scoped version is challenged if selective interruption of the specified receptor pathway leaves the preregistered downstream HPA response unchanged.",
+      "id": "pmm:claim:hpa-feedback-mechanism-hypothesis",
+      "mechanism_id": "pmm:mechanism:glucocorticoid-negative-feedback",
+      "outcome_id": "pmm:state:hpa-secretory-drive",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Receptor subtype, tissue, timing, and basal versus stress regime must be specified in empirical claims."
+        ],
+        "context_ids": [
+          "pmm:context:hpa-regulation"
+        ],
+        "population": "Mammalian HPA-axis systems.",
+        "species": [
+          "mixed"
+        ],
+        "temporal_scope": "Minutes to hours, conditional on the physiological regime."
+      },
+      "statement": "Increases in glucocorticoid signaling contribute to limiting or reshaping later HPA secretory drive.",
+      "temporal_ordering": "Glucocorticoid signaling precedes the regulated later secretory activity."
+    },
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The term is operationally useful when partner, modality, stressor, and outcome are specified."
+      },
+      "defined_object_id": "pmm:mechanism:social-buffering",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:social-buffering-definition",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:social-evaluative-stress"
+        ],
+        "population": "Children exposed to a controlled social-evaluative stress task.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Acute laboratory stress episode."
+      },
+      "source_ids": [
+        "pmm:source:donzella-social-buffering-2026"
+      ],
+      "statement": "Social buffering denotes a change in stress-response magnitude or trajectory attributable to a social condition."
+    },
+    {
+      "claim_type": "moderation",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The randomized trial reported a condition-by-trial interaction, but the effect estimate was not extracted beyond p < .05."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:donzella-moderation"
+      ],
+      "exposure_id": "pmm:event:post-stressor-time-course",
+      "id": "pmm:claim:buffer-condition-moderates-cortisol-time-course",
+      "interaction_term": {
+        "direction": "negative",
+        "metric": "trial-by-condition interaction",
+        "notes": "Reported p < .05; parent condition differed from alone and researcher conditions in post-hoc tests.",
+        "value_status": "qualitative_only"
+      },
+      "limitations": [
+        "A statistical interaction is not itself an identified mediating mechanism."
+      ],
+      "moderator_id": "pmm:intervention:parent-social-buffer",
+      "outcome_id": "pmm:state:cortisol-stress-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Does not generalize automatically to adults, other support partners, or subjective stress."
+        ],
+        "context_ids": [
+          "pmm:context:social-evaluative-stress"
+        ],
+        "population": "180 children aged 11-15 years in the MISTiC experiment.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Baseline through 65 minutes after baseline."
+      },
+      "statement": "Randomized social-buffer condition modified the post-stressor cortisol trajectory across sampling trials."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Each randomized condition corresponds to the protocol-defined interaction.",
+        "exchangeability": "Supported by random assignment; implementation details were not independently audited here.",
+        "interference": "Assumed no effect of one child's assignment on another child's cortisol response.",
+        "positivity": "Three conditions were assigned in the trial."
+      },
+      "causal_estimand": "Intention-to-treat contrast in repeated cortisol trajectory for parent buffer versus randomized comparison conditions.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Random assignment supports a causal condition contrast, while the extracted record lacks a numerical standardized effect."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:donzella-causal-contrast"
+      ],
+      "exposure_id": "pmm:intervention:parent-social-buffer",
+      "id": "pmm:claim:parent-buffer-causal-effect-on-cortisol",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "Numerical effect size and allocation details require full-text extraction before expert review."
+      ],
+      "outcome_id": "pmm:state:cortisol-stress-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Estimand is assignment to the study condition, not social support in all settings."
+        ],
+        "context_ids": [
+          "pmm:context:social-evaluative-stress"
+        ],
+        "population": "180 children aged 11-15 years in the MISTiC experiment.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Acute post-stressor cortisol trajectory."
+      },
+      "statement": "Assignment to the parent-buffer condition changed the cortisol stress-response trajectory relative to comparison conditions.",
+      "temporal_ordering": "Buffer assignment and interactions preceded post-stressor cortisol measurements."
+    }
+  ],
+  "dataset_id": "pmm:dataset:heterogeneous-mechanisms-stress-test",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:retrieval-competition-hypothesis"
+      ],
+      "design": "Critical review of behavioral and imaging studies across proactive-interference paradigms.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "not_assessed"
+      },
+      "evidence_kind": "narrative_review",
+      "extraction_locator": "Abstract and review synthesis of encoding- and retrieval-stage mechanisms.",
+      "id": "pmm:evidence:proactive-interference-review",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Not a source-specific causal estimate for the PMM mechanism claim."
+      ],
+      "population": "Human experimental memory studies.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "source_id": "pmm:source:proactive-interference-review-2020",
+      "species": [
+        "human"
+      ],
+      "summary": "Both encoding and retrieval processes contribute; retrieval competition is plausible but not uniquely sufficient.",
+      "support_direction": "mixed"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:temporal-difference-update-hypothesis"
+      ],
+      "design": "Perspective integrating computational accounts and dopamine findings.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "not_assessed"
+      },
+      "evidence_kind": "narrative_review",
+      "extraction_locator": "Abstract and conceptual synthesis.",
+      "id": "pmm:evidence:rpe-perspective",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Supports model plausibility, not a one-to-one neural identity."
+      ],
+      "population": "Human and nonhuman reinforcement-learning research.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "source_id": "pmm:source:rpe-perspective-2024",
+      "species": [
+        "mixed"
+      ],
+      "summary": "Prediction-error accounts explain important findings but simple dopamine-is-RPE identity claims face empirical challenges.",
+      "support_direction": "mixed"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:hpa-feedback-mechanism-hypothesis"
+      ],
+      "design": "Physiological review covering human and animal evidence.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "not_assessed"
+      },
+      "evidence_kind": "narrative_review",
+      "extraction_locator": "Abstract and sections reviewing receptor and intra-adrenal feedback mechanisms.",
+      "id": "pmm:evidence:hpa-feedback-review",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Generic synthesis does not identify one site-specific causal estimand."
+      ],
+      "population": "Mammalian HPA-axis studies.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "source_id": "pmm:source:hpa-feedback-review-2018",
+      "species": [
+        "mixed"
+      ],
+      "summary": "Multiple receptor-linked negative-feedback processes contribute to glucocorticoid pulsatility and HPA regulation.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:buffer-condition-moderates-cortisol-time-course"
+      ],
+      "design": "Three-arm randomized social-buffering experiment during MISTiC with repeated cortisol sampling.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "trial-by-condition interaction",
+        "notes": "Abstract reports p < .05 without a standardized interaction estimate.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract, Results; trials-by-condition interaction and post-hoc condition contrasts.",
+      "id": "pmm:evidence:donzella-moderation",
+      "inference_support": "moderation",
+      "limitations": [
+        "Full risk-of-bias assessment and numerical effect extraction remain pending."
+      ],
+      "population": "180 children aged 11-15 years; 92 female.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "sample_size": 180,
+      "source_id": "pmm:source:donzella-social-buffering-2026",
+      "species": [
+        "human"
+      ],
+      "summary": "Cortisol change differed over trials by randomized buffer condition; parent buffering differed from both comparison conditions.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:parent-buffer-causal-effect-on-cortisol"
+      ],
+      "design": "Three-arm randomized intervention with parent, researcher, and no-buffer conditions.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "randomized condition contrast in cortisol trajectory",
+        "notes": "Parent buffer produced lower cortisol response than both comparison conditions; numerical effect not extracted.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract, Methods and Results; randomized condition assignment and cortisol trajectory contrasts.",
+      "id": "pmm:evidence:donzella-causal-contrast",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "This does not identify which psychological or neural mediator produced the effect."
+      ],
+      "population": "180 children aged 11-15 years; 92 female.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "sample_size": 180,
+      "source_id": "pmm:source:donzella-social-buffering-2026",
+      "species": [
+        "human"
+      ],
+      "summary": "Random assignment identifies the effect of protocol condition on the measured cortisol trajectory under stated assumptions.",
+      "support_direction": "supports"
+    }
+  ],
+  "metadata": {
+    "description": "Deliberately heterogeneous records used to test whether PMM separates constructs, states, mechanisms, interventions, outcomes, measurements, statistical moderation, and causal effects across levels of analysis.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T00:00:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T00:00:00+03:00",
+      "record_version": "0.3.0",
+      "review_status": "machine_validated"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "PMM v0.3 heterogeneous mechanism stress test"
+  },
+  "namespaces": {
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "context_kind": "experimental",
+      "curation_status": "provisional",
+      "definition": "Experimental context in which currently relevant material is tested after earlier, potentially competing material has been encoded.",
+      "dimensions": {
+        "earlier_material": "present",
+        "task_family": "multiple-list or trial-sequence memory task"
+      },
+      "id": "pmm:context:successive-memory-task",
+      "label": "Successive memory-task context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": "Human laboratory memory tasks; exact interference depends on task and material similarity.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "experimental",
+      "curation_status": "provisional",
+      "definition": "Experimental or computational context with states, actions, outcomes, and trial-wise value updating.",
+      "dimensions": {
+        "feedback": "trial-wise",
+        "repeated_choice": true
+      },
+      "id": "pmm:context:reinforcement-learning-task",
+      "label": "Reinforcement-learning task context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": "Model-based description; neural implementation requires separate claims.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "physical",
+      "curation_status": "provisional",
+      "definition": "Physiological context covering basal or stress-related hypothalamic- pituitary-adrenal activity and glucocorticoid feedback.",
+      "dimensions": {
+        "regime": "basal or stress-responsive",
+        "system": "hypothalamic-pituitary-adrenal axis"
+      },
+      "id": "pmm:context:hpa-regulation",
+      "label": "HPA-axis regulatory context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": "Mammalian physiology; timing and receptor contributions vary by regime and tissue.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "experimental",
+      "curation_status": "provisional",
+      "definition": "Controlled stress context involving social evaluation and repeated physiological sampling after the stressor.",
+      "dimensions": {
+        "sampling": "repeated post-stressor saliva samples",
+        "stressor_family": "MISTiC or Trier-derived task"
+      },
+      "id": "pmm:context:social-evaluative-stress",
+      "label": "Social-evaluative stress context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "scope": "The pilot result below is restricted to children aged 11-15 years.",
+      "type": "Context"
+    },
+    {
+      "boundary_notes": [
+        "This label denotes a performance phenomenon, not one uniquely established mechanism.",
+        "Encoding competition and retrieval competition must remain distinguishable hypotheses."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Impairment of memory for newer target information associated with prior learning or activation of competing information.",
+      "id": "pmm:construct:proactive-interference",
+      "label": "Proactive interference",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "type": "Construct"
+    },
+    {
+      "bearer_scope": "person",
+      "curation_status": "provisional",
+      "definition": "Previously encoded information that remains available and can compete with current targets.",
+      "id": "pmm:state:prior-memory-traces",
+      "label": "Activated prior memory traces",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "state_kind": "cognitive",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "verbal_behavior",
+      "curation_status": "provisional",
+      "definition": "Observable response reporting the currently relevant target item.",
+      "id": "pmm:behavior:target-recall-response",
+      "label": "Target recall response",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "response_topography": "Spoken, typed, or selected target response.",
+      "type": "Behavior"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Accuracy or latency of retrieval for currently relevant target information.",
+      "id": "pmm:outcome:target-retrieval-performance",
+      "label": "Target retrieval performance",
+      "ontological_level": "type",
+      "outcome_kind": "performance",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "type": "Outcome",
+      "valence": "not_applicable"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Proposed process in which activated prior traces compete with a current target during retrieval, reducing target accessibility or selection.",
+      "id": "pmm:mechanism:retrieval-competition",
+      "label": "Retrieval competition from prior traces",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "realization_conditions": [
+        "Prior and current information are both available at retrieval.",
+        "The task creates competition through overlap, recency, or response conflict."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:state:prior-memory-traces",
+          "role": "competing information"
+        },
+        {
+          "object_id": "pmm:behavior:target-recall-response",
+          "role": "retrieval response"
+        },
+        {
+          "object_id": "pmm:outcome:target-retrieval-performance",
+          "role": "performance consequence"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Difference in target accuracy or latency between interference and matched control conditions.",
+      "id": "pmm:measurement:proactive-interference-cost",
+      "label": "Proactive-interference cost",
+      "measurement_kind": "behavioral_task",
+      "method": "Contrast performance after competing prior material with an appropriate noncompeting baseline.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:proactive-interference",
+        "pmm:outcome:target-retrieval-performance"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "A computational variable is not identical to a dopamine signal.",
+        "Distributional, sensory, and belief-state variants require explicit model specifications."
+      ],
+      "construct_kind": "computational",
+      "curation_status": "provisional",
+      "definition": "Computational discrepancy between received and expected reward, commonly extended in temporal-difference models to include discounted next-state value.",
+      "id": "pmm:construct:reward-prediction-error",
+      "label": "Reward prediction error",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "type": "Construct"
+    },
+    {
+      "bearer_scope": "person",
+      "curation_status": "provisional",
+      "definition": "Current model-derived estimate of expected future return for an action in a state.",
+      "id": "pmm:state:expected-action-value",
+      "label": "Expected action value",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "state_kind": "cognitive",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Appetitive consequence delivered or observed on a learning trial.",
+      "id": "pmm:outcome:received-reward",
+      "label": "Received reward",
+      "ontological_level": "type",
+      "outcome_kind": "event_occurrence",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "type": "Outcome",
+      "valence": "appetitive"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Computational process that changes a value estimate as a function of a prediction-error term and a learning-rate parameter.",
+      "id": "pmm:mechanism:temporal-difference-value-update",
+      "label": "Temporal-difference value updating",
+      "mechanism_kind": "computational",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "realization_conditions": [
+        "A formally specified update rule links trial outcomes to later value estimates.",
+        "Learning rate and state representation are identified or estimated."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:state:expected-action-value",
+          "role": "prior value estimate"
+        },
+        {
+          "object_id": "pmm:outcome:received-reward",
+          "role": "outcome input"
+        },
+        {
+          "object_id": "pmm:construct:reward-prediction-error",
+          "role": "error signal"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Trial-wise latent prediction-error estimate generated by a fitted reinforcement-learning model.",
+      "id": "pmm:measurement:fitted-reward-prediction-error",
+      "label": "Fitted trial-wise reward prediction error",
+      "measurement_kind": "computational_parameter",
+      "method": "Fit a preregistered learning model to choices and outcomes, then compute trial-wise latent values.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "result_type": "model_parameter",
+      "target_ids": [
+        "pmm:construct:reward-prediction-error",
+        "pmm:state:expected-action-value"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "paradigm"
+    },
+    {
+      "bearer_scope": "organism",
+      "curation_status": "provisional",
+      "definition": "Time-indexed concentration of cortisol or corticosterone in circulation.",
+      "id": "pmm:state:circulating-glucocorticoid-level",
+      "label": "Circulating glucocorticoid level",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "state_kind": "physiological",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "bearer_scope": "organism",
+      "curation_status": "provisional",
+      "definition": "Time-indexed activity promoting downstream glucocorticoid secretion within the HPA axis.",
+      "id": "pmm:state:hpa-secretory-drive",
+      "label": "HPA secretory drive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "state_kind": "physiological",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Physiological feedback process through which glucocorticoid signaling contributes to limiting or shaping subsequent HPA-axis secretory activity.",
+      "id": "pmm:mechanism:glucocorticoid-negative-feedback",
+      "label": "Glucocorticoid negative feedback on HPA activity",
+      "mechanism_kind": "physiological",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "realization_conditions": [
+        "Glucocorticoid and/or mineralocorticoid receptor signaling is available.",
+        "Temporal regime and tissue location are specified."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:state:circulating-glucocorticoid-level",
+          "role": "feedback signal"
+        },
+        {
+          "object_id": "pmm:state:hpa-secretory-drive",
+          "role": "regulated activity"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Experimental pharmacological manipulation used to probe glucocorticoid feedback sensitivity.",
+      "delivery": "Timed administration followed by endocrine sampling under a specified protocol.",
+      "id": "pmm:intervention:dexamethasone-challenge",
+      "intended_direction": "test",
+      "intervention_kind": "pharmacological",
+      "label": "Dexamethasone challenge",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "target_ids": [
+        "pmm:mechanism:glucocorticoid-negative-feedback",
+        "pmm:state:hpa-secretory-drive"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Repeated cortisol assay used to characterize level, trajectory, or pulsatility over time.",
+      "id": "pmm:measurement:serial-cortisol",
+      "label": "Serial cortisol measurement",
+      "measurement_kind": "physiology",
+      "method": "Repeated saliva, plasma, or other validated matrix sampling with time stamps.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:circulating-glucocorticoid-level",
+        "pmm:state:hpa-secretory-drive"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "physiology"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Controlled task manipulation intended to elicit a social-evaluative stress response.",
+      "delivery": "Standardized age-appropriate social-evaluative task.",
+      "id": "pmm:intervention:psychosocial-stressor",
+      "intended_direction": "increase",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Standardized psychosocial stressor",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "target_ids": [
+        "pmm:state:cortisol-stress-response"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Randomized condition providing brief parent interaction around a social-evaluative stressor.",
+      "delivery": "Brief audiovisual parent interaction at protocol-defined time points.",
+      "id": "pmm:intervention:parent-social-buffer",
+      "intended_direction": "decrease",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Parent social-buffer condition",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "target_ids": [
+        "pmm:state:cortisol-stress-response",
+        "pmm:mechanism:social-buffering"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Ordered sequence of post-stressor sampling occasions used to estimate response trajectory.",
+      "event_kind": "state_transition",
+      "id": "pmm:event:post-stressor-time-course",
+      "label": "Post-stressor sampling time course",
+      "ontological_level": "type",
+      "participant_ids": [
+        "pmm:state:cortisol-stress-response"
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "temporal_scale": "hours",
+      "type": "Event"
+    },
+    {
+      "bearer_scope": "person",
+      "curation_status": "provisional",
+      "definition": "Time-indexed change in cortisol concentration following a defined stressor.",
+      "id": "pmm:state:cortisol-stress-response",
+      "label": "Cortisol stress-response trajectory",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "state_kind": "physiological",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "boundary_notes": [
+        "An observed buffering effect does not by itself identify the mediating mechanism."
+      ],
+      "curation_status": "provisional",
+      "definition": "Family of processes through which a social partner or social signal changes the magnitude or time course of a stress response.",
+      "id": "pmm:mechanism:social-buffering",
+      "label": "Social buffering of physiological stress",
+      "mechanism_kind": "social",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "realization_conditions": [
+        "Partner identity, relationship, developmental stage, and interaction modality are specified.",
+        "Stressor and physiological outcome are operationalized separately."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:intervention:parent-social-buffer",
+          "role": "social input"
+        },
+        {
+          "object_id": "pmm:state:cortisol-stress-response",
+          "role": "regulated stress response"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Repeated salivary cortisol assay summarized as change or modeled response over time.",
+      "id": "pmm:measurement:salivary-cortisol-trajectory",
+      "label": "Salivary cortisol trajectory",
+      "measurement_kind": "physiology",
+      "method": "Baseline and repeated post-stressor salivary cortisol assays.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:cortisol-stress-response"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "physiology"
+    }
+  ],
+  "pmm_version": "0.3.0",
+  "relations": [
+    {
+      "id": "pmm:relation:proactive-interference-measured-by-cost",
+      "object_id": "pmm:measurement:proactive-interference-cost",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "subject_id": "pmm:construct:proactive-interference"
+    },
+    {
+      "id": "pmm:relation:retrieval-competition-in-memory-task",
+      "object_id": "pmm:context:successive-memory-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "subject_id": "pmm:mechanism:retrieval-competition"
+    },
+    {
+      "id": "pmm:relation:rpe-measured-by-model",
+      "object_id": "pmm:measurement:fitted-reward-prediction-error",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "subject_id": "pmm:construct:reward-prediction-error"
+    },
+    {
+      "id": "pmm:relation:value-update-has-rpe",
+      "object_id": "pmm:construct:reward-prediction-error",
+      "predicate": "has_participant",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "subject_id": "pmm:mechanism:temporal-difference-value-update"
+    },
+    {
+      "id": "pmm:relation:hpa-feedback-in-regulatory-context",
+      "object_id": "pmm:context:hpa-regulation",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "subject_id": "pmm:mechanism:glucocorticoid-negative-feedback"
+    },
+    {
+      "id": "pmm:relation:glucocorticoid-measured-by-cortisol",
+      "object_id": "pmm:measurement:serial-cortisol",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "subject_id": "pmm:state:circulating-glucocorticoid-level"
+    },
+    {
+      "id": "pmm:relation:social-buffering-in-stress-context",
+      "object_id": "pmm:context:social-evaluative-stress",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "subject_id": "pmm:mechanism:social-buffering"
+    },
+    {
+      "id": "pmm:relation:cortisol-response-measured-by-saliva",
+      "object_id": "pmm:measurement:salivary-cortisol-trajectory",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "subject_id": "pmm:state:cortisol-stress-response"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Recent review explicitly distinguishes encoding and retrieval contributions to proactive interference.",
+      "doi": "10.1016/j.neubiorev.2020.10.028",
+      "id": "pmm:source:proactive-interference-review-2020",
+      "pmid": "33221329",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Buildup and release from proactive interference - Cognitive and neural mechanisms",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33221329/",
+      "year": 2021
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Current perspective that preserves RPE's value while rejecting an overly simple dopamine identity claim.",
+      "authors": [
+        "Samuel J. Gershman et al."
+      ],
+      "doi": "10.1038/s41593-024-01705-4",
+      "id": "pmm:source:rpe-perspective-2024",
+      "pmid": "39054370",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Explaining dopamine through prediction errors and beyond",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39054370/",
+      "year": 2024
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Review of receptor-linked and intra-adrenal feedback contributions to HPA pulsatility.",
+      "authors": [
+        "Julia K. Gjerstad",
+        "Stafford L. Lightman",
+        "Francesca Spiga"
+      ],
+      "doi": "10.1080/10253890.2018.1470238",
+      "id": "pmm:source:hpa-feedback-review-2018",
+      "pmid": "29764284",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Role of glucocorticoid negative feedback in the regulation of HPA axis pulsatility",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29764284/",
+      "year": 2018
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Recent randomized experiment with repeated cortisol outcomes and explicit condition-by-time analysis.",
+      "authors": [
+        "Bonny Donzella",
+        "Zachary Miller",
+        "Nikola C. Tsakonas",
+        "Kathleen M. Thomas",
+        "Megan R. Gunnar"
+      ],
+      "doi": "10.1016/j.psyneuen.2026.107760",
+      "id": "pmm:source:donzella-social-buffering-2026",
+      "pmid": "41610560",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Social buffering of the cortisol stress response during the Minnesota Imaging Stress Test in Children",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41610560/",
+      "year": 2026
+    }
+  ]
+}

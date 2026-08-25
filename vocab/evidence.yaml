@@ -1,0 +1,61 @@
+vocabulary_id: pmm:vocabulary:evidence-v0-2
+version: 0.2.0
+title: PMM evidence and confidence rules
+
+knowledge_status:
+  operational_definition: A term or contingency is defined by convention; this is not an empirical effect claim.
+  established_empirical: Direct, convergent evidence with no major unresolved contradiction in the stated scope.
+  supported_empirical: Evidence favors the claim, but directness, consistency, precision, or generalizability remains limited.
+  mixed_empirical: Credible evidence points in materially different directions.
+  proposed_integrative: PMM links established components into a testable model that has not been validated as a complete chain.
+  refuted: Adequate evidence contradicts the claim in the stated scope.
+  unknown: Evidence has not been assessed.
+
+confidence_levels:
+  high:
+    rule: Direct and reasonably consistent evidence; low risk of bias; adequate precision; no critical indirectness.
+  moderate:
+    rule: Claim is probably correct in scope, but at least one important evidence domain is limited.
+  low:
+    rule: Evidence provides only tentative support because of serious limitations or indirectness.
+  very_low:
+    rule: Effect or mechanism is highly uncertain.
+  not_applicable:
+    rule: Use only for operational definitions or purely semantic mappings.
+
+evidence_domains:
+  directness: [direct, partially_indirect, indirect]
+  risk_of_bias: [low, some_concerns, high, not_assessed]
+  consistency: [consistent, mostly_consistent, mixed, single_source, not_assessed]
+  precision: [adequate, limited, very_limited, not_reported]
+  replication: [independent_replication, conceptual_replication, unreplicated, not_applicable, not_assessed]
+
+inference_rules:
+  correlation:
+    requires: [exposure_id, outcome_id, association_estimate, confounding_note]
+    meaning: Covariation only. Temporal order and intervention effects are not established.
+    forbids: [causal_estimand, mediation_path, interaction_term]
+  prediction:
+    requires: [exposure_id, outcome_id, validation_strategy, predictive_metric]
+    meaning: Direction refers to information flow or time, not necessarily cause.
+    forbids: [causal_estimand, mediation_path, interaction_term]
+  mediation:
+    requires: [exposure_id, mediator_id, outcome_id, indirect_effect, temporal_ordering]
+    meaning: A statistical indirect effect. Mark causal only when causal assumptions and identification are separately supplied.
+    forbids: [interaction_term]
+  moderation:
+    requires: [exposure_id, moderator_id, outcome_id, interaction_term]
+    meaning: Effect/association heterogeneity across moderator values; the moderator need not be causal.
+    forbids: [mediation_path, indirect_effect]
+  causation:
+    requires: [exposure_id, outcome_id, causal_estimand, identification_strategy, temporal_ordering, causal_assumptions]
+    meaning: A scoped intervention claim. It must be supported by evidence with causal_support=true.
+    forbids: [predictive_metric]
+
+aggregation_rules:
+  - Confidence is ordinal and reasoned; PMM does not average study scores into false numerical precision.
+  - A review can support scope and consensus but cannot replace study-level extraction for a high-confidence quantitative claim.
+  - Cross-species evidence is indirect for human clinical claims unless the claim explicitly includes the studied species.
+  - A statistically significant association alone cannot yield a causation status.
+  - Mediation and moderation analyses remain associational unless exposure and relevant paths are causally identified.
+  - Proposed/integrative claims must name the empirical components they integrate and at least one falsifiable boundary condition.
