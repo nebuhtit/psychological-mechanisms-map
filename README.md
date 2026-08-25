@@ -2,7 +2,7 @@
 
 PMM is a versioned, evidence-aware knowledge model for psychological mechanisms. The canonical source is human-editable YAML; validated JSON is a build artifact for graph and interface projections. An early interactive map is generated from those artifacts rather than maintained as a separate scientific dataset.
 
-**Current version:** PMM Schema v0.3. Version 0.2 is preserved as a historical snapshot, not silently overwritten.
+**Current version:** PMM Schema v0.3.1. Version 0.2 is preserved as a historical snapshot, not silently overwritten.
 
 ## Architecture
 
@@ -117,7 +117,7 @@ upgrading it to causal mediation. See the
 ## Next steps
 
 1. Add independent primary-study replications and preregistered null results to the negative-reinforcement pack.
-2. Add invalid fixtures for prediction, mediation, moderation, and context-dependent causal claims; then define SHACL-equivalent graph constraints.
+2. Add invalid fixtures for prediction and context-dependent causal claims, then define SHACL-equivalent graph constraints. Mediation and moderation inference modes are now covered.
 3. Verify stable external ontology identifiers against pinned RDoC, Cognitive Atlas, MF, NBO, and HiTOP releases before promoting mappings.
 4. Add JSON-LD/RDF export while keeping Claims and Evidence reified; do not translate uncertain empirical claims into OWL class axioms.
-5. Request domain-expert review of definitions and causal assumptions before any visualization work.
+5. Request domain-expert review of definitions and causal assumptions before expanding the interface beyond the current exploratory map.

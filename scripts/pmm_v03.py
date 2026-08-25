@@ -275,6 +275,21 @@ def validate_semantics(document: dict[str, Any]) -> list[str]:
             )
             if not direct:
                 errors.append(f"{where}: causal_effect requires linked direct causal evidence")
+        if (
+            claim_type == "mediation" and claim.get("mediation_inference") == "causal"
+        ) or (
+            claim_type == "moderation"
+            and claim.get("moderation_inference") == "causal_effect_modification"
+        ):
+            direct = any(
+                records.get(evidence_id, {}).get("causal_support") == "direct"
+                for evidence_id in evidence_ids
+            )
+            if not direct:
+                errors.append(
+                    f"{where}: causal mediation or effect modification requires "
+                    "linked direct causal evidence"
+                )
 
         allowed_support = EVIDENCE_COMPATIBILITY.get(claim_type)
         if allowed_support:
@@ -293,8 +308,15 @@ def validate_semantics(document: dict[str, Any]) -> list[str]:
         where = f"evidence[{index}] ({evidence_id})"
         expect_refs(evidence.get("claim_ids", []), records, "claim", f"{where}.claim_ids", errors)
         expect_ref(evidence.get("source_id"), records, "source", f"{where}.source_id", errors)
-        if evidence.get("causal_support") == "direct" and evidence.get("inference_support") != "causal_effect":
-            errors.append(f"{where}: causal_support=direct requires inference_support=causal_effect")
+        if evidence.get("causal_support") == "direct" and evidence.get("inference_support") not in {
+            "causal_effect",
+            "mediation",
+            "moderation",
+        }:
+            errors.append(
+                f"{where}: causal_support=direct requires causal_effect, mediation, "
+                "or moderation inference support"
+            )
 
     # Backlinks are intentionally redundant so edits cannot silently orphan support.
     for claim in document.get("claims", []):

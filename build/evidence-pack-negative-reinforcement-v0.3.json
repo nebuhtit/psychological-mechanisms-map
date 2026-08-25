@@ -973,7 +973,7 @@
       "unit_of_analysis": "physiology"
     }
   ],
-  "pmm_version": "0.3.0",
+  "pmm_version": "0.3.1",
   "relations": [
     {
       "id": "pmm:relation:avoidance-frequency-operationalizes-behavior",

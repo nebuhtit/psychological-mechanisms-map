@@ -160,13 +160,74 @@ class CognitiveReappraisalEvidencePackTests(unittest.TestCase):
         self.assertEqual(records["pmm:behavior:emotion-expressive-behavior"], "Behavior")
 
     def test_neural_mediation_is_not_marked_direct_causal(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:neural-response-statistically-mediates-reappraisal"
+        )
         evidence = next(
             item
             for item in self.document["evidence"]
             if item["id"] == "pmm:evidence:wager-2008-neural-mediation"
         )
+        self.assertEqual(claim["mediation_inference"], "statistical")
         self.assertEqual(evidence["inference_support"], "mediation")
         self.assertEqual(evidence["causal_support"], "indirect")
+
+    def test_statistical_mediation_rejects_causal_fields(self) -> None:
+        document = copy.deepcopy(self.document)
+        claim = next(item for item in document["claims"] if item["claim_type"] == "mediation")
+        claim["causal_estimand"] = "Invalid path-specific causal effect"
+        self.assertTrue(pmm_v03.validate(document))
+
+    def test_causal_mediation_requires_direct_causal_evidence(self) -> None:
+        document = copy.deepcopy(self.document)
+        claim = next(item for item in document["claims"] if item["claim_type"] == "mediation")
+        claim["mediation_inference"] = "causal"
+        claim["causal_estimand"] = "Path-specific indirect effect"
+        claim["identification_strategy"] = "randomized_intervention"
+        claim["causal_assumptions"] = {
+            "consistency": "Defined interventions",
+            "exchangeability": "Not established for the mediator-outcome relation",
+            "positivity": "Assumed",
+            "interference": "Assumed absent",
+            "assessment": "unverified",
+        }
+        errors = pmm_v03.validate(document)
+        self.assertTrue(any("requires linked direct causal evidence" in error for error in errors))
+
+    def test_causal_mediation_accepts_direct_mediation_evidence(self) -> None:
+        document = copy.deepcopy(self.document)
+        claim = next(item for item in document["claims"] if item["claim_type"] == "mediation")
+        claim["mediation_inference"] = "causal"
+        claim["causal_estimand"] = "Path-specific indirect effect"
+        claim["identification_strategy"] = "randomized_intervention"
+        claim["causal_assumptions"] = {
+            "consistency": "Defined interventions",
+            "exchangeability": "Assumed for this structural test",
+            "positivity": "Assumed",
+            "interference": "Assumed absent",
+            "assessment": "plausible",
+        }
+        evidence = next(item for item in document["evidence"] if item["inference_support"] == "mediation")
+        evidence["causal_support"] = "direct"
+        self.assertEqual(pmm_v03.validate(document), [])
+
+
+class InferentialModeTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(ROOT / "data" / "stress-test-mechanisms-v0.3.yaml")
+
+    def test_social_buffering_is_statistical_moderation(self) -> None:
+        claim = next(item for item in self.document["claims"] if item["claim_type"] == "moderation")
+        self.assertEqual(claim["moderation_inference"], "statistical_interaction")
+
+    def test_statistical_moderation_rejects_causal_estimand(self) -> None:
+        document = copy.deepcopy(self.document)
+        claim = next(item for item in document["claims"] if item["claim_type"] == "moderation")
+        claim["causal_estimand"] = "Invalid causal effect-modification estimand"
+        self.assertTrue(pmm_v03.validate(document))
 
 
 if __name__ == "__main__":

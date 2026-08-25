@@ -1,6 +1,6 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$id: https://pmm.local/schema/pmm-v0.3.schema.json
-title: Psychological Mechanisms Map Schema v0.3
+$id: https://pmm.local/schema/pmm-v0.3.1.schema.json
+title: Psychological Mechanisms Map Schema v0.3.1
 description: >-
   Evidence-aware knowledge model with an abstract Entity base, explicit
   constructs/events/outcomes/contingencies, structural Relations, and reified
@@ -10,7 +10,7 @@ additionalProperties: false
 required: [pmm_version, document_type, dataset_id, metadata, namespaces, objects, relations, claims, evidence, sources]
 properties:
   pmm_version:
-    const: 0.3.0
+    const: 0.3.1
   document_type:
     const: pmm_dataset
   dataset_id:
@@ -473,6 +473,10 @@ $defs:
       outcome_id: {$ref: '#/$defs/objectId'}
       mediator_id: {$ref: '#/$defs/objectId'}
       moderator_id: {$ref: '#/$defs/objectId'}
+      mediation_inference:
+        enum: [statistical, causal]
+      moderation_inference:
+        enum: [statistical_interaction, causal_effect_modification]
       mechanism_id: {$ref: '#/$defs/objectId'}
       estimate: {$ref: '#/$defs/estimate'}
       predictive_metric: {$ref: '#/$defs/estimate'}
@@ -529,18 +533,38 @@ $defs:
               - required: [moderator_id]
       - if: {properties: {claim_type: {const: mediation}}}
         then:
-          required: [exposure_id, mediator_id, outcome_id, indirect_effect, temporal_ordering]
+          required: [exposure_id, mediator_id, outcome_id, mediation_inference, indirect_effect, temporal_ordering]
           not:
             anyOf:
               - required: [moderator_id]
               - required: [interaction_term]
+          allOf:
+            - if: {properties: {mediation_inference: {const: causal}}}
+              then:
+                required: [causal_estimand, identification_strategy, causal_assumptions]
+              else:
+                not:
+                  anyOf:
+                    - required: [causal_estimand]
+                    - required: [identification_strategy]
+                    - required: [causal_assumptions]
       - if: {properties: {claim_type: {const: moderation}}}
         then:
-          required: [exposure_id, moderator_id, outcome_id, interaction_term]
+          required: [exposure_id, moderator_id, outcome_id, moderation_inference, interaction_term]
           not:
             anyOf:
               - required: [mediator_id]
               - required: [indirect_effect]
+          allOf:
+            - if: {properties: {moderation_inference: {const: causal_effect_modification}}}
+              then:
+                required: [causal_estimand, identification_strategy, temporal_ordering, causal_assumptions]
+              else:
+                not:
+                  anyOf:
+                    - required: [causal_estimand]
+                    - required: [identification_strategy]
+                    - required: [causal_assumptions]
       - if: {properties: {claim_type: {const: causal_effect}}}
         then:
           required: [exposure_id, outcome_id, causal_estimand, identification_strategy, temporal_ordering, causal_assumptions]

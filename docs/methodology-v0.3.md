@@ -32,13 +32,13 @@ Claims are distinguished by required and forbidden fields.
 |---|---|---|
 | Association | Exposure, outcome, estimate, confounding note | Prospective prediction, temporal order, causation |
 | Prediction | Exposure, outcome, held-out validation strategy, predictive metric | Intervention effect or mechanism |
-| Mediation | Exposure, mediator, outcome, indirect effect, temporal ordering | Causal mediation without path-specific identification assumptions |
-| Moderation | Exposure, moderator, outcome, interaction term | That the moderator is causal or is a mediator |
+| Mediation | Exposure, mediator, outcome, inference mode, indirect effect, temporal ordering | Causal mediation unless the causal mode, estimand, identification strategy, assumptions, and direct evidence are present |
+| Moderation | Exposure, moderator, outcome, inference mode, interaction term | Causal effect modification unless its estimand, identification strategy, assumptions, temporal order, and direct evidence are present |
 | Causal effect | Exposure, outcome, estimand, identification strategy, temporal order, causal assumptions, direct evidence | Generalization beyond declared scope or a mechanism |
 | Causal hypothesis | Proposed estimand, assumptions, temporal order, falsifiable boundary | An established causal effect |
 | Mechanism hypothesis | Mechanism, exposure, outcome, temporal order, falsifiable boundary | Unique mediation or biological implementation |
 
-The JSON Schema implements conditional `required` and `not` constraints. The semantic validator additionally requires direct causal Evidence for `causal_effect`, validates relation domains/ranges, resolves references, and checks Evidence/Claim backlinks.
+The JSON Schema implements conditional `required` and `not` constraints. `mediation_inference` separates statistical from causal mediation; `moderation_inference` separates a statistical interaction from causal effect modification. The semantic validator requires linked direct causal Evidence for every causal mode, validates relation domains/ranges, resolves references, and checks Evidence/Claim backlinks.
 
 ## Evidence and confidence
 
@@ -91,5 +91,5 @@ YAML is canonical. Deterministic JSON is generated only after validation. A late
 - Confidence ratings are curator judgments, not a calibrated evidence-grading system.
 - External ontology releases and stable IDs are not yet pinned locally.
 - Claim scope is textual rather than a fully compositional population/intervention/comparator/outcome model.
-- The current schema can represent statistical mediation and moderation but does not yet provide separate hypothesis subtypes for each.
+- Causal mediation and effect modification are structurally representable, but no current pilot record claims either; dedicated proposed-hypothesis subtypes remain future work.
 - No expert review has been completed; `machine_validated` means structural and semantic checks passed, not scientific endorsement.

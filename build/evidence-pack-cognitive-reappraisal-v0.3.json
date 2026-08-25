@@ -33,7 +33,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -86,7 +86,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -127,6 +127,7 @@
       "limitations": [
         "Statistical mediation is not causal mediation without stronger identification assumptions or intervention on the mediator."
       ],
+      "mediation_inference": "statistical",
       "mediator_id": "pmm:measurement:reappraisal-bold-response",
       "outcome_id": "pmm:state:negative-emotional-experience",
       "provenance": {
@@ -135,7 +136,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -181,7 +182,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -241,7 +242,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -287,7 +288,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -332,7 +333,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -378,7 +379,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -423,7 +424,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -468,7 +469,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -491,7 +492,7 @@
         "OpenAI Codex"
       ],
       "modified_at": "2026-08-26T00:00:00+03:00",
-      "record_version": "0.3.0",
+      "record_version": "0.3.1",
       "review_status": "machine_validated",
       "source_snapshot_date": "2026-08-26"
     },
@@ -523,7 +524,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -548,7 +549,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -571,7 +572,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -595,7 +596,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -619,7 +620,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -642,7 +643,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -663,7 +664,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -688,7 +689,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -714,7 +715,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -752,7 +753,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -777,7 +778,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -802,7 +803,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -830,7 +831,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -843,7 +844,7 @@
       "unit_of_analysis": "circuits"
     }
   ],
-  "pmm_version": "0.3.0",
+  "pmm_version": "0.3.1",
   "relations": [
     {
       "id": "pmm:relation:negative-experience-measured-by-rating",
@@ -855,7 +856,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -871,7 +872,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -887,7 +888,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -903,7 +904,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -926,7 +927,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -952,7 +953,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -980,7 +981,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },
@@ -1007,7 +1008,7 @@
           "OpenAI Codex"
         ],
         "modified_at": "2026-08-26T00:00:00+03:00",
-        "record_version": "0.3.0",
+        "record_version": "0.3.1",
         "review_status": "machine_validated",
         "source_snapshot_date": "2026-08-26"
       },

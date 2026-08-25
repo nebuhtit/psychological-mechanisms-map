@@ -1,4 +1,4 @@
-pmm_version: 0.3.0
+pmm_version: 0.3.1
 document_type: pmm_dataset
 dataset_id: pmm:dataset:cognitive-reappraisal-primary-evidence-v0-3
 metadata:
@@ -12,7 +12,7 @@ metadata:
   license: CC-BY-4.0
   schema_path: schema/pmm-v0.3.schema.yaml
   provenance: &provenance
-    record_version: 0.3.0
+    record_version: 0.3.1
     created_at: '2026-08-26T00:00:00+03:00'
     modified_at: '2026-08-26T00:00:00+03:00'
     created_by: [OpenAI Codex]
@@ -297,6 +297,7 @@ claims:
 
   - id: pmm:claim:neural-response-statistically-mediates-reappraisal
     claim_type: mediation
+    mediation_inference: statistical
     statement: Trial-level prefrontal and subcortical BOLD patterns statistically mediated the relation between reappraisal condition and reported negative emotion in Wager et al. 2008.
     epistemic_status: supported
     confidence:
