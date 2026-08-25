@@ -1,0 +1,69 @@
+@prefix pmmv: <https://pmm.local/vocab/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+# These shapes mirror cross-record rules that JSON Schema cannot express alone.
+pmmv:ClaimShape a sh:NodeShape ;
+  sh:targetClass pmmv:Claim ;
+  sh:property [ sh:path pmmv:statement ; sh:minCount 1 ] ;
+  sh:property [ sh:path pmmv:epistemic_status ; sh:minCount 1 ] ;
+  sh:property [ sh:path pmmv:scope ; sh:minCount 1 ] .
+
+pmmv:CausalEffectShape a sh:NodeShape ;
+  sh:targetClass pmmv:Claim ;
+  sh:sparql [
+    sh:message "A causal_effect requires estimand, identification strategy, assumptions, evidence, and explicit boundary conditions." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this pmmv:claim_type "causal_effect" .
+        FILTER (
+          NOT EXISTS { $this pmmv:causal_estimand ?estimand } ||
+          NOT EXISTS { $this pmmv:identification_strategy ?strategy } ||
+          NOT EXISTS { $this pmmv:causal_assumptions ?assumptions } ||
+          NOT EXISTS { $this pmmv:evidence_ids ?evidence } ||
+          NOT EXISTS { $this pmmv:scope/pmmv:boundary_conditions ?boundary }
+        )
+      }
+    """
+  ] .
+
+pmmv:PredictionShape a sh:NodeShape ;
+  sh:targetClass pmmv:Claim ;
+  sh:sparql [
+    sh:message "A supported prediction cannot use resubstitution as validation." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this pmmv:claim_type "prediction" ;
+              pmmv:epistemic_status ?status ;
+              pmmv:validation_design "resubstitution" .
+        FILTER (?status IN ("supported", "mixed"))
+      }
+    """
+  ] .
+
+pmmv:StatisticalMediationShape a sh:NodeShape ;
+  sh:targetClass pmmv:Claim ;
+  sh:sparql [
+    sh:message "Statistical mediation must not carry causal identification fields." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this pmmv:claim_type "mediation" ; pmmv:mediation_inference "statistical" .
+        FILTER (
+          EXISTS { $this pmmv:causal_estimand ?estimand } ||
+          EXISTS { $this pmmv:causal_assumptions ?assumptions }
+        )
+      }
+    """
+  ] .
+
+pmmv:StatisticalModerationShape a sh:NodeShape ;
+  sh:targetClass pmmv:Claim ;
+  sh:sparql [
+    sh:message "A statistical interaction must not be labeled as causal effect modification." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this pmmv:claim_type "moderation" ;
+              pmmv:moderation_inference "statistical_interaction" .
+        FILTER (EXISTS { $this pmmv:causal_estimand ?estimand })
+      }
+    """
+  ] .

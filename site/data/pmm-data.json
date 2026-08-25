@@ -898,7 +898,7 @@
         }
       ],
       "title": "Threat and avoidance",
-      "version": "0.3.2"
+      "version": "0.3.3"
     },
     {
       "claims": [
@@ -1676,7 +1676,7 @@
         }
       ],
       "title": "Fear extinction",
-      "version": "0.3.2"
+      "version": "0.3.3"
     },
     {
       "claims": [
@@ -2459,7 +2459,7 @@
         }
       ],
       "title": "Habit control",
-      "version": "0.3.2"
+      "version": "0.3.3"
     },
     {
       "claims": [
@@ -3290,9 +3290,9 @@
         }
       ],
       "title": "Cognitive reappraisal",
-      "version": "0.3.2"
+      "version": "0.3.3"
     }
   ],
   "interface_version": "0.1.0",
-  "pmm_version": "0.3.2"
+  "pmm_version": "0.3.3"
 }

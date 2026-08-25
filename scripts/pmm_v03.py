@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "schema" / "pmm-v0.3.schema.yaml"
 RELATIONS_PATH = ROOT / "vocab" / "relations-v0.3.yaml"
 EVIDENCE_PATH = ROOT / "vocab" / "evidence-v0.3.yaml"
+JSONLD_CONTEXT_PATH = ROOT / "graph" / "pmm-context.jsonld"
 
 TYPE_PREFIX = {
     "Construct": "construct",
@@ -369,6 +370,42 @@ def export_json(source: Path, destination: Path) -> None:
     )
 
 
+def export_jsonld(source: Path, destination: Path) -> None:
+    """Export a validated dataset as a reified, self-contained JSON-LD graph."""
+    document = validate_path(source)
+    context_document = json.loads(JSONLD_CONTEXT_PATH.read_text(encoding="utf-8"))
+    graph: list[dict[str, Any]] = []
+    section_types = {
+        "relations": "Relation",
+        "claims": "Claim",
+        "evidence": "Evidence",
+        "sources": "Source",
+    }
+    for section in ("objects", "relations", "claims", "evidence", "sources"):
+        for record in document[section]:
+            node = dict(record)
+            node["@id"] = node.pop("id")
+            if section == "objects":
+                node["@type"] = node.pop("type")
+            else:
+                node["@type"] = section_types[section]
+            graph.append(node)
+
+    payload = {
+        "@context": context_document["@context"],
+        "@id": document["dataset_id"],
+        "@type": "Dataset",
+        "pmm_version": document["pmm_version"],
+        "metadata": document["metadata"],
+        "@graph": graph,
+    }
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
 def clean_build(path: Path) -> None:
     resolved = path.resolve()
     expected = (ROOT / "build").resolve()
@@ -389,6 +426,12 @@ def main() -> int:
     export_parser.add_argument("source", type=Path)
     export_parser.add_argument("destination", type=Path)
 
+    jsonld_parser = subparsers.add_parser(
+        "export-jsonld", help="validate and export a reified JSON-LD graph"
+    )
+    jsonld_parser.add_argument("source", type=Path)
+    jsonld_parser.add_argument("destination", type=Path)
+
     clean_parser = subparsers.add_parser("clean", help="remove only the repository build directory")
     clean_parser.add_argument("path", type=Path)
 
@@ -404,6 +447,9 @@ def main() -> int:
         elif args.command == "export":
             export_json(args.source, args.destination)
             print(f"exported: {args.destination}")
+        elif args.command == "export-jsonld":
+            export_jsonld(args.source, args.destination)
+            print(f"exported JSON-LD: {args.destination}")
         elif args.command == "clean":
             clean_build(args.path)
             print(f"cleaned: {(ROOT / 'build').resolve()}")

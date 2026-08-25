@@ -1,6 +1,6 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$id: https://pmm.local/schema/pmm-v0.3.2.schema.json
-title: Psychological Mechanisms Map Schema v0.3.2
+$id: https://pmm.local/schema/pmm-v0.3.3.schema.json
+title: Psychological Mechanisms Map Schema v0.3.3
 description: >-
   Evidence-aware knowledge model with an abstract Entity base, explicit
   constructs/events/outcomes/contingencies, structural Relations, and reified
@@ -10,7 +10,7 @@ additionalProperties: false
 required: [pmm_version, document_type, dataset_id, metadata, namespaces, objects, relations, claims, evidence, sources]
 properties:
   pmm_version:
-    const: 0.3.2
+    const: 0.3.3
   document_type:
     const: pmm_dataset
   dataset_id:

@@ -85,7 +85,7 @@ External systems are aligned by role, not copied wholesale.
 
 ## Serialization
 
-YAML is canonical. Deterministic JSON is generated only after validation. A later JSON-LD context can expand PMM IDs and structural predicates to RDF. SHACL should mirror cross-record validation. OWL may encode taxonomic commitments, but uncertain empirical Claims and Evidence must remain reified resources rather than being converted into unconditional class axioms.
+YAML is canonical. Deterministic JSON and JSON-LD are generated only after validation. The JSON-LD graph keeps ontology objects, Relations, Claims, Evidence, and Sources as separate identified nodes. Reference-valued fields expand as IRIs through the checked-in context. SHACL mirrors the critical cross-record inferential constraints. OWL may later encode stable taxonomic commitments, but uncertain empirical Claims and Evidence must remain reified resources rather than becoming unconditional class axioms.
 
 ## Known limits
 

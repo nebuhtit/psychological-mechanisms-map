@@ -40,6 +40,7 @@ export:
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-fear-extinction-v0.3.yaml build/evidence-pack-fear-extinction-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-habit-control-v0.3.yaml build/evidence-pack-habit-control-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-cognitive-reappraisal-v0.3.yaml build/evidence-pack-cognitive-reappraisal-v0.3.json
+	$(PYTHON) scripts/pmm_v03.py export-jsonld data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.jsonld
 	$(PYTHON) scripts/build_site_data.py
 
 verify: validate validate-stress validate-pack validate-extinction validate-habit validate-reappraisal test export

@@ -1,5 +1,5 @@
 vocabulary_id: pmm:vocabulary:evidence-v0-3
-version: 0.3.2
+version: 0.3.3
 rules:
   - Definitions cite Sources directly and are not graded as empirical Evidence.
   - Each Evidence record extracts one result from one Source.
