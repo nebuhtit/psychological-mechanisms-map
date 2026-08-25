@@ -80,7 +80,7 @@ def build_family(
 
 def main() -> None:
     payload = {
-        "pmm_version": "0.3.3",
+        "pmm_version": "0.3.4",
         "interface_version": "0.1.0",
         "families": [build_family(*family) for family in FAMILIES],
     }

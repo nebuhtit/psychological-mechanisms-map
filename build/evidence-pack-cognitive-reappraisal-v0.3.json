@@ -844,7 +844,7 @@
       "unit_of_analysis": "circuits"
     }
   ],
-  "pmm_version": "0.3.3",
+  "pmm_version": "0.3.4",
   "relations": [
     {
       "id": "pmm:relation:negative-experience-measured-by-rating",

@@ -1,0 +1,713 @@
+@prefix ns1: <https://pmm.local/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pmm.local/id/claim:active-avoidance-contingency-definition> a ns1:Claim ;
+    ns1:claim_type "definition" ;
+    ns1:confidence [ ns1:level "not_applicable" ;
+            ns1:rationale "This defines the experimental contingency and does not assert that learning or later response increase occurred." ] ;
+    ns1:defined_object_id <https://pmm.local/id/contingency:avoidance-response-outcome> ;
+    ns1:epistemic_status "not_assessed" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:scope [ ns1:context_ids <https://pmm.local/id/context:controlled-instrumental-avoidance> ;
+            ns1:population "Human and non-human experimental subjects." ;
+            ns1:species "mixed" ;
+            ns1:temporal_scope "Within-trial response-consequence interval." ] ;
+    ns1:source_ids <https://pmm.local/id/source:punishment-mechanisms-review> ;
+    ns1:statement "In an active-avoidance contingency, a specified response changes the programmed aversive consequence relative to a comparator." .
+
+<https://pmm.local/id/claim:rdoc-potential-threat-definition> a ns1:Claim ;
+    ns1:claim_type "definition" ;
+    ns1:confidence [ ns1:level "not_applicable" ;
+            ns1:rationale "This is terminology provenance from the current official RDoC definition, not an empirical effect estimate." ] ;
+    ns1:defined_object_id <https://pmm.local/id/construct:rdoc-potential-threat-anxiety> ;
+    ns1:epistemic_status "not_assessed" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:scope [ ns1:context_ids <https://pmm.local/id/context:uncertain-threat> ;
+            ns1:population "RDoC dimensional research across normal-to-abnormal human functioning." ;
+            ns1:species "human" ;
+            ns1:temporal_scope "Potential rather than acute imminent threat." ] ;
+    ns1:source_ids <https://pmm.local/id/source:rdoc-definitions> ;
+    ns1:statement "RDoC Potential Threat (Anxiety) concerns responses when harm may occur but is distant, ambiguous, or uncertain in probability." .
+
+<https://pmm.local/id/dataset:anxiety-avoidance-pilot-v0-3> a ns1:Dataset ;
+    ns1:metadata [ ns1:description "Corrected pilot separating the RDoC construct, uncertain-threat context, anxiety state, avoidance behavior, aversive outcome, outcome omission, response-outcome contingency, subjective relief, and learning mechanism." ;
+            ns1:language "en" ;
+            ns1:license "CC-BY-4.0" ;
+            ns1:provenance [ ns1:change_note "Replaces the v0.2 pilot while preserving it as a historical snapshot." ;
+                    ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+                    ns1:created_by "OpenAI Codex" ;
+                    ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+                    ns1:record_version "0.3.0" ;
+                    ns1:review_status "machine_validated" ;
+                    ns1:source_snapshot_date "2026-08-26"^^xsd:date ] ;
+            ns1:schema_path "schema/pmm-v0.3.schema.yaml" ;
+            ns1:status "pilot" ;
+            ns1:title "Anxiety, avoidance, and negative reinforcement pilot v0.3" ] ;
+    ns1:pmm_version "0.3.4" .
+
+<https://pmm.local/id/measurement:conditional-aversive-outcome-probability> a ns1:Measurement ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "Estimated or programmed p(aversive outcome | response option) for each response and comparator." ;
+    ns1:label "Conditional aversive-outcome probability" ;
+    ns1:measurement_kind "behavioral_task" ;
+    ns1:method "Report p(O|R) for every response option and any noncontingent control." ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:result_type "continuous" ;
+    ns1:target_ids <https://pmm.local/id/contingency:avoidance-response-outcome>,
+        <https://pmm.local/id/outcome:aversive-event> ;
+    ns1:unit_of_analysis "paradigm" .
+
+<https://pmm.local/id/relation:anxiety-measured-by-multimethod> a ns1:Relation ;
+    ns1:object_id <https://pmm.local/id/measurement:anxiety-multimethod> ;
+    ns1:predicate "measured_by" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:subject_id <https://pmm.local/id/state:anxiety-response> .
+
+<https://pmm.local/id/relation:anxiety-occurs-in-uncertain-threat> a ns1:Relation ;
+    ns1:object_id <https://pmm.local/id/context:uncertain-threat> ;
+    ns1:predicate "occurs_in_context" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:subject_id <https://pmm.local/id/state:anxiety-response> .
+
+<https://pmm.local/id/relation:avoidance-measured-by-selection-rate> a ns1:Relation ;
+    ns1:object_id <https://pmm.local/id/measurement:avoidance-selection-rate> ;
+    ns1:predicate "measured_by" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:subject_id <https://pmm.local/id/behavior:avoidance-response> .
+
+<https://pmm.local/id/relation:contingency-has-avoidance-response> a ns1:Relation ;
+    ns1:object_id <https://pmm.local/id/behavior:avoidance-response> ;
+    ns1:predicate "has_participant" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:subject_id <https://pmm.local/id/contingency:avoidance-response-outcome> .
+
+<https://pmm.local/id/relation:contingency-has-outcome-omission> a ns1:Relation ;
+    ns1:object_id <https://pmm.local/id/event:aversive-outcome-omission> ;
+    ns1:predicate "has_participant" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:subject_id <https://pmm.local/id/contingency:avoidance-response-outcome> .
+
+<https://pmm.local/id/state:subjective-relief> a ns1:State ;
+    ns1:bearer_scope "person" ;
+    ns1:boundary_notes "Relief alone does not establish reinforcement unless later behavior increases under the contingency.",
+        "Relief is a measured subjective state and cannot be inferred from objective outcome omission alone." ;
+    ns1:curation_status "provisional" ;
+    ns1:definition "A time-bounded experienced reduction in aversive affect or tension relative to a prior state." ;
+    ns1:label "Subjective relief" ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:state_kind "affective" ;
+    ns1:temporal_scale "momentary" .
+
+<https://pmm.local/id/claim:assigned-loss-probability-changes-choice> a ns1:Claim ;
+    ns1:causal_assumptions [ ns1:assessment "partly_tested" ;
+            ns1:consistency "Response options and monetary feedback followed the programmed probabilities." ;
+            ns1:exchangeability "Stimulus assignments were counterbalanced; within-person alternatives shared the task context." ;
+            ns1:interference "Participants completed individual tasks without cross-participant contingencies." ;
+            ns1:positivity "Every participant encountered both action options and probabilistic outcomes." ] ;
+    ns1:causal_estimand "Difference in probability of selecting the action assigned lower versus higher monetary-loss probability under counterbalanced task assignments." ;
+    ns1:claim_type "causal_effect" ;
+    ns1:confidence [ ns1:level "moderate" ;
+            ns1:rationale "Controlled within-task probabilities and counterbalancing support a scoped causal interpretation; the sample was small and the claim does not identify the neural or psychological reinforcer." ] ;
+    ns1:epistemic_status "supported" ;
+    ns1:evidence_ids <https://pmm.local/id/evidence:kim-2006-avoidance-choice> ;
+    ns1:exposure_id <https://pmm.local/id/contingency:avoidance-response-outcome> ;
+    ns1:identification_strategy "controlled_contingency" ;
+    ns1:limitations "Sixteen healthy adults provide limited population generalizability.",
+        "This effect does not prove that subjective relief or medial OFC activity caused learning." ;
+    ns1:outcome_id <https://pmm.local/id/behavior:avoidance-response> ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:scope [ ns1:boundary_conditions "Restricted to probabilistic monetary-loss avoidance in the cited task." ;
+            ns1:context_ids <https://pmm.local/id/context:controlled-instrumental-avoidance> ;
+            ns1:population "Sixteen healthy adult participants in the specified monetary instrumental task." ;
+            ns1:species "human" ;
+            ns1:temporal_scope "Across two sessions of repeated instrumental choices." ] ;
+    ns1:statement "In the Kim et al. instrumental choice task, assigning one action a lower probability of monetary loss increased preference for that action across trials." ;
+    ns1:temporal_ordering "Outcome probabilities were assigned to actions and preference developed over repeated trials." .
+
+<https://pmm.local/id/construct:rdoc-potential-threat-anxiety> a ns1:Construct ;
+    ns1:boundary_notes "Acute imminent threat belongs to a different RDoC construct.",
+        "This record represents the RDoC construct, not a threat cue, context, diagnosis, or individual anxiety episode." ;
+    ns1:construct_kind "neurobehavioral" ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "A dimensional neurobehavioral construct concerning responses when harm may occur but is distant, ambiguous, or uncertain in probability." ;
+    ns1:external_mappings [ ns1:accessed_at "2026-08-26"^^xsd:date ;
+            ns1:external_iri "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs" ;
+            ns1:external_label "Potential Threat (Anxiety)" ;
+            ns1:mapping_relation "close_match" ;
+            ns1:mapping_status "label_verified" ;
+            ns1:rationale "The official page and label are verified; RDoC does not expose a stable term IRI for this construct on the cited page." ;
+            ns1:system "RDoC" ] ;
+    ns1:label "RDoC Potential Threat (Anxiety) construct" ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] .
+
+<https://pmm.local/id/evidence:ball-gunaydin-maladaptive-avoidance> a ns1:Evidence ;
+    ns1:causal_support "indirect" ;
+    ns1:claim_ids <https://pmm.local/id/claim:anxiety-avoidance-association> ;
+    ns1:design "Translational review of avoidance paradigms and candidate neurobehavioral processes." ;
+    ns1:domains [ ns1:consistency "mostly_consistent" ;
+            ns1:directness "partially_indirect" ;
+            ns1:precision "not_reported" ;
+            ns1:replication "conceptual_replication" ;
+            ns1:risk_of_bias "some_concerns" ] ;
+    ns1:evidence_kind "narrative_review" ;
+    ns1:extraction_locator "A neurobehavioral model of maladaptive avoidance behavior and Conclusion." ;
+    ns1:inference_support "association" ;
+    ns1:limitations "Paradigms and clinical populations are heterogeneous." ;
+    ns1:population "Human and non-human avoidance research, including clinical anxiety-related conditions." ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_id <https://pmm.local/id/source:ball-gunaydin-2022> ;
+    ns1:species "human",
+        "mixed" ;
+    ns1:summary "Maladaptive avoidance is heterogeneous and may reflect threat appraisal, habitual avoidance, or trait avoidance tendency." ;
+    ns1:support_direction "supports" .
+
+<https://pmm.local/id/evidence:brown-uncertainty-anxiety> a ns1:Evidence ;
+    ns1:causal_support "indirect" ;
+    ns1:claim_ids <https://pmm.local/id/claim:clinical-maintenance-loop-hypothesis> ;
+    ns1:design "Integrative neurocomputational and clinical review proposing an uncertainty-learning framework." ;
+    ns1:domains [ ns1:consistency "mixed" ;
+            ns1:directness "indirect" ;
+            ns1:precision "not_reported" ;
+            ns1:replication "not_assessed" ;
+            ns1:risk_of_bias "some_concerns" ] ;
+    ns1:evidence_kind "narrative_review" ;
+    ns1:extraction_locator "Avoidance and anxiety; Integrating maladaptive aversive uncertainty learning, avoidance, and exposure therapy." ;
+    ns1:inference_support "mechanism" ;
+    ns1:limitations "The proposed framework is not a direct test of the complete maintenance loop." ;
+    ns1:population "Adults with and without anxiety-related clinical conditions." ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_id <https://pmm.local/id/source:brown-2023> ;
+    ns1:species "human" ;
+    ns1:summary "The review proposes that uncertainty-sensitive learning and explore/exploit decisions contribute to maladaptive avoidance." ;
+    ns1:support_direction "supports" .
+
+<https://pmm.local/id/evidence:kim-2006-avoidance-choice> a ns1:Evidence ;
+    ns1:causal_support "direct" ;
+    ns1:claim_ids <https://pmm.local/id/claim:assigned-loss-probability-changes-choice> ;
+    ns1:design "Within-participant probabilistic instrumental choice task with counterbalanced fractal assignments and reward, avoidance, and neutral conditions." ;
+    ns1:domains [ ns1:consistency "single_source" ;
+            ns1:directness "direct" ;
+            ns1:precision "limited" ;
+            ns1:replication "unreplicated" ;
+            ns1:risk_of_bias "some_concerns" ] ;
+    ns1:effect [ ns1:direction "positive" ;
+            ns1:metric "preference for action associated with lower aversive-outcome probability" ;
+            ns1:notes "Reported t(15)=1.9, one-tailed p<0.05; no confidence interval reported." ;
+            ns1:value_status "reported" ] ;
+    ns1:evidence_kind "controlled_experiment" ;
+    ns1:extraction_locator "Materials and Methods, Stimuli and task; Results, Behavioral Results." ;
+    ns1:inference_support "causal_effect" ;
+    ns1:limitations "Neural activity does not establish that the measured region causally reinforced behavior.",
+        "Small sample and one-tailed test." ;
+    ns1:population "Sixteen healthy right-handed adults without reported neurological or psychiatric history." ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:sample_size 16 ;
+    ns1:source_id <https://pmm.local/id/source:kim-2006-avoidance> ;
+    ns1:species "human" ;
+    ns1:summary "Participants preferentially selected the action assigned a lower probability of monetary loss over repeated trials." ;
+    ns1:support_direction "supports" .
+
+<https://pmm.local/id/evidence:krypotos-avoidance-learning-review> a ns1:Evidence ;
+    ns1:causal_support "indirect" ;
+    ns1:claim_ids <https://pmm.local/id/claim:negative-reinforcement-mechanism-hypothesis> ;
+    ns1:design "Theoretical and empirical review of avoidance-learning models." ;
+    ns1:domains [ ns1:consistency "mostly_consistent" ;
+            ns1:directness "partially_indirect" ;
+            ns1:precision "not_reported" ;
+            ns1:replication "conceptual_replication" ;
+            ns1:risk_of_bias "some_concerns" ] ;
+    ns1:evidence_kind "narrative_review" ;
+    ns1:extraction_locator "Principles of avoidance learning and Conclusions." ;
+    ns1:inference_support "mechanism" ;
+    ns1:limitations "Review-level extraction does not adjudicate every candidate mechanism." ;
+    ns1:population "Human and non-human avoidance-learning research." ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_id <https://pmm.local/id/source:krypotos-2015> ;
+    ns1:species "mixed" ;
+    ns1:summary "Instrumental contingencies contribute to avoidance acquisition and maintenance, while models differ about controlling representations." ;
+    ns1:support_direction "supports" .
+
+<https://pmm.local/id/evidence:punishment-review-active-avoidance> a ns1:Evidence ;
+    ns1:causal_support "indirect" ;
+    ns1:claim_ids <https://pmm.local/id/claim:negative-reinforcement-mechanism-hypothesis> ;
+    ns1:design "Review distinguishing response-dependent active avoidance, punishment, and Pavlovian fear." ;
+    ns1:domains [ ns1:consistency "consistent" ;
+            ns1:directness "partially_indirect" ;
+            ns1:precision "not_reported" ;
+            ns1:replication "conceptual_replication" ;
+            ns1:risk_of_bias "some_concerns" ] ;
+    ns1:evidence_kind "narrative_review" ;
+    ns1:extraction_locator "Different forms of aversive learning, Table 1 and active-avoidance discussion." ;
+    ns1:inference_support "mechanism" ;
+    ns1:limitations "Review-level evidence does not identify one universal psychological representation." ;
+    ns1:population "Human and non-human aversive-learning experiments." ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_id <https://pmm.local/id/source:punishment-mechanisms-review> ;
+    ns1:species "mixed" ;
+    ns1:summary "Active avoidance is an instrumental response-to-no-aversive-outcome contingency and differs from punishment and Pavlovian fear." ;
+    ns1:support_direction "supports" .
+
+<https://pmm.local/id/measurement:anxiety-multimethod> a ns1:Measurement ;
+    ns1:curation_status "provisional" ;
+    ns1:definition "A declared combination of self-report, physiological, and/or behavioral indicators without assuming their interchangeability." ;
+    ns1:label "Multimethod anxiety-response assessment" ;
+    ns1:measurement_kind "self_report" ;
+    ns1:method "Report each indicator separately and justify any composite score." ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:result_type "continuous" ;
+    ns1:target_ids <https://pmm.local/id/state:anxiety-response> ;
+    ns1:unit_of_analysis "self_report" .
+
+<https://pmm.local/id/measurement:avoidance-selection-rate> a ns1:Measurement ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "Proportion or count of eligible trials on which the predefined avoidance action is selected." ;
+    ns1:label "Avoidance-action selection rate" ;
+    ns1:measurement_kind "behavioral_task" ;
+    ns1:method "Report the response definition, eligible trials, denominator, and contingency assigned to each option." ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:result_type "continuous" ;
+    ns1:target_ids <https://pmm.local/id/behavior:avoidance-response> ;
+    ns1:unit_of_analysis "behavior" .
+
+<https://pmm.local/id/mechanism:negative-reinforcement> a ns1:Mechanism ;
+    ns1:boundary_notes "Negative denotes removal or reduction, not harmfulness.",
+        "Outcome omission, relief, safety signaling, action-outcome knowledge, and habit must remain distinguishable candidate processes." ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "Instrumental learning process in which a response-contingent removal, reduction, or prevention of an aversive consequence increases later probability or rate of the response under relevant conditions." ;
+    ns1:label "Negative reinforcement learning" ;
+    ns1:mechanism_kind "learning" ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:realization_conditions "Later probability or rate of the target response increases under relevant conditions.",
+        "Temporal adjacency without contingency is insufficient.",
+        "The consequence change is contingent on the specified response relative to a comparator." ;
+    ns1:role_bindings [ ns1:object_id <https://pmm.local/id/behavior:avoidance-response> ;
+            ns1:role "target-response" ],
+        [ ns1:object_id <https://pmm.local/id/contingency:avoidance-response-outcome> ;
+            ns1:role "response-consequence-contingency" ],
+        [ ns1:object_id <https://pmm.local/id/outcome:aversive-event> ;
+            ns1:role "aversive-consequence" ] .
+
+<https://pmm.local/id/source:ball-gunaydin-2022> a ns1:Source ;
+    ns1:accessed_at "2026-08-26"^^xsd:date ;
+    ns1:authority_note "Translational review of avoidance measurement and candidate neurobehavioral processes." ;
+    ns1:authors "Lisa A. Gunaydin",
+        "Tali M. Ball" ;
+    ns1:doi "10.1038/s41386-021-01263-4" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_type "peer_reviewed_article" ;
+    ns1:title "Measuring maladaptive avoidance: from animal models to clinical anxiety" ;
+    ns1:url "https://pmc.ncbi.nlm.nih.gov/articles/PMC8938494/" ;
+    ns1:year 2022 .
+
+<https://pmm.local/id/source:brown-2023> a ns1:Source ;
+    ns1:accessed_at "2026-08-26"^^xsd:date ;
+    ns1:authority_note "Integrative review proposing an uncertainty-learning framework; treated as indirect support only." ;
+    ns1:authors "Alexandre Y. Dombrovski",
+        "Rebecca Price",
+        "Vanessa M. Brown" ;
+    ns1:doi "10.3758/s13415-023-01080-w" ;
+    ns1:pmid "36869259" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_type "peer_reviewed_article" ;
+    ns1:title "Anxiety as a disorder of uncertainty: implications for understanding maladaptive anxiety, anxious avoidance, and exposure therapy" ;
+    ns1:url "https://pmc.ncbi.nlm.nih.gov/articles/PMC10475148/" ;
+    ns1:year 2023 .
+
+<https://pmm.local/id/source:hofmann-hay-2018> a ns1:Source ;
+    ns1:accessed_at "2026-08-26"^^xsd:date ;
+    ns1:authority_note "Clinical review emphasizing functional and contextual heterogeneity of avoidance." ;
+    ns1:authors "Aleena C. Hay",
+        "Stefan G. Hofmann" ;
+    ns1:doi "10.1016/j.janxdis.2018.03.004" ;
+    ns1:pmid "29550689" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_type "peer_reviewed_article" ;
+    ns1:title "Rethinking Avoidance: Toward a Balanced Approach to Avoidance in Treating Anxiety Disorders" ;
+    ns1:url "https://pmc.ncbi.nlm.nih.gov/articles/PMC5879019/" ;
+    ns1:year 2018 .
+
+<https://pmm.local/id/source:kim-2006-avoidance> a ns1:Source ;
+    ns1:accessed_at "2026-08-26"^^xsd:date ;
+    ns1:authority_note "Controlled human instrumental-choice experiment with explicitly programmed reward, avoidance, and neutral conditions." ;
+    ns1:authors "Hackjin Kim",
+        "John P. O'Doherty",
+        "Shinsuke Shimojo" ;
+    ns1:doi "10.1371/journal.pbio.0040233" ;
+    ns1:pmid "16802856" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_type "peer_reviewed_article" ;
+    ns1:title "Is Avoiding an Aversive Outcome Rewarding? Neural Substrates of Avoidance Learning in the Human Brain" ;
+    ns1:url "https://pmc.ncbi.nlm.nih.gov/articles/PMC1484497/" ;
+    ns1:year 2006 .
+
+<https://pmm.local/id/source:krypotos-2015> a ns1:Source ;
+    ns1:accessed_at "2026-08-26"^^xsd:date ;
+    ns1:authority_note "Review of theoretical models and experimental evidence on avoidance learning." ;
+    ns1:authors "Angelos-Miltiadis Krypotos",
+        "Marieke Effting",
+        "Merel Kindt",
+        "Tom Beckers" ;
+    ns1:doi "10.3389/fnbeh.2015.00189" ;
+    ns1:pmid "26257618" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_type "peer_reviewed_article" ;
+    ns1:title "Avoidance learning: a review of theoretical models and recent developments" ;
+    ns1:url "https://pmc.ncbi.nlm.nih.gov/articles/PMC4508580/" ;
+    ns1:year 2015 .
+
+<https://pmm.local/id/source:rdoc-definitions> a ns1:Source ;
+    ns1:accessed_at "2026-08-26"^^xsd:date ;
+    ns1:authority_note "Official source for the current Potential Threat (Anxiety) label and definition." ;
+    ns1:organization "National Institute of Mental Health" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_type "official_framework" ;
+    ns1:title "Definitions of the RDoC Domains and Constructs" ;
+    ns1:url "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs" .
+
+<https://pmm.local/id/claim:anxiety-avoidance-association> a ns1:Claim ;
+    ns1:claim_type "association" ;
+    ns1:confidence [ ns1:level "low" ;
+            ns1:rationale "Multiple reviews support the broad association, but no pooled comparable estimate has been extracted and constructs vary." ] ;
+    ns1:confounding_note "Threat severity, controllability, expected value, learning history, goals, social constraints, and measurement method can influence both variables." ;
+    ns1:epistemic_status "supported" ;
+    ns1:estimate [ ns1:direction "positive" ;
+            ns1:metric "qualitative direction across reviews" ;
+            ns1:notes "No pooled magnitude is asserted." ;
+            ns1:value_status "qualitative_only" ] ;
+    ns1:evidence_ids <https://pmm.local/id/evidence:ball-gunaydin-maladaptive-avoidance>,
+        <https://pmm.local/id/evidence:hofmann-hay-anxiety-avoidance> ;
+    ns1:exposure_id <https://pmm.local/id/state:anxiety-response> ;
+    ns1:limitations "The association does not establish a universal anxiety-to-avoidance causal path." ;
+    ns1:outcome_id <https://pmm.local/id/behavior:avoidance-response> ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:scope [ ns1:boundary_conditions "Anxiety may occur without avoidance and avoidance may occur without reported anxiety." ;
+            ns1:context_ids <https://pmm.local/id/context:uncertain-threat> ;
+            ns1:population "Human nonclinical and anxiety-related clinical samples." ;
+            ns1:species "human" ;
+            ns1:temporal_scope "Concurrent or short-lag association." ] ;
+    ns1:statement "Anxiety-related responding and avoidance are positively associated on average, with substantial heterogeneity across tasks, people, and contexts." .
+
+<https://pmm.local/id/claim:clinical-maintenance-loop-hypothesis> a ns1:Claim ;
+    ns1:causal_assumptions [ ns1:assessment "unverified" ;
+            ns1:consistency "Avoidance, objective outcome change, subjective relief, and later behavior are measured separately over time." ;
+            ns1:exchangeability "Threat severity, goals, social constraints, treatment, and learning history require control or manipulation." ;
+            ns1:interference "Social reinforcement and shared environments may violate no-interference assumptions." ;
+            ns1:positivity "Comparable opportunities for avoidance and approach exist in the target context." ] ;
+    ns1:causal_estimand "Longitudinal change in context-matched avoidance attributable to response-contingent short-term aversive reduction." ;
+    ns1:claim_type "causal_hypothesis" ;
+    ns1:confidence [ ns1:level "low" ;
+            ns1:rationale "Components are plausible, but the complete longitudinal human pathway is not directly identified across disorders and contexts." ] ;
+    ns1:epistemic_status "proposed" ;
+    ns1:evidence_ids <https://pmm.local/id/evidence:brown-uncertainty-anxiety>,
+        <https://pmm.local/id/evidence:hofmann-hay-anxiety-avoidance> ;
+    ns1:exposure_id <https://pmm.local/id/contingency:avoidance-response-outcome> ;
+    ns1:falsifiable_boundary "The pathway is weakened when measured contingent consequence change does not predict later avoidance or when contingency manipulation leaves persistence unchanged." ;
+    ns1:limitations "RDoC and HiTOP alignment do not validate the causal pathway.",
+        "This is not a statistical mediation claim." ;
+    ns1:outcome_id <https://pmm.local/id/behavior:avoidance-response> ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:scope [ ns1:boundary_conditions "Does not apply when avoidance is adaptive or mainly controlled by other consequences." ;
+            ns1:context_ids <https://pmm.local/id/context:uncertain-threat> ;
+            ns1:population "Humans with persistent maladaptive anxiety-related avoidance." ;
+            ns1:species "human" ;
+            ns1:temporal_scope "Repeated episodes over days to years." ] ;
+    ns1:statement "In some anxiety contexts, avoidance followed by short-term aversive reduction increases later avoidance and reduces opportunities for corrective learning, contributing to persistence." ;
+    ns1:temporal_ordering "Avoidance precedes consequence change, which precedes later context-matched avoidance." .
+
+<https://pmm.local/id/claim:negative-reinforcement-mechanism-hypothesis> a ns1:Claim ;
+    ns1:claim_type "mechanism_hypothesis" ;
+    ns1:confidence [ ns1:level "moderate" ;
+            ns1:rationale "Instrumental learning is established, but the precise controlling representation differs across paradigms and stages of training." ] ;
+    ns1:epistemic_status "proposed" ;
+    ns1:evidence_ids <https://pmm.local/id/evidence:krypotos-avoidance-learning-review>,
+        <https://pmm.local/id/evidence:punishment-review-active-avoidance> ;
+    ns1:exposure_id <https://pmm.local/id/contingency:avoidance-response-outcome> ;
+    ns1:falsifiable_boundary "The hypothesis is weakened where contingency manipulation does not alter later responding or where devaluation identifies a different controlling outcome." ;
+    ns1:limitations "A mechanism hypothesis is not promoted to a universal causal effect." ;
+    ns1:mechanism_id <https://pmm.local/id/mechanism:negative-reinforcement> ;
+    ns1:outcome_id <https://pmm.local/id/behavior:avoidance-response> ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:scope [ ns1:context_ids <https://pmm.local/id/context:controlled-instrumental-avoidance> ;
+            ns1:population "Human and non-human active-avoidance learners." ;
+            ns1:species "mixed" ;
+            ns1:temporal_scope "Across acquisition and maintenance trials." ] ;
+    ns1:statement "Response-contingent aversive-outcome omission contributes to increased later avoidance through negative reinforcement learning, while safety signaling and habit may also control performance." ;
+    ns1:temporal_ordering "Response-contingent consequence change follows current responding and precedes measured later response selection." .
+
+<https://pmm.local/id/event:aversive-outcome-omission> a ns1:Event ;
+    ns1:boundary_notes "Outcome omission is not identical to subjective relief or to reinforcement." ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "Non-occurrence of an expected or programmed aversive event on a specified trial or interval." ;
+    ns1:event_kind "consequence_omission" ;
+    ns1:label "Aversive-outcome omission" ;
+    ns1:ontological_level "type" ;
+    ns1:participant_ids <https://pmm.local/id/outcome:aversive-event> ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:temporal_scale "seconds" .
+
+<https://pmm.local/id/evidence:hofmann-hay-anxiety-avoidance> a ns1:Evidence ;
+    ns1:causal_support "indirect" ;
+    ns1:claim_ids <https://pmm.local/id/claim:anxiety-avoidance-association>,
+        <https://pmm.local/id/claim:clinical-maintenance-loop-hypothesis> ;
+    ns1:design "Clinical and translational narrative review." ;
+    ns1:domains [ ns1:consistency "mostly_consistent" ;
+            ns1:directness "partially_indirect" ;
+            ns1:precision "not_reported" ;
+            ns1:replication "conceptual_replication" ;
+            ns1:risk_of_bias "some_concerns" ] ;
+    ns1:evidence_kind "narrative_review" ;
+    ns1:extraction_locator "Sections Skinnerian Operant Conditioning, Mowrer-Miller Two-factor Theory, and Conclusion." ;
+    ns1:inference_support "association" ;
+    ns1:limitations "Narrative synthesis does not supply a pooled effect estimate." ;
+    ns1:population "Human anxiety-related clinical contexts with translational animal literature." ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_id <https://pmm.local/id/source:hofmann-hay-2018> ;
+    ns1:species "human",
+        "mixed" ;
+    ns1:summary "Avoidance is associated with anxiety but can be adaptive or maladaptive depending on function and context." ;
+    ns1:support_direction "supports" .
+
+<https://pmm.local/id/source:punishment-mechanisms-review> a ns1:Source ;
+    ns1:accessed_at "2026-08-26"^^xsd:date ;
+    ns1:authority_note "Review explicitly distinguishing active avoidance, punishment, and Pavlovian fear by contingency." ;
+    ns1:authors "Gavan P. McNally",
+        "Philip Jean-Richard-Dit-Bressel",
+        "Simon Killcross" ;
+    ns1:doi "10.1038/s41386-018-0047-3" ;
+    ns1:pmid "29703994" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:source_type "peer_reviewed_article" ;
+    ns1:title "Behavioral and neurobiological mechanisms of punishment: implications for psychiatric disorders" ;
+    ns1:url "https://pmc.ncbi.nlm.nih.gov/articles/PMC6006171/" ;
+    ns1:year 2018 .
+
+<https://pmm.local/id/outcome:aversive-event> a ns1:Outcome ;
+    ns1:boundary_notes "The outcome must be operationally specified; subjective aversion and programmed valence can dissociate." ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "A specified event whose occurrence, probability, intensity, or duration is treated as aversive in the study design or by the organism." ;
+    ns1:label "Aversive event outcome" ;
+    ns1:ontological_level "type" ;
+    ns1:outcome_kind "event_occurrence" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:valence "aversive" .
+
+<https://pmm.local/id/context:controlled-instrumental-avoidance> a ns1:Context ;
+    ns1:context_kind "experimental" ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "An experimental context in which response-consequence probabilities are assigned or manipulated and later response selection is observed." ;
+    ns1:dimensions [ ns1:comparison "alternative-response-or-noncontingent-control" ;
+            ns1:contingency_control "experimenter-assigned" ;
+            ns1:repeated_opportunities true ] ;
+    ns1:label "Controlled instrumental-avoidance experiment" ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:scope "Human or non-human active-avoidance and escape-learning experiments with explicit response-consequence contingencies." .
+
+<https://pmm.local/id/context:uncertain-threat> a ns1:Context ;
+    ns1:boundary_notes "The context is not itself anxiety and does not imply that every person responds anxiously." ;
+    ns1:context_kind "composite" ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "A context in which possible harm is temporally distant, ambiguous, or uncertain in probability." ;
+    ns1:dimensions [ ns1:harm_probability "uncertain" ;
+            ns1:imminence "non-imminent-or-ambiguous" ;
+            ns1:valence "aversive" ] ;
+    ns1:label "Uncertain-threat context" ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:scope "Experimental or naturalistic contexts involving possible rather than acute imminent harm." .
+
+<https://pmm.local/id/state:anxiety-response> a ns1:State ;
+    ns1:bearer_scope "person" ;
+    ns1:boundary_notes "Self-report, physiology, and behavior may dissociate.",
+        "This is not a diagnosis and is not identical to the RDoC Potential Threat construct." ;
+    ns1:curation_status "provisional" ;
+    ns1:definition "A time-bounded pattern of anxious apprehension, vigilance, arousal, or related responses in a person; no single measurement exhausts the state." ;
+    ns1:label "Anxiety response state" ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:state_kind "affective" ;
+    ns1:temporal_scale "episode" .
+
+<https://pmm.local/id/contingency:avoidance-response-outcome> a ns1:Contingency ;
+    ns1:antecedent_ids <https://pmm.local/id/context:controlled-instrumental-avoidance> ;
+    ns1:boundary_notes "A programmed contingency is part of the experimental design, not by itself evidence that learning occurred." ;
+    ns1:comparator "Alternative response, no response, or noncontingent/yoked consequence schedule." ;
+    ns1:consequence_id <https://pmm.local/id/event:aversive-outcome-omission> ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "An n-ary dependency in which a specified response changes the probability, intensity, or duration of a specified aversive consequence relative to a comparator." ;
+    ns1:label "Avoidance response-outcome contingency" ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:response_dependency "manipulated" ;
+    ns1:response_id <https://pmm.local/id/behavior:avoidance-response> ;
+    ns1:schedule "Must be reported for each study rather than assumed universal." ;
+    ns1:temporal_relation "Response precedes consequence omission or reduction; future responding is observed on later opportunities." .
+
+<https://pmm.local/id/behavior:avoidance-response> a ns1:Behavior ;
+    ns1:actor_scope "organism" ;
+    ns1:behavior_kind "response_pattern" ;
+    ns1:boundary_notes "Adaptive and maladaptive avoidance are not ontologically identical.",
+        "Escape terminates an ongoing aversive event; avoidance prevents or reduces an anticipated event." ;
+    ns1:curation_status "accepted" ;
+    ns1:definition "An action or operationally identified omission that changes contact with an anticipated threat or aversive outcome; its avoidance function requires a demonstrated response-consequence relation." ;
+    ns1:function_note "Topography alone is insufficient to classify a behavior as avoidance." ;
+    ns1:label "Avoidance response" ;
+    ns1:observability "operationally_inferred" ;
+    ns1:ontological_level "type" ;
+    ns1:provenance [ ns1:created_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:created_by "OpenAI Codex" ;
+            ns1:modified_at "2026-08-26T00:00:00+03:00"^^xsd:dateTime ;
+            ns1:record_version "0.3.0" ;
+            ns1:review_status "machine_validated" ] ;
+    ns1:response_topography "Task- and context-specific action or omission." .
+

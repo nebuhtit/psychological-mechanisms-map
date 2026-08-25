@@ -91,6 +91,30 @@
   },
   "@graph": [
     {
+      "@id": "pmm:dataset:anxiety-avoidance-pilot-v0-3",
+      "@type": "Dataset",
+      "metadata": {
+        "description": "Corrected pilot separating the RDoC construct, uncertain-threat context, anxiety state, avoidance behavior, aversive outcome, outcome omission, response-outcome contingency, subjective relief, and learning mechanism.",
+        "language": "en",
+        "license": "CC-BY-4.0",
+        "provenance": {
+          "change_note": "Replaces the v0.2 pilot while preserving it as a historical snapshot.",
+          "created_at": "2026-08-26T00:00:00+03:00",
+          "created_by": [
+            "OpenAI Codex"
+          ],
+          "modified_at": "2026-08-26T00:00:00+03:00",
+          "record_version": "0.3.0",
+          "review_status": "machine_validated",
+          "source_snapshot_date": "2026-08-26"
+        },
+        "schema_path": "schema/pmm-v0.3.schema.yaml",
+        "status": "pilot",
+        "title": "Anxiety, avoidance, and negative reinforcement pilot v0.3"
+      },
+      "pmm_version": "0.3.4"
+    },
+    {
       "@id": "pmm:construct:rdoc-potential-threat-anxiety",
       "@type": "Construct",
       "boundary_notes": [
@@ -1196,27 +1220,5 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10475148/",
       "year": 2023
     }
-  ],
-  "@id": "pmm:dataset:anxiety-avoidance-pilot-v0-3",
-  "@type": "Dataset",
-  "metadata": {
-    "description": "Corrected pilot separating the RDoC construct, uncertain-threat context, anxiety state, avoidance behavior, aversive outcome, outcome omission, response-outcome contingency, subjective relief, and learning mechanism.",
-    "language": "en",
-    "license": "CC-BY-4.0",
-    "provenance": {
-      "change_note": "Replaces the v0.2 pilot while preserving it as a historical snapshot.",
-      "created_at": "2026-08-26T00:00:00+03:00",
-      "created_by": [
-        "OpenAI Codex"
-      ],
-      "modified_at": "2026-08-26T00:00:00+03:00",
-      "record_version": "0.3.0",
-      "review_status": "machine_validated",
-      "source_snapshot_date": "2026-08-26"
-    },
-    "schema_path": "schema/pmm-v0.3.schema.yaml",
-    "status": "pilot",
-    "title": "Anxiety, avoidance, and negative reinforcement pilot v0.3"
-  },
-  "pmm_version": "0.3.3"
+  ]
 }

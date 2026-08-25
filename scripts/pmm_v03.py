@@ -7,6 +7,7 @@ import argparse
 import json
 import shutil
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -391,18 +392,35 @@ def export_jsonld(source: Path, destination: Path) -> None:
                 node["@type"] = section_types[section]
             graph.append(node)
 
-    payload = {
-        "@context": context_document["@context"],
+    dataset_node = {
         "@id": document["dataset_id"],
         "@type": "Dataset",
         "pmm_version": document["pmm_version"],
         "metadata": document["metadata"],
-        "@graph": graph,
+    }
+    payload = {
+        "@context": context_document["@context"],
+        "@graph": [dataset_node, *graph],
     }
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
+    )
+
+
+def export_turtle(source: Path, destination: Path) -> None:
+    """Export validated PMM YAML through JSON-LD into Turtle."""
+    from rdflib import Graph
+    from rdflib.compare import to_canonical_graph
+
+    with tempfile.TemporaryDirectory() as directory:
+        jsonld_path = Path(directory) / "dataset.jsonld"
+        export_jsonld(source, jsonld_path)
+        graph = Graph().parse(jsonld_path, format="json-ld")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(
+        to_canonical_graph(graph).serialize(format="turtle"), encoding="utf-8"
     )
 
 
@@ -432,6 +450,12 @@ def main() -> int:
     jsonld_parser.add_argument("source", type=Path)
     jsonld_parser.add_argument("destination", type=Path)
 
+    turtle_parser = subparsers.add_parser(
+        "export-turtle", help="validate and export RDF Turtle through JSON-LD"
+    )
+    turtle_parser.add_argument("source", type=Path)
+    turtle_parser.add_argument("destination", type=Path)
+
     clean_parser = subparsers.add_parser("clean", help="remove only the repository build directory")
     clean_parser.add_argument("path", type=Path)
 
@@ -450,6 +474,9 @@ def main() -> int:
         elif args.command == "export-jsonld":
             export_jsonld(args.source, args.destination)
             print(f"exported JSON-LD: {args.destination}")
+        elif args.command == "export-turtle":
+            export_turtle(args.source, args.destination)
+            print(f"exported Turtle: {args.destination}")
         elif args.command == "clean":
             clean_build(args.path)
             print(f"cleaned: {(ROOT / 'build').resolve()}")

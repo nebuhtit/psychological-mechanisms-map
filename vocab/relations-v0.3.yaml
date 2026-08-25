@@ -1,5 +1,5 @@
 vocabulary_id: pmm:vocabulary:relations-v0-3
-version: 0.3.3
+version: 0.3.4
 description: >-
   Relations are structural or operational. Statistical and causal assertions
   are represented only as Claims.

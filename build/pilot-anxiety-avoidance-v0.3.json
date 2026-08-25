@@ -872,7 +872,7 @@
       "unit_of_analysis": "self_report"
     }
   ],
-  "pmm_version": "0.3.3",
+  "pmm_version": "0.3.4",
   "relations": [
     {
       "id": "pmm:relation:anxiety-occurs-in-uncertain-threat",

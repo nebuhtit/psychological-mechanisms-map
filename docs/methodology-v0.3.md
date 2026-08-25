@@ -87,6 +87,8 @@ External systems are aligned by role, not copied wholesale.
 
 YAML is canonical. Deterministic JSON and JSON-LD are generated only after validation. The JSON-LD graph keeps ontology objects, Relations, Claims, Evidence, and Sources as separate identified nodes. Reference-valued fields expand as IRIs through the checked-in context. SHACL mirrors the critical cross-record inferential constraints. OWL may later encode stable taxonomic commitments, but uncertain empirical Claims and Evidence must remain reified resources rather than becoming unconditional class axioms.
 
+The pilot graph is independently parsed by RDFLib, validated with pySHACL, round-tripped to deterministic Turtle, and compared by RDF graph isomorphism. A deliberately damaged causal Claim must fail SHACL validation.
+
 ## Known limits
 
 - Primary-study extraction currently covers one focused negative-reinforcement pack; the other mechanism families still rely mainly on reviews.
