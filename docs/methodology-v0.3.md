@@ -31,7 +31,7 @@ Claims are distinguished by required and forbidden fields.
 | Claim | Required identification content | Does not establish |
 |---|---|---|
 | Association | Exposure, outcome, estimate, confounding note | Prospective prediction, temporal order, causation |
-| Prediction | Exposure, outcome, held-out validation strategy, predictive metric | Intervention effect or mechanism |
+| Prediction | Exposure, outcome, validation design, data-separation note, validation strategy, predictive metric | Intervention effect, mechanism, or out-of-sample performance when only resubstitution was used |
 | Mediation | Exposure, mediator, outcome, inference mode, indirect effect, temporal ordering | Causal mediation unless the causal mode, estimand, identification strategy, assumptions, and direct evidence are present |
 | Moderation | Exposure, moderator, outcome, inference mode, interaction term | Causal effect modification unless its estimand, identification strategy, assumptions, temporal order, and direct evidence are present |
 | Causal effect | Exposure, outcome, estimand, identification strategy, temporal order, causal assumptions, direct evidence | Generalization beyond declared scope or a mechanism |
@@ -39,6 +39,8 @@ Claims are distinguished by required and forbidden fields.
 | Mechanism hypothesis | Mechanism, exposure, outcome, temporal order, falsifiable boundary | Unique mediation or biological implementation |
 
 The JSON Schema implements conditional `required` and `not` constraints. `mediation_inference` separates statistical from causal mediation; `moderation_inference` separates a statistical interaction from causal effect modification. The semantic validator requires linked direct causal Evidence for every causal mode, validates relation domains/ranges, resolves references, and checks Evidence/Claim backlinks.
+
+A supported Prediction cannot use `resubstitution` as its validation design. Every Causal-effect Claim must also list explicit boundary conditions; applying an effect outside those conditions requires a separate transport or generalization Claim rather than silent extrapolation.
 
 ## Evidence and confidence
 

@@ -46,6 +46,59 @@ class PMMV03ValidationTests(unittest.TestCase):
         errors = pmm_v03.validate(document)
         self.assertTrue(any("requires linked direct causal evidence" in error for error in errors))
 
+    def test_causal_effect_requires_boundary_conditions(self) -> None:
+        document = copy.deepcopy(self.document)
+        claim = next(item for item in document["claims"] if item["claim_type"] == "causal_effect")
+        claim["scope"].pop("boundary_conditions")
+        errors = pmm_v03.validate(document)
+        self.assertTrue(any("requires explicit scope.boundary_conditions" in error for error in errors))
+
+    def test_supported_prediction_rejects_resubstitution(self) -> None:
+        document = copy.deepcopy(self.document)
+        source_claim = next(item for item in document["claims"] if item["claim_type"] == "association")
+        prediction = copy.deepcopy(source_claim)
+        prediction.update(
+            {
+                "id": "pmm:claim:invalid-resubstitution-prediction",
+                "claim_type": "prediction",
+                "epistemic_status": "supported",
+                "validation_design": "resubstitution",
+                "validation_strategy": "Performance estimated on model-development observations.",
+                "data_separation_note": "No separation between development and evaluation data.",
+                "predictive_metric": prediction.pop("estimate"),
+            }
+        )
+        prediction.pop("confounding_note")
+        document["claims"].append(prediction)
+        for evidence_id in prediction["evidence_ids"]:
+            evidence = next(item for item in document["evidence"] if item["id"] == evidence_id)
+            evidence["claim_ids"].append(prediction["id"])
+            evidence["inference_support"] = "prediction"
+        errors = pmm_v03.validate(document)
+        self.assertTrue(any("requires validation beyond resubstitution" in error for error in errors))
+
+    def test_unassessed_temporal_prediction_is_representable(self) -> None:
+        document = copy.deepcopy(self.document)
+        source_claim = next(item for item in document["claims"] if item["claim_type"] == "association")
+        prediction = copy.deepcopy(source_claim)
+        predictive_metric = prediction.pop("estimate")
+        prediction.pop("confounding_note")
+        prediction.update(
+            {
+                "id": "pmm:claim:prospective-avoidance-prediction",
+                "claim_type": "prediction",
+                "statement": "Anxiety-state measurement may predict later avoidance in a temporally held-out evaluation set.",
+                "epistemic_status": "not_assessed",
+                "validation_design": "temporal_holdout",
+                "validation_strategy": "Fit on earlier observations and evaluate once on later observations.",
+                "data_separation_note": "Later outcomes are unavailable during model development.",
+                "predictive_metric": predictive_metric,
+                "evidence_ids": [],
+            }
+        )
+        document["claims"].append(prediction)
+        self.assertEqual(pmm_v03.validate(document), [])
+
     def test_exact_external_mapping_requires_verified_identifier(self) -> None:
         document = copy.deepcopy(self.document)
         mapping = document["objects"][0]["external_mappings"][0]

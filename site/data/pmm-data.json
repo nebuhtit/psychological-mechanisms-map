@@ -898,7 +898,7 @@
         }
       ],
       "title": "Threat and avoidance",
-      "version": "0.3.0"
+      "version": "0.3.2"
     },
     {
       "claims": [
@@ -1676,7 +1676,7 @@
         }
       ],
       "title": "Fear extinction",
-      "version": "0.3.0"
+      "version": "0.3.2"
     },
     {
       "claims": [
@@ -2459,7 +2459,7 @@
         }
       ],
       "title": "Habit control",
-      "version": "0.3.0"
+      "version": "0.3.2"
     },
     {
       "claims": [
@@ -2484,7 +2484,7 @@
           ],
           "outcome_id": "pmm:state:negative-emotional-experience",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2525,7 +2525,7 @@
           ],
           "outcome_id": "pmm:state:autonomic-emotional-reactivity",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2566,10 +2566,11 @@
           "limitations": [
             "Statistical mediation is not causal mediation without stronger identification assumptions or intervention on the mediator."
           ],
+          "mediation_inference": "statistical",
           "mediator_id": "pmm:measurement:reappraisal-bold-response",
           "outcome_id": "pmm:state:negative-emotional-experience",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2610,7 +2611,7 @@
           "mechanism_id": "pmm:mechanism:meaning-reinterpretation",
           "outcome_id": "pmm:state:negative-emotional-experience",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2665,7 +2666,7 @@
           ],
           "population": "120 adult participants assigned across three instruction conditions.",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2706,7 +2707,7 @@
           ],
           "population": "Ninety-four randomized adult participants.",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2746,7 +2747,7 @@
           ],
           "population": "Ninety-four randomized adult participants.",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2787,7 +2788,7 @@
           ],
           "population": "Healthy adult participants in a laboratory neuroimaging experiment.",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2827,7 +2828,7 @@
           ],
           "population": "Ninety-eight healthy adults aged 18-40.",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2867,7 +2868,7 @@
           ],
           "population": "Ninety-eight healthy adults aged 18-40.",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2895,7 +2896,7 @@
           "label": "Aversive-stimulus reappraisal task",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2915,7 +2916,7 @@
           "label": "Negative-emotion episode context",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2933,7 +2934,7 @@
           "label": "Negative emotional experience",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2952,7 +2953,7 @@
           "label": "Autonomic emotional reactivity",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2971,7 +2972,7 @@
           "observability": "direct",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -2989,7 +2990,7 @@
           "label": "Situational meaning appraisal",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3005,7 +3006,7 @@
           "label": "Cognitive reappraisal instruction",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3025,7 +3026,7 @@
           "label": "Watch instruction",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3046,7 +3047,7 @@
           "mechanism_kind": "cognitive",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3079,7 +3080,7 @@
           "method": "Visual analog, Likert, or comparable rating after watch or regulation trials.",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3099,7 +3100,7 @@
           "method": "Channel-specific psychophysiological recording time-locked to emotional stimuli.",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3119,7 +3120,7 @@
           "method": "Blind or standardized coding of recorded behavior.",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3142,7 +3143,7 @@
           "method": "fMRI contrast and multilevel mediation analysis across trials and participants.",
           "ontological_level": "type",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3161,7 +3162,7 @@
           "object_id": "pmm:measurement:negative-emotion-rating",
           "predicate": "measured_by",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3172,7 +3173,7 @@
           "object_id": "pmm:measurement:autonomic-response-recording",
           "predicate": "measured_by",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3183,7 +3184,7 @@
           "object_id": "pmm:measurement:expressive-behavior-coding",
           "predicate": "measured_by",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3194,7 +3195,7 @@
           "object_id": "pmm:context:aversive-stimulus-reappraisal-task",
           "predicate": "occurs_in_context",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3212,7 +3213,7 @@
           "id": "pmm:source:gross-1998-emotion-regulation",
           "pmid": "9457784",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3233,7 +3234,7 @@
           "id": "pmm:source:wolgast-lundh-viborg-2011",
           "pmid": "21999941",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3256,7 +3257,7 @@
           "id": "pmm:source:wager-2008-neural-pathways",
           "pmid": "18817740",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3278,7 +3279,7 @@
           "id": "pmm:source:hamza-2024-reappraisal-stress",
           "pmid": "39229764",
           "provenance": {
-            "record_version": "0.3.0",
+            "record_version": "0.3.1",
             "review_status": "machine_validated",
             "source_snapshot_date": "2026-08-26"
           },
@@ -3289,9 +3290,9 @@
         }
       ],
       "title": "Cognitive reappraisal",
-      "version": "0.3.0"
+      "version": "0.3.2"
     }
   ],
   "interface_version": "0.1.0",
-  "pmm_version": "0.3.1"
+  "pmm_version": "0.3.2"
 }

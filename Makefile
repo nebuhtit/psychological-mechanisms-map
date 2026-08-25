@@ -33,13 +33,14 @@ test:
 site-data:
 	$(PYTHON) scripts/build_site_data.py
 
-export: site-data
+export:
 	$(PYTHON) scripts/pmm_v03.py export data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/stress-test-mechanisms-v0.3.yaml build/stress-test-mechanisms-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-negative-reinforcement-v0.3.yaml build/evidence-pack-negative-reinforcement-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-fear-extinction-v0.3.yaml build/evidence-pack-fear-extinction-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-habit-control-v0.3.yaml build/evidence-pack-habit-control-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-cognitive-reappraisal-v0.3.yaml build/evidence-pack-cognitive-reappraisal-v0.3.json
+	$(PYTHON) scripts/build_site_data.py
 
 verify: validate validate-stress validate-pack validate-extinction validate-habit validate-reappraisal test export
 	git diff --exit-code -- build site/data/pmm-data.json

@@ -15,6 +15,9 @@ class SiteBundleTests(unittest.TestCase):
             [item["id"] for item in document["families"]],
             ["avoidance", "extinction", "habit", "reappraisal"],
         )
+        self.assertTrue(
+            all(item["version"] == document["pmm_version"] for item in document["families"])
+        )
 
     def test_site_bundle_references_resolve_within_each_family(self) -> None:
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())

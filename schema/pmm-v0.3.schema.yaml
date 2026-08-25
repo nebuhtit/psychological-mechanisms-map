@@ -1,6 +1,6 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$id: https://pmm.local/schema/pmm-v0.3.1.schema.json
-title: Psychological Mechanisms Map Schema v0.3.1
+$id: https://pmm.local/schema/pmm-v0.3.2.schema.json
+title: Psychological Mechanisms Map Schema v0.3.2
 description: >-
   Evidence-aware knowledge model with an abstract Entity base, explicit
   constructs/events/outcomes/contingencies, structural Relations, and reified
@@ -10,7 +10,7 @@ additionalProperties: false
 required: [pmm_version, document_type, dataset_id, metadata, namespaces, objects, relations, claims, evidence, sources]
 properties:
   pmm_version:
-    const: 0.3.1
+    const: 0.3.2
   document_type:
     const: pmm_dataset
   dataset_id:
@@ -480,7 +480,10 @@ $defs:
       mechanism_id: {$ref: '#/$defs/objectId'}
       estimate: {$ref: '#/$defs/estimate'}
       predictive_metric: {$ref: '#/$defs/estimate'}
-      validation_strategy: {type: string}
+      validation_design:
+        enum: [resubstitution, internal_resampling, temporal_holdout, external_holdout]
+      validation_strategy: {$ref: '#/$defs/nonEmptyString'}
+      data_separation_note: {$ref: '#/$defs/nonEmptyString'}
       indirect_effect: {$ref: '#/$defs/estimate'}
       interaction_term: {$ref: '#/$defs/estimate'}
       confounding_note: {type: string}
@@ -524,7 +527,7 @@ $defs:
               - required: [moderator_id]
       - if: {properties: {claim_type: {const: prediction}}}
         then:
-          required: [exposure_id, outcome_id, validation_strategy, predictive_metric]
+          required: [exposure_id, outcome_id, validation_design, validation_strategy, data_separation_note, predictive_metric]
           not:
             anyOf:
               - required: [causal_estimand]

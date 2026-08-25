@@ -268,6 +268,11 @@ def validate_semantics(document: dict[str, Any]) -> list[str]:
         if claim_type in EMPIRICAL_CLAIM_TYPES and claim.get("epistemic_status") != "not_assessed" and not evidence_ids:
             errors.append(f"{where}: assessed empirical claim requires evidence_ids")
         if claim_type == "causal_effect":
+            scope = claim.get("scope", {})
+            if not isinstance(scope, dict) or not scope.get("boundary_conditions"):
+                errors.append(
+                    f"{where}: causal_effect requires explicit scope.boundary_conditions"
+                )
             direct = any(
                 records.get(evidence_id, {}).get("causal_support") == "direct"
                 and records.get(evidence_id, {}).get("inference_support") == "causal_effect"
@@ -275,6 +280,14 @@ def validate_semantics(document: dict[str, Any]) -> list[str]:
             )
             if not direct:
                 errors.append(f"{where}: causal_effect requires linked direct causal evidence")
+        if (
+            claim_type == "prediction"
+            and claim.get("epistemic_status") in {"supported", "mixed"}
+            and claim.get("validation_design") == "resubstitution"
+        ):
+            errors.append(
+                f"{where}: supported prediction requires validation beyond resubstitution"
+            )
         if (
             claim_type == "mediation" and claim.get("mediation_inference") == "causal"
         ) or (

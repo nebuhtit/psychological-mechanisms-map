@@ -1,11 +1,13 @@
 vocabulary_id: pmm:vocabulary:evidence-v0-3
-version: 0.3.1
+version: 0.3.2
 rules:
   - Definitions cite Sources directly and are not graded as empirical Evidence.
   - Each Evidence record extracts one result from one Source.
   - A causal_effect Claim requires at least one linked Evidence record with causal_support=direct.
   - Statistical mediation and moderation do not imply causal pathways or causal effect modification.
   - Causal mediation or causal effect modification requires explicit identification fields and linked direct causal Evidence.
+  - A supported Prediction requires validation beyond reuse of the model-development observations.
+  - Every causal_effect Claim declares context and explicit boundary conditions; transport beyond them is a separate Claim.
   - Narrative reviews may support scope or mechanism plausibility but are not direct causal evidence.
   - Epistemic status belongs to Claims; ontology objects use curation_status only.
   - Hypotheses must be marked proposed and include a falsifiable boundary.
