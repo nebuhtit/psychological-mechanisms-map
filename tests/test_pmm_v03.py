@@ -90,5 +90,31 @@ class PrimaryEvidencePackTests(unittest.TestCase):
             )
 
 
+class FearExtinctionEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-fear-extinction-v0.3.yaml"
+        )
+
+    def test_fear_extinction_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_procedure_behavior_and_mechanism_remain_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:intervention:cue-only-extinction-procedure"], "Intervention")
+        self.assertEqual(records["pmm:behavior:within-session-response-decrement"], "Behavior")
+        self.assertEqual(records["pmm:mechanism:extinction-memory-formation"], "Mechanism")
+
+    def test_registered_null_is_preserved(self) -> None:
+        evidence = next(
+            item
+            for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:chalkia-2020-registered-replication"
+        )
+        self.assertEqual(evidence["support_direction"], "challenges")
+        self.assertEqual(evidence["effect"]["direction"], "null")
+
+
 if __name__ == "__main__":
     unittest.main()

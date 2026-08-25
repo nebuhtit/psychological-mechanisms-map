@@ -397,7 +397,7 @@ $defs:
       value:
         type: number
       direction:
-        enum: [positive, negative, null, mixed, not_applicable]
+        enum: [positive, negative, 'null', mixed, not_applicable]
       interval:
         type: object
         additionalProperties: false

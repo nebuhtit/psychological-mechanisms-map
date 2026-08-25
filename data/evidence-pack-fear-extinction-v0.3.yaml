@@ -1,0 +1,559 @@
+pmm_version: 0.3.0
+document_type: pmm_dataset
+dataset_id: pmm:dataset:fear-extinction-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for fear extinction and return of fear
+  description: >-
+    Human experimental records separating extinction procedure, within-session
+    response reduction, extinction-memory retrieval, and later return of fear.
+    The pack treats inhibitory learning as an explanatory hypothesis rather
+    than an observed synonym for response reduction.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.3.0
+    created_at: '2026-08-26T00:00:00+03:00'
+    modified_at: '2026-08-26T00:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmc: https://pmc.ncbi.nlm.nih.gov/articles/
+
+objects:
+  - id: pmm:context:differential-threat-conditioning
+    type: Context
+    label: Differential threat-conditioning context
+    definition: >-
+      Human laboratory context in which one cue predicts an aversive outcome
+      more often than a comparison cue.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      paradigm: Pavlovian differential conditioning
+      conditioned_cues: CS+ and CS-
+      aversive_outcome: electric shock or loud noise
+    scope: Healthy-adult laboratory paradigms represented in this pilot.
+    external_mappings:
+      - system: RDoC
+        external_iri: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/acute-threat-fear
+        external_label: Acute Threat (Fear)
+        mapping_relation: related_match
+        mapping_status: label_verified
+        rationale: The paradigms operationalize defensive responses within the RDoC Acute Threat domain but are not identical to the construct.
+        accessed_at: '2026-08-26'
+    provenance: *provenance
+
+  - id: pmm:context:extinction-training
+    type: Context
+    label: Extinction-training context
+    definition: Repeated presentation of a previously reinforced cue without the aversive outcome.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      cue: previously reinforced CS+
+      outcome: omitted
+      repetitions: multiple
+    scope: Laboratory extinction procedures; this record does not imply a particular learning mechanism.
+    provenance: *provenance
+
+  - id: pmm:context:return-of-fear-test
+    type: Context
+    label: Return-of-fear test context
+    definition: Test after extinction in which context, time, or unsignaled aversive outcomes permit renewed conditioned responding to be assessed.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      tests: renewal, spontaneous recovery, or reinstatement
+      comparison: late extinction or control condition
+    scope: Human laboratory tests; return of a measured response is not equivalent to clinical relapse.
+    provenance: *provenance
+
+  - id: pmm:state:conditioned-defensive-response
+    type: State
+    label: Conditioned defensive-response state
+    definition: Time-indexed defensive responding elicited by a cue with an aversive learning history.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes:
+      - Skin conductance, startle, expectancy, and self-report are noninterchangeable indicators.
+      - The state should not be identified with a single measurement channel.
+    provenance: *provenance
+
+  - id: pmm:event:aversive-outcome-omission-during-extinction
+    type: Event
+    label: Aversive-outcome omission during extinction
+    definition: Non-occurrence of the previously expected aversive outcome after presentation of the conditioned cue.
+    ontological_level: type
+    curation_status: accepted
+    event_kind: consequence_omission
+    participant_ids: [pmm:state:conditioned-defensive-response]
+    temporal_scale: seconds
+    provenance: *provenance
+
+  - id: pmm:behavior:within-session-response-decrement
+    type: Behavior
+    label: Within-session conditioned-response decrement
+    definition: Observable reduction in a conditioned response across nonreinforced cue presentations within an extinction session.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: response_pattern
+    observability: operationally_inferred
+    actor_scope: person
+    function_note: This performance pattern does not by itself identify erasure, inhibition, habituation, or durable extinction retention.
+    provenance: *provenance
+
+  - id: pmm:behavior:return-of-conditioned-response
+    type: Behavior
+    label: Return of conditioned responding
+    definition: Increase in conditioned responding after prior within-session extinction, relative to the relevant late-extinction or control contrast.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: response_pattern
+    observability: operationally_inferred
+    actor_scope: person
+    function_note: Renewal, spontaneous recovery, and reinstatement require distinct test arrangements.
+    provenance: *provenance
+
+  - id: pmm:intervention:cue-only-extinction-procedure
+    type: Intervention
+    label: Cue-only extinction procedure
+    definition: Experimental delivery of repeated conditioned-cue presentations without the aversive outcome.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:state:conditioned-defensive-response
+      - pmm:behavior:within-session-response-decrement
+    delivery: Repeated unreinforced CS presentations after differential threat conditioning.
+    intended_direction: decrease
+    provenance: *provenance
+
+  - id: pmm:intervention:reactivation-extinction-procedure
+    type: Intervention
+    label: Reactivation-extinction procedure
+    definition: A reminder presentation followed by extinction training within a proposed reconsolidation window.
+    ontological_level: type
+    curation_status: provisional
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:state:conditioned-defensive-response
+      - pmm:behavior:return-of-conditioned-response
+    delivery: Single CS reminder followed approximately ten minutes later by extinction training.
+    intended_direction: decrease
+    boundary_notes:
+      - A timing protocol is not evidence that reconsolidation was engaged.
+    provenance: *provenance
+
+  - id: pmm:mechanism:extinction-memory-formation
+    type: Mechanism
+    label: Extinction-memory formation and retrieval
+    definition: >-
+      Proposed learning process in which aversive-outcome omission supports a
+      new memory that reduces conditioned responding when later retrieved.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: learning
+    role_bindings:
+      - role: omission experience
+        object_id: pmm:event:aversive-outcome-omission-during-extinction
+      - role: conditioned response
+        object_id: pmm:state:conditioned-defensive-response
+      - role: performance change
+        object_id: pmm:behavior:within-session-response-decrement
+    realization_conditions:
+      - The conditioned cue is presented without the expected aversive outcome.
+      - Later performance depends on retrieval conditions including physical and temporal context.
+    boundary_notes:
+      - This integrative mechanism is compatible with several formal learning models.
+      - Return-of-fear effects argue against complete erasure but do not uniquely prove one inhibitory representation.
+    provenance: *provenance
+
+  - id: pmm:measurement:skin-conductance-differential
+    type: Measurement
+    label: Differential skin-conductance response
+    definition: Electrodermal response contrast between conditioned and comparison cues.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: physiology
+    target_ids:
+      - pmm:state:conditioned-defensive-response
+      - pmm:behavior:return-of-conditioned-response
+    method: Compare event-related skin-conductance amplitudes for CS+ and CS- or across test phases.
+    unit_of_analysis: physiology
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:fear-potentiated-startle
+    type: Measurement
+    label: Fear-potentiated startle
+    definition: Increase in the startle reflex during a threat-associated cue relative to an appropriate baseline or safety cue.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: physiology
+    target_ids:
+      - pmm:state:conditioned-defensive-response
+      - pmm:behavior:return-of-conditioned-response
+    method: Record blink electromyography after acoustic startle probes during conditioned cues and contexts.
+    unit_of_analysis: physiology
+    result_type: continuous
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:defensive-response-measured-by-scr
+    subject_id: pmm:state:conditioned-defensive-response
+    predicate: measured_by
+    object_id: pmm:measurement:skin-conductance-differential
+    provenance: *provenance
+  - id: pmm:relation:defensive-response-measured-by-startle
+    subject_id: pmm:state:conditioned-defensive-response
+    predicate: measured_by
+    object_id: pmm:measurement:fear-potentiated-startle
+    provenance: *provenance
+  - id: pmm:relation:response-decrement-occurs-in-extinction
+    subject_id: pmm:behavior:within-session-response-decrement
+    predicate: occurs_in_context
+    object_id: pmm:context:extinction-training
+    provenance: *provenance
+  - id: pmm:relation:return-response-occurs-in-test
+    subject_id: pmm:behavior:return-of-conditioned-response
+    predicate: occurs_in_context
+    object_id: pmm:context:return-of-fear-test
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:context-shift-causes-renewal
+    claim_type: causal_effect
+    statement: Testing outside the extinction context can increase previously extinguished conditioned responding in human laboratory paradigms.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: Controlled context manipulations support a narrow causal effect, with convergence across startle, skin conductance, and ratings but limited generalization beyond laboratory samples.
+    scope:
+      population: Healthy adults in differential aversive-conditioning experiments.
+      species: [human]
+      context_ids:
+        - pmm:context:extinction-training
+        - pmm:context:return-of-fear-test
+      temporal_scope: Immediate or delayed testing after successful within-session extinction.
+      boundary_conditions:
+        - Effect magnitude depends on context contrast, timing, and measurement channel.
+        - Laboratory renewal is not identical to clinical relapse.
+    exposure_id: pmm:context:return-of-fear-test
+    outcome_id: pmm:behavior:return-of-conditioned-response
+    causal_estimand: Difference in conditioned responding when testing occurs outside versus inside the extinction context.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Acquisition and extinction precede randomized or counterbalanced test-context exposure.
+    causal_assumptions:
+      consistency: Test contexts instantiate the study-specific physical or virtual context manipulation.
+      exchangeability: Supported by randomized group assignment or counterbalanced within-participant context order.
+      positivity: Included participants could be observed in the relevant test-context conditions.
+      interference: Participants completed conditioning independently.
+      assessment: partly_tested
+    evidence_ids:
+      - pmm:evidence:alvarez-2007-aba-renewal
+      - pmm:evidence:huff-2009-context-renewal
+    limitations:
+      - Context manipulations differ substantially between studies.
+    provenance: *provenance
+
+  - id: pmm:claim:time-allows-spontaneous-recovery
+    claim_type: causal_effect
+    statement: Under the tested timing arrangements, conditioned responding can recover after successful within-session extinction.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: Human experiments demonstrate recovery after a delay, while its magnitude and sensitivity to acquisition-to-extinction timing vary.
+    scope:
+      population: Healthy adults in laboratory threat-conditioning paradigms.
+      species: [human]
+      context_ids: [pmm:context:return-of-fear-test]
+      temporal_scope: Approximately 24 hours after extinction.
+      boundary_conditions:
+        - Recovery depends on procedural timing and the selected response measure.
+    exposure_id: pmm:context:return-of-fear-test
+    outcome_id: pmm:behavior:return-of-conditioned-response
+    causal_estimand: Change from late extinction to delayed test in differential conditioned responding.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Extinction response reduction precedes the delayed recovery test.
+    causal_assumptions:
+      consistency: Delayed tests follow the study-specific protocol.
+      exchangeability: Timing and extinction conditions are experimentally assigned in the included studies.
+      positivity: Relevant timing conditions are represented in each experimental design.
+      interference: Participants complete procedures independently.
+      assessment: partly_tested
+    evidence_ids:
+      - pmm:evidence:huff-2009-spontaneous-recovery
+      - pmm:evidence:coelho-2015-deepened-extinction
+    limitations:
+      - A time contrast cannot uniquely identify decay, temporal-context change, or memory competition.
+    provenance: *provenance
+
+  - id: pmm:claim:extinction-memory-mechanism-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: Extinction commonly adds context-sensitive learning that competes with conditioned responding rather than completely erasing the original cue-outcome learning.
+    epistemic_status: proposed
+    confidence:
+      level: moderate
+      rationale: Renewal and spontaneous recovery are difficult to reconcile with complete erasure, but behavioral return-of-fear effects do not uniquely identify the internal representation or neural mechanism.
+    scope:
+      population: Humans in laboratory Pavlovian threat-conditioning paradigms.
+      species: [human]
+      context_ids:
+        - pmm:context:extinction-training
+        - pmm:context:return-of-fear-test
+      temporal_scope: Extinction acquisition and later retrieval.
+      boundary_conditions:
+        - Some procedures may also modify original learning.
+        - The hypothesis does not require a single unitary inhibitory trace.
+    mechanism_id: pmm:mechanism:extinction-memory-formation
+    exposure_id: pmm:event:aversive-outcome-omission-during-extinction
+    outcome_id: pmm:state:conditioned-defensive-response
+    temporal_ordering: Outcome omission occurs during extinction before later retrieval or return-of-fear testing.
+    falsifiable_boundary: The broad account would be weakened by reliable, general, measurement-independent elimination of conditioned responding across context, time, and reinstatement tests after ordinary cue-only extinction.
+    evidence_ids:
+      - pmm:evidence:alvarez-2007-aba-renewal
+      - pmm:evidence:huff-2009-context-renewal
+      - pmm:evidence:huff-2009-spontaneous-recovery
+      - pmm:evidence:coelho-2015-deepened-extinction
+    limitations:
+      - Evidence is indirect with respect to latent memory contents.
+    provenance: *provenance
+
+  - id: pmm:claim:reactivation-extinction-prevents-return
+    claim_type: causal_effect
+    statement: Reactivation followed by extinction within ten minutes does not currently show a robust advantage over ordinary extinction for preventing later fear recovery in humans.
+    epistemic_status: unsupported
+    confidence:
+      level: moderate
+      rationale: A high-powered registered direct replication found no benefit, and reanalysis found weak support for the original between-group claim.
+    scope:
+      population: Healthy adults meeting conditioning and extinction inclusion criteria.
+      species: [human]
+      context_ids:
+        - pmm:context:extinction-training
+        - pmm:context:return-of-fear-test
+      temporal_scope: Reminder approximately ten minutes before extinction and recovery testing one day later.
+      boundary_conditions:
+        - This does not rule out every reconsolidation-based protocol or boundary condition.
+    exposure_id: pmm:intervention:reactivation-extinction-procedure
+    outcome_id: pmm:behavior:return-of-conditioned-response
+    causal_estimand: Between-group difference in later conditioned-response recovery for reactivation-extinction versus standard extinction.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Randomized reminder timing precedes extinction and delayed recovery testing.
+    causal_assumptions:
+      consistency: The replication closely followed the critical original protocol.
+      exchangeability: Supported by randomized experimental assignment.
+      positivity: Participants were assigned across reactivation and standard-extinction conditions.
+      interference: Participants completed the experiment independently.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:chalkia-2020-registered-replication]
+    limitations:
+      - Null advantage in one protocol is not proof that memory updating is impossible.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:alvarez-2007-aba-renewal
+    claim_ids:
+      - pmm:claim:context-shift-causes-renewal
+      - pmm:claim:extinction-memory-mechanism-hypothesis
+    source_id: pmm:source:alvarez-johnson-grillon-2007
+    extraction_locator: Abstract; Results; Discussion.
+    evidence_kind: controlled_experiment
+    design: Within-participant ABA renewal test in distinct virtual-reality contexts after short-delay extinction.
+    population: Healthy human volunteers completing differential aversive conditioning and extinction.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: renewal contrast across acquisition and extinction test contexts
+      value_status: qualitative_only
+      direction: positive
+      notes: Renewal was observed in fear-potentiated startle, skin conductance, and fear ratings.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: not_reported
+      replication: conceptual_replication
+    summary: Conditioned responding returned when testing moved from the extinction context, despite short-delay extinction.
+    limitations:
+      - Exact standardized effects were not extracted in this pilot.
+    provenance: *provenance
+
+  - id: pmm:evidence:huff-2009-context-renewal
+    claim_ids:
+      - pmm:claim:context-shift-causes-renewal
+      - pmm:claim:extinction-memory-mechanism-hypothesis
+    source_id: pmm:source:huff-hernandez-blanding-labar-2009
+    extraction_locator: Participants; Fear renewal test; Results, Figure 3.
+    evidence_kind: randomized_experiment
+    design: Fully crossed context-shift and acquisition-to-extinction-delay experiment with next-day testing in the acquisition context.
+    population: Sixty-six recruited healthy young adults; complete-case counts varied by analysis.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: context specificity of differential skin-conductance fear return
+      value_status: reported
+      value: 4.94
+      direction: positive
+      notes: Fear return was more selective to CS+ in context-shift than same-context groups, F(1,61)=4.94, p=.03.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: limited
+      replication: conceptual_replication
+    summary: Returning to the acquisition context produced selective renewal relative to remaining in the extinction context.
+    limitations:
+      - Differential attrition and responder availability reduced some phase-specific samples.
+    provenance: *provenance
+
+  - id: pmm:evidence:huff-2009-spontaneous-recovery
+    claim_ids:
+      - pmm:claim:time-allows-spontaneous-recovery
+      - pmm:claim:extinction-memory-mechanism-hypothesis
+    source_id: pmm:source:huff-hernandez-blanding-labar-2009
+    extraction_locator: Results, fear renewal test; Discussion.
+    evidence_kind: randomized_experiment
+    design: Immediate versus 24-hour delayed extinction crossed with same versus shifted physical context.
+    population: Sixty-six recruited healthy young adults; complete-case counts varied by analysis.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: mixed
+    causal_support: direct
+    effect:
+      metric: main effect of acquisition-to-extinction interval on fear-relapse difference score
+      value_status: reported
+      value: 6.93
+      direction: mixed
+      notes: F(1,61)=6.93, p<.01; spontaneous recovery appeared after immediate but not delayed extinction, while delayed context-shift renewal was transient.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: limited
+      replication: unreplicated
+    summary: Delayed testing revealed return of responding, but its form depended on acquisition-to-extinction timing and physical context.
+    limitations:
+      - Timing manipulation changes more than one possible memory process.
+    provenance: *provenance
+
+  - id: pmm:evidence:coelho-2015-deepened-extinction
+    claim_ids:
+      - pmm:claim:time-allows-spontaneous-recovery
+      - pmm:claim:extinction-memory-mechanism-hypothesis
+    source_id: pmm:source:coelho-dunsmoor-phelps-2015
+    extraction_locator: Abstract; Participants; Results, spontaneous recovery.
+    evidence_kind: randomized_experiment
+    design: Standard cue-only extinction versus compound deepened extinction with 24-hour spontaneous-recovery test.
+    population: Healthy adult volunteers; 51 participants contributed to the reported expectancy comparison after exclusions.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: between-group spontaneous-recovery contrast
+      value_status: qualitative_only
+      direction: negative
+      notes: Deepened extinction reduced recovery of skin conductance and was associated with lower shock expectancy than standard extinction.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: limited
+      replication: unreplicated
+    summary: Changing the extinction procedure altered next-day return of responding, consistent with extinction being modifiable learning rather than mere fatigue.
+    limitations:
+      - The study does not directly observe an inhibitory memory trace.
+      - Exclusions based on acquisition and extinction performance can affect generalizability.
+    provenance: *provenance
+
+  - id: pmm:evidence:chalkia-2020-registered-replication
+    claim_ids: [pmm:claim:reactivation-extinction-prevents-return]
+    source_id: pmm:source:chalkia-2020-registered-replication
+    extraction_locator: Abstract; Methods; Results; Discussion.
+    evidence_kind: randomized_experiment
+    design: High-powered preregistered direct replication of the critical reactivation-extinction conditions from Schiller et al. 2010 Experiment 1.
+    population: Healthy adults in a three-day differential fear-conditioning experiment.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: challenges
+    causal_support: direct
+    effect:
+      metric: reactivation-extinction versus standard-extinction difference in fear recovery
+      value_status: qualitative_only
+      direction: 'null'
+      notes: The registered replication found no evidence that reactivation-extinction persistently attenuated fear recovery.
+    domains:
+      directness: direct
+      risk_of_bias: low
+      consistency: mixed
+      precision: adequate
+      replication: independent_replication
+    summary: The preregistered direct replication did not reproduce the claimed advantage of the ten-minute reactivation-extinction procedure.
+    limitations:
+      - Results delimit this protocol and do not test every reconsolidation boundary condition.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:alvarez-johnson-grillon-2007
+    title: "Contextual-specificity of short-delay extinction in humans: Renewal of fear-potentiated startle in a virtual environment"
+    source_type: peer_reviewed_article
+    authors: [Ruben P. Alvarez, Linda Johnson, Christian Grillon]
+    year: 2007
+    doi: 10.1101/lm.493707
+    pmid: '17412963'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2216529/
+    accessed_at: '2026-08-26'
+    authority_note: Primary human controlled experiment with multimodal ABA renewal outcomes.
+    provenance: *provenance
+
+  - id: pmm:source:huff-hernandez-blanding-labar-2009
+    title: Delayed Extinction Attenuates Conditioned Fear Renewal and Spontaneous Recovery in Humans
+    source_type: peer_reviewed_article
+    authors: [Nicole C. Huff, Jose Alba Hernandez, Nineequa Q. Blanding, Kevin S. LaBar]
+    year: 2009
+    doi: 10.1037/a0016511
+    pmid: '19634943'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2749460/
+    accessed_at: '2026-08-26'
+    authority_note: Primary randomized human experiment crossing physical context and extinction timing.
+    provenance: *provenance
+
+  - id: pmm:source:coelho-dunsmoor-phelps-2015
+    title: Compound stimulus extinction reduces spontaneous recovery in humans
+    source_type: peer_reviewed_article
+    authors: [Cesar A. O. Coelho, Joseph E. Dunsmoor, Elizabeth A. Phelps]
+    year: 2015
+    doi: 10.1101/lm.039479.115
+    pmid: '26572649'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4749731/
+    accessed_at: '2026-08-26'
+    authority_note: Primary randomized human experiment comparing standard and deepened extinction.
+    provenance: *provenance
+
+  - id: pmm:source:chalkia-2020-registered-replication
+    title: "No persistent attenuation of fear memories in humans: A registered replication of the reactivation-extinction effect"
+    source_type: peer_reviewed_article
+    authors: [Anastasia Chalkia, Tom Beckers, Angelos-Miltiadis Kyriazos, Jan De Houwer]
+    year: 2020
+    doi: 10.1016/j.cognition.2019.104031
+    pmid: '31816576'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7115861/
+    accessed_at: '2026-08-26'
+    authority_note: Preregistered, high-powered, independent direct replication preserving a null result central to mechanism assessment.
+    provenance: *provenance

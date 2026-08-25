@@ -273,7 +273,7 @@
         "risk_of_bias": "some_concerns"
       },
       "effect": {
-        "direction": null,
+        "direction": "null",
         "metric": "F statistic for main effect of trained versus similar new signal",
         "notes": "F(1,54)=0.003, p=0.958; total signal counts also did not differ, t(54)=1.018, p=0.31.",
         "value": 0.003,

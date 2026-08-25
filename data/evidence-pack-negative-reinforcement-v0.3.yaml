@@ -480,7 +480,7 @@ evidence:
       metric: F statistic for main effect of trained versus similar new signal
       value_status: reported
       value: 0.003
-      direction: null
+      direction: 'null'
       notes: F(1,54)=0.003, p=0.958; total signal counts also did not differ, t(54)=1.018, p=0.31.
     domains:
       directness: direct

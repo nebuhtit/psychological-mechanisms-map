@@ -1,0 +1,965 @@
+{
+  "claims": [
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Test contexts instantiate the study-specific physical or virtual context manipulation.",
+        "exchangeability": "Supported by randomized group assignment or counterbalanced within-participant context order.",
+        "interference": "Participants completed conditioning independently.",
+        "positivity": "Included participants could be observed in the relevant test-context conditions."
+      },
+      "causal_estimand": "Difference in conditioned responding when testing occurs outside versus inside the extinction context.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Controlled context manipulations support a narrow causal effect, with convergence across startle, skin conductance, and ratings but limited generalization beyond laboratory samples."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:alvarez-2007-aba-renewal",
+        "pmm:evidence:huff-2009-context-renewal"
+      ],
+      "exposure_id": "pmm:context:return-of-fear-test",
+      "id": "pmm:claim:context-shift-causes-renewal",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "Context manipulations differ substantially between studies."
+      ],
+      "outcome_id": "pmm:behavior:return-of-conditioned-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Effect magnitude depends on context contrast, timing, and measurement channel.",
+          "Laboratory renewal is not identical to clinical relapse."
+        ],
+        "context_ids": [
+          "pmm:context:extinction-training",
+          "pmm:context:return-of-fear-test"
+        ],
+        "population": "Healthy adults in differential aversive-conditioning experiments.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Immediate or delayed testing after successful within-session extinction."
+      },
+      "statement": "Testing outside the extinction context can increase previously extinguished conditioned responding in human laboratory paradigms.",
+      "temporal_ordering": "Acquisition and extinction precede randomized or counterbalanced test-context exposure."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Delayed tests follow the study-specific protocol.",
+        "exchangeability": "Timing and extinction conditions are experimentally assigned in the included studies.",
+        "interference": "Participants complete procedures independently.",
+        "positivity": "Relevant timing conditions are represented in each experimental design."
+      },
+      "causal_estimand": "Change from late extinction to delayed test in differential conditioned responding.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Human experiments demonstrate recovery after a delay, while its magnitude and sensitivity to acquisition-to-extinction timing vary."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:huff-2009-spontaneous-recovery",
+        "pmm:evidence:coelho-2015-deepened-extinction"
+      ],
+      "exposure_id": "pmm:context:return-of-fear-test",
+      "id": "pmm:claim:time-allows-spontaneous-recovery",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "A time contrast cannot uniquely identify decay, temporal-context change, or memory competition."
+      ],
+      "outcome_id": "pmm:behavior:return-of-conditioned-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Recovery depends on procedural timing and the selected response measure."
+        ],
+        "context_ids": [
+          "pmm:context:return-of-fear-test"
+        ],
+        "population": "Healthy adults in laboratory threat-conditioning paradigms.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Approximately 24 hours after extinction."
+      },
+      "statement": "Under the tested timing arrangements, conditioned responding can recover after successful within-session extinction.",
+      "temporal_ordering": "Extinction response reduction precedes the delayed recovery test."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Renewal and spontaneous recovery are difficult to reconcile with complete erasure, but behavioral return-of-fear effects do not uniquely identify the internal representation or neural mechanism."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:alvarez-2007-aba-renewal",
+        "pmm:evidence:huff-2009-context-renewal",
+        "pmm:evidence:huff-2009-spontaneous-recovery",
+        "pmm:evidence:coelho-2015-deepened-extinction"
+      ],
+      "exposure_id": "pmm:event:aversive-outcome-omission-during-extinction",
+      "falsifiable_boundary": "The broad account would be weakened by reliable, general, measurement-independent elimination of conditioned responding across context, time, and reinstatement tests after ordinary cue-only extinction.",
+      "id": "pmm:claim:extinction-memory-mechanism-hypothesis",
+      "limitations": [
+        "Evidence is indirect with respect to latent memory contents."
+      ],
+      "mechanism_id": "pmm:mechanism:extinction-memory-formation",
+      "outcome_id": "pmm:state:conditioned-defensive-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Some procedures may also modify original learning.",
+          "The hypothesis does not require a single unitary inhibitory trace."
+        ],
+        "context_ids": [
+          "pmm:context:extinction-training",
+          "pmm:context:return-of-fear-test"
+        ],
+        "population": "Humans in laboratory Pavlovian threat-conditioning paradigms.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Extinction acquisition and later retrieval."
+      },
+      "statement": "Extinction commonly adds context-sensitive learning that competes with conditioned responding rather than completely erasing the original cue-outcome learning.",
+      "temporal_ordering": "Outcome omission occurs during extinction before later retrieval or return-of-fear testing."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "The replication closely followed the critical original protocol.",
+        "exchangeability": "Supported by randomized experimental assignment.",
+        "interference": "Participants completed the experiment independently.",
+        "positivity": "Participants were assigned across reactivation and standard-extinction conditions."
+      },
+      "causal_estimand": "Between-group difference in later conditioned-response recovery for reactivation-extinction versus standard extinction.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "A high-powered registered direct replication found no benefit, and reanalysis found weak support for the original between-group claim."
+      },
+      "epistemic_status": "unsupported",
+      "evidence_ids": [
+        "pmm:evidence:chalkia-2020-registered-replication"
+      ],
+      "exposure_id": "pmm:intervention:reactivation-extinction-procedure",
+      "id": "pmm:claim:reactivation-extinction-prevents-return",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "Null advantage in one protocol is not proof that memory updating is impossible."
+      ],
+      "outcome_id": "pmm:behavior:return-of-conditioned-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "This does not rule out every reconsolidation-based protocol or boundary condition."
+        ],
+        "context_ids": [
+          "pmm:context:extinction-training",
+          "pmm:context:return-of-fear-test"
+        ],
+        "population": "Healthy adults meeting conditioning and extinction inclusion criteria.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Reminder approximately ten minutes before extinction and recovery testing one day later."
+      },
+      "statement": "Reactivation followed by extinction within ten minutes does not currently show a robust advantage over ordinary extinction for preventing later fear recovery in humans.",
+      "temporal_ordering": "Randomized reminder timing precedes extinction and delayed recovery testing."
+    }
+  ],
+  "dataset_id": "pmm:dataset:fear-extinction-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:context-shift-causes-renewal",
+        "pmm:claim:extinction-memory-mechanism-hypothesis"
+      ],
+      "design": "Within-participant ABA renewal test in distinct virtual-reality contexts after short-delay extinction.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "renewal contrast across acquisition and extinction test contexts",
+        "notes": "Renewal was observed in fear-potentiated startle, skin conductance, and fear ratings.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Abstract; Results; Discussion.",
+      "id": "pmm:evidence:alvarez-2007-aba-renewal",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Exact standardized effects were not extracted in this pilot."
+      ],
+      "population": "Healthy human volunteers completing differential aversive conditioning and extinction.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:alvarez-johnson-grillon-2007",
+      "species": [
+        "human"
+      ],
+      "summary": "Conditioned responding returned when testing moved from the extinction context, despite short-delay extinction.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:context-shift-causes-renewal",
+        "pmm:claim:extinction-memory-mechanism-hypothesis"
+      ],
+      "design": "Fully crossed context-shift and acquisition-to-extinction-delay experiment with next-day testing in the acquisition context.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "limited",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "context specificity of differential skin-conductance fear return",
+        "notes": "Fear return was more selective to CS+ in context-shift than same-context groups, F(1,61)=4.94, p=.03.",
+        "value": 4.94,
+        "value_status": "reported"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Participants; Fear renewal test; Results, Figure 3.",
+      "id": "pmm:evidence:huff-2009-context-renewal",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Differential attrition and responder availability reduced some phase-specific samples."
+      ],
+      "population": "Sixty-six recruited healthy young adults; complete-case counts varied by analysis.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:huff-hernandez-blanding-labar-2009",
+      "species": [
+        "human"
+      ],
+      "summary": "Returning to the acquisition context produced selective renewal relative to remaining in the extinction context.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:time-allows-spontaneous-recovery",
+        "pmm:claim:extinction-memory-mechanism-hypothesis"
+      ],
+      "design": "Immediate versus 24-hour delayed extinction crossed with same versus shifted physical context.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "main effect of acquisition-to-extinction interval on fear-relapse difference score",
+        "notes": "F(1,61)=6.93, p<.01; spontaneous recovery appeared after immediate but not delayed extinction, while delayed context-shift renewal was transient.",
+        "value": 6.93,
+        "value_status": "reported"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Results, fear renewal test; Discussion.",
+      "id": "pmm:evidence:huff-2009-spontaneous-recovery",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Timing manipulation changes more than one possible memory process."
+      ],
+      "population": "Sixty-six recruited healthy young adults; complete-case counts varied by analysis.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:huff-hernandez-blanding-labar-2009",
+      "species": [
+        "human"
+      ],
+      "summary": "Delayed testing revealed return of responding, but its form depended on acquisition-to-extinction timing and physical context.",
+      "support_direction": "mixed"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:time-allows-spontaneous-recovery",
+        "pmm:claim:extinction-memory-mechanism-hypothesis"
+      ],
+      "design": "Standard cue-only extinction versus compound deepened extinction with 24-hour spontaneous-recovery test.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "between-group spontaneous-recovery contrast",
+        "notes": "Deepened extinction reduced recovery of skin conductance and was associated with lower shock expectancy than standard extinction.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract; Participants; Results, spontaneous recovery.",
+      "id": "pmm:evidence:coelho-2015-deepened-extinction",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "The study does not directly observe an inhibitory memory trace.",
+        "Exclusions based on acquisition and extinction performance can affect generalizability."
+      ],
+      "population": "Healthy adult volunteers; 51 participants contributed to the reported expectancy comparison after exclusions.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:coelho-dunsmoor-phelps-2015",
+      "species": [
+        "human"
+      ],
+      "summary": "Changing the extinction procedure altered next-day return of responding, consistent with extinction being modifiable learning rather than mere fatigue.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:reactivation-extinction-prevents-return"
+      ],
+      "design": "High-powered preregistered direct replication of the critical reactivation-extinction conditions from Schiller et al. 2010 Experiment 1.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "independent_replication",
+        "risk_of_bias": "low"
+      },
+      "effect": {
+        "direction": "null",
+        "metric": "reactivation-extinction versus standard-extinction difference in fear recovery",
+        "notes": "The registered replication found no evidence that reactivation-extinction persistently attenuated fear recovery.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract; Methods; Results; Discussion.",
+      "id": "pmm:evidence:chalkia-2020-registered-replication",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Results delimit this protocol and do not test every reconsolidation boundary condition."
+      ],
+      "population": "Healthy adults in a three-day differential fear-conditioning experiment.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:chalkia-2020-registered-replication",
+      "species": [
+        "human"
+      ],
+      "summary": "The preregistered direct replication did not reproduce the claimed advantage of the ten-minute reactivation-extinction procedure.",
+      "support_direction": "challenges"
+    }
+  ],
+  "metadata": {
+    "description": "Human experimental records separating extinction procedure, within-session response reduction, extinction-memory retrieval, and later return of fear. The pack treats inhibitory learning as an explanatory hypothesis rather than an observed synonym for response reduction.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T00:00:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T00:00:00+03:00",
+      "record_version": "0.3.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for fear extinction and return of fear"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Human laboratory context in which one cue predicts an aversive outcome more often than a comparison cue.",
+      "dimensions": {
+        "aversive_outcome": "electric shock or loud noise",
+        "conditioned_cues": "CS+ and CS-",
+        "paradigm": "Pavlovian differential conditioning"
+      },
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/acute-threat-fear",
+          "external_label": "Acute Threat (Fear)",
+          "mapping_relation": "related_match",
+          "mapping_status": "label_verified",
+          "rationale": "The paradigms operationalize defensive responses within the RDoC Acute Threat domain but are not identical to the construct.",
+          "system": "RDoC"
+        }
+      ],
+      "id": "pmm:context:differential-threat-conditioning",
+      "label": "Differential threat-conditioning context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Healthy-adult laboratory paradigms represented in this pilot.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Repeated presentation of a previously reinforced cue without the aversive outcome.",
+      "dimensions": {
+        "cue": "previously reinforced CS+",
+        "outcome": "omitted",
+        "repetitions": "multiple"
+      },
+      "id": "pmm:context:extinction-training",
+      "label": "Extinction-training context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Laboratory extinction procedures; this record does not imply a particular learning mechanism.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Test after extinction in which context, time, or unsignaled aversive outcomes permit renewed conditioned responding to be assessed.",
+      "dimensions": {
+        "comparison": "late extinction or control condition",
+        "tests": "renewal, spontaneous recovery, or reinstatement"
+      },
+      "id": "pmm:context:return-of-fear-test",
+      "label": "Return-of-fear test context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Human laboratory tests; return of a measured response is not equivalent to clinical relapse.",
+      "type": "Context"
+    },
+    {
+      "bearer_scope": "person",
+      "boundary_notes": [
+        "Skin conductance, startle, expectancy, and self-report are noninterchangeable indicators.",
+        "The state should not be identified with a single measurement channel."
+      ],
+      "curation_status": "accepted",
+      "definition": "Time-indexed defensive responding elicited by a cue with an aversive learning history.",
+      "id": "pmm:state:conditioned-defensive-response",
+      "label": "Conditioned defensive-response state",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "physiological",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Non-occurrence of the previously expected aversive outcome after presentation of the conditioned cue.",
+      "event_kind": "consequence_omission",
+      "id": "pmm:event:aversive-outcome-omission-during-extinction",
+      "label": "Aversive-outcome omission during extinction",
+      "ontological_level": "type",
+      "participant_ids": [
+        "pmm:state:conditioned-defensive-response"
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "temporal_scale": "seconds",
+      "type": "Event"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "response_pattern",
+      "curation_status": "accepted",
+      "definition": "Observable reduction in a conditioned response across nonreinforced cue presentations within an extinction session.",
+      "function_note": "This performance pattern does not by itself identify erasure, inhibition, habituation, or durable extinction retention.",
+      "id": "pmm:behavior:within-session-response-decrement",
+      "label": "Within-session conditioned-response decrement",
+      "observability": "operationally_inferred",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Behavior"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "response_pattern",
+      "curation_status": "accepted",
+      "definition": "Increase in conditioned responding after prior within-session extinction, relative to the relevant late-extinction or control contrast.",
+      "function_note": "Renewal, spontaneous recovery, and reinstatement require distinct test arrangements.",
+      "id": "pmm:behavior:return-of-conditioned-response",
+      "label": "Return of conditioned responding",
+      "observability": "operationally_inferred",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental delivery of repeated conditioned-cue presentations without the aversive outcome.",
+      "delivery": "Repeated unreinforced CS presentations after differential threat conditioning.",
+      "id": "pmm:intervention:cue-only-extinction-procedure",
+      "intended_direction": "decrease",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Cue-only extinction procedure",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:state:conditioned-defensive-response",
+        "pmm:behavior:within-session-response-decrement"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "boundary_notes": [
+        "A timing protocol is not evidence that reconsolidation was engaged."
+      ],
+      "curation_status": "provisional",
+      "definition": "A reminder presentation followed by extinction training within a proposed reconsolidation window.",
+      "delivery": "Single CS reminder followed approximately ten minutes later by extinction training.",
+      "id": "pmm:intervention:reactivation-extinction-procedure",
+      "intended_direction": "decrease",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Reactivation-extinction procedure",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:state:conditioned-defensive-response",
+        "pmm:behavior:return-of-conditioned-response"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "boundary_notes": [
+        "This integrative mechanism is compatible with several formal learning models.",
+        "Return-of-fear effects argue against complete erasure but do not uniquely prove one inhibitory representation."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed learning process in which aversive-outcome omission supports a new memory that reduces conditioned responding when later retrieved.",
+      "id": "pmm:mechanism:extinction-memory-formation",
+      "label": "Extinction-memory formation and retrieval",
+      "mechanism_kind": "learning",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "The conditioned cue is presented without the expected aversive outcome.",
+        "Later performance depends on retrieval conditions including physical and temporal context."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:event:aversive-outcome-omission-during-extinction",
+          "role": "omission experience"
+        },
+        {
+          "object_id": "pmm:state:conditioned-defensive-response",
+          "role": "conditioned response"
+        },
+        {
+          "object_id": "pmm:behavior:within-session-response-decrement",
+          "role": "performance change"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Electrodermal response contrast between conditioned and comparison cues.",
+      "id": "pmm:measurement:skin-conductance-differential",
+      "label": "Differential skin-conductance response",
+      "measurement_kind": "physiology",
+      "method": "Compare event-related skin-conductance amplitudes for CS+ and CS- or across test phases.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:conditioned-defensive-response",
+        "pmm:behavior:return-of-conditioned-response"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "physiology"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Increase in the startle reflex during a threat-associated cue relative to an appropriate baseline or safety cue.",
+      "id": "pmm:measurement:fear-potentiated-startle",
+      "label": "Fear-potentiated startle",
+      "measurement_kind": "physiology",
+      "method": "Record blink electromyography after acoustic startle probes during conditioned cues and contexts.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:conditioned-defensive-response",
+        "pmm:behavior:return-of-conditioned-response"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "physiology"
+    }
+  ],
+  "pmm_version": "0.3.0",
+  "relations": [
+    {
+      "id": "pmm:relation:defensive-response-measured-by-scr",
+      "object_id": "pmm:measurement:skin-conductance-differential",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:state:conditioned-defensive-response"
+    },
+    {
+      "id": "pmm:relation:defensive-response-measured-by-startle",
+      "object_id": "pmm:measurement:fear-potentiated-startle",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:state:conditioned-defensive-response"
+    },
+    {
+      "id": "pmm:relation:response-decrement-occurs-in-extinction",
+      "object_id": "pmm:context:extinction-training",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:within-session-response-decrement"
+    },
+    {
+      "id": "pmm:relation:return-response-occurs-in-test",
+      "object_id": "pmm:context:return-of-fear-test",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:return-of-conditioned-response"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary human controlled experiment with multimodal ABA renewal outcomes.",
+      "authors": [
+        "Ruben P. Alvarez",
+        "Linda Johnson",
+        "Christian Grillon"
+      ],
+      "doi": "10.1101/lm.493707",
+      "id": "pmm:source:alvarez-johnson-grillon-2007",
+      "pmid": "17412963",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Contextual-specificity of short-delay extinction in humans: Renewal of fear-potentiated startle in a virtual environment",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2216529/",
+      "year": 2007
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary randomized human experiment crossing physical context and extinction timing.",
+      "authors": [
+        "Nicole C. Huff",
+        "Jose Alba Hernandez",
+        "Nineequa Q. Blanding",
+        "Kevin S. LaBar"
+      ],
+      "doi": "10.1037/a0016511",
+      "id": "pmm:source:huff-hernandez-blanding-labar-2009",
+      "pmid": "19634943",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Delayed Extinction Attenuates Conditioned Fear Renewal and Spontaneous Recovery in Humans",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2749460/",
+      "year": 2009
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary randomized human experiment comparing standard and deepened extinction.",
+      "authors": [
+        "Cesar A. O. Coelho",
+        "Joseph E. Dunsmoor",
+        "Elizabeth A. Phelps"
+      ],
+      "doi": "10.1101/lm.039479.115",
+      "id": "pmm:source:coelho-dunsmoor-phelps-2015",
+      "pmid": "26572649",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Compound stimulus extinction reduces spontaneous recovery in humans",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4749731/",
+      "year": 2015
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Preregistered, high-powered, independent direct replication preserving a null result central to mechanism assessment.",
+      "authors": [
+        "Anastasia Chalkia",
+        "Tom Beckers",
+        "Angelos-Miltiadis Kyriazos",
+        "Jan De Houwer"
+      ],
+      "doi": "10.1016/j.cognition.2019.104031",
+      "id": "pmm:source:chalkia-2020-registered-replication",
+      "pmid": "31816576",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "No persistent attenuation of fear memories in humans: A registered replication of the reactivation-extinction effect",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7115861/",
+      "year": 2020
+    }
+  ]
+}

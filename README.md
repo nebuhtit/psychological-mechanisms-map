@@ -16,6 +16,9 @@ data/stress-test-mechanisms-v0.3.yaml
                                      Four heterogeneous mechanism families
 data/evidence-pack-negative-reinforcement-v0.3.yaml
                                      Seven primary-experiment extractions
+data/evidence-pack-fear-extinction-v0.3.yaml
+                                     Extinction and return-of-fear stress test
+docs/fear-extinction-preview.md       Provisional GitHub-rendered diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
 tests/test_pmm_v03.py                Valid and deliberately invalid fixtures
@@ -37,6 +40,7 @@ make setup
 make validate
 make validate-stress
 make validate-pack
+make validate-extinction
 make test
 make export
 make verify
@@ -74,6 +78,12 @@ The stress-test dataset checks the same model against proactive interference, te
 ## Primary evidence pack
 
 The first evidence pack contains seven source-specific human experimental extractions. Five are kept as separate experiments from Fisher and Urcelay (2024), including a null similar-signal comparison and an analysis-sensitive transfer result. Independent monetary-loss and yoked shock-control paradigms test whether the same ontology survives different operationalizations. The pack does not pool incompatible outcomes or convert neural correlates into causal mechanisms.
+
+The fear-extinction pack separates the extinction procedure from within-session
+response decrement, return-of-fear tests, measurements, and a proposed
+context-sensitive extinction-memory mechanism. A small
+[provisional visual preview](docs/fear-extinction-preview.md) is included for
+inspection on GitHub; it is not yet a stable visualization architecture.
 
 ## Next steps
 
