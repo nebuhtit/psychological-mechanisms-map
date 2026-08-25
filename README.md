@@ -14,6 +14,8 @@ data/pilot-anxiety-avoidance-v0.3.yaml
                                      Corrected anxiety/avoidance pilot
 data/stress-test-mechanisms-v0.3.yaml
                                      Four heterogeneous mechanism families
+data/evidence-pack-negative-reinforcement-v0.3.yaml
+                                     Seven primary-experiment extractions
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
 tests/test_pmm_v03.py                Valid and deliberately invalid fixtures
@@ -34,11 +36,15 @@ This is an inferential firewall: an arrow cannot silently become a causal statem
 make setup
 make validate
 make validate-stress
+make validate-pack
 make test
 make export
+make verify
 ```
 
 `make setup` creates a local `.venv`. Validation applies the complete JSON Schema and additional cross-record constraints. Export produces deterministic JSON in `build/`.
+
+GitHub Actions runs `make verify` on every push and pull request. The command validates all v0.3 datasets, runs the test suite, rebuilds JSON, and fails if generated JSON differs from the committed artifacts.
 
 ## ID convention
 
@@ -65,9 +71,13 @@ The controlled causal result is narrowly scoped to an assigned loss-probability 
 
 The stress-test dataset checks the same model against proactive interference, temporal-difference value updating, glucocorticoid feedback, and social buffering. It deliberately distinguishes a computational reward-prediction-error variable from dopamine, a performance phenomenon from a retrieval mechanism, a statistical interaction from a causal contrast, and an intervention from its hypothesized mechanism.
 
+## Primary evidence pack
+
+The first evidence pack contains seven source-specific human experimental extractions. Five are kept as separate experiments from Fisher and Urcelay (2024), including a null similar-signal comparison and an analysis-sensitive transfer result. Independent monetary-loss and yoked shock-control paradigms test whether the same ontology survives different operationalizations. The pack does not pool incompatible outcomes or convert neural correlates into causal mechanisms.
+
 ## Next steps
 
-1. Replace review-level support with source-specific primary-study extractions and numerical estimates for each mechanism family.
+1. Add independent primary-study replications and preregistered null results to the negative-reinforcement pack.
 2. Add invalid fixtures for prediction, mediation, moderation, and context-dependent causal claims; then define SHACL-equivalent graph constraints.
 3. Verify stable external ontology identifiers against pinned RDoC, Cognitive Atlas, MF, NBO, and HiTOP releases before promoting mappings.
 4. Add JSON-LD/RDF export while keeping Claims and Evidence reified; do not translate uncertain empirical claims into OWL class axioms.

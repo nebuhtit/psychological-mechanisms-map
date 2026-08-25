@@ -60,5 +60,35 @@ class PMMV03ValidationTests(unittest.TestCase):
         self.assertTrue(any("does not link back" in error for error in errors))
 
 
+class PrimaryEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-negative-reinforcement-v0.3.yaml"
+        )
+
+    def test_primary_evidence_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_pack_preserves_separate_experiments(self) -> None:
+        self.assertEqual(len(self.document["evidence"]), 7)
+        self.assertTrue(all(item["source_id"] for item in self.document["evidence"]))
+
+    def test_pack_preserves_challenging_and_mixed_results(self) -> None:
+        directions = {item["support_direction"] for item in self.document["evidence"]}
+        self.assertIn("challenges", directions)
+        self.assertIn("mixed", directions)
+
+    def test_every_causal_effect_has_direct_evidence(self) -> None:
+        evidence = {item["id"]: item for item in self.document["evidence"]}
+        causal_claims = [
+            item for item in self.document["claims"] if item["claim_type"] == "causal_effect"
+        ]
+        for claim in causal_claims:
+            self.assertTrue(
+                any(evidence[item]["causal_support"] == "direct" for item in claim["evidence_ids"])
+            )
+
+
 if __name__ == "__main__":
     unittest.main()

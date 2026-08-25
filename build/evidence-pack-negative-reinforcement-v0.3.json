@@ -1,0 +1,1124 @@
+{
+  "claims": [
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Each signal condition follows the reported response-contingent test procedure.",
+        "exchangeability": "Stimulus orientation and signal assignments were counterbalanced within participants.",
+        "interference": "Online participants were assumed not to influence one another's responses.",
+        "positivity": "Each included participant experienced both trained-signal and control test contingencies."
+      },
+      "causal_estimand": "Within-participant difference in test avoidance responding when a response produces the trained safety signal versus the experiment-specific control consequence.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Three full-test contrasts supported the effect, one similar-signal comparison was null, and Experiment 5's full-session main effect was marginal although total signal choices and the first four trials differed."
+      },
+      "epistemic_status": "mixed",
+      "evidence_ids": [
+        "pmm:evidence:fisher-2024-experiment-1",
+        "pmm:evidence:fisher-2024-experiment-2",
+        "pmm:evidence:fisher-2024-experiment-3",
+        "pmm:evidence:fisher-2024-experiment-4",
+        "pmm:evidence:fisher-2024-experiment-5"
+      ],
+      "exposure_id": "pmm:contingency:response-produced-safety-signal",
+      "id": "pmm:claim:safety-signal-contingency-affects-avoidance",
+      "identification_strategy": "controlled_contingency",
+      "limitations": [
+        "Experiments 1-4 did not isolate conditioned reinforcement from every possible sensory or generalization account.",
+        "Experiments 1-3 were repeated after unpreregistered exclusion decisions; Experiment 5 was preregistered."
+      ],
+      "outcome_id": "pmm:behavior:instrumental-avoidance-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Generalization depends on perceptual similarity between trained and control signals.",
+          "Participants who never produced a safety signal during training were excluded from reported analyses."
+        ],
+        "context_ids": [
+          "pmm:context:safety-signal-avoidance-test"
+        ],
+        "population": "Healthy adults completing Fisher and Urcelay's online or laboratory avoidance tasks.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Immediate extinction test after instrumental avoidance training."
+      },
+      "statement": "In Fisher and Urcelay's human extinction tests, making a trained safety signal contingent on responding increased avoidance relative to no signal or a dissimilar signal in several experiments; the effect was absent with a similar-signal control and was analysis-sensitive in the new-response test.",
+      "temporal_ordering": "Signal contingency is assigned to ambiguous stimuli before test responding is measured."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Controlled behavioral contrasts support reinforcing function, but perceptual generalization and sensory reinforcement delimit the interpretation."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:fisher-2024-experiment-1",
+        "pmm:evidence:fisher-2024-experiment-2",
+        "pmm:evidence:fisher-2024-experiment-3",
+        "pmm:evidence:fisher-2024-experiment-4",
+        "pmm:evidence:fisher-2024-experiment-5"
+      ],
+      "exposure_id": "pmm:contingency:response-produced-safety-signal",
+      "falsifiable_boundary": "The account is challenged when adequately powered, preregistered tests with perceptually matched controls repeatedly show no contingency-specific increase in responding.",
+      "id": "pmm:claim:conditioned-safety-signal-mechanism-hypothesis",
+      "mechanism_id": "pmm:mechanism:conditioned-safety-signal-reinforcement",
+      "outcome_id": "pmm:behavior:instrumental-avoidance-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Does not identify subjective relief as the mediator.",
+          "Does not imply that every safety signal reinforces every avoidance response."
+        ],
+        "context_ids": [
+          "pmm:context:safety-signal-avoidance-test"
+        ],
+        "population": "Healthy human participants in response-produced safety-signal tasks.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Instrumental training followed by immediate extinction testing."
+      },
+      "statement": "A learned safety signal produced by an avoidance response can function as a conditioned reinforcer and thereby increase later avoidance responding.",
+      "temporal_ordering": "Safety-signal training precedes the response-contingent test and measured response differences."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Fractal choices produced outcomes according to programmed task probabilities.",
+        "exchangeability": "Fractal-to-condition assignment was counterbalanced across participants.",
+        "interference": "Participants completed independent task sessions.",
+        "positivity": "Participants repeatedly encountered both action alternatives."
+      },
+      "causal_estimand": "Difference in selection probability for actions assigned lower versus higher monetary-loss probability.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Counterbalanced programmed contingencies support a narrow causal interpretation, but the sample was small and the test was one-tailed."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:kim-2006-monetary-avoidance"
+      ],
+      "exposure_id": "pmm:contingency:assigned-monetary-loss-probability",
+      "id": "pmm:claim:assigned-loss-probability-affects-choice",
+      "identification_strategy": "controlled_contingency",
+      "limitations": [
+        "Does not establish subjective relief or a specific neural signal as the mediator."
+      ],
+      "outcome_id": "pmm:behavior:instrumental-avoidance-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Restricted to probabilistic monetary loss and the tested fractal choices."
+        ],
+        "context_ids": [
+          "pmm:context:monetary-loss-avoidance-task"
+        ],
+        "population": "Sixteen healthy right-handed adults in the specified monetary instrumental task.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Two sessions of repeated instrumental choices."
+      },
+      "statement": "In Kim et al.'s monetary task, assigning one action a lower probability of loss increased preference for that action over repeated trials.",
+      "temporal_ordering": "Counterbalanced outcome probabilities governed feedback before preference was estimated."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Active and yoked assignments corresponded to the reported grid-control and motor-control procedures.",
+        "exchangeability": "Supported by random group assignment and paired yoked outcome exposure.",
+        "interference": "Each yoked pair shared an outcome schedule by design but pairs were otherwise independent.",
+        "positivity": "Participants were assigned to both active and yoked conditions."
+      },
+      "causal_estimand": "Between-group effect of active instrumental shock control versus yoked extinction on next-day conditioned skin-conductance responding.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Random assignment and yoked shock exposure isolate instrumental control, but the extraction is based on one study and no standardized effect was recorded here."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:boeke-2017-active-control"
+      ],
+      "exposure_id": "pmm:intervention:active-control-opportunity",
+      "id": "pmm:claim:active-control-affects-later-threat-response",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "Yoked pairing is deliberate partial interference and is included in the estimand.",
+        "Neural differences do not by themselves identify the behavioral mediator."
+      ],
+      "outcome_id": "pmm:state:conditioned-threat-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Outcome is conditioned physiological responding, not future avoidance frequency."
+        ],
+        "context_ids": [
+          "pmm:context:yoked-shock-control-task"
+        ],
+        "population": "Fifty-six analyzed healthy adults randomly assigned to active-control or yoked-extinction groups.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Active-control training on day 1 and cue-only retrieval 23-25 hours later."
+      },
+      "statement": "Random assignment to active shock control, compared with yoked extinction, altered conditioned skin-conductance responding on the following day.",
+      "temporal_ordering": "Group assignment and day-1 learning preceded the day-2 cue-only retrieval test."
+    }
+  ],
+  "dataset_id": "pmm:dataset:negative-reinforcement-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:safety-signal-contingency-affects-avoidance",
+        "pmm:claim:conditioned-safety-signal-mechanism-hypothesis"
+      ],
+      "design": "Online within-participant extinction test; trained safety signal versus no-signal consequence, counterbalanced across novel Gabor stimuli.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "partial eta squared for main effect of trained signal versus no signal",
+        "notes": "F(1,71)=16.28, p<0.001 across eight test trials.",
+        "value": 0.187,
+        "value_status": "reported"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Results, Experiment 1; Materials and Methods, Participants and Test.",
+      "id": "pmm:evidence:fisher-2024-experiment-1",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "No-signal comparison cannot fully exclude generic sensory reinforcement.",
+        "Reported sample excludes participants who earned no training safety signal; replication decision was not preregistered."
+      ],
+      "population": "Healthy adults recruited online; reported analysis after training-experience criterion.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 72,
+      "source_id": "pmm:source:fisher-urcelay-2024",
+      "species": [
+        "human"
+      ],
+      "summary": "Participants emitted more avoidance responses when responding produced the trained safety signal than when it produced no signal.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:safety-signal-contingency-affects-avoidance",
+        "pmm:claim:conditioned-safety-signal-mechanism-hypothesis"
+      ],
+      "design": "Online within-participant extinction test; trained safety signal versus a new signal differing only in color.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": null,
+        "metric": "F statistic for main effect of trained versus similar new signal",
+        "notes": "F(1,54)=0.003, p=0.958; total signal counts also did not differ, t(54)=1.018, p=0.31.",
+        "value": 0.003,
+        "value_status": "reported"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Results, Experiment 2; Materials and Methods, Participants and Test.",
+      "id": "pmm:evidence:fisher-2024-experiment-2",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Null contrast does not distinguish true equivalence from generalization between perceptually similar signals."
+      ],
+      "population": "Healthy adults recruited online; reported analysis after training-experience criterion.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 55,
+      "source_id": "pmm:source:fisher-urcelay-2024",
+      "species": [
+        "human"
+      ],
+      "summary": "Avoidance did not differ when trained and control signals differed only in color, consistent with broad signal generalization or no specific reinforcement effect.",
+      "support_direction": "challenges"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:safety-signal-contingency-affects-avoidance",
+        "pmm:claim:conditioned-safety-signal-mechanism-hypothesis"
+      ],
+      "design": "Online within-participant extinction test; trained safety signal versus a new signal differing in color and shape.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "partial eta squared for main effect of trained versus dissimilar new signal",
+        "notes": "F(1,73)=4.90, p=0.029; signal totals d=0.419, p<0.001.",
+        "value": 0.064,
+        "value_status": "reported"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Results, Experiment 3; Materials and Methods, Participants and Test.",
+      "id": "pmm:evidence:fisher-2024-experiment-3",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Dissimilar control reduces but does not eliminate every sensory-reinforcement account."
+      ],
+      "population": "Healthy adults recruited online; reported analysis after training-experience criterion.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 74,
+      "source_id": "pmm:source:fisher-urcelay-2024",
+      "species": [
+        "human"
+      ],
+      "summary": "Participants responded more for the trained safety signal than for a perceptually dissimilar new signal.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:safety-signal-contingency-affects-avoidance",
+        "pmm:claim:conditioned-safety-signal-mechanism-hypothesis"
+      ],
+      "design": "Laboratory within-participant extinction test using a 95 dB tone; trained safety signal versus no signal.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "limited",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "partial eta squared for main effect of trained signal versus no signal",
+        "notes": "F(1,40)=6.20, p=0.017 across eight test trials.",
+        "value": 0.134,
+        "value_status": "reported"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Results, Experiment 4; Materials and Methods, Participants and Test.",
+      "id": "pmm:evidence:fisher-2024-experiment-4",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "No-signal comparison remains susceptible to generic sensory reinforcement.",
+        "Final analyzed sample was 41 after the training-experience criterion."
+      ],
+      "population": "Healthy university participants; reported analysis after training-experience criterion.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 41,
+      "source_id": "pmm:source:fisher-urcelay-2024",
+      "species": [
+        "human"
+      ],
+      "summary": "The laboratory experiment replicated greater responding for a trained safety signal using a loud-tone aversive outcome.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:safety-signal-contingency-affects-avoidance",
+        "pmm:claim:conditioned-safety-signal-mechanism-hypothesis"
+      ],
+      "design": "Preregistered online choice test transferring from space-bar avoidance to mouse-click choice; trained versus dissimilar new signal.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "limited",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "Cohen d for total trained-signal versus new-signal choices",
+        "notes": "Total signal counts differed, t(53)=2.89, p=0.006. The preregistered full eight-trial ANOVA signal effect was marginal, F(1,53)=3.29, p=0.075; a first-four-trial analysis was significant, p=0.023.",
+        "value": 0.394,
+        "value_status": "reported"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Results, Experiment 5; Materials and Methods, Participants and Test.",
+      "id": "pmm:evidence:fisher-2024-experiment-5",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Interpretation depends on outcome metric and analysis window.",
+        "Reported sample excludes participants who produced no training safety signal."
+      ],
+      "population": "Healthy adults recruited online; reported analysis after training-experience criterion.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 54,
+      "source_id": "pmm:source:fisher-urcelay-2024",
+      "species": [
+        "human"
+      ],
+      "summary": "Choice totals favored the trained safety signal, but the full-session response-rate contrast was marginal and the significant early-trial analysis was selective.",
+      "support_direction": "mixed"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:assigned-loss-probability-affects-choice"
+      ],
+      "design": "Within-participant probabilistic monetary instrumental-choice task with counterbalanced fractal assignments.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "very_limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "t statistic for preference toward lower-loss-probability action",
+        "notes": "t(15)=1.9, one-tailed p<0.05; no confidence interval reported.",
+        "value": 1.9,
+        "value_status": "reported"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Materials and Methods, Participants and Stimuli and task; Results, Behavioral Results.",
+      "id": "pmm:evidence:kim-2006-monetary-avoidance",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Small sample and one-tailed significance test.",
+        "Neural activation does not identify a causal reinforcer."
+      ],
+      "population": "Sixteen healthy right-handed adults without reported neurological or psychiatric history.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 16,
+      "source_id": "pmm:source:kim-shimojo-odoherty-2006",
+      "species": [
+        "human"
+      ],
+      "summary": "Participants preferentially selected the action assigned a lower probability of monetary loss.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:active-control-affects-later-threat-response"
+      ],
+      "design": "Randomized active-avoidance versus yoked-extinction experiment with matched shock and motor exposure and next-day cue-only retrieval.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "between-group conditioned skin-conductance response contrast",
+        "notes": "Active-control participants maintained lower conditioned responding than yoked-extinction participants at next-day retrieval; standardized effect not extracted.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Materials and Methods, Subjects and Procedure overview; Results and Abstract.",
+      "id": "pmm:evidence:boeke-2017-active-control",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "This result concerns later physiological threat responding, not direct persistence of avoidance behavior.",
+        "Imaging correlates do not establish the mediating neural mechanism."
+      ],
+      "population": "Fifty-six analyzed healthy adults, 35 female, mean age 23 years; 28 per group.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 56,
+      "source_id": "pmm:source:boeke-active-avoidance-2017",
+      "species": [
+        "human"
+      ],
+      "summary": "Instrumental control over shock omission produced a different next-day threat-response pattern than matched passive extinction.",
+      "support_direction": "supports"
+    }
+  ],
+  "metadata": {
+    "description": "Seven source-specific extractions from human controlled experiments. Five extractions preserve the separate experiments, including a null result, reported by Fisher and Urcelay (2024); two use independent monetary-loss and yoked shock-control paradigms.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T00:00:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T00:00:00+03:00",
+      "record_version": "0.3.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for negative reinforcement and active avoidance"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Human instrumental test in which an avoidance response to one ambiguous stimulus produces a trained safety signal and a matched response to another stimulus produces no signal or a control signal.",
+      "dimensions": {
+        "design": "within-participant counterbalanced signal contingency",
+        "response_measure": "avoidance response frequency or choice",
+        "test_outcome": "aversive outcome absent during extinction"
+      },
+      "id": "pmm:context:safety-signal-avoidance-test",
+      "label": "Response-produced safety-signal avoidance test",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Fisher and Urcelay human experiments using novel Gabor test stimuli.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Human choice task with counterbalanced actions assigned different probabilities of monetary loss.",
+      "dimensions": {
+        "assignment": "counterbalanced fractal-action contingencies",
+        "consequence": "monetary loss or loss omission",
+        "design": "repeated within-participant choice"
+      },
+      "id": "pmm:context:monetary-loss-avoidance-task",
+      "label": "Monetary-loss instrumental avoidance task",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Kim, Shimojo, and O'Doherty 2006 instrumental task.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Between-participant task in which an active group can prevent shock by an action and a yoked group receives matched cue, shock, and motor exposure without instrumental control.",
+      "dimensions": {
+        "aversive_outcome": "wrist shock",
+        "delayed_test": "23-25 hours",
+        "groups": "active-control and yoked-extinction"
+      },
+      "id": "pmm:context:yoked-shock-control-task",
+      "label": "Active-control versus yoked-extinction task",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Boeke et al. 2017 two-day fMRI and psychophysiology experiment.",
+      "type": "Context"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable action whose occurrence changes an aversive consequence or produces a learned safety signal under a specified contingency.",
+      "function_note": "Avoidance function is assigned only within the stated response-consequence contingency.",
+      "id": "pmm:behavior:instrumental-avoidance-response",
+      "label": "Instrumental avoidance response",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Task-specific key press, choice, mouse click, or grid movement.",
+      "type": "Behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Programmed aversive image, loud tone, monetary loss, or electric shock.",
+      "id": "pmm:outcome:aversive-stimulus",
+      "label": "Aversive stimulus outcome",
+      "ontological_level": "type",
+      "outcome_kind": "event_occurrence",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "aversive"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Non-occurrence of the programmed aversive outcome following a successful response.",
+      "event_kind": "consequence_omission",
+      "id": "pmm:event:aversive-outcome-omission",
+      "label": "Aversive-outcome omission",
+      "ontological_level": "type",
+      "participant_ids": [
+        "pmm:outcome:aversive-stimulus"
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "temporal_scale": "seconds",
+      "type": "Event"
+    },
+    {
+      "boundary_notes": [
+        "The signal is not identical to subjective relief.",
+        "Sensory reinforcement and stimulus generalization require explicit control conditions."
+      ],
+      "curation_status": "accepted",
+      "definition": "Presentation of the signal previously produced after successful avoidance and tested as a response-contingent consequence.",
+      "event_kind": "consequence_delivery",
+      "id": "pmm:event:trained-safety-signal-presentation",
+      "label": "Trained safety-signal presentation",
+      "ontological_level": "type",
+      "participant_ids": [
+        "pmm:behavior:instrumental-avoidance-response"
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "temporal_scale": "seconds",
+      "type": "Event"
+    },
+    {
+      "bearer_scope": "person",
+      "curation_status": "accepted",
+      "definition": "Time-indexed conditioned physiological response to a cue previously paired with shock.",
+      "id": "pmm:state:conditioned-threat-response",
+      "label": "Conditioned threat-response state",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "physiological",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "antecedent_ids": [
+        "pmm:context:safety-signal-avoidance-test"
+      ],
+      "comparator": "Matched ambiguous stimulus followed by no signal or a perceptually controlled new signal.",
+      "consequence_id": "pmm:event:trained-safety-signal-presentation",
+      "curation_status": "accepted",
+      "definition": "Dependency in which an instrumental avoidance response produces a trained safety signal during an extinction test, relative to no signal or a new control signal.",
+      "id": "pmm:contingency:response-produced-safety-signal",
+      "label": "Response-produced safety-signal contingency",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_dependency": "manipulated",
+      "response_id": "pmm:behavior:instrumental-avoidance-response",
+      "schedule": "Eight extinction-test trials per stimulus, except Experiment 5 used eight simultaneous-choice trials.",
+      "temporal_relation": "Response precedes immediate signal presentation; response frequency is compared across contingencies.",
+      "type": "Contingency"
+    },
+    {
+      "antecedent_ids": [
+        "pmm:context:monetary-loss-avoidance-task"
+      ],
+      "comparator": "Alternative action assigned the higher monetary-loss probability.",
+      "consequence_id": "pmm:event:aversive-outcome-omission",
+      "curation_status": "accepted",
+      "definition": "Counterbalanced dependency assigning one action a lower probability of monetary loss than its alternative.",
+      "id": "pmm:contingency:assigned-monetary-loss-probability",
+      "label": "Assigned monetary-loss probability contingency",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_dependency": "manipulated",
+      "response_id": "pmm:behavior:instrumental-avoidance-response",
+      "temporal_relation": "Assigned probabilities govern repeated feedback and precede measured preference.",
+      "type": "Contingency"
+    },
+    {
+      "antecedent_ids": [
+        "pmm:context:yoked-shock-control-task"
+      ],
+      "comparator": "Yoked cue, shock, and motor exposure without instrumental control.",
+      "consequence_id": "pmm:event:aversive-outcome-omission",
+      "curation_status": "accepted",
+      "definition": "Dependency allowing a learned grid-movement response to prevent shock, contrasted with yoked participants lacking response-outcome control.",
+      "id": "pmm:contingency:active-shock-control",
+      "label": "Active shock-control contingency",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_dependency": "manipulated",
+      "response_id": "pmm:behavior:instrumental-avoidance-response",
+      "temporal_relation": "Active-control training occurs on day 1 before cue-only threat-response testing on day 2.",
+      "type": "Contingency"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Proposed learning process in which a response-produced signal associated with aversive-outcome omission increases later instrumental responding.",
+      "id": "pmm:mechanism:conditioned-safety-signal-reinforcement",
+      "label": "Conditioned safety-signal reinforcement",
+      "mechanism_kind": "learning",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "The safety signal has a learning history related to successful aversive-outcome omission.",
+        "Signal production is contingent on the measured response.",
+        "A matched response with no signal or a controlled alternative signal is available for comparison."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:behavior:instrumental-avoidance-response",
+          "role": "instrumental response"
+        },
+        {
+          "object_id": "pmm:event:trained-safety-signal-presentation",
+          "role": "response-produced consequence"
+        },
+        {
+          "object_id": "pmm:contingency:response-produced-safety-signal",
+          "role": "contingency"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental assignment permitting a learned action to prevent an otherwise scheduled shock.",
+      "delivery": "Grid-movement avoidance task during conditioned threat-cue presentations.",
+      "id": "pmm:intervention:active-control-opportunity",
+      "intended_direction": "test",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Active opportunity to control shock",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:contingency:active-shock-control",
+        "pmm:state:conditioned-threat-response"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Count or rate of predefined avoidance actions within eligible test trials.",
+      "id": "pmm:measurement:avoidance-response-frequency",
+      "label": "Avoidance-response frequency",
+      "measurement_kind": "behavioral_task",
+      "method": "Compare within-person responses under trained-signal and control contingencies.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "count",
+      "target_ids": [
+        "pmm:behavior:instrumental-avoidance-response"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Probability or proportion of choices selecting the action with the lower assigned aversive-outcome probability.",
+      "id": "pmm:measurement:avoidance-choice-probability",
+      "label": "Avoidance-choice probability",
+      "measurement_kind": "behavioral_task",
+      "method": "Repeated forced choice between counterbalanced fractal actions.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:behavior:instrumental-avoidance-response"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Cue-elicited skin-conductance response used as an index of conditioned physiological threat responding.",
+      "id": "pmm:measurement:skin-conductance-threat-response",
+      "label": "Skin-conductance threat response",
+      "measurement_kind": "physiology",
+      "method": "Skin conductance recorded during cue presentations and contrasted by cue and experimental group.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:conditioned-threat-response"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "physiology"
+    }
+  ],
+  "pmm_version": "0.3.0",
+  "relations": [
+    {
+      "id": "pmm:relation:avoidance-frequency-operationalizes-behavior",
+      "object_id": "pmm:behavior:instrumental-avoidance-response",
+      "predicate": "operationalizes",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:measurement:avoidance-response-frequency"
+    },
+    {
+      "id": "pmm:relation:choice-probability-operationalizes-avoidance",
+      "object_id": "pmm:behavior:instrumental-avoidance-response",
+      "predicate": "operationalizes",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:measurement:avoidance-choice-probability"
+    },
+    {
+      "id": "pmm:relation:threat-response-measured-by-skin-conductance",
+      "object_id": "pmm:measurement:skin-conductance-threat-response",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:state:conditioned-threat-response"
+    },
+    {
+      "id": "pmm:relation:safety-reinforcement-has-signal",
+      "object_id": "pmm:event:trained-safety-signal-presentation",
+      "predicate": "has_participant",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:mechanism:conditioned-safety-signal-reinforcement"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Open primary report of five human experiments with separate signal-control conditions and an openly linked dataset.",
+      "authors": [
+        "Courteney T. L. Fisher",
+        "Gonzalo P. Urcelay"
+      ],
+      "doi": "10.1101/lm.053914.123",
+      "id": "pmm:source:fisher-urcelay-2024",
+      "pmid": "39260876",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Safety signals reinforce instrumental avoidance in humans",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11407691/",
+      "year": 2024
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Open primary human experiment with explicitly programmed monetary reward, avoidance, and neutral contingencies.",
+      "authors": [
+        "Hackjin Kim",
+        "Shinsuke Shimojo",
+        "John P. O'Doherty"
+      ],
+      "doi": "10.1371/journal.pbio.0040233",
+      "id": "pmm:source:kim-shimojo-odoherty-2006",
+      "pmid": "16802856",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Is Avoiding an Aversive Outcome Rewarding? Neural Substrates of Avoidance Learning in the Human Brain",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1484497/",
+      "year": 2006
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Open randomized human active-control experiment with yoked shock and motor exposure and delayed psychophysiological testing.",
+      "authors": [
+        "Emily A. Boeke",
+        "Justin M. Moscarello",
+        "Joseph E. LeDoux",
+        "Elizabeth A. Phelps",
+        "Catherine A. Hartley"
+      ],
+      "doi": "10.1523/JNEUROSCI.3261-16.2017",
+      "id": "pmm:source:boeke-active-avoidance-2017",
+      "pmid": "28408411",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Active Avoidance: Neural Mechanisms and Attenuation of Pavlovian Conditioned Responding",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426570/",
+      "year": 2017
+    }
+  ]
+}

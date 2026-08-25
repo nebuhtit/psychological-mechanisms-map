@@ -1,0 +1,688 @@
+pmm_version: 0.3.0
+document_type: pmm_dataset
+dataset_id: pmm:dataset:negative-reinforcement-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for negative reinforcement and active avoidance
+  description: >-
+    Seven source-specific extractions from human controlled experiments. Five
+    extractions preserve the separate experiments, including a null result,
+    reported by Fisher and Urcelay (2024); two use independent monetary-loss
+    and yoked shock-control paradigms.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.3.0
+    created_at: '2026-08-26T00:00:00+03:00'
+    modified_at: '2026-08-26T00:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmc: https://pmc.ncbi.nlm.nih.gov/articles/
+
+objects:
+  - id: pmm:context:safety-signal-avoidance-test
+    type: Context
+    label: Response-produced safety-signal avoidance test
+    definition: >-
+      Human instrumental test in which an avoidance response to one ambiguous
+      stimulus produces a trained safety signal and a matched response to
+      another stimulus produces no signal or a control signal.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      design: within-participant counterbalanced signal contingency
+      test_outcome: aversive outcome absent during extinction
+      response_measure: avoidance response frequency or choice
+    scope: Fisher and Urcelay human experiments using novel Gabor test stimuli.
+    provenance: *provenance
+
+  - id: pmm:context:monetary-loss-avoidance-task
+    type: Context
+    label: Monetary-loss instrumental avoidance task
+    definition: >-
+      Human choice task with counterbalanced actions assigned different
+      probabilities of monetary loss.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      consequence: monetary loss or loss omission
+      assignment: counterbalanced fractal-action contingencies
+      design: repeated within-participant choice
+    scope: Kim, Shimojo, and O'Doherty 2006 instrumental task.
+    provenance: *provenance
+
+  - id: pmm:context:yoked-shock-control-task
+    type: Context
+    label: Active-control versus yoked-extinction task
+    definition: >-
+      Between-participant task in which an active group can prevent shock by an
+      action and a yoked group receives matched cue, shock, and motor exposure
+      without instrumental control.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      groups: active-control and yoked-extinction
+      aversive_outcome: wrist shock
+      delayed_test: 23-25 hours
+    scope: Boeke et al. 2017 two-day fMRI and psychophysiology experiment.
+    provenance: *provenance
+
+  - id: pmm:behavior:instrumental-avoidance-response
+    type: Behavior
+    label: Instrumental avoidance response
+    definition: >-
+      Observable action whose occurrence changes an aversive consequence or
+      produces a learned safety signal under a specified contingency.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Task-specific key press, choice, mouse click, or grid movement.
+    function_note: Avoidance function is assigned only within the stated response-consequence contingency.
+    provenance: *provenance
+
+  - id: pmm:outcome:aversive-stimulus
+    type: Outcome
+    label: Aversive stimulus outcome
+    definition: Programmed aversive image, loud tone, monetary loss, or electric shock.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: event_occurrence
+    valence: aversive
+    provenance: *provenance
+
+  - id: pmm:event:aversive-outcome-omission
+    type: Event
+    label: Aversive-outcome omission
+    definition: Non-occurrence of the programmed aversive outcome following a successful response.
+    ontological_level: type
+    curation_status: accepted
+    event_kind: consequence_omission
+    participant_ids: [pmm:outcome:aversive-stimulus]
+    temporal_scale: seconds
+    provenance: *provenance
+
+  - id: pmm:event:trained-safety-signal-presentation
+    type: Event
+    label: Trained safety-signal presentation
+    definition: >-
+      Presentation of the signal previously produced after successful avoidance
+      and tested as a response-contingent consequence.
+    ontological_level: type
+    curation_status: accepted
+    event_kind: consequence_delivery
+    participant_ids: [pmm:behavior:instrumental-avoidance-response]
+    temporal_scale: seconds
+    boundary_notes:
+      - The signal is not identical to subjective relief.
+      - Sensory reinforcement and stimulus generalization require explicit control conditions.
+    provenance: *provenance
+
+  - id: pmm:state:conditioned-threat-response
+    type: State
+    label: Conditioned threat-response state
+    definition: Time-indexed conditioned physiological response to a cue previously paired with shock.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: person
+    temporal_scale: episode
+    provenance: *provenance
+
+  - id: pmm:contingency:response-produced-safety-signal
+    type: Contingency
+    label: Response-produced safety-signal contingency
+    definition: >-
+      Dependency in which an instrumental avoidance response produces a trained
+      safety signal during an extinction test, relative to no signal or a new
+      control signal.
+    ontological_level: type
+    curation_status: accepted
+    antecedent_ids: [pmm:context:safety-signal-avoidance-test]
+    response_id: pmm:behavior:instrumental-avoidance-response
+    consequence_id: pmm:event:trained-safety-signal-presentation
+    response_dependency: manipulated
+    comparator: Matched ambiguous stimulus followed by no signal or a perceptually controlled new signal.
+    temporal_relation: Response precedes immediate signal presentation; response frequency is compared across contingencies.
+    schedule: Eight extinction-test trials per stimulus, except Experiment 5 used eight simultaneous-choice trials.
+    provenance: *provenance
+
+  - id: pmm:contingency:assigned-monetary-loss-probability
+    type: Contingency
+    label: Assigned monetary-loss probability contingency
+    definition: >-
+      Counterbalanced dependency assigning one action a lower probability of
+      monetary loss than its alternative.
+    ontological_level: type
+    curation_status: accepted
+    antecedent_ids: [pmm:context:monetary-loss-avoidance-task]
+    response_id: pmm:behavior:instrumental-avoidance-response
+    consequence_id: pmm:event:aversive-outcome-omission
+    response_dependency: manipulated
+    comparator: Alternative action assigned the higher monetary-loss probability.
+    temporal_relation: Assigned probabilities govern repeated feedback and precede measured preference.
+    provenance: *provenance
+
+  - id: pmm:contingency:active-shock-control
+    type: Contingency
+    label: Active shock-control contingency
+    definition: >-
+      Dependency allowing a learned grid-movement response to prevent shock,
+      contrasted with yoked participants lacking response-outcome control.
+    ontological_level: type
+    curation_status: accepted
+    antecedent_ids: [pmm:context:yoked-shock-control-task]
+    response_id: pmm:behavior:instrumental-avoidance-response
+    consequence_id: pmm:event:aversive-outcome-omission
+    response_dependency: manipulated
+    comparator: Yoked cue, shock, and motor exposure without instrumental control.
+    temporal_relation: Active-control training occurs on day 1 before cue-only threat-response testing on day 2.
+    provenance: *provenance
+
+  - id: pmm:mechanism:conditioned-safety-signal-reinforcement
+    type: Mechanism
+    label: Conditioned safety-signal reinforcement
+    definition: >-
+      Proposed learning process in which a response-produced signal associated
+      with aversive-outcome omission increases later instrumental responding.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: learning
+    role_bindings:
+      - role: instrumental response
+        object_id: pmm:behavior:instrumental-avoidance-response
+      - role: response-produced consequence
+        object_id: pmm:event:trained-safety-signal-presentation
+      - role: contingency
+        object_id: pmm:contingency:response-produced-safety-signal
+    realization_conditions:
+      - The safety signal has a learning history related to successful aversive-outcome omission.
+      - Signal production is contingent on the measured response.
+      - A matched response with no signal or a controlled alternative signal is available for comparison.
+    provenance: *provenance
+
+  - id: pmm:intervention:active-control-opportunity
+    type: Intervention
+    label: Active opportunity to control shock
+    definition: Experimental assignment permitting a learned action to prevent an otherwise scheduled shock.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:contingency:active-shock-control
+      - pmm:state:conditioned-threat-response
+    delivery: Grid-movement avoidance task during conditioned threat-cue presentations.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:measurement:avoidance-response-frequency
+    type: Measurement
+    label: Avoidance-response frequency
+    definition: Count or rate of predefined avoidance actions within eligible test trials.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids: [pmm:behavior:instrumental-avoidance-response]
+    method: Compare within-person responses under trained-signal and control contingencies.
+    unit_of_analysis: behavior
+    result_type: count
+    provenance: *provenance
+
+  - id: pmm:measurement:avoidance-choice-probability
+    type: Measurement
+    label: Avoidance-choice probability
+    definition: Probability or proportion of choices selecting the action with the lower assigned aversive-outcome probability.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids: [pmm:behavior:instrumental-avoidance-response]
+    method: Repeated forced choice between counterbalanced fractal actions.
+    unit_of_analysis: behavior
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:skin-conductance-threat-response
+    type: Measurement
+    label: Skin-conductance threat response
+    definition: Cue-elicited skin-conductance response used as an index of conditioned physiological threat responding.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: physiology
+    target_ids: [pmm:state:conditioned-threat-response]
+    method: Skin conductance recorded during cue presentations and contrasted by cue and experimental group.
+    unit_of_analysis: physiology
+    result_type: continuous
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:avoidance-frequency-operationalizes-behavior
+    subject_id: pmm:measurement:avoidance-response-frequency
+    predicate: operationalizes
+    object_id: pmm:behavior:instrumental-avoidance-response
+    provenance: *provenance
+  - id: pmm:relation:choice-probability-operationalizes-avoidance
+    subject_id: pmm:measurement:avoidance-choice-probability
+    predicate: operationalizes
+    object_id: pmm:behavior:instrumental-avoidance-response
+    provenance: *provenance
+  - id: pmm:relation:threat-response-measured-by-skin-conductance
+    subject_id: pmm:state:conditioned-threat-response
+    predicate: measured_by
+    object_id: pmm:measurement:skin-conductance-threat-response
+    provenance: *provenance
+  - id: pmm:relation:safety-reinforcement-has-signal
+    subject_id: pmm:mechanism:conditioned-safety-signal-reinforcement
+    predicate: has_participant
+    object_id: pmm:event:trained-safety-signal-presentation
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:safety-signal-contingency-affects-avoidance
+    claim_type: causal_effect
+    statement: >-
+      In Fisher and Urcelay's human extinction tests, making a trained safety
+      signal contingent on responding increased avoidance relative to no signal
+      or a dissimilar signal in several experiments; the effect was absent with
+      a similar-signal control and was analysis-sensitive in the new-response test.
+    epistemic_status: mixed
+    confidence:
+      level: moderate
+      rationale: >-
+        Three full-test contrasts supported the effect, one similar-signal
+        comparison was null, and Experiment 5's full-session main effect was
+        marginal although total signal choices and the first four trials differed.
+    scope:
+      population: Healthy adults completing Fisher and Urcelay's online or laboratory avoidance tasks.
+      species: [human]
+      context_ids: [pmm:context:safety-signal-avoidance-test]
+      temporal_scope: Immediate extinction test after instrumental avoidance training.
+      boundary_conditions:
+        - Generalization depends on perceptual similarity between trained and control signals.
+        - Participants who never produced a safety signal during training were excluded from reported analyses.
+    exposure_id: pmm:contingency:response-produced-safety-signal
+    outcome_id: pmm:behavior:instrumental-avoidance-response
+    causal_estimand: >-
+      Within-participant difference in test avoidance responding when a response
+      produces the trained safety signal versus the experiment-specific control consequence.
+    identification_strategy: controlled_contingency
+    temporal_ordering: Signal contingency is assigned to ambiguous stimuli before test responding is measured.
+    causal_assumptions:
+      consistency: Each signal condition follows the reported response-contingent test procedure.
+      exchangeability: Stimulus orientation and signal assignments were counterbalanced within participants.
+      positivity: Each included participant experienced both trained-signal and control test contingencies.
+      interference: Online participants were assumed not to influence one another's responses.
+      assessment: partly_tested
+    evidence_ids:
+      - pmm:evidence:fisher-2024-experiment-1
+      - pmm:evidence:fisher-2024-experiment-2
+      - pmm:evidence:fisher-2024-experiment-3
+      - pmm:evidence:fisher-2024-experiment-4
+      - pmm:evidence:fisher-2024-experiment-5
+    limitations:
+      - Experiments 1-4 did not isolate conditioned reinforcement from every possible sensory or generalization account.
+      - Experiments 1-3 were repeated after unpreregistered exclusion decisions; Experiment 5 was preregistered.
+    provenance: *provenance
+
+  - id: pmm:claim:conditioned-safety-signal-mechanism-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: >-
+      A learned safety signal produced by an avoidance response can function as
+      a conditioned reinforcer and thereby increase later avoidance responding.
+    epistemic_status: proposed
+    confidence:
+      level: moderate
+      rationale: Controlled behavioral contrasts support reinforcing function, but perceptual generalization and sensory reinforcement delimit the interpretation.
+    scope:
+      population: Healthy human participants in response-produced safety-signal tasks.
+      species: [human]
+      context_ids: [pmm:context:safety-signal-avoidance-test]
+      temporal_scope: Instrumental training followed by immediate extinction testing.
+      boundary_conditions:
+        - Does not identify subjective relief as the mediator.
+        - Does not imply that every safety signal reinforces every avoidance response.
+    mechanism_id: pmm:mechanism:conditioned-safety-signal-reinforcement
+    exposure_id: pmm:contingency:response-produced-safety-signal
+    outcome_id: pmm:behavior:instrumental-avoidance-response
+    temporal_ordering: Safety-signal training precedes the response-contingent test and measured response differences.
+    falsifiable_boundary: >-
+      The account is challenged when adequately powered, preregistered tests with
+      perceptually matched controls repeatedly show no contingency-specific increase in responding.
+    evidence_ids:
+      - pmm:evidence:fisher-2024-experiment-1
+      - pmm:evidence:fisher-2024-experiment-2
+      - pmm:evidence:fisher-2024-experiment-3
+      - pmm:evidence:fisher-2024-experiment-4
+      - pmm:evidence:fisher-2024-experiment-5
+    provenance: *provenance
+
+  - id: pmm:claim:assigned-loss-probability-affects-choice
+    claim_type: causal_effect
+    statement: >-
+      In Kim et al.'s monetary task, assigning one action a lower probability of
+      loss increased preference for that action over repeated trials.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: Counterbalanced programmed contingencies support a narrow causal interpretation, but the sample was small and the test was one-tailed.
+    scope:
+      population: Sixteen healthy right-handed adults in the specified monetary instrumental task.
+      species: [human]
+      context_ids: [pmm:context:monetary-loss-avoidance-task]
+      temporal_scope: Two sessions of repeated instrumental choices.
+      boundary_conditions:
+        - Restricted to probabilistic monetary loss and the tested fractal choices.
+    exposure_id: pmm:contingency:assigned-monetary-loss-probability
+    outcome_id: pmm:behavior:instrumental-avoidance-response
+    causal_estimand: Difference in selection probability for actions assigned lower versus higher monetary-loss probability.
+    identification_strategy: controlled_contingency
+    temporal_ordering: Counterbalanced outcome probabilities governed feedback before preference was estimated.
+    causal_assumptions:
+      consistency: Fractal choices produced outcomes according to programmed task probabilities.
+      exchangeability: Fractal-to-condition assignment was counterbalanced across participants.
+      positivity: Participants repeatedly encountered both action alternatives.
+      interference: Participants completed independent task sessions.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:kim-2006-monetary-avoidance]
+    limitations:
+      - Does not establish subjective relief or a specific neural signal as the mediator.
+    provenance: *provenance
+
+  - id: pmm:claim:active-control-affects-later-threat-response
+    claim_type: causal_effect
+    statement: >-
+      Random assignment to active shock control, compared with yoked extinction,
+      altered conditioned skin-conductance responding on the following day.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: Random assignment and yoked shock exposure isolate instrumental control, but the extraction is based on one study and no standardized effect was recorded here.
+    scope:
+      population: Fifty-six analyzed healthy adults randomly assigned to active-control or yoked-extinction groups.
+      species: [human]
+      context_ids: [pmm:context:yoked-shock-control-task]
+      temporal_scope: Active-control training on day 1 and cue-only retrieval 23-25 hours later.
+      boundary_conditions:
+        - Outcome is conditioned physiological responding, not future avoidance frequency.
+    exposure_id: pmm:intervention:active-control-opportunity
+    outcome_id: pmm:state:conditioned-threat-response
+    causal_estimand: Between-group effect of active instrumental shock control versus yoked extinction on next-day conditioned skin-conductance responding.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Group assignment and day-1 learning preceded the day-2 cue-only retrieval test.
+    causal_assumptions:
+      consistency: Active and yoked assignments corresponded to the reported grid-control and motor-control procedures.
+      exchangeability: Supported by random group assignment and paired yoked outcome exposure.
+      positivity: Participants were assigned to both active and yoked conditions.
+      interference: Each yoked pair shared an outcome schedule by design but pairs were otherwise independent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:boeke-2017-active-control]
+    limitations:
+      - Yoked pairing is deliberate partial interference and is included in the estimand.
+      - Neural differences do not by themselves identify the behavioral mediator.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:fisher-2024-experiment-1
+    claim_ids:
+      - pmm:claim:safety-signal-contingency-affects-avoidance
+      - pmm:claim:conditioned-safety-signal-mechanism-hypothesis
+    source_id: pmm:source:fisher-urcelay-2024
+    extraction_locator: Results, Experiment 1; Materials and Methods, Participants and Test.
+    evidence_kind: controlled_experiment
+    design: Online within-participant extinction test; trained safety signal versus no-signal consequence, counterbalanced across novel Gabor stimuli.
+    population: Healthy adults recruited online; reported analysis after training-experience criterion.
+    species: [human]
+    sample_size: 72
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: partial eta squared for main effect of trained signal versus no signal
+      value_status: reported
+      value: 0.187
+      direction: positive
+      notes: F(1,71)=16.28, p<0.001 across eight test trials.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: adequate
+      replication: unreplicated
+    summary: Participants emitted more avoidance responses when responding produced the trained safety signal than when it produced no signal.
+    limitations:
+      - No-signal comparison cannot fully exclude generic sensory reinforcement.
+      - Reported sample excludes participants who earned no training safety signal; replication decision was not preregistered.
+    provenance: *provenance
+
+  - id: pmm:evidence:fisher-2024-experiment-2
+    claim_ids:
+      - pmm:claim:safety-signal-contingency-affects-avoidance
+      - pmm:claim:conditioned-safety-signal-mechanism-hypothesis
+    source_id: pmm:source:fisher-urcelay-2024
+    extraction_locator: Results, Experiment 2; Materials and Methods, Participants and Test.
+    evidence_kind: controlled_experiment
+    design: Online within-participant extinction test; trained safety signal versus a new signal differing only in color.
+    population: Healthy adults recruited online; reported analysis after training-experience criterion.
+    species: [human]
+    sample_size: 55
+    inference_support: causal_effect
+    support_direction: challenges
+    causal_support: direct
+    effect:
+      metric: F statistic for main effect of trained versus similar new signal
+      value_status: reported
+      value: 0.003
+      direction: null
+      notes: F(1,54)=0.003, p=0.958; total signal counts also did not differ, t(54)=1.018, p=0.31.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: adequate
+      replication: unreplicated
+    summary: Avoidance did not differ when trained and control signals differed only in color, consistent with broad signal generalization or no specific reinforcement effect.
+    limitations:
+      - Null contrast does not distinguish true equivalence from generalization between perceptually similar signals.
+    provenance: *provenance
+
+  - id: pmm:evidence:fisher-2024-experiment-3
+    claim_ids:
+      - pmm:claim:safety-signal-contingency-affects-avoidance
+      - pmm:claim:conditioned-safety-signal-mechanism-hypothesis
+    source_id: pmm:source:fisher-urcelay-2024
+    extraction_locator: Results, Experiment 3; Materials and Methods, Participants and Test.
+    evidence_kind: controlled_experiment
+    design: Online within-participant extinction test; trained safety signal versus a new signal differing in color and shape.
+    population: Healthy adults recruited online; reported analysis after training-experience criterion.
+    species: [human]
+    sample_size: 74
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: partial eta squared for main effect of trained versus dissimilar new signal
+      value_status: reported
+      value: 0.064
+      direction: positive
+      notes: F(1,73)=4.90, p=0.029; signal totals d=0.419, p<0.001.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: adequate
+      replication: conceptual_replication
+    summary: Participants responded more for the trained safety signal than for a perceptually dissimilar new signal.
+    limitations:
+      - Dissimilar control reduces but does not eliminate every sensory-reinforcement account.
+    provenance: *provenance
+
+  - id: pmm:evidence:fisher-2024-experiment-4
+    claim_ids:
+      - pmm:claim:safety-signal-contingency-affects-avoidance
+      - pmm:claim:conditioned-safety-signal-mechanism-hypothesis
+    source_id: pmm:source:fisher-urcelay-2024
+    extraction_locator: Results, Experiment 4; Materials and Methods, Participants and Test.
+    evidence_kind: controlled_experiment
+    design: Laboratory within-participant extinction test using a 95 dB tone; trained safety signal versus no signal.
+    population: Healthy university participants; reported analysis after training-experience criterion.
+    species: [human]
+    sample_size: 41
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: partial eta squared for main effect of trained signal versus no signal
+      value_status: reported
+      value: 0.134
+      direction: positive
+      notes: F(1,40)=6.20, p=0.017 across eight test trials.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: limited
+      replication: conceptual_replication
+    summary: The laboratory experiment replicated greater responding for a trained safety signal using a loud-tone aversive outcome.
+    limitations:
+      - No-signal comparison remains susceptible to generic sensory reinforcement.
+      - Final analyzed sample was 41 after the training-experience criterion.
+    provenance: *provenance
+
+  - id: pmm:evidence:fisher-2024-experiment-5
+    claim_ids:
+      - pmm:claim:safety-signal-contingency-affects-avoidance
+      - pmm:claim:conditioned-safety-signal-mechanism-hypothesis
+    source_id: pmm:source:fisher-urcelay-2024
+    extraction_locator: Results, Experiment 5; Materials and Methods, Participants and Test.
+    evidence_kind: controlled_experiment
+    design: Preregistered online choice test transferring from space-bar avoidance to mouse-click choice; trained versus dissimilar new signal.
+    population: Healthy adults recruited online; reported analysis after training-experience criterion.
+    species: [human]
+    sample_size: 54
+    inference_support: causal_effect
+    support_direction: mixed
+    causal_support: direct
+    effect:
+      metric: Cohen d for total trained-signal versus new-signal choices
+      value_status: reported
+      value: 0.394
+      direction: positive
+      notes: >-
+        Total signal counts differed, t(53)=2.89, p=0.006. The preregistered
+        full eight-trial ANOVA signal effect was marginal, F(1,53)=3.29,
+        p=0.075; a first-four-trial analysis was significant, p=0.023.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: limited
+      replication: conceptual_replication
+    summary: Choice totals favored the trained safety signal, but the full-session response-rate contrast was marginal and the significant early-trial analysis was selective.
+    limitations:
+      - Interpretation depends on outcome metric and analysis window.
+      - Reported sample excludes participants who produced no training safety signal.
+    provenance: *provenance
+
+  - id: pmm:evidence:kim-2006-monetary-avoidance
+    claim_ids: [pmm:claim:assigned-loss-probability-affects-choice]
+    source_id: pmm:source:kim-shimojo-odoherty-2006
+    extraction_locator: Materials and Methods, Participants and Stimuli and task; Results, Behavioral Results.
+    evidence_kind: controlled_experiment
+    design: Within-participant probabilistic monetary instrumental-choice task with counterbalanced fractal assignments.
+    population: Sixteen healthy right-handed adults without reported neurological or psychiatric history.
+    species: [human]
+    sample_size: 16
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: t statistic for preference toward lower-loss-probability action
+      value_status: reported
+      value: 1.9
+      direction: positive
+      notes: t(15)=1.9, one-tailed p<0.05; no confidence interval reported.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: very_limited
+      replication: unreplicated
+    summary: Participants preferentially selected the action assigned a lower probability of monetary loss.
+    limitations:
+      - Small sample and one-tailed significance test.
+      - Neural activation does not identify a causal reinforcer.
+    provenance: *provenance
+
+  - id: pmm:evidence:boeke-2017-active-control
+    claim_ids: [pmm:claim:active-control-affects-later-threat-response]
+    source_id: pmm:source:boeke-active-avoidance-2017
+    extraction_locator: Materials and Methods, Subjects and Procedure overview; Results and Abstract.
+    evidence_kind: randomized_experiment
+    design: Randomized active-avoidance versus yoked-extinction experiment with matched shock and motor exposure and next-day cue-only retrieval.
+    population: Fifty-six analyzed healthy adults, 35 female, mean age 23 years; 28 per group.
+    species: [human]
+    sample_size: 56
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: between-group conditioned skin-conductance response contrast
+      value_status: qualitative_only
+      direction: negative
+      notes: Active-control participants maintained lower conditioned responding than yoked-extinction participants at next-day retrieval; standardized effect not extracted.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: not_reported
+      replication: unreplicated
+    summary: Instrumental control over shock omission produced a different next-day threat-response pattern than matched passive extinction.
+    limitations:
+      - This result concerns later physiological threat responding, not direct persistence of avoidance behavior.
+      - Imaging correlates do not establish the mediating neural mechanism.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:fisher-urcelay-2024
+    title: Safety signals reinforce instrumental avoidance in humans
+    source_type: peer_reviewed_article
+    authors: [Courteney T. L. Fisher, Gonzalo P. Urcelay]
+    year: 2024
+    doi: 10.1101/lm.053914.123
+    pmid: '39260876'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11407691/
+    accessed_at: '2026-08-26'
+    authority_note: Open primary report of five human experiments with separate signal-control conditions and an openly linked dataset.
+    provenance: *provenance
+
+  - id: pmm:source:kim-shimojo-odoherty-2006
+    title: Is Avoiding an Aversive Outcome Rewarding? Neural Substrates of Avoidance Learning in the Human Brain
+    source_type: peer_reviewed_article
+    authors: [Hackjin Kim, Shinsuke Shimojo, John P. O'Doherty]
+    year: 2006
+    doi: 10.1371/journal.pbio.0040233
+    pmid: '16802856'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC1484497/
+    accessed_at: '2026-08-26'
+    authority_note: Open primary human experiment with explicitly programmed monetary reward, avoidance, and neutral contingencies.
+    provenance: *provenance
+
+  - id: pmm:source:boeke-active-avoidance-2017
+    title: "Active Avoidance: Neural Mechanisms and Attenuation of Pavlovian Conditioned Responding"
+    source_type: peer_reviewed_article
+    authors: [Emily A. Boeke, Justin M. Moscarello, Joseph E. LeDoux, Elizabeth A. Phelps, Catherine A. Hartley]
+    year: 2017
+    doi: 10.1523/JNEUROSCI.3261-16.2017
+    pmid: '28408411'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5426570/
+    accessed_at: '2026-08-26'
+    authority_note: Open randomized human active-control experiment with yoked shock and motor exposure and delayed psychophysiological testing.
+    provenance: *provenance

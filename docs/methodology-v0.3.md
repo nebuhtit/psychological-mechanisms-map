@@ -44,6 +44,8 @@ The JSON Schema implements conditional `required` and `not` constraints. The sem
 
 Each Evidence record represents one extraction from one Source. Reviews can support definitions, scope, consistency, or mechanism plausibility, but a review label does not itself supply direct causal identification. Evidence tracks directness, risk of bias, consistency, precision, replication, support direction, and causal support.
 
+Multiple experiments within one article remain separate Evidence records. Null and analysis-sensitive results are retained with `challenges` or `mixed` support directions; they are not absorbed into a favorable article-level summary.
+
 Confidence remains ordinal with a written rationale. PMM intentionally avoids a pseudo-precise numerical truth score. `epistemic_status` belongs to Claims; ontology objects use `curation_status` only.
 
 ## Anxiety pilot interpretation
@@ -85,7 +87,7 @@ YAML is canonical. Deterministic JSON is generated only after validation. A late
 
 ## Known limits
 
-- Most pilot support still comes from reviews; primary-study effect extraction is sparse.
+- Primary-study extraction currently covers one focused negative-reinforcement pack; the other mechanism families still rely mainly on reviews.
 - Confidence ratings are curator judgments, not a calibrated evidence-grading system.
 - External ontology releases and stable IDs are not yet pinned locally.
 - Claim scope is textual rather than a fully compositional population/intervention/comparator/outcome model.
