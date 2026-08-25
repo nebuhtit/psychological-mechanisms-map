@@ -1,0 +1,545 @@
+pmm_version: 0.3.0
+document_type: pmm_dataset
+dataset_id: pmm:dataset:habit-control-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for habitual and goal-directed action control
+  description: >-
+    Human experiments separating instrumental behavior, outcome value,
+    devaluation sensitivity, training duration, acute stress, measurement, and
+    proposed habitual or goal-directed control mechanisms.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.3.0
+    created_at: '2026-08-26T00:00:00+03:00'
+    modified_at: '2026-08-26T00:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmc: https://pmc.ncbi.nlm.nih.gov/articles/
+
+objects:
+  - id: pmm:context:instrumental-outcome-devaluation-task
+    type: Context
+    label: Instrumental outcome-devaluation task
+    definition: >-
+      Laboratory task in which actions first produce valued outcomes and
+      responding is later tested after one outcome loses value.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      acquisition: action-outcome training
+      manipulation: selective outcome devaluation
+      test: commonly conducted without outcome feedback
+    scope: Human food or monetary outcome-devaluation paradigms.
+    provenance: *provenance
+
+  - id: pmm:context:multi-paradigm-habit-assessment
+    type: Context
+    label: Multi-paradigm habit assessment
+    definition: >-
+      Study context administering several laboratory habit tasks and self-report
+      measures to test convergence across operationalizations.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      training_duration: multiple days
+      laboratory_paradigms: six
+      validation_target: cross-task convergence
+    scope: Nebe et al. 2024 Registered Report in healthy young adults.
+    provenance: *provenance
+
+  - id: pmm:state:current-outcome-value
+    type: State
+    label: Current outcome value
+    definition: Time-indexed motivational value of a particular action outcome for a person.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: motivational
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes:
+      - Programmed devaluation does not guarantee that subjective value changed for every participant.
+      - Value of one outcome must remain distinguishable from generalized satiety or disengagement.
+    provenance: *provenance
+
+  - id: pmm:behavior:instrumental-response
+    type: Behavior
+    label: Instrumental response
+    definition: Observable action performed in a specified action-outcome contingency.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Task-specific button press, key choice, or response withholding.
+    function_note: Repetition or speed alone does not establish habitual control.
+    provenance: *provenance
+
+  - id: pmm:behavior:outcome-insensitive-responding
+    type: Behavior
+    label: Outcome-insensitive response pattern
+    definition: >-
+      Continued instrumental responding after a demonstrated reduction in the
+      value of its specific outcome, relative to an appropriate valued-outcome comparison.
+    ontological_level: type
+    curation_status: provisional
+    behavior_kind: response_pattern
+    observability: operationally_inferred
+    actor_scope: person
+    function_note: This pattern is compatible with habit but can also arise from failed devaluation, misunderstanding, low baseline responding, or measurement error.
+    provenance: *provenance
+
+  - id: pmm:intervention:extended-instrumental-training
+    type: Intervention
+    label: Extended instrumental training
+    definition: Experimental assignment to substantially more repetitions or sessions of an action-outcome contingency.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:behavior:instrumental-response
+      - pmm:behavior:outcome-insensitive-responding
+    delivery: Multiple instrumental-training sessions compared with a shorter-training condition.
+    intended_direction: increase
+    provenance: *provenance
+
+  - id: pmm:intervention:selective-outcome-devaluation
+    type: Intervention
+    label: Selective outcome devaluation
+    definition: Experimental manipulation intended to reduce the current value of one trained action outcome while preserving the value of another.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:state:current-outcome-value]
+    delivery: Outcome-specific satiation, taste aversion, instruction, or conversion of reward to loss.
+    intended_direction: decrease
+    provenance: *provenance
+
+  - id: pmm:intervention:acute-stress-induction
+    type: Intervention
+    label: Acute stress induction
+    definition: Controlled experimental procedure designed to increase acute subjective and physiological stress before or after instrumental learning.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:behavior:outcome-insensitive-responding]
+    delivery: Cold pressor or comparable stress protocol with a nonstress control condition.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:mechanism:goal-directed-action-control
+    type: Mechanism
+    label: Goal-directed action control
+    definition: >-
+      Proposed action-selection process that uses action-outcome knowledge and
+      current outcome value to guide responding.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: learning
+    role_bindings:
+      - role: candidate action
+        object_id: pmm:behavior:instrumental-response
+      - role: current outcome value
+        object_id: pmm:state:current-outcome-value
+    realization_conditions:
+      - The actor has usable knowledge of the action-outcome relation.
+      - Current outcome value can influence action selection before responding.
+    provenance: *provenance
+
+  - id: pmm:mechanism:habitual-action-control
+    type: Mechanism
+    label: Habitual action control
+    definition: >-
+      Proposed cue-linked action-selection process whose momentary expression
+      is relatively insensitive to the current value of the action outcome.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: learning
+    role_bindings:
+      - role: elicited action
+        object_id: pmm:behavior:instrumental-response
+      - role: diagnostic response pattern
+        object_id: pmm:behavior:outcome-insensitive-responding
+    realization_conditions:
+      - A learned cue-response relation is available in the test context.
+      - Outcome value has changed effectively and is not required for immediate response selection.
+    boundary_notes:
+      - Automaticity, repetition, procedural skill, and model-free choice are not exact synonyms.
+      - Outcome insensitivity supports habitual control only when devaluation and task comprehension are verified.
+    provenance: *provenance
+
+  - id: pmm:measurement:devaluation-sensitivity-index
+    type: Measurement
+    label: Outcome-devaluation sensitivity index
+    definition: Contrast in responding for still-valued versus effectively devalued trained outcomes.
+    ontological_level: type
+    curation_status: provisional
+    measurement_kind: behavioral_task
+    target_ids:
+      - pmm:behavior:instrumental-response
+      - pmm:behavior:outcome-insensitive-responding
+    method: Compare response rates or choices after outcome-specific devaluation, ideally with individual manipulation checks.
+    unit_of_analysis: behavior
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:cross-task-habit-convergence
+    type: Measurement
+    label: Cross-task habit-measure convergence
+    definition: Correlation or latent convergence among scores from distinct laboratory and self-report habit measures.
+    ontological_level: type
+    curation_status: provisional
+    measurement_kind: psychometric_scale
+    target_ids: [pmm:construct:habit-measurement-convergence]
+    method: Estimate preregistered correlations and measurement models across multiple habit operationalizations.
+    unit_of_analysis: person
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:construct:habit-measurement-convergence
+    type: Construct
+    label: Habit-measurement convergence
+    definition: Degree to which distinct habit measures behave as indicators of a shared latent attribute or process.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Lack of convergence can reflect different mechanisms, low reliability, or restricted variance.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:outcome-insensitivity-measured-by-devaluation
+    subject_id: pmm:behavior:outcome-insensitive-responding
+    predicate: measured_by
+    object_id: pmm:measurement:devaluation-sensitivity-index
+    provenance: *provenance
+  - id: pmm:relation:habit-convergence-measured-by-cross-task
+    subject_id: pmm:construct:habit-measurement-convergence
+    predicate: measured_by
+    object_id: pmm:measurement:cross-task-habit-convergence
+    provenance: *provenance
+  - id: pmm:relation:instrumental-response-occurs-in-devaluation-task
+    subject_id: pmm:behavior:instrumental-response
+    predicate: occurs_in_context
+    object_id: pmm:context:instrumental-outcome-devaluation-task
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:extended-training-causes-outcome-insensitivity
+    claim_type: causal_effect
+    statement: Extended instrumental training has not shown a robust general causal effect on outcome-insensitive responding in humans.
+    epistemic_status: mixed
+    confidence:
+      level: moderate
+      rationale: One influential experiment reported the predicted interaction, while a larger preregistered four-laboratory study found no statistical effect of training duration.
+    scope:
+      population: Healthy adults completing free-operant food outcome-devaluation tasks.
+      species: [human]
+      context_ids: [pmm:context:instrumental-outcome-devaluation-task]
+      temporal_scope: One versus multiple training sessions followed by devaluation and extinction testing.
+      boundary_conditions:
+        - Selective satiation must actually alter outcome value for each participant.
+        - Null training effects do not establish absence of every form of habit learning.
+    exposure_id: pmm:intervention:extended-instrumental-training
+    outcome_id: pmm:behavior:outcome-insensitive-responding
+    causal_estimand: Difference between extended and moderate training in the valued-versus-devalued response contrast.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Training assignment precedes outcome devaluation and the extinction test.
+    causal_assumptions:
+      consistency: Training groups receive the study-specific number of instrumental sessions.
+      exchangeability: Supported by randomized assignment within each experiment or laboratory.
+      positivity: Both training-duration conditions are represented.
+      interference: Participants complete the task independently.
+      assessment: partly_tested
+    evidence_ids:
+      - pmm:evidence:tricomi-2009-overtraining
+      - pmm:evidence:pool-2022-multilab-training
+    limitations:
+      - Food satiation may incompletely or nonspecifically alter outcome value.
+    provenance: *provenance
+
+  - id: pmm:claim:acute-stress-causes-habit-shift
+    claim_type: causal_effect
+    statement: Acute stress did not reliably increase outcome-insensitive responding in two preregistered exact human replications.
+    epistemic_status: unsupported
+    confidence:
+      level: moderate
+      rationale: Both experiments successfully induced stress but failed to support the predicted stress-by-devaluation effect; interpretation was limited by poor goal-directed differentiation in controls.
+    scope:
+      population: Healthy adults in food-reward instrumental-learning tasks.
+      species: [human]
+      context_ids: [pmm:context:instrumental-outcome-devaluation-task]
+      temporal_scope: Stress before or immediately after learning, followed by satiation and extinction testing.
+      boundary_conditions:
+        - The result does not exclude stress effects under other tasks, stressors, or timing arrangements.
+    exposure_id: pmm:intervention:acute-stress-induction
+    outcome_id: pmm:behavior:outcome-insensitive-responding
+    causal_estimand: Stress-versus-control difference in responding for devalued relative to valued outcomes.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Stress assignment occurs before the post-devaluation test.
+    causal_assumptions:
+      consistency: Assigned stress and control conditions follow the original protocols closely.
+      exchangeability: Supported by randomized assignment.
+      positivity: Both stress and control conditions are represented.
+      interference: Participants complete procedures independently.
+      assessment: partly_tested
+    evidence_ids:
+      - pmm:evidence:smeets-2023-replication-1
+      - pmm:evidence:smeets-2023-replication-2
+    limitations:
+      - Indifferent control-group responding made the intended mechanistic contrast difficult to interpret.
+    provenance: *provenance
+
+  - id: pmm:claim:habit-measures-converge
+    claim_type: association
+    statement: Scores from different laboratory and self-report habit paradigms did not show evidence of a common convergent habit measure.
+    epistemic_status: unsupported
+    confidence:
+      level: moderate
+      rationale: A large Registered Report tested six paradigms and found no overlap across experimental approaches or with real-life habit self-report.
+    scope:
+      population: 208 healthy young adults contributing to cross-task analyses.
+      species: [human]
+      context_ids: [pmm:context:multi-paradigm-habit-assessment]
+      temporal_scope: Five-day laboratory assessment plus online measures.
+      boundary_conditions:
+        - A young convenience sample and task reliability can constrain correlations.
+    exposure_id: pmm:measurement:cross-task-habit-convergence
+    outcome_id: pmm:construct:habit-measurement-convergence
+    estimate:
+      metric: preregistered cross-task correlations and measurement-model fit
+      value_status: qualitative_only
+      direction: 'null'
+      notes: The study reported no evidence for overlap across experimental habit measures or self-reported real-life habits.
+    confounding_note: Cross-sectional score associations can be attenuated by measurement error, restricted variance, and task-specific processes.
+    evidence_ids: [pmm:evidence:nebe-2024-cross-task-convergence]
+    provenance: *provenance
+
+  - id: pmm:claim:habitual-control-mechanism-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: A cue-linked control process can contribute to instrumental responding without immediate use of current outcome value.
+    epistemic_status: proposed
+    confidence:
+      level: low
+      rationale: Outcome-insensitive behavior is theoretically diagnostic only after effective devaluation and comprehension checks, while human induction and measurement results remain inconsistent.
+    scope:
+      population: Humans in controlled instrumental-learning tasks.
+      species: [human]
+      context_ids:
+        - pmm:context:instrumental-outcome-devaluation-task
+        - pmm:context:multi-paradigm-habit-assessment
+      temporal_scope: Instrumental training followed by a diagnostic test without corrective feedback.
+      boundary_conditions:
+        - Does not equate habits with repetition, speed, automaticity, model-free choice, or procedural skill.
+    mechanism_id: pmm:mechanism:habitual-action-control
+    exposure_id: pmm:intervention:selective-outcome-devaluation
+    outcome_id: pmm:behavior:outcome-insensitive-responding
+    temporal_ordering: Instrumental learning and verified devaluation precede the outcome-sensitivity test.
+    falsifiable_boundary: The operational account is challenged when purported habit effects disappear after individual verification of devaluation, task knowledge, baseline responding, and response opportunity.
+    evidence_ids:
+      - pmm:evidence:tricomi-2009-overtraining
+      - pmm:evidence:pool-2022-multilab-training
+    limitations:
+      - Current evidence does not identify a unitary human habit mechanism across paradigms.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:tricomi-2009-overtraining
+    claim_ids:
+      - pmm:claim:extended-training-causes-outcome-insensitivity
+      - pmm:claim:habitual-control-mechanism-hypothesis
+    source_id: pmm:source:tricomi-balleine-odoherty-2009
+    extraction_locator: Behavioral results; Figure 2; Discussion.
+    evidence_kind: randomized_experiment
+    design: One-day versus three-day free-operant food training followed by selective satiation and an extinction test.
+    population: Healthy adults; behavioral interaction reported with 31 analyzed participants.
+    species: [human]
+    sample_size: 31
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: training-duration by outcome-devaluation interaction
+      value_status: reported
+      value: 7.9
+      direction: positive
+      notes: F(1,29)=7.9, p<.05; the three-day group persisted more for the devalued food outcome.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: limited
+      replication: unreplicated
+    summary: Extended training was associated with reduced behavioral sensitivity to selective satiation in the original experiment.
+    limitations:
+      - Small sample and incomplete separation of devaluation effectiveness from habitual control.
+      - Neural correlates do not establish the causal mechanism.
+    provenance: *provenance
+
+  - id: pmm:evidence:pool-2022-multilab-training
+    claim_ids:
+      - pmm:claim:extended-training-causes-outcome-insensitivity
+      - pmm:claim:habitual-control-mechanism-hypothesis
+    source_id: pmm:source:pool-2022-multilaboratory
+    extraction_locator: Abstract; preregistered analyses; Discussion.
+    evidence_kind: randomized_experiment
+    design: Preregistered four-laboratory moderate-versus-extended training study adapting the Tricomi free-operant task.
+    population: Healthy adult participants recruited across four laboratories.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: challenges
+    causal_support: direct
+    effect:
+      metric: preregistered main effect of training amount on habit expression
+      value_status: qualitative_only
+      direction: 'null'
+      notes: No statistical evidence was found for a main effect of training amount; stress moderation was exploratory.
+    domains:
+      directness: direct
+      risk_of_bias: low
+      consistency: mixed
+      precision: adequate
+      replication: independent_replication
+    summary: The multilaboratory study did not reproduce a general increase in outcome-insensitive responding after extended training.
+    limitations:
+      - Selective satiation and baseline outcome sensitivity remained important interpretive constraints.
+    provenance: *provenance
+
+  - id: pmm:evidence:smeets-2023-replication-1
+    claim_ids: [pmm:claim:acute-stress-causes-habit-shift]
+    source_id: pmm:source:smeets-2023-stress-replications
+    extraction_locator: Study 1 Methods and Results; General Discussion.
+    evidence_kind: randomized_experiment
+    design: Preregistered exact replication with acute stress before instrumental learning and a post-satiation extinction test.
+    population: Healthy adults assigned to stress or no-stress control.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: challenges
+    causal_support: direct
+    effect:
+      metric: stress by outcome-value interaction on high-probability choices
+      value_status: qualitative_only
+      direction: 'null'
+      notes: Stress induction succeeded, but Bayesian analyses supported the null habit-shift hypothesis.
+    domains:
+      directness: direct
+      risk_of_bias: low
+      consistency: single_source
+      precision: adequate
+      replication: independent_replication
+    summary: Stress before learning did not increase devalued responding relative to control.
+    limitations:
+      - Control participants did not clearly differentiate valued from devalued outcomes at test.
+    provenance: *provenance
+
+  - id: pmm:evidence:smeets-2023-replication-2
+    claim_ids: [pmm:claim:acute-stress-causes-habit-shift]
+    source_id: pmm:source:smeets-2023-stress-replications
+    extraction_locator: Study 2 Methods and Results; General Discussion.
+    evidence_kind: randomized_experiment
+    design: Preregistered exact replication with acute stress immediately after instrumental learning and a post-satiation extinction test.
+    population: Healthy adults assigned to stress or no-stress control.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: challenges
+    causal_support: direct
+    effect:
+      metric: stress by outcome-value interaction on high-probability choices
+      value_status: qualitative_only
+      direction: 'null'
+      notes: The second experiment also failed to support stress-induced habitual responding.
+    domains:
+      directness: direct
+      risk_of_bias: low
+      consistency: mostly_consistent
+      precision: adequate
+      replication: independent_replication
+    summary: Stress after learning did not produce the predicted shift toward devalued responding.
+    limitations:
+      - Indiscriminate devaluation weakened the intended diagnostic comparison.
+    provenance: *provenance
+
+  - id: pmm:evidence:nebe-2024-cross-task-convergence
+    claim_ids: [pmm:claim:habit-measures-converge]
+    source_id: pmm:source:nebe-2024-characterizing-habits
+    extraction_locator: Registered Report abstract; Participants; validity of habit tasks; RQ3-RQ5.
+    evidence_kind: controlled_experiment
+    design: Five-day Registered Report with six experimental habit paradigms, computational analyses, and real-life habit self-report.
+    population: 220 healthy adults in the full sample; 208 in cross-task analyses.
+    species: [human]
+    sample_size: 208
+    inference_support: association
+    support_direction: challenges
+    causal_support: none
+    effect:
+      metric: cross-paradigm convergence
+      value_status: qualitative_only
+      direction: 'null'
+      notes: No evidence for overlap among experimental habit approaches or with self-reported real-life habits.
+    domains:
+      directness: direct
+      risk_of_bias: low
+      consistency: single_source
+      precision: adequate
+      replication: unreplicated
+    summary: Different operationalizations did not behave as interchangeable measures of one common habit construct.
+    limitations:
+      - Young convenience sample and reliability differences can attenuate cross-task associations.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:tricomi-balleine-odoherty-2009
+    title: A specific role for posterior dorsolateral striatum in human habit learning
+    source_type: peer_reviewed_article
+    authors: [Elizabeth Tricomi, Bernard W. Balleine, John P. O'Doherty]
+    year: 2009
+    doi: 10.1111/j.1460-9568.2009.06796.x
+    pmid: '19490086'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2758609/
+    accessed_at: '2026-08-26'
+    authority_note: Influential primary experiment reporting training-dependent human outcome insensitivity.
+    provenance: *provenance
+
+  - id: pmm:source:pool-2022-multilaboratory
+    title: "Determining the effects of training duration on the behavioral expression of habitual control in humans: a multilaboratory investigation"
+    source_type: peer_reviewed_article
+    authors: [Eva R. Pool, Rani Gera, Aniek Fransen, Omar D. Perez, Anna Cremer, Mladena Aleksic, Sandy Tanwisuth, Stephanie Quail, Ahmet O. Ceceli, Dylan A. Manfredi, Gideon Nave, Elizabeth Tricomi, Bernard Balleine, Tom Schonberg, Lars Schwabe, John P. O'Doherty]
+    year: 2022
+    doi: 10.1101/lm.053413.121
+    pmid: '34911800'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8686594/
+    accessed_at: '2026-08-26'
+    authority_note: Preregistered four-laboratory investigation of the critical training-duration effect.
+    provenance: *provenance
+
+  - id: pmm:source:smeets-2023-stress-replications
+    title: Does stress consistently favor habits over goal-directed behaviors? Data from two preregistered exact replication studies
+    source_type: peer_reviewed_article
+    authors: [Tom Smeets, Stephanie M. Ashton, Simone J. A. A. Roelands, Conny W. E. M. Quaedflieg]
+    year: 2023
+    doi: 10.1016/j.ynstr.2023.100528
+    pmid: '36861028'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9969070/
+    accessed_at: '2026-08-26'
+    authority_note: Two preregistered exact replications preserving null stress effects and manipulation failures.
+    provenance: *provenance
+
+  - id: pmm:source:nebe-2024-characterizing-habits
+    title: Characterizing Human Habits in the Lab
+    source_type: peer_reviewed_article
+    authors: [Stephan Nebe, Andre Kretzschmar, Maike C. Brandt, Philippe N. Tobler]
+    year: 2024
+    doi: 10.1525/collabra.92949
+    pmid: '38463460'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7615722/
+    accessed_at: '2026-08-26'
+    authority_note: Large Registered Report directly testing convergence across six laboratory habit paradigms and self-report.
+    provenance: *provenance

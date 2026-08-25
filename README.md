@@ -19,6 +19,9 @@ data/evidence-pack-negative-reinforcement-v0.3.yaml
 data/evidence-pack-fear-extinction-v0.3.yaml
                                      Extinction and return-of-fear stress test
 docs/fear-extinction-preview.md       Provisional GitHub-rendered diagram
+data/evidence-pack-habit-control-v0.3.yaml
+                                     Habit and goal-directed control stress test
+docs/habit-control-preview.md         Provisional habit-control diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
 tests/test_pmm_v03.py                Valid and deliberately invalid fixtures
@@ -41,6 +44,7 @@ make validate
 make validate-stress
 make validate-pack
 make validate-extinction
+make validate-habit
 make test
 make export
 make verify
@@ -84,6 +88,13 @@ response decrement, return-of-fear tests, measurements, and a proposed
 context-sensitive extinction-memory mechanism. A small
 [provisional visual preview](docs/fear-extinction-preview.md) is included for
 inspection on GitHub; it is not yet a stable visualization architecture.
+
+The habit-control pack keeps instrumental behavior, current outcome value,
+outcome-insensitive response patterns, measurement procedures, and proposed
+habitual or goal-directed mechanisms separate. Its
+[provisional visual preview](docs/habit-control-preview.md) also displays failed
+devaluation as an explicit alternative explanation rather than silently
+classifying every persistent response as a habit.
 
 ## Next steps
 

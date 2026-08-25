@@ -116,5 +116,32 @@ class FearExtinctionEvidencePackTests(unittest.TestCase):
         self.assertEqual(evidence["effect"]["direction"], "null")
 
 
+class HabitControlEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-habit-control-v0.3.yaml"
+        )
+
+    def test_habit_control_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_response_pattern_is_not_typed_as_mechanism(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:behavior:outcome-insensitive-responding"], "Behavior")
+        self.assertEqual(records["pmm:mechanism:habitual-action-control"], "Mechanism")
+
+    def test_null_replications_are_preserved(self) -> None:
+        replication_ids = {
+            "pmm:evidence:pool-2022-multilab-training",
+            "pmm:evidence:smeets-2023-replication-1",
+            "pmm:evidence:smeets-2023-replication-2",
+        }
+        records = {item["id"]: item for item in self.document["evidence"]}
+        for evidence_id in replication_ids:
+            self.assertEqual(records[evidence_id]["support_direction"], "challenges")
+            self.assertEqual(records[evidence_id]["effect"]["direction"], "null")
+
+
 if __name__ == "__main__":
     unittest.main()

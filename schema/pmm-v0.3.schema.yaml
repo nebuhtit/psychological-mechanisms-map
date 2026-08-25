@@ -266,7 +266,7 @@ $defs:
         properties:
           type: {const: Measurement}
           measurement_kind:
-            enum: [self_report, behavioral_task, observation, physiology, circuit, molecular, genetic, clinical_rating, computational_parameter]
+            enum: [self_report, behavioral_task, observation, physiology, circuit, molecular, genetic, clinical_rating, psychometric_scale, computational_parameter]
           target_ids:
             type: array
             minItems: 1
@@ -274,7 +274,7 @@ $defs:
             uniqueItems: true
           method: {$ref: '#/$defs/nonEmptyString'}
           unit_of_analysis:
-            enum: [genes, molecules, cells, circuits, physiology, behavior, self_report, paradigm, clinical_record]
+            enum: [genes, molecules, cells, circuits, physiology, behavior, person, self_report, paradigm, clinical_record]
           result_type:
             enum: [binary, count, continuous, ordinal, nominal, time_to_event, model_parameter]
   context:

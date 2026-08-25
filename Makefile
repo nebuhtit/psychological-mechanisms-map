@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction test export verify clean
+.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction validate-habit test export verify clean
 
 PYTHON := .venv/bin/python
 
@@ -21,6 +21,9 @@ validate-pack:
 validate-extinction:
 	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-fear-extinction-v0.3.yaml
 
+validate-habit:
+	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-habit-control-v0.3.yaml
+
 test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
 
@@ -29,8 +32,9 @@ export:
 	$(PYTHON) scripts/pmm_v03.py export data/stress-test-mechanisms-v0.3.yaml build/stress-test-mechanisms-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-negative-reinforcement-v0.3.yaml build/evidence-pack-negative-reinforcement-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-fear-extinction-v0.3.yaml build/evidence-pack-fear-extinction-v0.3.json
+	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-habit-control-v0.3.yaml build/evidence-pack-habit-control-v0.3.json
 
-verify: validate validate-stress validate-pack validate-extinction test export
+verify: validate validate-stress validate-pack validate-extinction validate-habit test export
 	git diff --exit-code -- build
 
 clean:
