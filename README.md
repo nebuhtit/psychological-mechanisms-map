@@ -22,6 +22,9 @@ docs/fear-extinction-preview.md       Provisional GitHub-rendered diagram
 data/evidence-pack-habit-control-v0.3.yaml
                                      Habit and goal-directed control stress test
 docs/habit-control-preview.md         Provisional habit-control diagram
+data/evidence-pack-cognitive-reappraisal-v0.3.yaml
+                                     Reappraisal and multimodal outcome stress test
+docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
 tests/test_pmm_v03.py                Valid and deliberately invalid fixtures
@@ -45,6 +48,7 @@ make validate-stress
 make validate-pack
 make validate-extinction
 make validate-habit
+make validate-reappraisal
 make test
 make export
 make verify
@@ -95,6 +99,12 @@ habitual or goal-directed mechanisms separate. Its
 [provisional visual preview](docs/habit-control-preview.md) also displays failed
 devaluation as an explicit alternative explanation rather than silently
 classifying every persistent response as a habit.
+
+The cognitive-reappraisal pack separates an assigned instruction from proposed
+meaning reinterpretation and from subjective, expressive, autonomic, and BOLD
+measurements. Statistical neural mediation is recorded explicitly without
+upgrading it to causal mediation. See the
+[provisional visual preview](docs/cognitive-reappraisal-preview.md).
 
 ## Next steps
 

@@ -1,0 +1,578 @@
+pmm_version: 0.3.0
+document_type: pmm_dataset
+dataset_id: pmm:dataset:cognitive-reappraisal-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for cognitive reappraisal
+  description: >-
+    Human experiments separating reappraisal instructions, reinterpretation as
+    a proposed process, subjective emotional experience, expressive behavior,
+    autonomic physiology, neural measurements, and statistical mediation.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.3.0
+    created_at: '2026-08-26T00:00:00+03:00'
+    modified_at: '2026-08-26T00:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmc: https://pmc.ncbi.nlm.nih.gov/articles/
+
+objects:
+  - id: pmm:context:aversive-stimulus-reappraisal-task
+    type: Context
+    label: Aversive-stimulus reappraisal task
+    definition: Laboratory context in which participants view aversive films or images under assigned emotion-regulation instructions.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      elicitor: aversive film or image
+      comparison: watch, acceptance, or suppression instruction
+      response_channels: self-report, expression, physiology, or fMRI
+    scope: Brief instructed regulation in human laboratory studies; not habitual real-world strategy use.
+    provenance: *provenance
+
+  - id: pmm:context:negative-emotion-episode
+    type: Context
+    label: Negative-emotion episode context
+    definition: Time-bounded situation in which an eliciting stimulus is appraised as emotionally negative.
+    ontological_level: type
+    curation_status: provisional
+    context_kind: composite
+    dimensions:
+      elicitor: present
+      appraisal: negative
+      duration: seconds to minutes
+    scope: Experimental episodes represented in this pilot.
+    provenance: *provenance
+
+  - id: pmm:state:negative-emotional-experience
+    type: State
+    label: Negative emotional experience
+    definition: Time-indexed subjective experience of negative affect during or after an eliciting event.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: affective
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes:
+      - Subjective experience is not interchangeable with autonomic activity or facial expression.
+    provenance: *provenance
+
+  - id: pmm:state:autonomic-emotional-reactivity
+    type: State
+    label: Autonomic emotional reactivity
+    definition: Time-indexed cardiovascular, electrodermal, respiratory, or pupillary response during an emotional episode.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes:
+      - Different autonomic channels need not change in the same direction.
+    provenance: *provenance
+
+  - id: pmm:behavior:emotion-expressive-behavior
+    type: Behavior
+    label: Emotion-expressive behavior
+    definition: Observable facial or bodily behavior coded as expression of emotion during an eliciting event.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: response_pattern
+    observability: direct
+    actor_scope: person
+    response_topography: Facial and bodily expressions coded from recorded behavior.
+    function_note: Reduced expression does not by itself imply reduced subjective emotion.
+    provenance: *provenance
+
+  - id: pmm:construct:situational-meaning-appraisal
+    type: Construct
+    label: Situational meaning appraisal
+    definition: The interpreted meaning and significance assigned to an emotion-eliciting situation.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Appraisal content must be operationalized rather than inferred solely from lower emotion ratings.
+    provenance: *provenance
+
+  - id: pmm:intervention:reappraisal-instruction
+    type: Intervention
+    label: Cognitive reappraisal instruction
+    definition: Experimental instruction to reinterpret or psychologically distance from an eliciting situation so as to alter its emotional impact.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:construct:situational-meaning-appraisal
+      - pmm:state:negative-emotional-experience
+    delivery: Verbal or written instruction before or during aversive stimulus presentation.
+    intended_direction: decrease
+    provenance: *provenance
+
+  - id: pmm:intervention:watch-instruction
+    type: Intervention
+    label: Watch instruction
+    definition: Experimental comparison instruction to attend naturally to the emotional stimulus without assigned regulation.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:state:negative-emotional-experience]
+    delivery: Natural viewing instruction during the same class of stimuli.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:mechanism:meaning-reinterpretation
+    type: Mechanism
+    label: Meaning reinterpretation
+    definition: Proposed cognitive process that changes the construed meaning of an eliciting situation and thereby changes later emotional responding.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: cognitive
+    role_bindings:
+      - role: interpreted meaning
+        object_id: pmm:construct:situational-meaning-appraisal
+      - role: emotional consequence
+        object_id: pmm:state:negative-emotional-experience
+      - role: eliciting context
+        object_id: pmm:context:negative-emotion-episode
+    realization_conditions:
+      - The participant generates or adopts an alternative interpretation of the eliciting situation.
+      - The reinterpretation occurs early enough to influence the measured emotional response.
+    boundary_notes:
+      - Successful instruction assignment does not verify that reinterpretation occurred.
+      - Distancing, reinterpretation, distraction, acceptance, and suppression should remain distinguishable strategies.
+    provenance: *provenance
+
+  - id: pmm:measurement:negative-emotion-rating
+    type: Measurement
+    label: Trial-level negative-emotion rating
+    definition: Self-reported intensity of negative emotional experience after an eliciting stimulus.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: self_report
+    target_ids: [pmm:state:negative-emotional-experience]
+    method: Visual analog, Likert, or comparable rating after watch or regulation trials.
+    unit_of_analysis: self_report
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:autonomic-response-recording
+    type: Measurement
+    label: Autonomic response recording
+    definition: Recording of heart rate, skin conductance, respiration, or pupil response during emotion regulation.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: physiology
+    target_ids: [pmm:state:autonomic-emotional-reactivity]
+    method: Channel-specific psychophysiological recording time-locked to emotional stimuli.
+    unit_of_analysis: physiology
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:expressive-behavior-coding
+    type: Measurement
+    label: Emotion-expression coding
+    definition: Observer coding of facial and bodily expressive behavior during emotional stimulation.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: observation
+    target_ids: [pmm:behavior:emotion-expressive-behavior]
+    method: Blind or standardized coding of recorded behavior.
+    unit_of_analysis: behavior
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:reappraisal-bold-response
+    type: Measurement
+    label: Reappraisal-related BOLD response
+    definition: Task-related blood-oxygen-level-dependent signal contrast during reappraisal relative to a comparison instruction.
+    ontological_level: type
+    curation_status: provisional
+    measurement_kind: circuit
+    target_ids:
+      - pmm:construct:situational-meaning-appraisal
+      - pmm:state:negative-emotional-experience
+    method: fMRI contrast and multilevel mediation analysis across trials and participants.
+    unit_of_analysis: circuits
+    result_type: continuous
+    boundary_notes:
+      - BOLD association or mediation is not equivalent to a causal neural mechanism.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:negative-experience-measured-by-rating
+    subject_id: pmm:state:negative-emotional-experience
+    predicate: measured_by
+    object_id: pmm:measurement:negative-emotion-rating
+    provenance: *provenance
+  - id: pmm:relation:autonomic-reactivity-measured-by-recording
+    subject_id: pmm:state:autonomic-emotional-reactivity
+    predicate: measured_by
+    object_id: pmm:measurement:autonomic-response-recording
+    provenance: *provenance
+  - id: pmm:relation:expression-measured-by-coding
+    subject_id: pmm:behavior:emotion-expressive-behavior
+    predicate: measured_by
+    object_id: pmm:measurement:expressive-behavior-coding
+    provenance: *provenance
+  - id: pmm:relation:reappraisal-occurs-in-aversive-task
+    subject_id: pmm:intervention:reappraisal-instruction
+    predicate: occurs_in_context
+    object_id: pmm:context:aversive-stimulus-reappraisal-task
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:reappraisal-reduces-reported-negative-emotion
+    claim_type: causal_effect
+    statement: Assigned cognitive reappraisal instructions can reduce self-reported negative emotional experience relative to natural viewing in brief laboratory tasks.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: Randomized experiments across films and images converge on lower subjective negative emotion, although strategies, comparisons, and demand characteristics differ.
+    scope:
+      population: Healthy adults viewing aversive films or images.
+      species: [human]
+      context_ids: [pmm:context:aversive-stimulus-reappraisal-task]
+      temporal_scope: Immediate instructed regulation during a laboratory emotion episode.
+      boundary_conditions:
+        - Does not establish durable skill acquisition or everyday effectiveness.
+        - Self-report can be influenced by interpretation of task demands.
+    exposure_id: pmm:intervention:reappraisal-instruction
+    outcome_id: pmm:state:negative-emotional-experience
+    causal_estimand: Difference in reported negative-emotion intensity under assigned reappraisal versus watch instructions.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Regulation instruction precedes stimulus-period or poststimulus emotion rating.
+    causal_assumptions:
+      consistency: Participants receive study-specific reappraisal or watch instructions.
+      exchangeability: Supported by randomized between-group or counterbalanced within-participant assignment.
+      positivity: Relevant instruction conditions are represented.
+      interference: Participants complete tasks independently.
+      assessment: partly_tested
+    evidence_ids:
+      - pmm:evidence:gross-1998-reappraisal-experience
+      - pmm:evidence:wolgast-2011-subjective-distress
+      - pmm:evidence:hamza-2024-subjective-emotion
+    limitations:
+      - Lower ratings do not identify meaning reinterpretation as the unique mediator.
+    provenance: *provenance
+
+  - id: pmm:claim:reappraisal-reduces-autonomic-reactivity
+    claim_type: causal_effect
+    statement: Effects of assigned cognitive reappraisal on autonomic emotional reactivity are mixed and channel-dependent.
+    epistemic_status: mixed
+    confidence:
+      level: moderate
+      rationale: Some randomized experiments report physiological reductions, while a recent experiment found subjective benefit without corresponding heart-rate, skin-conductance, or pupil differences.
+    scope:
+      population: Healthy adults in aversive film or image tasks.
+      species: [human]
+      context_ids: [pmm:context:aversive-stimulus-reappraisal-task]
+      temporal_scope: Autonomic responding during brief instructed regulation.
+      boundary_conditions:
+        - Results vary by channel, baseline, trial duration, and comparator.
+    exposure_id: pmm:intervention:reappraisal-instruction
+    outcome_id: pmm:state:autonomic-emotional-reactivity
+    causal_estimand: Reappraisal-versus-control difference in channel-specific autonomic response during emotional stimulation.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Instruction assignment precedes physiological recording during the emotion task.
+    causal_assumptions:
+      consistency: Each autonomic channel follows the reported preprocessing and contrast definition.
+      exchangeability: Supported by randomized instruction assignment.
+      positivity: Reappraisal and comparison conditions are represented.
+      interference: Participants are measured independently.
+      assessment: partly_tested
+    evidence_ids:
+      - pmm:evidence:wolgast-2011-physiological-response
+      - pmm:evidence:hamza-2024-psychophysiology
+    limitations:
+      - Physiological channels cannot be pooled as if they measured one interchangeable response.
+    provenance: *provenance
+
+  - id: pmm:claim:neural-response-statistically-mediates-reappraisal
+    claim_type: mediation
+    statement: Trial-level prefrontal and subcortical BOLD patterns statistically mediated the relation between reappraisal condition and reported negative emotion in Wager et al. 2008.
+    epistemic_status: supported
+    confidence:
+      level: low
+      rationale: Multilevel mediation identified reproducible statistical pathways within one experiment, but temporal resolution, unmeasured mediator-outcome confounding, and absence of neural manipulation prevent a causal mediation interpretation.
+    scope:
+      population: Healthy adults completing the specified fMRI reappraisal task.
+      species: [human]
+      context_ids: [pmm:context:aversive-stimulus-reappraisal-task]
+      temporal_scope: Trial-level reappraisal, BOLD response, and posttrial emotion rating.
+      boundary_conditions:
+        - The mediator is a measured BOLD pattern, not a directly manipulated neural process.
+    exposure_id: pmm:intervention:reappraisal-instruction
+    mediator_id: pmm:measurement:reappraisal-bold-response
+    outcome_id: pmm:state:negative-emotional-experience
+    indirect_effect:
+      metric: multilevel mediation effect
+      value_status: qualitative_only
+      direction: mixed
+      notes: Distinct prefrontal-subcortical pathways showed opposing associations with reported negative emotion.
+    temporal_ordering: Instruction and stimulus presentation preceded posttrial emotion ratings, but BOLD timing does not establish mediator-outcome causal order.
+    evidence_ids: [pmm:evidence:wager-2008-neural-mediation]
+    limitations:
+      - Statistical mediation is not causal mediation without stronger identification assumptions or intervention on the mediator.
+    provenance: *provenance
+
+  - id: pmm:claim:meaning-reinterpretation-mechanism-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: Reappraisal can alter emotional experience by changing the construed meaning of an eliciting situation before the full response is expressed.
+    epistemic_status: proposed
+    confidence:
+      level: moderate
+      rationale: Randomized instructions alter reported experience and sometimes expression or physiology, but most studies do not independently manipulate or directly verify the proposed change in meaning.
+    scope:
+      population: Humans using instructed reinterpretation or distancing in laboratory emotion tasks.
+      species: [human]
+      context_ids:
+        - pmm:context:aversive-stimulus-reappraisal-task
+        - pmm:context:negative-emotion-episode
+      temporal_scope: Seconds to minutes during instructed regulation.
+      boundary_conditions:
+        - Does not generalize automatically to habitual use, clinical improvement, or every reappraisal tactic.
+    mechanism_id: pmm:mechanism:meaning-reinterpretation
+    exposure_id: pmm:intervention:reappraisal-instruction
+    outcome_id: pmm:state:negative-emotional-experience
+    temporal_ordering: The proposed reinterpretation occurs after instruction and before or during construction of the measured emotional response.
+    falsifiable_boundary: The mechanism account is weakened when verified changes in construed meaning do not precede or predict emotional change, or when equivalent effects persist after interpretation change is experimentally prevented.
+    evidence_ids:
+      - pmm:evidence:gross-1998-reappraisal-experience
+      - pmm:evidence:wolgast-2011-subjective-distress
+      - pmm:evidence:hamza-2024-subjective-emotion
+    limitations:
+      - Current evidence supports intervention efficacy more directly than the internal mechanism.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:gross-1998-reappraisal-experience
+    claim_ids:
+      - pmm:claim:reappraisal-reduces-reported-negative-emotion
+      - pmm:claim:meaning-reinterpretation-mechanism-hypothesis
+    source_id: pmm:source:gross-1998-emotion-regulation
+    extraction_locator: Abstract; Method; Results for experience and expressive behavior.
+    evidence_kind: randomized_experiment
+    design: Reappraisal, expressive-suppression, and watch groups viewing a disgust-eliciting film with experiential, behavioral, and physiological recording.
+    population: 120 adult participants assigned across three instruction conditions.
+    species: [human]
+    sample_size: 120
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: reappraisal-versus-watch difference in reported disgust experience
+      value_status: qualitative_only
+      direction: negative
+      notes: Reappraisal decreased reported disgust experience; both reappraisal and suppression reduced expressive behavior, while suppression increased sympathetic activation.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: adequate
+      replication: conceptual_replication
+    summary: Assigned reappraisal reduced reported disgust and expressive behavior relative to watching naturally.
+    limitations:
+      - Participants could infer the intended direction of the rating effect.
+      - The instruction combines reinterpretation with a goal to feel less emotion.
+    provenance: *provenance
+
+  - id: pmm:evidence:wolgast-2011-subjective-distress
+    claim_ids:
+      - pmm:claim:reappraisal-reduces-reported-negative-emotion
+      - pmm:claim:meaning-reinterpretation-mechanism-hypothesis
+    source_id: pmm:source:wolgast-lundh-viborg-2011
+    extraction_locator: Abstract; Methods; subjective distress results.
+    evidence_kind: randomized_experiment
+    design: Reappraisal, acceptance, and watch groups viewing aversive film clips.
+    population: Ninety-four randomized adult participants.
+    species: [human]
+    sample_size: 94
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: between-group subjective-distress contrast
+      value_status: qualitative_only
+      direction: negative
+      notes: Reappraisal and acceptance both reduced subjective distress relative to watch; few contrasts differentiated the two active strategies.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: mostly_consistent
+      precision: adequate
+      replication: conceptual_replication
+    summary: Reappraisal reduced subjective distress, but was often not distinguishable from acceptance.
+    limitations:
+      - Common instruction, expectancy, or engagement effects may contribute to both active conditions.
+    provenance: *provenance
+
+  - id: pmm:evidence:wolgast-2011-physiological-response
+    claim_ids: [pmm:claim:reappraisal-reduces-autonomic-reactivity]
+    source_id: pmm:source:wolgast-lundh-viborg-2011
+    extraction_locator: Abstract; physiological reactions results.
+    evidence_kind: randomized_experiment
+    design: Randomized comparison of reappraisal, acceptance, and watch with skin conductance and other responses to aversive films.
+    population: Ninety-four randomized adult participants.
+    species: [human]
+    sample_size: 94
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: active-strategy versus watch physiological-response contrast
+      value_status: qualitative_only
+      direction: negative
+      notes: Reappraisal and acceptance reduced measured physiological reactions relative to control.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: mixed
+      precision: adequate
+      replication: conceptual_replication
+    summary: The experiment found physiological reductions under reappraisal, although active strategies rarely differed.
+    limitations:
+      - The abstract-level extraction does not imply uniform effects across every physiological channel.
+    provenance: *provenance
+
+  - id: pmm:evidence:wager-2008-neural-mediation
+    claim_ids: [pmm:claim:neural-response-statistically-mediates-reappraisal]
+    source_id: pmm:source:wager-2008-neural-pathways
+    extraction_locator: Summary; multilevel mediation analyses; Discussion.
+    evidence_kind: controlled_experiment
+    design: Within-participant fMRI reappraisal task with trial-level negative-emotion ratings and multilevel mediation effect parametric mapping.
+    population: Healthy adult participants in a laboratory neuroimaging experiment.
+    species: [human]
+    inference_support: mediation
+    support_direction: supports
+    causal_support: indirect
+    effect:
+      metric: multilevel indirect association through BOLD response patterns
+      value_status: qualitative_only
+      direction: mixed
+      notes: Two partially independent prefrontal-subcortical pathways showed opposing relations with reported regulation success.
+    domains:
+      directness: indirect
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: limited
+      replication: unreplicated
+    summary: BOLD patterns statistically mediated the instruction-rating association, without experimental manipulation of the neural mediator.
+    limitations:
+      - Sequential ignorability for the mediator-outcome relation was not established.
+      - BOLD spatial patterns are measurements, not mechanism entities.
+    provenance: *provenance
+
+  - id: pmm:evidence:hamza-2024-subjective-emotion
+    claim_ids:
+      - pmm:claim:reappraisal-reduces-reported-negative-emotion
+      - pmm:claim:meaning-reinterpretation-mechanism-hypothesis
+    source_id: pmm:source:hamza-2024-reappraisal-stress
+    extraction_locator: Abstract; subjective emotion results.
+    evidence_kind: randomized_experiment
+    design: Reappraisal, acceptance, or watch instruction crossed with acute-stress or control exposure before viewing distressing IAPS images.
+    population: Ninety-eight healthy adults aged 18-40.
+    species: [human]
+    sample_size: 98
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: assigned-strategy difference in visual-analog negative-emotion rating
+      value_status: qualitative_only
+      direction: negative
+      notes: Reappraisal lowered subjectively experienced negative emotion; prior stress and trait moderation effects were not supported.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: mostly_consistent
+      precision: adequate
+      replication: conceptual_replication
+    summary: Reappraisal reduced subjective negative-emotion ratings in a recent randomized experiment.
+    limitations:
+      - Strategy use was instructed rather than directly observed.
+    provenance: *provenance
+
+  - id: pmm:evidence:hamza-2024-psychophysiology
+    claim_ids: [pmm:claim:reappraisal-reduces-autonomic-reactivity]
+    source_id: pmm:source:hamza-2024-reappraisal-stress
+    extraction_locator: Abstract; heart-rate, skin-conductance, and pupil-response results.
+    evidence_kind: randomized_experiment
+    design: Strategy instruction and acute-stress factorial experiment with multimodal psychophysiology.
+    population: Ninety-eight healthy adults aged 18-40.
+    species: [human]
+    sample_size: 98
+    inference_support: causal_effect
+    support_direction: challenges
+    causal_support: direct
+    effect:
+      metric: group differences in heart rate, skin conductance, and pupil response
+      value_status: qualitative_only
+      direction: 'null'
+      notes: Subjective reappraisal differences were not supported by the psychophysiological indicators.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: mixed
+      precision: adequate
+      replication: conceptual_replication
+    summary: The recent experiment found subjective benefit without corresponding psychophysiological group differences.
+    limitations:
+      - Null channel effects do not prove equivalence without channel-specific precision estimates.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:gross-1998-emotion-regulation
+    title: "Antecedent- and response-focused emotion regulation: divergent consequences for experience, expression, and physiology"
+    source_type: peer_reviewed_article
+    authors: [James J. Gross]
+    year: 1998
+    doi: 10.1037/0022-3514.74.1.224
+    pmid: '9457784'
+    url: https://pubmed.ncbi.nlm.nih.gov/9457784/
+    accessed_at: '2026-08-26'
+    authority_note: Foundational randomized experiment separating experience, expression, and physiological response channels.
+    provenance: *provenance
+
+  - id: pmm:source:wolgast-lundh-viborg-2011
+    title: "Cognitive reappraisal and acceptance: an experimental comparison of two emotion regulation strategies"
+    source_type: peer_reviewed_article
+    authors: [Martin Wolgast, Lars-Gunnar Lundh, Gardar Viborg]
+    year: 2011
+    doi: 10.1016/j.brat.2011.09.011
+    pmid: '21999941'
+    url: https://pubmed.ncbi.nlm.nih.gov/21999941/
+    accessed_at: '2026-08-26'
+    authority_note: Randomized multimodal comparison of reappraisal, acceptance, and natural viewing.
+    provenance: *provenance
+
+  - id: pmm:source:wager-2008-neural-pathways
+    title: "Neural mechanisms of emotion regulation: Evidence for two independent prefrontal-subcortical pathways"
+    source_type: peer_reviewed_article
+    authors: [Tor D. Wager, Matthew L. Davidson, Brent L. Hughes, Martin A. Lindquist, Kevin N. Ochsner]
+    year: 2008
+    doi: 10.1016/j.neuron.2008.09.006
+    pmid: '18817740'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2742320/
+    accessed_at: '2026-08-26'
+    authority_note: Primary fMRI experiment applying multilevel mediation, included with explicit noncausal interpretation limits.
+    provenance: *provenance
+
+  - id: pmm:source:hamza-2024-reappraisal-stress
+    title: Cognitive reappraisal and acceptance following acute stress
+    source_type: peer_reviewed_article
+    authors: [Josef Hamza, Simona Vytykacova, Katarina Jansakova, Jakub Rajcani]
+    year: 2024
+    doi: 10.1002/smi.3469
+    pmid: '39229764'
+    url: https://pubmed.ncbi.nlm.nih.gov/39229764/
+    accessed_at: '2026-08-26'
+    authority_note: Recent randomized multimodal experiment preserving divergence between subjective and psychophysiological outcomes.
+    provenance: *provenance

@@ -143,5 +143,31 @@ class HabitControlEvidencePackTests(unittest.TestCase):
             self.assertEqual(records[evidence_id]["effect"]["direction"], "null")
 
 
+class CognitiveReappraisalEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-cognitive-reappraisal-v0.3.yaml"
+        )
+
+    def test_cognitive_reappraisal_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_emotion_channels_remain_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:state:negative-emotional-experience"], "State")
+        self.assertEqual(records["pmm:state:autonomic-emotional-reactivity"], "State")
+        self.assertEqual(records["pmm:behavior:emotion-expressive-behavior"], "Behavior")
+
+    def test_neural_mediation_is_not_marked_direct_causal(self) -> None:
+        evidence = next(
+            item
+            for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:wager-2008-neural-mediation"
+        )
+        self.assertEqual(evidence["inference_support"], "mediation")
+        self.assertEqual(evidence["causal_support"], "indirect")
+
+
 if __name__ == "__main__":
     unittest.main()

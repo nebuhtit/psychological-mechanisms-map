@@ -1,0 +1,1020 @@
+{
+  "claims": [
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Participants receive study-specific reappraisal or watch instructions.",
+        "exchangeability": "Supported by randomized between-group or counterbalanced within-participant assignment.",
+        "interference": "Participants complete tasks independently.",
+        "positivity": "Relevant instruction conditions are represented."
+      },
+      "causal_estimand": "Difference in reported negative-emotion intensity under assigned reappraisal versus watch instructions.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Randomized experiments across films and images converge on lower subjective negative emotion, although strategies, comparisons, and demand characteristics differ."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:gross-1998-reappraisal-experience",
+        "pmm:evidence:wolgast-2011-subjective-distress",
+        "pmm:evidence:hamza-2024-subjective-emotion"
+      ],
+      "exposure_id": "pmm:intervention:reappraisal-instruction",
+      "id": "pmm:claim:reappraisal-reduces-reported-negative-emotion",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "Lower ratings do not identify meaning reinterpretation as the unique mediator."
+      ],
+      "outcome_id": "pmm:state:negative-emotional-experience",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Does not establish durable skill acquisition or everyday effectiveness.",
+          "Self-report can be influenced by interpretation of task demands."
+        ],
+        "context_ids": [
+          "pmm:context:aversive-stimulus-reappraisal-task"
+        ],
+        "population": "Healthy adults viewing aversive films or images.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Immediate instructed regulation during a laboratory emotion episode."
+      },
+      "statement": "Assigned cognitive reappraisal instructions can reduce self-reported negative emotional experience relative to natural viewing in brief laboratory tasks.",
+      "temporal_ordering": "Regulation instruction precedes stimulus-period or poststimulus emotion rating."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Each autonomic channel follows the reported preprocessing and contrast definition.",
+        "exchangeability": "Supported by randomized instruction assignment.",
+        "interference": "Participants are measured independently.",
+        "positivity": "Reappraisal and comparison conditions are represented."
+      },
+      "causal_estimand": "Reappraisal-versus-control difference in channel-specific autonomic response during emotional stimulation.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Some randomized experiments report physiological reductions, while a recent experiment found subjective benefit without corresponding heart-rate, skin-conductance, or pupil differences."
+      },
+      "epistemic_status": "mixed",
+      "evidence_ids": [
+        "pmm:evidence:wolgast-2011-physiological-response",
+        "pmm:evidence:hamza-2024-psychophysiology"
+      ],
+      "exposure_id": "pmm:intervention:reappraisal-instruction",
+      "id": "pmm:claim:reappraisal-reduces-autonomic-reactivity",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "Physiological channels cannot be pooled as if they measured one interchangeable response."
+      ],
+      "outcome_id": "pmm:state:autonomic-emotional-reactivity",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Results vary by channel, baseline, trial duration, and comparator."
+        ],
+        "context_ids": [
+          "pmm:context:aversive-stimulus-reappraisal-task"
+        ],
+        "population": "Healthy adults in aversive film or image tasks.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Autonomic responding during brief instructed regulation."
+      },
+      "statement": "Effects of assigned cognitive reappraisal on autonomic emotional reactivity are mixed and channel-dependent.",
+      "temporal_ordering": "Instruction assignment precedes physiological recording during the emotion task."
+    },
+    {
+      "claim_type": "mediation",
+      "confidence": {
+        "level": "low",
+        "rationale": "Multilevel mediation identified reproducible statistical pathways within one experiment, but temporal resolution, unmeasured mediator-outcome confounding, and absence of neural manipulation prevent a causal mediation interpretation."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:wager-2008-neural-mediation"
+      ],
+      "exposure_id": "pmm:intervention:reappraisal-instruction",
+      "id": "pmm:claim:neural-response-statistically-mediates-reappraisal",
+      "indirect_effect": {
+        "direction": "mixed",
+        "metric": "multilevel mediation effect",
+        "notes": "Distinct prefrontal-subcortical pathways showed opposing associations with reported negative emotion.",
+        "value_status": "qualitative_only"
+      },
+      "limitations": [
+        "Statistical mediation is not causal mediation without stronger identification assumptions or intervention on the mediator."
+      ],
+      "mediator_id": "pmm:measurement:reappraisal-bold-response",
+      "outcome_id": "pmm:state:negative-emotional-experience",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The mediator is a measured BOLD pattern, not a directly manipulated neural process."
+        ],
+        "context_ids": [
+          "pmm:context:aversive-stimulus-reappraisal-task"
+        ],
+        "population": "Healthy adults completing the specified fMRI reappraisal task.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Trial-level reappraisal, BOLD response, and posttrial emotion rating."
+      },
+      "statement": "Trial-level prefrontal and subcortical BOLD patterns statistically mediated the relation between reappraisal condition and reported negative emotion in Wager et al. 2008.",
+      "temporal_ordering": "Instruction and stimulus presentation preceded posttrial emotion ratings, but BOLD timing does not establish mediator-outcome causal order."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Randomized instructions alter reported experience and sometimes expression or physiology, but most studies do not independently manipulate or directly verify the proposed change in meaning."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:gross-1998-reappraisal-experience",
+        "pmm:evidence:wolgast-2011-subjective-distress",
+        "pmm:evidence:hamza-2024-subjective-emotion"
+      ],
+      "exposure_id": "pmm:intervention:reappraisal-instruction",
+      "falsifiable_boundary": "The mechanism account is weakened when verified changes in construed meaning do not precede or predict emotional change, or when equivalent effects persist after interpretation change is experimentally prevented.",
+      "id": "pmm:claim:meaning-reinterpretation-mechanism-hypothesis",
+      "limitations": [
+        "Current evidence supports intervention efficacy more directly than the internal mechanism."
+      ],
+      "mechanism_id": "pmm:mechanism:meaning-reinterpretation",
+      "outcome_id": "pmm:state:negative-emotional-experience",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Does not generalize automatically to habitual use, clinical improvement, or every reappraisal tactic."
+        ],
+        "context_ids": [
+          "pmm:context:aversive-stimulus-reappraisal-task",
+          "pmm:context:negative-emotion-episode"
+        ],
+        "population": "Humans using instructed reinterpretation or distancing in laboratory emotion tasks.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Seconds to minutes during instructed regulation."
+      },
+      "statement": "Reappraisal can alter emotional experience by changing the construed meaning of an eliciting situation before the full response is expressed.",
+      "temporal_ordering": "The proposed reinterpretation occurs after instruction and before or during construction of the measured emotional response."
+    }
+  ],
+  "dataset_id": "pmm:dataset:cognitive-reappraisal-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:reappraisal-reduces-reported-negative-emotion",
+        "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
+      ],
+      "design": "Reappraisal, expressive-suppression, and watch groups viewing a disgust-eliciting film with experiential, behavioral, and physiological recording.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "reappraisal-versus-watch difference in reported disgust experience",
+        "notes": "Reappraisal decreased reported disgust experience; both reappraisal and suppression reduced expressive behavior, while suppression increased sympathetic activation.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract; Method; Results for experience and expressive behavior.",
+      "id": "pmm:evidence:gross-1998-reappraisal-experience",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Participants could infer the intended direction of the rating effect.",
+        "The instruction combines reinterpretation with a goal to feel less emotion."
+      ],
+      "population": "120 adult participants assigned across three instruction conditions.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 120,
+      "source_id": "pmm:source:gross-1998-emotion-regulation",
+      "species": [
+        "human"
+      ],
+      "summary": "Assigned reappraisal reduced reported disgust and expressive behavior relative to watching naturally.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:reappraisal-reduces-reported-negative-emotion",
+        "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
+      ],
+      "design": "Reappraisal, acceptance, and watch groups viewing aversive film clips.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "between-group subjective-distress contrast",
+        "notes": "Reappraisal and acceptance both reduced subjective distress relative to watch; few contrasts differentiated the two active strategies.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract; Methods; subjective distress results.",
+      "id": "pmm:evidence:wolgast-2011-subjective-distress",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Common instruction, expectancy, or engagement effects may contribute to both active conditions."
+      ],
+      "population": "Ninety-four randomized adult participants.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 94,
+      "source_id": "pmm:source:wolgast-lundh-viborg-2011",
+      "species": [
+        "human"
+      ],
+      "summary": "Reappraisal reduced subjective distress, but was often not distinguishable from acceptance.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:reappraisal-reduces-autonomic-reactivity"
+      ],
+      "design": "Randomized comparison of reappraisal, acceptance, and watch with skin conductance and other responses to aversive films.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "active-strategy versus watch physiological-response contrast",
+        "notes": "Reappraisal and acceptance reduced measured physiological reactions relative to control.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract; physiological reactions results.",
+      "id": "pmm:evidence:wolgast-2011-physiological-response",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "The abstract-level extraction does not imply uniform effects across every physiological channel."
+      ],
+      "population": "Ninety-four randomized adult participants.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 94,
+      "source_id": "pmm:source:wolgast-lundh-viborg-2011",
+      "species": [
+        "human"
+      ],
+      "summary": "The experiment found physiological reductions under reappraisal, although active strategies rarely differed.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:neural-response-statistically-mediates-reappraisal"
+      ],
+      "design": "Within-participant fMRI reappraisal task with trial-level negative-emotion ratings and multilevel mediation effect parametric mapping.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "indirect",
+        "precision": "limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "multilevel indirect association through BOLD response patterns",
+        "notes": "Two partially independent prefrontal-subcortical pathways showed opposing relations with reported regulation success.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Summary; multilevel mediation analyses; Discussion.",
+      "id": "pmm:evidence:wager-2008-neural-mediation",
+      "inference_support": "mediation",
+      "limitations": [
+        "Sequential ignorability for the mediator-outcome relation was not established.",
+        "BOLD spatial patterns are measurements, not mechanism entities."
+      ],
+      "population": "Healthy adult participants in a laboratory neuroimaging experiment.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:wager-2008-neural-pathways",
+      "species": [
+        "human"
+      ],
+      "summary": "BOLD patterns statistically mediated the instruction-rating association, without experimental manipulation of the neural mediator.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:reappraisal-reduces-reported-negative-emotion",
+        "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
+      ],
+      "design": "Reappraisal, acceptance, or watch instruction crossed with acute-stress or control exposure before viewing distressing IAPS images.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "assigned-strategy difference in visual-analog negative-emotion rating",
+        "notes": "Reappraisal lowered subjectively experienced negative emotion; prior stress and trait moderation effects were not supported.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract; subjective emotion results.",
+      "id": "pmm:evidence:hamza-2024-subjective-emotion",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Strategy use was instructed rather than directly observed."
+      ],
+      "population": "Ninety-eight healthy adults aged 18-40.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 98,
+      "source_id": "pmm:source:hamza-2024-reappraisal-stress",
+      "species": [
+        "human"
+      ],
+      "summary": "Reappraisal reduced subjective negative-emotion ratings in a recent randomized experiment.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:reappraisal-reduces-autonomic-reactivity"
+      ],
+      "design": "Strategy instruction and acute-stress factorial experiment with multimodal psychophysiology.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "null",
+        "metric": "group differences in heart rate, skin conductance, and pupil response",
+        "notes": "Subjective reappraisal differences were not supported by the psychophysiological indicators.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "randomized_experiment",
+      "extraction_locator": "Abstract; heart-rate, skin-conductance, and pupil-response results.",
+      "id": "pmm:evidence:hamza-2024-psychophysiology",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Null channel effects do not prove equivalence without channel-specific precision estimates."
+      ],
+      "population": "Ninety-eight healthy adults aged 18-40.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 98,
+      "source_id": "pmm:source:hamza-2024-reappraisal-stress",
+      "species": [
+        "human"
+      ],
+      "summary": "The recent experiment found subjective benefit without corresponding psychophysiological group differences.",
+      "support_direction": "challenges"
+    }
+  ],
+  "metadata": {
+    "description": "Human experiments separating reappraisal instructions, reinterpretation as a proposed process, subjective emotional experience, expressive behavior, autonomic physiology, neural measurements, and statistical mediation.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T00:00:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T00:00:00+03:00",
+      "record_version": "0.3.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for cognitive reappraisal"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Laboratory context in which participants view aversive films or images under assigned emotion-regulation instructions.",
+      "dimensions": {
+        "comparison": "watch, acceptance, or suppression instruction",
+        "elicitor": "aversive film or image",
+        "response_channels": "self-report, expression, physiology, or fMRI"
+      },
+      "id": "pmm:context:aversive-stimulus-reappraisal-task",
+      "label": "Aversive-stimulus reappraisal task",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Brief instructed regulation in human laboratory studies; not habitual real-world strategy use.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "composite",
+      "curation_status": "provisional",
+      "definition": "Time-bounded situation in which an eliciting stimulus is appraised as emotionally negative.",
+      "dimensions": {
+        "appraisal": "negative",
+        "duration": "seconds to minutes",
+        "elicitor": "present"
+      },
+      "id": "pmm:context:negative-emotion-episode",
+      "label": "Negative-emotion episode context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Experimental episodes represented in this pilot.",
+      "type": "Context"
+    },
+    {
+      "bearer_scope": "person",
+      "boundary_notes": [
+        "Subjective experience is not interchangeable with autonomic activity or facial expression."
+      ],
+      "curation_status": "accepted",
+      "definition": "Time-indexed subjective experience of negative affect during or after an eliciting event.",
+      "id": "pmm:state:negative-emotional-experience",
+      "label": "Negative emotional experience",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "affective",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "bearer_scope": "person",
+      "boundary_notes": [
+        "Different autonomic channels need not change in the same direction."
+      ],
+      "curation_status": "accepted",
+      "definition": "Time-indexed cardiovascular, electrodermal, respiratory, or pupillary response during an emotional episode.",
+      "id": "pmm:state:autonomic-emotional-reactivity",
+      "label": "Autonomic emotional reactivity",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "physiological",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "response_pattern",
+      "curation_status": "accepted",
+      "definition": "Observable facial or bodily behavior coded as expression of emotion during an eliciting event.",
+      "function_note": "Reduced expression does not by itself imply reduced subjective emotion.",
+      "id": "pmm:behavior:emotion-expressive-behavior",
+      "label": "Emotion-expressive behavior",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Facial and bodily expressions coded from recorded behavior.",
+      "type": "Behavior"
+    },
+    {
+      "boundary_notes": [
+        "Appraisal content must be operationalized rather than inferred solely from lower emotion ratings."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "The interpreted meaning and significance assigned to an emotion-eliciting situation.",
+      "id": "pmm:construct:situational-meaning-appraisal",
+      "label": "Situational meaning appraisal",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental instruction to reinterpret or psychologically distance from an eliciting situation so as to alter its emotional impact.",
+      "delivery": "Verbal or written instruction before or during aversive stimulus presentation.",
+      "id": "pmm:intervention:reappraisal-instruction",
+      "intended_direction": "decrease",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Cognitive reappraisal instruction",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:construct:situational-meaning-appraisal",
+        "pmm:state:negative-emotional-experience"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental comparison instruction to attend naturally to the emotional stimulus without assigned regulation.",
+      "delivery": "Natural viewing instruction during the same class of stimuli.",
+      "id": "pmm:intervention:watch-instruction",
+      "intended_direction": "test",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Watch instruction",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:state:negative-emotional-experience"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "boundary_notes": [
+        "Successful instruction assignment does not verify that reinterpretation occurred.",
+        "Distancing, reinterpretation, distraction, acceptance, and suppression should remain distinguishable strategies."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed cognitive process that changes the construed meaning of an eliciting situation and thereby changes later emotional responding.",
+      "id": "pmm:mechanism:meaning-reinterpretation",
+      "label": "Meaning reinterpretation",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "The participant generates or adopts an alternative interpretation of the eliciting situation.",
+        "The reinterpretation occurs early enough to influence the measured emotional response."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:construct:situational-meaning-appraisal",
+          "role": "interpreted meaning"
+        },
+        {
+          "object_id": "pmm:state:negative-emotional-experience",
+          "role": "emotional consequence"
+        },
+        {
+          "object_id": "pmm:context:negative-emotion-episode",
+          "role": "eliciting context"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Self-reported intensity of negative emotional experience after an eliciting stimulus.",
+      "id": "pmm:measurement:negative-emotion-rating",
+      "label": "Trial-level negative-emotion rating",
+      "measurement_kind": "self_report",
+      "method": "Visual analog, Likert, or comparable rating after watch or regulation trials.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:negative-emotional-experience"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "self_report"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Recording of heart rate, skin conductance, respiration, or pupil response during emotion regulation.",
+      "id": "pmm:measurement:autonomic-response-recording",
+      "label": "Autonomic response recording",
+      "measurement_kind": "physiology",
+      "method": "Channel-specific psychophysiological recording time-locked to emotional stimuli.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:autonomic-emotional-reactivity"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "physiology"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Observer coding of facial and bodily expressive behavior during emotional stimulation.",
+      "id": "pmm:measurement:expressive-behavior-coding",
+      "label": "Emotion-expression coding",
+      "measurement_kind": "observation",
+      "method": "Blind or standardized coding of recorded behavior.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:behavior:emotion-expressive-behavior"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "BOLD association or mediation is not equivalent to a causal neural mechanism."
+      ],
+      "curation_status": "provisional",
+      "definition": "Task-related blood-oxygen-level-dependent signal contrast during reappraisal relative to a comparison instruction.",
+      "id": "pmm:measurement:reappraisal-bold-response",
+      "label": "Reappraisal-related BOLD response",
+      "measurement_kind": "circuit",
+      "method": "fMRI contrast and multilevel mediation analysis across trials and participants.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:situational-meaning-appraisal",
+        "pmm:state:negative-emotional-experience"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "circuits"
+    }
+  ],
+  "pmm_version": "0.3.0",
+  "relations": [
+    {
+      "id": "pmm:relation:negative-experience-measured-by-rating",
+      "object_id": "pmm:measurement:negative-emotion-rating",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:state:negative-emotional-experience"
+    },
+    {
+      "id": "pmm:relation:autonomic-reactivity-measured-by-recording",
+      "object_id": "pmm:measurement:autonomic-response-recording",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:state:autonomic-emotional-reactivity"
+    },
+    {
+      "id": "pmm:relation:expression-measured-by-coding",
+      "object_id": "pmm:measurement:expressive-behavior-coding",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:emotion-expressive-behavior"
+    },
+    {
+      "id": "pmm:relation:reappraisal-occurs-in-aversive-task",
+      "object_id": "pmm:context:aversive-stimulus-reappraisal-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:intervention:reappraisal-instruction"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Foundational randomized experiment separating experience, expression, and physiological response channels.",
+      "authors": [
+        "James J. Gross"
+      ],
+      "doi": "10.1037/0022-3514.74.1.224",
+      "id": "pmm:source:gross-1998-emotion-regulation",
+      "pmid": "9457784",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Antecedent- and response-focused emotion regulation: divergent consequences for experience, expression, and physiology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9457784/",
+      "year": 1998
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Randomized multimodal comparison of reappraisal, acceptance, and natural viewing.",
+      "authors": [
+        "Martin Wolgast",
+        "Lars-Gunnar Lundh",
+        "Gardar Viborg"
+      ],
+      "doi": "10.1016/j.brat.2011.09.011",
+      "id": "pmm:source:wolgast-lundh-viborg-2011",
+      "pmid": "21999941",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Cognitive reappraisal and acceptance: an experimental comparison of two emotion regulation strategies",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21999941/",
+      "year": 2011
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary fMRI experiment applying multilevel mediation, included with explicit noncausal interpretation limits.",
+      "authors": [
+        "Tor D. Wager",
+        "Matthew L. Davidson",
+        "Brent L. Hughes",
+        "Martin A. Lindquist",
+        "Kevin N. Ochsner"
+      ],
+      "doi": "10.1016/j.neuron.2008.09.006",
+      "id": "pmm:source:wager-2008-neural-pathways",
+      "pmid": "18817740",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Neural mechanisms of emotion regulation: Evidence for two independent prefrontal-subcortical pathways",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2742320/",
+      "year": 2008
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Recent randomized multimodal experiment preserving divergence between subjective and psychophysiological outcomes.",
+      "authors": [
+        "Josef Hamza",
+        "Simona Vytykacova",
+        "Katarina Jansakova",
+        "Jakub Rajcani"
+      ],
+      "doi": "10.1002/smi.3469",
+      "id": "pmm:source:hamza-2024-reappraisal-stress",
+      "pmid": "39229764",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Cognitive reappraisal and acceptance following acute stress",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39229764/",
+      "year": 2024
+    }
+  ]
+}
