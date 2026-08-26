@@ -1,0 +1,82 @@
+curation_version: 0.1.0
+document_type: curation_protocol
+protocol_id: pmm:curation-protocol:evidence-pack-v0-1
+title: PMM evidence-pack curation protocol v0.1
+status: pilot
+scope: Reproducible discovery, selection, extraction, and review of source-specific evidence for PMM mechanism families.
+adopted_standards:
+  - name: PRISMA 2020
+    url: https://www.prisma-statement.org/prisma-2020-statement
+    adopted_for: Transparent reporting of identification, selection, exclusion, and inclusion flow.
+    limitation: PMM evidence packs are not systematic reviews unless every protocol gate is completed and explicitly reported.
+  - name: PRISMA-S
+    url: https://www.prisma-statement.org/prisma-search
+    adopted_for: Verbatim strategies, information sources, platforms, dates, limits, result counts, and search peer review.
+    limitation: A complete search log improves reproducibility but does not by itself make source coverage unbiased or exhaustive.
+  - name: Cochrane MECIR study selection standards C39-C42
+    url: https://www.cochrane.org/authors/handbooks-and-manuals/mecir-manual/standards-conduct-new-cochrane-intervention-reviews-c1-c75/performing-review-c24-c75/selecting-studies-include-review-c39-c42
+    adopted_for: Independent duplicate full-text eligibility decisions and explicit disagreement resolution.
+    limitation: PMM covers heterogeneous designs and must add design-specific appraisal rather than treating all studies as intervention trials.
+workflow:
+  - id: define-question
+    objective: Declare a narrow population, exposure or intervention, comparator, outcome, design, and mechanism boundary before searching.
+    required_records: [review question, inclusion criteria, exclusion criteria, claim-splitting plan]
+    exit_criteria: [Every criterion is operational enough for two reviewers to apply independently.]
+  - id: search
+    objective: Run and preserve reproducible searches without silently replacing earlier search versions.
+    required_records: [information source, platform, execution timestamp, verbatim strategy, limits, hit count, searcher, peer-review status]
+    exit_criteria: [Every planned information source has a dated search record and exported result set.]
+  - id: deduplicate
+    objective: Merge reports of the same study without losing report-level identifiers.
+    required_records: [stable record ID, DOI or PMID when available, deduplication key, provenance]
+    exit_criteria: [Duplicate decisions are deterministic and reversible.]
+  - id: screen
+    objective: Apply eligibility criteria and retain reasons for exclusion.
+    required_records: [independent reviewer decisions, screening stage, exclusion reason, consensus decision]
+    exit_criteria: [Two independent reviewers agree or a named adjudicator resolves each full-text decision.]
+  - id: extract
+    objective: Create source-specific Evidence records without upgrading statistical results into causal or mechanism claims.
+    required_records: [source locator, design, population, estimate status, inferential support, limitations, Evidence and Claim links]
+    exit_criteria: [A second reviewer verifies extraction and inferential classification against the source.]
+  - id: publish
+    objective: Validate references, report unresolved disagreement and gaps, and publish a dated evidence snapshot.
+    required_records: [machine validation, review status, search flow, known gaps, change note]
+    exit_criteria: [Generated views match canonical YAML and no incomplete pilot is labelled systematic or complete.]
+eligibility_requirements:
+  - Criteria must specify population, context, exposure or intervention, comparator, outcome, and eligible designs.
+  - One article may yield multiple Evidence records but each Evidence record must remain source-specific.
+  - Null and conflicting eligible findings must be retained.
+  - Reviews may support discovery or background but cannot replace primary-study extraction for causal claims.
+review_rules:
+  minimum_full_text_reviewers: 2
+  minimum_extraction_reviewers: 2
+  independent_before_consensus: true
+  disagreement_resolution: Reviewers reconcile after independent decisions; unresolved cases require a third named adjudicator.
+  machine_only_inclusion_allowed: false
+claim_split_triggers:
+  - materially different population or developmental stage
+  - different exposure, intervention, or comparator
+  - different outcome channel or operationalization
+  - different follow-up or temporal window
+  - different inferential type, including association, prediction, moderation, mediation, and causal effect
+  - incompatible effect direction or materially different boundary conditions
+automation_policy:
+  machine_allowed:
+    - schema and cross-reference validation
+    - deterministic deduplication suggestions
+    - identifier and URL normalization
+    - generation of screening queues and flow counts
+    - detection of missing fields and inconsistent inference labels
+  human_required:
+    - final eligibility decisions
+    - scientific extraction verification
+    - risk-of-bias judgement
+    - confidence judgement
+    - resolution of construct, mechanism, state, behavior, and measurement boundaries
+provenance:
+  record_version: 0.1.0
+  created_at: '2026-08-26T11:30:00+03:00'
+  modified_at: '2026-08-26T11:30:00+03:00'
+  created_by: [OpenAI Codex]
+  review_status: machine_validated
+  change_note: Initial protocol; independent methods and domain-expert review remain pending.

@@ -1,0 +1,211 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://pmm.local/schema/curation-v0.1.0.schema.json
+title: PMM Curation Protocol and Search Log Schema v0.1.0
+oneOf:
+  - $ref: '#/$defs/protocolDocument'
+  - $ref: '#/$defs/logDocument'
+
+$defs:
+  nonEmptyString:
+    type: string
+    minLength: 1
+  stringList:
+    type: array
+    items: {$ref: '#/$defs/nonEmptyString'}
+    minItems: 1
+    uniqueItems: true
+  provenance:
+    type: object
+    additionalProperties: false
+    required: [record_version, created_at, modified_at, created_by, review_status]
+    properties:
+      record_version: {type: string, pattern: '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'}
+      created_at: {type: string, format: date-time}
+      modified_at: {type: string, format: date-time}
+      created_by: {$ref: '#/$defs/stringList'}
+      reviewed_by: {$ref: '#/$defs/stringList'}
+      review_status: {enum: [unreviewed, machine_validated, independently_reviewed, deprecated]}
+      change_note: {type: string}
+  standard:
+    type: object
+    additionalProperties: false
+    required: [name, url, adopted_for, limitation]
+    properties:
+      name: {$ref: '#/$defs/nonEmptyString'}
+      url: {type: string, format: uri}
+      adopted_for: {$ref: '#/$defs/nonEmptyString'}
+      limitation: {$ref: '#/$defs/nonEmptyString'}
+  workflowStage:
+    type: object
+    additionalProperties: false
+    required: [id, objective, required_records, exit_criteria]
+    properties:
+      id: {type: string, pattern: '^[a-z][a-z0-9-]*$'}
+      objective: {$ref: '#/$defs/nonEmptyString'}
+      required_records: {$ref: '#/$defs/stringList'}
+      exit_criteria: {$ref: '#/$defs/stringList'}
+  protocolDocument:
+    type: object
+    additionalProperties: false
+    required: [curation_version, document_type, protocol_id, title, status, scope, adopted_standards, workflow, eligibility_requirements, review_rules, claim_split_triggers, automation_policy, provenance]
+    properties:
+      curation_version: {const: 0.1.0}
+      document_type: {const: curation_protocol}
+      protocol_id: {type: string, pattern: '^pmm:curation-protocol:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      title: {$ref: '#/$defs/nonEmptyString'}
+      status: {enum: [draft, pilot, adopted, deprecated]}
+      scope: {$ref: '#/$defs/nonEmptyString'}
+      adopted_standards:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/standard'}
+      workflow:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/workflowStage'}
+      eligibility_requirements: {$ref: '#/$defs/stringList'}
+      review_rules:
+        type: object
+        additionalProperties: false
+        required: [minimum_full_text_reviewers, minimum_extraction_reviewers, independent_before_consensus, disagreement_resolution, machine_only_inclusion_allowed]
+        properties:
+          minimum_full_text_reviewers: {type: integer, minimum: 2}
+          minimum_extraction_reviewers: {type: integer, minimum: 2}
+          independent_before_consensus: {const: true}
+          disagreement_resolution: {$ref: '#/$defs/nonEmptyString'}
+          machine_only_inclusion_allowed: {const: false}
+      claim_split_triggers: {$ref: '#/$defs/stringList'}
+      automation_policy:
+        type: object
+        additionalProperties: false
+        required: [machine_allowed, human_required]
+        properties:
+          machine_allowed: {$ref: '#/$defs/stringList'}
+          human_required: {$ref: '#/$defs/stringList'}
+      provenance: {$ref: '#/$defs/provenance'}
+  informationSource:
+    type: object
+    additionalProperties: false
+    required: [id, name, platform, url]
+    properties:
+      id: {type: string, pattern: '^source:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      name: {$ref: '#/$defs/nonEmptyString'}
+      platform: {$ref: '#/$defs/nonEmptyString'}
+      url: {type: string, format: uri}
+      coverage_note: {type: string}
+  searchRun:
+    type: object
+    additionalProperties: false
+    required: [id, information_source_id, executed_at, strategy, limits, result_count_status, searcher, peer_review_status]
+    properties:
+      id: {type: string, pattern: '^search:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      information_source_id: {type: string, pattern: '^source:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      executed_at: {type: string, format: date-time}
+      strategy: {$ref: '#/$defs/nonEmptyString'}
+      limits: {type: array, items: {$ref: '#/$defs/nonEmptyString'}, uniqueItems: true}
+      result_count_status: {enum: [recorded, not_recorded]}
+      result_count: {type: integer, minimum: 0}
+      searcher: {$ref: '#/$defs/nonEmptyString'}
+      peer_review_status: {enum: [not_reviewed, pending, reviewed]}
+      notes: {type: string}
+    allOf:
+      - if: {properties: {result_count_status: {const: recorded}}}
+        then: {required: [result_count]}
+  reviewerDecision:
+    type: object
+    additionalProperties: false
+    required: [reviewer, stage, decision, decided_at, rationale]
+    properties:
+      reviewer: {$ref: '#/$defs/nonEmptyString'}
+      stage: {enum: [seed_audit, title_abstract, full_text, extraction]}
+      decision: {enum: [include, exclude, uncertain]}
+      decided_at: {type: string, format: date-time}
+      rationale: {$ref: '#/$defs/nonEmptyString'}
+  consensus:
+    type: object
+    additionalProperties: false
+    required: [decision, resolved_by, resolved_at, rationale]
+    properties:
+      decision: {enum: [include, exclude]}
+      resolved_by: {$ref: '#/$defs/stringList'}
+      resolved_at: {type: string, format: date-time}
+      rationale: {$ref: '#/$defs/nonEmptyString'}
+  screenedRecord:
+    type: object
+    additionalProperties: false
+    required: [id, title, url, identifiers, discovered_by, deduplication_key, screening_status, reviewer_decisions]
+    properties:
+      id: {type: string, pattern: '^record:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      title: {$ref: '#/$defs/nonEmptyString'}
+      url: {type: string, format: uri}
+      identifiers:
+        type: object
+        minProperties: 1
+        additionalProperties: {type: string, minLength: 1}
+      discovered_by:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items: {type: string, pattern: '^search:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      deduplication_key: {$ref: '#/$defs/nonEmptyString'}
+      screening_status: {enum: [awaiting_screening, awaiting_full_text, provisionally_included, included, excluded]}
+      reviewer_decisions:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/reviewerDecision'}
+      consensus: {$ref: '#/$defs/consensus'}
+      exclusion_reason: {type: string}
+      linked_source_id: {type: string, pattern: '^pmm:source:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      linked_evidence_ids:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items: {type: string, pattern: '^pmm:evidence:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+    allOf:
+      - if: {properties: {screening_status: {enum: [provisionally_included, included]}}}
+        then: {required: [linked_source_id, linked_evidence_ids]}
+      - if: {properties: {screening_status: {const: excluded}}}
+        then: {required: [exclusion_reason]}
+  logDocument:
+    type: object
+    additionalProperties: false
+    required: [curation_version, document_type, log_id, protocol_id, family_id, linked_dataset, status, review_question, eligibility, information_sources, searches, records, known_gaps, provenance]
+    properties:
+      curation_version: {const: 0.1.0}
+      document_type: {const: curation_log}
+      log_id: {type: string, pattern: '^pmm:curation-log:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      protocol_id: {type: string, pattern: '^pmm:curation-protocol:[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      family_id: {type: string, pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      linked_dataset: {$ref: '#/$defs/nonEmptyString'}
+      status: {enum: [draft, pilot, complete, deprecated]}
+      review_question:
+        type: object
+        additionalProperties: false
+        required: [population, exposure, comparator, outcome, eligible_designs]
+        properties:
+          population: {$ref: '#/$defs/nonEmptyString'}
+          exposure: {$ref: '#/$defs/nonEmptyString'}
+          comparator: {$ref: '#/$defs/nonEmptyString'}
+          outcome: {$ref: '#/$defs/nonEmptyString'}
+          eligible_designs: {$ref: '#/$defs/stringList'}
+      eligibility:
+        type: object
+        additionalProperties: false
+        required: [include, exclude]
+        properties:
+          include: {$ref: '#/$defs/stringList'}
+          exclude: {$ref: '#/$defs/stringList'}
+      information_sources:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/informationSource'}
+      searches:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/searchRun'}
+      records:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/screenedRecord'}
+      known_gaps: {$ref: '#/$defs/stringList'}
+      provenance: {$ref: '#/$defs/provenance'}

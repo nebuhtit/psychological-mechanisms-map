@@ -54,6 +54,8 @@ Ten families cannot represent psychology or psychopathology as a whole. Developm
 
 ## Quality gates before broad expansion
 
+`Curation Protocol v0.1` and its first retrospective social-buffering log now provide the machine-readable infrastructure for gate 1. The protocol remains a pilot: the first log is not a systematic review, and gates 2-7 remain scientifically incomplete.
+
 PMM should not pursue comprehensive coverage until all of the following exist:
 
 1. A machine-readable curation protocol with eligibility, search, deduplication, extraction, and update rules.

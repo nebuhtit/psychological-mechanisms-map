@@ -7,6 +7,8 @@
 
 **[Explore the live interactive map](https://nebuhtit.github.io/psychological-mechanisms-map/)** · **[Read the methodology](docs/methodology-v0.3.md)** · **[Inspect the YAML datasets](data/)**
 
+**[Inspect Curation Protocol v0.1](curation/protocol-v0.1.yaml)** · **[Review the social-buffering search pilot](curation/logs/social-buffering-retrospective-v0.1.yaml)**
+
 PMM is an open, versioned, evidence-aware ontology and knowledge-graph project for psychological mechanisms. It represents psychological constructs, mental states, behaviors, interventions, measurements, contexts, empirical claims, evidence records, and scientific sources without collapsing them into an ambiguous diagram.
 
 The canonical scientific data is human-editable YAML validated against JSON Schema and semantic rules. Deterministic JSON, JSON-LD, Turtle/RDF, and the interactive website are generated projections rather than independently maintained sources of truth.
@@ -141,6 +143,10 @@ scripts/pmm_v03.py                   Schema + semantic validation and JSON expor
 scripts/build_site_data.py           Deterministic interactive-map data bundle
 scripts/build_registry.py            Validate/export every registered dataset
 scripts/build_coverage_report.py     Deterministic coverage and curation audit
+schema/curation-v0.1.schema.yaml     Search, screening, and review-log contract
+curation/protocol-v0.1.yaml          Machine-readable evidence-selection protocol
+curation/logs/                        Per-family searches, decisions, exclusions, and gaps
+scripts/curation.py                  Curation schema and cross-reference validator
 data/families.yaml                   Single registry for datasets and public map families
 scripts/new_evidence_pack.py         Schema-valid evidence-pack starter generator
 site/                                Static interactive map v0.1
@@ -157,6 +163,21 @@ PMM separates four layers:
 4. **Evidence and Sources** store one source-specific extraction per Evidence record, confidence domains, provenance, and bibliographic identity.
 
 This is an inferential firewall: an arrow cannot silently become a causal statement.
+
+## Curation and independent review
+
+PMM now has a separate machine-readable curation layer. It adopts reporting and selection practices from [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-statement), [PRISMA-S](https://www.prisma-statement.org/prisma-search), and [Cochrane MECIR C39-C42](https://www.cochrane.org/authors/handbooks-and-manuals/mecir-manual/standards-conduct-new-cochrane-intervention-reviews-c1-c75/performing-review-c24-c75/selecting-studies-include-review-c39-c42), while adding PMM-specific rules for claim splitting and inferential classification.
+
+The curation layer records:
+
+- the review question and eligibility criteria fixed before a prospective search;
+- each information source, platform, verbatim query, date, limits, hit count, and search-review status;
+- deduplication keys and report-level identifiers;
+- independent title/abstract and full-text decisions plus exclusion reasons;
+- consensus resolution and links from included reports to PMM Source and Evidence records;
+- unresolved search, screening, extraction, and expert-review gaps.
+
+The first social-buffering log is deliberately labelled `pilot`. It retrospectively audits the two mapped sources and creates a full-text queue for additional studies, but its hit count, multi-database coverage, search peer review, and independent human screening are incomplete. It is not a systematic review. The validator prevents a record from reaching `included` with fewer than two independent full-text inclusion decisions and prevents a log from reaching `complete` while searches lack hit counts or records remain unfinished.
 
 JSON-LD export preserves that firewall by emitting Claims, Evidence, and Sources as separate graph nodes. SHACL mirrors the main causal and statistical constraints; uncertain Claims are not exported as OWL axioms.
 
@@ -195,6 +216,8 @@ python3 -m http.server 8000 --directory site
 ```
 
 `make setup` creates a local `.venv`. Validation applies the complete JSON Schema and additional cross-record constraints to every dataset in `data/families.yaml`. Export produces deterministic JSON in `build/` and rebuilds the public families declared by the same registry.
+
+`make validate` also validates every YAML file under `curation/`, verifies search and information-source references, checks deduplication keys, resolves linked PMM Source/Evidence IDs, and enforces the independent-review completion gates.
 
 `make report` rebuilds `docs/coverage-report.md` and `build/coverage-report.json`. The report counts public objects, claim types, evidence profiles, and rule-based review flags; it is a curation audit, not a score of scientific truth or importance.
 

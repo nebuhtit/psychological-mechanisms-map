@@ -8,6 +8,7 @@ setup:
 
 validate:
 	$(PYTHON) scripts/build_registry.py validate
+	$(PYTHON) scripts/curation.py validate
 
 validate-v02:
 	$(PYTHON) scripts/pmm.py validate data/pilot-anxiety-avoidance.yaml

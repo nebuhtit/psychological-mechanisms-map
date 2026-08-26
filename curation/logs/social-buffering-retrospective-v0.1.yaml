@@ -1,0 +1,152 @@
+curation_version: 0.1.0
+document_type: curation_log
+log_id: pmm:curation-log:social-buffering-retrospective-v0-1
+protocol_id: pmm:curation-protocol:evidence-pack-v0-1
+family_id: social-buffering
+linked_dataset: data/evidence-pack-social-buffering-v0.3.yaml
+status: pilot
+review_question:
+  population: Human children or adolescents exposed to an acute laboratory stressor.
+  exposure: Experimentally assigned interpersonal support, presence, or preparation condition around the stressor.
+  comparator: Another support figure, stranger, alone condition, or another experimentally assigned social condition.
+  outcome: Repeated cortisol response or recovery after the acute stressor.
+  eligible_designs: [randomized experiment, controlled experimental study]
+eligibility:
+  include:
+    - Participants are children or adolescents and human data are reported separately.
+    - A social condition is experimentally assigned before or during an acute stressor.
+    - Cortisol reactivity, trajectory, or recovery is measured after assignment.
+    - The report permits extraction of the social-condition contrast or an interaction involving that contrast.
+  exclude:
+    - Parenting programs without an acute experimentally assigned support condition.
+    - Observational association only, with no assigned social condition.
+    - Chronic or hair cortisol without an acute stress-response outcome.
+    - Review, commentary, animal study, protocol, or duplicate report without unique eligible results.
+information_sources:
+  - id: source:web-search-pubmed
+    name: Web discovery constrained to PubMed records
+    platform: OpenAI web search
+    url: https://pubmed.ncbi.nlm.nih.gov/
+    coverage_note: Discovery aid only, not a direct PubMed database search or reproducible substitute for one.
+searches:
+  - id: search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+    information_source_id: source:web-search-pubmed
+    executed_at: '2026-08-26T11:35:00+03:00'
+    strategy: 'Batch of three web queries: (1) site:pubmed.ncbi.nlm.nih.gov social buffering cortisol children parent stress randomized; (2) site:pubmed.ncbi.nlm.nih.gov "social buffering" cortisol childhood experimental study; (3) site:pubmed.ncbi.nlm.nih.gov "social buffering" cortisol adolescents parent.'
+    limits: [Web results constrained to pubmed.ncbi.nlm.nih.gov, Search executed on 2026-08-26]
+    result_count_status: not_recorded
+    searcher: OpenAI Codex web discovery
+    peer_review_status: not_reviewed
+    notes: Retrospective seed audit. Web discovery is not a direct PubMed search; ranking, complete results, export, and hit count were not available, so this run cannot satisfy the protocol search gate.
+records:
+  - id: record:pubmed-41610560
+    title: Social buffering of the cortisol stress response during the Minnesota Imaging Stress Test in Children
+    url: https://pubmed.ncbi.nlm.nih.gov/41610560/
+    identifiers: {pmid: '41610560', doi: 10.1016/j.psyneuen.2026.107760}
+    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
+    deduplication_key: doi:10.1016/j.psyneuen.2026.107760
+    screening_status: provisionally_included
+    reviewer_decisions:
+      - reviewer: OpenAI Codex
+        stage: seed_audit
+        decision: include
+        decided_at: '2026-08-26T11:40:00+03:00'
+        rationale: Existing mapped randomized condition contrast with repeated cortisol sampling; independent full-text review is pending.
+    linked_source_id: pmm:source:donzella-2026-social-buffering
+    linked_evidence_ids: [pmm:evidence:donzella-2026-causal-contrast, pmm:evidence:donzella-2026-moderation]
+  - id: record:pubmed-26322485
+    title: 'Early social deprivation and the social buffering of cortisol stress responses in late childhood: An experimental study'
+    url: https://pubmed.ncbi.nlm.nih.gov/26322485/
+    identifiers: {pmid: '26322485', doi: 10.1037/dev0000029}
+    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
+    deduplication_key: doi:10.1037/dev0000029
+    screening_status: provisionally_included
+    reviewer_decisions:
+      - reviewer: OpenAI Codex
+        stage: seed_audit
+        decision: include
+        decided_at: '2026-08-26T11:40:00+03:00'
+        rationale: Existing mapped randomized support contrast with an observational developmental-history moderator; independent full-text review is pending.
+    linked_source_id: pmm:source:hostinar-2015-early-deprivation
+    linked_evidence_ids: [pmm:evidence:hostinar-2015-developmental-moderation, pmm:evidence:hostinar-2015-mechanism-compatibility]
+  - id: record:pubmed-26899419
+    title: 'Social stress buffering by friends in childhood and adolescence: Effects on HPA and oxytocin activity'
+    url: https://pubmed.ncbi.nlm.nih.gov/26899419/
+    identifiers: {pmid: '26899419', doi: 10.1080/17470919.2016.1149095}
+    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
+    deduplication_key: doi:10.1080/17470919.2016.1149095
+    screening_status: awaiting_full_text
+    reviewer_decisions:
+      - reviewer: OpenAI Codex
+        stage: title_abstract
+        decision: include
+        decided_at: '2026-08-26T11:42:00+03:00'
+        rationale: Randomized parent-versus-friend preparation and repeated cortisol outcomes; the abstract reports age-dependent and potentially amplifying effects.
+  - id: record:pubmed-33427180
+    title: 'Parenting matters: Parents can reduce or amplify children''s anxiety and cortisol responses to acute stress'
+    url: https://pubmed.ncbi.nlm.nih.gov/33427180/
+    identifiers: {pmid: '33427180', doi: 10.1017/S0954579420001285}
+    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
+    deduplication_key: doi:10.1017/S0954579420001285
+    screening_status: awaiting_full_text
+    reviewer_decisions:
+      - reviewer: OpenAI Codex
+        stage: title_abstract
+        decision: include
+        decided_at: '2026-08-26T11:42:00+03:00'
+        rationale: Randomized parent-versus-alone preparation with cortisol outcomes and a reported moderator; may add both buffering and amplification boundaries.
+  - id: record:pubmed-40857990
+    title: Social buffering by siblings in childhood and adolescence
+    url: https://pubmed.ncbi.nlm.nih.gov/40857990/
+    identifiers: {pmid: '40857990', doi: 10.1016/j.psyneuen.2025.107580}
+    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
+    deduplication_key: doi:10.1016/j.psyneuen.2025.107580
+    screening_status: awaiting_full_text
+    reviewer_decisions:
+      - reviewer: OpenAI Codex
+        stage: title_abstract
+        decision: include
+        decided_at: '2026-08-26T11:42:00+03:00'
+        rationale: Randomized sibling-versus-stranger condition with developmental and depressive-symptom moderation of cortisol outcomes.
+  - id: record:pubmed-39644711
+    title: 'Share-the-load vs bring-your-own-judge: The effects of friends on social evaluative stress in early adolescence'
+    url: https://pubmed.ncbi.nlm.nih.gov/39644711/
+    identifiers: {pmid: '39644711'}
+    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
+    deduplication_key: pmid:39644711
+    screening_status: awaiting_full_text
+    reviewer_decisions:
+      - reviewer: OpenAI Codex
+        stage: title_abstract
+        decision: include
+        decided_at: '2026-08-26T11:42:00+03:00'
+        rationale: Preregistered randomized social-role conditions with cortisol reactivity; directly challenges a generic beneficial-support interpretation.
+  - id: record:pubmed-35007962
+    title: 'A randomized controlled trial of an emotion socialization parenting program and its impact on parenting, children''s behavior and parent and child stress cortisol: Tuning in to Toddlers'
+    url: https://pubmed.ncbi.nlm.nih.gov/35007962/
+    identifiers: {pmid: '35007962', doi: 10.1016/j.brat.2021.104016}
+    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
+    deduplication_key: doi:10.1016/j.brat.2021.104016
+    screening_status: excluded
+    reviewer_decisions:
+      - reviewer: OpenAI Codex
+        stage: title_abstract
+        decision: exclude
+        decided_at: '2026-08-26T11:42:00+03:00'
+        rationale: Parenting program with hair cortisol at follow-up, not an acute assigned support condition around a laboratory stressor.
+    exclusion_reason: Wrong intervention and temporal outcome for the declared pilot question.
+known_gaps:
+  - PubMed was not searched directly; run and export a prospective PubMed strategy with an exact hit count before calling coverage reproducible.
+  - PsycInfo and at least one multidisciplinary citation database remain unsearched.
+  - Backward and forward citation chasing, trial registries, preprints, and grey literature remain unsearched.
+  - No information specialist has peer-reviewed the search strategy.
+  - No record has two independent full-text decisions or two-person extraction verification.
+  - Newly discovered eligible-looking records have not yet been added to PMM Claims or Evidence.
+  - This pilot must not be described as a systematic review or complete evidence synthesis.
+provenance:
+  record_version: 0.1.0
+  created_at: '2026-08-26T11:45:00+03:00'
+  modified_at: '2026-08-26T11:45:00+03:00'
+  created_by: [OpenAI Codex]
+  review_status: machine_validated
+  change_note: Retrospective audit of two mapped sources plus a title-and-abstract queue; no independent human review completed.
