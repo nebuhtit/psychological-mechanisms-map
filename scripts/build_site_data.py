@@ -41,6 +41,12 @@ FAMILIES = (
         "build/evidence-pack-working-memory-control-v0.3.json",
         "N-back performance, construct validity, lure interference, and competing memory mechanisms.",
     ),
+    (
+        "interoception",
+        "Interoception and anxiety",
+        "build/evidence-pack-interoception-anxiety-v0.3.json",
+        "Bodily physiology, objective performance, self-evaluation, metacognition, and anxiety kept distinct.",
+    ),
 )
 
 

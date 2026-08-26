@@ -1,0 +1,387 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:interoception-anxiety-primary-evidence-v0-3
+
+metadata:
+  title: Primary evidence pack for interoception and anxiety
+  description: Separates bodily physiology, task performance, self-evaluation, metacognition, anxiety outcomes, and proposed appraisal mechanisms.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T10:30:00+03:00'
+    modified_at: '2026-08-26T10:30:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:context:cardiac-interoception-assessment
+    type: Context
+    label: Cardiac interoception assessment
+    definition: Experimental assessment in which cardiac signals, judgments, confidence, or self-reports are recorded.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions: {signal_domain: cardiac, setting: laboratory}
+    scope: Heartbeat detection, discrimination, tracking, confidence, and questionnaire procedures.
+    provenance: *provenance
+
+  - id: pmm:context:isoproterenol-challenge
+    type: Context
+    label: Isoproterenol cardiorespiratory challenge
+    definition: Pharmacological challenge comparing peripheral beta-adrenergic stimulation with saline while bodily sensation and anxiety are assessed.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions: {agent: isoproterenol, comparator: saline}
+    scope: Dose-dependent cardiorespiratory perturbation under the study protocol.
+    provenance: *provenance
+
+  - id: pmm:construct:cardiac-interoceptive-accuracy
+    type: Construct
+    label: Cardiac interoceptive accuracy
+    definition: Ability construct inferred from performance on a specified objective cardiac perception task.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Scores from different heartbeat tasks are not assumed to be interchangeable.
+      - The construct is not a physiological state or a self-evaluated belief.
+    provenance: *provenance
+
+  - id: pmm:construct:interoceptive-sensibility
+    type: Construct
+    label: Interoceptive sensibility
+    definition: Self-evaluated tendency or belief concerning perception of internal bodily signals.
+    ontological_level: type
+    curation_status: accepted
+    construct_kind: psychological
+    provenance: *provenance
+
+  - id: pmm:construct:interoceptive-awareness
+    type: Construct
+    label: Interoceptive metacognitive awareness
+    definition: Correspondence between confidence judgments and objective interoceptive task performance.
+    ontological_level: type
+    curation_status: accepted
+    construct_kind: psychological
+    boundary_notes:
+      - This metacognitive definition is narrower than everyday uses of bodily awareness.
+    provenance: *provenance
+
+  - id: pmm:state:cardiorespiratory-activation
+    type: State
+    label: Cardiorespiratory activation
+    definition: Time-indexed physiological change involving cardiac and respiratory activity.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: person
+    temporal_scale: episode
+    provenance: *provenance
+
+  - id: pmm:state:perceived-cardiorespiratory-sensation
+    type: State
+    label: Perceived cardiorespiratory sensation
+    definition: Momentary conscious experience of heartbeat, breathing, palpitations, or dyspnea.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: cognitive
+    bearer_scope: person
+    temporal_scale: momentary
+    provenance: *provenance
+
+  - id: pmm:outcome:anxiety-intensity
+    type: Outcome
+    label: Anxiety intensity
+    definition: Reported intensity of anxiety or panic symptoms during or across an assessment.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: symptom
+    valence: aversive
+    provenance: *provenance
+
+  - id: pmm:intervention:isoproterenol-infusion
+    type: Intervention
+    label: Isoproterenol infusion
+    definition: Peripheral beta-adrenergic agonist administration used to perturb cardiorespiratory physiology.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: pharmacological
+    target_ids: [pmm:state:cardiorespiratory-activation]
+    delivery: Intravenous bolus infusion at protocol-defined doses compared with saline.
+    intended_direction: increase
+    provenance: *provenance
+
+  - id: pmm:measurement:heartbeat-task-performance
+    type: Measurement
+    label: Heartbeat task performance
+    definition: Behavioral score from a specified heartbeat detection, discrimination, or tracking procedure.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids: [pmm:construct:cardiac-interoceptive-accuracy]
+    method: Score responses against task-specific cardiac timing or counting criteria.
+    unit_of_analysis: behavior
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:interoception-self-report
+    type: Measurement
+    label: Interoception self-report
+    definition: Questionnaire or interview score concerning perceived interoceptive ability or tendency.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: self_report
+    target_ids: [pmm:construct:interoceptive-sensibility]
+    method: Aggregate responses according to the named instrument and scoring rule.
+    unit_of_analysis: self_report
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:confidence-accuracy-correspondence
+    type: Measurement
+    label: Confidence-accuracy correspondence
+    definition: Metacognitive score relating trial-level or participant-level confidence to objective task performance.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: computational_parameter
+    target_ids: [pmm:construct:interoceptive-awareness]
+    method: Estimate correspondence between confidence judgments and heartbeat-task correctness.
+    unit_of_analysis: person
+    result_type: model_parameter
+    provenance: *provenance
+
+  - id: pmm:mechanism:cardiorespiratory-appraisal
+    type: Mechanism
+    label: Appraisal of cardiorespiratory sensation
+    definition: Proposed process by which perceived cardiorespiratory changes are evaluated in a way that can contribute to anxiety experience.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: integrative
+    role_bindings:
+      - {role: physiological input, object_id: pmm:state:cardiorespiratory-activation}
+      - {role: perceived signal, object_id: pmm:state:perceived-cardiorespiratory-sensation}
+      - {role: affective outcome, object_id: pmm:outcome:anxiety-intensity}
+    realization_conditions:
+      - Cardiorespiratory change is consciously detected or otherwise influences evaluation.
+      - The perceived change is evaluated in its current context.
+    boundary_notes:
+      - The present sources do not identify one unique appraisal computation.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:accuracy-measured-by-heartbeat-task
+    subject_id: pmm:construct:cardiac-interoceptive-accuracy
+    predicate: measured_by
+    object_id: pmm:measurement:heartbeat-task-performance
+    provenance: *provenance
+  - id: pmm:relation:sensibility-measured-by-self-report
+    subject_id: pmm:construct:interoceptive-sensibility
+    predicate: measured_by
+    object_id: pmm:measurement:interoception-self-report
+    provenance: *provenance
+  - id: pmm:relation:awareness-measured-by-confidence-accuracy
+    subject_id: pmm:construct:interoceptive-awareness
+    predicate: measured_by
+    object_id: pmm:measurement:confidence-accuracy-correspondence
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:interoceptive-dimensions-are-dissociable
+    claim_type: association
+    statement: In the studied normative sample, heartbeat-task accuracy, self-evaluated interoceptive sensibility, and confidence-accuracy correspondence were empirically distinct and only partly corresponded.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The study measured all three operational dimensions, but evidence is cross-sectional and task-specific.'}
+    scope:
+      population: Normative adult sample of 80 participants.
+      species: [human]
+      context_ids: [pmm:context:cardiac-interoception-assessment]
+      temporal_scope: Cross-sectional laboratory assessment.
+      boundary_conditions: [The result does not establish that each score is a unitary natural kind.]
+    exposure_id: pmm:measurement:heartbeat-task-performance
+    outcome_id: pmm:measurement:interoception-self-report
+    estimate: {metric: cross-dimensional correspondence, value_status: qualitative_only, direction: mixed, notes: Dimensions were dissociable and correspondence was partial.}
+    confounding_note: Task reliability, physiological detectability, confidence scale use, and questionnaire interpretation may influence correspondence.
+    evidence_ids: [pmm:evidence:garfinkel-2015-dimensions]
+    provenance: *provenance
+
+  - id: pmm:claim:cardiac-accuracy-not-generally-associated-with-anxiety
+    claim_type: association
+    statement: A preregistered meta-analysis found no overall association between state or trait anxiety and objectively measured cardiac interoceptive accuracy.
+    epistemic_status: supported
+    confidence: {level: high, rationale: 'The synthesis included 55 studies and examined prespecified moderators, while remaining limited to cardiac tasks and included-study quality.'}
+    scope:
+      population: Participants represented across 55 cardiac-interoception studies.
+      species: [human]
+      context_ids: [pmm:context:cardiac-interoception-assessment]
+      temporal_scope: Aggregate cross-sectional association across included studies.
+      boundary_conditions: [Does not address every interoceptive modality or subjective belief about bodily signals.]
+    exposure_id: pmm:measurement:heartbeat-task-performance
+    outcome_id: pmm:outcome:anxiety-intensity
+    estimate: {metric: meta-analytic association, value_status: qualitative_only, direction: 'null', notes: The indexed abstract reports no evidence of an overall association or examined moderation.}
+    confounding_note: Included tasks, anxiety measures, sampling, and measurement validity varied across studies.
+    evidence_ids: [pmm:evidence:adams-2022-meta-analysis]
+    provenance: *provenance
+
+  - id: pmm:claim:isoproterenol-increases-anxiety-in-lesion-case-study
+    claim_type: causal_effect
+    statement: Under the reported challenge protocol, isoproterenol rather than saline increased anxiety in two participants with bilateral amygdala lesions, with panic in one participant.
+    epistemic_status: supported
+    confidence: {level: low, rationale: 'Pharmacological perturbation supports temporal causal interpretation within cases, but the lesion sample contains only two people.'}
+    scope:
+      population: Two monozygotic twins with focal bilateral amygdala lesions under the reported protocol.
+      species: [human]
+      context_ids: [pmm:context:isoproterenol-challenge]
+      temporal_scope: Acute response following bolus infusion.
+      boundary_conditions: [No population-level generalization is warranted from two lesion cases.]
+    exposure_id: pmm:intervention:isoproterenol-infusion
+    outcome_id: pmm:outcome:anxiety-intensity
+    causal_estimand: Within-case acute anxiety response under isoproterenol versus saline in the reported protocol.
+    identification_strategy: controlled_contingency
+    temporal_ordering: Infusion preceded physiological, sensory, and anxiety ratings.
+    causal_assumptions:
+      consistency: Infusion and saline conditions followed the reported protocol.
+      exchangeability: Within-case comparator reduces but does not eliminate order and expectancy effects.
+      positivity: Both active and saline conditions were administered.
+      interference: No interference between participants is expected; carryover remains possible.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:khalsa-2016-challenge]
+    limitations: [Single-blind case design and exceptional lesion anatomy sharply limit generalization.]
+    provenance: *provenance
+
+  - id: pmm:claim:appraisal-may-link-bodily-signals-to-anxiety
+    claim_type: mechanism_hypothesis
+    statement: Appraisal of perceived cardiorespiratory change may contribute to anxiety, without requiring that objective heartbeat-task accuracy be globally elevated in anxious people.
+    epistemic_status: proposed
+    confidence: {level: low, rationale: 'The synthesis is compatible with dissociable measurement dimensions and experimental symptom induction, but appraisal was not uniquely manipulated or measured.'}
+    scope:
+      population: Integrative interpretation across normative measurement research, meta-analysis, and a rare lesion challenge.
+      species: [human]
+      context_ids: [pmm:context:cardiac-interoception-assessment, pmm:context:isoproterenol-challenge]
+      temporal_scope: Acute bodily-signal evaluation and cross-sectional individual differences.
+      boundary_conditions: [Does not specify a unique neural or computational implementation.]
+    mechanism_id: pmm:mechanism:cardiorespiratory-appraisal
+    exposure_id: pmm:state:cardiorespiratory-activation
+    outcome_id: pmm:outcome:anxiety-intensity
+    temporal_ordering: Physiological change and perceived sensation precede or accompany anxiety appraisal.
+    falsifiable_boundary: Direct manipulation of appraisal with matched bodily perturbation should alter anxiety if appraisal is causally involved.
+    evidence_ids: [pmm:evidence:khalsa-2016-appraisal-interpretation]
+    limitations: [This is an integrative proposal, not a source-level demonstrated mediation claim.]
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:garfinkel-2015-dimensions
+    claim_ids: [pmm:claim:interoceptive-dimensions-are-dissociable]
+    source_id: pmm:source:garfinkel-2015-knowing-heart
+    extraction_locator: PubMed abstract, dimensional dissociation results.
+    evidence_kind: cross_sectional_observational
+    design: Joint assessment of objective heartbeat detection, self-evaluated sensibility, and confidence-accuracy correspondence.
+    population: Normative adults.
+    species: [human]
+    sample_size: 80
+    inference_support: association
+    support_direction: mixed
+    causal_support: none
+    effect: {metric: correspondence among operational dimensions, value_status: qualitative_only, direction: mixed, notes: The dimensions were distinct and only partly corresponding.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: not_reported, replication: unreplicated}
+    summary: Objective performance, subjective sensibility, and metacognitive correspondence should not be collapsed into one score.
+    limitations: [Task-specific operationalization and normative sample.]
+    provenance: *provenance
+
+  - id: pmm:evidence:adams-2022-meta-analysis
+    claim_ids: [pmm:claim:cardiac-accuracy-not-generally-associated-with-anxiety]
+    source_id: pmm:source:adams-2022-anxiety-accuracy
+    extraction_locator: PubMed abstract, overall and moderator conclusions.
+    evidence_kind: meta_analysis
+    design: Preregistered systematic review and meta-analysis of heartbeat counting and discrimination studies.
+    population: Participants across 55 included studies.
+    species: [human]
+    inference_support: association
+    support_direction: mixed
+    causal_support: none
+    effect: {metric: anxiety-cardiac-accuracy association, value_status: qualitative_only, direction: 'null', notes: No overall association or examined moderator effect was reported in the abstract.}
+    domains: {directness: direct, risk_of_bias: low, consistency: consistent, precision: adequate, replication: independent_replication}
+    summary: Objective cardiac accuracy is not supported as a general correlate of state or trait anxiety.
+    limitations: [Conclusions inherit heterogeneity and validity limits of included heartbeat tasks.]
+    provenance: *provenance
+
+  - id: pmm:evidence:khalsa-2016-challenge
+    claim_ids: [pmm:claim:isoproterenol-increases-anxiety-in-lesion-case-study]
+    source_id: pmm:source:khalsa-2016-panic-lesions
+    extraction_locator: PubMed abstract and Figure 2 caption.
+    evidence_kind: controlled_experiment
+    design: Single-blind isoproterenol-versus-saline cardiorespiratory challenge in two bilateral-amygdala-lesion cases with comparison participants.
+    population: Two lesion cases; comparison sample described in the report.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: acute anxiety response, value_status: qualitative_only, direction: positive, notes: Anxiety increased in both lesion cases and one met panic criteria.}
+    domains: {directness: direct, risk_of_bias: high, consistency: single_source, precision: very_limited, replication: unreplicated}
+    summary: Peripheral cardiorespiratory perturbation produced acute anxiety within the two exceptional lesion cases.
+    limitations: [Two-case lesion evidence cannot estimate a general population effect.]
+    provenance: *provenance
+
+  - id: pmm:evidence:khalsa-2016-appraisal-interpretation
+    claim_ids: [pmm:claim:appraisal-may-link-bodily-signals-to-anxiety]
+    source_id: pmm:source:khalsa-2016-panic-lesions
+    extraction_locator: PubMed abstract, sensory-awareness differences and anxiety response.
+    evidence_kind: controlled_experiment
+    design: Mechanistic interpretation of cardiorespiratory ratings and anxiety during isoproterenol challenge in two lesion cases.
+    population: Two participants with bilateral amygdala lesions.
+    species: [human]
+    sample_size: 2
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: compatibility with sensation-appraisal pathway, value_status: qualitative_only, direction: positive, notes: Sensory and anxiety responses varied across the two cases; appraisal itself was not manipulated.}
+    domains: {directness: indirect, risk_of_bias: high, consistency: single_source, precision: very_limited, replication: unreplicated}
+    summary: The challenge is compatible with a role for conscious cardiorespiratory sensation but does not identify appraisal as a mediator.
+    limitations: [Post hoc mechanistic interpretation of two exceptional cases.]
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:garfinkel-2015-knowing-heart
+    title: 'Knowing your own heart: distinguishing interoceptive accuracy from interoceptive awareness'
+    source_type: peer_reviewed_article
+    authors: [Sarah N. Garfinkel, Anil K. Seth, Adam B. Barrett, Keisuke Suzuki, Hugo D. Critchley]
+    year: 2015
+    doi: 10.1016/j.biopsycho.2014.11.004
+    pmid: '25451381'
+    url: https://pubmed.ncbi.nlm.nih.gov/25451381/
+    accessed_at: '2026-08-26'
+    authority_note: Primary multidimensional measurement study; supports distinction rather than interchangeability of operational dimensions.
+    provenance: *provenance
+
+  - id: pmm:source:adams-2022-anxiety-accuracy
+    title: 'The association between anxiety and cardiac interoceptive accuracy: A systematic review and meta-analysis'
+    source_type: peer_reviewed_article
+    authors: [Kiera Louise Adams, Alexandra Edwards, Charlotte Peart, Lyn Ellett, Ines Mendes, Geoffrey Bird, Jennifer Murphy]
+    year: 2022
+    doi: 10.1016/j.neubiorev.2022.104754
+    pmid: '35798125'
+    url: https://pubmed.ncbi.nlm.nih.gov/35798125/
+    accessed_at: '2026-08-26'
+    authority_note: Preregistered synthesis of 55 studies used to constrain broad anxiety claims.
+    provenance: *provenance
+
+  - id: pmm:source:khalsa-2016-panic-lesions
+    title: 'Panic Anxiety in Humans with Bilateral Amygdala Lesions: Pharmacological Induction via Cardiorespiratory Interoceptive Pathways'
+    source_type: peer_reviewed_article
+    authors: [Sahib S. Khalsa, Justin S. Feinstein, Wei Li, Jamie D. Feusner, Ralph Adolphs, Rene Hurlemann]
+    year: 2016
+    doi: 10.1523/JNEUROSCI.4109-15.2016
+    pmid: '27013684'
+    url: https://pubmed.ncbi.nlm.nih.gov/27013684/
+    accessed_at: '2026-08-26'
+    authority_note: Rare mechanistic challenge study retained with explicit two-case generalization limits.
+    provenance: *provenance

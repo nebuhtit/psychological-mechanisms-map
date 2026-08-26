@@ -26,6 +26,8 @@ data/evidence-pack-cognitive-reappraisal-v0.3.yaml
                                      Reappraisal and multimodal outcome stress test
 data/evidence-pack-working-memory-control-v0.3.yaml
                                      N-back construct-validity and competing-mechanism pack
+data/evidence-pack-interoception-anxiety-v0.3.yaml
+                                     Interoception measurement and anxiety boundary pack
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
@@ -127,6 +129,11 @@ The working-memory pack separates the N-back task context, behavioral score,
 latent construct, lure-induced errors, and competing familiarity-control and
 episodic-retrieval accounts. It includes a large preregistered latent-variable
 study and does not treat computational sufficiency as proof of human mechanism.
+
+The interoception pack separates physiological activation, objective heartbeat-task
+performance, self-evaluated sensibility, metacognitive awareness, and anxiety. It
+preserves the meta-analytic null association for objective cardiac accuracy and
+marks cardiorespiratory appraisal as an integrative hypothesis rather than mediation.
 
 ## Next steps
 

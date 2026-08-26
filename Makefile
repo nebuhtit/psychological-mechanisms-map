@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory site-data test export verify clean
+.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory validate-interoception site-data test export verify clean
 
 PYTHON := .venv/bin/python
 
@@ -30,6 +30,9 @@ validate-reappraisal:
 validate-working-memory:
 	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-working-memory-control-v0.3.yaml
 
+validate-interoception:
+	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-interoception-anxiety-v0.3.yaml
+
 test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
 
@@ -44,11 +47,12 @@ export:
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-habit-control-v0.3.yaml build/evidence-pack-habit-control-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-cognitive-reappraisal-v0.3.yaml build/evidence-pack-cognitive-reappraisal-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-working-memory-control-v0.3.yaml build/evidence-pack-working-memory-control-v0.3.json
+	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-interoception-anxiety-v0.3.yaml build/evidence-pack-interoception-anxiety-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export-jsonld data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.jsonld
 	$(PYTHON) scripts/pmm_v03.py export-turtle data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.ttl
 	$(PYTHON) scripts/build_site_data.py
 
-verify: validate validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory test export
+verify: validate validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory validate-interoception test export
 	git diff --exit-code -- build site/data/pmm-data.json
 
 clean:

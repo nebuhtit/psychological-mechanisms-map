@@ -320,5 +320,42 @@ class WorkingMemoryEvidencePackTests(unittest.TestCase):
         self.assertTrue(any("duplicate doi" in error for error in errors))
 
 
+class InteroceptionEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-interoception-anxiety-v0.3.yaml"
+        )
+
+    def test_interoception_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_physiology_measurement_construct_and_mechanism_remain_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:state:cardiorespiratory-activation"], "State")
+        self.assertEqual(records["pmm:measurement:heartbeat-task-performance"], "Measurement")
+        self.assertEqual(records["pmm:construct:cardiac-interoceptive-accuracy"], "Construct")
+        self.assertEqual(records["pmm:mechanism:cardiorespiratory-appraisal"], "Mechanism")
+
+    def test_meta_analytic_null_is_preserved(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:cardiac-accuracy-not-generally-associated-with-anxiety"
+        )
+        self.assertEqual(claim["claim_type"], "association")
+        self.assertEqual(claim["estimate"]["direction"], "null")
+
+    def test_appraisal_remains_proposed_and_not_mediation(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:appraisal-may-link-bodily-signals-to-anxiety"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertNotIn("mediator_id", claim)
+
+
 if __name__ == "__main__":
     unittest.main()

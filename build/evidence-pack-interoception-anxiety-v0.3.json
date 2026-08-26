@@ -1,0 +1,851 @@
+{
+  "claims": [
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The study measured all three operational dimensions, but evidence is cross-sectional and task-specific."
+      },
+      "confounding_note": "Task reliability, physiological detectability, confidence scale use, and questionnaire interpretation may influence correspondence.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "mixed",
+        "metric": "cross-dimensional correspondence",
+        "notes": "Dimensions were dissociable and correspondence was partial.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_ids": [
+        "pmm:evidence:garfinkel-2015-dimensions"
+      ],
+      "exposure_id": "pmm:measurement:heartbeat-task-performance",
+      "id": "pmm:claim:interoceptive-dimensions-are-dissociable",
+      "outcome_id": "pmm:measurement:interoception-self-report",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The result does not establish that each score is a unitary natural kind."
+        ],
+        "context_ids": [
+          "pmm:context:cardiac-interoception-assessment"
+        ],
+        "population": "Normative adult sample of 80 participants.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Cross-sectional laboratory assessment."
+      },
+      "statement": "In the studied normative sample, heartbeat-task accuracy, self-evaluated interoceptive sensibility, and confidence-accuracy correspondence were empirically distinct and only partly corresponded."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "high",
+        "rationale": "The synthesis included 55 studies and examined prespecified moderators, while remaining limited to cardiac tasks and included-study quality."
+      },
+      "confounding_note": "Included tasks, anxiety measures, sampling, and measurement validity varied across studies.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "null",
+        "metric": "meta-analytic association",
+        "notes": "The indexed abstract reports no evidence of an overall association or examined moderation.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_ids": [
+        "pmm:evidence:adams-2022-meta-analysis"
+      ],
+      "exposure_id": "pmm:measurement:heartbeat-task-performance",
+      "id": "pmm:claim:cardiac-accuracy-not-generally-associated-with-anxiety",
+      "outcome_id": "pmm:outcome:anxiety-intensity",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Does not address every interoceptive modality or subjective belief about bodily signals."
+        ],
+        "context_ids": [
+          "pmm:context:cardiac-interoception-assessment"
+        ],
+        "population": "Participants represented across 55 cardiac-interoception studies.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Aggregate cross-sectional association across included studies."
+      },
+      "statement": "A preregistered meta-analysis found no overall association between state or trait anxiety and objectively measured cardiac interoceptive accuracy."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Infusion and saline conditions followed the reported protocol.",
+        "exchangeability": "Within-case comparator reduces but does not eliminate order and expectancy effects.",
+        "interference": "No interference between participants is expected; carryover remains possible.",
+        "positivity": "Both active and saline conditions were administered."
+      },
+      "causal_estimand": "Within-case acute anxiety response under isoproterenol versus saline in the reported protocol.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "low",
+        "rationale": "Pharmacological perturbation supports temporal causal interpretation within cases, but the lesion sample contains only two people."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:khalsa-2016-challenge"
+      ],
+      "exposure_id": "pmm:intervention:isoproterenol-infusion",
+      "id": "pmm:claim:isoproterenol-increases-anxiety-in-lesion-case-study",
+      "identification_strategy": "controlled_contingency",
+      "limitations": [
+        "Single-blind case design and exceptional lesion anatomy sharply limit generalization."
+      ],
+      "outcome_id": "pmm:outcome:anxiety-intensity",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "No population-level generalization is warranted from two lesion cases."
+        ],
+        "context_ids": [
+          "pmm:context:isoproterenol-challenge"
+        ],
+        "population": "Two monozygotic twins with focal bilateral amygdala lesions under the reported protocol.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Acute response following bolus infusion."
+      },
+      "statement": "Under the reported challenge protocol, isoproterenol rather than saline increased anxiety in two participants with bilateral amygdala lesions, with panic in one participant.",
+      "temporal_ordering": "Infusion preceded physiological, sensory, and anxiety ratings."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "low",
+        "rationale": "The synthesis is compatible with dissociable measurement dimensions and experimental symptom induction, but appraisal was not uniquely manipulated or measured."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:khalsa-2016-appraisal-interpretation"
+      ],
+      "exposure_id": "pmm:state:cardiorespiratory-activation",
+      "falsifiable_boundary": "Direct manipulation of appraisal with matched bodily perturbation should alter anxiety if appraisal is causally involved.",
+      "id": "pmm:claim:appraisal-may-link-bodily-signals-to-anxiety",
+      "limitations": [
+        "This is an integrative proposal",
+        "not a source-level demonstrated mediation claim."
+      ],
+      "mechanism_id": "pmm:mechanism:cardiorespiratory-appraisal",
+      "outcome_id": "pmm:outcome:anxiety-intensity",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Does not specify a unique neural or computational implementation."
+        ],
+        "context_ids": [
+          "pmm:context:cardiac-interoception-assessment",
+          "pmm:context:isoproterenol-challenge"
+        ],
+        "population": "Integrative interpretation across normative measurement research, meta-analysis, and a rare lesion challenge.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Acute bodily-signal evaluation and cross-sectional individual differences."
+      },
+      "statement": "Appraisal of perceived cardiorespiratory change may contribute to anxiety, without requiring that objective heartbeat-task accuracy be globally elevated in anxious people.",
+      "temporal_ordering": "Physiological change and perceived sensation precede or accompany anxiety appraisal."
+    }
+  ],
+  "dataset_id": "pmm:dataset:interoception-anxiety-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:interoceptive-dimensions-are-dissociable"
+      ],
+      "design": "Joint assessment of objective heartbeat detection, self-evaluated sensibility, and confidence-accuracy correspondence.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "correspondence among operational dimensions",
+        "notes": "The dimensions were distinct and only partly corresponding.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "cross_sectional_observational",
+      "extraction_locator": "PubMed abstract, dimensional dissociation results.",
+      "id": "pmm:evidence:garfinkel-2015-dimensions",
+      "inference_support": "association",
+      "limitations": [
+        "Task-specific operationalization and normative sample."
+      ],
+      "population": "Normative adults.",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 80,
+      "source_id": "pmm:source:garfinkel-2015-knowing-heart",
+      "species": [
+        "human"
+      ],
+      "summary": "Objective performance, subjective sensibility, and metacognitive correspondence should not be collapsed into one score.",
+      "support_direction": "mixed"
+    },
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:cardiac-accuracy-not-generally-associated-with-anxiety"
+      ],
+      "design": "Preregistered systematic review and meta-analysis of heartbeat counting and discrimination studies.",
+      "domains": {
+        "consistency": "consistent",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "independent_replication",
+        "risk_of_bias": "low"
+      },
+      "effect": {
+        "direction": "null",
+        "metric": "anxiety-cardiac-accuracy association",
+        "notes": "No overall association or examined moderator effect was reported in the abstract.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "meta_analysis",
+      "extraction_locator": "PubMed abstract, overall and moderator conclusions.",
+      "id": "pmm:evidence:adams-2022-meta-analysis",
+      "inference_support": "association",
+      "limitations": [
+        "Conclusions inherit heterogeneity and validity limits of included heartbeat tasks."
+      ],
+      "population": "Participants across 55 included studies.",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:adams-2022-anxiety-accuracy",
+      "species": [
+        "human"
+      ],
+      "summary": "Objective cardiac accuracy is not supported as a general correlate of state or trait anxiety.",
+      "support_direction": "mixed"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:isoproterenol-increases-anxiety-in-lesion-case-study"
+      ],
+      "design": "Single-blind isoproterenol-versus-saline cardiorespiratory challenge in two bilateral-amygdala-lesion cases with comparison participants.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "very_limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "high"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "acute anxiety response",
+        "notes": "Anxiety increased in both lesion cases and one met panic criteria.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "PubMed abstract and Figure 2 caption.",
+      "id": "pmm:evidence:khalsa-2016-challenge",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Two-case lesion evidence cannot estimate a general population effect."
+      ],
+      "population": "Two lesion cases; comparison sample described in the report.",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:khalsa-2016-panic-lesions",
+      "species": [
+        "human"
+      ],
+      "summary": "Peripheral cardiorespiratory perturbation produced acute anxiety within the two exceptional lesion cases.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:appraisal-may-link-bodily-signals-to-anxiety"
+      ],
+      "design": "Mechanistic interpretation of cardiorespiratory ratings and anxiety during isoproterenol challenge in two lesion cases.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "indirect",
+        "precision": "very_limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "high"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "compatibility with sensation-appraisal pathway",
+        "notes": "Sensory and anxiety responses varied across the two cases; appraisal itself was not manipulated.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "PubMed abstract, sensory-awareness differences and anxiety response.",
+      "id": "pmm:evidence:khalsa-2016-appraisal-interpretation",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Post hoc mechanistic interpretation of two exceptional cases."
+      ],
+      "population": "Two participants with bilateral amygdala lesions.",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 2,
+      "source_id": "pmm:source:khalsa-2016-panic-lesions",
+      "species": [
+        "human"
+      ],
+      "summary": "The challenge is compatible with a role for conscious cardiorespiratory sensation but does not identify appraisal as a mediator.",
+      "support_direction": "supports"
+    }
+  ],
+  "metadata": {
+    "description": "Separates bodily physiology, task performance, self-evaluation, metacognition, anxiety outcomes, and proposed appraisal mechanisms.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T10:30:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T10:30:00+03:00",
+      "record_version": "0.1.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for interoception and anxiety"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Experimental assessment in which cardiac signals, judgments, confidence, or self-reports are recorded.",
+      "dimensions": {
+        "setting": "laboratory",
+        "signal_domain": "cardiac"
+      },
+      "id": "pmm:context:cardiac-interoception-assessment",
+      "label": "Cardiac interoception assessment",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Heartbeat detection, discrimination, tracking, confidence, and questionnaire procedures.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Pharmacological challenge comparing peripheral beta-adrenergic stimulation with saline while bodily sensation and anxiety are assessed.",
+      "dimensions": {
+        "agent": "isoproterenol",
+        "comparator": "saline"
+      },
+      "id": "pmm:context:isoproterenol-challenge",
+      "label": "Isoproterenol cardiorespiratory challenge",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Dose-dependent cardiorespiratory perturbation under the study protocol.",
+      "type": "Context"
+    },
+    {
+      "boundary_notes": [
+        "Scores from different heartbeat tasks are not assumed to be interchangeable.",
+        "The construct is not a physiological state or a self-evaluated belief."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Ability construct inferred from performance on a specified objective cardiac perception task.",
+      "id": "pmm:construct:cardiac-interoceptive-accuracy",
+      "label": "Cardiac interoceptive accuracy",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "construct_kind": "psychological",
+      "curation_status": "accepted",
+      "definition": "Self-evaluated tendency or belief concerning perception of internal bodily signals.",
+      "id": "pmm:construct:interoceptive-sensibility",
+      "label": "Interoceptive sensibility",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "This metacognitive definition is narrower than everyday uses of bodily awareness."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "accepted",
+      "definition": "Correspondence between confidence judgments and objective interoceptive task performance.",
+      "id": "pmm:construct:interoceptive-awareness",
+      "label": "Interoceptive metacognitive awareness",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "bearer_scope": "person",
+      "curation_status": "accepted",
+      "definition": "Time-indexed physiological change involving cardiac and respiratory activity.",
+      "id": "pmm:state:cardiorespiratory-activation",
+      "label": "Cardiorespiratory activation",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "physiological",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "bearer_scope": "person",
+      "curation_status": "accepted",
+      "definition": "Momentary conscious experience of heartbeat, breathing, palpitations, or dyspnea.",
+      "id": "pmm:state:perceived-cardiorespiratory-sensation",
+      "label": "Perceived cardiorespiratory sensation",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "cognitive",
+      "temporal_scale": "momentary",
+      "type": "State"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Reported intensity of anxiety or panic symptoms during or across an assessment.",
+      "id": "pmm:outcome:anxiety-intensity",
+      "label": "Anxiety intensity",
+      "ontological_level": "type",
+      "outcome_kind": "symptom",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "aversive"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Peripheral beta-adrenergic agonist administration used to perturb cardiorespiratory physiology.",
+      "delivery": "Intravenous bolus infusion at protocol-defined doses compared with saline.",
+      "id": "pmm:intervention:isoproterenol-infusion",
+      "intended_direction": "increase",
+      "intervention_kind": "pharmacological",
+      "label": "Isoproterenol infusion",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:state:cardiorespiratory-activation"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Behavioral score from a specified heartbeat detection, discrimination, or tracking procedure.",
+      "id": "pmm:measurement:heartbeat-task-performance",
+      "label": "Heartbeat task performance",
+      "measurement_kind": "behavioral_task",
+      "method": "Score responses against task-specific cardiac timing or counting criteria.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:cardiac-interoceptive-accuracy"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Questionnaire or interview score concerning perceived interoceptive ability or tendency.",
+      "id": "pmm:measurement:interoception-self-report",
+      "label": "Interoception self-report",
+      "measurement_kind": "self_report",
+      "method": "Aggregate responses according to the named instrument and scoring rule.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:interoceptive-sensibility"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "self_report"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Metacognitive score relating trial-level or participant-level confidence to objective task performance.",
+      "id": "pmm:measurement:confidence-accuracy-correspondence",
+      "label": "Confidence-accuracy correspondence",
+      "measurement_kind": "computational_parameter",
+      "method": "Estimate correspondence between confidence judgments and heartbeat-task correctness.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "model_parameter",
+      "target_ids": [
+        "pmm:construct:interoceptive-awareness"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "person"
+    },
+    {
+      "boundary_notes": [
+        "The present sources do not identify one unique appraisal computation."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process by which perceived cardiorespiratory changes are evaluated in a way that can contribute to anxiety experience.",
+      "id": "pmm:mechanism:cardiorespiratory-appraisal",
+      "label": "Appraisal of cardiorespiratory sensation",
+      "mechanism_kind": "integrative",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "Cardiorespiratory change is consciously detected or otherwise influences evaluation.",
+        "The perceived change is evaluated in its current context."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:state:cardiorespiratory-activation",
+          "role": "physiological input"
+        },
+        {
+          "object_id": "pmm:state:perceived-cardiorespiratory-sensation",
+          "role": "perceived signal"
+        },
+        {
+          "object_id": "pmm:outcome:anxiety-intensity",
+          "role": "affective outcome"
+        }
+      ],
+      "type": "Mechanism"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:accuracy-measured-by-heartbeat-task",
+      "object_id": "pmm:measurement:heartbeat-task-performance",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:cardiac-interoceptive-accuracy"
+    },
+    {
+      "id": "pmm:relation:sensibility-measured-by-self-report",
+      "object_id": "pmm:measurement:interoception-self-report",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:interoceptive-sensibility"
+    },
+    {
+      "id": "pmm:relation:awareness-measured-by-confidence-accuracy",
+      "object_id": "pmm:measurement:confidence-accuracy-correspondence",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:interoceptive-awareness"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary multidimensional measurement study; supports distinction rather than interchangeability of operational dimensions.",
+      "authors": [
+        "Sarah N. Garfinkel",
+        "Anil K. Seth",
+        "Adam B. Barrett",
+        "Keisuke Suzuki",
+        "Hugo D. Critchley"
+      ],
+      "doi": "10.1016/j.biopsycho.2014.11.004",
+      "id": "pmm:source:garfinkel-2015-knowing-heart",
+      "pmid": "25451381",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Knowing your own heart: distinguishing interoceptive accuracy from interoceptive awareness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25451381/",
+      "year": 2015
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Preregistered synthesis of 55 studies used to constrain broad anxiety claims.",
+      "authors": [
+        "Kiera Louise Adams",
+        "Alexandra Edwards",
+        "Charlotte Peart",
+        "Lyn Ellett",
+        "Ines Mendes",
+        "Geoffrey Bird",
+        "Jennifer Murphy"
+      ],
+      "doi": "10.1016/j.neubiorev.2022.104754",
+      "id": "pmm:source:adams-2022-anxiety-accuracy",
+      "pmid": "35798125",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "The association between anxiety and cardiac interoceptive accuracy: A systematic review and meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35798125/",
+      "year": 2022
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Rare mechanistic challenge study retained with explicit two-case generalization limits.",
+      "authors": [
+        "Sahib S. Khalsa",
+        "Justin S. Feinstein",
+        "Wei Li",
+        "Jamie D. Feusner",
+        "Ralph Adolphs",
+        "Rene Hurlemann"
+      ],
+      "doi": "10.1523/JNEUROSCI.4109-15.2016",
+      "id": "pmm:source:khalsa-2016-panic-lesions",
+      "pmid": "27013684",
+      "provenance": {
+        "created_at": "2026-08-26T10:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T10:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Panic Anxiety in Humans with Bilateral Amygdala Lesions: Pharmacological Induction via Cardiorespiratory Interoceptive Pathways",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27013684/",
+      "year": 2016
+    }
+  ]
+}
