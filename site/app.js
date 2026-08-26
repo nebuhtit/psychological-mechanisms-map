@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.4.0";
-const RU_URL = "data/i18n-ru.json?v=0.4.0";
+const DATA_URL = "data/pmm-data.json?v=0.4.2";
+const RU_URL = "data/i18n-ru.json?v=0.4.2";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -426,6 +426,83 @@ function inferenceExplanation(claim) {
   return explanations[claim.claim_type] || "";
 }
 
+function objectLabel(id, fallbackEn, fallbackRu) {
+  const record = id ? recordById(id) : null;
+  return record ? t(record.label) : ui(fallbackEn, fallbackRu);
+}
+
+function plainLanguageExplanation(claim) {
+  const exposure = objectLabel(claim.exposure_id, "one factor", "один фактор");
+  const outcome = objectLabel(claim.outcome_id, "the result", "результат");
+  const mediator = objectLabel(claim.mediator_id, "an intermediate element", "промежуточный элемент");
+  const moderator = objectLabel(claim.moderator_id, "another condition", "другое условие");
+  const mechanism = objectLabel(claim.mechanism_id, "the proposed process", "предполагаемый процесс");
+  const defined = objectLabel(claim.defined_object_id, "this concept", "это понятие");
+
+  if (claim.claim_type === "definition") {
+    return ui(
+      `This record explains what “${defined}” means. It sets the boundaries of the concept; it does not show that the concept causes anything.`,
+      `Эта запись объясняет, что означает «${defined}». Она задаёт границы понятия, но не доказывает, что оно что-либо вызывает.`,
+    );
+  }
+  if (claim.claim_type === "association") {
+    const weak = /\bweak(?:ly)?\b/i.test(claim.statement) || claim.estimate?.strength === "weak";
+    if (weak) {
+      return ui(
+        `“${exposure}” and “${outcome}” overlapped only a little in the studied group. They should not be treated as interchangeable, and this result does not show that one causes the other.`,
+        `«${exposure}» и «${outcome}» в изученной группе были связаны лишь слабо. Их нельзя считать взаимозаменяемыми, и результат не показывает, что одно вызывает другое.`,
+      );
+    }
+    return ui(
+      `“${exposure}” and “${outcome}” varied together in the studied group. This shows a relationship, but not which element is the cause or whether a third factor explains both.`,
+      `«${exposure}» и «${outcome}» изменялись совместно в изученной группе. Это показывает связь, но не говорит, что является причиной и не объясняет, мог ли на оба элемента влиять третий фактор.`,
+    );
+  }
+  if (claim.claim_type === "prediction") {
+    return ui(
+      `Knowing “${exposure}” helped forecast “${outcome}”. A useful forecast still does not mean that changing the predictor would change the result.`,
+      `Знание показателя «${exposure}» помогало прогнозировать «${outcome}». Но даже полезный прогноз не означает, что изменение предиктора изменит результат.`,
+    );
+  }
+  if (claim.claim_type === "causal_effect") {
+    return ui(
+      `Researchers changed “${exposure}” and observed a resulting difference in “${outcome}” under the tested conditions. The causal conclusion is limited to those conditions and comparisons.`,
+      `Исследователи изменяли «${exposure}» и наблюдали последующее различие в «${outcome}». Причинный вывод относится только к проверенным условиям и сравнению.`,
+    );
+  }
+  if (claim.claim_type === "mediation") {
+    const causal = claim.mediation_inference === "causal";
+    return causal
+      ? ui(
+        `The evidence tests whether “${exposure}” changes “${outcome}” through “${mediator}”. This is intended as a causal pathway, subject to the stated assumptions.`,
+        `Проверяется, изменяет ли «${exposure}» результат «${outcome}» через «${mediator}». Это предполагаемый причинный путь, который зависит от указанных допущений.`,
+      )
+      : ui(
+        `“${mediator}” statistically accounts for part of the relationship between “${exposure}” and “${outcome}”. This alone does not prove that it is the real causal pathway.`,
+        `«${mediator}» статистически объясняет часть связи между «${exposure}» и «${outcome}». Само по себе это не доказывает, что найден настоящий причинный путь.`,
+      );
+  }
+  if (claim.claim_type === "moderation") {
+    return ui(
+      `The relationship between “${exposure}” and “${outcome}” differed depending on “${moderator}”. This describes when or for whom the relationship changes, not necessarily why.`,
+      `Связь между «${exposure}» и «${outcome}» различалась в зависимости от «${moderator}». Это показывает, когда или для кого связь меняется, но не обязательно объясняет почему.`,
+    );
+  }
+  if (claim.claim_type === "mechanism_hypothesis") {
+    return ui(
+      `The proposed explanation is that “${exposure}” may influence “${outcome}” through “${mechanism}”. This is a testable explanation, not a mechanism already proven to be the only one.`,
+      `Предлагается объяснение: «${exposure}» может влиять на «${outcome}» через «${mechanism}». Это проверяемая версия, а не уже доказанный единственный механизм.`,
+    );
+  }
+  if (claim.claim_type === "causal_hypothesis") {
+    return ui(
+      `The proposal is that “${exposure}” may cause a change in “${outcome}”. This causal direction still requires a suitable experimental or quasi-experimental test.`,
+      `Предполагается, что «${exposure}» может вызывать изменение «${outcome}». Это причинное направление ещё требует подходящей экспериментальной или квазиэкспериментальной проверки.`,
+    );
+  }
+  return inferenceExplanation(claim);
+}
+
 function roleFor(claim, id) {
   if (claim.exposure_id === id) {
     if (claim.claim_type === "causal_effect") return ui("tested cause", "проверяемая причина");
@@ -533,6 +610,10 @@ function renderInspector(record) {
       <span class="section-eyebrow">${record.kind === "claim" ? ui("What is being claimed", "Что утверждается") : ui("What this means", "Что это значит")}</span>
       <p>${escapeHtml(definition)}</p>
     </section>
+    ${record.kind === "claim" ? `<section class="plain-language-card">
+      <span class="section-eyebrow">${ui("In plain language", "Простыми словами")}</span>
+      <p>${escapeHtml(plainLanguageExplanation(record))}</p>
+    </section>` : ""}
     <div class="evidence-summary status-${escapeHtml(status || "neutral")}">
       <div><span class="section-eyebrow">${record.kind === "claim" ? ui("Degree of evidence", "Степень доказанности") : ui("Definition status", "Статус определения")}</span><strong>${escapeHtml(t(STATUS_LABELS[status] || status))}</strong></div>
       ${confidence ? `<div><span class="section-eyebrow">${ui("Confidence", "Уверенность")}</span><strong>${escapeHtml(t(confidence))}</strong></div>` : ""}

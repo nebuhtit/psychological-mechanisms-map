@@ -20,7 +20,10 @@ OVERRIDES = {
     "Fear extinction": "Угасание страха",
     "HPA feedback": "Обратная связь ГГН-оси",
     "Multi-task working-memory battery": "Батарея заданий на рабочую память",
+    "N-back performance measurement": "Результат выполнения N-back",
+    "Operation-span performance measurement": "Результат выполнения теста operation span",
     "RDoC Potential Threat (Anxiety) concerns responses when harm may occur but is distant, ambiguous, or uncertain in probability.": "Конструкт RDoC «Потенциальная угроза (тревога)» описывает реакции на возможный вред, который отдалён во времени, неоднозначен или имеет неопределённую вероятность.",
+    "Verbal N-back performance showed weak convergence with operation-span performance in Kane et al. 2007.": "В исследовании Kane et al. (2007) результаты вербального N-back были лишь слабо связаны с результатами теста operation span.",
     "Working-memory capacity": "Ёмкость рабочей памяти",
     "Working-memory control": "Контроль рабочей памяти",
 }
