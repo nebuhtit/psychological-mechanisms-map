@@ -42,9 +42,27 @@ class SiteBundleTests(unittest.TestCase):
                 for evidence_id in claim.get("evidence_ids", []):
                     self.assertIn(evidence_id, records)
 
+    def test_mechanism_index_is_complete_and_derived(self) -> None:
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        expected = {
+            (family["id"], item["id"])
+            for family in document["families"]
+            for item in family["objects"]
+            if item["type"] == "Mechanism"
+        }
+        actual = {
+            (item["family_id"], item["id"])
+            for item in document["mechanism_index"]
+        }
+        self.assertEqual(actual, expected)
+        self.assertEqual(len(actual), len(document["mechanism_index"]))
+        for item in document["mechanism_index"]:
+            self.assertEqual(item["evidence_count"] >= item["source_count"], True)
+            self.assertEqual(sum(item["claim_status_counts"].values()), len(item["claim_ids"]))
+
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.4.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -52,7 +70,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.4.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -72,6 +90,21 @@ class SiteBundleTests(unittest.TestCase):
         self.assertNotIn('<details class="map-guide" open>', page)
         for phrase in ("How to read this map", "Claim colours", "Lines and interaction"):
             self.assertIn(phrase, page)
+
+    def test_cross_family_mechanism_catalog_is_collapsed_and_navigable(self) -> None:
+        page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        stylesheet = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('<details class="mechanism-catalog" id="mechanism-catalog">', page)
+        self.assertNotIn('<details class="mechanism-catalog" id="mechanism-catalog" open>', page)
+        self.assertIn('id="mechanism-search"', page)
+        self.assertIn("function renderMechanismCatalog()", javascript)
+        self.assertIn('state.data.mechanism_index.filter', javascript)
+        self.assertIn('data-open-mechanism=', javascript)
+        self.assertIn('selectNode(button.dataset.openMechanism)', javascript)
+        self.assertIn("They are not truth scores", page)
+        self.assertIn(".mechanism-grid", stylesheet)
+        self.assertIn(".mechanism-card", stylesheet)
 
     def test_map_background_and_escape_clear_selection(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")

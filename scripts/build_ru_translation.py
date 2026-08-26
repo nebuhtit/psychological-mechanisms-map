@@ -18,6 +18,7 @@ OUTPUT_PATH = ROOT / "site" / "data" / "i18n-ru.json"
 # Curated terminology takes precedence over generic machine translation.
 OVERRIDES = {
     "Fear extinction": "Угасание страха",
+    "HPA feedback": "Обратная связь ГГН-оси",
     "Multi-task working-memory battery": "Батарея заданий на рабочую память",
     "RDoC Potential Threat (Anxiety) concerns responses when harm may occur but is distant, ambiguous, or uncertain in probability.": "Конструкт RDoC «Потенциальная угроза (тревога)» описывает реакции на возможный вред, который отдалён во времени, неоднозначен или имеет неопределённую вероятность.",
     "Working-memory capacity": "Ёмкость рабочей памяти",

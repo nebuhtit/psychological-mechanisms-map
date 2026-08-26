@@ -1,0 +1,238 @@
+{
+  "generated_from": "site/data/pmm-data.json",
+  "interpretation_warning": "This is a cross-family inventory, not an assertion that similarly named mechanisms are identical or causally connected.",
+  "mechanisms": [
+    {
+      "claim_ids": [
+        "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed cognitive process that changes the construed meaning of an eliciting situation and thereby changes later emotional responding.",
+      "evidence_count": 3,
+      "family_id": "reappraisal",
+      "family_title": "Cognitive reappraisal",
+      "id": "pmm:mechanism:meaning-reinterpretation",
+      "label": "Meaning reinterpretation",
+      "mechanism_kind": "cognitive",
+      "source_count": 3
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:extinction-memory-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed learning process in which aversive-outcome omission supports a new memory that reduces conditioned responding when later retrieved.",
+      "evidence_count": 4,
+      "family_id": "extinction",
+      "family_title": "Fear extinction",
+      "id": "pmm:mechanism:extinction-memory-formation",
+      "label": "Extinction-memory formation and retrieval",
+      "mechanism_kind": "learning",
+      "source_count": 3
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:cortisol-signaling-may-limit-later-hpa-drive",
+        "pmm:claim:hpa-feedback-is-multiple-receptor-linked-processes"
+      ],
+      "claim_status_counts": {
+        "proposed": 1,
+        "supported": 1
+      },
+      "claim_types": [
+        "definition",
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Receptor-linked physiological processes through which glucocorticoid signaling limits or reshapes later HPA secretory activity.",
+      "evidence_count": 1,
+      "family_id": "hpa-feedback",
+      "family_title": "HPA feedback",
+      "id": "pmm:mechanism:glucocorticoid-negative-feedback",
+      "label": "Glucocorticoid negative feedback on HPA activity",
+      "mechanism_kind": "physiological",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [],
+      "claim_status_counts": {},
+      "claim_types": [],
+      "curation_status": "provisional",
+      "definition": "Proposed action-selection process that uses action-outcome knowledge and current outcome value to guide responding.",
+      "evidence_count": 0,
+      "family_id": "habit",
+      "family_title": "Habit control",
+      "id": "pmm:mechanism:goal-directed-action-control",
+      "label": "Goal-directed action control",
+      "mechanism_kind": "learning",
+      "source_count": 0
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:habitual-control-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed cue-linked action-selection process whose momentary expression is relatively insensitive to the current value of the action outcome.",
+      "evidence_count": 2,
+      "family_id": "habit",
+      "family_title": "Habit control",
+      "id": "pmm:mechanism:habitual-action-control",
+      "label": "Habitual action control",
+      "mechanism_kind": "learning",
+      "source_count": 2
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:appraisal-may-link-bodily-signals-to-anxiety"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process by which perceived cardiorespiratory changes are evaluated in a way that can contribute to anxiety experience.",
+      "evidence_count": 1,
+      "family_id": "interoception",
+      "family_title": "Interoception and anxiety",
+      "id": "pmm:mechanism:cardiorespiratory-appraisal",
+      "label": "Appraisal of cardiorespiratory sensation",
+      "mechanism_kind": "integrative",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:expectation-opioid-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which treatment expectation recruits endogenous opioid signaling that changes pain responding.",
+      "evidence_count": 3,
+      "family_id": "placebo-analgesia",
+      "family_title": "Placebo analgesia",
+      "id": "pmm:mechanism:endogenous-opioid-modulation",
+      "label": "Endogenous opioid pain modulation",
+      "mechanism_kind": "physiological",
+      "source_count": 3
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:rpe-may-drive-temporal-difference-updating"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Computational process that updates a value estimate using a prediction-error term and learning-rate parameter.",
+      "evidence_count": 1,
+      "family_id": "reward-learning",
+      "family_title": "Reward prediction error",
+      "id": "pmm:mechanism:temporal-difference-value-update",
+      "label": "Temporal-difference value updating",
+      "mechanism_kind": "computational",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:co-regulation-may-produce-buffering"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process through which interaction with a familiar support figure changes stress appraisal or regulatory activity and thereby alters physiological responding.",
+      "evidence_count": 1,
+      "family_id": "social-buffering",
+      "family_title": "Social buffering",
+      "id": "pmm:mechanism:social-co-regulation",
+      "label": "Social co-regulation of stress responding",
+      "mechanism_kind": "social",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:negative-reinforcement-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "accepted",
+      "definition": "Instrumental learning process in which a response-contingent removal, reduction, or prevention of an aversive consequence increases later probability or rate of the response under relevant conditions.",
+      "evidence_count": 2,
+      "family_id": "avoidance",
+      "family_title": "Threat and avoidance",
+      "id": "pmm:mechanism:negative-reinforcement",
+      "label": "Negative reinforcement learning",
+      "mechanism_kind": "learning",
+      "source_count": 2
+    },
+    {
+      "claim_ids": [],
+      "claim_status_counts": {},
+      "claim_types": [],
+      "curation_status": "provisional",
+      "definition": "Proposed process that uses task position information to override a familiar but currently incorrect target response.",
+      "evidence_count": 0,
+      "family_id": "working-memory",
+      "family_title": "Working-memory control",
+      "id": "pmm:mechanism:familiarity-control",
+      "label": "Control over familiarity-based responding",
+      "mechanism_kind": "cognitive",
+      "source_count": 0
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:episodic-retrieval-can-support-n-back"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which retrieval from episodic memory supplies prior-item information used for the current N-back judgment.",
+      "evidence_count": 1,
+      "family_id": "working-memory",
+      "family_title": "Working-memory control",
+      "id": "pmm:mechanism:episodic-retrieval-n-back",
+      "label": "Episodic retrieval supporting N-back performance",
+      "mechanism_kind": "cognitive",
+      "source_count": 1
+    }
+  ],
+  "pmm_version": "0.3.4"
+}

@@ -70,11 +70,15 @@ PMM should not pursue comprehensive coverage until all of the following exist:
 
 ## Recommended next development sequence
 
-1. **Curation protocol v0.1:** encode source eligibility, search logs, screening decisions, extraction review, and update cadence.
-2. **Dual-review pilot:** independently re-curate one heterogeneous family and measure agreement on object type, claim type, scope, status, and confidence.
-3. **Design-specific bias assessment:** pilot RoB-style fields for randomized experiments, observational studies, computational models, and reviews.
-4. **Claim-granularity audit:** split records that combine materially different populations, outcomes, tasks, or follow-up periods.
-5. **Then expand coverage:** add new families only when they test a declared ontology boundary or fill a measured coverage gap.
+PMM now separates product integration from evidence-quality work. Repeating a manual near-systematic review for every family would be unscalable and would duplicate mature evidence-synthesis systems without solving cross-family integration.
+
+1. **Global mechanism index:** compare every Mechanism across families using derived Claim, Evidence, and Source metadata without asserting equivalence.
+2. **Cross-family bridge audit:** add conservative, reviewed mapping records for exact, close, broader, narrower, or related matches; never use these mappings as causal predicates.
+3. **Sampled dual review:** independently re-curate a heterogeneous sample and measure agreement on object type, claim type, scope, status, and confidence.
+4. **Design-specific bias assessment:** pilot RoB-style fields for randomized experiments, observational studies, computational models, and reviews.
+5. **Targeted expansion:** add a family only when it tests a declared ontology boundary, connects existing islands, or fills a measured coverage gap.
+
+The rationale and completion criteria for this course correction are documented in [the strategy reset](strategy-reset.md).
 
 ## Interpretation rule
 

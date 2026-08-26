@@ -9,6 +9,8 @@
 
 **[Inspect Curation Protocol v0.1](curation/protocol-v0.1.yaml)** · **[Review the social-buffering search pilot](curation/logs/social-buffering-retrospective-v0.1.yaml)**
 
+**[Read the strategy reset](docs/strategy-reset.md)** · **[Compare all modeled mechanisms](docs/mechanism-index.md)**
+
 PMM is an open, versioned, evidence-aware ontology and knowledge-graph project for psychological mechanisms. It represents psychological constructs, mental states, behaviors, interventions, measurements, contexts, empirical claims, evidence records, and scientific sources without collapsing them into an ambiguous diagram.
 
 The canonical scientific data is human-editable YAML validated against JSON Schema and semantic rules. Deterministic JSON, JSON-LD, Turtle/RDF, and the interactive website are generated projections rather than independently maintained sources of truth.
@@ -57,6 +59,8 @@ The live explorer contains ten deliberately heterogeneous mechanism families. Br
 | Placebo analgesia | Treatment expectation, pain report, naloxone challenge, dopamine null result, and statistical neural mediation |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
+
+The website also provides a collapsed **all-mechanisms index**. It compares every public Mechanism by definition, family, mechanism kind, linked Claims, Evidence records, and Sources, then opens the selected record in its local graph. This is an inventory of modeled traceability, not a ranking of scientific truth. Similar labels are not merged automatically.
 
 See the generated [coverage and curation report](docs/coverage-report.md) for current object, claim, evidence, confidence, and review-queue counts.
 Read the [critical assessment](docs/critical-assessment.md) for current scientific limitations, failure modes, and quality gates required before broad expansion.
@@ -143,6 +147,9 @@ scripts/pmm_v03.py                   Schema + semantic validation and JSON expor
 scripts/build_site_data.py           Deterministic interactive-map data bundle
 scripts/build_registry.py            Validate/export every registered dataset
 scripts/build_coverage_report.py     Deterministic coverage and curation audit
+scripts/build_mechanism_index.py     Cross-family mechanism inventory export
+docs/strategy-reset.md               Product thesis, drift analysis, and current priority
+docs/mechanism-index.md              Generated human-readable mechanism inventory
 schema/curation-v0.1.schema.yaml     Search, screening, and review-log contract
 curation/protocol-v0.1.yaml          Machine-readable evidence-selection protocol
 curation/logs/                        Per-family searches, decisions, exclusions, and gaps
@@ -237,6 +244,8 @@ The social-buffering title/abstract packet contains all 51 PubMed records with c
 Independent Reviewer B must work from `curation/review-packets/social-buffering-title-abstract-v0.1.json` without inspecting `curation/reviews/social-buffering-reviewer-a-v0.1.yaml`. Private in-progress forms belong under the git-ignored `curation/private-reviews/` directory. Blinding is procedural rather than cryptographically enforced. After both reviews are complete, `scripts/screening.py compare` calculates percent agreement, Cohen's kappa, and the disagreement queue; only resolved consensus decisions may update the main curation log.
 
 `make report` rebuilds `docs/coverage-report.md` and `build/coverage-report.json`. The report counts public objects, claim types, evidence profiles, and rule-based review flags; it is a curation audit, not a score of scientific truth or importance.
+
+`make mechanism-index` rebuilds the public site bundle plus `build/mechanism-index.json` and `docs/mechanism-index.md`. The index is derived from canonical family records and never infers cross-family equivalence or causation from similar labels.
 
 GitHub Actions runs `make verify` on every push and pull request. The command validates all v0.3 datasets, runs the test suite, rebuilds JSON, and fails if generated JSON differs from the committed artifacts.
 

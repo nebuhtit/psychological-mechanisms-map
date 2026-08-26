@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json";
-const RU_URL = "data/i18n-ru.json";
+const DATA_URL = "data/pmm-data.json?v=0.4.0";
+const RU_URL = "data/i18n-ru.json?v=0.4.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -12,6 +12,25 @@ const UI_RU = {
   "Contested": "Спорные",
   "How to read this map": "Как читать эту карту",
   "Open guide": "Открыть инструкцию",
+  "Explore all mechanisms": "Все механизмы",
+  "Compare processes across every evidence pack": "Сравните процессы из всех пакетов доказательств",
+  "Cross-family index": "Межтематический индекс",
+  "One inventory, without false unification.": "Единый каталог без ложного объединения.",
+  "Each card is a Mechanism record from one evidence pack. Counts show traceability to modeled Claims, Evidence records, and Sources. They are not truth scores, effect sizes, or scientific rankings.": "Каждая карточка — запись механизма из одного пакета доказательств. Числа показывают прослеживаемость до утверждений, записей доказательств и источников. Это не оценки истинности, размеры эффектов и не научный рейтинг.",
+  "Find a mechanism": "Найти механизм",
+  "Similar labels do not establish that mechanisms are identical or causally connected. Cross-family bridges require separate scientific review.": "Похожие названия не доказывают, что механизмы тождественны или причинно связаны. Межтематические мосты требуют отдельной научной проверки.",
+  "mechanisms": "механизмов",
+  "linked claims": "связанных утверждений",
+  "evidence records": "записей доказательств",
+  "sources": "источников",
+  "Open in map": "Открыть на карте",
+  "No mechanisms match this search.": "По этому запросу механизмы не найдены.",
+  "learning": "обучение",
+  "cognitive": "когнитивный",
+  "integrative": "интегративный",
+  "physiological": "физиологический",
+  "computational": "вычислительный",
+  "social": "социальный",
   "Reading rule": "Правило чтения",
   "Follow the records, not the visual distance.": "Следуйте данным записей, а не визуальному расстоянию.",
   "PMM is an evidence-aware knowledge map. Nearby nodes help navigation only; they do not show a stronger effect, a causal direction, or a scientific consensus.": "PMM — карта знаний с учётом доказательств. Близость узлов помогает только навигации и не означает более сильный эффект, причинное направление или научный консенсус.",
@@ -112,7 +131,7 @@ const STATUS_LABELS = {
   not_assessed: "not assessed",
 };
 
-const state = { data: null, translations: {}, lang: localStorage.getItem("pmm-language") || "en", family: null, filter: "all", selectedId: null };
+const state = { data: null, translations: {}, lang: localStorage.getItem("pmm-language") || "en", family: null, filter: "all", selectedId: null, mechanismQuery: "" };
 const svg = document.getElementById("knowledge-map");
 const inspector = document.getElementById("inspector");
 
@@ -629,6 +648,61 @@ function renderFamilyDescription() {
   document.getElementById("family-description").textContent = t(state.family.description);
 }
 
+function mechanismStatusSummary(mechanism) {
+  const entries = Object.entries(mechanism.claim_status_counts);
+  if (!entries.length) return ui("No linked scientific claims", "Нет связанных научных утверждений");
+  return entries
+    .map(([status, count]) => `${count} ${t(STATUS_LABELS[status] || status)}`)
+    .join(" · ");
+}
+
+function renderMechanismCatalog() {
+  const query = state.mechanismQuery.trim().toLocaleLowerCase(state.lang === "ru" ? "ru" : "en");
+  const mechanisms = state.data.mechanism_index.filter(mechanism => {
+    const searchable = [
+      t(mechanism.label),
+      t(mechanism.definition),
+      t(mechanism.family_title),
+      t(mechanism.mechanism_kind),
+    ].join(" ").toLocaleLowerCase(state.lang === "ru" ? "ru" : "en");
+    return !query || searchable.includes(query);
+  });
+  document.getElementById("mechanism-count").textContent = `${state.data.mechanism_index.length} ${ui("mechanisms", "механизмов")}`;
+  const search = document.getElementById("mechanism-search");
+  search.placeholder = ui("Search by mechanism, family, or kind", "Поиск по механизму, теме или виду");
+  search.value = state.mechanismQuery;
+  const grid = document.getElementById("mechanism-grid");
+  grid.innerHTML = mechanisms.length ? mechanisms.map(mechanism => `
+    <article class="mechanism-card">
+      <p>${escapeHtml(t(mechanism.family_title))}</p>
+      <h3>${escapeHtml(t(mechanism.label))}</h3>
+      <span class="mechanism-kind">${escapeHtml(t(mechanism.mechanism_kind))}</span>
+      <p class="mechanism-definition">${escapeHtml(t(mechanism.definition))}</p>
+      <div class="mechanism-metrics">
+        <span><strong>${mechanism.claim_ids.length}</strong>${ui("linked claims", "связанных утверждений")}</span>
+        <span><strong>${mechanism.evidence_count}</strong>${ui("evidence records", "записей доказательств")}</span>
+        <span><strong>${mechanism.source_count}</strong>${ui("sources", "источников")}</span>
+      </div>
+      <p class="mechanism-status">${escapeHtml(mechanismStatusSummary(mechanism))}</p>
+      <button type="button" data-open-mechanism="${escapeHtml(mechanism.id)}" data-family-id="${escapeHtml(mechanism.family_id)}">${ui("Open in map", "Открыть на карте")}</button>
+    </article>
+  `).join("") : `<p class="catalog-empty">${ui("No mechanisms match this search.", "По этому запросу механизмы не найдены.")}</p>`;
+
+  grid.querySelectorAll("[data-open-mechanism]").forEach(button => {
+    button.addEventListener("click", () => {
+      state.family = state.data.families.find(family => family.id === button.dataset.familyId);
+      state.filter = "all";
+      document.querySelectorAll(".filter-button").forEach(item => item.classList.toggle("is-active", item.dataset.filter === "all"));
+      renderFamilies();
+      renderFamilyDescription();
+      renderMap();
+      selectNode(button.dataset.openMechanism);
+      document.getElementById("mechanism-catalog").open = false;
+      document.querySelector(".map-layout").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
 function setLanguage(language) {
   state.lang = language;
   localStorage.setItem("pmm-language", language);
@@ -636,6 +710,7 @@ function setLanguage(language) {
   translateStaticDom();
   renderFamilies();
   renderFamilyDescription();
+  renderMechanismCatalog();
   renderMap();
   if (state.selectedId) renderInspector(recordById(state.selectedId));
   else renderEmptyInspector();
@@ -652,8 +727,14 @@ async function init() {
     document.getElementById("build-version").textContent = `Schema ${state.data.pmm_version} · Interface ${state.data.interface_version}`;
     renderFamilies();
     renderFamilyDescription();
+    renderMechanismCatalog();
     renderMap();
     document.getElementById("language-toggle").addEventListener("click", () => setLanguage(state.lang === "ru" ? "en" : "ru"));
+    document.getElementById("mechanism-search").addEventListener("input", event => {
+      state.mechanismQuery = event.target.value;
+      renderMechanismCatalog();
+      document.getElementById("mechanism-search").focus();
+    });
     svg.addEventListener("click", event => {
       if (!event.target.closest(".node")) clearSelection();
     });

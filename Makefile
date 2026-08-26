@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 site-data translate-ru report test export verify pubmed-social-buffering social-buffering-abstracts clean
+.PHONY: setup validate validate-v02 site-data mechanism-index translate-ru report test export verify pubmed-social-buffering social-buffering-abstracts clean
 
 PYTHON := .venv/bin/python
 
@@ -20,10 +20,13 @@ test:
 site-data:
 	$(PYTHON) scripts/build_site_data.py
 
+mechanism-index: site-data
+	$(PYTHON) scripts/build_mechanism_index.py
+
 translate-ru:
 	$(PYTHON) -u scripts/build_ru_translation.py
 
-report:
+report: mechanism-index
 	$(PYTHON) scripts/build_registry.py report
 
 export:
