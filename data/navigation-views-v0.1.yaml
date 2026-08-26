@@ -1,0 +1,261 @@
+view_version: 0.1.0
+status: pilot
+canonical_language: en
+provenance:
+  created_at: '2026-08-26T13:00:00+03:00'
+  modified_at: '2026-08-26T13:00:00+03:00'
+  created_by: [OpenAI Codex]
+  review_status: source_checked_editorial
+  source_snapshot_date: '2026-08-26'
+
+sources:
+  - id: source:rdoc-definitions
+    title: Definitions of the RDoC Domains and Constructs
+    organization: National Institute of Mental Health
+    url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs
+  - id: source:rdoc-about
+    title: About RDoC
+    organization: National Institute of Mental Health
+    url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/about-rdoc
+  - id: source:cognitive-atlas
+    title: Cognitive Atlas
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/
+  - id: source:cognitive-atlas-working-memory
+    title: Cognitive Atlas concept — working memory
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b5a7/
+  - id: source:cognitive-atlas-n-back
+    title: Cognitive Atlas task — N-back task
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/task/id/tsk_4a57abb949bcd/
+  - id: source:hitop-framework
+    title: The HiTOP Framework
+    organization: Hierarchical Taxonomy of Psychopathology Consortium
+    url: https://www.hitop-system.org/the-framework
+  - id: source:memory-systems-review
+    title: Memory systems of the brain — a brief history and current perspective
+    organization: Neurobiology of Learning and Memory
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4455839/
+  - id: source:rothbart-temperament
+    title: Temperament, Development, and Personality
+    organization: Current Directions in Psychological Science
+    url: https://doi.org/10.1111/j.1467-8721.2007.00505.x
+  - id: source:big-five-review
+    title: An Introduction to the Five-Factor Model and Its Applications
+    organization: Journal of Personality
+    url: https://doi.org/10.1111/j.1467-6494.1992.tb00970.x
+
+general_psychology:
+  id: general-psychology
+  title:
+    en: General Psychology
+    ru: Общая психология
+  subtitle:
+    en: Familiar areas of psychology used as navigation, not as one final theory of the mind.
+    ru: Знакомые разделы психологии для навигации, а не единая окончательная теория психики.
+  methodological_note:
+    en: These categories overlap and do not share one ontological level. They organize access to canonical PMM records without changing what those records are.
+    ru: Эти категории пересекаются и находятся на разных онтологических уровнях. Они помогают находить канонические записи PMM, но не меняют их сущность.
+  root_id: gp:mind
+  nodes:
+    - id: gp:mind
+      parent_id: null
+      kind: navigation_root
+      label: {en: Mind, ru: Психика}
+      description:
+        en: An educational entry point into psychological functions, states, learning, and individual differences.
+        ru: Учебная точка входа к психическим функциям, состояниям, обучению и индивидуальным различиям.
+      coverage: partial
+      source_ids: []
+    - id: gp:cognitive-processes
+      parent_id: gp:mind
+      kind: domain
+      label: {en: Cognitive processes, ru: Познавательные процессы}
+      description:
+        en: Families of processes involved in acquiring, maintaining, transforming, and using information.
+        ru: Семейства процессов, с помощью которых информация воспринимается, сохраняется, преобразуется и используется.
+      coverage: partial
+      source_ids: [source:memory-systems-review, source:rdoc-definitions]
+    - id: gp:memory
+      parent_id: gp:cognitive-processes
+      kind: topic
+      label: {en: Memory, ru: Память}
+      description:
+        en: Multiple partly distinct systems and processes for retaining and retrieving information; it is not one unitary faculty.
+        ru: Несколько частично различающихся систем и процессов сохранения и извлечения информации, а не одна единая способность.
+      ontological_note:
+        en: PMM currently covers working-memory constructs and N-back-related mechanisms. N-back is a task, and its score is a measurement; neither is memory itself.
+        ru: Сейчас PMM охватывает конструкты рабочей памяти и механизмы, связанные с N-back. N-back — это задача, а её результат — измерение; ни то ни другое не является самой памятью.
+      coverage: partial
+      source_ids: [source:memory-systems-review, source:rdoc-definitions, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back]
+      memberships:
+        - family_id: working-memory
+          canonical_id: pmm:construct:working-memory-capacity
+          role: construct_example
+          expected_type: Construct
+        - family_id: working-memory
+          canonical_id: pmm:context:n-back-task
+          role: task_context_example
+          expected_type: Context
+        - family_id: working-memory
+          canonical_id: pmm:measurement:n-back-performance
+          role: measurement_example
+          expected_type: Measurement
+        - family_id: working-memory
+          canonical_id: pmm:mechanism:episodic-retrieval-n-back
+          role: mechanism_example
+          expected_type: Mechanism
+    - id: gp:emotion-motivation
+      parent_id: gp:mind
+      kind: domain
+      label: {en: Emotions and motivation, ru: Эмоции и мотивация}
+      description:
+        en: A broad area covering affective states, appraisals, action tendencies, regulation, and motivational processes.
+        ru: Широкая область, включающая эмоциональные состояния, оценку ситуации, побуждения к действию, регуляцию и мотивационные процессы.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+    - id: gp:emotional-states-regulation
+      parent_id: gp:emotion-motivation
+      kind: topic
+      label: {en: Emotional states and regulation, ru: Эмоциональные состояния и регуляция}
+      description:
+        en: Momentary affective responses and processes that alter their intensity, duration, expression, or meaning.
+        ru: Текущие эмоциональные реакции и процессы, изменяющие их силу, длительность, выражение или смысл ситуации.
+      ontological_note:
+        en: “Emotion” is not one PMM object type. This topic links distinct States, Constructs, Interventions, Behaviors, and Mechanisms. Anxiety is typed according to its use in each record.
+        ru: «Эмоция» не является одним типом объекта PMM. Раздел связывает разные состояния, конструкты, вмешательства, поведения и механизмы. Тревога типизируется по её роли в конкретной записи.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - family_id: reappraisal
+          canonical_id: pmm:state:negative-emotional-experience
+          role: state_example
+          expected_type: State
+        - family_id: reappraisal
+          canonical_id: pmm:mechanism:meaning-reinterpretation
+          role: regulation_mechanism_example
+          expected_type: Mechanism
+        - family_id: reappraisal
+          canonical_id: pmm:intervention:reappraisal-instruction
+          role: intervention_example
+          expected_type: Intervention
+        - family_id: avoidance
+          canonical_id: pmm:state:anxiety-response
+          role: state_example
+          expected_type: State
+        - family_id: interoception
+          canonical_id: pmm:mechanism:cardiorespiratory-appraisal
+          role: appraisal_mechanism_example
+          expected_type: Mechanism
+    - id: gp:personality-individual-differences
+      parent_id: gp:mind
+      kind: domain
+      label: {en: Personality and individual differences, ru: Личность и индивидуальные различия}
+      description:
+        en: Relatively stable patterns and dimensions on which people differ; descriptive structure must not be mistaken for a causal mechanism.
+        ru: Относительно устойчивые особенности и измерения, по которым люди различаются; описательную структуру нельзя принимать за причинный механизм.
+      coverage: planned
+      source_ids: [source:rothbart-temperament, source:big-five-review]
+    - id: gp:temperament
+      parent_id: gp:personality-individual-differences
+      kind: topic
+      label: {en: Temperament, ru: Темперамент}
+      description:
+        en: Relatively stable individual differences in emotional, motor, and attentional reactivity and self-regulation, studied developmentally.
+        ru: Относительно устойчивые индивидуальные различия в эмоциональной, двигательной и внимательной реактивности и саморегуляции, рассматриваемые в развитии.
+      ontological_note:
+        en: Temperament models contain dimensions and developmental hypotheses; “types of temperament” are not interchangeable with modern dimensional models.
+        ru: Модели темперамента включают измерения и гипотезы развития; традиционные «типы темперамента» не тождественны современным размерным моделям.
+      coverage: planned
+      source_ids: [source:rothbart-temperament]
+      memberships: []
+    - id: gp:big-five
+      parent_id: gp:personality-individual-differences
+      kind: taxonomy
+      label: {en: Big Five, ru: Большая пятёрка}
+      description:
+        en: "A hierarchical dimensional taxonomy describing broad personality trait variation: Extraversion, Agreeableness, Conscientiousness, Neuroticism, and Openness."
+        ru: "Иерархическая размерная классификация широких черт личности: экстраверсии, доброжелательности, добросовестности, нейротизма и открытости опыту."
+      ontological_note:
+        en: Big Five dimensions summarize covariation in traits. The taxonomy is not by itself a theory of mechanisms or a proof that a trait causes behavior.
+        ru: Измерения Большой пятёрки обобщают совместную изменчивость черт. Сама классификация не является теорией механизмов и не доказывает, что черта вызывает поведение.
+      coverage: planned
+      source_ids: [source:big-five-review]
+      memberships: []
+
+scientific_systems:
+  id: scientific-systems
+  title: {en: Scientific systems, ru: Научные системы}
+  subtitle:
+    en: Different frameworks answer different questions. They should be aligned, not collapsed into one hierarchy.
+    ru: Разные системы отвечают на разные вопросы. Их нужно сопоставлять, а не сливать в одну иерархию.
+  systems:
+    - id: system:rdoc
+      label: {en: NIMH RDoC, ru: NIMH RDoC}
+      system_kind: research_framework
+      scope:
+        en: A dimensional research framework connecting functional constructs with multiple units of analysis, from genes and circuits to behavior and self-report.
+        ru: Размерная исследовательская рамка, связывающая функциональные конструкты с уровнями анализа от генов и нейронных систем до поведения и самоотчёта.
+      limitation:
+        en: It is not a diagnostic manual, a complete ontology, or a fixed final taxonomy.
+        ru: Это не диагностическое руководство, не полная онтология и не окончательная неизменная классификация.
+      coverage: partial
+      source_ids: [source:rdoc-about, source:rdoc-definitions]
+      mapped_memberships:
+        - family_id: avoidance
+          canonical_id: pmm:construct:rdoc-potential-threat-anxiety
+        - family_id: working-memory
+          canonical_id: pmm:construct:working-memory-capacity
+    - id: system:cognitive-atlas
+      label: {en: Cognitive Atlas, ru: Cognitive Atlas}
+      system_kind: collaborative_knowledge_base
+      scope:
+        en: A knowledge base of cognitive concepts and experimental tasks with explicit relationships between them.
+        ru: База знаний о когнитивных понятиях и экспериментальных задачах с явными связями между ними.
+      limitation:
+        en: Record review status matters. The linked working-memory and N-back pages are currently marked “Unreviewed,” so PMM treats these alignments as provisional.
+        ru: Важен статус проверки записи. Связанные страницы рабочей памяти и N-back сейчас помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
+      coverage: partial
+      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back]
+      mapped_memberships:
+        - family_id: working-memory
+          canonical_id: pmm:construct:working-memory-capacity
+        - family_id: working-memory
+          canonical_id: pmm:context:n-back-task
+    - id: system:big-five
+      label: {en: Big Five, ru: Большая пятёрка}
+      system_kind: trait_taxonomy
+      scope:
+        en: A hierarchical dimensional taxonomy for organizing broad personality trait variation.
+        ru: Иерархическая размерная классификация широких различий в чертах личности.
+      limitation:
+        en: Descriptive trait structure does not itself identify causal psychological mechanisms.
+        ru: Описательная структура черт сама по себе не выявляет причинные психологические механизмы.
+      coverage: planned
+      source_ids: [source:big-five-review]
+      mapped_memberships: []
+    - id: system:temperament
+      label: {en: Modern temperament models, ru: Современные модели темперамента}
+      system_kind: developmental_individual_differences_framework
+      scope:
+        en: Dimensional developmental accounts of individual differences in reactivity and self-regulation.
+        ru: Размерные модели развития индивидуальных различий в реактивности и саморегуляции.
+      limitation:
+        en: Multiple models use different dimensions; PMM has not selected one as a universal taxonomy.
+        ru: Разные модели используют разные измерения; PMM пока не выбрала одну из них как универсальную классификацию.
+      coverage: planned
+      source_ids: [source:rothbart-temperament]
+      mapped_memberships: []
+    - id: system:hitop
+      label: {en: HiTOP, ru: HiTOP}
+      system_kind: psychopathology_taxonomy
+      scope:
+        en: A hierarchical dimensional classification of psychopathology, from signs and symptoms through spectra.
+        ru: Иерархическая размерная классификация психопатологии от признаков и симптомов до широких спектров.
+      limitation:
+        en: HiTOP is for psychopathology. It should not be used as a general taxonomy of normal mental functions.
+        ru: HiTOP предназначена для психопатологии. Её нельзя использовать как общую классификацию нормальных психических функций.
+      coverage: planned
+      source_ids: [source:hitop-framework]
+      mapped_memberships: []

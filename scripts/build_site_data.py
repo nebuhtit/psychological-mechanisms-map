@@ -15,6 +15,7 @@ from claim_explanations import load_annotations, validate as validate_explanatio
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "site" / "data" / "pmm-data.json"
 REGISTRY_PATH = ROOT / "data" / "families.yaml"
+VIEWS_PATH = ROOT / "data" / "navigation-views-v0.1.yaml"
 
 
 def load_families() -> list[tuple[str, str, str, str]]:
@@ -133,6 +134,60 @@ def build_mechanism_index(families: list[dict[str, Any]]) -> list[dict[str, Any]
     return sorted(index, key=lambda item: (item["family_title"], item["label"]))
 
 
+def load_navigation_views(families: list[dict[str, Any]]) -> dict[str, Any]:
+    """Validate faceted navigation against canonical PMM records."""
+    document = yaml.safe_load(VIEWS_PATH.read_text(encoding="utf-8"))
+    family_by_id = {family["id"]: family for family in families}
+    source_ids = {source["id"] for source in document["sources"]}
+
+    def validate_sources(owner: str, references: list[str]) -> None:
+        missing = set(references) - source_ids
+        if missing:
+            raise ValueError(f"{owner}: unknown navigation source IDs: {sorted(missing)}")
+
+    def validate_membership(owner: str, membership: dict[str, Any]) -> None:
+        family_id = membership["family_id"]
+        if family_id not in family_by_id:
+            raise ValueError(f"{owner}: unknown family {family_id}")
+        records = {
+            item["id"]: item
+            for section in ("objects", "claims")
+            for item in family_by_id[family_id][section]
+        }
+        canonical_id = membership["canonical_id"]
+        if canonical_id not in records:
+            raise ValueError(f"{owner}: {canonical_id} is not in family {family_id}")
+        expected_type = membership.get("expected_type")
+        if expected_type and records[canonical_id].get("type") != expected_type:
+            raise ValueError(
+                f"{owner}: expected {canonical_id} to be {expected_type}, "
+                f"found {records[canonical_id].get('type')}"
+            )
+
+    general = document["general_psychology"]
+    nodes = general["nodes"]
+    node_ids = {node["id"] for node in nodes}
+    if len(node_ids) != len(nodes):
+        raise ValueError("general_psychology: duplicate node IDs")
+    if general["root_id"] not in node_ids:
+        raise ValueError("general_psychology: root_id does not resolve")
+    for node in nodes:
+        parent_id = node.get("parent_id")
+        if parent_id is not None and parent_id not in node_ids:
+            raise ValueError(f"{node['id']}: unknown parent {parent_id}")
+        validate_sources(node["id"], node.get("source_ids", []))
+        for membership in node.get("memberships", []):
+            validate_membership(node["id"], membership)
+
+    systems = document["scientific_systems"]["systems"]
+    for system in systems:
+        validate_sources(system["id"], system.get("source_ids", []))
+        for membership in system.get("mapped_memberships", []):
+            validate_membership(system["id"], membership)
+
+    return document
+
+
 def main() -> None:
     explanation_errors = validate_explanations()
     if explanation_errors:
@@ -141,9 +196,10 @@ def main() -> None:
     families = [build_family(*family, explanations) for family in load_families()]
     payload = {
         "pmm_version": "0.3.4",
-        "interface_version": "0.4.3",
+        "interface_version": "0.5.0",
         "families": families,
         "mechanism_index": build_mechanism_index(families),
+        "navigation_views": load_navigation_views(families),
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(

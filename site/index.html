@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,650&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=0.5.1">
 </head>
 <body>
   <div class="page-shell">
@@ -28,6 +28,26 @@
     </header>
 
     <main>
+      <nav class="perspective-switch" id="perspective-switch" aria-label="Choose a way to explore PMM">
+        <button class="perspective-button is-active" type="button" data-perspective="general" aria-pressed="true">
+          <small>01 · Familiar navigation</small>
+          <strong>General Psychology</strong>
+        </button>
+        <button class="perspective-button" type="button" data-perspective="mechanisms" aria-pressed="false">
+          <small>02 · Scientific core</small>
+          <strong>Mechanisms &amp; Evidence</strong>
+        </button>
+        <button class="perspective-button" type="button" data-perspective="systems" aria-pressed="false">
+          <small>03 · Terminology alignment</small>
+          <strong>Scientific Systems</strong>
+        </button>
+      </nav>
+
+      <section class="perspective-panel general-panel" id="general-panel" data-perspective-panel="general">
+        <div id="general-psychology-view"></div>
+      </section>
+
+      <section class="perspective-panel" id="mechanisms-panel" data-perspective-panel="mechanisms" hidden>
       <section class="control-deck" aria-label="Map controls">
         <div class="family-strip" id="family-strip" role="tablist" aria-label="Mechanism family"></div>
         <div class="filter-row">
@@ -124,6 +144,11 @@
           </div>
         </aside>
       </section>
+      </section>
+
+      <section class="perspective-panel systems-panel" id="systems-panel" data-perspective-panel="systems" hidden>
+        <div id="scientific-systems-view"></div>
+      </section>
     </main>
 
     <footer>
@@ -131,6 +156,6 @@
       <span id="build-version"></span>
     </footer>
   </div>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=0.5.0" defer></script>
 </body>
 </html>

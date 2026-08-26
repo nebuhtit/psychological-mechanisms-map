@@ -36,6 +36,14 @@ objects:
       typical_loads: 2-back and 3-back
       response: target or non-target judgment
     scope: Human laboratory N-back variants; stimulus domain, load, lure frequency, and scoring can differ.
+    external_mappings:
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/task/id/tsk_4a57abb949bcd/
+        external_label: N-back task
+        mapping_relation: related_match
+        mapping_status: provisional
+        rationale: The external record identifies the N-back task family, while this PMM Context record additionally scopes the variants used by the evidence pack; the Cognitive Atlas page is marked Unreviewed.
+        accessed_at: '2026-08-26'
     provenance: *provenance
 
   - id: pmm:context:working-memory-battery
@@ -61,6 +69,21 @@ objects:
     boundary_notes:
       - Competing theories disagree about storage, attention, retrieval, and interference contributions.
       - A score from one task is not identical to the construct.
+    external_mappings:
+      - system: RDoC
+        external_iri: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/working-memory
+        external_label: Working Memory
+        mapping_relation: narrow_match
+        mapping_status: label_verified
+        rationale: PMM Working-memory capacity is narrower than the RDoC Working Memory construct, which also includes active maintenance, flexible updating, and interference control.
+        accessed_at: '2026-08-26'
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b5a7/
+        external_label: working memory
+        mapping_relation: narrow_match
+        mapping_status: provisional
+        rationale: PMM Working-memory capacity is one constrained construct within the broader external working-memory concept; the Cognitive Atlas page is marked Unreviewed.
+        accessed_at: '2026-08-26'
     provenance: *provenance
 
   - id: pmm:construct:n-back-specific-variance

@@ -3804,6 +3804,17 @@
             "task_family": "n-back",
             "typical_loads": "2-back and 3-back"
           },
+          "external_mappings": [
+            {
+              "accessed_at": "2026-08-26",
+              "external_iri": "https://www.cognitiveatlas.org/task/id/tsk_4a57abb949bcd/",
+              "external_label": "N-back task",
+              "mapping_relation": "related_match",
+              "mapping_status": "provisional",
+              "rationale": "The external record identifies the N-back task family, while this PMM Context record additionally scopes the variants used by the evidence pack; the Cognitive Atlas page is marked Unreviewed.",
+              "system": "CognitiveAtlas"
+            }
+          ],
           "id": "pmm:context:n-back-task",
           "label": "N-back task context",
           "ontological_level": "type",
@@ -3842,6 +3853,26 @@
           "construct_kind": "psychological",
           "curation_status": "provisional",
           "definition": "Limited ability to maintain accessible information while performing goal-directed processing.",
+          "external_mappings": [
+            {
+              "accessed_at": "2026-08-26",
+              "external_iri": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/working-memory",
+              "external_label": "Working Memory",
+              "mapping_relation": "narrow_match",
+              "mapping_status": "label_verified",
+              "rationale": "PMM Working-memory capacity is narrower than the RDoC Working Memory construct, which also includes active maintenance, flexible updating, and interference control.",
+              "system": "RDoC"
+            },
+            {
+              "accessed_at": "2026-08-26",
+              "external_iri": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b5a7/",
+              "external_label": "working memory",
+              "mapping_relation": "narrow_match",
+              "mapping_status": "provisional",
+              "rationale": "PMM Working-memory capacity is one constrained construct within the broader external working-memory concept; the Cognitive Atlas page is marked Unreviewed.",
+              "system": "CognitiveAtlas"
+            }
+          ],
           "id": "pmm:construct:working-memory-capacity",
           "label": "Working-memory capacity",
           "ontological_level": "type",
@@ -7421,7 +7452,7 @@
       "version": "0.3.4"
     }
   ],
-  "interface_version": "0.4.3",
+  "interface_version": "0.5.0",
   "mechanism_index": [
     {
       "claim_ids": [
@@ -7655,5 +7686,447 @@
       "source_count": 1
     }
   ],
+  "navigation_views": {
+    "canonical_language": "en",
+    "general_psychology": {
+      "id": "general-psychology",
+      "methodological_note": {
+        "en": "These categories overlap and do not share one ontological level. They organize access to canonical PMM records without changing what those records are.",
+        "ru": "Эти категории пересекаются и находятся на разных онтологических уровнях. Они помогают находить канонические записи PMM, но не меняют их сущность."
+      },
+      "nodes": [
+        {
+          "coverage": "partial",
+          "description": {
+            "en": "An educational entry point into psychological functions, states, learning, and individual differences.",
+            "ru": "Учебная точка входа к психическим функциям, состояниям, обучению и индивидуальным различиям."
+          },
+          "id": "gp:mind",
+          "kind": "navigation_root",
+          "label": {
+            "en": "Mind",
+            "ru": "Психика"
+          },
+          "parent_id": null,
+          "source_ids": []
+        },
+        {
+          "coverage": "partial",
+          "description": {
+            "en": "Families of processes involved in acquiring, maintaining, transforming, and using information.",
+            "ru": "Семейства процессов, с помощью которых информация воспринимается, сохраняется, преобразуется и используется."
+          },
+          "id": "gp:cognitive-processes",
+          "kind": "domain",
+          "label": {
+            "en": "Cognitive processes",
+            "ru": "Познавательные процессы"
+          },
+          "parent_id": "gp:mind",
+          "source_ids": [
+            "source:memory-systems-review",
+            "source:rdoc-definitions"
+          ]
+        },
+        {
+          "coverage": "partial",
+          "description": {
+            "en": "Multiple partly distinct systems and processes for retaining and retrieving information; it is not one unitary faculty.",
+            "ru": "Несколько частично различающихся систем и процессов сохранения и извлечения информации, а не одна единая способность."
+          },
+          "id": "gp:memory",
+          "kind": "topic",
+          "label": {
+            "en": "Memory",
+            "ru": "Память"
+          },
+          "memberships": [
+            {
+              "canonical_id": "pmm:construct:working-memory-capacity",
+              "expected_type": "Construct",
+              "family_id": "working-memory",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:context:n-back-task",
+              "expected_type": "Context",
+              "family_id": "working-memory",
+              "role": "task_context_example"
+            },
+            {
+              "canonical_id": "pmm:measurement:n-back-performance",
+              "expected_type": "Measurement",
+              "family_id": "working-memory",
+              "role": "measurement_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:episodic-retrieval-n-back",
+              "expected_type": "Mechanism",
+              "family_id": "working-memory",
+              "role": "mechanism_example"
+            }
+          ],
+          "ontological_note": {
+            "en": "PMM currently covers working-memory constructs and N-back-related mechanisms. N-back is a task, and its score is a measurement; neither is memory itself.",
+            "ru": "Сейчас PMM охватывает конструкты рабочей памяти и механизмы, связанные с N-back. N-back — это задача, а её результат — измерение; ни то ни другое не является самой памятью."
+          },
+          "parent_id": "gp:cognitive-processes",
+          "source_ids": [
+            "source:memory-systems-review",
+            "source:rdoc-definitions",
+            "source:cognitive-atlas-working-memory",
+            "source:cognitive-atlas-n-back"
+          ]
+        },
+        {
+          "coverage": "partial",
+          "description": {
+            "en": "A broad area covering affective states, appraisals, action tendencies, regulation, and motivational processes.",
+            "ru": "Широкая область, включающая эмоциональные состояния, оценку ситуации, побуждения к действию, регуляцию и мотивационные процессы."
+          },
+          "id": "gp:emotion-motivation",
+          "kind": "domain",
+          "label": {
+            "en": "Emotions and motivation",
+            "ru": "Эмоции и мотивация"
+          },
+          "parent_id": "gp:mind",
+          "source_ids": [
+            "source:rdoc-definitions"
+          ]
+        },
+        {
+          "coverage": "partial",
+          "description": {
+            "en": "Momentary affective responses and processes that alter their intensity, duration, expression, or meaning.",
+            "ru": "Текущие эмоциональные реакции и процессы, изменяющие их силу, длительность, выражение или смысл ситуации."
+          },
+          "id": "gp:emotional-states-regulation",
+          "kind": "topic",
+          "label": {
+            "en": "Emotional states and regulation",
+            "ru": "Эмоциональные состояния и регуляция"
+          },
+          "memberships": [
+            {
+              "canonical_id": "pmm:state:negative-emotional-experience",
+              "expected_type": "State",
+              "family_id": "reappraisal",
+              "role": "state_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:meaning-reinterpretation",
+              "expected_type": "Mechanism",
+              "family_id": "reappraisal",
+              "role": "regulation_mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:intervention:reappraisal-instruction",
+              "expected_type": "Intervention",
+              "family_id": "reappraisal",
+              "role": "intervention_example"
+            },
+            {
+              "canonical_id": "pmm:state:anxiety-response",
+              "expected_type": "State",
+              "family_id": "avoidance",
+              "role": "state_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:cardiorespiratory-appraisal",
+              "expected_type": "Mechanism",
+              "family_id": "interoception",
+              "role": "appraisal_mechanism_example"
+            }
+          ],
+          "ontological_note": {
+            "en": "“Emotion” is not one PMM object type. This topic links distinct States, Constructs, Interventions, Behaviors, and Mechanisms. Anxiety is typed according to its use in each record.",
+            "ru": "«Эмоция» не является одним типом объекта PMM. Раздел связывает разные состояния, конструкты, вмешательства, поведения и механизмы. Тревога типизируется по её роли в конкретной записи."
+          },
+          "parent_id": "gp:emotion-motivation",
+          "source_ids": [
+            "source:rdoc-definitions"
+          ]
+        },
+        {
+          "coverage": "planned",
+          "description": {
+            "en": "Relatively stable patterns and dimensions on which people differ; descriptive structure must not be mistaken for a causal mechanism.",
+            "ru": "Относительно устойчивые особенности и измерения, по которым люди различаются; описательную структуру нельзя принимать за причинный механизм."
+          },
+          "id": "gp:personality-individual-differences",
+          "kind": "domain",
+          "label": {
+            "en": "Personality and individual differences",
+            "ru": "Личность и индивидуальные различия"
+          },
+          "parent_id": "gp:mind",
+          "source_ids": [
+            "source:rothbart-temperament",
+            "source:big-five-review"
+          ]
+        },
+        {
+          "coverage": "planned",
+          "description": {
+            "en": "Relatively stable individual differences in emotional, motor, and attentional reactivity and self-regulation, studied developmentally.",
+            "ru": "Относительно устойчивые индивидуальные различия в эмоциональной, двигательной и внимательной реактивности и саморегуляции, рассматриваемые в развитии."
+          },
+          "id": "gp:temperament",
+          "kind": "topic",
+          "label": {
+            "en": "Temperament",
+            "ru": "Темперамент"
+          },
+          "memberships": [],
+          "ontological_note": {
+            "en": "Temperament models contain dimensions and developmental hypotheses; “types of temperament” are not interchangeable with modern dimensional models.",
+            "ru": "Модели темперамента включают измерения и гипотезы развития; традиционные «типы темперамента» не тождественны современным размерным моделям."
+          },
+          "parent_id": "gp:personality-individual-differences",
+          "source_ids": [
+            "source:rothbart-temperament"
+          ]
+        },
+        {
+          "coverage": "planned",
+          "description": {
+            "en": "A hierarchical dimensional taxonomy describing broad personality trait variation: Extraversion, Agreeableness, Conscientiousness, Neuroticism, and Openness.",
+            "ru": "Иерархическая размерная классификация широких черт личности: экстраверсии, доброжелательности, добросовестности, нейротизма и открытости опыту."
+          },
+          "id": "gp:big-five",
+          "kind": "taxonomy",
+          "label": {
+            "en": "Big Five",
+            "ru": "Большая пятёрка"
+          },
+          "memberships": [],
+          "ontological_note": {
+            "en": "Big Five dimensions summarize covariation in traits. The taxonomy is not by itself a theory of mechanisms or a proof that a trait causes behavior.",
+            "ru": "Измерения Большой пятёрки обобщают совместную изменчивость черт. Сама классификация не является теорией механизмов и не доказывает, что черта вызывает поведение."
+          },
+          "parent_id": "gp:personality-individual-differences",
+          "source_ids": [
+            "source:big-five-review"
+          ]
+        }
+      ],
+      "root_id": "gp:mind",
+      "subtitle": {
+        "en": "Familiar areas of psychology used as navigation, not as one final theory of the mind.",
+        "ru": "Знакомые разделы психологии для навигации, а не единая окончательная теория психики."
+      },
+      "title": {
+        "en": "General Psychology",
+        "ru": "Общая психология"
+      }
+    },
+    "provenance": {
+      "created_at": "2026-08-26T13:00:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T13:00:00+03:00",
+      "review_status": "source_checked_editorial",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "scientific_systems": {
+      "id": "scientific-systems",
+      "subtitle": {
+        "en": "Different frameworks answer different questions. They should be aligned, not collapsed into one hierarchy.",
+        "ru": "Разные системы отвечают на разные вопросы. Их нужно сопоставлять, а не сливать в одну иерархию."
+      },
+      "systems": [
+        {
+          "coverage": "partial",
+          "id": "system:rdoc",
+          "label": {
+            "en": "NIMH RDoC",
+            "ru": "NIMH RDoC"
+          },
+          "limitation": {
+            "en": "It is not a diagnostic manual, a complete ontology, or a fixed final taxonomy.",
+            "ru": "Это не диагностическое руководство, не полная онтология и не окончательная неизменная классификация."
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:construct:rdoc-potential-threat-anxiety",
+              "family_id": "avoidance"
+            },
+            {
+              "canonical_id": "pmm:construct:working-memory-capacity",
+              "family_id": "working-memory"
+            }
+          ],
+          "scope": {
+            "en": "A dimensional research framework connecting functional constructs with multiple units of analysis, from genes and circuits to behavior and self-report.",
+            "ru": "Размерная исследовательская рамка, связывающая функциональные конструкты с уровнями анализа от генов и нейронных систем до поведения и самоотчёта."
+          },
+          "source_ids": [
+            "source:rdoc-about",
+            "source:rdoc-definitions"
+          ],
+          "system_kind": "research_framework"
+        },
+        {
+          "coverage": "partial",
+          "id": "system:cognitive-atlas",
+          "label": {
+            "en": "Cognitive Atlas",
+            "ru": "Cognitive Atlas"
+          },
+          "limitation": {
+            "en": "Record review status matters. The linked working-memory and N-back pages are currently marked “Unreviewed,” so PMM treats these alignments as provisional.",
+            "ru": "Важен статус проверки записи. Связанные страницы рабочей памяти и N-back сейчас помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными."
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:construct:working-memory-capacity",
+              "family_id": "working-memory"
+            },
+            {
+              "canonical_id": "pmm:context:n-back-task",
+              "family_id": "working-memory"
+            }
+          ],
+          "scope": {
+            "en": "A knowledge base of cognitive concepts and experimental tasks with explicit relationships between them.",
+            "ru": "База знаний о когнитивных понятиях и экспериментальных задачах с явными связями между ними."
+          },
+          "source_ids": [
+            "source:cognitive-atlas",
+            "source:cognitive-atlas-working-memory",
+            "source:cognitive-atlas-n-back"
+          ],
+          "system_kind": "collaborative_knowledge_base"
+        },
+        {
+          "coverage": "planned",
+          "id": "system:big-five",
+          "label": {
+            "en": "Big Five",
+            "ru": "Большая пятёрка"
+          },
+          "limitation": {
+            "en": "Descriptive trait structure does not itself identify causal psychological mechanisms.",
+            "ru": "Описательная структура черт сама по себе не выявляет причинные психологические механизмы."
+          },
+          "mapped_memberships": [],
+          "scope": {
+            "en": "A hierarchical dimensional taxonomy for organizing broad personality trait variation.",
+            "ru": "Иерархическая размерная классификация широких различий в чертах личности."
+          },
+          "source_ids": [
+            "source:big-five-review"
+          ],
+          "system_kind": "trait_taxonomy"
+        },
+        {
+          "coverage": "planned",
+          "id": "system:temperament",
+          "label": {
+            "en": "Modern temperament models",
+            "ru": "Современные модели темперамента"
+          },
+          "limitation": {
+            "en": "Multiple models use different dimensions; PMM has not selected one as a universal taxonomy.",
+            "ru": "Разные модели используют разные измерения; PMM пока не выбрала одну из них как универсальную классификацию."
+          },
+          "mapped_memberships": [],
+          "scope": {
+            "en": "Dimensional developmental accounts of individual differences in reactivity and self-regulation.",
+            "ru": "Размерные модели развития индивидуальных различий в реактивности и саморегуляции."
+          },
+          "source_ids": [
+            "source:rothbart-temperament"
+          ],
+          "system_kind": "developmental_individual_differences_framework"
+        },
+        {
+          "coverage": "planned",
+          "id": "system:hitop",
+          "label": {
+            "en": "HiTOP",
+            "ru": "HiTOP"
+          },
+          "limitation": {
+            "en": "HiTOP is for psychopathology. It should not be used as a general taxonomy of normal mental functions.",
+            "ru": "HiTOP предназначена для психопатологии. Её нельзя использовать как общую классификацию нормальных психических функций."
+          },
+          "mapped_memberships": [],
+          "scope": {
+            "en": "A hierarchical dimensional classification of psychopathology, from signs and symptoms through spectra.",
+            "ru": "Иерархическая размерная классификация психопатологии от признаков и симптомов до широких спектров."
+          },
+          "source_ids": [
+            "source:hitop-framework"
+          ],
+          "system_kind": "psychopathology_taxonomy"
+        }
+      ],
+      "title": {
+        "en": "Scientific systems",
+        "ru": "Научные системы"
+      }
+    },
+    "sources": [
+      {
+        "id": "source:rdoc-definitions",
+        "organization": "National Institute of Mental Health",
+        "title": "Definitions of the RDoC Domains and Constructs",
+        "url": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs"
+      },
+      {
+        "id": "source:rdoc-about",
+        "organization": "National Institute of Mental Health",
+        "title": "About RDoC",
+        "url": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/about-rdoc"
+      },
+      {
+        "id": "source:cognitive-atlas",
+        "organization": "Cognitive Atlas",
+        "title": "Cognitive Atlas",
+        "url": "https://www.cognitiveatlas.org/"
+      },
+      {
+        "id": "source:cognitive-atlas-working-memory",
+        "organization": "Cognitive Atlas",
+        "title": "Cognitive Atlas concept — working memory",
+        "url": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b5a7/"
+      },
+      {
+        "id": "source:cognitive-atlas-n-back",
+        "organization": "Cognitive Atlas",
+        "title": "Cognitive Atlas task — N-back task",
+        "url": "https://www.cognitiveatlas.org/task/id/tsk_4a57abb949bcd/"
+      },
+      {
+        "id": "source:hitop-framework",
+        "organization": "Hierarchical Taxonomy of Psychopathology Consortium",
+        "title": "The HiTOP Framework",
+        "url": "https://www.hitop-system.org/the-framework"
+      },
+      {
+        "id": "source:memory-systems-review",
+        "organization": "Neurobiology of Learning and Memory",
+        "title": "Memory systems of the brain — a brief history and current perspective",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4455839/"
+      },
+      {
+        "id": "source:rothbart-temperament",
+        "organization": "Current Directions in Psychological Science",
+        "title": "Temperament, Development, and Personality",
+        "url": "https://doi.org/10.1111/j.1467-8721.2007.00505.x"
+      },
+      {
+        "id": "source:big-five-review",
+        "organization": "Journal of Personality",
+        "title": "An Introduction to the Five-Factor Model and Its Applications",
+        "url": "https://doi.org/10.1111/j.1467-6494.1992.tb00970.x"
+      }
+    ],
+    "status": "pilot",
+    "view_version": "0.1.0"
+  },
   "pmm_version": "0.3.4"
 }

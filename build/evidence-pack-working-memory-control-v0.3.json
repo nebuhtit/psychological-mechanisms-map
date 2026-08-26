@@ -413,6 +413,17 @@
         "task_family": "n-back",
         "typical_loads": "2-back and 3-back"
       },
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/task/id/tsk_4a57abb949bcd/",
+          "external_label": "N-back task",
+          "mapping_relation": "related_match",
+          "mapping_status": "provisional",
+          "rationale": "The external record identifies the N-back task family, while this PMM Context record additionally scopes the variants used by the evidence pack; the Cognitive Atlas page is marked Unreviewed.",
+          "system": "CognitiveAtlas"
+        }
+      ],
       "id": "pmm:context:n-back-task",
       "label": "N-back task context",
       "ontological_level": "type",
@@ -461,6 +472,26 @@
       "construct_kind": "psychological",
       "curation_status": "provisional",
       "definition": "Limited ability to maintain accessible information while performing goal-directed processing.",
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/working-memory",
+          "external_label": "Working Memory",
+          "mapping_relation": "narrow_match",
+          "mapping_status": "label_verified",
+          "rationale": "PMM Working-memory capacity is narrower than the RDoC Working Memory construct, which also includes active maintenance, flexible updating, and interference control.",
+          "system": "RDoC"
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b5a7/",
+          "external_label": "working memory",
+          "mapping_relation": "narrow_match",
+          "mapping_status": "provisional",
+          "rationale": "PMM Working-memory capacity is one constrained construct within the broader external working-memory concept; the Cognitive Atlas page is marked Unreviewed.",
+          "system": "CognitiveAtlas"
+        }
+      ],
       "id": "pmm:construct:working-memory-capacity",
       "label": "Working-memory capacity",
       "ontological_level": "type",

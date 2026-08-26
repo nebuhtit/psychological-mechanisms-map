@@ -61,8 +61,10 @@ The pilot explicitly rejects several shortcuts: relief alone is not reinforcemen
 
 ## Framework alignment
 
+Framework alignment is faceted and polyhierarchical: an educational heading, an external framework term, and a canonical PMM record may point to the same scientific object without becoming identical ontology classes. General-psychology headings are navigation nodes only. They never change a `Context` such as N-back into a memory process, a `Measurement` into an ability, or a trait taxonomy into a Mechanism.
+
 - [NIMH RDoC](https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/about-rdoc) supplies a dimensional research framework. PMM uses the official [Potential Threat (Anxiety)](https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs) boundary where appropriate, but RDoC is not a diagnostic guide or a complete causal ontology.
-- [Cognitive Atlas](https://www.cognitiveatlas.org/about) separates concepts, tasks, and assertions. PMM follows that separation conceptually, but label-level mappings remain provisional until stable IDs are pinned.
+- [Cognitive Atlas](https://www.cognitiveatlas.org/) separates concepts, tasks, and assertions. PMM follows that separation conceptually. The exact Working Memory concept and N-back task URLs are pinned, but both external pages are currently marked `Unreviewed`, so the mappings remain provisional.
 - [Mental Functioning Ontology](https://bioportal.bioontology.org/ontologies/MF) supplies BFO/OGMS-grounded upper-level mental-functioning classes. Its indexed 2025-07-08 release is marked alpha; PMM therefore avoids fabricated exact matches.
 - [Neuro Behavior Ontology](https://bioportal.bioontology.org/ontologies/NBO) supplies OWL classes for behavioral processes and phenotypes. PMM records a provisional relationship for avoidance pending release-level term review.
 - [HiTOP](https://www.hitop-system.org/) supplies a hierarchical dimensional organization of psychopathology based primarily on symptom/trait covariation. It helps locate clinical phenotype dimensions; it does not by itself establish a learning mechanism.

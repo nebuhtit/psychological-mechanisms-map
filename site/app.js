@@ -1,11 +1,18 @@
-const DATA_URL = "data/pmm-data.json?v=0.4.3";
-const RU_URL = "data/i18n-ru.json?v=0.4.3";
+const DATA_URL = "data/pmm-data.json?v=0.5.0";
+const RU_URL = "data/i18n-ru.json?v=0.5.1";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
   "The mind as a map of": "Психика как карта",
   "testable mechanisms": "проверяемых механизмов",
   "Source data ↗": "Исходные данные ↗",
+  "Choose a way to explore PMM": "Выберите способ изучения PMM",
+  "01 · Familiar navigation": "01 · Знакомая навигация",
+  "General Psychology": "Общая психология",
+  "02 · Scientific core": "02 · Научное ядро",
+  "Mechanisms & Evidence": "Механизмы и доказательства",
+  "03 · Terminology alignment": "03 · Сопоставление терминов",
+  "Scientific Systems": "Научные системы",
   "All": "Все",
   "Causal": "Причинные",
   "Hypotheses": "Гипотезы",
@@ -131,13 +138,27 @@ const STATUS_LABELS = {
   not_assessed: "not assessed",
 };
 
-const state = { data: null, translations: {}, lang: localStorage.getItem("pmm-language") || "en", family: null, filter: "all", selectedId: null, mechanismQuery: "" };
+const state = {
+  data: null,
+  translations: {},
+  lang: localStorage.getItem("pmm-language") || "en",
+  perspective: localStorage.getItem("pmm-perspective") || "general",
+  family: null,
+  filter: "all",
+  selectedId: null,
+  mechanismQuery: "",
+};
 const svg = document.getElementById("knowledge-map");
 const inspector = document.getElementById("inspector");
 
 function t(value = "") {
   if (state.lang !== "ru") return value;
   return UI_RU[value] || state.translations[value] || value;
+}
+
+function localText(value = "") {
+  if (!value || typeof value === "string") return t(value || "");
+  return value[state.lang] || value.en || "";
 }
 
 function translateStaticDom() {
@@ -708,6 +729,218 @@ function renderMechanismCatalog() {
   });
 }
 
+function navigationSource(sourceId) {
+  return state.data.navigation_views.sources.find(source => source.id === sourceId);
+}
+
+function canonicalRecord(familyId, canonicalId) {
+  const family = state.data.families.find(item => item.id === familyId);
+  if (!family) return null;
+  const record = [...family.objects, ...family.claims].find(item => item.id === canonicalId);
+  return record ? { family, record } : null;
+}
+
+function coverageLabel(coverage) {
+  const labels = {
+    partial: ["Partially modeled", "Частично смоделировано"],
+    planned: ["Not modeled yet", "Пока не смоделировано"],
+    complete: ["Modeled", "Смоделировано"],
+  };
+  const [en, ru] = labels[coverage] || [coverage, coverage];
+  return ui(en, ru);
+}
+
+function membershipRole(role) {
+  const labels = {
+    construct_example: ["Construct", "Конструкт"],
+    task_context_example: ["Task context, not memory", "Контекст задачи, не сама память"],
+    measurement_example: ["Measurement, not the ability itself", "Измерение, не сама способность"],
+    mechanism_example: ["Proposed mechanism", "Предложенный механизм"],
+    state_example: ["Momentary state", "Текущее состояние"],
+    regulation_mechanism_example: ["Regulation mechanism", "Механизм регуляции"],
+    intervention_example: ["Experimental instruction", "Экспериментальная инструкция"],
+    appraisal_mechanism_example: ["Appraisal mechanism", "Механизм оценки"],
+    mapped_record: ["Mapped canonical record", "Сопоставленная каноническая запись"],
+  };
+  const [en, ru] = labels[role] || [role, role];
+  return ui(en, ru);
+}
+
+function renderViewSources(sourceIds = []) {
+  return sourceIds.map(sourceId => navigationSource(sourceId)).filter(Boolean).map(source => `
+    <a class="view-source" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">
+      ${escapeHtml(source.title)} <span>↗</span>
+    </a>
+  `).join("");
+}
+
+function renderMemberships(memberships = []) {
+  if (!memberships.length) {
+    return `<p class="coverage-gap">${ui(
+      "No canonical PMM records have been curated for this area yet. The gap is visible by design.",
+      "Для этой области пока не отобраны канонические записи PMM. Пробел показан намеренно."
+    )}</p>`;
+  }
+  return `<div class="view-memberships">${memberships.map(membership => {
+    const resolved = canonicalRecord(membership.family_id, membership.canonical_id);
+    if (!resolved) return "";
+    const { family, record } = resolved;
+    return `
+      <button class="canonical-link" type="button" data-family-id="${escapeHtml(family.id)}" data-canonical-id="${escapeHtml(record.id)}">
+        <span class="canonical-role">${escapeHtml(membershipRole(membership.role || "mapped_record"))}</span>
+        <strong>${escapeHtml(t(record.label || record.statement))}</strong>
+        <small>${escapeHtml(t(TYPE_LABELS[record.type] || record.type))} · ${escapeHtml(t(family.title))}</small>
+        <i>${ui("Open evidence record", "Открыть запись с доказательствами")} →</i>
+      </button>
+    `;
+  }).join("")}</div>`;
+}
+
+function bindCanonicalLinks(container) {
+  container.querySelectorAll("[data-canonical-id]").forEach(button => {
+    button.addEventListener("click", () => openCanonicalRecord(button.dataset.familyId, button.dataset.canonicalId));
+  });
+}
+
+function renderGeneralPsychology() {
+  const view = state.data.navigation_views.general_psychology;
+  const byParent = new Map();
+  for (const node of view.nodes) {
+    const key = node.parent_id || "root";
+    byParent.set(key, [...(byParent.get(key) || []), node]);
+  }
+  const domains = byParent.get(view.root_id) || [];
+  const container = document.getElementById("general-psychology-view");
+  container.innerHTML = `
+    <header class="view-hero">
+      <div>
+        <p class="view-kicker">${ui("Educational navigation · pilot v0.1", "Учебная навигация · пилот v0.1")}</p>
+        <h2>${escapeHtml(localText(view.title))}</h2>
+        <p class="view-subtitle">${escapeHtml(localText(view.subtitle))}</p>
+      </div>
+      <aside class="method-note">
+        <strong>${ui("Important distinction", "Важное различие")}</strong>
+        <p>${escapeHtml(localText(view.methodological_note))}</p>
+      </aside>
+    </header>
+    <div class="view-legend">
+      <span><i class="coverage-dot partial"></i>${coverageLabel("partial")}</span>
+      <span><i class="coverage-dot planned"></i>${coverageLabel("planned")}</span>
+      <p>${ui(
+        "A category is a navigation facet. Colored record cards below are the canonical scientific objects.",
+        "Категория — это способ навигации. Цветные карточки ниже — канонические научные объекты."
+      )}</p>
+    </div>
+    <div class="domain-grid">
+      ${domains.map((domain, index) => {
+        const topics = byParent.get(domain.id) || [];
+        return `
+          <article class="domain-card coverage-${domain.coverage}">
+            <header>
+              <span class="domain-index">${String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <p>${ui("Area of psychology", "Раздел психологии")}</p>
+                <h3>${escapeHtml(localText(domain.label))}</h3>
+              </div>
+              <span class="coverage-chip">${coverageLabel(domain.coverage)}</span>
+            </header>
+            <p class="domain-description">${escapeHtml(localText(domain.description))}</p>
+            <div class="topic-list">
+              ${topics.map(topic => `
+                <section class="topic-card coverage-${topic.coverage}">
+                  <div class="topic-heading">
+                    <div>
+                      <span>${escapeHtml(topic.kind)}</span>
+                      <h4>${escapeHtml(localText(topic.label))}</h4>
+                    </div>
+                    <span class="coverage-chip">${coverageLabel(topic.coverage)}</span>
+                  </div>
+                  <p>${escapeHtml(localText(topic.description))}</p>
+                  ${topic.ontological_note ? `<p class="ontology-note"><strong>${ui("How PMM treats it:", "Как это трактует PMM:")}</strong> ${escapeHtml(localText(topic.ontological_note))}</p>` : ""}
+                  ${renderMemberships(topic.memberships || [])}
+                  <details class="view-sources"><summary>${ui("Definitions and alignment sources", "Источники определений и сопоставлений")}</summary>${renderViewSources(topic.source_ids)}</details>
+                </section>
+              `).join("")}
+            </div>
+          </article>
+        `;
+      }).join("")}
+    </div>
+    <p class="scope-footer">${ui(
+      "This first release intentionally covers only three branches. Attention, perception, motivation, social processes, development, and psychophysiological regulation will be added after their object boundaries are reviewed.",
+      "Первая версия намеренно охватывает только три ветви. Внимание, восприятие, мотивация, социальные процессы, развитие и психофизиологическая регуляция будут добавлены после проверки границ объектов."
+    )}</p>
+  `;
+  bindCanonicalLinks(container);
+}
+
+function renderScientificSystems() {
+  const view = state.data.navigation_views.scientific_systems;
+  const container = document.getElementById("scientific-systems-view");
+  container.innerHTML = `
+    <header class="view-hero systems-hero">
+      <div>
+        <p class="view-kicker">${ui("Crosswalk, not a merger", "Сопоставление, а не слияние")}</p>
+        <h2>${escapeHtml(localText(view.title))}</h2>
+        <p class="view-subtitle">${escapeHtml(localText(view.subtitle))}</p>
+      </div>
+      <aside class="method-note">
+        <strong>${ui("Reading rule", "Правило чтения")}</strong>
+        <p>${ui(
+          "A mapped record means that PMM documents a qualified correspondence. It does not mean the systems define the term identically.",
+          "Связанная запись означает, что PMM документирует ограниченное соответствие. Это не означает, что системы определяют термин одинаково."
+        )}</p>
+      </aside>
+    </header>
+    <div class="systems-grid">
+      ${view.systems.map((system, index) => `
+        <article class="system-card coverage-${system.coverage}">
+          <header>
+            <span>${String(index + 1).padStart(2, "0")}</span>
+            <div><p>${escapeHtml(system.system_kind.replaceAll("_", " "))}</p><h3>${escapeHtml(localText(system.label))}</h3></div>
+            <span class="coverage-chip">${coverageLabel(system.coverage)}</span>
+          </header>
+          <section><strong>${ui("What it is", "Что это")}</strong><p>${escapeHtml(localText(system.scope))}</p></section>
+          <section class="system-limit"><strong>${ui("Do not use it as", "Чем это не является")}</strong><p>${escapeHtml(localText(system.limitation))}</p></section>
+          ${renderMemberships((system.mapped_memberships || []).map(item => ({ ...item, role: "mapped_record" })))}
+          <div class="system-sources">${renderViewSources(system.source_ids)}</div>
+        </article>
+      `).join("")}
+    </div>
+  `;
+  bindCanonicalLinks(container);
+}
+
+function setPerspective(perspective, persist = true) {
+  const allowed = new Set(["general", "mechanisms", "systems"]);
+  state.perspective = allowed.has(perspective) ? perspective : "general";
+  if (persist) localStorage.setItem("pmm-perspective", state.perspective);
+  document.querySelectorAll("[data-perspective-panel]").forEach(panel => {
+    panel.hidden = panel.dataset.perspectivePanel !== state.perspective;
+  });
+  document.querySelectorAll("[data-perspective]").forEach(button => {
+    const active = button.dataset.perspective === state.perspective;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  if (state.perspective === "mechanisms") requestAnimationFrame(() => renderMap());
+}
+
+function openCanonicalRecord(familyId, canonicalId) {
+  state.family = state.data.families.find(family => family.id === familyId);
+  state.filter = "all";
+  state.selectedId = null;
+  document.querySelectorAll(".filter-button").forEach(item => item.classList.toggle("is-active", item.dataset.filter === "all"));
+  renderFamilies();
+  renderFamilyDescription();
+  setPerspective("mechanisms");
+  requestAnimationFrame(() => {
+    renderMap();
+    selectNode(canonicalId);
+    document.querySelector(".map-layout").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
 function setLanguage(language) {
   state.lang = language;
   localStorage.setItem("pmm-language", language);
@@ -716,6 +949,8 @@ function setLanguage(language) {
   renderFamilies();
   renderFamilyDescription();
   renderMechanismCatalog();
+  renderGeneralPsychology();
+  renderScientificSystems();
   renderMap();
   if (state.selectedId) renderInspector(recordById(state.selectedId));
   else renderEmptyInspector();
@@ -733,12 +968,17 @@ async function init() {
     renderFamilies();
     renderFamilyDescription();
     renderMechanismCatalog();
+    renderGeneralPsychology();
+    renderScientificSystems();
     renderMap();
     document.getElementById("language-toggle").addEventListener("click", () => setLanguage(state.lang === "ru" ? "en" : "ru"));
     document.getElementById("mechanism-search").addEventListener("input", event => {
       state.mechanismQuery = event.target.value;
       renderMechanismCatalog();
       document.getElementById("mechanism-search").focus();
+    });
+    document.querySelectorAll("[data-perspective]").forEach(button => {
+      button.addEventListener("click", () => setPerspective(button.dataset.perspective));
     });
     svg.addEventListener("click", event => {
       if (!event.target.closest(".node")) clearSelection();
@@ -747,6 +987,7 @@ async function init() {
       if (event.key === "Escape") clearSelection();
     });
     setLanguage(state.lang);
+    setPerspective(state.perspective, false);
 
     document.querySelectorAll(".filter-button").forEach(button => button.addEventListener("click", () => {
       state.filter = button.dataset.filter;

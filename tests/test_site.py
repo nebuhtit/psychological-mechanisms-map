@@ -63,7 +63,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.4.3";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.5.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -71,7 +71,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.4.3";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.5.1";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -178,6 +178,52 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn("else renderEmptyInspector();", javascript)
         self.assertIn(".family-overview-card", stylesheet)
         self.assertIn(".family-stats", stylesheet)
+
+    def test_three_validated_navigation_views_are_exposed(self) -> None:
+        page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        self.assertIn('data-perspective="general"', page)
+        self.assertIn('data-perspective="mechanisms"', page)
+        self.assertIn('data-perspective="systems"', page)
+        self.assertIn('localStorage.getItem("pmm-perspective")', javascript)
+        self.assertIn("function openCanonicalRecord(", javascript)
+        self.assertIn("navigation_views", document)
+        self.assertEqual(document["navigation_views"]["view_version"], "0.1.0")
+
+    def test_navigation_does_not_collapse_tasks_traits_and_mechanisms(self) -> None:
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        view = document["navigation_views"]["general_psychology"]
+        nodes = {node["id"]: node for node in view["nodes"]}
+        memory = nodes["gp:memory"]
+        types = {item["canonical_id"]: item["expected_type"] for item in memory["memberships"]}
+        self.assertEqual(types["pmm:context:n-back-task"], "Context")
+        self.assertEqual(types["pmm:measurement:n-back-performance"], "Measurement")
+        self.assertEqual(types["pmm:mechanism:episodic-retrieval-n-back"], "Mechanism")
+        self.assertIn("neither is memory itself", memory["ontological_note"]["en"])
+        for node_id in ("gp:temperament", "gp:big-five"):
+            self.assertEqual(nodes[node_id]["coverage"], "planned")
+            self.assertEqual(nodes[node_id]["memberships"], [])
+
+    def test_framework_cards_preserve_scope_and_mapping_uncertainty(self) -> None:
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        systems = {
+            system["id"]: system
+            for system in document["navigation_views"]["scientific_systems"]["systems"]
+        }
+        self.assertIn("not a diagnostic manual", systems["system:rdoc"]["limitation"]["en"])
+        self.assertIn("Unreviewed", systems["system:cognitive-atlas"]["limitation"]["en"])
+        self.assertIn("psychopathology", systems["system:hitop"]["scope"]["en"])
+        self.assertEqual(systems["system:hitop"]["coverage"], "planned")
+
+        working_memory = next(
+            item
+            for family in document["families"] if family["id"] == "working-memory"
+            for item in family["objects"] if item["id"] == "pmm:construct:working-memory-capacity"
+        )
+        mappings = {item["system"]: item for item in working_memory["external_mappings"]}
+        self.assertEqual(mappings["RDoC"]["mapping_relation"], "narrow_match")
+        self.assertEqual(mappings["CognitiveAtlas"]["mapping_status"], "provisional")
 
 
 if __name__ == "__main__":
