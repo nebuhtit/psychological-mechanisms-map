@@ -9,6 +9,8 @@ from typing import Any
 
 import yaml
 
+from claim_explanations import load_annotations, validate as validate_explanations
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "site" / "data" / "pmm-data.json"
@@ -47,6 +49,7 @@ def build_family(
     title: str,
     relative_path: str,
     description: str,
+    explanations: dict[str, dict[str, str]],
 ) -> dict[str, Any]:
     path = ROOT / relative_path
     document = json.loads(path.read_text(encoding="utf-8"))
@@ -58,7 +61,14 @@ def build_family(
         "version": document["pmm_version"],
         "objects": [compact_record(item) for item in document["objects"]],
         "relations": [compact_record(item) for item in document["relations"]],
-        "claims": [compact_record(item) for item in document["claims"]],
+        "claims": [
+            {
+                **compact_record(item),
+                "plain_language_summary": explanations[item["id"]]["en"],
+                "plain_language_review_status": "source_checked_editorial",
+            }
+            for item in document["claims"]
+        ],
         "evidence": [compact_record(item) for item in document["evidence"]],
         "sources": [compact_record(item) for item in document["sources"]],
     }
@@ -124,10 +134,14 @@ def build_mechanism_index(families: list[dict[str, Any]]) -> list[dict[str, Any]
 
 
 def main() -> None:
-    families = [build_family(*family) for family in load_families()]
+    explanation_errors = validate_explanations()
+    if explanation_errors:
+        raise ValueError("invalid Claim explanations:\n" + "\n".join(explanation_errors))
+    explanations = load_annotations()
+    families = [build_family(*family, explanations) for family in load_families()]
     payload = {
         "pmm_version": "0.3.4",
-        "interface_version": "0.4.2",
+        "interface_version": "0.4.3",
         "families": families,
         "mechanism_index": build_mechanism_index(families),
     }

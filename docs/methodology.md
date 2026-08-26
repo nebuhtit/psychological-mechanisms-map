@@ -4,6 +4,12 @@
 
 PMM is a claim-and-evidence model that can later be projected into a graph. It does not assume that every named psychological construct is a mechanism, or that every edge is causal.
 
+## Plain-language annotations
+
+A scientific `Claim.statement` and its plain-language explanation are deliberately separate records. The Claim is canonical scientific data; `data/claim-explanations.yaml` is a bilingual editorial layer checked against the Claim's linked Evidence and Sources. An explanation may clarify the design, observed result, scope, and inference limit, but it must not strengthen causality, generality, confidence, or mechanism status.
+
+The interface never generates these explanations from a claim type or node labels. Complete English and Russian coverage is validated before publication. Missing text is a build error because a fluent but unsupported fallback would be more misleading than an explicit gap.
+
 | Record | Precise role |
 |---|---|
 | Entity | General base for a construct, event, outcome, process, disposition, agent, or other referent. |

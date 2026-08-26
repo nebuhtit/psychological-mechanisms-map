@@ -8,6 +8,7 @@ setup:
 
 validate:
 	$(PYTHON) scripts/build_registry.py validate
+	$(PYTHON) scripts/claim_explanations.py
 	$(PYTHON) scripts/curation.py validate
 	$(PYTHON) scripts/screening.py validate-review curation/review-packets/social-buffering-title-abstract-v0.1.json curation/reviews/social-buffering-reviewer-a-v0.1.yaml
 

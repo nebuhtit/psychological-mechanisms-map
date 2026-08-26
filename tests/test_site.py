@@ -12,6 +12,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_ru_translation import displayed_strings  # noqa: E402
+from claim_explanations import load_annotations, registered_claims, validate  # noqa: E402
 
 
 class SiteBundleTests(unittest.TestCase):
@@ -62,7 +63,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.4.2";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.4.3";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -70,7 +71,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.4.2";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.4.3";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -83,6 +84,26 @@ class SiteBundleTests(unittest.TestCase):
             bundle["translations"]["RDoC Potential Threat (Anxiety) concerns responses when harm may occur but is distant, ambiguous, or uncertain in probability."],
             "Конструкт RDoC «Потенциальная угроза (тревога)» описывает реакции на возможный вред, который отдалён во времени, неоднозначен или имеет неопределённую вероятность.",
         )
+
+    def test_every_claim_has_a_source_checked_bilingual_explanation(self) -> None:
+        self.assertEqual(validate(), [])
+        annotations = load_annotations()
+        self.assertEqual(set(annotations), set(registered_claims()))
+
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
+        for family in document["families"]:
+            for claim in family["claims"]:
+                self.assertEqual(claim["plain_language_summary"], annotations[claim["id"]]["en"])
+                self.assertEqual(
+                    bundle["translations"][claim["plain_language_summary"]],
+                    annotations[claim["id"]]["ru"],
+                )
+
+        corrected = annotations["pmm:claim:clinical-maintenance-loop-hypothesis"]["ru"]
+        self.assertIn("ему может быстро стать легче", corrected)
+        self.assertIn("не получит возможности проверить", corrected)
+        self.assertNotIn("может вызывать изменение", corrected)
 
     def test_reading_guide_is_collapsed_and_explains_visual_encoding(self) -> None:
         page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
@@ -116,24 +137,18 @@ class SiteBundleTests(unittest.TestCase):
     def test_inspector_explains_status_inference_and_element_roles(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         stylesheet = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
-        for function in ("statusExplanation", "inferenceExplanation", "plainLanguageExplanation", "roleFor", "claimDiagram", "renderConnections"):
+        for function in ("statusExplanation", "inferenceExplanation", "roleFor", "claimDiagram", "renderConnections"):
             self.assertIn(f"function {function}(", javascript)
         self.assertIn('"Degree of evidence", "Степень доказанности"', javascript)
-        self.assertIn('"In plain language", "Простыми словами"', javascript)
+        self.assertIn('"Source-checked plain explanation", "Проверенное по источникам объяснение"', javascript)
+        self.assertIn("record.plain_language_summary", javascript)
+        self.assertNotIn("function plainLanguageExplanation(", javascript)
         self.assertIn('"Association only:', javascript)
         self.assertIn(".evidence-summary", stylesheet)
         self.assertIn(".plain-language-card", stylesheet)
         self.assertIn(".connection-card", stylesheet)
         self.assertIn(".claim-diagram", stylesheet)
         self.assertIn(".moderator-branch", stylesheet)
-
-    def test_plain_language_explanation_preserves_inference_boundaries(self) -> None:
-        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
-        self.assertIn("They should not be treated as interchangeable", javascript)
-        self.assertIn("does not mean that changing the predictor would change the result", javascript)
-        self.assertIn("The causal conclusion is limited to those conditions", javascript)
-        self.assertIn("does not prove that it is the real causal pathway", javascript)
-        self.assertIn("not a mechanism already proven to be the only one", javascript)
 
     def test_inspector_does_not_render_moderator_as_mediator(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")

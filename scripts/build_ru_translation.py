@@ -10,6 +10,8 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+from claim_explanations import load_annotations
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "site" / "data" / "pmm-data.json"
@@ -27,6 +29,7 @@ OVERRIDES = {
     "Working-memory capacity": "Ёмкость рабочей памяти",
     "Working-memory control": "Контроль рабочей памяти",
 }
+OVERRIDES.update({entry["en"]: entry["ru"] for entry in load_annotations().values()})
 
 
 def displayed_strings(document: dict) -> set[str]:
@@ -38,6 +41,7 @@ def displayed_strings(document: dict) -> set[str]:
             strings.update(item.get("boundary_notes", []))
         for claim in family["claims"]:
             strings.add(claim["statement"])
+            strings.add(claim["plain_language_summary"])
             strings.add(claim["confidence"]["rationale"])
             strings.add(claim["scope"]["population"])
             strings.update(claim.get("limitations", []))
@@ -101,6 +105,7 @@ def main() -> int:
     existing = {}
     if OUTPUT_PATH.exists():
         existing = json.loads(OUTPUT_PATH.read_text(encoding="utf-8")).get("translations", {})
+    existing.update({key: value for key, value in OVERRIDES.items() if key in strings})
     missing = sorted(strings - existing.keys())
     print(f"catalog: {len(strings)} strings; translating: {len(missing)}")
     with ThreadPoolExecutor(max_workers=args.workers) as executor:

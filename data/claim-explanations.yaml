@@ -1,0 +1,336 @@
+annotation_version: 0.1.0
+canonical_language: en
+languages: [en, ru]
+method: Editorial explanations are written from the linked Claim, Evidence, and Source records. They simplify wording without increasing the strength or scope of the scientific inference.
+review_status: source_checked_editorial
+reviewed_at: '2026-08-26'
+entries:
+  - claim_id: pmm:claim:rdoc-potential-threat-definition
+    en: >-
+      This is the NIMH RDoC term for reactions to a possible danger that is not immediate or clearly predictable. It describes what researchers mean by “potential threat”; it is not evidence that this construct causes a particular behavior.
+    ru: >-
+      Это термин системы RDoC для реакций на возможную опасность, которая не является непосредственной и точно предсказуемой. Здесь объясняется, что исследователи называют «потенциальной угрозой»; само определение ничего не доказывает о причинах поведения.
+
+  - claim_id: pmm:claim:active-avoidance-contingency-definition
+    en: >-
+      In an active-avoidance experiment, a participant can perform an action that changes whether, when, or how often an unpleasant event occurs, compared with not performing that action. This describes the task arrangement; it does not by itself show that avoidance was learned.
+    ru: >-
+      В эксперименте с активным избеганием участник может совершить действие, которое меняет вероятность или момент неприятного события по сравнению с бездействием. Это описание устройства задания, а не доказательство того, что участник уже научился избеганию.
+
+  - claim_id: pmm:claim:anxiety-avoidance-association
+    en: >-
+      People or situations with stronger anxiety-related responses often also show more avoidance on average. The relationship varies substantially, so anxiety does not always lead to avoidance and the association alone does not establish cause.
+    ru: >-
+      В среднем более выраженная тревожная реакция часто сопровождается более сильным избеганием. Но эта связь сильно различается между людьми и ситуациями: тревога не всегда приводит к избеганию, а совместное появление двух явлений ещё не доказывает причинность.
+
+  - claim_id: pmm:claim:assigned-loss-probability-changes-choice
+    en: >-
+      In a small laboratory study, participants gradually preferred the action that had been programmed to produce monetary loss less often. The experiment shows learning from different loss probabilities in that task, not a general rule for real-life anxiety or avoidance.
+    ru: >-
+      В небольшом лабораторном исследовании участники постепенно чаще выбирали действие, при котором денежная потеря происходила реже. Это показывает обучение на разной вероятности потери в конкретном задании, но не устанавливает общее правило для тревоги и избегания в жизни.
+
+  - claim_id: pmm:claim:negative-reinforcement-mechanism-hypothesis
+    en: >-
+      If an action prevents or ends something unpleasant, that successful outcome may make the same action more likely next time. This is one explanation of avoidance learning; signals of safety and habit can also control the behavior, so the mechanism cannot be inferred from repeated avoidance alone.
+    ru: >-
+      Если действие предотвращает или прекращает неприятное событие, успешный результат может повысить вероятность такого же действия в следующий раз. Это одно из объяснений обучения избеганию; поведение также могут поддерживать сигнал безопасности или привычка, поэтому по одному повторению избегания нельзя определить механизм.
+
+  - claim_id: pmm:claim:clinical-maintenance-loop-hypothesis
+    en: >-
+      Avoiding a feared situation can bring immediate relief. That relief may make avoidance more likely next time, while the person loses chances to learn that the situation is safe or manageable. This is a proposed process that may maintain anxiety in some contexts, not a rule for every form of avoidance.
+    ru: >-
+      Когда человек избегает пугающей ситуации, ему может быстро стать легче. Из-за этого в следующий раз он с большей вероятностью снова выберет избегание и не получит возможности проверить, действительно ли ситуация опасна или переносима. Это возможный механизм сохранения тревоги в некоторых условиях, а не правило для любого избегания.
+
+  - claim_id: pmm:claim:proactive-interference-definition
+    en: >-
+      Proactive interference occurs when information learned earlier makes newer information harder to remember. The label describes a pattern of errors; it does not specify one unique mental or neural mechanism.
+    ru: >-
+      Проактивная интерференция возникает, когда ранее выученная информация мешает вспомнить более новую. Этот термин описывает наблюдаемый тип ошибок, но сам по себе не указывает на единственный психический или нейронный механизм.
+
+  - claim_id: pmm:claim:retrieval-competition-hypothesis
+    en: >-
+      One proposed explanation is that, during recall, older memories compete with the newer target memory and make it harder to select. The reviewed evidence also allows problems during encoding, so retrieval competition is not established as the only cause.
+    ru: >-
+      Одно из возможных объяснений состоит в том, что при воспоминании старые следы конкурируют с нужной новой информацией и затрудняют её выбор. Но обзор допускает и нарушения на этапе запоминания, поэтому конкуренция при извлечении не доказана как единственная причина.
+
+  - claim_id: pmm:claim:reward-prediction-error-definition
+    en: >-
+      A reward prediction error is the difference between the reward expected before an outcome and the reward actually received. It is a quantity in a learning model, not automatically the same thing as activity in one brain region or neurotransmitter system.
+    ru: >-
+      Ошибка предсказания вознаграждения — это разница между ожидаемой и фактически полученной наградой. Это величина в модели обучения; её нельзя автоматически отождествлять с активностью одной области мозга или одного нейромедиатора.
+
+  - claim_id: pmm:claim:temporal-difference-update-hypothesis
+    en: >-
+      Temporal-difference models propose that a prediction error changes the stored value of preceding cues or actions, which then changes later choices. This is a useful computational explanation, but it does not show that every biological learning process implements the model in the same way.
+    ru: >-
+      Модели временных различий предполагают, что ошибка прогноза обновляет ценность предшествующих сигналов или действий и тем самым влияет на последующий выбор. Это полезное вычислительное объяснение, но оно не доказывает, что все биологические процессы обучения реализуют его одинаково.
+
+  - claim_id: pmm:claim:hpa-negative-feedback-definition
+    en: >-
+      HPA negative feedback means that cortisol-related signals later restrain or reshape further activity of the stress-hormone system. It is not a single instant switch: several receptors, brain and pituitary sites, and time scales are involved.
+    ru: >-
+      Отрицательная обратная связь ГГН-оси означает, что сигналы, связанные с кортизолом, затем ограничивают или перестраивают дальнейшую активность гормональной системы стресса. Это не один мгновенный выключатель: участвуют разные рецепторы, участки мозга и гипофиза и разные временные интервалы.
+
+  - claim_id: pmm:claim:hpa-feedback-mechanism-hypothesis
+    en: >-
+      The proposed mechanism is that glucocorticoid signaling helps prevent the HPA stress response from continuing unchecked and helps shape its pulses over time. The exact contribution depends on receptor, site, timing, and physiological state.
+    ru: >-
+      Предполагается, что сигналы глюкокортикоидов не дают стрессовой реакции ГГН-оси продолжаться без ограничений и участвуют в формировании её пульсаций. Конкретный эффект зависит от типа рецептора, места действия, времени и состояния организма.
+
+  - claim_id: pmm:claim:social-buffering-definition
+    en: >-
+      Social buffering means that the presence or support of another person changes the size or time course of a stress response. The term describes an effect to be measured; it does not by itself identify how the support produced that effect.
+    ru: >-
+      Социальная буферизация означает, что присутствие или поддержка другого человека меняет силу либо развитие стрессовой реакции во времени. Термин описывает измеряемый эффект, но сам по себе не объясняет, каким механизмом поддержка его вызвала.
+
+  - claim_id: pmm:claim:buffer-condition-moderates-cortisol-time-course
+    en: >-
+      In the child stress experiment, cortisol changed over time differently depending on which support condition the child had been assigned to. This is an interaction with sampling time, not a claim that one condition had a fixed effect at every measurement.
+    ru: >-
+      В эксперименте с детьми динамика кортизола во времени различалась в зависимости от назначенного условия поддержки. Речь идёт о различии траекторий по моментам измерения, а не о постоянном одинаковом эффекте поддержки в каждой точке времени.
+
+  - claim_id: pmm:claim:parent-buffer-causal-effect-on-cortisol
+    en: >-
+      Children were assigned to different support conditions during a laboratory stress task, and the parent-support condition produced a different cortisol trajectory than the comparison conditions. The causal conclusion is limited to this task, sample, and measured hormone response.
+    ru: >-
+      Во время лабораторного стрессового задания детей распределяли по разным условиям поддержки, и при поддержке родителя динамика кортизола отличалась от условий сравнения. Причинный вывод относится только к этому заданию, этой выборке и измеренной гормональной реакции.
+
+  - claim_id: pmm:claim:safety-signal-contingency-affects-avoidance
+    en: >-
+      In several experiments, people avoided more when their response itself produced a signal indicating safety. The effect was not equally clear in all experiments and controls, so the current evidence is mixed rather than conclusive.
+    ru: >-
+      В нескольких экспериментах люди чаще избегали угрозы, когда их действие само вызывало сигнал безопасности. Эффект проявился не во всех экспериментах и контрольных условиях одинаково ясно, поэтому данные считаются смешанными, а не окончательными.
+
+  - claim_id: pmm:claim:conditioned-safety-signal-mechanism-hypothesis
+    en: >-
+      A signal that repeatedly appears after successful avoidance may itself become desirable and help reinforce the avoidance response. This is a proposed explanation; the experiments do not show that a conditioned safety signal is the only process maintaining avoidance.
+    ru: >-
+      Сигнал, который многократно появляется после успешного избегания, может сам приобрести положительное значение и подкреплять избегающее действие. Это возможное объяснение; эксперименты не показывают, что условный сигнал безопасности является единственным механизмом поддержания избегания.
+
+  - claim_id: pmm:claim:assigned-loss-probability-affects-choice
+    en: >-
+      In the Kim task, participants increasingly selected the action associated with a lower probability of monetary loss. Because the probabilities were programmed, the task supports a narrow causal effect on choice, but it does not identify whether relief, safety, or another representation drove learning.
+    ru: >-
+      В задании Kim участники всё чаще выбирали действие, связанное с меньшей вероятностью денежной потери. Поскольку вероятности задавались экспериментально, результат поддерживает узкий причинный вывод о выборе, но не показывает, что именно управляло обучением: облегчение, безопасность или другое представление.
+
+  - claim_id: pmm:claim:active-control-affects-later-threat-response
+    en: >-
+      Participants who could actively prevent shock during learning showed a different skin-conductance response the next day than yoked participants who received the same events without control. This shows an effect of controllability in that protocol, not a general reduction of all later fear or anxiety.
+    ru: >-
+      Участники, которые во время обучения могли действием предотвратить удар током, на следующий день отличались по кожно-гальванической реакции от участников, получавших те же события без контроля. Это эффект контролируемости в конкретном протоколе, а не доказательство общего снижения любой последующей тревоги или страха.
+
+  - claim_id: pmm:claim:context-shift-causes-renewal
+    en: >-
+      A conditioned fear response can return when testing takes place outside the context where extinction was learned. This shows that extinction learning is often tied to context; it does not mean that fear must return after every context change.
+    ru: >-
+      Условная реакция страха может вернуться, если проверка проходит не в той обстановке, где происходило угасание. Это показывает зависимость угасания от контекста, но не означает, что страх обязательно возвращается при любой смене обстановки.
+
+  - claim_id: pmm:claim:time-allows-spontaneous-recovery
+    en: >-
+      Even after a fear response decreases during extinction, part of the response can reappear after a delay without new threat learning. The size of this spontaneous recovery depends on the procedure and is not evidence that extinction had no effect.
+    ru: >-
+      Даже если во время угасания реакция страха уменьшилась, спустя время часть реакции может вернуться без нового обучения угрозе. Величина такого спонтанного восстановления зависит от процедуры и не означает, что угасание совсем не подействовало.
+
+  - claim_id: pmm:claim:extinction-memory-mechanism-hypothesis
+    en: >-
+      A leading explanation is that extinction creates new “this cue is now safe” learning that competes with the older threat memory rather than erasing it. Return of fear is compatible with this account, but does not prove it is the only mechanism of extinction.
+    ru: >-
+      Одно из основных объяснений состоит в том, что при угасании формируется новое знание «этот сигнал теперь безопасен», которое конкурирует со старой памятью об угрозе, а не стирает её. Возврат страха согласуется с этой моделью, но не доказывает, что это единственный механизм угасания.
+
+  - claim_id: pmm:claim:reactivation-extinction-prevents-return
+    en: >-
+      A large preregistered direct replication found no reliable advantage of giving extinction shortly after memory reactivation over ordinary extinction: fear returned in both groups. The original procedure therefore should not be presented as a robust way to prevent return of fear.
+    ru: >-
+      В крупной заранее зарегистрированной прямой репликации угасание вскоре после реактивации памяти не имело надёжного преимущества перед обычным угасанием: страх возвращался в обеих группах. Поэтому исходную процедуру нельзя представлять как устойчиво доказанный способ предотвращения возврата страха.
+
+  - claim_id: pmm:claim:extended-training-causes-outcome-insensitivity
+    en: >-
+      One influential experiment reported that extensive training made responses less sensitive to whether the outcome was still valuable, which is used as a laboratory sign of habit. A later multilaboratory study did not find a robust training-duration effect, so the evidence is mixed.
+    ru: >-
+      В одном влиятельном эксперименте после длительной тренировки действия стали меньше зависеть от текущей ценности результата — это используют как лабораторный признак привычки. Позднее многоцентровое исследование не обнаружило устойчивого эффекта длительности тренировки, поэтому данные остаются смешанными.
+
+  - claim_id: pmm:claim:acute-stress-causes-habit-shift
+    en: >-
+      Two preregistered exact replications did not find evidence that acute stress shifted behavior from goal-directed control to habits. However, the unstressed groups also failed the expected goal-directed benchmark, so the studies cannot establish that stress never has such an effect.
+    ru: >-
+      Две заранее зарегистрированные точные репликации не нашли подтверждения тому, что острый стресс переключает поведение с целенаправленного контроля на привычный. Но и группы без стресса не показали ожидаемый эталон целенаправленного поведения, поэтому эти исследования не доказывают, что такого эффекта стресса не бывает никогда.
+
+  - claim_id: pmm:claim:habit-measures-converge
+    en: >-
+      Different laboratory tasks and self-report questionnaires intended to measure habit did not consistently identify the same individual differences. They should not be treated as interchangeable measures of one established “habit strength” variable.
+    ru: >-
+      Разные лабораторные задания и опросники, предназначенные для измерения привычек, не выявляли одни и те же индивидуальные различия достаточно последовательно. Их нельзя считать взаимозаменяемыми измерениями единой доказанной «силы привычки».
+
+  - claim_id: pmm:claim:habitual-control-mechanism-hypothesis
+    en: >-
+      Habitual control is proposed to occur when a cue triggers a learned response with little use of the outcome’s current value. The idea is useful, but human tasks do not always produce or measure this form of control reliably.
+    ru: >-
+      Предполагается, что при привычном контроле сигнал запускает выученное действие почти без учёта текущей ценности результата. Эта идея полезна, но лабораторные задания у людей не всегда надёжно создают или измеряют именно такой контроль.
+
+  - claim_id: pmm:claim:reappraisal-reduces-reported-negative-emotion
+    en: >-
+      In brief laboratory tasks, people instructed to reinterpret a negative stimulus usually reported feeling less negative than under the comparison instruction. This supports a short-term effect on self-report, not a guarantee of lasting benefit in everyday life or therapy.
+    ru: >-
+      В коротких лабораторных заданиях люди, которым предлагали переосмыслить неприятный стимул, обычно сообщали о менее сильных негативных переживаниях, чем при инструкции сравнения. Это подтверждает кратковременный эффект на самоотчёт, но не гарантирует длительную пользу в повседневной жизни или терапии.
+
+  - claim_id: pmm:claim:reappraisal-reduces-autonomic-reactivity
+    en: >-
+      Reappraisal reduced some bodily measures of emotional arousal in one experiment, but another study found no clear physiological difference after acute stress. Subjective relief and autonomic change therefore should not be assumed to move together.
+    ru: >-
+      В одном эксперименте переоценка уменьшала некоторые физиологические показатели возбуждения, но в другом исследовании после острого стресса ясного физиологического различия не обнаружили. Поэтому нельзя считать, что субъективное облегчение и вегетативная реакция всегда изменяются одинаково.
+
+  - claim_id: pmm:claim:neural-response-statistically-mediates-reappraisal
+    en: >-
+      In an fMRI analysis, changes in particular brain signals statistically accounted for part of the link between the reappraisal instruction and reported emotion. Because the brain activity was measured rather than experimentally changed, this is statistical mediation, not proof that those signals caused the emotional change.
+    ru: >-
+      В анализе фМРТ изменения некоторых мозговых сигналов статистически объясняли часть связи между инструкцией переоценки и самооценкой эмоции. Поскольку активность мозга измеряли, а не изменяли экспериментально, это статистическая медиация, а не доказательство того, что именно эти сигналы вызвали изменение эмоции.
+
+  - claim_id: pmm:claim:meaning-reinterpretation-mechanism-hypothesis
+    en: >-
+      Cognitive reappraisal is proposed to work by changing what a situation is understood to mean before the emotional response is fully expressed. The studies show effects of reappraisal instructions, but do not establish one universal internal mechanism for every person and situation.
+    ru: >-
+      Предполагается, что когнитивная переоценка действует через изменение смысла ситуации до того, как эмоциональная реакция полностью развернулась. Исследования показывают эффект инструкции переоценки, но не устанавливают один универсальный внутренний механизм для всех людей и ситуаций.
+
+  - claim_id: pmm:claim:lures-increase-n-back-false-alarms
+    en: >-
+      In verbal N-back tasks, a lure was a familiar item seen recently but in the wrong serial position. Participants falsely accepted these lures more often than ordinary non-targets, showing that the task requires control over familiarity, not just remembering items.
+    ru: >-
+      В вербальном N-back «ловушкой» был знакомый элемент, недавно показанный, но находившийся не на нужной позиции. Участники ошибочно принимали такие элементы за цель чаще обычных нецелевых стимулов, поэтому задание требует контролировать чувство знакомости, а не просто помнить элементы.
+
+  - claim_id: pmm:claim:n-back-weakly-converges-with-complex-span
+    en: >-
+      People who scored well on verbal N-back were only slightly more likely to score well on operation span. The two tasks therefore should not be treated as interchangeable tests of one working-memory ability.
+    ru: >-
+      Люди с высоким результатом в вербальном N-back лишь немного чаще показывали высокий результат в тесте operation span. Поэтому эти задания нельзя считать взаимозаменяемыми измерениями одной и той же способности рабочей памяти.
+
+  - claim_id: pmm:claim:n-back-and-backward-recall-are-distinct-factors
+    en: >-
+      In a large task battery, performance on N-back tasks and backward-recall tasks was best described by two related but distinct statistical factors. Calling both “working memory” does not mean they measure exactly the same ability.
+    ru: >-
+      В большой батарее заданий результаты N-back и воспроизведения в обратном порядке лучше описывались двумя связанными, но различными статистическими факторами. Общее название «рабочая память» не означает, что эти задания измеряют совершенно одну и ту же способность.
+
+  - claim_id: pmm:claim:episodic-retrieval-can-support-n-back
+    en: >-
+      A computational model reproduced important N-back results by retrieving recent episodes rather than relying only on a fixed-capacity working-memory store. This shows that episodic retrieval is a viable explanation, not that the brain uses only this mechanism during N-back.
+    ru: >-
+      Вычислительная модель воспроизвела важные результаты N-back за счёт извлечения недавних эпизодов, а не только ограниченного хранилища рабочей памяти. Это показывает, что эпизодическое извлечение является возможным объяснением, но не доказывает, что мозг использует в N-back только этот механизм.
+
+  - claim_id: pmm:claim:interoceptive-dimensions-are-dissociable
+    en: >-
+      Accurately detecting heartbeats, judging oneself as sensitive to bodily signals, and knowing when one’s heartbeat judgment is correct were distinct abilities in the study. A person can score high on one of these dimensions and not on the others.
+    ru: >-
+      Точность восприятия сердцебиения, субъективная оценка своей чувствительности к телесным сигналам и понимание того, когда собственный ответ верен, оказались разными характеристиками. Человек может иметь высокий показатель по одной из них и невысокий по другим.
+
+  - claim_id: pmm:claim:cardiac-accuracy-not-generally-associated-with-anxiety
+    en: >-
+      A preregistered meta-analysis of 55 studies found no overall relationship between anxiety and objective performance on heartbeat counting or discrimination tasks. This does not mean that anxiety is unrelated to every aspect of interoception, especially attention to or interpretation of bodily sensations.
+    ru: >-
+      Заранее зарегистрированный метаанализ 55 исследований не обнаружил общей связи между тревогой и объективным выполнением заданий на подсчёт или различение сердцебиений. Это не означает, что тревога не связана с другими сторонами интероцепции, например с вниманием к телесным ощущениям или их интерпретацией.
+
+  - claim_id: pmm:claim:isoproterenol-increases-anxiety-in-lesion-case-study
+    en: >-
+      In two people with bilateral amygdala damage, a drug that increased cardiorespiratory arousal produced more anxiety than saline, and one person experienced panic. The result shows that intense bodily signals can support anxiety without an intact amygdala, but two cases cannot establish a general mechanism.
+    ru: >-
+      У двух людей с двусторонним повреждением миндалины препарат, усиливавший сердечно-дыхательное возбуждение, вызвал больше тревоги, чем физраствор; у одного человека возникла паника. Результат показывает, что сильные телесные сигналы могут поддерживать тревогу без сохранной миндалины, но два случая не устанавливают общий механизм.
+
+  - claim_id: pmm:claim:appraisal-may-link-bodily-signals-to-anxiety
+    en: >-
+      One hypothesis is that bodily changes contribute to anxiety through how the person notices and interprets them, rather than through signal intensity alone. The drug challenge is compatible with this idea but did not manipulate or measure the proposed appraisal pathway directly.
+    ru: >-
+      Одна из гипотез состоит в том, что телесные изменения влияют на тревогу через то, как человек их замечает и истолковывает, а не только через их физическую силу. Фармакологическая проба согласуется с этой идеей, но не изменяла и не измеряла предполагаемый путь интерпретации напрямую.
+
+  - claim_id: pmm:claim:parent-buffer-changes-cortisol-trajectory
+    en: >-
+      During a laboratory stress task for children, assignment to support from a parent led to a different cortisol pattern over time than the comparison support conditions. The result concerns hormone response in this protocol, not every psychological benefit of parental presence.
+    ru: >-
+      Во время лабораторного стрессового задания у детей поддержка родителя приводила к иной динамике кортизола, чем условия сравнения. Результат относится к гормональной реакции в этом протоколе, а не ко всем возможным психологическим эффектам присутствия родителя.
+
+  - claim_id: pmm:claim:buffer-condition-interacts-with-sampling-time
+    en: >-
+      The difference between support conditions was not constant: it depended on when cortisol was sampled after the stress task. This means the study found different response trajectories, not simply a single higher or lower cortisol value.
+    ru: >-
+      Различие между условиями поддержки не было постоянным и зависело от того, когда после стрессового задания измеряли кортизол. То есть исследование выявило разные траектории реакции, а не просто одно более высокое или низкое значение.
+
+  - claim_id: pmm:claim:care-history-moderates-parent-support-effect
+    en: >-
+      Parent support dampened the cortisol response relative to stranger support in children without an institutional-care history, but not in previously institutionalized children. Early care history therefore changed the observed effect of who provided support in this sample.
+    ru: >-
+      У детей без опыта институционального ухода поддержка родителя ослабляла кортизоловую реакцию по сравнению с поддержкой незнакомого человека, а у ранее находившихся в учреждениях детей такого различия не было. Значит, в этой выборке ранняя история ухода изменяла эффект того, кто оказывал поддержку.
+
+  - claim_id: pmm:claim:co-regulation-may-produce-buffering
+    en: >-
+      A proposed explanation is that a familiar caregiver helps the child regulate threat and arousal, which then reduces the stress-hormone response. The experiments demonstrate conditional buffering effects but do not isolate co-regulation as the causal mechanism.
+    ru: >-
+      Возможное объяснение состоит в том, что знакомый взрослый помогает ребёнку регулировать восприятие угрозы и возбуждение, что затем уменьшает гормональную стрессовую реакцию. Эксперименты показывают зависимый от условий буферный эффект, но не выделяют совместную регуляцию как доказанный причинный механизм.
+
+  - claim_id: pmm:claim:rpe-is-model-defined-discrepancy
+    en: >-
+      In reinforcement-learning models, reward prediction error is the numerical difference between what was expected and what was obtained. A positive error means “better than expected” and a negative error “worse than expected”; the number is defined by the model, not directly observed in a neuron.
+    ru: >-
+      В моделях обучения с подкреплением ошибка предсказания награды — это численная разница между ожидаемым и полученным результатом. Положительная ошибка означает «лучше ожидания», отрицательная — «хуже ожидания»; эта величина задаётся моделью, а не наблюдается напрямую в отдельном нейроне.
+
+  - claim_id: pmm:claim:timed-dopamine-stimulation-increases-learned-seeking
+    en: >-
+      In rats, precisely timed activation of dopamine neurons at reward delivery caused a cue to produce stronger reward seeking later. This supports a causal role for that stimulation in cue-reward learning in the tested animal procedures, not a general claim about all human rewards.
+    ru: >-
+      У крыс точно синхронизированная активация дофаминовых нейронов в момент награды приводила к более сильному последующему поиску награды по сигналу. Это подтверждает причинную роль такой стимуляции в обучении «сигнал — награда» в данных опытах на животных, но не является общим выводом обо всех наградах у людей.
+
+  - claim_id: pmm:claim:distributional-model-predicts-held-out-reversal-point
+    en: >-
+      A model fitted to one half of each mouse dopamine neuron’s responses predicted where that neuron’s response would reverse in the other half of the trials. This supports a stable, heterogeneous distributional code in that dataset, but prediction alone does not prove that the model is the unique biological mechanism.
+    ru: >-
+      Модель, настроенная на половине ответов каждого дофаминового нейрона мыши, предсказывала точку смены ответа этого нейрона на другой половине проб. Это поддерживает устойчивое неоднородное распределённое кодирование в данных эксперимента, но само предсказание не доказывает, что модель описывает единственный биологический механизм.
+
+  - claim_id: pmm:claim:rpe-may-drive-temporal-difference-updating
+    en: >-
+      The proposed process is that each prediction error updates the expected value of earlier cues or actions, gradually changing future choices. Dopamine signals are an important candidate implementation, but they also carry information beyond a simple scalar prediction error.
+    ru: >-
+      Предполагается, что каждая ошибка прогноза обновляет ожидаемую ценность предшествующих сигналов или действий и постепенно меняет будущий выбор. Дофаминовые сигналы считаются важным кандидатом на реализацию этого процесса, но они несут и другую информацию, не сводимую к одной численной ошибке.
+
+  - claim_id: pmm:claim:hpa-feedback-is-multiple-receptor-linked-processes
+    en: >-
+      Cortisol feedback is produced by several receptor-linked processes acting at different sites and delays. Treating HPA feedback as one uniform arrow hides important differences between fast, delayed, brain, pituitary, continuous, and pulsatile regulation.
+    ru: >-
+      Обратная связь кортизола создаётся несколькими процессами, связанными с разными рецепторами, участками действия и задержками. Представление её одной однородной стрелкой скрывает различия между быстрым и отсроченным, мозговым и гипофизарным, непрерывным и пульсирующим регулированием.
+
+  - claim_id: pmm:claim:cortisol-replacement-suppresses-acth-after-delay
+    en: >-
+      In healthy volunteers whose cortisol production had been pharmacologically reduced, giving cortisol back was followed after a delay by lower ACTH secretion. This supports delayed negative feedback under that endocrine manipulation, not an instantaneous effect in every stress response.
+    ru: >-
+      У здоровых добровольцев, которым фармакологически снижали выработку кортизола, введение кортизола спустя некоторое время уменьшало секрецию АКТГ. Это подтверждает отсроченную отрицательную обратную связь в данном эндокринном эксперименте, но не мгновенный одинаковый эффект при любой стрессовой реакции.
+
+  - claim_id: pmm:claim:metyrapone-increases-continuous-and-pulsatile-acth
+    en: >-
+      Metyrapone reduced cortisol synthesis in healthy participants, after which both continuous and pulsatile components of ACTH secretion increased. The intervention supports cortisol feedback on ACTH dynamics, while the exact feedback sites remain unresolved by this result alone.
+    ru: >-
+      Метирапон снижал синтез кортизола у здоровых участников, после чего возрастали и непрерывная, и пульсирующая составляющие секреции АКТГ. Вмешательство подтверждает обратное влияние кортизола на динамику АКТГ, но само по себе не определяет точные места действия этой связи.
+
+  - claim_id: pmm:claim:cortisol-signaling-may-limit-later-hpa-drive
+    en: >-
+      A proposed integrative mechanism is that cortisol signaling limits later drive through the HPA axis and helps organize its pulses. Evidence supports feedback, but its timing and location are heterogeneous, so the mechanism should not be represented as one simple linear inhibition.
+    ru: >-
+      Интегративная гипотеза состоит в том, что сигналы кортизола ограничивают последующую активность ГГН-оси и помогают организовать её пульсации. Данные поддерживают наличие обратной связи, но её время и место действия неоднородны, поэтому механизм нельзя изображать как одно простое линейное торможение.
+
+  - claim_id: pmm:claim:naloxone-blocks-expectation-placebo-analgesia
+    en: >-
+      In one ischemic-pain experiment, naloxone removed the pain reduction produced by an expectation-based placebo procedure. This supports endogenous opioid involvement in that protocol, but does not show that all placebo analgesia is opioid-mediated.
+    ru: >-
+      В одном эксперименте с ишемической болью налоксон устранял уменьшение боли, вызванное плацебо-процедурой, основанной на ожидании. Это подтверждает участие эндогенной опиоидной системы в данном протоколе, но не показывает, что вся плацебо-анальгезия работает через опиоиды.
+
+  - claim_id: pmm:claim:dopamine-modulation-null-effect
+    en: >-
+      In this human experiment, increasing or blocking dopamine pharmacologically produced no detectable change in treatment-expectation formation or placebo analgesia at the tested doses and times. This is evidence for a scoped null effect, not proof that dopamine is irrelevant to every placebo process.
+    ru: >-
+      В этом эксперименте на людях фармакологическое усиление или блокирование дофаминовой передачи не вызвало обнаружимого изменения формирования ожиданий лечения или плацебо-анальгезии при проверенных дозах и сроках. Это ограниченный нулевой результат, а не доказательство того, что дофамин не участвует ни в одном плацебо-процессе.
+
+  - claim_id: pmm:claim:conditioning-neural-statistical-mediation
+    en: >-
+      In pooled neuroimaging data, measured brain activity statistically accounted for part of the difference between conditioned-plus-suggested and suggestion-only placebo analgesia. Because the neural signal was not manipulated, the analysis does not prove that this activity caused the pain reduction.
+    ru: >-
+      В объединённых данных нейровизуализации измеренная активность мозга статистически объясняла часть различия между плацебо с обусловливанием и словесным внушением и плацебо только с внушением. Поскольку мозговой сигнал не изменяли экспериментально, анализ не доказывает, что именно эта активность вызвала уменьшение боли.
+
+  - claim_id: pmm:claim:expectation-opioid-mechanism-hypothesis
+    en: >-
+      Treatment expectations may recruit the body’s own opioid system and thereby reduce pain in some placebo procedures. Naloxone studies and a meta-analysis support this pathway, but effects vary across protocols and people, so it is not a universal placebo mechanism.
+    ru: >-
+      Ожидание эффекта лечения может в некоторых плацебо-процедурах активировать собственную опиоидную систему организма и тем самым уменьшать боль. Исследования с налоксоном и метаанализ поддерживают этот путь, но результаты различаются между протоколами и людьми, поэтому это не универсальный механизм любого плацебо.

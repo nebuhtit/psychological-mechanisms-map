@@ -12,6 +12,8 @@
           "epistemic_status": "not_assessed",
           "evidence_ids": [],
           "id": "pmm:claim:rdoc-potential-threat-definition",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "This is the NIMH RDoC term for reactions to a possible danger that is not immediate or clearly predictable. It describes what researchers mean by “potential threat”; it is not evidence that this construct causes a particular behavior.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated"
@@ -41,6 +43,8 @@
           "epistemic_status": "not_assessed",
           "evidence_ids": [],
           "id": "pmm:claim:active-avoidance-contingency-definition",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In an active-avoidance experiment, a participant can perform an action that changes whether, when, or how often an unpleasant event occurs, compared with not performing that action. This describes the task arrangement; it does not by itself show that avoidance was learned.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated"
@@ -84,6 +88,8 @@
             "The association does not establish a universal anxiety-to-avoidance causal path."
           ],
           "outcome_id": "pmm:behavior:avoidance-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "People or situations with stronger anxiety-related responses often also show more avoidance on average. The relationship varies substantially, so anxiety does not always lead to avoidance and the association alone does not establish cause.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated"
@@ -122,6 +128,8 @@
             "Sixteen healthy adults provide limited population generalizability."
           ],
           "outcome_id": "pmm:behavior:avoidance-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In a small laboratory study, participants gradually preferred the action that had been programmed to produce monetary loss less often. The experiment shows learning from different loss probabilities in that task, not a general rule for real-life anxiety or avoidance.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated"
@@ -161,6 +169,8 @@
           ],
           "mechanism_id": "pmm:mechanism:negative-reinforcement",
           "outcome_id": "pmm:behavior:avoidance-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "If an action prevents or ends something unpleasant, that successful outcome may make the same action more likely next time. This is one explanation of avoidance learning; signals of safety and habit can also control the behavior, so the mechanism cannot be inferred from repeated avoidance alone.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated"
@@ -198,6 +208,8 @@
             "RDoC and HiTOP alignment do not validate the causal pathway."
           ],
           "outcome_id": "pmm:behavior:avoidance-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Avoiding a feared situation can bring immediate relief. That relief may make avoidance more likely next time, while the person loses chances to learn that the situation is safe or manageable. This is a proposed process that may maintain anxiety in some contexts, not a rule for every form of avoidance.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated"
@@ -922,6 +934,8 @@
             "Context manipulations differ substantially between studies."
           ],
           "outcome_id": "pmm:behavior:return-of-conditioned-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A conditioned fear response can return when testing takes place outside the context where extinction was learned. This shows that extinction learning is often tied to context; it does not mean that fear must return after every context change.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated",
@@ -964,6 +978,8 @@
             "A time contrast cannot uniquely identify decay, temporal-context change, or memory competition."
           ],
           "outcome_id": "pmm:behavior:return-of-conditioned-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Even after a fear response decreases during extinction, part of the response can reappear after a delay without new threat learning. The size of this spontaneous recovery depends on the procedure and is not evidence that extinction had no effect.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated",
@@ -1006,6 +1022,8 @@
           ],
           "mechanism_id": "pmm:mechanism:extinction-memory-formation",
           "outcome_id": "pmm:state:conditioned-defensive-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A leading explanation is that extinction creates new “this cue is now safe” learning that competes with the older threat memory rather than erasing it. Return of fear is compatible with this account, but does not prove it is the only mechanism of extinction.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated",
@@ -1047,6 +1065,8 @@
             "Null advantage in one protocol is not proof that memory updating is impossible."
           ],
           "outcome_id": "pmm:behavior:return-of-conditioned-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A large preregistered direct replication found no reliable advantage of giving extinction shortly after memory reactivation over ordinary extinction: fear returned in both groups. The original procedure therefore should not be presented as a robust way to prevent return of fear.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated",
@@ -1769,6 +1789,8 @@
             "Food satiation may incompletely or nonspecifically alter outcome value."
           ],
           "outcome_id": "pmm:behavior:outcome-insensitive-responding",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "One influential experiment reported that extensive training made responses less sensitive to whether the outcome was still valuable, which is used as a laboratory sign of habit. A later multilaboratory study did not find a robust training-duration effect, so the evidence is mixed.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated",
@@ -1810,6 +1832,8 @@
             "Indifferent control-group responding made the intended mechanistic contrast difficult to interpret."
           ],
           "outcome_id": "pmm:behavior:outcome-insensitive-responding",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Two preregistered exact replications did not find evidence that acute stress shifted behavior from goal-directed control to habits. However, the unstressed groups also failed the expected goal-directed benchmark, so the studies cannot establish that stress never has such an effect.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated",
@@ -1851,6 +1875,8 @@
           "exposure_id": "pmm:measurement:cross-task-habit-convergence",
           "id": "pmm:claim:habit-measures-converge",
           "outcome_id": "pmm:construct:habit-measurement-convergence",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Different laboratory tasks and self-report questionnaires intended to measure habit did not consistently identify the same individual differences. They should not be treated as interchangeable measures of one established “habit strength” variable.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated",
@@ -1890,6 +1916,8 @@
           ],
           "mechanism_id": "pmm:mechanism:habitual-action-control",
           "outcome_id": "pmm:behavior:outcome-insensitive-responding",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Habitual control is proposed to occur when a cue triggers a learned response with little use of the outcome’s current value. The idea is useful, but human tasks do not always produce or measure this form of control reliably.",
           "provenance": {
             "record_version": "0.3.0",
             "review_status": "machine_validated",
@@ -2605,6 +2633,8 @@
             "Lower ratings do not identify meaning reinterpretation as the unique mediator."
           ],
           "outcome_id": "pmm:state:negative-emotional-experience",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In brief laboratory tasks, people instructed to reinterpret a negative stimulus usually reported feeling less negative than under the comparison instruction. This supports a short-term effect on self-report, not a guarantee of lasting benefit in everyday life or therapy.",
           "provenance": {
             "record_version": "0.3.1",
             "review_status": "machine_validated",
@@ -2646,6 +2676,8 @@
             "Physiological channels cannot be pooled as if they measured one interchangeable response."
           ],
           "outcome_id": "pmm:state:autonomic-emotional-reactivity",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Reappraisal reduced some bodily measures of emotional arousal in one experiment, but another study found no clear physiological difference after acute stress. Subjective relief and autonomic change therefore should not be assumed to move together.",
           "provenance": {
             "record_version": "0.3.1",
             "review_status": "machine_validated",
@@ -2691,6 +2723,8 @@
           "mediation_inference": "statistical",
           "mediator_id": "pmm:measurement:reappraisal-bold-response",
           "outcome_id": "pmm:state:negative-emotional-experience",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In an fMRI analysis, changes in particular brain signals statistically accounted for part of the link between the reappraisal instruction and reported emotion. Because the brain activity was measured rather than experimentally changed, this is statistical mediation, not proof that those signals caused the emotional change.",
           "provenance": {
             "record_version": "0.3.1",
             "review_status": "machine_validated",
@@ -2732,6 +2766,8 @@
           ],
           "mechanism_id": "pmm:mechanism:meaning-reinterpretation",
           "outcome_id": "pmm:state:negative-emotional-experience",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Cognitive reappraisal is proposed to work by changing what a situation is understood to mean before the emotional response is fully expressed. The studies show effects of reappraisal instructions, but do not establish one universal internal mechanism for every person and situation.",
           "provenance": {
             "record_version": "0.3.1",
             "review_status": "machine_validated",
@@ -3434,6 +3470,8 @@
             "Trial sequencing and previous-item history can influence lure effects."
           ],
           "outcome_id": "pmm:outcome:lure-false-alarm-rate",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In verbal N-back tasks, a lure was a familiar item seen recently but in the wrong serial position. Participants falsely accepted these lures more often than ordinary non-targets, showing that the task requires control over familiarity, not just remembering items.",
           "provenance": {
             "record_version": "0.3.4",
             "review_status": "machine_validated",
@@ -3476,6 +3514,8 @@
           "exposure_id": "pmm:measurement:n-back-performance",
           "id": "pmm:claim:n-back-weakly-converges-with-complex-span",
           "outcome_id": "pmm:measurement:operation-span-performance",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "People who scored well on verbal N-back were only slightly more likely to score well on operation span. The two tasks therefore should not be treated as interchangeable tests of one working-memory ability.",
           "provenance": {
             "record_version": "0.3.4",
             "review_status": "machine_validated",
@@ -3521,6 +3561,8 @@
           "exposure_id": "pmm:measurement:n-back-performance",
           "id": "pmm:claim:n-back-and-backward-recall-are-distinct-factors",
           "outcome_id": "pmm:measurement:backward-recall-performance",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In a large task battery, performance on N-back tasks and backward-recall tasks was best described by two related but distinct statistical factors. Calling both “working memory” does not mean they measure exactly the same ability.",
           "provenance": {
             "record_version": "0.3.4",
             "review_status": "machine_validated",
@@ -3560,6 +3602,8 @@
           ],
           "mechanism_id": "pmm:mechanism:episodic-retrieval-n-back",
           "outcome_id": "pmm:behavior:n-back-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A computational model reproduced important N-back results by retrieving recent episodes rather than relying only on a fixed-capacity working-memory store. This shows that episodic retrieval is a viable explanation, not that the brain uses only this mechanism during N-back.",
           "provenance": {
             "record_version": "0.3.4",
             "review_status": "machine_validated",
@@ -4177,6 +4221,8 @@
           "exposure_id": "pmm:measurement:heartbeat-task-performance",
           "id": "pmm:claim:interoceptive-dimensions-are-dissociable",
           "outcome_id": "pmm:measurement:interoception-self-report",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Accurately detecting heartbeats, judging oneself as sensitive to bodily signals, and knowing when one’s heartbeat judgment is correct were distinct abilities in the study. A person can score high on one of these dimensions and not on the others.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -4217,6 +4263,8 @@
           "exposure_id": "pmm:measurement:heartbeat-task-performance",
           "id": "pmm:claim:cardiac-accuracy-not-generally-associated-with-anxiety",
           "outcome_id": "pmm:outcome:anxiety-intensity",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A preregistered meta-analysis of 55 studies found no overall relationship between anxiety and objective performance on heartbeat counting or discrimination tasks. This does not mean that anxiety is unrelated to every aspect of interoception, especially attention to or interpretation of bodily sensations.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -4255,6 +4303,8 @@
             "Single-blind case design and exceptional lesion anatomy sharply limit generalization."
           ],
           "outcome_id": "pmm:outcome:anxiety-intensity",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In two people with bilateral amygdala damage, a drug that increased cardiorespiratory arousal produced more anxiety than saline, and one person experienced panic. The result shows that intense bodily signals can support anxiety without an intact amygdala, but two cases cannot establish a general mechanism.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -4295,6 +4345,8 @@
           ],
           "mechanism_id": "pmm:mechanism:cardiorespiratory-appraisal",
           "outcome_id": "pmm:outcome:anxiety-intensity",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "One hypothesis is that bodily changes contribute to anxiety through how the person notices and interprets them, rather than through signal intensity alone. The drug challenge is compatible with this idea but did not manipulate or measure the proposed appraisal pathway directly.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -4863,6 +4915,8 @@
             "The condition contrast does not identify a unique social-buffering mechanism."
           ],
           "outcome_id": "pmm:state:cortisol-stress-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "During a laboratory stress task for children, assignment to support from a parent led to a different cortisol pattern over time than the comparison support conditions. The result concerns hormone response in this protocol, not every psychological benefit of parental presence.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -4911,6 +4965,8 @@
           "moderation_inference": "statistical_interaction",
           "moderator_id": "pmm:intervention:parent-buffer-condition",
           "outcome_id": "pmm:state:cortisol-stress-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "The difference between support conditions was not constant: it depended on when cortisol was sampled after the stress task. This means the study found different response trajectories, not simply a single higher or lower cortisol value.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -4955,6 +5011,8 @@
           "moderation_inference": "statistical_interaction",
           "moderator_id": "pmm:context:early-institutional-care-history",
           "outcome_id": "pmm:state:cortisol-stress-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Parent support dampened the cortisol response relative to stranger support in children without an institutional-care history, but not in previously institutionalized children. Early care history therefore changed the observed effect of who provided support in this sample.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -4995,6 +5053,8 @@
           ],
           "mechanism_id": "pmm:mechanism:social-co-regulation",
           "outcome_id": "pmm:state:cortisol-stress-response",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A proposed explanation is that a familiar caregiver helps the child regulate threat and arousal, which then reduces the stress-hormone response. The experiments demonstrate conditional buffering effects but do not isolate co-regulation as the causal mechanism.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -5434,6 +5494,8 @@
           "epistemic_status": "supported",
           "evidence_ids": [],
           "id": "pmm:claim:rpe-is-model-defined-discrepancy",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In reinforcement-learning models, reward prediction error is the numerical difference between what was expected and what was obtained. A positive error means “better than expected” and a negative error “worse than expected”; the number is defined by the model, not directly observed in a neuron.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -5472,6 +5534,8 @@
             "The intervention can have effects beyond a mathematically pure prediction-error signal."
           ],
           "outcome_id": "pmm:behavior:cue-elicited-reward-seeking",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In rats, precisely timed activation of dopamine neurons at reward delivery caused a cue to produce stronger reward seeking later. This supports a causal role for that stimulation in cue-reward learning in the tested animal procedures, not a general claim about all human rewards.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -5513,6 +5577,8 @@
             "The split-half analysis validates stability of the neural feature more directly than the full distributional model against independent alternatives."
           ],
           "outcome_id": "pmm:state:phasic-dopamine-neuron-activity",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A model fitted to one half of each mouse dopamine neuron’s responses predicted where that neuron’s response would reverse in the other half of the trials. This supports a stable, heterogeneous distributional code in that dataset, but prediction alone does not prove that the model is the unique biological mechanism.",
           "predictive_metric": {
             "direction": "positive",
             "metric": "correlation of reversal-point estimates across random trial halves",
@@ -5560,6 +5626,8 @@
           ],
           "mechanism_id": "pmm:mechanism:temporal-difference-value-update",
           "outcome_id": "pmm:state:expected-reward-value",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "The proposed process is that each prediction error updates the expected value of earlier cues or actions, gradually changing future choices. Dopamine signals are an important candidate implementation, but they also carry information beyond a simple scalar prediction error.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -6038,6 +6106,8 @@
           "epistemic_status": "supported",
           "evidence_ids": [],
           "id": "pmm:claim:hpa-feedback-is-multiple-receptor-linked-processes",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Cortisol feedback is produced by several receptor-linked processes acting at different sites and delays. Treating HPA feedback as one uniform arrow hides important differences between fast, delayed, brain, pituitary, continuous, and pulsatile regulation.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -6076,6 +6146,8 @@
             "Plasma ACTH is not a direct localization of pituitary versus hypothalamic feedback."
           ],
           "outcome_id": "pmm:state:acth-secretory-drive",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In healthy volunteers whose cortisol production had been pharmacologically reduced, giving cortisol back was followed after a delay by lower ACTH secretion. This supports delayed negative feedback under that endocrine manipulation, not an instantaneous effect in every stress response.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -6118,6 +6190,8 @@
             "Metyrapone may have effects beyond removal of cortisol feedback and secretory deconvolution is model-dependent."
           ],
           "outcome_id": "pmm:state:acth-secretory-drive",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Metyrapone reduced cortisol synthesis in healthy participants, after which both continuous and pulsatile components of ACTH secretion increased. The intervention supports cortisol feedback on ACTH dynamics, while the exact feedback sites remain unresolved by this result alone.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -6161,6 +6235,8 @@
           ],
           "mechanism_id": "pmm:mechanism:glucocorticoid-negative-feedback",
           "outcome_id": "pmm:state:acth-secretory-drive",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A proposed integrative mechanism is that cortisol signaling limits later drive through the HPA axis and helps organize its pulses. Evidence supports feedback, but its timing and location are heterogeneous, so the mechanism should not be represented as one simple linear inhibition.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -6633,6 +6709,8 @@
             "Antagonist blockade identifies receptor involvement more directly than a full psychological or neural mechanism."
           ],
           "outcome_id": "pmm:state:pain-experience",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In one ischemic-pain experiment, naloxone removed the pain reduction produced by an expectation-based placebo procedure. This supports endogenous opioid involvement in that protocol, but does not show that all placebo analgesia is opioid-mediated.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -6675,6 +6753,8 @@
             "and population."
           ],
           "outcome_id": "pmm:state:pain-experience",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In this human experiment, increasing or blocking dopamine pharmacologically produced no detectable change in treatment-expectation formation or placebo analgesia at the tested doses and times. This is evidence for a scoped null effect, not proof that dopamine is irrelevant to every placebo process.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -6720,6 +6800,8 @@
           "mediation_inference": "statistical",
           "mediator_id": "pmm:measurement:neurologic-pain-signature",
           "outcome_id": "pmm:state:pain-experience",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In pooled neuroimaging data, measured brain activity statistically accounted for part of the difference between conditioned-plus-suggested and suggestion-only placebo analgesia. Because the neural signal was not manipulated, the analysis does not prove that this activity caused the pain reduction.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -6761,6 +6843,8 @@
           ],
           "mechanism_id": "pmm:mechanism:endogenous-opioid-modulation",
           "outcome_id": "pmm:state:pain-experience",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Treatment expectations may recruit the body’s own opioid system and thereby reduce pain in some placebo procedures. Naloxone studies and a meta-analysis support this pathway, but effects vary across protocols and people, so it is not a universal placebo mechanism.",
           "provenance": {
             "record_version": "0.1.0",
             "review_status": "machine_validated",
@@ -7337,7 +7421,7 @@
       "version": "0.3.4"
     }
   ],
-  "interface_version": "0.4.2",
+  "interface_version": "0.4.3",
   "mechanism_index": [
     {
       "claim_ids": [

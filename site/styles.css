@@ -404,6 +404,7 @@ h1 em { color: var(--forest); font-weight: 500; }
 .plain-language-card { position: relative; padding: 14px 15px 14px 18px; margin-top: 8px; border-radius: 10px; background: #eee7d6; }
 .plain-language-card::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 4px; border-radius: 10px 0 0 10px; background: var(--amber); }
 .plain-language-card p { margin: 0; color: var(--ink); font-size: 13px; font-weight: 550; line-height: 1.58; }
+.plain-language-card small { display: block; margin-top: 9px; color: var(--muted); font-size: 10px; line-height: 1.45; }
 .evidence-summary { display: grid; grid-template-columns: repeat(2, minmax(0, auto)); gap: 10px 20px; padding: 14px 15px; margin-top: 10px; border-left: 4px solid var(--line-strong); background: rgba(255,255,255,.3); }
 .evidence-summary.status-supported, .evidence-summary.status-accepted { border-color: var(--forest); }
 .evidence-summary.status-mixed, .evidence-summary.status-unsupported { border-color: var(--amber); }
