@@ -1,0 +1,1166 @@
+{
+  "snapshot_version": 1,
+  "database": "PubMed",
+  "platform": "NCBI E-utilities EFetch",
+  "source_search_id": "search:pubmed-social-buffering-cortisol-youth-2026-08-26",
+  "source_result_count": 51,
+  "source_search_executed_at": "2026-08-26T11:35:00+03:00",
+  "retrieved_at": "2026-08-26T12:10:00+03:00",
+  "records": [
+    {
+      "pmid": "42527913",
+      "title": "Investigating interpretation bias and stress responses as risk factors in children of parents with depression",
+      "abstract": "BACKGROUND: Children of parents with depression, hereafter referred to as high-risk youth, are at elevated risk for mental illness, yet the mechanisms underlying this vulnerability remain unclear. Biased interpretation of ambiguous information and altered stress responses in this population have been proposed as potential pathways. As no previous study has examined these factors together, we investigated interpretation bias and endocrinological and affective stress responses as potential markers of depression vulnerability in high-risk children. We hypothesised that children of parents with depression would show more negative interpretation bias, altered cortisol stress responses and greater affective reactivity and prolonged recovery compared to children of parents with no mental illness. Across the sample, associations between interpretation bias and stress responses were expected.\nMETHOD: Participants were 80 high-risk (parental depression) and 77 low-risk (no parental mental illness) youth aged 10 to 14 years. Mental health was assessed using structured clinical interviews. Interpretation bias was measured using the Scrambled Sentences Task, and stress reactivity and recovery were indexed by salivary cortisol and self-reported affect across six time points. Group differences were tested with t-tests and analyses of covariance. Regressions examined the unique contribution of familial risk status beyond other relevant factors, including depression, anxiety, childhood trauma, pubertal status, and sex. Correlations examined associations between interpretation bias and cortisol and affective stress indices.\nRESULTS: Groups did not differ in interpretation bias, or cortisol or affective stress responses. Children's own symptoms of psychopathology (depression slightly more so than anxiety) positively predicted their interpretation bias but not their cortisol or affective stress responses. Exploratory moderation analyses showed that higher baseline cortisol strengthened the relationship between depression and interpretation bias. Interpretation bias correlated with cortisol reactivity and recovery within the high-risk but not the low-risk group.\nCONCLUSION: Contrary to theoretical accounts, high-risk youth did not exhibit cognitive, affective, or endocrinological vulnerabilities relative to low-risk peers. Interpretation bias was found to be a promising target, robustly linked to clinical outcomes and tentatively to cortisol stress responses, though its absence in high-risk youth is in support of a more selective intervention approach.\nTRIAL REGISTRATION: The study was preregistered under the Deutsches Register Klinischer Studien DRKS00028842 on August 19, 2022.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Child",
+        "Adolescent",
+        "Female",
+        "Hydrocortisone",
+        "Stress, Psychological",
+        "Male",
+        "Child of Impaired Parents",
+        "Risk Factors",
+        "Depression",
+        "Saliva",
+        "Parents"
+      ]
+    },
+    {
+      "pmid": "41610560",
+      "title": "Social buffering of the cortisol stress response during the Minnesota Imaging Stress Test in Children",
+      "abstract": "INTRODUCTION: To understand neural underpinnings of individual differences in physiological stress responding, most notably of the hypothalamic-pituitaryadrenocortical system, but also of the autonomic system, it is essential to rely on an imaging task that reliably elevates cortisol and measures of the autonomic nervous system activity, such as salivary alpha amylase. When the question also involves neural activity related to social stress buffering, it requires a task that shows differential stress responses as a function of varying social buffering partners. The purpose of this study was to examine whether the Minnesota Imaging Stress Test in Children (MISTiC) with social buffering conditions fulfilled these requirements.\nMETHOD: 180 children ages 11 through 15 years (92 female) had salivary cortisol and salivary alpha amylase (sAA) samples taken during the MISTiC, a socially evaluative stressor modeled after the Trier Social Stress Test. Participants were randomly assigned to one of three social buffering conditions: Alone-No Buffer, Parent-as-Buffer, and Researcher-as-Buffer. Buffers interacted briefly with participants audiovisually at multiple points. Saliva samples for cortisol determination were taken 3 times during the hour preceding the MISTiC with the last serving as the pretest (T0) sample. Saliva was then collected post MISTiC at 25, 35, 45, 55, and 65 min after T0. The T0, 25, and 35 samples were assayed for sAA.\nRESULTS: 61 % of participants showed a significant increase in cortisol in response to the stressor (i.e., 115 % or greater) with roughly the same showing an increase in sAA. Change from T0 was analyzed for cortisol yielding a significant trials by condition interaction (p < .05). Post-hoc tests showed a significant difference between the Parent-as-Buffer and both the Alone-No Buffer and the Researcher-as-Buffer conditions, thus indicating that parents were still effective buffers for the cortisol response in this age range. The only significant effect for sAA was a trials effect, p < .001 with the same being true for self-ratings of stress, p < .001. Puberty (pre/early vs mid/late) did not moderate the response of social buffering condition on cortisol or sAA.\nCONCLUSION: The MISTiC is effective in elevating cortisol, sAA and perceived stress. For cortisol, the method used for buffering yielded significant differences by buffer type, suggesting that this paradigm is appropriate for assessing the neural systems underlying the social buffering of stress. Contrary to our prior work, pubertal stage did not moderate the effectiveness of the parent in buffering the child's cortisol response.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Hydrocortisone",
+        "Child",
+        "Stress, Psychological",
+        "Saliva",
+        "Male",
+        "Adolescent",
+        "Salivary alpha-Amylases",
+        "Hypothalamo-Hypophyseal System",
+        "Pituitary-Adrenal System"
+      ]
+    },
+    {
+      "pmid": "40857990",
+      "title": "Social buffering by siblings in childhood and adolescence",
+      "abstract": "Although positive sibling relationships are associated with better developmental outcomes for children and adolescents, it is unknown whether siblings may be effective social buffers of physiological stress. In addition, there is little research on whether depressive symptoms may moderate the effectiveness of social buffering. The current study examined (1) whether siblings, compared to strangers, buffered the cortisol response to a social evaluative stressor in children and adolescents, (2) whether depressive symptoms moderated this effect, and (3) whether self-reported sibling relationship quality influenced sibling buffering effectiveness. A total of 72 children (9-11 years) and 65 adolescents (15-17 years) were randomly assigned to complete the Trier Social Stress Test-Online with a same-age or older sibling versus a stranger. Participants provided saliva samples to measure cortisol reactivity and recovery across the session and reported on their depressive symptoms and sibling relationship quality. The sibling versus stranger buffering effect varied based on participants' developmental stage (child vs. adolescent) and level of depressive symptoms. Specifically, adolescents with high depressive symptoms who prepared with a sibling showed lower cortisol reactivity than those who prepared with a stranger (b = 0.70, SE = 0.32, p < .05). In contrast, there were no significant differences by condition for children or adolescents with low depressive symptoms. For individuals who prepared with a sibling (n = 69), higher alienation predicted impaired cortisol recovery post-stressor (b = 0.32, SE = 0.18, p < .05). These findings are in line with research on normative development of sibling relationships and cortisol activity in the context of depression from childhood to adolescence.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Adolescent",
+        "Child",
+        "Female",
+        "Male",
+        "Hydrocortisone",
+        "Siblings",
+        "Saliva",
+        "Depression",
+        "Stress, Psychological",
+        "Sibling Relations"
+      ]
+    },
+    {
+      "pmid": "39644711",
+      "title": "Share-the-load vs bring-your-own-judge: The effects of friends on social evaluative stress in early adolescence",
+      "abstract": "OBJECTIVE: Parental attachment figures effectively buffer their children's cortisol responses to a socially evaluative stressor, the Trier Social Stress Test (TSST), by providing instrumental and emotional support during the preparation period. The effectiveness of parents as stress buffers wanes in adolescence as youth increase their reliance on peers for support. Yet, in a previous study, when peers played the same supportive role as parents, the cortisol response to the TSST was amplified. Here we asked if the role the friend plays matters. We hypothesized that the support of a friend would reduce the cortisol response to the TSST if they were also undergoing the stressor; while friend support would increase the cortisol response if they were only there for support and were not also undergoing the stressor.\nMETHOD: 235 youth ages 11.2-15.1 years were tested in the TSST-OL, an on-line version of the TSST task. Saliva samples were obtained for cortisol determination at multiple timepoints. In this pre-registered study, youth were randomly assigned, stratified by age, sex assigned at birth and pubertal status (early/later), to one of the following conditions: 1) Alone, 2) Unfamiliar Peer - Both Tested, 3) Friend as Supporter, 4) Friend - Both Tested.\nRESULTS: Area under the curve from intercept (AUCi) for the initial reactivity phase was significantly different by group, matching our pre-registered prediction that friend support would reduce reactivity if both friends were undergoing the stressor, but increase it if the friend providing support did not also undergo the stressor. Recovery did not differ by condition.\nCONCLUSIONS: The effect of friends as stress buffers varies by the role the friend plays. In the case of the TSST, a social evaluative stressor, support from a friend buffers cortisol reactivity if the friend is also experiencing the stressor; but increases cortisol reactivity if they are just there as a support. Simply being with a supportive friend does not shield the adolescent from reacting with a neuroendocrine stress response to the stress of social evaluation.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, U.S. Gov't, Non-P.H.S.",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Adolescent",
+        "Female",
+        "Male",
+        "Friends",
+        "Hydrocortisone",
+        "Stress, Psychological",
+        "Child",
+        "Saliva",
+        "Peer Group",
+        "Social Support"
+      ]
+    },
+    {
+      "pmid": "39457966",
+      "title": "Mechanisms of Social Attachment Between Children and Pet Dogs",
+      "abstract": "An increasing body of evidence indicates that owning a pet dog is associated with improvements in child health and well-being. Importantly, the degree of the social bond between child and dog may mediate the beneficial outcomes of dog ownership. The formation of social bonds is an intrinsically dyadic, interactive process where each interactor's behavior influences the other's behavior. For this reason, it is critical to evaluate the biological mechanisms of attachment in both children and their pet dogs as a socially bonded pair. Here, we review the physical, mental, and emotional outcomes that are associated with pet dog ownership or interaction in children. We then discuss the evidence that suggests that the strength of a social bond between a child and their pet dog matters for maximizing the beneficial outcomes associated with pet dog ownership, such as possible stress-buffering effects. We review the existing literature on the neural and endocrinological mechanisms of social attachment for inter-species social bonds that form between human children and dogs, situating this emerging knowledge within the context of the mechanisms of intra-species bonds in mammals. Finally, we highlight the remaining open questions and point toward directions for future research.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": []
+    },
+    {
+      "pmid": "38640970",
+      "title": "Feeding under fire: Relations between parental stress hormones and controlling feeding behaviors",
+      "abstract": "Under stress, parents tend to use more controlling feeding behaviors toward their children (Berge et al., 2017; Doan et al., 2022; Loth et al., 2016). However, the majority of prior work focuses on subjective reports of stress, and there is a dearth of research examining parental physiological stress and its impact on feeding behaviors. In the current study, we examined how parental physiological stress reactivity would influence their feeding behaviors under mild stress in a lab-based setting. Parents (n = 83, 50 % females) and their children (59% female, Mage = 42 months, SD = 4.48) participated. Stress was induced using the Trier Social Stress Test in the laboratory (Kirshbaum et al., 1993). Salivary samples were collected at 4 time points during the visit to index stress reactivity and later assayed for cortisol and DHEA. Parent-child interactions during the anticipatory period of the stress test were observationally coded for parent use of controlling feeding behaviors. To examine whether parent stress physiology predicts their feeding behaviors, we ran a Poisson regression using income, parent ethnicity, parent sex (mom/dad), time of day, and DHEA/cortisol ratio as predictors of controlling feeding behavior. Latinx parents used less controlling feeding behaviors, b = -0.323, p = 0.041 than non-Latinx parents. Parents with a higher DHEA/Cortisol ratio were less likely to use controlling feeding behaviors, b = -0.231, p = 0.008. To our knowledge, this is the first study to show that for both mothers and fathers, DHEA relative to cortisol has a protective role in controlling feeding practices, and lends support to the role of acute stress reactivity in predicting behavioral outcomes.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Male",
+        "Feeding Behavior",
+        "Hydrocortisone",
+        "Stress, Psychological",
+        "Parents",
+        "Saliva",
+        "Parent-Child Relations",
+        "Adult",
+        "Child, Preschool",
+        "Dehydroepiandrosterone",
+        "Parenting",
+        "Stress, Physiological"
+      ]
+    },
+    {
+      "pmid": "38484567",
+      "title": "Glucocorticoid response to naturalistic interactions between children and dogs",
+      "abstract": "Although research has shown that pets appear to provide certain types of social support to children, little is known about the physiological bases of these effects, especially in naturalistic contexts. In this study, we investigated the effect of free-form interactions between children (ages 8-10 years) and dogs on salivary cortisol concentrations in both species. We further investigated the role of the child-dog relationship by comparing interactions with the child's pet dog to interactions with an unfamiliar dog or a nonsocial control condition, and modeled associations between survey measures of the human-animal bond and children's physiological responses. In both children and dogs, salivary cortisol decreased from pre- to post-interaction; the effect was strongest for children interacting with an unfamiliar dog (compared to their pet dog) and for the pet dogs (compared to the unfamiliar dog). We found minimal evidence for associations between cortisol output and behaviors coded from video, but children scoring higher on survey measures of the human-animal bond exhibited the greatest reductions in cortisol when interacting with dogs. Self-reported loneliness was not related to cortisol or the human-animal bond, but measures of both loneliness and the human-animal bond were higher among children who participated after the onset of the COVID-19 pandemic, relative to those who participated before the pandemic. This study builds on previous work that investigated potential stress-buffering effects of human-animal interaction during explicit stressors and demonstrates important physiological correlates of naturalistic interactions between children and dogs, similar to those that occur in daily life.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Dogs",
+        "Animals",
+        "Child",
+        "Hydrocortisone",
+        "Male",
+        "Humans",
+        "Female",
+        "Saliva",
+        "Human-Animal Bond",
+        "Pets",
+        "Human-Animal Interaction",
+        "Glucocorticoids",
+        "Loneliness",
+        "COVID-19"
+      ]
+    },
+    {
+      "pmid": "37559538",
+      "title": "The Development of Stress Reactivity and Regulation in Children and Adolescents",
+      "abstract": "Adversity experienced in early life can have detrimental effects on physical and mental health. One pathway in which these effects occur is through the hypothalamic-pituitary-adrenal (HPA) axis, a key physiological stress-mediating system. In this review, we discuss the theoretical perspectives that guide stress reactivity and regulation research, the anatomy and physiology of the axis, developmental changes in the axis and its regulation, brain systems regulating stress, the role of genetic and epigenetics variation in axis development, sensitive periods in stress system calibration, the social regulation of stress (i.e., social buffering), and emerging research areas in the study of stress physiology and development. Understanding the development of stress reactivity and regulation is crucial for uncovering how early adverse experiences influence mental and physical health.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Review",
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Child",
+        "Humans",
+        "Adolescent",
+        "Stress, Psychological",
+        "Hypothalamo-Hypophyseal System",
+        "Mental Health",
+        "Pituitary-Adrenal System",
+        "Brain"
+      ]
+    },
+    {
+      "pmid": "36995488",
+      "title": "Adolescents' Hormonal Responses to Social Stress and Associations with Adolescent Social Anxiety and Maternal Comfort: A Preliminary Study",
+      "abstract": "Both social support and social stress can impact adolescent physiology including hormonal responses during the sensitive transition to adolescence. Social support from parents continues to play an important role in socioemotional development during adolescence. Sources of social support and stress may be particularly impactful for adolescents with social anxiety symptoms. The goal of the current study was to examine whether adolescent social anxiety symptoms and maternal comfort moderated adolescents' hormonal response to social stress and support. We evaluated 47 emotionally healthy 11- to 14-year-old adolescents' cortisol and oxytocin reactivity to social stress and support using a modified version of the Trier Social Stress Test for Adolescents that included a maternal comfort paradigm. Findings demonstrated that adolescents showed significant increases in cortisol and significant decreases in oxytocin following the social stress task. Subsequently, we found that adolescents showed significant decreases in cortisol and increases in oxytocin following the maternal comfort paradigm. Adolescents with greater social anxiety symptoms showed higher levels of cortisol at baseline but greater declines in cortisol response following maternal social support. Social anxiety symptoms were unrelated to oxytocin response to social stress or support. Our findings provide further evidence that mothers play a key role in adolescent regulation of physiological response, particularly if the stressor is consistent with adolescents' anxiety. More specifically, our findings suggest that adolescents with higher social anxiety symptoms show greater sensitivity to maternal social support following social stressors. Encouraging parents to continue to serve as a supportive presence during adolescent distress may be helpful for promoting stress recovery during the vulnerable transition to adolescence.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Adolescent",
+        "Hydrocortisone",
+        "Female",
+        "Stress, Psychological",
+        "Male",
+        "Oxytocin",
+        "Social Support",
+        "Child",
+        "Anxiety",
+        "Mother-Child Relations",
+        "Saliva",
+        "Mothers",
+        "Phobia, Social"
+      ]
+    },
+    {
+      "pmid": "36744630",
+      "title": "Effects of pair housing on behavior, cortisol, and clinical outcomes during quarantine-like procedures for rhesus macaques (Macaca mulatta)",
+      "abstract": "BACKGROUND: Compatible pair housing of macaques in research settings increases species-typical behaviors and facilitates beneficial social buffering. It is not yet established whether these benefits are maintained after intrafacility transfer and domestic quarantine, which are two stressors that can lead to behavioral and clinical abnormalities.\nMETHODS: We evaluated 40 adolescent male rhesus macaques who were single- or pair-housed immediately following an intrafacility transfer. We measured behavior, fecal cortisol, body weight, and diarrhea occurrence. Body weight and diarrhea occurrence were also retrospectively analyzed in an additional 120 adolescent rhesus who underwent a similar transfer.\nRESULTS AND CONCLUSIONS: Pair-housed macaques exhibited less of some undesirable behaviors (e.g., self-clasping) and experienced less diarrhea than single-housed subjects; however, no significant differences in cortisol levels or alopecia measures were found. The demonstrated beneficial effects of pair housing for rhesus macaques following intrafacility transfer and adjustment suggest pairing upon arrival at a new facility will bolster animal welfare.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Animals",
+        "Male",
+        "Macaca mulatta",
+        "Hydrocortisone",
+        "Quarantine",
+        "Retrospective Studies",
+        "Housing, Animal",
+        "Social Behavior",
+        "Behavior, Animal"
+      ]
+    },
+    {
+      "pmid": "35935109",
+      "title": "The Neurobiology of Infant Attachment-Trauma and Disruption of Parent-Infant Interactions",
+      "abstract": "Current clinical literature and supporting animal literature have shown that repeated and profound early-life adversity, especially when experienced within the caregiver-infant dyad, disrupts the trajectory of brain development to induce later-life expression of maladaptive behavior and pathology. What is less well understood is the immediate impact of repeated adversity during early life with the caregiver, especially since attachment to the caregiver occurs regardless of the quality of care the infant received including experiences of trauma. The focus of the present manuscript is to review the current literature on infant trauma within attachment, with an emphasis on animal research to define mechanisms and translate developmental child research. Across species, the effects of repeated trauma with the attachment figure, are subtle in early life, but the presence of acute stress can uncover some pathology, as was highlighted by Bowlby and Ainsworth in the 1950s. Through rodent neurobehavioral literature we discuss the important role of repeated elevations in stress hormone corticosterone (CORT) in infancy, especially if paired with the mother (not when pups are alone) as targeting the amygdala and causal in infant pathology. We also show that following induced alterations, at baseline infants appear stable, although acute stress hormone elevation uncovers pathology in brain circuits important in emotion, social behavior, and fear. We suggest that a comprehensive understanding of the role of stress hormones during infant typical development and elevated CORT disruption of this typical development will provide insight into age-specific identification of trauma effects, as well as a better understanding of early markers of later-life pathology.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": []
+    },
+    {
+      "pmid": "35671231",
+      "title": "Targeting the Proximal Mechanisms of Stress Adaptation in Early Adolescence to Prevent Mental Health Problems in Youth in Poverty",
+      "abstract": "OBJECTIVE: This study used a randomized clinical trial design to evaluate the success with which The Building a Strong Identity and Coping Skills intervention (BaSICS) engaged the proximal mechanisms of poverty-related stress's impact on the psychosocial functioning and mental health of young adolescents living in high poverty contexts.\nMETHOD: 129 youth from very low-income families were randomized to receive the 32-hour group-based intervention or no-treatment control - 16 of these families withdrew before the intervention groups began. The remaining 113 youth aged 11-12 (53% assigned to intervention; 54% female; 40% Hispanic, 63% Black, 20% White) participated in the study, which included four assessment waves: pretest, posttest, 6-month follow-up and 12-month follow-up assessments. Primary control, secondary control, and disengagement coping were assessed via a combination of parent and youth reports as well as via interviews and questionnaires. Hypothalamic-pituitary-adrenal axis (HPA) reactivity was assessed via salivary cortisol responses occurring during a lab-based stress induction (Trier Social Stress Test).\nRESULTS: Multilevel regression models with repeated measures nested within subjects revealed that in comparison to controls, intervention youth had sustained significant increases in their knowledge about primary control coping (e.g., problem solving, emotion modulation), knowledge and utilization of secondary control (e.g., cognitive restructuring) coping, as well as decreased reliance on disengagement coping. These were accompanied by decreased cortisol reactivity in intervention versus control youth.\nCONCLUSIONS: These findings support that BaSICS engages several proximal mechanisms of poverty-related stress' impact on early adolescent mental health - coping skills and HPA reactivity - during the neurodevelopmentally plastic pubertal period.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Adaptation, Psychological",
+        "Adolescent",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Male",
+        "Mental Health",
+        "Pituitary-Adrenal System",
+        "Poverty",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "34632877",
+      "title": "Within-person patterns of psychobiological stress response correspondence: links to preadolescent internalizing problems and coping behaviors",
+      "abstract": "Though correspondence across the affective experience and physiologic arousal levels of the stress response is thought to support efficacious coping and buffer against internalizing problems, little evidence has demonstrated such correspondence. Using a community sample of preadolescents (N=151, Mage=10.33 years, Minage=8.92, Maxage=12.00, 51.7% male), this person-centered study examined internalizing problem and coping-linked variability in psychobiological stress response correspondence. Preadolescents were exposed to the Trier Social Stress Test and self-reported negative affect (NA) and salivary cortisol (SC) levels were assessed. Multitrajectory modeling revealed four subgroups. Relative to In-Touch (i.e., Moderate NA-Moderate SC; n=65), Unmindful (i.e., Moderate NA-Low SC; n=49) were more likely to present with parent-reported but not self-reported internalizing problems; Vigilant (i.e., High NA-Low SC; n=13) were more likely to present with self- and parent-reported internalizing problems, less likely to use engagement coping, and more likely to use wishful thinking (e.g., \"I wish problems would just go away.\"); Denial (i.e., Low NA-High SC; n=24) self-reported similarly low internalizing problems, but were also more likely to report reliance on denial (e.g., \"I pretend problems don't exist.\"). Findings illustrate meaningful heterogeneity in preadolescent psychobiological correspondence with implications for multimodal assessment and outcome monitoring in coping-based preventative interventions.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Adaptation, Psychological",
+        "Female",
+        "Humans",
+        "Male",
+        "Self Report"
+      ]
+    },
+    {
+      "pmid": "34388607",
+      "title": "Linking post-stressor interpersonal processes in adolescent girls' close friendships with acute HPA stress responses",
+      "abstract": "INTRODUCTION: For adolescent girls, close friendships may facilitate stress management and mitigate risk for internalizing psychopathology. However, little is known about how friendship processes may buffer (or potentially exacerbate) acute psychobiological responses to interpersonal stressors in ways that affect risk.\nMETHODS: In a sample of 220 girls (ages 12-17 years) with a history of internalizing symptoms, this study investigated friendship dynamics following the Trier Social Stress Test (TSST) to evaluate associations between post-stressor friendship behaviors (expressions of vulnerability by the stressed teen; support offered by their close friend) and hypothalamic-pituitary-adrenal (HPA) axis stress responses.\nRESULTS: Multilevel regression modeling revealed that girls who displayed more pronounced cortisol reactivity expressed greater vulnerability to, and received greater support from, their close friend. Expressed vulnerability was associated with more efficient cortisol recovery. Close friend support was not significantly associated with cortisol recovery, nor did it influence the connection between expressed vulnerability and cortisol recovery.\nCONCLUSIONS: Findings suggest that HPA reactivity may prompt expressions of vulnerability to girls' close friends, and in this context, promote more efficient HPA recovery. Findings highlight the role friendship dynamics may play in HPA-related risk for internalizing symptoms and point to expressed vulnerability in adolescent girls' close friendships as a potential consideration for interpersonally-centered therapeutic approaches.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Female",
+        "Friends",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Pituitary-Adrenal System",
+        "Saliva",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "33902711",
+      "title": "The role of the endogenous oxytocin system under psychosocial stress conditions in adolescents suffering from anxiety disorder: study protocol for a parallel group controlled trial",
+      "abstract": "BACKGROUND: In social neuroscience, the linkage between the endocrinological system and the etiology and symptomatology of mental health problems has received increasing attention. A particular focus is given to the neuropeptide oxytocin with its anxiolytic and stress-buffering effect and the resulting therapeutic potential for anxiety disorders. Even though anxiety disorders are the most prevalent mental health disorders in childhood and adolescence worldwide, the reactivity of the endogenous oxytocin system to an acute stressor (Trier Social Stress Test, TSST) has so far only been investigated in healthy children. It has been shown that peripheral oxytocin levels increased under psychosocial stress conditions. In the present study, it is hypothesized that the endogenous oxytocin system in children and adolescents suffering from a clinically diagnosed anxiety disorder is dysregulated. Three primary outcome parameters will be analyzed: significant differences between participants with anxiety disorders compared to healthy controls in basal oxytocin levels, varying salivary oxytocin release after stress exposure and the correlation between the cortisol peak/-decrease and oxytocin level over time. Secondary outcome criteria are significant differences in physiological (heart rate) and psychological (perceived stress, anxiety, insecurity, tension) responses.\nMETHODS: The present study is a single-center experimental observation study to investigate the reactivity of the endocrinological system to a psychosocial stressor (TSST). 32 children and adolescents (11-18 years) suffering from anxiety disorder will be compared to a matched healthy control group. After a detailed psychological assessment, saliva samples will be taken to measure oxytocin levels before and after psychosocial stress exposure at eight different time points. Additionally, the stress hormone cortisol will be analyzed according to the same procedure.\nDISCUSSION: Due to the high prevalence and comorbidity rate with numerous other psychiatric disorders and mental health problems, there is an urgent need to strengthen research in possible neurobiological underpinnings of anxiety disorders. To our knowledge, the proposed experiment is the first study to examine the endocrinological oxytocin and cortisol reaction to an acute psychosocial stressor in children and adolescents with mental health disorders. Trial registration The study is registered in the German Clinical Trials Register since 11 September 2019, DRKS00017793, https://www.drks.de/drks_web/navigate.do?navigationId=trial.HTML&TRIAL_ID=DRKS00017793 .",
+      "abstract_status": "available",
+      "publication_types": [
+        "Clinical Trial Protocol",
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Anxiety",
+        "Anxiety Disorders",
+        "Child",
+        "Humans",
+        "Hydrocortisone",
+        "Oxytocin",
+        "Randomized Controlled Trials as Topic",
+        "Saliva",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "33871320",
+      "title": "Parental support and insecure attachment development: the cortisol stress response as a moderator",
+      "abstract": "The current study investigated whether variations at the level of the cortisol stress response moderate the association between parental support and attachment development. To test this hypothesis, we conducted a one-year longitudinal study with two waves in which 101 children (56% girls, Mage = 11.15, SDage = 0.70) participated. Attachment anxiety and avoidance were measured at baseline (Wave 1) and one year later (Wave 2). Parental support and children's cortisol stress response during the Trier Social Stress Test were measured at Wave 2. Children's cortisol stress response was found to moderate the association between parental support and relative change in anxious attachment. A strong cortisol stress response weakened the associated between parental support and relative change in anxious attachment. No moderation effects were found for relative change in avoidant attachment.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Child",
+        "Female",
+        "Humans",
+        "Infant",
+        "Male",
+        "Hydrocortisone",
+        "Longitudinal Studies",
+        "Object Attachment",
+        "Anxiety",
+        "Parents"
+      ]
+    },
+    {
+      "pmid": "33432595",
+      "title": "Early maternal and paternal caregiving moderates the links between preschoolers' reactivity and regulation and maturation of the HPA-immune axis",
+      "abstract": "While early caregiving and child's temperamental dispositions work in concert to shape social-emotional outcomes, their unique and joint contribution to the maturation of the child's stress and immune systems remain unclear. We followed children longitudinally from infancy to preschool to address the buffering effect of early parenting on the link between temperamental dysregulation and hypothalamic-pituitary-adrenal (HPA)-immune axis in preschool-aged children. Participants included 47 typically developing children and their 94 parents in both mother-father and two-father families followed across the first 4-years of family formation. In infancy, we observed parent-infant synchrony and measured parental oxytocin; in preschool, we observed temperamental reactivity and self-regulation and assessed children's cortisol and secretory Immunoglobulin A (s-IgA), biomarkers of the stress and immune systems. Greater self-regulation and lower negative emotionality were associated with lower baseline s-IgA and cortisol, respectively. However, these links were defined by interactive effects so that preschoolers with low self-regulation displayed higher s-IgA levels only in cases of low parent-infant synchrony and negative emotionality linked with greater baseline cortisol levels only when parental oxytocin levels were low. Results emphasize the long-term stress-buffering role of the neurobiology of parental care, demonstrate comparable developmental paths for mothers and fathers, and delineate the complex developmental cascades to the maturation of children's stress-management systems.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Child",
+        "Child, Preschool",
+        "Fathers",
+        "Female",
+        "Humans",
+        "Hypothalamo-Hypophyseal System",
+        "Infant",
+        "Male",
+        "Parenting",
+        "Pituitary-Adrenal System",
+        "Saliva"
+      ]
+    },
+    {
+      "pmid": "33427186",
+      "title": "Associations between stress reactivity and behavior problems for previously institutionalized youth across puberty",
+      "abstract": "Megan Gunnar's pubertal stress recalibration hypothesis was supported in a recent study of previously institutionalized (PI) youth such that increases in pubertal stage were associated with increases in cortisol stress reactivity. This work provides evidence that puberty may open up a window of recalibration for PI youth, resulting in a shift from a blunted to a more typical cortisol stress response. Using the same sample (N = 132), the current study aimed to elucidate whether increases in cortisol are associated with increases in adaptive functioning or whether they further underlie potential links to developmental psychopathology. Specifically, we examined the bidirectional associations between cortisol stress reactivity and both internalizing and externalizing symptoms across three timepoints during the pubertal period. Youth reported on their own internalizing symptoms and parents reported on youths' externalizing symptoms. Cortisol reactivity was assessed during the Trier social stress test. Analyses revealed no associations between cortisol reactivity and externalizing symptoms across puberty for PI youth. However, longitudinal bidirectional associations did emerge for internalizing symptoms such that increases in cortisol reactivity predicted increases in internalizing symptoms and increases in internalizing symptoms predicted increases in cortisol reactivity. Findings suggest that recalibrating to more normative levels of cortisol reactivity may not always be associated with adaptive outcomes for PI youth.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Humans",
+        "Hydrocortisone",
+        "Parents",
+        "Problem Behavior",
+        "Puberty",
+        "Saliva",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "33427180",
+      "title": "Parenting matters: Parents can reduce or amplify children's anxiety and cortisol responses to acute stress",
+      "abstract": "Parents serve important functions in regulating children's responses to stress and challenge. However, the parental characteristics that modulate the effectiveness of parents as stress buffers remain to be fully characterized. To address this gap, this study examined parental characteristics and behaviors that may explain variation in parents' ability to buffer cortisol responses to acute stress of 180 children (ages 9-11 years old, M = 9.9 years, SD = .58). Children were randomly assigned to either participate in a public speaking task, the Trier Social Stress Test - modified for children (TSST-M) or a control condition. Children in the TSST-M condition were randomly assigned to prepare for the public speaking task either with their parent (N = 59) or alone (N = 60), whereas 61 children were assigned to the control condition (no TSST-M). We found that parental education moderated the effect of condition on children's responses to acute stress. Children whose parents had lower levels of education exhibited reduced cortisol responses in the parent condition compared to the alone condition, showing a buffered pattern of reactivity. In contrast, children of parents with high levels of education displayed higher cortisol reactivity in the parent condition compared to the alone and control conditions. Parental education was also positively associated with higher levels of state anxiety within the parent condition. These results suggest that highly educated parents may emphasize performance over comfort, amplifying their children's state anxiety and cortisol responses to a public performance.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ],
+      "mesh_terms": [
+        "Anxiety",
+        "Child",
+        "Humans",
+        "Hydrocortisone",
+        "Parenting",
+        "Parents",
+        "Speech",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "33305356",
+      "title": "Parental emotional support and social buffering in previously institutionalized and typically developing children and adolescents",
+      "abstract": "The current study tested the hypothesis that variation in parental emotional support explains differences in cortisol reactivity among 159 youth, including both previously institutionalized (PI; N = 78) and non-adopted (NA; N = 81) children (ages 9-10) and adolescents (ages 15-16). Youth participated in a Modified Trier Social Stress Test after a period of preparation with either their parent or a supportive stranger. Saliva samples were collected to derive a measure of cortisol reactivity. Our findings revealed that parents buffered the cortisol stress response for PI children and adolescents only if they were high on emotional support. Our results also suggest that simply preparing with a parent might buffer the stress response for NA children; for NA adolescents, however, only emotionally supportive parents significantly buffered their adolescents' stress.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Parents",
+        "Saliva",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "33060454",
+      "title": "Perceived Social Support and Children's Physiological Responses to Stress: An Examination of the Stress-Buffering Hypothesis",
+      "abstract": "OBJECTIVE: The current study aimed to examine the stress-buffering effect of children's perceived social support on their hypothalamic-pituitary-adrenocortical axis and autonomic nervous system reactivity to an acute laboratory stressor.\nMETHODS: A sample of 150 children (aged 9-13 years, mean [standard deviation] age = 10.69 [0.93] years, 74 girls) reported perceived social support, stressful life events, and underwent the Modified Trier Social Stress Test, during which six saliva samples were collected. A two-piece multilevel growth curve model with landmark registration was used to detect trajectory differences in the reactivity and recovery phases of the stress response and account for individual variation in the timing of poststressor peak hormone concentrations.\nRESULTS: The interaction between stressful life events and perceived social support significantly predicted poststressor peak cortisol levels (β = 0.0805, SE = 0.0328, p = .015) and cortisol recovery slope (β = -0.0011, SE = 0.0005, p = .040). Children with more life events and low social support exhibited the lowest poststressor peak cortisol levels and the flattest cortisol recovery slope. In contrast, children high in stressful life events and high in social support displayed cortisol response profiles more similar to those of children with low stressful life events. Conversely, there were no statistically significant two-way interactions of stressful life events and perceived social support on salivary α-amylase parameters (i.e., poststressor peak [p = .38], reactivity slope [p = .81], and recovery slope [p = .32]).\nCONCLUSIONS: These results provide preliminary evidence for the buffering effect of children's perceived social support on the association between life stress and hypothalamic-pituitary-adrenocortical axis response profiles.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Child",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Pituitary-Adrenal System",
+        "Saliva",
+        "Salivary alpha-Amylases",
+        "Social Support",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "32979563",
+      "title": "Pubertal recalibration of cortisol reactivity following early life parent-child separation",
+      "abstract": "BACKGROUND: The hypothalamic-pituitary-adrenocortical (HPA) axis had been proved to calibrate to early-life adversity and puberty may reverse the calibration. This study examines the consequences of prolonged parent-child separation on HPA axis reactivity and the pubertal recalibration hypothesis.\nMETHODS: Totally of 144 participants aged 8.75 to 15.25 (mean age 12.50 years, SD: 1.32) were enrolled from rural areas of Chizhou city, Anhui Province of China in 2019. Data on parent-child separation was collected from parents. Self-reported Peterson Pubertal Development Scale was used to assess pubertal maturation and HPA axis stress reactivity was measured using the Trier Social Stress Test for Children.\nRESULTS: For children at early stage of puberty, childhood parent-child separation experiences were associated with blunted HPA axis reactivity (B = -1.888, p = 0.034); while for those at later stage of puberty, HPA axis reactivity was similar between children experienced early childhood separation and those without separation (AUCi: B = -0.426, p = 0.878). In contrast, for children experienced persistent parent-child separation, blunted HPA axis reactivity was observed (all p < 0.05).\nLIMITATIONS: Due to the cross-sectional nature of this study, conclusions about causality remain speculative.\nCONCLUSIONS: The effect of parent-child separation on dysregulation of HPA axis acts in a time-dependent manner. This finding provides support for the pubertal recalibration hypothesis suggesting that a focus of improving environment in adolescence would help those individuals reared initially in non-supportive conditions.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Child, Preschool",
+        "China",
+        "Cross-Sectional Studies",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Parent-Child Relations",
+        "Pituitary-Adrenal System",
+        "Saliva",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "32272126",
+      "title": "Human attachment triggers different social buffering mechanisms under high and low early life stress rearing",
+      "abstract": "Social buffering - the attenuation of stress by maternal safety signals - is a core mammalian-general stress management mechanism implicating two ancient systems: the oxytocinergic and HPA systems. Yet, because human attachments are representation-based, understanding social buffering mechanisms in humans requires the assessment of relationship history and consideration of early life stress (ELS), which alters stress responsivity. We followed a unique trauma-exposed cohort across childhood, versus a low-stress control group, and repeatedly observed maternal sensitive, safety-promoting style. In adolescence, we used an attachment induction paradigm that exposed children to both live and reminders of attachment safety signals and measured oxytocin and cortisol baseline and response, to test how maternal safety signals impact hormonal reactivity in children reared under high- versus low-stress conditions. Only safety-promoting mothers exhibited a stress-buffering function, but their effect was system-specific and depended on the rearing context. For oxytocin, safety-promoting mothers normalized the deficient baseline oxytocin levels observed in ELS youth by implicating a plasticity-by-affiliation mechanism. For cortisol, safety-promoting mothering reduced the initial stress response only among youth reared in low-stress contexts via the typical buffering-by-safety mechanism. Results suggest that human attachments require internalized security evolving over time to trigger a stress buffering function. Under conditions of chronic early stress, the stressful rearing context overrides the maternal safety signals, normative stress buffering mechanisms fail, and safety-promoting mothers switch to an immature, affiliation-based mechanism that relies on maternal presence.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Child Rearing",
+        "Child, Preschool",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Longitudinal Studies",
+        "Male",
+        "Maternal Behavior",
+        "Mother-Child Relations",
+        "Object Attachment",
+        "Oxytocin",
+        "Safety",
+        "Social Behavior",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "32204834",
+      "title": "The development of stress reactivity and regulation during human development",
+      "abstract": "Adverse experiences during childhood can have long-lasting impacts on physical and mental health. At the heart of most theories of how these effects are transduced into health impacts is the activity of stress-mediating systems, most notably the hypothalamic-pituitary-adrenocortical (HPA) axis. Here we review the anatomy and physiology of the axis, models of stress and development, the development of the axis prenatally through adolescence, the role of experience and sensitive periods in shaping its regulation, the social regulation of the axis at different points in development, and finally conclude with suggestions for future research. We conclude that it is clear that early adversity sculpts the stress system, but we do not understand which dimensions have the most impact and at what points in early development. It is equally clear that secure attachment relationships buffer the developing stress system; however, the mechanisms of social buffering and how these may change with development are not yet clear. Another critical issue that is not understood is when and for whom adversity will result in hypo- vs hyperactivity of stress-mediating systems. These and other issues are important for advancing our understanding of how early adversity \"gets under the skin\" and shapes human physical and mental health.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Adverse Childhood Experiences",
+        "Brain",
+        "Child",
+        "Child, Preschool",
+        "Female",
+        "Human Development",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Infant",
+        "Interpersonal Relations",
+        "Object Attachment",
+        "Pregnancy",
+        "Prenatal Exposure Delayed Effects",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "31677411",
+      "title": "Intranasal oxytocin enhances stress-protective effects of social support in women with negative childhood experiences during a virtual Trier Social Stress Test",
+      "abstract": "Oxytocin is considered a biological mechanism underlying stress-protective effects of positive social interactions. It is assumed to underlie the women-specific tend-and-befriend response to stress, although few studies have tested this assertion with female samples. The aim of the present study was, therefore, to test whether oxytocin enhances stress-protective effects of social support during stress in women, taking into account the moderating role of childhood adversity. The sample consisted of 180 female undergraduate students who had reported on experiences of childhood abuse and how often their mother used love withdrawal as an insensitive disciplinary strategy. Women participated in a virtual version of the Trier Social Stress Test (TSST) and were randomly assigned to receive 24 IU oxytocin or a placebo and to receive support or no support from a female friend (sub-groups N = 45). Results showed that oxytocin reduced heart rate variability during the TSST in participants who received support, possibly indicating that oxytocin increases attention and stimulates a challenge motivational state in the presence of a friend. In addition, we found that, in the presence of a friend, oxytocin reduced state anxiety levels and cortisol levels after the TSST, but only in women with higher levels of adverse childhood experiences. Our findings may indicate that oxytocin is a neurobiological means to attain and benefit from social support under stressful circumstances, which may be particularly adaptive for women with a history of adversity. Thus, oxytocin may function as motivator for affiliative disposition during stress exposure in women with a history of childhood adversity. Results should be replicated in clinical samples.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Administration, Intranasal",
+        "Adult",
+        "Adverse Childhood Experiences",
+        "Female",
+        "Friends",
+        "Heart Rate",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Oxytocin",
+        "Pituitary-Adrenal System",
+        "Saliva",
+        "Social Support",
+        "Stress, Psychological",
+        "Young Adult"
+      ]
+    },
+    {
+      "pmid": "31382947",
+      "title": "Acute psychosocial stress and working memory performance: the potential of physical activity to modulate cognitive functions in children",
+      "abstract": "BACKGROUND: Research suggests that physical activity (PA) enhances cognitive performance and prevents stress-related impairments of higher order cognitive functions like working memory (WM) performance. The aim of the current study was to investigate the effect of PA on WM performance after acute stress exposure in preadolescent children.\nMETHODS: Regular PA was assessed for seven consecutive days during a typical school week using accelerometers in a sample of 44 preadolescent children (14 girls, Mage = 11.29 years, SDage = 0.67). Following this period, participants performed an automated operational span (OSPAN) task immediately after being exposed to the Trier Social Stress Test for Children (TSST-C).\nRESULTS: Children exhibited prototypical response slopes in salivary cortisol and salivary α-amylase as markers of the endocrine and autonomic stress response immediately after psychosocial stress induction. A subsequent two-way ANOVA comparing high- and low-stress responders revealed a significant interaction between group affiliation and PA level on WM performance for both stress markers. Interestingly, best WM performance was demonstrated in children showing both high PA levels and high cortisol (or low α-amylase, respectively) stress responses.\nCONCLUSIONS: Though patterns differed for salivary cortisol and salivary α-amylase, overall findings suggest that PA buffers the negative effects of stress on cognitive performance in children.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Child",
+        "Cognition",
+        "Cross-Sectional Studies",
+        "Exercise",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Longitudinal Studies",
+        "Male",
+        "Memory, Short-Term",
+        "Saliva",
+        "Stress, Psychological",
+        "alpha-Amylases"
+      ]
+    },
+    {
+      "pmid": "31374220",
+      "title": "Neglect, HPA axis reactivity, and development",
+      "abstract": "Neglect is a common and frequently chronic form of child maltreatment that can compromise child development and increase the risk of physical and psychological problems. In this review, we discuss one of the potential ways neglect becomes biologically embedded by shaping the development of a key stress responsive system: namely, the hypothalamic-pituitary-adrenal (HPA) axis. Several potential mediators and moderators of this process are examined, including inflammation, attachment and social buffering, self-regulation, child sex and age, and genetics.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Child",
+        "Child Abuse",
+        "Child Development",
+        "Humans",
+        "Hypothalamo-Hypophyseal System",
+        "Pituitary-Adrenal System",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "31006325",
+      "title": "Adrenocortical and autonomic attunement between romantic partners in emerging adulthood",
+      "abstract": "Parent-child physiological attunement, particularly during stressful situations, appears adaptive as shared stress reactivity may promote dyadic engagement. Romantic partners eventually replace parents as the primary support figure, yet it remains unclear whether romantic partners buffer physiological stress or display physiological attunement as most studies on adults examine attunement during conflict paradigms. The present study examined physiological attunement in 63 emerging adult romantic partner dyads (one partner was the active participant, the other the observer) during the Trier Social Stress Task (TSST). Heart rate (HR) and respiratory sinus arrhythmia (RSA) were continuously monitored across the visit. Repeated saliva samples were assayed for cortisol. Physiological attunement was operationalized as a correlation in biomarkers between the TSST participant and their partner; sex, social support, and physical proximity were examined as moderators. We then compared the biomarker profiles of partnered-TSST participants to individuals who participated in the TSST solo (n = 63) to determine if partner presence buffered stress biomarker reactivity during the TSST. RSA attunement between partners was found but was not further moderated by social support or sex. Adrenocortical attunement was moderated, such that lower social support and increased proximity resulted in higher attunement. HR attunement was higher when the participant was male and when partners were in close physical proximity. Compared to TSST solo, romantic partner presence increased participant cortisol levels and altered HR reactivity, suggesting that emerging adult romantic partners do not buffer physiological stress reactivity. Future research should examine whether physiological attunement and partner presence is protective in more established relationships.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Autonomic Nervous System",
+        "Female",
+        "Heart Rate",
+        "Humans",
+        "Hydrocortisone",
+        "Male",
+        "Respiratory Sinus Arrhythmia",
+        "Saliva",
+        "Social Support",
+        "Stress, Psychological",
+        "Young Adult"
+      ]
+    },
+    {
+      "pmid": "30068422",
+      "title": "Social buffering of the maternal and infant HPA axes: Mediation and moderation in the intergenerational transmission of adverse childhood experiences",
+      "abstract": "Supportive social relationships can reduce both psychological and physiological responses to stressful experiences. Recently, studies have also assessed the potential for social relationships to buffer the intergenerational transmission of stress. The majority of these studies, however, have focussed on social learning as a mechanism responsible for the intergenerational transmission of stress. Evidence of biological mechanisms is lacking. The objective of the current study was, therefore, to determine whether the association between maternal adverse childhood experiences (ACEs) and infant hypothalamic-pituitary-adrenal (HPA) axis function is mediated by maternal HPA axis function during pregnancy and moderated by social support. Data were from 243 mother-infant dyads enrolled in a prospective longitudinal cohort (the Alberta Pregnancy Outcomes and Nutrition Study). Maternal history of ACEs was retrospectively assessed while maternal perceived social support and salivary cortisol were assessed prospectively at 6-22 weeks gestation (Time 1) and 27-37 weeks gestation (Time 2), and infant cortisol reactivity to a laboratory stressor and maternal perceived social support were assessed at 5-10 months postnatal (Time 3). Results revealed that maternal HPA axis function during pregnancy mediated the effects of maternal ACEs on infant HPA axis reactivity, suggesting that the maternal HPA axis is a mechanism by which maternal early life stress is transmitted to offspring. Furthermore, social support in the prenatal and postnatal periods moderated the cascade from maternal ACEs to infant HPA axis reactivity. Specifically, prenatal social support moderated the association between ACEs and maternal HPA axis function during pregnancy, and postnatal social support moderated the association between maternal HPA axis function and infant cortisol reactivity. These findings highlight the social sensitivity of the HPA axis and suggest the utility of social relationships as an intervention target to reduce the effects of maternal early life stress on infant outcomes.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Female",
+        "Gestational Age",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Infant",
+        "Life Change Events",
+        "Longitudinal Studies",
+        "Male",
+        "Mothers",
+        "Pituitary-Adrenal System",
+        "Pregnancy",
+        "Prospective Studies",
+        "Saliva",
+        "Social Support",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "30036796",
+      "title": "Glucocorticoid receptor exon 1F methylation and the cortisol stress response in health and disease",
+      "abstract": "Childhood trauma has been proposed to increase vulnerability to develop psychopathology in part through an altered cortisol stress response. Research in rats has suggested that this effect is mediated by methylation in the glucocorticoid receptor 17 region (GR-17 or GR-1F in humans), with higher methylation after poor maternal care leading to an increased cortisol stress response in adulthood. In humans, the associations between childhood trauma and GR-1F methylation or the cortisol stress response are equivocal. Remarkably, evidence for the relation between GR-1F methylation and the cortisol stress response has been conflicting as well. To further explore this, we investigated the associations of peripheral GR-1F methylation (52 CpGs) with the cortisol stress response (Trier Social Stress Test) and with childhood trauma in three independent studies (total N = 241) including healthy controls, patients with schizophrenia and bipolar disorder and unaffected siblings of patients with one of these disorders. We did not find any significant association between GR-1F methylation and the cortisol stress response (areas under the curve) or childhood trauma, nor did we observe any group differences between patients, siblings and healthy controls. Our findings do not support GR-1F methylation as a proxy for the cortisol stress response, nor its link with childhood trauma or psychopathology. These results suggest that multifactorial models for stress-related psychopathology are needed. Alternatively, future longitudinal studies may reveal GR-1F methylation to be a useful parameter at an individual level.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Adverse Childhood Experiences",
+        "Alternative Splicing",
+        "Bipolar Disorder",
+        "CpG Islands",
+        "DNA Methylation",
+        "Epigenesis, Genetic",
+        "Exons",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Male",
+        "Middle Aged",
+        "Pituitary-Adrenal System",
+        "Promoter Regions, Genetic",
+        "Receptors, Glucocorticoid",
+        "Saliva",
+        "Schizophrenia",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "28714126",
+      "title": "Annual Research Review: Early adversity, the hypothalamic-pituitary-adrenocortical axis, and child psychopathology",
+      "abstract": "BACKGROUND: Research on early adversity, stress biology, and child development has grown exponentially in recent years.\nFINDINGS: We review the current evidence for the hypothalamic-pituitary-adrenocortical (HPA) axis as a stress-mediating mechanism between various forms of childhood adversity and psychopathology. We begin with a review of the neurobiology of the axis and evidence for relations between early adversity-HPA axis activity and HPA axis activity-psychopathology, as well as discuss the role of regulatory mechanisms and sensitive periods in development.\nCONCLUSIONS: We call attention to critical gaps in the literature to highlight next steps in this research including focus on developmental timing, sex differences, stress buffering, and epigenetic regulation. A better understanding of individual differences in the adversity-HPA axis-psychopathology associations will require continued work addressing how multiple biological and behavioral systems work in concert to shape development.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Adverse Childhood Experiences",
+        "Allostasis",
+        "Child",
+        "Child Development",
+        "Child Health",
+        "Epigenesis, Genetic",
+        "Humans",
+        "Hypothalamo-Hypophyseal System",
+        "Mental Disorders",
+        "Mental Health",
+        "Models, Theoretical",
+        "Pituitary-Adrenal System",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "28498527",
+      "title": "Adolescent Conflict Appraisals Moderate the Link Between Marital Conflict and Physiological Stress Reactivity",
+      "abstract": "The goal of this study was to advance understanding of how adolescent conflict appraisals contribute uniquely, and in combination with interparental conflict behavior, to individual differences in adolescent physiological reactivity. Saliva samples were collected from 153 adolescents (52% female; ages 10-17 years) before and after the Trier Social Stress Test. Saliva was assayed for cortisol and alpha-amylase. Results revealed interactive effects between marital conflict and conflict appraisals. For youth who appraised parental conflict negatively (particularly as threatening), negative marital conflict predicted dampened reactivity; for youth who appraised parental conflict less negatively, negative marital conflict predicted heightened reactivity. These findings support the notion that the family context and youth appraisals of family relationships are linked with individual differences in biological sensitivity to context.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Adolescent Behavior",
+        "Child",
+        "Cross-Sectional Studies",
+        "Divorce",
+        "Family Conflict",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Male",
+        "Parent-Child Relations",
+        "Saliva",
+        "Social Environment",
+        "Stress, Physiological",
+        "Stress, Psychological",
+        "alpha-Amylases"
+      ]
+    },
+    {
+      "pmid": "28439150",
+      "title": "Effect of Pet Dogs on Children's Perceived Stress and Cortisol Stress Response",
+      "abstract": "The present study tested whether pet dogs have stress-buffering effects for children during a validated laboratory-based protocol, the Trier Social Stress Test for Children (TSST-C). Participants were 101 children aged 7-12 years with their primary caregivers and pet dogs. Children were randomly assigned in the TSST-C to a pet present condition or one of two comparison conditions: parent present or no support figure present. Baseline, response, and recovery indices of perceived stress and cortisol levels were computed based on children's self-reported feelings of stress and salivary cortisol. Results indicated that in the alone (no social support) condition, children showed the expected rise for both perceived stress and cortisol response to stress. Pet dog presence significantly buffered the perceived stress response in comparison to children in the alone and parent present conditions. No main condition effect was observed for cortisol; however, for children experiencing the stressor with their pet present, lower cortisol response to stress was associated with more child-initiated petting and less dog proximity-seeking behavior. The results support the notion that pet dogs can provide socio-emotional benefits for children via stress buffering.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": []
+    },
+    {
+      "pmid": "28377196",
+      "title": "Emotion socialization as a predictor of physiological and psychological responses to stress",
+      "abstract": "Reactivity patterns to acute stress are important indicators of physical and mental health. However, the relationships between emotion socialization and stress responses are not well understood. This study aimed to examine whether parental responses to negative emotions predicted physiological and psychological responses to acute stress in late adolescence and emerging adulthood, and whether these relationships varied by gender and ethnicity. Participants were 973 individuals (mean age=19.20years; 50% male; 63% African American, 34% European American) who reported on parental emotion socialization. Participants completed a standardized social stress test (the Trier Social Stress Test; TSST). Heart rate, blood pressure and salivary samples were assessed from baseline throughout the task and during recovery period. Psychological responses to stress were measured immediately after the TSST. Unsupportive parental responses to children's negative emotions were associated with blunted cortisol reactivity and greater negative emotions to a psychosocial stress task in females and African American youth, whereas supportive parental responses predicted greater cortisol reactivity and lower negative emotions to stress in European American youth, as well as less negative emotions in males. However, parental responses to negative emotions did not predict heart rate or SBP reactivity to the TSST. Findings suggest that parental emotion socialization may be an important factor influencing HPA axis reactivity and psychological responses to stress, with important differences across gender and ethnic youth subgroups.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Area Under Curve",
+        "Black People",
+        "Emotions",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Male",
+        "Saliva",
+        "Sex Characteristics",
+        "Socialization",
+        "Stress, Physiological",
+        "Stress, Psychological",
+        "White People",
+        "Young Adult",
+        "Black or African American"
+      ]
+    },
+    {
+      "pmid": "28167135",
+      "title": "Long-term effects of adolescent stress on neophobic behaviors in zebra finches are modulated by social context when in adulthood",
+      "abstract": "Experiencing stress during adolescence can increase neophobic behaviors in adulthood, but most tests have been conducted in the absence of conspecifics. Conspecifics can modulate responses to stressors, for example by acting as 'social buffers' to attenuate the aversive appraisal of stressors. Here, we investigate the long-term effects of adolescent stress on the behavioral responses to novel stimuli (a mild stressor) across social contexts in an affiliative passerine bird, the zebra finch. During early (days 40-60) or late (days 65-85) adolescence the birds (n=66) were dosed with either saline or the hormone corticosterone (CORT). CORT was given in order to mimic a physiological stress response and saline was given as a control. In adulthood, the birds' behavioral responses to a novel environment were recorded in both the presence and absence of conspecifics. An acute CORT response was also quantified in adolescence and adulthood. Our findings show clear evidence of social context mediating any long-term effects of adolescent stress. In the presence of familiar conspecifics no treatment effects were detected. Individually, birds dosed with CORT in early adolescence were slower to enter a novel environment, spent more time perching in the same novel environment, and, if female, engaged in more risk assessment. Birds dosed in late adolescence were unaffected. No treatment effects were detected on CORT, but adolescents had a higher CORT concentration than adults. Our results are the first to suggest that familiar conspecifics in adulthood can buffer the long-term effects of stress that occurred during early adolescence.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Adaptation, Psychological",
+        "Aging",
+        "Animals",
+        "Behavior, Animal",
+        "Corticosterone",
+        "Female",
+        "Finches",
+        "Male",
+        "Sexual Maturation",
+        "Social Environment",
+        "Stress, Physiological",
+        "Stress, Psychological",
+        "Time"
+      ]
+    },
+    {
+      "pmid": "27783306",
+      "title": "Individual and Day-to-Day Differences in Active Coping Predict Diurnal Cortisol Patterns among Early Adolescent Girls",
+      "abstract": "Prior work has identified alterations in activity of the hypothalamic-pituitary-adrenal axis as a potential mechanism underlying stress-induced emotional health problems, which disproportionately impact girls beginning in mid-adolescence. How adolescent girls differ from one another in dispositional coping tendencies and shift specific coping strategies in response to varying stressors have been theorized as important predictors of their adaptation, health, and well-being during this dynamic period of development. The goal of this study was to examine whether individual and day-to-day (within-person) differences in adolescent girls' coping responses are associated with daily patterns of hypothalamic-pituitary-adrenal axis activity, indexed by cortisol. Participants were 122 early adolescent girls (M age = 12.39) who provided three saliva samples per day for 3 days and completed daily coping reports, as well as a standard coping survey. Participants and primary caregivers also completed objective life stress interviews. On average, girls who were more likely to respond to interpersonal stress with voluntary engagement (active) coping exhibited generally adaptive daily physiological regulation-steeper diurnal cortisol slopes, lower total diurnal cortisol output, and lower cortisol awakening responses. Chronic interpersonal stress level significantly moderated these associations in different ways for two distinct components of the diurnal pattern-the slope and cortisol awakening responses. Regarding within-person differences, using active coping more than usual was associated with higher waking cortisol the following morning, which may help to prepare adolescent girls for perceived daily demands. These findings highlight the interactive influence of stress and coping in the prediction of daily hypothalamic-pituitary-adrenal axis activity and support the stress-buffering role of active coping for adolescent girls.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Activities of Daily Living",
+        "Adaptation, Psychological",
+        "Adolescent",
+        "Circadian Rhythm",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Individuality",
+        "Personality",
+        "Pituitary-Adrenal System",
+        "Saliva",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "27540420",
+      "title": "Comparing oxytocin and cortisol regulation in a double-blind, placebo-controlled, hydrocortisone challenge pilot study in children with autism and typical development",
+      "abstract": "BACKGROUND: Children with autism spectrum disorder (ASD) show marked impairment in social functioning and poor adaptation to new and changing contexts, which may be influenced by underlying regulatory processes. Oxytocin (OT) and cortisol are key neuromodulators of biological and behavioral responses, show a synergistic effect, and have been implicated in the neuropathological profile in ASD. However, they are rarely investigated together. The purpose of the pilot study was to evaluate the relationship between cortisol and OT in children with ASD under baseline and physiological stress (hydrocortisone challenge) conditions. Arginine vasopressin (AVP), structurally similar to OT, was also examined.\nMETHODS: A double-blind, placebo-controlled, randomly assigned, crossover design was employed in 25 children 8-to-12 years with ASD (N = 14) or typical development (TD, N = 11). A low dose of hydrocortisone and placebo were administered via liquid suspension. Analysis of variance (ANOVA) was used to examine the within-subject factor \"Condition\" (hydrocortisone/placebo) and \"Time\" (pre and post) and the between-subject factor \"Group\" (ASD vs. TD). Pearson correlations examined the relationship between hormone levels and clinical profile.\nRESULTS: There was a significant Time × Condition × Group interaction F (1.23) = 4.18, p = 0.05 showing a rise in OT during the experimental condition (hydrocortisone) and a drop during the placebo condition for the TD group but not the ASD group. There were no group differences for AVP. Hormone levels were associated with social profiles.\nCONCLUSIONS: For the TD group, an inverse relationship was observed. OT increased during physiological challenge suggesting that OT played a stress-buffering role during cortisol administration. In contrast for the ASD group, OT remained unchanged or decreased during both the physiological challenge and the placebo condition, suggesting that OT failed to serve as a stress buffer under conditions of physiological stress. While OT has been tied to the social ability of children with ASD, the diminished moderating effect of OT on cortisol may also play a contributory role in the heightened stress often observed in children with ASD. These results contribute to our understanding of the growing complexity of the effects of OT on social behavior as well as the functional interplay and differential regulation OT may have on stress modulation.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": []
+    },
+    {
+      "pmid": "27021231",
+      "title": "The role of social buffering on chronic disruptions in quality of care: evidence from caregiver-based interventions in foster children",
+      "abstract": "There is growing evidence that social support can buffer the physiological stress response, specifically cortisol reactivity. We use a developmental framework to review the importance of social buffering in early childhood, a period of heightened plasticity for programming of the hypothalamic-pituitary-adrenal (HPA) axis. The social environment, in which parents play the largest role in early life, is a critical agent in the developmental trajectory of the HPA axis. A prevailing model of social buffering primarily focuses on the role of social support in the context of acute stressors and cortisol response. This review expands this model to provide evidence of the mechanism of social buffering, or lack thereof, across periods of chronic stress by applying the social buffer model to children involved in the child welfare system. We also highlight current interventions that capitalize on the mechanism of social buffering to modify HPA axis functioning across childhood. Last, we synthesize our findings using the social buffering framework to inform future targeted interventions.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Caregivers",
+        "Child",
+        "Child Abuse",
+        "Child Development",
+        "Foster Home Care",
+        "Humans",
+        "Hypothalamo-Hypophyseal System",
+        "Parent-Child Relations",
+        "Parenting",
+        "Pituitary-Adrenal System",
+        "Social Support",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "26899419",
+      "title": "Social stress buffering by friends in childhood and adolescence: Effects on HPA and oxytocin activity",
+      "abstract": "Previous research has demonstrated that before puberty, parents are able to buffer, and often completely block, cortisol responses to social evaluative stressors (e.g., Trier Social Stress Test; TSST). However, after puberty, parents no longer provide a powerful buffer of the HPA axis from a social-evaluative stressor. The current study investigates whether friends can buffer the HPA axis in both children and adolescents compared to parents and whether similar stress-ameliorating patterns can also be observed in oxytocin activity. A total of 109 participants (54 children aged 9-10 and 55 adolescents aged 15-16; half of each sex) completed the TSST and were randomly assigned to prepare for their speech with their parent or friend for 5 minutes beforehand. Salivary cortisol and urinary oxytocin were measured before and after the TSST. For children, cortisol responses were comparable regardless of who helped the child prepare the speech. For adolescents, however, friends actually amplified the cortisol response compared to parents. In addition, adolescents produced less oxytocin than children, as did males compared to females. Notably, for boys, oxytocin levels decreased across the session if participants prepared with a friend rather than their parent. The mean change was in the same direction but not significant for girls. These results indicate that friends do not take over the social buffering role by age 15-16, which may inform interventions in at-risk children and adolescents.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Adolescent Development",
+        "Child",
+        "Friends",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Interpersonal Relations",
+        "Oxytocin",
+        "Parent-Child Relations",
+        "Parents",
+        "Pituitary-Adrenal System",
+        "Practice, Psychological",
+        "Psychological Tests",
+        "Random Allocation",
+        "Saliva",
+        "Self Report",
+        "Sex Characteristics",
+        "Social Perception",
+        "Speech",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "26478822",
+      "title": "Social Support Can Buffer against Stress and Shape Brain Activity",
+      "abstract": "Social support from close relationship partners is an important resource for coping with stress, particularly during childhood. We discuss ethical challenges associated with studying stress and its social buffering in the laboratory, as well as emerging evidence regarding two potential neural substrates for the social buffering of stress: hypothalamic oxytocin activity and activation of areas in the prefrontal cortex associated with effective self-regulation. We also address the role of early-life social experiences in shaping brain development, as well as recommendations for practice and policy that would advance the ethical treatment of children and reduce social inequalities in early-life experiences and opportunities-e.g., investing in programs that prevent child maltreatment and facilitating access to high-quality child care for economically disadvantaged families. We also debate the ethical implications of using oxytocin nasal sprays to simulate the stress-reducing properties of social support and advise waiting for more evidence before recommending their use.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": []
+    },
+    {
+      "pmid": "26322485",
+      "title": "Early social deprivation and the social buffering of cortisol stress responses in late childhood: An experimental study",
+      "abstract": "The goal of the present study was to investigate the role of early social deprivation in shaping the effectiveness of parent support to alleviate hypothalamic-pituitary-adrenal (HPA)-axis-stress responses of children (ages 8.9-11, M = 9.83 years, SD = .55). The sample was equally divided between children who had been adopted internationally from orphanage care by age 5 (n = 40) and an age- and gender-matched group of nonadopted (NA) children (n = 40). On average, internationally adopted children were invited to the laboratory 7.6 years postadoption (SD = 1.45). We experimentally manipulated the provision of parent support during the 5-min speech preparation period before a modified Trier Social Stress Test (TSST) and examined its effect on levels of salivary cortisol secreted in response to this laboratory stressor. All participants were randomly assigned to receive support from their parent or a stranger. Analyses revealed a significant interaction of support condition and group such that parent support significantly dampened the cortisol-stress response in NA children compared with support from a stranger, whereas the cortisol response curves of postinstitutionalized (PI) children did not differ between the parent- and stranger-support conditions. Cortisol reactivity for PI children in both conditions was lower than that of NA children in the stranger-support condition. Social deprivation during the first few years of life may shape neurobehavioral development in ways that reduce selective responses to caregivers versus strangers.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adoption",
+        "Child",
+        "Child, Institutionalized",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Male",
+        "Parenting",
+        "Pituitary-Adrenal System",
+        "Psychosocial Deprivation",
+        "Random Allocation",
+        "Saliva",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "26230646",
+      "title": "The social buffering of the hypothalamic-pituitary-adrenocortical axis in humans: Developmental and experiential determinants",
+      "abstract": "Social buffering, a subset of social support, is the process through which the availability of a conspecific reduces the activity of stress-mediating neurobiological systems. While its role in coping and resilience is significant, we know little about its developmental history in humans. This brief review presents an integrative developmental account of the social buffering of hypothalamic-pituitary-adrenocortical (HPA) stress reactivity in humans, from infancy to adulthood. During infancy, parents are powerful stress-regulators for children, but child temperament also plays a role and interacts with parenting quality to predict the magnitude of stress responses to fear or pain stimuli. Recent work indicates that parental support remains a potent stress buffer into late childhood, but that it loses its effectiveness as a buffer of the HPA axis by adolescence. Puberty may be the switch that alters the potency of parental buffering. Beginning in middle childhood, friends may serve as stress buffers, particularly when other peers are the source of stress. By adulthood, romantic partners assume this protective role, though studies often reveal sex differences that are currently not well understood. Translational research across species will be critical for developing a mechanistic understanding of social buffering and the processes involved in developmental changes noted in this review.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, U.S. Gov't, Non-P.H.S."
+      ],
+      "mesh_terms": [
+        "Animals",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Interpersonal Relations",
+        "Parent-Child Relations",
+        "Parenting",
+        "Pituitary-Adrenal System",
+        "Sex Characteristics",
+        "Social Support"
+      ]
+    },
+    {
+      "pmid": "26047719",
+      "title": "The roles of puberty and age in explaining the diminished effectiveness of parental buffering of HPA reactivity and recovery in adolescence",
+      "abstract": "Parental support is a powerful regulator of stress and fear responses for infants and children, but recent evidence suggests it may be an ineffective stress buffer for adolescents. The mechanisms underlying this developmental shift are not well-understood. The goal of the present study was to examine the independent and joint contributions of pubertal status and chronological age in explaining this shift. A sample of 75 typically developing youth (M age=12.95 years, SD=0.70, range=11.7-14.6 years; 37 females) was recruited to complete a modified Trier Social Stress Test (TSST-M) in the laboratory. Participants were recruited in such a way as to disentangle pubertal stage and chronological age by phone screening for markers of pubertal stage and then recruiting roughly equal numbers of younger and older, pre/early and mid/late pubertal youth who were then randomly assigned within groups to condition. The TSST-M was used as the stressor and youth prepared either with their parent or stranger (parent condition: N=39). Pubertal stage was confirmed by the Petersen Pubertal Development Scale at the time of testing and treated, along with chronological age, as a continuous variable in the analyses. The results revealed an interaction of pubertal stage and support condition for cortisol reactivity to the TSST-M such that preparing for the speech with the parent became a less potent buffer of the HPA axis as pubertal stage increased. Age did not interact with condition in predicting cortisol reactivity. In contrast, the parent's presence during speech preparation decreased in its effectiveness to hasten recovery of the HPA axis as children got older, but pubertal stage was not predictive of recovery rate. These patterns were specific to cortisol and were not observed with salivary alpha-amylase levels or subjective stress ratings for the task. These analyses suggest that the switch away from using parents as social buffers may be the result of neurobiological mechanisms associated with puberty.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Age Factors",
+        "Child",
+        "Child Guidance",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Male",
+        "Parent-Child Relations",
+        "Pituitary-Adrenal System",
+        "Puberty",
+        "Saliva",
+        "Salivary alpha-Amylases",
+        "Self Report",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "25774280",
+      "title": "Neuroendocrine and behavioral response to social rupture and repair in preschoolers with autism spectrum disorders interacting with mother and father",
+      "abstract": "BACKGROUND: Preschoolers with autism spectrum disorder (ASD) exhibit difficulties in handling social stress and utilizing efficient emotion regulation (ER) strategies to manage high arousal. While researchers called to assess ER in ASD, few studies utilized direct observations. We tested children's behavioral and cortisol response to maternal and paternal unavailability and hypothesized that children with ASD will employ less complex ER strategies and their parents would show increased regulation facilitation effort to accommodate their child's difficulties.\nMETHODS: Forty preschoolers with ASD were matched with 40 typically developing (TD) preschoolers. Children were seen twice for identical battery with mother or father in the face-to-face-still-face paradigm, a three-episode paradigm where parent-child play (free play (FP)) is interrupted by elimination of communication (still face (SF)) followed by resuming play (reunion (RE)). Micro-coding of parent and child's social behavior and ER strategies was conducted. Parent and child's cortisol was assessed at baseline, following stress, and at recovery.\nRESULTS: Children with ASD exhibited the typical SF effect, indexed by an increase in negative affect and decrease in positive communications, but employed more simple regulatory behavior (self-soothing, proximity-seeking) and less complex strategies involving attention redirection and substitutive play. Their parents used more regulation-facilitation behavior, both simple and complex. All children showed initial cortisol response to novelty, which declined over time. However, maternal presence suppressed initial cortisol response in children with ASD.\nCONCLUSIONS: Children with ASD form typical expectations of parental availability and their parents increase effort to help repair social rupture. Among children with ASD, maternal presence and regulation facilitation provide social buffering for the child's HPA stress response in a manner similar to mammalian neonates. Results highlight the importance of assessing ER by combining direct observations and physiological measures and including fathers in empirical studies and intervention efforts for children with ASD during sensitive periods for social growth.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": []
+    },
+    {
+      "pmid": "24942038",
+      "title": "Parent support is less effective in buffering cortisol stress reactivity for adolescents compared to children",
+      "abstract": "The goal of the present study was to investigate developmental differences in the effectiveness of parent support to alleviate hypothalamic-pituitary-adrenal (HPA) axis stress responses of children (ages 9-10, N = 40) and adolescents (ages 15-16, N = 41). We experimentally manipulated the provision of parent support during the speech preparation period before a modified Trier Social Stress Test (TSST) and examined its effect on levels of salivary cortisol secreted in response to this laboratory stressor. Analyses revealed a significant interaction of condition and age group such that social support from the parent (versus a stranger) significantly eliminated the cortisol stress response in children, but had no effect on the response among adolescents.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Aging",
+        "Analysis of Variance",
+        "Child",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Male",
+        "Medical Records",
+        "Parent-Child Relations",
+        "Parents",
+        "Saliva",
+        "Self-Assessment",
+        "Sex Factors",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "23746193",
+      "title": "Future directions in the study of social relationships as regulators of the HPA axis across development",
+      "abstract": "Many promising findings support the notion that social relationships can dampen hypothalamic-pituitary-adrenocortical (HPA) axis stress responses and protect individuals from maladaptive psychological and physical disease states. Despite the public health relevance of this topic, little is known about developmental changes in the social regulation of the HPA system, with most prior research having focused on early childhood and adulthood. This gap is particularly striking with regards to adolescence, an age period when it seems likely that reliance on parents as sources of stress-buffering decreases, even as the security of friends and relationship partners as stress buffers may not yet be certain. Furthermore, we speculate that early life stress or abnormal social experiences may impact the propensity to draw mental and physical health benefits from social relationships, but more empirical support for these ideas is needed. Last, research linking social support to cumulative life stress has mostly relied on self-report measures of stress, making it difficult to show that social support impacts the type of chronic stress exposure that is associated with increased allostatic load or \"wear and tear\" on the body and on psychological functioning. Recent advancements in methodology (e.g., assessing hair cortisol levels) as well as composite measures of allostatic load using biomarkers that capture the activity of multiple neuroendocrine, cardiovascular, immune, and metabolic systems will allow us to ask new questions about the extent to which social relationships can impact cumulative life stress and health.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Female",
+        "Humans",
+        "Hypothalamo-Hypophyseal System",
+        "Interpersonal Relations",
+        "Male",
+        "Pituitary-Adrenal System",
+        "Research",
+        "Social Support",
+        "Stress, Psychological"
+      ]
+    },
+    {
+      "pmid": "23162482",
+      "title": "Effects of social support by a dog on stress modulation in male children with insecure attachment",
+      "abstract": "Up to 90% of children with special education needs and about 40% of children in the general population show insecure or disorganized attachment patterns, which are linked to a diminished ability to use social support by others for the regulation of stress. The aim of the study was to investigate if children with insecure-avoidant/disorganized attachment can profit more from social support by a dog compared to a friendly human during a stressful task. We investigated 47 male children (age 7-11) with insecure-avoidant or disorganized attachment. Social stress was elicited via the Trier Social Stress Test for Children (TSST-C). For one group of children a friendly therapy-dog (n = 24) was present, for one control group a friendly human (n = 10) and for the other control group a toy dog (n = 13). Stress levels of the children were measured via salivary cortisol at five times (t1-t5) before, during, and after the TSST-C and subjective reports. The physiological stress response was significantly lower in the dog condition in comparison to the two other support conditions at t4, t5 and the overall stress reaction from t1 to t5 (Area Under the Curve increase; Kruskal-Wallis H-Test, pairwise post hoc comparisons via Mann-Whitney U-Tests). Cortisol levels correlated negatively (r(s)) with the amount of physical contact between the child and dog. We conclude that male children with insecure-avoidant or disorganized attachment profit more from the presence of a therapy-dog than of a friendly human under social stress. Our findings support the assumption that the increasing practice of animal-assisted education is reasonable and that dogs can be helpful assistants in education/special education, since stress interferes with learning and performance in students.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": []
+    },
+    {
+      "pmid": "20841560",
+      "title": "Momentary work worries, marital disclosure, and salivary cortisol among parents of young children",
+      "abstract": "OBJECTIVE: To investigate whether worries about work are linked to people's own cortisol levels and their spouses' cortisol levels in everyday life and whether marital factors may moderate these links. Although research has shown that satisfying marriages can buffer the physiological effects of everyday stress, the specific mechanisms through which marriage influences the processing and transmission of stress have not yet been identified.\nMETHODS: Thirty-seven healthy married couples completed baseline measures and then provided saliva samples and indicated their worries about work for six times a day from a Saturday morning through a Monday evening.\nRESULTS: Wives' cortisol levels were associated positively with their own work worries (p = .008) and with their husbands' work worries (p = .006). Husbands' cortisol levels were associated positively only with their own work worries (p = .015). Wives low in both marital satisfaction and disclosure showed a stronger association between work worries and cortisol compared with wives reporting either high marital satisfaction and/or high marital disclosure.\nCONCLUSIONS: These results suggest that momentary feelings of stress affect not only one's own cortisol levels but affect close others' cortisol levels as well. Furthermore, they suggest that, for women, the stress-buffering effects of a happy marriage may be partially explained by the extent to which they disclose their thoughts and feelings with their spouses.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Comparative Study",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Child",
+        "Circadian Rhythm",
+        "Emotions",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Hypothalamo-Hypophyseal System",
+        "Interpersonal Relations",
+        "Life Change Events",
+        "Male",
+        "Marriage",
+        "Parents",
+        "Personal Satisfaction",
+        "Pituitary-Adrenal System",
+        "Saliva",
+        "Self Disclosure",
+        "Spouses",
+        "Surveys and Questionnaires",
+        "Work"
+      ]
+    },
+    {
+      "pmid": "19766938",
+      "title": "Depression, cortisol reactivity, and obesity in childhood and adolescence",
+      "abstract": "PURPOSE: Depression in childhood is associated with higher body mass index (BMI), a relative measure of overweight, and overweight is associated with cortisol reactivity, indexed by heightened secretion of cortisol in response to a stressor. The current study uses a mediation model to examine the associations between symptoms of depression, cortisol reactivity and BMI in a cross-sectional study.\nMETHODS: Children (N = 111) 8 to 13 years old and a parent completed structured interviews. The Child Behavior Checklist was used to assess symptoms of depression, and cortisol reactivity to the Trier Social Stress Test for Children was measured. Physical examinations were used to determine BMI (kg/m(2)) and pubertal stage.\nRESULTS: Depression was positively associated with BMI in both sexes. Age and pubertal stage were not significantly associated with BMI, nor was physical activity and BMI in a model including depression. In girls, but not in boys, the association between depression and BMI was mediated by cortisol reactivity.\nCONCLUSIONS: The current findings attest to the significance of psychologic states as potential components in models of childhood obesity, and provide conceptual and empirical support for the inclusion of cortisol reactivity in these models.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Body Mass Index",
+        "Child",
+        "Cross-Sectional Studies",
+        "Depression",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Interviews as Topic",
+        "Male",
+        "Obesity"
+      ]
+    },
+    {
+      "pmid": "16879926",
+      "title": "Asymmetry between salivary cortisol and alpha-amylase reactivity to stress: relation to aggressive behavior in adolescents",
+      "abstract": "This study used a multiple physiological systems measurement approach to test the hypothesis that asymmetry between the major components of the psychobiology of stress is associated with atypical behavior in youth [Bauer, A.M., Quas, J.A., Boyce, W.T., 2002. Associations between physiological reactivity and children's behavior: advantages of a multisystem approach. J. Dev. Behav. Pediatr. 23, 102-113]. Adolescents (N=67; ages 10-14; 52% male) provided 2 saliva samples before, and 4 samples after, a modified Trier Social Stress Test (TSST; Kirschbaum, C., Pirke, K., Hellhammer, D.H., 1993. The \"Trier Social Stress Test\": a tool for investigating psychobiological stress responses in a laboratory setting. Neuropsychobiology 28, 76-81). Samples were assayed for cortisol (C) and alpha-amylase (A-A), a surrogate marker of sympathetic nervous system (SNS) activity. Parents/guardians and adolescents reported on adolescents' aggressive behavior. Both salivary A-A and C increased in response to the TSST, with a peak response for A-A immediately post-TSST and for C 10 min post-TSST. A-A and C stress reactivity were estimated using area under the curve (AUC). Asymmetrical C and A-A reactivity accounted for 7% of the variance in parent-reported adolescent aggression. At lower levels of A-A reactivity, lower C reactivity corresponded to higher aggression ratings, but at high A-A reactivity levels, C reactivity was not related to aggression. These results support the hypothesis of Bauer et al. and underscore the importance of a multiple systems measurement approach in biosocial models of adolescent aggression.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Aggression",
+        "Area Under Curve",
+        "Biomarkers",
+        "Child",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Male",
+        "Regression Analysis",
+        "Saliva",
+        "Stress, Psychological",
+        "alpha-Amylases"
+      ]
+    },
+    {
+      "pmid": "11750779",
+      "title": "Social regulation of the cortisol levels in early human development",
+      "abstract": "Other papers in this special edition provide evidence to implicate activity of the limbic hypothalamic-pituitary-adrenocortical (L-HPA) system in the etiology of drug and alcohol abuse. Furthermore, studies in rodents and primates suggest that responsivity and regulation of this system later in life may be shaped by social experiences during early development. Cortisol is the major hormonal product of the L-HPA system in humans. Although it provides only a partial understanding of the activity of this neuroendocrine axis, its regulation may bear importantly on human growth and development. We review developmental studies of cortisol and behavior in human children, birth to approximately 5 years of age. We describe the development of social buffering of cortisol responses that produces a functional analogue of the rodent stress hyporesponsive period by the time children are about 12 months of age. We further describe the sensitivity of cortisol activity to variations in care quality among infants and toddlers, along with evidence that children with negative emotional temperaments may be most likely to exhibit elevations in cortisol under conditions of less than optimal care. Finally, the few studies of cortisol activity under conditions of neglectful and abusive care of young children are considered, noting that these often have yielded evidence of reduced rather than increased cortisol levels.",
+      "abstract_status": "available",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Child Development",
+        "Child, Preschool",
+        "Female",
+        "Humans",
+        "Hydrocortisone",
+        "Infant",
+        "Male",
+        "Social Environment"
+      ]
+    }
+  ]
+}

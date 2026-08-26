@@ -148,6 +148,7 @@ curation/protocol-v0.1.yaml          Machine-readable evidence-selection protoco
 curation/logs/                        Per-family searches, decisions, exclusions, and gaps
 scripts/curation.py                  Curation schema and cross-reference validator
 scripts/pubmed_search.py             Reproducible PubMed snapshot and screening-queue sync
+scripts/screening.py                 Blinded packets, independent reviews, and agreement metrics
 data/families.yaml                   Single registry for datasets and public map families
 scripts/new_evidence_pack.py         Schema-valid evidence-pack starter generator
 site/                                Static interactive map v0.1
@@ -230,6 +231,10 @@ The first direct PubMed snapshot is committed under `curation/exports/`. Re-run 
 ```
 
 Synchronization is idempotent. It adds new PubMed results only as `awaiting_screening`; it never makes eligibility decisions, creates Evidence, or promotes Claims automatically.
+
+The social-buffering title/abstract packet contains all 51 PubMed records with complete abstracts. Authors, affiliations, journal names, and reviewer decisions are omitted from the packet. An AI-assisted Reviewer A pass retained 10 records as potentially eligible, marked 3 uncertain, and excluded 38. These are triage decisions, not independent human eligibility judgements and not grounds for adding Evidence.
+
+Independent Reviewer B must work from `curation/review-packets/social-buffering-title-abstract-v0.1.json` without inspecting `curation/reviews/social-buffering-reviewer-a-v0.1.yaml`. Private in-progress forms belong under the git-ignored `curation/private-reviews/` directory. Blinding is procedural rather than cryptographically enforced. After both reviews are complete, `scripts/screening.py compare` calculates percent agreement, Cohen's kappa, and the disagreement queue; only resolved consensus decisions may update the main curation log.
 
 `make report` rebuilds `docs/coverage-report.md` and `build/coverage-report.json`. The report counts public objects, claim types, evidence profiles, and rule-based review flags; it is a curation audit, not a score of scientific truth or importance.
 

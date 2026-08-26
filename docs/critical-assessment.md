@@ -56,6 +56,8 @@ Ten families cannot represent psychology or psychopathology as a whole. Developm
 
 `Curation Protocol v0.1` and its first retrospective social-buffering log now provide the machine-readable infrastructure for gate 1. The protocol remains a pilot: the first log is not a systematic review, and gates 2-7 remain scientifically incomplete.
 
+The social-buffering dual-review pilot now has a blinded 51-record title/abstract packet and an AI-assisted Reviewer A triage file. An independent human Reviewer B, agreement measurement, disagreement resolution, full-text screening, and extraction verification remain incomplete, so this does not yet satisfy gate 2.
+
 PMM should not pursue comprehensive coverage until all of the following exist:
 
 1. A machine-readable curation protocol with eligibility, search, deduplication, extraction, and update rules.

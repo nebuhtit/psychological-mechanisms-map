@@ -193,7 +193,7 @@ def validate_path(path: Path) -> None:
 
 
 def curation_paths() -> list[Path]:
-    return sorted(CURATION_ROOT.rglob("*.yaml"))
+    return [CURATION_ROOT / "protocol-v0.1.yaml", *sorted((CURATION_ROOT / "logs").glob("*.yaml"))]
 
 
 def main() -> int:

@@ -674,15 +674,15 @@ known_gaps:
 - The direct PubMed strategy and its 51-record snapshot have not received independent information-specialist peer review.
 - PsycInfo and at least one multidisciplinary citation database remain unsearched.
 - Backward and forward citation chasing, trial registries, preprints, and grey literature remain unsearched.
-- Forty-five direct PubMed candidates still await initial title-and-abstract screening.
+- AI-assisted Reviewer A completed title-and-abstract triage; independent human Reviewer B decisions and reconciliation remain pending.
 - No record has two independent full-text decisions or two-person extraction verification.
 - Newly discovered eligible-looking records have not yet been added to PMM Claims or Evidence.
 - This pilot must not be described as a systematic review or complete evidence synthesis.
 provenance:
-  record_version: 0.2.0
+  record_version: 0.3.0
   created_at: '2026-08-26T11:45:00+03:00'
-  modified_at: '2026-08-26T12:00:00+03:00'
+  modified_at: '2026-08-26T12:35:00+03:00'
   created_by:
   - OpenAI Codex
   review_status: machine_validated
-  change_note: Added a direct 51-record PubMed snapshot and synchronized screening queue; no independent human review completed.
+  change_note: Added the blinded abstract packet and AI-assisted Reviewer A triage; independent human Reviewer B remains pending.

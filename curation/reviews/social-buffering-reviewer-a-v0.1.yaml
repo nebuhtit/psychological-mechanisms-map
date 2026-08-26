@@ -1,0 +1,271 @@
+review_version: 0.1.0
+document_type: screening_review
+review_id: pmm:screening-review:social-buffering-reviewer-a-v0-1
+packet_id: pmm:screening-packet:social-buffering-title-abstract-v0-1
+reviewer_id: OpenAI Codex (Reviewer A)
+stage: title_abstract
+status: complete
+blinded_to_other_decisions: true
+decisions:
+- record_id: record:pubmed-42527913
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: No experimentally assigned interpersonal support condition.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-41610560
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Randomized parent, researcher, and no-buffer conditions around acute stress with repeated cortisol.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-40857990
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Randomized sibling-versus-stranger condition around acute stress with cortisol reactivity and recovery.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-39644711
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Randomized friend-role conditions during acute social stress with repeated cortisol.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-39457966
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review article without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-38640970
+  decision: exclude
+  reason_code: wrong_population
+  rationale: Physiological outcome concerns parents rather than child cortisol response to assigned support.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-38484567
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: Naturalistic dog interaction without an acute laboratory stressor.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-37559538
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review article without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-36995488
+  decision: exclude
+  reason_code: wrong_design
+  rationale: Maternal comfort follows stress without an assigned support comparator described in the abstract.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-36744630
+  decision: exclude
+  reason_code: wrong_population
+  rationale: Non-human primate study.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-35935109
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review article without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-35671231
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: Coping intervention rather than acute interpersonal support around the stressor.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-34632877
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: No experimentally assigned interpersonal support condition.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-34388607
+  decision: exclude
+  reason_code: wrong_design
+  rationale: Post-stressor friendship behavior is observational rather than assigned.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-33902711
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Study protocol without reported results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-33871320
+  decision: exclude
+  reason_code: wrong_design
+  rationale: Parental support is measured observationally rather than assigned around stress.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-33432595
+  decision: exclude
+  reason_code: wrong_design
+  rationale: Longitudinal caregiving associations without an assigned acute support condition.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-33427186
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: No experimentally assigned interpersonal support contrast.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-33427180
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Randomized parent-versus-alone preparation around acute stress with cortisol outcomes.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-33305356
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Parent-versus-supportive-stranger preparation with cortisol reactivity; assignment details require full text.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-33060454
+  decision: exclude
+  reason_code: wrong_design
+  rationale: Perceived support and life stress are observational rather than assigned.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-32979563
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: Parent-child separation history is not an acute assigned support condition.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-32272126
+  decision: uncertain
+  reason_code: insufficient_abstract_information
+  rationale: Attachment induction and cortisol are relevant, but assignment and comparator details are unclear.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-32204834
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review article without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-31677411
+  decision: exclude
+  reason_code: wrong_population
+  rationale: Adult undergraduate women rather than children or adolescents.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-31382947
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: Physical activity rather than acute interpersonal support is the candidate buffer.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-31374220
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review article without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-31006325
+  decision: exclude
+  reason_code: wrong_population
+  rationale: Emerging adult romantic partners rather than children or adolescents.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-30068422
+  decision: exclude
+  reason_code: wrong_population
+  rationale: Infants and maternal prenatal support fall outside the declared youth acute-stress question.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-30036796
+  decision: exclude
+  reason_code: wrong_population
+  rationale: Adult clinical and control samples without separate eligible youth data.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-28714126
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review article without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-28498527
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: Marital conflict and appraisal are observational, not assigned social support.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-28439150
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Randomized pet, parent, and no-support conditions during TSST-C with cortisol outcomes.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-28377196
+  decision: exclude
+  reason_code: wrong_design
+  rationale: Retrospective parental emotion-socialization report rather than assigned support.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-28167135
+  decision: exclude
+  reason_code: wrong_population
+  rationale: Zebra finch study.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-27783306
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: Active coping and diurnal cortisol without assigned interpersonal support.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-27540420
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: Hydrocortisone challenge without an interpersonal support condition.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-27021231
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review article without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-26899419
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Randomized parent-versus-friend preparation during TSST with repeated cortisol.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-26478822
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Discussion and review without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-26322485
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Randomized parent-versus-stranger support during modified TSST with repeated cortisol.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-26230646
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Brief review without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-26047719
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Randomized parent-versus-stranger preparation during TSST with cortisol reactivity and recovery.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-25774280
+  decision: uncertain
+  reason_code: insufficient_abstract_information
+  rationale: Experimental parent availability and cortisol are relevant, but the fixed episode design may not meet the assigned
+    support-comparator criterion.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-24942038
+  decision: include
+  reason_code: potentially_eligible
+  rationale: Experimentally manipulated parent-versus-stranger support during modified TSST with cortisol response.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-23746193
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review article without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-23162482
+  decision: uncertain
+  reason_code: insufficient_abstract_information
+  rationale: Controlled dog, friendly-human, and toy conditions with cortisol, but allocation method is unclear.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-20841560
+  decision: exclude
+  reason_code: wrong_population
+  rationale: Adult married couples rather than children or adolescents.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-19766938
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: No experimentally assigned interpersonal support condition.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-16879926
+  decision: exclude
+  reason_code: wrong_exposure
+  rationale: No experimentally assigned interpersonal support condition.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+- record_id: record:pubmed-11750779
+  decision: exclude
+  reason_code: wrong_publication_type
+  rationale: Review of early development without unique eligible experimental results.
+  reviewed_at: '2026-08-26T12:30:00+03:00'
+provenance:
+  created_at: '2026-08-26T12:10:00+03:00'
+  modified_at: '2026-08-26T12:30:00+03:00'
+  created_by:
+  - OpenAI Codex
+  note: AI-assisted first-pass review from the blinded packet; not a substitute for independent human eligibility review.
