@@ -1,0 +1,328 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:placebo-analgesia-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for placebo analgesia
+  description: Separates treatment context, expectation, pain report, nociceptive activity, pharmacological perturbation, statistical mediation, and proposed opioid mechanisms.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T14:00:00+03:00'
+    modified_at: '2026-08-26T14:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:context:placebo-analgesia-protocol
+    type: Context
+    label: Placebo analgesia protocol
+    definition: Experimental pain context in which an inert treatment cue is paired with verbal suggestion, conditioning, or both.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions: {treatment_content: inert, induction: suggestion or conditioning, outcome_domain: pain}
+    scope: Human experimental-pain protocols represented by the included studies.
+    provenance: *provenance
+
+  - id: pmm:construct:positive-treatment-expectation
+    type: Construct
+    label: Positive treatment expectation
+    definition: Anticipated reduction in pain attributed to a treatment or treatment cue.
+    ontological_level: type
+    curation_status: accepted
+    construct_kind: psychological
+    boundary_notes: [Expectation is not identical to conditioning history or reported pain or analgesia.]
+    provenance: *provenance
+
+  - id: pmm:state:pain-experience
+    type: State
+    label: Experienced pain intensity
+    definition: Subjective pain intensity during a protocol-defined noxious stimulus.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: affective
+    bearer_scope: person
+    temporal_scale: episode
+    provenance: *provenance
+
+  - id: pmm:measurement:pain-rating
+    type: Measurement
+    label: Self-reported pain rating
+    definition: Protocol-specific participant rating used to operationalize experienced pain intensity.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: self_report
+    target_ids: [pmm:state:pain-experience]
+    method: Rating scale collected after or during experimental pain stimulation.
+    unit_of_analysis: person
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:neurologic-pain-signature
+    type: Measurement
+    label: Neurologic Pain Signature response
+    definition: Multivariate fMRI pattern expression used as an index of nociceptive brain activity.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: circuit
+    target_ids: [pmm:state:pain-experience]
+    method: Apply the preregistered or published multivariate pattern to pain-period fMRI data.
+    unit_of_analysis: circuits
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:intervention:naloxone-challenge
+    type: Intervention
+    label: Naloxone challenge
+    definition: Administration of an opioid-receptor antagonist during a placebo analgesia experiment.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: pharmacological
+    target_ids: [pmm:mechanism:endogenous-opioid-modulation]
+    delivery: Study-specific naloxone administration compared with control treatment.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:intervention:dopamine-tone-modulation
+    type: Intervention
+    label: Dopamine-tone modulation
+    definition: Double-blind administration of sulpiride, L-dopa, or placebo during formation of treatment expectations.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: pharmacological
+    target_ids: [pmm:construct:positive-treatment-expectation]
+    delivery: Between-subject administration before conditioning.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:mechanism:endogenous-opioid-modulation
+    type: Mechanism
+    label: Endogenous opioid pain modulation
+    definition: Proposed process in which treatment expectation recruits endogenous opioid signaling that changes pain responding.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: physiological
+    role_bindings:
+      - {role: antecedent expectation, object_id: pmm:construct:positive-treatment-expectation}
+      - {role: perturbation, object_id: pmm:intervention:naloxone-challenge}
+      - {role: outcome, object_id: pmm:state:pain-experience}
+    realization_conditions: [A placebo protocol induces a positive treatment expectation before pain assessment.]
+    boundary_notes: [Naloxone sensitivity supports opioid involvement but does not by itself establish complete mediation or one neural pathway.]
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:pain-experience-measured-by-rating
+    subject_id: pmm:state:pain-experience
+    predicate: measured_by
+    object_id: pmm:measurement:pain-rating
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:naloxone-blocks-expectation-placebo-analgesia
+    claim_type: causal_effect
+    statement: In the Amanzio and Benedetti ischemic-pain experiment, naloxone administration eliminated placebo analgesia induced by expectation cues.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Pharmacological perturbation directly tests opioid-receptor involvement, but allocation details and a standardized effect were not extracted.'}
+    scope:
+      population: Participants in the Amanzio and Benedetti human experimental ischemic arm-pain study.
+      species: [human]
+      context_ids: [pmm:context:placebo-analgesia-protocol]
+      temporal_scope: Placebo test following expectation induction.
+      boundary_conditions: [Does not establish that every placebo analgesic response is opioid-mediated.]
+    exposure_id: pmm:intervention:naloxone-challenge
+    outcome_id: pmm:state:pain-experience
+    causal_estimand: Effect of naloxone versus control treatment on expectation-induced placebo analgesia in the study protocol.
+    identification_strategy: other
+    temporal_ordering: Expectation induction and naloxone administration preceded pain assessment.
+    causal_assumptions:
+      consistency: Naloxone and comparison conditions follow the reported protocol.
+      exchangeability: Depends on the source allocation and blinding procedures.
+      positivity: Relevant protocol groups received antagonist and comparison conditions.
+      interference: Cross-participant interference is assumed absent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:amanzio-1999-naloxone]
+    limitations: [Antagonist blockade identifies receptor involvement more directly than a full psychological or neural mechanism.]
+    provenance: *provenance
+
+  - id: pmm:claim:dopamine-modulation-null-effect
+    claim_type: causal_effect
+    statement: In Kunkel et al., randomized sulpiride or L-dopa did not detectably alter formation of positive treatment expectation or placebo analgesia one day later relative to placebo medication.
+    epistemic_status: supported
+    confidence: {level: high, rationale: 'A double-blind randomized placebo-controlled experiment used opposing pharmacological manipulations and combined frequentist and Bayesian analyses.'}
+    scope:
+      population: 168 healthy volunteers in the registered experiment.
+      species: [human]
+      context_ids: [pmm:context:placebo-analgesia-protocol]
+      temporal_scope: Expectation formation during conditioning and placebo analgesia one day later.
+      boundary_conditions: [A null protocol effect does not prove dopamine is irrelevant to every placebo process or population.]
+    exposure_id: pmm:intervention:dopamine-tone-modulation
+    outcome_id: pmm:state:pain-experience
+    causal_estimand: Between-group effect of sulpiride or L-dopa versus placebo on later placebo analgesia.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Medication preceded conditioning; pain outcomes were assessed one day later.
+    causal_assumptions:
+      consistency: Medication groups received the reported pharmacological protocols.
+      exchangeability: Supported by randomized double-blind assignment.
+      positivity: Participants were allocated across all medication groups.
+      interference: Cross-participant interference is assumed absent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:kunkel-2024-dopamine-null]
+    limitations: [The result constrains a direct causal role under the tested dose, timing, task, and population.]
+    provenance: *provenance
+
+  - id: pmm:claim:conditioning-neural-statistical-mediation
+    claim_type: mediation
+    mediation_inference: statistical
+    statement: Across the Placebo Imaging Consortium dataset, greater analgesia from conditioning plus suggestion versus suggestion alone was statistically mediated by changes in specified cortical, striatal, sensory-nociceptive, and cerebellar activity.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Individual-participant meta-analysis increases precision, but statistical mediation of fMRI measures does not identify causal neural mediation.'}
+    scope:
+      population: 409 participants from 16 within-participant placebo neuroimaging studies.
+      species: [human]
+      context_ids: [pmm:context:placebo-analgesia-protocol]
+      temporal_scope: Pain-period activity and analgesic response in suggestion-only and conditioning-plus-suggestion conditions.
+      boundary_conditions: [The mediator set and indirect effects are model-dependent and do not establish necessity or sufficiency.]
+    exposure_id: pmm:context:placebo-analgesia-protocol
+    mediator_id: pmm:measurement:neurologic-pain-signature
+    outcome_id: pmm:state:pain-experience
+    indirect_effect: {metric: meta-analytic statistical indirect effect, value_status: qualitative_only, direction: negative, notes: The abstract reports mediation through multiple increased and decreased regional activity measures.}
+    temporal_ordering: Protocol induction preceded pain-period imaging and pain-response estimation; within-trial mediator-outcome ordering remains limited.
+    evidence_ids: [pmm:evidence:spisak-2026-mediation]
+    limitations: [The NPS is one measured component of a broader reported mediator set and is not the mechanism itself.]
+    provenance: *provenance
+
+  - id: pmm:claim:expectation-opioid-mechanism-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: Positive treatment expectation may recruit endogenous opioid signaling that contributes to reduced pain responding in some placebo protocols.
+    epistemic_status: proposed
+    confidence: {level: moderate, rationale: 'Naloxone blockade supports opioid involvement, while protocol heterogeneity and nonopioid conditioned effects argue against a universal pathway.'}
+    scope:
+      population: Humans in experimental placebo analgesia paradigms represented by the included pharmacological study.
+      species: [human]
+      context_ids: [pmm:context:placebo-analgesia-protocol]
+      temporal_scope: Expectation induction through subsequent experimental pain assessment.
+      boundary_conditions: [Conditioning with nonopioid drugs can produce naloxone-insensitive placebo responses.]
+    mechanism_id: pmm:mechanism:endogenous-opioid-modulation
+    exposure_id: pmm:construct:positive-treatment-expectation
+    outcome_id: pmm:state:pain-experience
+    temporal_ordering: Positive treatment expectation is induced before the pain outcome.
+    falsifiable_boundary: The hypothesis is weakened if adequately powered receptor blockade repeatedly leaves expectation-induced placebo analgesia unchanged under matched protocols.
+    evidence_ids: [pmm:evidence:amanzio-1999-mechanism]
+    limitations: [This integrative mechanism claim is narrower than saying that expectation is sufficient or that all placebo analgesia is opioid-mediated.]
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:amanzio-1999-naloxone
+    claim_ids: [pmm:claim:naloxone-blocks-expectation-placebo-analgesia]
+    source_id: pmm:source:amanzio-1999-neuropharmacological-dissection
+    extraction_locator: PubMed abstract, expectation-cue and naloxone result.
+    evidence_kind: controlled_experiment
+    design: Human ischemic arm-pain experiment crossing expectation or drug-conditioning procedures with naloxone challenge.
+    population: Participants in a human experimental ischemic arm-pain protocol; sample size not extracted from the abstract.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: antagonist effect on placebo analgesia, value_status: qualitative_only, direction: negative, notes: Expectation-cue placebo responses were reported as completely blocked by naloxone.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: Opioid-receptor antagonism removed the expectation-cue placebo response in this protocol.
+    limitations: [Sample size, allocation details, and numerical effect were not extracted from the abstract.]
+    provenance: *provenance
+
+  - id: pmm:evidence:amanzio-1999-mechanism
+    claim_ids: [pmm:claim:expectation-opioid-mechanism-hypothesis]
+    source_id: pmm:source:amanzio-1999-neuropharmacological-dissection
+    extraction_locator: PubMed abstract, opioid-versus-nonopioid conditioning contrasts.
+    evidence_kind: controlled_experiment
+    design: Pharmacological dissociation across expectation, morphine conditioning, and ketorolac conditioning procedures.
+    population: Participants in the human experimental ischemic arm-pain study.
+    species: [human]
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: naloxone sensitivity by induction procedure, value_status: qualitative_only, direction: mixed, notes: Responses ranged from reversible to partially reversible to insensitive depending on procedure.}
+    domains: {directness: indirect, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: Differential naloxone sensitivity supports multiple protocol-dependent implementations rather than one universal placebo mechanism.
+    limitations: [Pharmacological dissociation does not by itself identify the complete intervening pathway.]
+    provenance: *provenance
+
+  - id: pmm:evidence:kunkel-2024-dopamine-null
+    claim_ids: [pmm:claim:dopamine-modulation-null-effect]
+    source_id: pmm:source:kunkel-2024-dopamine
+    extraction_locator: PubMed abstract, randomized medication contrast and day-1 outcome.
+    evidence_kind: randomized_experiment
+    design: Registered double-blind randomized placebo-controlled between-subject trial of sulpiride, L-dopa, and placebo.
+    population: 168 healthy volunteers.
+    species: [human]
+    sample_size: 168
+    inference_support: causal_effect
+    support_direction: challenges
+    causal_support: direct
+    effect: {metric: medication-group effect on expectation and placebo analgesia, value_status: qualitative_only, direction: 'null', notes: Frequentist and Bayesian analyses supported no direct effect under the tested protocol.}
+    domains: {directness: direct, risk_of_bias: low, consistency: single_source, precision: adequate, replication: unreplicated}
+    summary: Opposing dopamine manipulations did not alter treatment-expectation formation or next-day placebo analgesia.
+    limitations: [Dose, timing, healthy sample, and protocol constrain generalization.]
+    provenance: *provenance
+
+  - id: pmm:evidence:spisak-2026-mediation
+    claim_ids: [pmm:claim:conditioning-neural-statistical-mediation]
+    source_id: pmm:source:spisak-2026-neural-correlates
+    extraction_locator: PubMed abstract, individual-participant meta-analysis and mediation result.
+    evidence_kind: meta_analysis
+    design: Individual-participant meta-analysis of 16 within-participant placebo fMRI studies comparing suggestion alone with suggestion plus conditioning.
+    population: 409 participants.
+    species: [human]
+    sample_size: 409
+    inference_support: mediation
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: statistical indirect effects through brain-activity measures, value_status: qualitative_only, direction: mixed, notes: Increased prefrontal and striatal and decreased sensory-nociceptive and cerebellar activity were reported.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: adequate, replication: conceptual_replication}
+    summary: Conditioning added analgesia and distinct neural associations, with reported statistical mediation across pooled participant data.
+    limitations: [Study heterogeneity and mediator-outcome causal assumptions remain.]
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:amanzio-1999-neuropharmacological-dissection
+    title: 'Neuropharmacological dissection of placebo analgesia: expectation-activated opioid systems versus conditioning-activated specific subsystems'
+    source_type: peer_reviewed_article
+    authors: [Martina Amanzio, Fabrizio Benedetti]
+    year: 1999
+    doi: 10.1523/JNEUROSCI.19-01-00484.1999
+    pmid: '9870976'
+    url: https://pubmed.ncbi.nlm.nih.gov/9870976/
+    accessed_at: '2026-08-26'
+    authority_note: Controlled pharmacological dissociation of expectation and conditioning procedures using naloxone.
+    provenance: *provenance
+
+  - id: pmm:source:kunkel-2024-dopamine
+    title: Dopamine has no direct causal role in the formation of treatment expectations and placebo analgesia in humans
+    source_type: peer_reviewed_article
+    authors: [Anna Kunkel, Lara Asan, Isabel Krüger, Charlotte Erfurt, Lea Ruhnau, Esra B. Caliskan, Julia Hackert, Katja Wiech, Kristin Schmidt, Ulrike Bingel]
+    year: 2024
+    doi: 10.1371/journal.pbio.3002772
+    pmid: '39316644'
+    url: https://pubmed.ncbi.nlm.nih.gov/39316644/
+    accessed_at: '2026-08-26'
+    authority_note: Registered randomized pharmacological experiment with an informative null result.
+    provenance: *provenance
+
+  - id: pmm:source:spisak-2026-neural-correlates
+    title: Meta-analytic evidence for distinct neural correlates of conditioned versus verbally induced placebo analgesia
+    source_type: peer_reviewed_article
+    authors: [Tamas Spisak, Helena Hartmann, Matthias Zunhammer, Balint Kincses, Katja Wiech, Tor D. Wager, Ulrike Bingel, Placebo Imaging Consortium]
+    year: 2026
+    doi: 10.1038/s41467-026-74743-0
+    pmid: '42469238'
+    url: https://pubmed.ncbi.nlm.nih.gov/42469238/
+    accessed_at: '2026-08-26'
+    authority_note: Individual-participant meta-analysis distinguishing suggestion-only from conditioning-plus-suggestion protocols.
+    provenance: *provenance

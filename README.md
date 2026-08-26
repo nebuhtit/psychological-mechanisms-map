@@ -39,7 +39,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains nine deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains ten deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -52,6 +52,7 @@ The live explorer contains nine deliberately heterogeneous mechanism families. B
 | Social buffering | Randomized support conditions, cortisol trajectories, developmental context, moderation, and proposed co-regulation |
 | Reward prediction error | Computational error, expected value, temporal-difference updating, dopamine activity, neural manipulation, and learned behavior |
 | HPA feedback | Cortisol level, ACTH secretory drive, serial assays, pharmacological probes, and multi-site feedback |
+| Placebo analgesia | Treatment expectation, pain report, naloxone challenge, dopamine null result, and statistical neural mediation |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
@@ -129,6 +130,8 @@ data/evidence-pack-reward-prediction-error-v0.3.yaml
                                      Computational error, dopamine, and learning boundary pack
 data/evidence-pack-hpa-feedback-v0.3.yaml
                                      Cortisol, ACTH dynamics, probes, and feedback boundary pack
+data/evidence-pack-placebo-analgesia-v0.3.yaml
+                                     Expectation, pain, pharmacological perturbation, and mediation boundary pack
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
@@ -326,7 +329,7 @@ Before proposing a large expansion, open an issue describing the mechanism famil
 
 ## Search terms
 
-Psychological ontology, psychology knowledge graph, mental mechanisms, cognitive ontology, computational psychiatry, evidence graph, causal knowledge graph, behavioral science ontology, RDoC, Cognitive Atlas, HiTOP, negative reinforcement, fear extinction, habit learning, cognitive reappraisal, working memory, interoception, social buffering, reward prediction error, dopamine learning, and HPA-axis feedback.
+Psychological ontology, psychology knowledge graph, mental mechanisms, cognitive ontology, computational psychiatry, evidence graph, causal knowledge graph, behavioral science ontology, RDoC, Cognitive Atlas, HiTOP, negative reinforcement, fear extinction, habit learning, cognitive reappraisal, working memory, interoception, social buffering, reward prediction error, dopamine learning, HPA-axis feedback, placebo analgesia, treatment expectation, and endogenous opioid modulation.
 
 ## License and reuse
 

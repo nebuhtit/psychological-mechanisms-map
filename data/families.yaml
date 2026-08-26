@@ -58,3 +58,9 @@ datasets:
       id: hpa-feedback
       title: HPA feedback
       description: Cortisol levels, ACTH secretory dynamics, pharmacological probes, and multi-site feedback.
+  - source: data/evidence-pack-placebo-analgesia-v0.3.yaml
+    output: build/evidence-pack-placebo-analgesia-v0.3.json
+    family:
+      id: placebo-analgesia
+      title: Placebo analgesia
+      description: Treatment context, expectation, pain report, pharmacological perturbation, and neural mediation kept distinct.
