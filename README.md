@@ -28,6 +28,8 @@ data/evidence-pack-working-memory-control-v0.3.yaml
                                      N-back construct-validity and competing-mechanism pack
 data/evidence-pack-interoception-anxiety-v0.3.yaml
                                      Interoception measurement and anxiety boundary pack
+data/evidence-pack-social-buffering-v0.3.yaml
+                                     Social context, cortisol, moderation, and causal-contrast pack
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
@@ -134,6 +136,10 @@ The interoception pack separates physiological activation, objective heartbeat-t
 performance, self-evaluated sensibility, metacognitive awareness, and anxiety. It
 preserves the meta-analytic null association for objective cardiac accuracy and
 marks cardiorespiratory appraisal as an integrative hypothesis rather than mediation.
+
+The social-buffering pack separates randomized support-condition effects from
+condition-by-time and developmental-context moderation. Social co-regulation
+remains a proposed mechanism because cortisol contrasts do not identify mediation.
 
 ## Next steps
 

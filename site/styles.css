@@ -109,7 +109,7 @@ h1 em { color: var(--forest); font-weight: 500; }
 
 .family-strip {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }

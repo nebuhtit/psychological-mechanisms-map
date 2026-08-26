@@ -47,6 +47,12 @@ FAMILIES = (
         "build/evidence-pack-interoception-anxiety-v0.3.json",
         "Bodily physiology, objective performance, self-evaluation, metacognition, and anxiety kept distinct.",
     ),
+    (
+        "social-buffering",
+        "Social buffering",
+        "build/evidence-pack-social-buffering-v0.3.json",
+        "Randomized support conditions, cortisol trajectories, developmental context, and proposed co-regulation.",
+    ),
 )
 
 

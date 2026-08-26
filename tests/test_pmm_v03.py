@@ -357,5 +357,43 @@ class InteroceptionEvidencePackTests(unittest.TestCase):
         self.assertNotIn("mediator_id", claim)
 
 
+class SocialBufferingEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-social-buffering-v0.3.yaml"
+        )
+
+    def test_social_buffering_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_randomized_contrast_and_interaction_are_separate_claims(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        causal = claims["pmm:claim:parent-buffer-changes-cortisol-trajectory"]
+        interaction = claims["pmm:claim:buffer-condition-interacts-with-sampling-time"]
+        self.assertEqual(causal["claim_type"], "causal_effect")
+        self.assertEqual(interaction["claim_type"], "moderation")
+        self.assertEqual(interaction["moderation_inference"], "statistical_interaction")
+
+    def test_observational_developmental_context_is_not_causal_effect_modification(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:care-history-moderates-parent-support-effect"
+        )
+        self.assertEqual(claim["moderation_inference"], "statistical_interaction")
+        self.assertNotIn("causal_estimand", claim)
+
+    def test_co_regulation_remains_proposed_and_not_mediation(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:co-regulation-may-produce-buffering"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertNotIn("mediator_id", claim)
+
+
 if __name__ == "__main__":
     unittest.main()

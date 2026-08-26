@@ -1,0 +1,318 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:social-buffering-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for social buffering of cortisol stress responses
+  description: Separates randomized support conditions, developmental context, cortisol trajectories, statistical moderation, causal contrasts, and proposed co-regulation.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T12:00:00+03:00'
+    modified_at: '2026-08-26T12:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:context:child-social-evaluative-stress
+    type: Context
+    label: Child social-evaluative stress context
+    definition: Controlled child or adolescent stress protocol involving evaluation and repeated physiological sampling.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions: {stressor_family: MISTiC or modified TSST, outcome_domain: salivary cortisol}
+    scope: Laboratory social-evaluative stress in the age ranges declared by each claim.
+    provenance: *provenance
+
+  - id: pmm:context:early-institutional-care-history
+    type: Context
+    label: Early institutional-care history
+    definition: Developmental history of early orphanage care followed by international adoption in the Hostinar et al. sample.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: developmental
+    dimensions: {exposure_period: early childhood, sampling_group: postinstitutionalized adoptees}
+    scope: Group-defining developmental history, not an experimentally assigned exposure.
+    provenance: *provenance
+
+  - id: pmm:state:cortisol-stress-response
+    type: State
+    label: Cortisol stress-response trajectory
+    definition: Time-indexed salivary cortisol change before and after a standardized stressor.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: person
+    temporal_scale: episode
+    provenance: *provenance
+
+  - id: pmm:event:post-stressor-sampling-time
+    type: Event
+    label: Post-stressor sampling time
+    definition: Repeated protocol-defined saliva collection following the stressor.
+    ontological_level: type
+    curation_status: accepted
+    event_kind: other
+    participant_ids: [pmm:state:cortisol-stress-response]
+    temporal_scale: minutes
+    provenance: *provenance
+
+  - id: pmm:intervention:parent-buffer-condition
+    type: Intervention
+    label: Parent social-buffer condition
+    definition: Randomized protocol condition providing parent interaction or support around a social-evaluative stressor.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:state:cortisol-stress-response]
+    delivery: Study-specific brief parent interaction before or during stress preparation.
+    intended_direction: decrease
+    provenance: *provenance
+
+  - id: pmm:intervention:comparison-buffer-condition
+    type: Intervention
+    label: Comparison support condition
+    definition: Randomized researcher, stranger, or no-buffer condition defined by the source study.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:state:cortisol-stress-response]
+    delivery: Study-specific comparison interaction or absence of support.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:measurement:serial-salivary-cortisol
+    type: Measurement
+    label: Serial salivary cortisol
+    definition: Repeated salivary cortisol assay used to estimate stress reactivity and recovery over time.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: physiology
+    target_ids: [pmm:state:cortisol-stress-response]
+    method: Collect saliva at protocol-defined baseline and post-stressor times and assay cortisol concentration.
+    unit_of_analysis: physiology
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:mechanism:social-co-regulation
+    type: Mechanism
+    label: Social co-regulation of stress responding
+    definition: Proposed process through which interaction with a familiar support figure changes stress appraisal or regulatory activity and thereby alters physiological responding.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: social
+    role_bindings:
+      - {role: support condition, object_id: pmm:intervention:parent-buffer-condition}
+      - {role: stress context, object_id: pmm:context:child-social-evaluative-stress}
+      - {role: physiological response, object_id: pmm:state:cortisol-stress-response}
+    realization_conditions:
+      - The support figure is available under the source-specific protocol.
+      - Relationship and developmental context permit effective co-regulation.
+    boundary_notes:
+      - A randomized support-condition effect does not identify the mediating psychological or neural process.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:cortisol-response-measured-by-serial-saliva
+    subject_id: pmm:state:cortisol-stress-response
+    predicate: measured_by
+    object_id: pmm:measurement:serial-salivary-cortisol
+    provenance: *provenance
+  - id: pmm:relation:sampling-occurs-in-stress-context
+    subject_id: pmm:event:post-stressor-sampling-time
+    predicate: occurs_in_context
+    object_id: pmm:context:child-social-evaluative-stress
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:parent-buffer-changes-cortisol-trajectory
+    claim_type: causal_effect
+    statement: In the MISTiC trial, random assignment to the parent-buffer condition changed the cortisol stress-response trajectory relative to researcher-buffer and no-buffer conditions.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Random assignment supports a causal protocol contrast, but a standardized effect estimate was not extracted.'}
+    scope:
+      population: 180 children aged 11 to 15 years in the MISTiC experiment.
+      species: [human]
+      context_ids: [pmm:context:child-social-evaluative-stress]
+      temporal_scope: Baseline through repeated samples up to 65 minutes after baseline.
+      boundary_conditions: [Does not automatically generalize to adults, peers, other stressors, or subjective distress.]
+    exposure_id: pmm:intervention:parent-buffer-condition
+    outcome_id: pmm:state:cortisol-stress-response
+    causal_estimand: Randomized parent-buffer versus comparison-condition difference in the post-stressor cortisol trajectory.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Condition assignment and buffer interactions preceded post-stressor cortisol sampling.
+    causal_assumptions:
+      consistency: Conditions follow the reported parent, researcher, and alone protocols.
+      exchangeability: Supported by random assignment, subject to attrition and protocol adherence.
+      positivity: Participants were assigned across all three conditions.
+      interference: Cross-participant interference is assumed absent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:donzella-2026-causal-contrast]
+    limitations: [The condition contrast does not identify a unique social-buffering mechanism.]
+    provenance: *provenance
+
+  - id: pmm:claim:buffer-condition-interacts-with-sampling-time
+    claim_type: moderation
+    moderation_inference: statistical_interaction
+    statement: In the MISTiC trial, randomized buffer condition statistically modified change in cortisol across sampling trials.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The trial reported a condition-by-trial interaction and post-hoc contrasts, but no standardized interaction estimate was extracted.'}
+    scope:
+      population: 180 children aged 11 to 15 years in the MISTiC experiment.
+      species: [human]
+      context_ids: [pmm:context:child-social-evaluative-stress]
+      temporal_scope: Repeated baseline and post-stressor saliva samples.
+      boundary_conditions: [The interaction is scale- and model-dependent and is not a mediating mechanism.]
+    exposure_id: pmm:event:post-stressor-sampling-time
+    moderator_id: pmm:intervention:parent-buffer-condition
+    outcome_id: pmm:state:cortisol-stress-response
+    interaction_term: {metric: trial-by-condition interaction, value_status: qualitative_only, direction: negative, notes: 'Reported p < .05; parent condition differed from both comparison conditions.'}
+    evidence_ids: [pmm:evidence:donzella-2026-moderation]
+    limitations: [Statistical moderation does not by itself establish causal effect modification or mediation.]
+    provenance: *provenance
+
+  - id: pmm:claim:care-history-moderates-parent-support-effect
+    claim_type: moderation
+    moderation_inference: statistical_interaction
+    statement: In Hostinar et al., the parent-versus-stranger support contrast differed between nonadopted and postinstitutionalized children.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Support condition was randomized and the group interaction was reported, but developmental history was observational.'}
+    scope:
+      population: 40 postinstitutionalized and 40 age- and gender-matched nonadopted children aged approximately 9 to 11 years.
+      species: [human]
+      context_ids: [pmm:context:child-social-evaluative-stress, pmm:context:early-institutional-care-history]
+      temporal_scope: Cortisol response to a modified TSST following randomized speech-preparation support.
+      boundary_conditions: [Group differences cannot be attributed uniquely to institutional care because developmental history was not randomized.]
+    exposure_id: pmm:intervention:parent-buffer-condition
+    moderator_id: pmm:context:early-institutional-care-history
+    outcome_id: pmm:state:cortisol-stress-response
+    interaction_term: {metric: support-condition-by-group interaction, value_status: qualitative_only, direction: mixed, notes: Parent support dampened cortisol relative to stranger support in nonadopted children but not in postinstitutionalized children.}
+    evidence_ids: [pmm:evidence:hostinar-2015-developmental-moderation]
+    limitations: [The interaction is not proof of a specific developmental mechanism.]
+    provenance: *provenance
+
+  - id: pmm:claim:co-regulation-may-produce-buffering
+    claim_type: mechanism_hypothesis
+    statement: Familiar-support co-regulation may contribute to reduced cortisol responding, with effectiveness conditional on developmental and relationship context.
+    epistemic_status: proposed
+    confidence: {level: low, rationale: 'Randomized condition effects establish protocol effects, while the proposed co-regulatory process was not uniquely manipulated or measured.'}
+    scope:
+      population: Children and adolescents represented by the two included experiments.
+      species: [human]
+      context_ids: [pmm:context:child-social-evaluative-stress]
+      temporal_scope: Support interaction before or during acute social-evaluative stress.
+      boundary_conditions: [Does not claim one neural mediator or universal benefit from any social contact.]
+    mechanism_id: pmm:mechanism:social-co-regulation
+    exposure_id: pmm:intervention:parent-buffer-condition
+    outcome_id: pmm:state:cortisol-stress-response
+    temporal_ordering: Support interaction occurs before the measured post-stressor cortisol trajectory.
+    falsifiable_boundary: The hypothesis is weakened if matched familiar support repeatedly fails to alter candidate appraisal or regulation processes despite reliable cortisol effects.
+    evidence_ids: [pmm:evidence:hostinar-2015-mechanism-compatibility]
+    limitations: [This is an integrative hypothesis, not an identified mediation claim.]
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:donzella-2026-causal-contrast
+    claim_ids: [pmm:claim:parent-buffer-changes-cortisol-trajectory]
+    source_id: pmm:source:donzella-2026-social-buffering
+    extraction_locator: PubMed abstract, randomized conditions and cortisol post-hoc contrasts.
+    evidence_kind: randomized_experiment
+    design: Three-arm randomized MISTiC experiment with parent, researcher, and no-buffer conditions.
+    population: 180 children aged 11 to 15 years; 92 female.
+    species: [human]
+    sample_size: 180
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: randomized condition contrast in cortisol trajectory, value_status: qualitative_only, direction: negative, notes: Parent condition differed from both comparison conditions.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: Random assignment identifies a study-protocol effect on cortisol trajectory under stated assumptions.
+    limitations: [Numerical standardized effect and full risk-of-bias assessment remain pending.]
+    provenance: *provenance
+
+  - id: pmm:evidence:donzella-2026-moderation
+    claim_ids: [pmm:claim:buffer-condition-interacts-with-sampling-time]
+    source_id: pmm:source:donzella-2026-social-buffering
+    extraction_locator: PubMed abstract, trials-by-condition interaction.
+    evidence_kind: randomized_experiment
+    design: Repeated cortisol sampling analyzed with sampling-trial by randomized-condition interaction.
+    population: 180 children aged 11 to 15 years; 92 female.
+    species: [human]
+    sample_size: 180
+    inference_support: moderation
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: trial-by-condition interaction, value_status: qualitative_only, direction: negative, notes: Abstract reports p < .05.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: Cortisol change across trials differed statistically by assigned buffer condition.
+    limitations: [The interaction does not identify a mediator.]
+    provenance: *provenance
+
+  - id: pmm:evidence:hostinar-2015-developmental-moderation
+    claim_ids: [pmm:claim:care-history-moderates-parent-support-effect]
+    source_id: pmm:source:hostinar-2015-early-deprivation
+    extraction_locator: PubMed abstract, support-condition by group interaction.
+    evidence_kind: randomized_experiment
+    design: Randomized parent-versus-stranger speech-preparation support, stratified by observational developmental-history group.
+    population: 80 children, equally divided between postinstitutionalized adoptees and matched nonadopted children.
+    species: [human]
+    sample_size: 80
+    inference_support: moderation
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: condition-by-group interaction, value_status: qualitative_only, direction: mixed, notes: Selective parent buffering appeared in nonadopted but not postinstitutionalized children.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: The randomized support contrast varied across an observational developmental-history grouping.
+    limitations: [The moderator was not randomized and may bundle multiple developmental differences.]
+    provenance: *provenance
+
+  - id: pmm:evidence:hostinar-2015-mechanism-compatibility
+    claim_ids: [pmm:claim:co-regulation-may-produce-buffering]
+    source_id: pmm:source:hostinar-2015-early-deprivation
+    extraction_locator: PubMed abstract, selective parent-versus-stranger pattern.
+    evidence_kind: randomized_experiment
+    design: Mechanistic interpretation of support-condition differences across developmental-history groups.
+    population: 80 children in the Hostinar et al. experiment.
+    species: [human]
+    sample_size: 80
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: compatibility with familiar-support co-regulation, value_status: qualitative_only, direction: positive, notes: Familiarity-selective buffering varied by developmental group; the process was not directly measured.}
+    domains: {directness: indirect, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: The pattern is compatible with context-sensitive co-regulation but does not identify its implementation.
+    limitations: [Post hoc mechanism interpretation from outcome contrasts.]
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:donzella-2026-social-buffering
+    title: Social buffering of the cortisol stress response during the Minnesota Imaging Stress Test in Children
+    source_type: peer_reviewed_article
+    authors: [Bonny Donzella, Zachary Miller, Nikola C. Tsakonas, Kathleen M. Thomas, Megan R. Gunnar]
+    year: 2026
+    doi: 10.1016/j.psyneuen.2026.107760
+    pmid: '41610560'
+    url: https://pubmed.ncbi.nlm.nih.gov/41610560/
+    accessed_at: '2026-08-26'
+    authority_note: Recent randomized three-arm experiment with repeated cortisol outcomes and an explicit condition-by-time analysis.
+    provenance: *provenance
+
+  - id: pmm:source:hostinar-2015-early-deprivation
+    title: 'Early social deprivation and the social buffering of cortisol stress responses in late childhood: An experimental study'
+    source_type: peer_reviewed_article
+    authors: [Camelia E. Hostinar, Anna E. Johnson, Megan R. Gunnar]
+    year: 2015
+    doi: 10.1037/dev0000029
+    pmid: '26322485'
+    url: https://pubmed.ncbi.nlm.nih.gov/26322485/
+    accessed_at: '2026-08-26'
+    authority_note: Randomized support manipulation showing that developmental-history group modifies the observed parent-versus-stranger contrast.
+    provenance: *provenance
