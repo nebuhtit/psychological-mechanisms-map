@@ -686,3 +686,39 @@ entries:
       A plausible model says that existing dispositions influence which environments people enter or evoke, while repeated roles, relationships, actions, and consequences may feed back into later patterns. Separate literatures are compatible with this loop, but the full reciprocal causal sequence has not been demonstrated within one person.
     ru: >-
       Правдоподобная модель предполагает, что имеющиеся склонности влияют на выбор и создание среды, а повторяющиеся роли, отношения, действия и последствия могут влиять на последующие паттерны. Разные области исследований совместимы с такой петлёй, но полная взаимная причинная последовательность у одного человека не доказана.
+
+  - claim_id: pmm:claim:motivation-requires-distinct-components
+    en: >-
+      “Motivation” is not one inner fuel gauge. A person may value an outcome but expect failure, believe success is possible but see the cost as excessive, act under pressure without ownership, or be willing but blocked by skill, health, time, or access. Measure these possibilities separately before choosing an intervention.
+    ru: >-
+      «Мотивация» — не единый внутренний запас энергии. Человек может ценить результат, но не верить в успех; считать успех возможным, но видеть чрезмерную цену; действовать под давлением без собственного согласия; хотеть действовать, но не иметь навыка, здоровья, времени или доступа. До выбора воздействия эти варианты нужно проверять раздельно.
+
+  - claim_id: pmm:claim:intrinsic-motivation-and-incentives-jointly-predict-performance
+    en: >-
+      Across many studies, interest in the activity and external incentives both predicted performance, but not in the same way: intrinsic motivation was more informative for quality, while incentives were more informative for quantity. These are predictive averages, not proof that adding a reward will help this person or that rewards always destroy interest.
+    ru: >-
+      Во многих исследованиях и интерес к деятельности, и внешние стимулы предсказывали результат, но по-разному: внутренняя мотивация была важнее для качества, а стимулы — для количества. Это средние прогностические связи, а не доказательство, что награда поможет конкретному человеку или что награды всегда уничтожают интерес.
+
+  - claim_id: pmm:claim:sdt-interventions-have-small-health-behavior-effect
+    en: >-
+      In randomized health-behavior trials, programs designed to support self-directed motivation produced a small average improvement. The useful conclusion is not “give more freedom,” but to test a bounded combination of meaningful rationale, feasible choice, competence support, and respectful social support, then measure the actual target behavior.
+    ru: >-
+      В рандомизированных исследованиях поведения, связанного со здоровьем, программы поддержки самостоятельной мотивации давали небольшой средний эффект. Практический вывод — не «дайте полную свободу», а проверяйте ограниченное сочетание понятного смысла, реального выбора, поддержки компетентности и уважительной социальной поддержки, измеряя именно целевое поведение.
+
+  - claim_id: pmm:claim:autonomous-motivation-and-competence-statistically-mediate-health-behavior
+    en: >-
+      Across the intervention literature, changes in autonomous motivation and perceived competence statistically accounted for part of later behavior change. They are therefore useful candidate processes to measure. The analysis does not prove that either process caused change within a particular person or that other pathways were absent.
+    ru: >-
+      В совокупности исследований изменения автономной мотивации и воспринимаемой компетентности статистически объясняли часть последующего изменения поведения. Поэтому их полезно измерять как предполагаемые процессы. Анализ не доказывает, что один из них вызвал изменение у конкретного человека или что других путей не было.
+
+  - claim_id: pmm:claim:need-support-techniques-change-motivation-measures
+    en: >-
+      Controlled health interventions improved reports of autonomy support, autonomy, competence, relatedness, and motivation on average. Most programs combined several techniques, so the result supports testing a need-supportive environment, not prescribing one magic phrase or assuming that a better questionnaire score guarantees lasting behavior.
+    ru: >-
+      В контролируемых программах для здоровья в среднем улучшались оценки поддержки автономии, автономии, компетентности, связанности с другими и мотивации. Обычно программы сочетали несколько приёмов, поэтому результат поддерживает проверку поддерживающей среды, но не одну «волшебную фразу» и не обещание устойчивого поведения по одному улучшенному баллу опросника.
+
+  - claim_id: pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis
+    en: >-
+      A useful hypothesis is that action becomes more likely when a result matters, success appears possible, costs are tolerable, and the option competes well with alternatives. The complete calculation is not directly observed. In practice, change one measured candidate — value, expected success, cost, access, skill, or alternative — and check the next action.
+    ru: >-
+      Полезная гипотеза: действие становится вероятнее, когда результат важен, успех кажется достижимым, издержки приемлемы, а вариант выигрывает у альтернатив. Полный внутренний «расчёт» непосредственно не наблюдается. На практике меняйте один измеренный фактор — ценность, ожидание успеха, цену усилия, доступ, навык или альтернативу — и проверяйте следующее действие.

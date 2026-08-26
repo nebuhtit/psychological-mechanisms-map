@@ -301,6 +301,26 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which expected success, subjective value, effort and opportunity costs, alternatives, social context, and prior experience jointly influence action selection and persistence.",
+      "evidence_count": 1,
+      "family_id": "motivation-process",
+      "family_title": "Motivation beyond reinforcement",
+      "id": "pmm:mechanism:situated-expectancy-value-cost-integration",
+      "label": "Situated expectancy-value-cost integration",
+      "mechanism_kind": "cognitive",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
         "pmm:claim:person-environment-transaction-is-developmental-hypothesis"
       ],
       "claim_status_counts": {

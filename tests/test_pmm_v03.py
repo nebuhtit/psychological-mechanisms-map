@@ -459,6 +459,52 @@ class PersonalityDevelopmentEvidencePackTests(unittest.TestCase):
         self.assertEqual(claim["confidence"]["level"], "low")
 
 
+class MotivationProcessEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-motivation-process-v0.3.yaml"
+        )
+
+    def test_motivation_process_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_motivation_constructs_behavior_measurement_and_mechanism_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:goal-directed-motivation"], "Construct")
+        self.assertEqual(records["pmm:construct:expected-success"], "Construct")
+        self.assertEqual(records["pmm:state:perceived-effort-cost"], "State")
+        self.assertEqual(records["pmm:behavior:goal-directed-effort-persistence"], "Behavior")
+        self.assertEqual(records["pmm:measurement:effort-persistence-performance"], "Measurement")
+        self.assertEqual(records["pmm:mechanism:situated-expectancy-value-cost-integration"], "Mechanism")
+
+    def test_randomized_behavior_effect_is_causal_but_mediation_is_statistical(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        effect = claims["pmm:claim:sdt-interventions-have-small-health-behavior-effect"]
+        mediation = claims["pmm:claim:autonomous-motivation-and-competence-statistically-mediate-health-behavior"]
+        self.assertEqual(effect["claim_type"], "causal_effect")
+        self.assertEqual(effect["identification_strategy"], "randomized_intervention")
+        self.assertEqual(mediation["claim_type"], "mediation")
+        self.assertEqual(mediation["mediation_inference"], "statistical")
+        self.assertNotIn("causal_estimand", mediation)
+
+    def test_mixed_controlled_review_is_not_promoted_to_causal_effect(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:need-support-techniques-change-motivation-measures"
+        )
+        self.assertEqual(claim["claim_type"], "association")
+        self.assertNotIn("causal_estimand", claim)
+
+    def test_complete_integration_remains_low_confidence_hypothesis(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis"
+        )
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertEqual(claim["confidence"]["level"], "low")
+
+
 class InferentialModeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:

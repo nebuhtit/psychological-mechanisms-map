@@ -142,3 +142,9 @@ datasets:
       id: personality-development
       title: Personality development and change
       description: Trait construct, repeated score, mean change, rank continuity, individual change, life event, intervention, behavior, later score, and proposed transaction kept distinct.
+  - source: data/evidence-pack-motivation-process-v0.3.yaml
+    output: build/evidence-pack-motivation-process-v0.3.json
+    family:
+      id: motivation-process
+      title: Motivation beyond reinforcement
+      description: Expectancy, value, effort cost, intrinsic, autonomous and controlled motivation, opportunity, persistence, performance, intervention effects, mediation, and proposed integration kept distinct.

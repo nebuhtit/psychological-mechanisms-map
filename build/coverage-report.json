@@ -1,30 +1,30 @@
 {
   "causal_support": {
-    "direct": 36,
-    "indirect": 40,
-    "none": 20
+    "direct": 37,
+    "indirect": 43,
+    "none": 21
   },
   "claim_types": {
-    "association": 21,
-    "causal_effect": 28,
+    "association": 23,
+    "causal_effect": 29,
     "causal_hypothesis": 1,
-    "definition": 21,
-    "mechanism_hypothesis": 24,
-    "mediation": 4,
+    "definition": 22,
+    "mechanism_hypothesis": 25,
+    "mediation": 5,
     "moderation": 2,
     "prediction": 1
   },
   "confidence_levels": {
-    "high": 9,
-    "low": 23,
-    "moderate": 68,
+    "high": 10,
+    "low": 25,
+    "moderate": 71,
     "not_applicable": 2
   },
   "epistemic_statuses": {
     "mixed": 5,
     "not_assessed": 2,
-    "proposed": 25,
-    "supported": 67,
+    "proposed": 26,
+    "supported": 72,
     "unsupported": 3
   },
   "evidence_kinds": {
@@ -32,8 +32,8 @@
     "controlled_experiment": 32,
     "cross_sectional_observational": 5,
     "longitudinal_observational": 2,
-    "meta_analysis": 17,
-    "narrative_review": 15,
+    "meta_analysis": 21,
+    "narrative_review": 16,
     "randomized_experiment": 20,
     "systematic_review": 2
   },
@@ -244,20 +244,29 @@
       "source": "data/evidence-pack-personality-development-v0.3.yaml",
       "sources": 4,
       "title": "Personality development and change"
+    },
+    {
+      "claims": 6,
+      "evidence": 5,
+      "id": "motivation-process",
+      "objects": 14,
+      "source": "data/evidence-pack-motivation-process-v0.3.yaml",
+      "sources": 5,
+      "title": "Motivation beyond reinforcement"
     }
   ],
-  "family_count": 23,
+  "family_count": 24,
   "object_types": {
-    "Behavior": 25,
-    "Construct": 44,
-    "Context": 41,
+    "Behavior": 26,
+    "Construct": 50,
+    "Context": 42,
     "Contingency": 3,
     "Event": 4,
-    "Intervention": 31,
-    "Measurement": 52,
-    "Mechanism": 26,
-    "Outcome": 20,
-    "State": 24
+    "Intervention": 32,
+    "Measurement": 54,
+    "Mechanism": 27,
+    "Outcome": 21,
+    "State": 25
   },
   "report_version": 1,
   "review_queue": [
@@ -696,18 +705,35 @@
         "proposed claim",
         "low confidence"
       ]
+    },
+    {
+      "claim_id": "pmm:claim:autonomous-motivation-and-competence-statistically-mediate-health-behavior",
+      "family_id": "motivation-process",
+      "reasons": [
+        "low confidence",
+        "limited precision",
+        "statistical, not causal, mediation"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis",
+      "family_id": "motivation-process",
+      "reasons": [
+        "proposed claim",
+        "low confidence"
+      ]
     }
   ],
   "scope": "public_families",
   "support_directions": {
     "challenges": 9,
-    "mixed": 17,
-    "supports": 70
+    "mixed": 18,
+    "supports": 74
   },
   "totals": {
-    "claims": 102,
-    "evidence": 96,
-    "objects": 270,
-    "sources": 102
+    "claims": 108,
+    "evidence": 101,
+    "objects": 284,
+    "sources": 107
   }
 }

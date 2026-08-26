@@ -871,3 +871,40 @@ applications:
     claim_ids: [pmm:claim:personality-development-requires-distinct-change-indices, pmm:claim:personality-mean-levels-change-across-life, pmm:claim:people-differ-in-personality-change, pmm:claim:interventions-associated-with-personality-score-change, pmm:claim:life-events-have-preliminary-trait-change-evidence, pmm:claim:person-environment-transaction-is-developmental-hypothesis]
     source_ids: [pmm:source:roberts-walton-viechtbauer-2006, pmm:source:haehner-2026-individual-change, pmm:source:roberts-2017-intervention-change, pmm:source:bleidorn-2018-life-events]
     provenance: *provenance
+
+  - id: pmm:application:diagnose-motivation-bottleneck-before-adding-reward
+    family_id: motivation-process
+    title:
+      en: Find the motivational bottleneck before adding pressure or reward
+      ru: Найдите узкое место мотивации до добавления давления или награды
+    practical_question:
+      en: >-
+        Is the immediate barrier value, expected success, effort cost, available skill, opportunity, social pressure, a competing goal, or the environment?
+      ru: >-
+        Что сейчас мешает: низкая ценность, ожидание неудачи, цена усилия, нехватка навыка или возможности, социальное давление, конкурирующая цель или среда?
+    action:
+      en: >-
+        Choose one safe, concrete action and outcome. Ask separately whether it matters, seems achievable, has an acceptable cost, fits the person's reasons, and is actually possible. Measure baseline initiation or persistence, change one candidate barrier, and repeat the same measurement.
+      ru: >-
+        Выберите одно безопасное конкретное действие и результат. Отдельно проверьте, важно ли это, кажется ли достижимым, приемлема ли цена, согласуется ли действие с причинами человека и реально ли оно возможно. Измерьте исходное начало или продолжение действия, измените один предполагаемый барьер и повторите измерение.
+    expected_change:
+      en: A testable improvement in initiation, persistence, quality, quantity, or chosen goal revision, together with clearer evidence about which process mattered.
+      ru: Проверяемое изменение начала, продолжительности, качества или количества действия либо обоснованный пересмотр цели и более ясные данные о важном процессе.
+    evidence_basis:
+      en: Motivation frameworks distinguish expectancy, value, cost, and regulation. Meta-analyses support bounded predictive relations and small average effects of need-supportive health interventions, but not one universal motivational mechanism.
+      ru: Теории мотивации разделяют ожидание успеха, ценность, издержки и тип регуляции. Метаанализы поддерживают ограниченные прогностические связи и небольшие средние эффекты поддерживающих программ для здоровья, но не единый универсальный механизм мотивации.
+    applicability:
+      en: Low-risk education, work design, habit support, coaching, and collaborative health behavior change with a concrete consenting participant and measurable outcome.
+      ru: Низкорисковое обучение, организация работы, поддержка привычек, коучинг и совместное изменение поведения для здоровья при согласии человека и измеримом результате.
+    not_established:
+      en: Low performance does not diagnose low motivation, and a reward, choice, autonomy-supportive phrase, or motivation score does not identify the cause or guarantee durable change.
+      ru: Низкий результат не диагностирует низкую мотивацию, а награда, выбор, поддерживающая автономию фраза или балл мотивации не выявляют причину и не гарантируют устойчивое изменение.
+    safety_note:
+      en: Do not use the map to manipulate consent, disguise coercion as motivation, ignore disability or exhaustion, blame people for structural barriers, or optimize harmful goals.
+      ru: Не используйте карту для манипуляции согласием, маскировки принуждения под мотивацию, игнорирования инвалидности или истощения, обвинения человека в структурных барьерах или оптимизации вредной цели.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [individual, educator, clinician, researcher, designer]
+    claim_ids: [pmm:claim:motivation-requires-distinct-components, pmm:claim:intrinsic-motivation-and-incentives-jointly-predict-performance, pmm:claim:sdt-interventions-have-small-health-behavior-effect, pmm:claim:autonomous-motivation-and-competence-statistically-mediate-health-behavior, pmm:claim:need-support-techniques-change-motivation-measures, pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis]
+    source_ids: [pmm:source:eccles-wigfield-2020-sevt, pmm:source:ryan-deci-2020-sdt, pmm:source:cerasoli-2014-intrinsic-incentives, pmm:source:sheeran-2020-sdt-health-rct, pmm:source:gillison-2019-need-support]
+    provenance: *provenance

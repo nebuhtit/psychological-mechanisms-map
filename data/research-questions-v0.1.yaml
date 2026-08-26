@@ -423,3 +423,21 @@ questions:
     about_ids: [pmm:mechanism:person-environment-personality-transaction, pmm:context:repeated-role-and-environment, pmm:behavior:repeated-personality-relevant-behavior, pmm:outcome:later-personality-trait-score]
     source_ids: [pmm:source:haehner-2026-individual-change, pmm:source:roberts-2017-intervention-change, pmm:source:bleidorn-2018-life-events]
     provenance: *provenance
+
+  - id: pmm:research-question:motivation-person-specific-process-selection
+    family_id: motivation-process
+    question:
+      en: For a particular person and goal, which measured change in value, expected success, effort cost, autonomy, competence, opportunity, or competing goals causes a useful and durable change in action?
+      ru: Какое измеренное изменение ценности, ожидания успеха, цены усилия, автономии, компетентности, возможности или конкурирующих целей причинно и устойчиво меняет действие у конкретного человека и для конкретной цели?
+    why_open:
+      en: Meta-analyses estimate average prediction and intervention effects, but motivational constructs overlap, behavior also depends on skill and opportunity, intervention bundles contain many components, and statistical mediation does not identify one within-person causal path.
+      ru: Метаанализы оценивают средние прогностические связи и эффекты программ, но мотивационные конструкты пересекаются, поведение зависит также от навыка и возможности, программы содержат много компонентов, а статистическая медиация не выявляет индивидуальный причинный путь.
+    what_would_help:
+      en: Preregistered intensive within-person measurement followed by safe sequential randomization of one candidate process at a time, with behavioral outcomes, competing-process models, consent, burden monitoring, and delayed follow-up.
+      ru: Пререгистрированные частые внутрииндивидуальные измерения с последующей безопасной последовательной рандомизацией по одному предполагаемому процессу, поведенческими исходами, конкурирующими моделями, согласием, контролем нагрузки и отсроченной проверкой.
+    question_kind: causal
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:situated-expectancy-value-cost-integration, pmm:construct:expected-success, pmm:construct:subjective-task-value, pmm:state:perceived-effort-cost, pmm:behavior:goal-directed-effort-persistence]
+    source_ids: [pmm:source:eccles-wigfield-2020-sevt, pmm:source:sheeran-2020-sdt-health-rct, pmm:source:gillison-2019-need-support]
+    provenance: *provenance

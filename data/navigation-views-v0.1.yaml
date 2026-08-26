@@ -285,6 +285,38 @@ sources:
     title: What's social about social learning?
     organization: Journal of Comparative Psychology
     url: https://pubmed.ncbi.nlm.nih.gov/21895355/
+  - id: source:eccles-wigfield-sevt-2020
+    title: From expectancy-value theory to situated expectancy-value theory
+    organization: Contemporary Educational Psychology
+    url: https://doi.org/10.1016/j.cedpsych.2020.101859
+  - id: source:ryan-deci-sdt-2020
+    title: Intrinsic and extrinsic motivation from a self-determination theory perspective
+    organization: Contemporary Educational Psychology
+    url: https://doi.org/10.1016/j.cedpsych.2020.101860
+  - id: source:cerasoli-intrinsic-incentives-2014
+    title: Intrinsic motivation and extrinsic incentives jointly predict performance
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/24491020/
+  - id: source:sheeran-sdt-health-2020
+    title: Self-determination theory interventions for health behavior change
+    organization: Journal of Consulting and Clinical Psychology
+    url: https://pubmed.ncbi.nlm.nih.gov/32437175/
+  - id: source:gillison-need-support-2019
+    title: Techniques to promote motivation for health behaviour change
+    organization: Health Psychology Review
+    url: https://pubmed.ncbi.nlm.nih.gov/30295176/
+  - id: source:gross-reappraisal-1998
+    title: Antecedent- and response-focused emotion regulation
+    organization: Journal of Personality and Social Psychology
+    url: https://pubmed.ncbi.nlm.nih.gov/9457784/
+  - id: source:won-hpa-feedback-1986
+    title: Delayed, integral, and proportional glucocorticoid feedback on ACTH secretion
+    organization: Metabolism
+    url: https://pubmed.ncbi.nlm.nih.gov/3005801/
+  - id: source:donzella-social-buffering-2026
+    title: Parental social buffering of adolescent cortisol responses
+    organization: Psychoneuroendocrinology
+    url: https://pubmed.ncbi.nlm.nih.gov/41412195/
 
 general_psychology:
   id: general-psychology
@@ -606,15 +638,22 @@ general_psychology:
         en: Processes that assign value, energize behavior, support goal pursuit, and update choices after outcomes.
         ru: Процессы оценки ценности, побуждения поведения, достижения целей и изменения выбора после полученных результатов.
       ontological_note:
-        en: Expected value, received reward, reward-seeking behavior, computational prediction error, and a learning mechanism are distinct PMM records.
-        ru: Ожидаемая ценность, полученная награда, поисковое поведение, вычислительная ошибка прогноза и механизм научения являются разными записями PMM.
+        en: Expected success, subjective value, effort cost, autonomous and controlled reasons, actual opportunity, persistence, received reward, prediction error, and performance are distinct PMM records.
+        ru: Ожидание успеха, субъективная ценность, цена усилия, автономные и контролируемые причины, реальная возможность, упорство, полученная награда, ошибка прогноза и результат являются разными записями PMM.
       coverage: partial
-      source_ids: [source:rdoc-definitions]
+      source_ids: [source:rdoc-definitions, source:eccles-wigfield-sevt-2020, source:ryan-deci-sdt-2020, source:cerasoli-intrinsic-incentives-2014, source:sheeran-sdt-health-2020]
       memberships:
         - {family_id: reward-learning, canonical_id: pmm:construct:reward-prediction-error, role: construct_example, expected_type: Construct}
         - {family_id: reward-learning, canonical_id: pmm:state:expected-reward-value, role: state_example, expected_type: State}
         - {family_id: reward-learning, canonical_id: pmm:behavior:cue-elicited-reward-seeking, role: behavior_example, expected_type: Behavior}
         - {family_id: reward-learning, canonical_id: pmm:mechanism:temporal-difference-value-update, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: motivation-process, canonical_id: pmm:construct:goal-directed-motivation, role: construct_example, expected_type: Construct}
+        - {family_id: motivation-process, canonical_id: pmm:construct:expected-success, role: construct_example, expected_type: Construct}
+        - {family_id: motivation-process, canonical_id: pmm:construct:subjective-task-value, role: construct_example, expected_type: Construct}
+        - {family_id: motivation-process, canonical_id: pmm:state:perceived-effort-cost, role: state_example, expected_type: State}
+        - {family_id: motivation-process, canonical_id: pmm:behavior:goal-directed-effort-persistence, role: behavior_example, expected_type: Behavior}
+        - {family_id: motivation-process, canonical_id: pmm:intervention:need-supportive-motivation-intervention, role: intervention_example, expected_type: Intervention}
+        - {family_id: motivation-process, canonical_id: pmm:mechanism:situated-expectancy-value-cost-integration, role: mechanism_example, expected_type: Mechanism}
     - id: gp:stress-coping
       parent_id: gp:emotion-motivation
       kind: topic
@@ -1060,22 +1099,31 @@ foundational_models:
       label: {en: Motivation and reinforcement, ru: Мотивация и подкрепление}
       model_kind: motivational_framework
       coverage: partial
-      plain_summary: {en: Expected value, prediction error, current needs, and consequences shape which actions are selected and repeated., ru: Ожидаемая ценность, ошибка прогноза, текущие потребности и последствия влияют на выбор и повторение действий.}
+      plain_summary: {en: Action depends not only on reward but also on whether an outcome matters, seems achievable, has acceptable costs, fits a person's reasons, and is actually possible., ru: Действие зависит не только от награды, но и от того, важен ли результат, кажется ли он достижимым, приемлема ли цена, согласуется ли он с причинами человека и возможен ли в реальности.}
       chain:
-        - {en: Need, goal, or expected outcome, ru: Потребность, цель или ожидаемый исход}
-        - {en: Select an action, ru: Выбор действия}
-        - {en: Outcome differs from expectation, ru: Исход отличается от ожидания}
-        - {en: Value or policy updates, ru: Ценность или правило выбора обновляется}
-        - {en: Future choice changes, ru: Будущий выбор меняется}
-      practical_focus: {en: Make valued outcomes and contingencies observable; change one consequence at a time and monitor behavior., ru: Сделайте ценные исходы и зависимости наблюдаемыми; меняйте по одному последствию и отслеживайте поведение.}
-      established: {en: Reward and aversive contingencies change behavior in controlled tasks., ru: Вознаграждающие и аверсивные зависимости меняют поведение в контролируемых заданиях.}
-      proposed: {en: Computational prediction errors and dopamine signals are not interchangeable explanations., ru: Вычислительные ошибки прогноза и дофаминовые сигналы не являются взаимозаменяемыми объяснениями.}
-      measurements: {en: Choice, response rate, experienced outcome, model parameters, and neural activity., ru: Выбор, частота реакции, пережитый исход, параметры модели и нейронная активность.}
-      limitation: {en: Reward is person- and context-dependent; external incentives can conflict with values or long-term outcomes., ru: Вознаграждение зависит от человека и контекста; внешние стимулы могут конфликтовать с ценностями или долгосрочными исходами.}
-      source_ids: []
+        - {en: Goal, need, or possible outcome, ru: Цель, потребность или возможный результат}
+        - {en: Expected success, value, costs, and alternatives, ru: Ожидание успеха, ценность, издержки и альтернативы}
+        - {en: Autonomous reasons, pressure, skill, and opportunity, ru: Собственные причины, давление, навык и возможность}
+        - {en: Choice, effort, persistence, or disengagement, ru: Выбор, усилие, продолжение или отказ}
+        - {en: Outcome and feedback update later choice, ru: Результат и обратная связь меняют последующий выбор}
+      practical_focus: {en: Identify whether the current bottleneck is value, expected success, cost, skill, opportunity, pressure, or a competing goal; change one candidate and measure the next action., ru: Определите, связано ли текущее узкое место с ценностью, ожиданием успеха, ценой, навыком, возможностью, давлением или конкурирующей целью; измените один фактор и измерьте следующее действие.}
+      established: {en: Intrinsic motivation and incentives predict different aspects of performance, and randomized need-supportive health interventions have small average effects on behavior., ru: Внутренняя мотивация и стимулы предсказывают разные стороны результата, а рандомизированные поддерживающие программы для здоровья дают небольшой средний эффект на поведение.}
+      proposed: {en: Complete expectancy-value-cost integration and need-support pathways remain mechanism hypotheses; prediction error, dopamine, autonomy, and reward are not interchangeable explanations., ru: Полная интеграция ожидания, ценности и цены и пути поддержки потребностей остаются гипотезами механизмов; ошибка прогноза, дофамин, автономия и награда не являются взаимозаменяемыми объяснениями.}
+      measurements: {en: Expectancy, value, regulation and need-support reports; choice, initiation, persistence, quality, quantity, experienced outcomes, model parameters, and barriers., ru: Самоотчёты об ожидании, ценности, регуляции и поддержке потребностей; выбор, начало, продолжительность, качество, количество, полученные результаты, параметры модели и барьеры.}
+      limitation: {en: Low performance does not diagnose low motivation; ability, health, fatigue, opportunity, coercion, inaccessible design, and competing goals can produce the same observation., ru: Низкий результат не диагностирует низкую мотивацию; такую же картину могут создать способности, здоровье, усталость, возможность, принуждение, недоступная среда и конкурирующие цели.}
+      source_ids: [source:eccles-wigfield-sevt-2020, source:ryan-deci-sdt-2020, source:cerasoli-intrinsic-incentives-2014, source:sheeran-sdt-health-2020, source:gillison-need-support-2019]
       mapped_memberships:
         - {family_id: reward-learning, canonical_id: pmm:construct:reward-prediction-error, role: construct_example, expected_type: Construct}
         - {family_id: reward-learning, canonical_id: pmm:mechanism:temporal-difference-value-update, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: motivation-process, canonical_id: pmm:construct:goal-directed-motivation, role: construct_example, expected_type: Construct}
+        - {family_id: motivation-process, canonical_id: pmm:construct:expected-success, role: construct_example, expected_type: Construct}
+        - {family_id: motivation-process, canonical_id: pmm:construct:subjective-task-value, role: construct_example, expected_type: Construct}
+        - {family_id: motivation-process, canonical_id: pmm:construct:autonomous-motivation, role: construct_example, expected_type: Construct}
+        - {family_id: motivation-process, canonical_id: pmm:construct:controlled-motivation, role: construct_example, expected_type: Construct}
+        - {family_id: motivation-process, canonical_id: pmm:state:perceived-effort-cost, role: state_example, expected_type: State}
+        - {family_id: motivation-process, canonical_id: pmm:behavior:goal-directed-effort-persistence, role: behavior_example, expected_type: Behavior}
+        - {family_id: motivation-process, canonical_id: pmm:intervention:need-supportive-motivation-intervention, role: intervention_example, expected_type: Intervention}
+        - {family_id: motivation-process, canonical_id: pmm:mechanism:situated-expectancy-value-cost-integration, role: mechanism_example, expected_type: Mechanism}
     - id: model:self-regulation
       label: {en: Self-regulation and behavioral control, ru: Саморегуляция и контроль поведения}
       model_kind: control_framework
@@ -1178,7 +1226,7 @@ foundational_models:
       proposed: {en: Broad defense labels and one universal coping hierarchy are not established mechanisms., ru: Широкие ярлыки защит и единая универсальная иерархия совладания не являются установленными механизмами.}
       measurements: {en: Stressor exposure, appraisal, symptoms, cortisol, autonomic activity, behavior, recovery, and functioning., ru: Воздействие стрессора, оценка, симптомы, кортизол, автономная активность, поведение, восстановление и функционирование.}
       limitation: {en: A strategy can be adaptive in one context and costly in another; symptom reduction is not the only relevant outcome., ru: Одна стратегия может быть адаптивной в одном контексте и затратной в другом; снижение симптома не является единственным важным исходом.}
-      source_ids: []
+      source_ids: [source:gross-reappraisal-1998, source:won-hpa-feedback-1986, source:donzella-social-buffering-2026]
       mapped_memberships:
         - {family_id: hpa-feedback, canonical_id: pmm:mechanism:glucocorticoid-negative-feedback, role: mechanism_example, expected_type: Mechanism}
         - {family_id: social-buffering, canonical_id: pmm:mechanism:social-co-regulation, role: mechanism_example, expected_type: Mechanism}

@@ -19806,9 +19806,1036 @@
       ],
       "title": "Personality development and change",
       "version": "0.3.4"
+    },
+    {
+      "claims": [
+        {
+          "claim_type": "definition",
+          "confidence": {
+            "level": "high",
+            "rationale": "Major contemporary motivation frameworks define these constructs separately and assign them different theoretical roles."
+          },
+          "defined_object_id": "pmm:construct:goal-directed-motivation",
+          "epistemic_status": "supported",
+          "evidence_ids": [],
+          "id": "pmm:claim:motivation-requires-distinct-components",
+          "limitations": [
+            "The distinctions do not establish one complete taxonomy or one universal causal sequence."
+          ],
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "“Motivation” is not one inner fuel gauge. A person may value an outcome but expect failure, believe success is possible but see the cost as excessive, act under pressure without ownership, or be willing but blocked by skill, health, time, or access. Measure these possibilities separately before choosing an intervention.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:bounded-goal-pursuit"
+            ],
+            "population": "Humans choosing or pursuing goals in declared contexts.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Before, during, and after a bounded action opportunity."
+          },
+          "source_ids": [
+            "pmm:source:eccles-wigfield-2020-sevt",
+            "pmm:source:ryan-deci-2020-sdt"
+          ],
+          "statement": "Motivation must distinguish expected success, subjective value, intrinsic and autonomous reasons, controlled pressure, effort cost, actual opportunity, observable persistence, and performance rather than treating them as one quantity."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The large meta-analysis covered school, work, and physical domains, but most relations are predictive rather than randomized causal contrasts and constructs and outcomes were heterogeneous."
+          },
+          "confounding_note": "Ability, prior achievement, opportunity, task selection, common-method measurement, incentives, role demands, and domain can contribute to observed prediction.",
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "positive",
+            "metric": "meta-analytic correlation corrected for artifacts",
+            "notes": "Intrinsic motivation predicted performance at approximately rho = .21 to .45 across analyses; incentive and outcome moderators changed the pattern.",
+            "value_status": "reported"
+          },
+          "evidence_ids": [
+            "pmm:evidence:cerasoli-2014-performance-meta"
+          ],
+          "exposure_id": "pmm:construct:intrinsic-motivation",
+          "id": "pmm:claim:intrinsic-motivation-and-incentives-jointly-predict-performance",
+          "limitations": [
+            "The result does not show that rewards always help, always undermine intrinsic motivation, or cause durable engagement."
+          ],
+          "outcome_id": "pmm:outcome:goal-relevant-behavior",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Across many studies, interest in the activity and external incentives both predicted performance, but not in the same way: intrinsic motivation was more informative for quality, while incentives were more informative for quantity. These are predictive averages, not proof that adding a reward will help this person or that rewards always destroy interest.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Performance quality, performance quantity, and direct versus indirect incentive salience are distinguished."
+            ],
+            "context_ids": [
+              "pmm:context:bounded-goal-pursuit"
+            ],
+            "population": "212,468 participants represented in 183 school, work, and physical-domain studies.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Source-specific motivation assessment, incentive condition, and performance period."
+          },
+          "statement": "Across 183 studies, intrinsic motivation and extrinsic incentives both predicted performance, with intrinsic motivation more predictive of performance quality and incentives more predictive of quantity."
+        },
+        {
+          "causal_estimand": "Average difference in prespecified health behavior between assignment to an SDT-informed intervention and its declared control condition.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Randomized comparisons support an average effect, but the pooled interventions and behaviors were heterogeneous and publication and small-sample bias reduced the corrected estimate."
+          },
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "positive",
+            "metric": "sample-weighted standardized mean difference",
+            "notes": "Bias-corrected effects remained positive but smaller, at least d = .15 in reported corrections.",
+            "value": 0.23,
+            "value_status": "reported"
+          },
+          "evidence_ids": [
+            "pmm:evidence:sheeran-2020-sdt-rct-meta"
+          ],
+          "exposure_id": "pmm:intervention:need-supportive-motivation-intervention",
+          "id": "pmm:claim:sdt-interventions-have-small-health-behavior-effect",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "The average effect does not establish effectiveness for every behavior, component, person, or context."
+          ],
+          "outcome_id": "pmm:outcome:goal-relevant-behavior",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In randomized health-behavior trials, programs designed to support self-directed motivation produced a small average improvement. The useful conclusion is not “give more freedom,” but to test a bounded combination of meaningful rationale, feasible choice, competence support, and respectful social support, then measure the actual target behavior.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Health behavior, intervention components, comparator, delivery, population, and follow-up must match a represented or sufficiently similar context."
+            ],
+            "context_ids": [
+              "pmm:context:bounded-goal-pursuit"
+            ],
+            "population": "Participants in randomized health-behavior intervention trials represented in 56 articles and 65 independent tests.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Postintervention health behavior and source-specific follow-up."
+          },
+          "statement": "Across 65 independent randomized tests, Self-Determination-Theory-informed interventions produced a small average improvement in health behavior relative to control conditions.",
+          "temporal_ordering": "Intervention assignment preceded motivational assessments and later behavior."
+        },
+        {
+          "claim_type": "mediation",
+          "confidence": {
+            "level": "low",
+            "rationale": "The source tested theory-specified mediation across randomized interventions, but aggregate mediation and heterogeneous measurement do not identify a within-person causal pathway."
+          },
+          "epistemic_status": "supported",
+          "evidence_ids": [
+            "pmm:evidence:sheeran-2020-sdt-mediation"
+          ],
+          "exposure_id": "pmm:intervention:need-supportive-motivation-intervention",
+          "id": "pmm:claim:autonomous-motivation-and-competence-statistically-mediate-health-behavior",
+          "indirect_effect": {
+            "direction": "positive",
+            "metric": "meta-analytic structural equation mediation",
+            "notes": "Autonomous motivation and perceived competence statistically mediated intervention effects in the reported MASEM.",
+            "value_status": "qualitative_only"
+          },
+          "limitations": [
+            "Statistical mediation does not prove that changing autonomous motivation caused behavior change in a particular person."
+          ],
+          "mediation_inference": "statistical",
+          "mediator_id": "pmm:construct:autonomous-motivation",
+          "outcome_id": "pmm:outcome:goal-relevant-behavior",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Across the intervention literature, changes in autonomous motivation and perceived competence statistically accounted for part of later behavior change. They are therefore useful candidate processes to measure. The analysis does not prove that either process caused change within a particular person or that other pathways were absent.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:bounded-goal-pursuit"
+            ],
+            "population": "Participants represented in randomized SDT health-behavior intervention trials.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Intervention assignment, motivational assessment, and later health behavior as represented in the synthesis."
+          },
+          "statement": "Meta-analytic structural equation modeling linked SDT interventions to health behavior partly through measured autonomous motivation and perceived competence.",
+          "temporal_ordering": "Randomization preceded outcomes, but mediator timing and mediator-outcome confounding were not uniformly established across trials."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Most included studies were randomized or cluster randomized and effects were positive, while intervention bundles, populations, risk of bias, and meta-regression uncertainty limit component-level claims."
+          },
+          "confounding_note": "The pooled set mixed randomized, cluster-randomized, and nonrandomized controlled designs, and intervention bundles and implementation quality differed.",
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "positive",
+            "metric": "Hedges g by motivational outcome",
+            "notes": "Reported pooled effects included autonomy support g = .84, autonomy g = .81, competence g = .63, relatedness g = .28, and motivation g = .41.",
+            "value_status": "reported"
+          },
+          "evidence_ids": [
+            "pmm:evidence:gillison-2019-need-support-meta"
+          ],
+          "exposure_id": "pmm:intervention:need-supportive-motivation-intervention",
+          "id": "pmm:claim:need-support-techniques-change-motivation-measures",
+          "limitations": [
+            "The synthesis did not show that one isolated technique reliably produces all changes or that self-report change guarantees sustained behavior."
+          ],
+          "outcome_id": "pmm:measurement:motivation-regulation-self-report",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Controlled health interventions improved reports of autonomy support, autonomy, competence, relatedness, and motivation on average. Most programs combined several techniques, so the result supports testing a need-supportive environment, not prescribing one magic phrase or assuming that a better questionnaire score guarantees lasting behavior.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:bounded-goal-pursuit"
+            ],
+            "population": "Children and adults represented in 74 controlled health-intervention studies.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Pre-post motivational assessment during health interventions."
+          },
+          "statement": "Across 74 controlled health interventions, need-supportive programs improved perceived autonomy support, autonomy, competence, relatedness, and motivation measures on average, with heterogeneous effects and limited evidence for any single technique."
+        },
+        {
+          "claim_type": "mechanism_hypothesis",
+          "confidence": {
+            "level": "low",
+            "rationale": "Expectancy-value theories organize substantial observational and intervention evidence, but the complete within-person integration and computation are not directly identified as one universal mechanism."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:expectancy-value-integration-review"
+          ],
+          "exposure_id": "pmm:construct:expected-success",
+          "falsifiable_boundary": "The account is weakened when independently changing expectancy, value, or cost fails to alter subsequent choices as predicted and when competing process models better predict held-out within-person behavior.",
+          "id": "pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis",
+          "limitations": [
+            "The hypothesis must not be used to explain any action after the fact without prospective measurements and competing models."
+          ],
+          "mechanism_id": "pmm:mechanism:situated-expectancy-value-cost-integration",
+          "outcome_id": "pmm:behavior:goal-directed-effort-persistence",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A useful hypothesis is that action becomes more likely when a result matters, success appears possible, costs are tolerable, and the option competes well with alternatives. The complete calculation is not directly observed. In practice, change one measured candidate — value, expected success, cost, access, skill, or alternative — and check the next action.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Expectancy, value, cost, opportunity, skill, action, and outcome are measured separately."
+            ],
+            "context_ids": [
+              "pmm:context:bounded-goal-pursuit"
+            ],
+            "population": "Humans choosing or pursuing goals with measurable alternatives, expectancies, values, costs, actions, and outcomes.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Appraisal before choice, followed by effort, outcome, and possible updating."
+          },
+          "statement": "Goal selection and persistence may arise from a situated integration of expected success, subjective value, effort and opportunity costs, alternatives, social context, and prior experience.",
+          "temporal_ordering": "Candidate expectancy, value, and cost appraisals precede the measured choice or persistence period."
+        }
+      ],
+      "dataset_id": "pmm:dataset:motivation-process-evidence-v0-3",
+      "description": "Expectancy, value, effort cost, intrinsic, autonomous and controlled motivation, opportunity, persistence, performance, intervention effects, mediation, and proposed integration kept distinct.",
+      "evidence": [
+        {
+          "causal_support": "none",
+          "claim_ids": [
+            "pmm:claim:intrinsic-motivation-and-incentives-jointly-predict-performance"
+          ],
+          "design": "Random-effects meta-analysis of intrinsic motivation, extrinsic incentives, and performance across school, work, and physical domains.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "corrected correlation and meta-analytic regression",
+            "notes": "Intrinsic motivation predicted performance at rho = .21 to .45; unique prediction differed for quality versus quantity and incentive salience.",
+            "value_status": "reported"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract reporting k = 183, N = 212,468, corrected correlations, performance-quality and quantity moderators, and incentive salience.",
+          "id": "pmm:evidence:cerasoli-2014-performance-meta",
+          "inference_support": "association",
+          "limitations": [
+            "Prediction across heterogeneous studies does not establish a universal causal effect of changing motivation or incentives."
+          ],
+          "population": "212,468 participants represented in 183 studies.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:cerasoli-2014-intrinsic-incentives",
+          "species": [
+            "human"
+          ],
+          "summary": "Intrinsic motivation and incentives jointly predicted performance, with different relevance for quality and quantity.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:sdt-interventions-have-small-health-behavior-effect"
+          ],
+          "design": "Random-effects meta-analysis of randomized SDT-informed health-behavior intervention trials.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "sample-weighted standardized mean difference",
+            "notes": "Small average behavior effect; bias-corrected effects remained positive but smaller.",
+            "value": 0.23,
+            "value_status": "reported"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract reporting 56 articles, 65 independent randomized tests, d+ = .23, behavior-specific effects, bias analyses, and corrected effects.",
+          "id": "pmm:evidence:sheeran-2020-sdt-rct-meta",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Publication bias, small-study bias, intervention heterogeneity, and behavior-specific effects limit generalization."
+          ],
+          "population": "Participants represented across 65 independent randomized tests.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:sheeran-2020-sdt-health-rct",
+          "species": [
+            "human"
+          ],
+          "summary": "SDT-informed interventions produced a small average improvement in health behavior across randomized tests.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:autonomous-motivation-and-competence-statistically-mediate-health-behavior"
+          ],
+          "design": "Meta-analytic structural equation modeling nested within a synthesis of randomized SDT health-behavior interventions.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "partially_indirect",
+            "precision": "limited",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "meta-analytic statistical indirect pathways",
+            "notes": "Autonomous motivation and perceived competence were reported as mediators.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract description of meta-analytic structural equation modeling of autonomous motivation and perceived competence as mediators.",
+          "id": "pmm:evidence:sheeran-2020-sdt-mediation",
+          "inference_support": "mediation",
+          "limitations": [
+            "Aggregate path models do not establish within-person causal mediation or eliminate mediator-outcome confounding."
+          ],
+          "population": "Participants represented in eligible randomized intervention trials with mediation variables.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:sheeran-2020-sdt-health-rct",
+          "species": [
+            "human"
+          ],
+          "summary": "Autonomous motivation and perceived competence statistically accounted for part of the intervention-behavior relation.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:need-support-techniques-change-motivation-measures"
+          ],
+          "design": "Systematic review and random-effects meta-analysis of controlled SDT-informed health interventions reporting pre-post psychosocial mediators.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "Hedges g for need-support and motivation outcomes",
+            "notes": "Positive pooled changes in autonomy support, autonomy, competence, relatedness, and motivation.",
+            "value_status": "reported"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract reporting 74 controlled studies, 80 percent randomized or cluster randomized, outcome-specific Hedges g estimates, and meta-regression of techniques.",
+          "id": "pmm:evidence:gillison-2019-need-support-meta",
+          "inference_support": "association",
+          "limitations": [
+            "Mixed controlled designs and co-occurring techniques prevent strong causal attribution to a single strategy."
+          ],
+          "population": "Children and adults represented in 74 health-intervention studies.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:gillison-2019-need-support",
+          "species": [
+            "human"
+          ],
+          "summary": "Need-supportive intervention bundles improved several motivation-related self-report measures on average.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis"
+          ],
+          "design": "Integrative theoretical review of situated expectancy-value research across developmental, social-cognitive, and sociocultural levels.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "indirect",
+            "precision": "not_reported",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "Review sections defining expectancies, task-value components and cost, contextual influences, choices, persistence, and the warning that the model is not static or monolithic.",
+          "id": "pmm:evidence:expectancy-value-integration-review",
+          "inference_support": "mechanism",
+          "limitations": [
+            "A theoretical synthesis organizes evidence but does not identify the full mechanism in one person."
+          ],
+          "population": "Primarily children, adolescents, and adults represented in achievement-motivation research.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:eccles-wigfield-2020-sevt",
+          "species": [
+            "human"
+          ],
+          "summary": "Expectancies, values, costs, choices, and context form a useful process framework, but not one directly observed universal computation.",
+          "support_direction": "mixed"
+        }
+      ],
+      "id": "motivation-process",
+      "objects": [
+        {
+          "boundary_notes": [
+            "Motivation is not one amount, a stable moral quality, observed performance, pleasure, reward, intention, or willpower.",
+            "Similar behavior can arise from different values, pressures, habits, needs, expectancies, opportunities, or constraints."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "Processes that energize, select, direct, and sustain action toward or away from anticipated outcomes in a particular person and context.",
+          "id": "pmm:construct:goal-directed-motivation",
+          "label": "Goal-directed motivation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "Expected success is not objective ability, actual opportunity, certainty, or guaranteed control over the outcome."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "A person's context-specific expectation that a contemplated action can be performed and can contribute to the intended outcome.",
+          "id": "pmm:construct:expected-success",
+          "label": "Expected success or efficacy",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "Value is person-, goal-, time-, and context-specific and is not equivalent to external reward magnitude."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "Context-sensitive importance, usefulness, interest, identity relevance, or anticipated benefit assigned to an activity or outcome, considered alongside its costs.",
+          "id": "pmm:construct:subjective-task-value",
+          "label": "Subjective task value",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "Intrinsic motivation is narrower than autonomous motivation and does not make an activity beneficial, feasible, or morally preferable."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "accepted",
+          "definition": "Motivation to perform an activity for its inherent interest or enjoyment rather than solely for a separable consequence.",
+          "id": "pmm:construct:intrinsic-motivation",
+          "label": "Intrinsic motivation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "Autonomous motivation does not mean independence from other people, unlimited choice, or absence of structure."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "Motivation experienced with a sense of volition and ownership, including intrinsic motivation and well-internalized extrinsic reasons.",
+          "id": "pmm:construct:autonomous-motivation",
+          "label": "Autonomous motivation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "Controlled motivation can produce behavior and is not identical to no motivation; its effects depend on task, contingency, duration, and outcome."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "Motivation organized primarily around external demands, rewards, punishments, approval, shame, or internal pressure.",
+          "id": "pmm:construct:controlled-motivation",
+          "label": "Controlled motivation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "context_kind": "composite",
+          "curation_status": "accepted",
+          "definition": "A declared setting in which a person can choose, initiate, persist in, modify, or stop an action in relation to a specified goal and available alternatives.",
+          "dimensions": {
+            "alternatives": "available actions and nonaction",
+            "consequences": "expected and experienced benefits, costs, and social responses",
+            "goal": "prespecified person-relevant or task-defined outcome",
+            "opportunity": "actual time, resources, skills, and access"
+          },
+          "id": "pmm:context:bounded-goal-pursuit",
+          "label": "Bounded goal-pursuit context",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Educational, work, laboratory, and health-behavior contexts represented in the included reviews.",
+          "type": "Context"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "Perceived cost is not laziness and may reflect real fatigue, risk, pain, competing obligations, inaccessible design, or forgone alternatives."
+          ],
+          "curation_status": "provisional",
+          "definition": "Time-varying anticipated or experienced burden of allocating physical, cognitive, emotional, social, or temporal resources to an action rather than alternatives.",
+          "id": "pmm:state:perceived-effort-cost",
+          "label": "Perceived effort and opportunity cost",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "motivational",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "response_pattern",
+          "curation_status": "accepted",
+          "definition": "Observable allocation of action, time, repetitions, or task engagement toward a declared goal across one or more opportunities.",
+          "function_note": "Low persistence can reflect low value or expectancy, high cost, competing goals, insufficient skill, environmental barriers, fatigue, or adaptive disengagement.",
+          "id": "pmm:behavior:goal-directed-effort-persistence",
+          "label": "Goal-directed effort and persistence",
+          "observability": "direct",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "response_topography": "Source-specific task choice, initiation, time on task, repetition, persistence, or disengagement.",
+          "type": "Behavior"
+        },
+        {
+          "boundary_notes": [
+            "A self-report score is not direct observation of effort, value integration, need satisfaction, or a unique causal mechanism."
+          ],
+          "curation_status": "accepted",
+          "definition": "A declared scale or item set estimating intrinsic, autonomous, controlled, amotivated, expectancy, value, competence, or need-support constructs.",
+          "id": "pmm:measurement:motivation-regulation-self-report",
+          "label": "Motivation and regulation self-report",
+          "measurement_kind": "psychometric_scale",
+          "method": "Report construct, instrument, items, timeframe, language, scoring, reliability, respondent, and context.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:construct:goal-directed-motivation",
+            "pmm:construct:expected-success",
+            "pmm:construct:subjective-task-value",
+            "pmm:construct:intrinsic-motivation",
+            "pmm:construct:autonomous-motivation",
+            "pmm:construct:controlled-motivation"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "self_report"
+        },
+        {
+          "boundary_notes": [
+            "Performance combines motivation with ability, knowledge, strategy, health, opportunity, and measurement conditions."
+          ],
+          "curation_status": "accepted",
+          "definition": "Protocol-defined record of task choice, initiation, time, repetitions, disengagement, quality, quantity, or goal attainment.",
+          "id": "pmm:measurement:effort-persistence-performance",
+          "label": "Effort, persistence, and performance measurement",
+          "measurement_kind": "behavioral_task",
+          "method": "Declare task, opportunities, alternatives, time window, quality and quantity criteria, incentives, barriers, and missingness.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:behavior:goal-directed-effort-persistence"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "behavior"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "A structured intervention intended to support volition, competence, or relatedness through combinations of meaningful rationale, noncontrolling language, choice within boundaries, skill support, feedback, and social connection.",
+          "delivery": "Source-specific health behavior intervention informed by Self-Determination Theory and compared with a declared control condition.",
+          "id": "pmm:intervention:need-supportive-motivation-intervention",
+          "intended_direction": "increase",
+          "intervention_kind": "behavioral",
+          "label": "Need-supportive motivation intervention",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:construct:autonomous-motivation",
+            "pmm:construct:expected-success",
+            "pmm:behavior:goal-directed-effort-persistence"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "boundary_notes": [
+            "More behavior is not automatically better; the goal, consent, safety, quality, sustainability, and competing outcomes must be declared."
+          ],
+          "curation_status": "accepted",
+          "definition": "Prespecified behavioral or performance result occurring after the motivational assessment or intervention.",
+          "id": "pmm:outcome:goal-relevant-behavior",
+          "label": "Goal-relevant behavior or performance",
+          "ontological_level": "type",
+          "outcome_kind": "performance",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Outcome",
+          "valence": "not_applicable"
+        },
+        {
+          "boundary_notes": [
+            "A multiplication metaphor or path diagram is not direct evidence that one universal computation caused a person's action."
+          ],
+          "curation_status": "provisional",
+          "definition": "Proposed process in which expected success, subjective value, effort and opportunity costs, alternatives, social context, and prior experience jointly influence action selection and persistence.",
+          "id": "pmm:mechanism:situated-expectancy-value-cost-integration",
+          "label": "Situated expectancy-value-cost integration",
+          "mechanism_kind": "cognitive",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "realization_conditions": [
+            "Expectancy, value, cost, alternatives, opportunity, action, and result are measured separately in the same context.",
+            "Candidate inputs precede the relevant choice or persistence period.",
+            "Competing habit, affective, social, reinforcement-learning, skill, and barrier explanations remain testable."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:construct:expected-success",
+              "role": "expected attainability"
+            },
+            {
+              "object_id": "pmm:construct:subjective-task-value",
+              "role": "valued outcome"
+            },
+            {
+              "object_id": "pmm:state:perceived-effort-cost",
+              "role": "anticipated cost"
+            },
+            {
+              "object_id": "pmm:behavior:goal-directed-effort-persistence",
+              "role": "selected action"
+            },
+            {
+              "object_id": "pmm:outcome:goal-relevant-behavior",
+              "role": "observed result"
+            }
+          ],
+          "type": "Mechanism"
+        }
+      ],
+      "practical_implications": [
+        {
+          "action": {
+            "en": "Choose one safe, concrete action and outcome. Ask separately whether it matters, seems achievable, has an acceptable cost, fits the person's reasons, and is actually possible. Measure baseline initiation or persistence, change one candidate barrier, and repeat the same measurement.",
+            "ru": "Выберите одно безопасное конкретное действие и результат. Отдельно проверьте, важно ли это, кажется ли достижимым, приемлема ли цена, согласуется ли действие с причинами человека и реально ли оно возможно. Измерьте исходное начало или продолжение действия, измените один предполагаемый барьер и повторите измерение."
+          },
+          "actionability": "interpretation_only",
+          "applicability": {
+            "en": "Low-risk education, work design, habit support, coaching, and collaborative health behavior change with a concrete consenting participant and measurable outcome.",
+            "ru": "Низкорисковое обучение, организация работы, поддержка привычек, коучинг и совместное изменение поведения для здоровья при согласии человека и измеримом результате."
+          },
+          "audience": [
+            "individual",
+            "educator",
+            "clinician",
+            "researcher",
+            "designer"
+          ],
+          "claim_ids": [
+            "pmm:claim:motivation-requires-distinct-components",
+            "pmm:claim:intrinsic-motivation-and-incentives-jointly-predict-performance",
+            "pmm:claim:sdt-interventions-have-small-health-behavior-effect",
+            "pmm:claim:autonomous-motivation-and-competence-statistically-mediate-health-behavior",
+            "pmm:claim:need-support-techniques-change-motivation-measures",
+            "pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis"
+          ],
+          "confidence": "moderate",
+          "evidence_basis": {
+            "en": "Motivation frameworks distinguish expectancy, value, cost, and regulation. Meta-analyses support bounded predictive relations and small average effects of need-supportive health interventions, but not one universal motivational mechanism.",
+            "ru": "Теории мотивации разделяют ожидание успеха, ценность, издержки и тип регуляции. Метаанализы поддерживают ограниченные прогностические связи и небольшие средние эффекты поддерживающих программ для здоровья, но не единый универсальный механизм мотивации."
+          },
+          "expected_change": {
+            "en": "A testable improvement in initiation, persistence, quality, quantity, or chosen goal revision, together with clearer evidence about which process mattered.",
+            "ru": "Проверяемое изменение начала, продолжительности, качества или количества действия либо обоснованный пересмотр цели и более ясные данные о важном процессе."
+          },
+          "family_id": "motivation-process",
+          "id": "pmm:application:diagnose-motivation-bottleneck-before-adding-reward",
+          "not_established": {
+            "en": "Low performance does not diagnose low motivation, and a reward, choice, autonomy-supportive phrase, or motivation score does not identify the cause or guarantee durable change.",
+            "ru": "Низкий результат не диагностирует низкую мотивацию, а награда, выбор, поддерживающая автономию фраза или балл мотивации не выявляют причину и не гарантируют устойчивое изменение."
+          },
+          "practical_question": {
+            "en": "Is the immediate barrier value, expected success, effort cost, available skill, opportunity, social pressure, a competing goal, or the environment?",
+            "ru": "Что сейчас мешает: низкая ценность, ожидание неудачи, цена усилия, нехватка навыка или возможности, социальное давление, конкурирующая цель или среда?"
+          },
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "safety_note": {
+            "en": "Do not use the map to manipulate consent, disguise coercion as motivation, ignore disability or exhaustion, blame people for structural barriers, or optimize harmful goals.",
+            "ru": "Не используйте карту для манипуляции согласием, маскировки принуждения под мотивацию, игнорирования инвалидности или истощения, обвинения человека в структурных барьерах или оптимизации вредной цели."
+          },
+          "source_ids": [
+            "pmm:source:eccles-wigfield-2020-sevt",
+            "pmm:source:ryan-deci-2020-sdt",
+            "pmm:source:cerasoli-2014-intrinsic-incentives",
+            "pmm:source:sheeran-2020-sdt-health-rct",
+            "pmm:source:gillison-2019-need-support"
+          ],
+          "title": {
+            "en": "Find the motivational bottleneck before adding pressure or reward",
+            "ru": "Найдите узкое место мотивации до добавления давления или награды"
+          }
+        }
+      ],
+      "relations": [
+        {
+          "id": "pmm:relation:motivation-measured-by-regulation-report",
+          "object_id": "pmm:measurement:motivation-regulation-self-report",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:construct:goal-directed-motivation"
+        },
+        {
+          "id": "pmm:relation:effort-measured-by-behavior-record",
+          "object_id": "pmm:measurement:effort-persistence-performance",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:behavior:goal-directed-effort-persistence"
+        },
+        {
+          "id": "pmm:relation:integration-has-expectancy",
+          "object_id": "pmm:construct:expected-success",
+          "predicate": "has_participant",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:mechanism:situated-expectancy-value-cost-integration"
+        },
+        {
+          "id": "pmm:relation:integration-has-value",
+          "object_id": "pmm:construct:subjective-task-value",
+          "predicate": "has_participant",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:mechanism:situated-expectancy-value-cost-integration"
+        },
+        {
+          "id": "pmm:relation:integration-has-effort-cost",
+          "object_id": "pmm:state:perceived-effort-cost",
+          "predicate": "has_participant",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:mechanism:situated-expectancy-value-cost-integration"
+        }
+      ],
+      "research_questions": [
+        {
+          "about_ids": [
+            "pmm:mechanism:situated-expectancy-value-cost-integration",
+            "pmm:construct:expected-success",
+            "pmm:construct:subjective-task-value",
+            "pmm:state:perceived-effort-cost",
+            "pmm:behavior:goal-directed-effort-persistence"
+          ],
+          "display_prominence": "peripheral",
+          "family_id": "motivation-process",
+          "id": "pmm:research-question:motivation-person-specific-process-selection",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "question": {
+            "en": "For a particular person and goal, which measured change in value, expected success, effort cost, autonomy, competence, opportunity, or competing goals causes a useful and durable change in action?",
+            "ru": "Какое измеренное изменение ценности, ожидания успеха, цены усилия, автономии, компетентности, возможности или конкурирующих целей причинно и устойчиво меняет действие у конкретного человека и для конкретной цели?"
+          },
+          "question_kind": "causal",
+          "source_ids": [
+            "pmm:source:eccles-wigfield-2020-sevt",
+            "pmm:source:sheeran-2020-sdt-health-rct",
+            "pmm:source:gillison-2019-need-support"
+          ],
+          "status": "open",
+          "what_would_help": {
+            "en": "Preregistered intensive within-person measurement followed by safe sequential randomization of one candidate process at a time, with behavioral outcomes, competing-process models, consent, burden monitoring, and delayed follow-up.",
+            "ru": "Пререгистрированные частые внутрииндивидуальные измерения с последующей безопасной последовательной рандомизацией по одному предполагаемому процессу, поведенческими исходами, конкурирующими моделями, согласием, контролем нагрузки и отсроченной проверкой."
+          },
+          "why_open": {
+            "en": "Meta-analyses estimate average prediction and intervention effects, but motivational constructs overlap, behavior also depends on skill and opportunity, intervention bundles contain many components, and statistical mediation does not identify one within-person causal path.",
+            "ru": "Метаанализы оценивают средние прогностические связи и эффекты программ, но мотивационные конструкты пересекаются, поведение зависит также от навыка и возможности, программы содержат много компонентов, а статистическая медиация не выявляет индивидуальный причинный путь."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Contemporary theory review used to separate expectancy, value, cost, context, choice, and persistence without treating the diagram as a proven static mechanism.",
+          "authors": [
+            "Jacquelynne S. Eccles",
+            "Allan Wigfield"
+          ],
+          "doi": "10.1016/j.cedpsych.2020.101859",
+          "id": "pmm:source:eccles-wigfield-2020-sevt",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "From expectancy-value theory to situated expectancy-value theory — a developmental, social cognitive, and sociocultural perspective on motivation",
+          "url": "https://doi.org/10.1016/j.cedpsych.2020.101859",
+          "year": 2020
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Contemporary SDT review used for construct definitions and theory boundaries, not as causal evidence for every proposed need pathway.",
+          "authors": [
+            "Richard M. Ryan",
+            "Edward L. Deci"
+          ],
+          "doi": "10.1016/j.cedpsych.2020.101860",
+          "id": "pmm:source:ryan-deci-2020-sdt",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Intrinsic and extrinsic motivation from a self-determination theory perspective — definitions, theory, practices, and future directions",
+          "url": "https://doi.org/10.1016/j.cedpsych.2020.101860",
+          "year": 2020
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Large cross-domain meta-analysis used for bounded predictive relations among intrinsic motivation, incentives, and performance.",
+          "authors": [
+            "Christopher P. Cerasoli",
+            "Jessica M. Nicklin",
+            "Michael T. Ford"
+          ],
+          "doi": "10.1037/a0035661",
+          "id": "pmm:source:cerasoli-2014-intrinsic-incentives",
+          "pmid": "24491020",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Intrinsic motivation and extrinsic incentives jointly predict performance — a 40-year meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24491020/",
+          "year": 2014
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Randomized-trial meta-analysis used to distinguish intervention effects from statistical mediation and complete mechanism identification.",
+          "authors": [
+            "Paschal Sheeran",
+            "Charles E. Wright",
+            "Aya Avishai",
+            "Megan E. Villegas",
+            "Jan Willem Lindemans",
+            "William M. P. Klein",
+            "Alexander J. Rothman",
+            "Eleanor Miles",
+            "Nikos Ntoumanis"
+          ],
+          "doi": "10.1037/ccp0000501",
+          "id": "pmm:source:sheeran-2020-sdt-health-rct",
+          "pmid": "32437175",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Self-determination theory interventions for health behavior change — meta-analysis and meta-analytic structural equation modeling of randomized controlled trials",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32437175/",
+          "year": 2020
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Controlled-intervention meta-analysis used for motivation and need-support outcomes while preserving bundle and component uncertainty.",
+          "authors": [
+            "Fiona Gillison",
+            "Peter Rouse",
+            "Martyn Standage",
+            "Simon J. Sebire",
+            "Richard M. Ryan"
+          ],
+          "doi": "10.1080/17437199.2018.1534071",
+          "id": "pmm:source:gillison-2019-need-support",
+          "pmid": "30295176",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "A meta-analysis of techniques to promote motivation for health behaviour change from a self-determination theory perspective",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30295176/",
+          "year": 2019
+        }
+      ],
+      "title": "Motivation beyond reinforcement",
+      "version": "0.3.4"
     }
   ],
-  "interface_version": "0.20.0",
+  "interface_version": "0.21.0",
   "mechanism_index": [
     {
       "claim_ids": [
@@ -20106,6 +21133,26 @@
       "label": "Strategic expectancy or post-lexical matching",
       "mechanism_kind": "cognitive",
       "source_count": 2
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:expectancy-value-cost-integration-is-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which expected success, subjective value, effort and opportunity costs, alternatives, social context, and prior experience jointly influence action selection and persistence.",
+      "evidence_count": 1,
+      "family_id": "motivation-process",
+      "family_title": "Motivation beyond reinforcement",
+      "id": "pmm:mechanism:situated-expectancy-value-cost-integration",
+      "label": "Situated expectancy-value-cost integration",
+      "mechanism_kind": "cognitive",
+      "source_count": 1
     },
     {
       "claim_ids": [
@@ -20875,33 +21922,50 @@
         {
           "chain": [
             {
-              "en": "Need",
-              "goal": null,
-              "or expected outcome": null,
-              "ru": "Потребность",
-              "цель или ожидаемый исход": null
+              "en": "Goal",
+              "need": null,
+              "or possible outcome": null,
+              "ru": "Цель",
+              "потребность или возможный результат": null
             },
             {
-              "en": "Select an action",
-              "ru": "Выбор действия"
+              "and alternatives": null,
+              "costs": null,
+              "en": "Expected success",
+              "ru": "Ожидание успеха",
+              "value": null,
+              "издержки и альтернативы": null,
+              "ценность": null
             },
             {
-              "en": "Outcome differs from expectation",
-              "ru": "Исход отличается от ожидания"
+              "and opportunity": null,
+              "en": "Autonomous reasons",
+              "pressure": null,
+              "ru": "Собственные причины",
+              "skill": null,
+              "давление": null,
+              "навык и возможность": null
             },
             {
-              "en": "Value or policy updates",
-              "ru": "Ценность или правило выбора обновляется"
+              "effort": null,
+              "en": "Choice",
+              "or disengagement": null,
+              "persistence": null,
+              "ru": "Выбор",
+              "продолжение или отказ": null,
+              "усилие": null
             },
             {
-              "en": "Future choice changes",
-              "ru": "Будущий выбор меняется"
+              "en": "Outcome and feedback update later choice",
+              "ru": "Результат и обратная связь меняют последующий выбор"
             }
           ],
           "coverage": "partial",
           "established": {
-            "en": "Reward and aversive contingencies change behavior in controlled tasks.",
-            "ru": "Вознаграждающие и аверсивные зависимости меняют поведение в контролируемых заданиях."
+            "and randomized need-supportive health interventions have small average effects on behavior.": null,
+            "en": "Intrinsic motivation and incentives predict different aspects of performance",
+            "ru": "Внутренняя мотивация и стимулы предсказывают разные стороны результата",
+            "а рандомизированные поддерживающие программы для здоровья дают небольшой средний эффект на поведение.": null
           },
           "id": "model:motivation-reinforcement",
           "label": {
@@ -20909,8 +21973,19 @@
             "ru": "Мотивация и подкрепление"
           },
           "limitation": {
-            "en": "Reward is person- and context-dependent; external incentives can conflict with values or long-term outcomes.",
-            "ru": "Вознаграждение зависит от человека и контекста; внешние стимулы могут конфликтовать с ценностями или долгосрочными исходами."
+            "and competing goals can produce the same observation.": null,
+            "coercion": null,
+            "en": "Low performance does not diagnose low motivation; ability",
+            "fatigue": null,
+            "health": null,
+            "inaccessible design": null,
+            "opportunity": null,
+            "ru": "Низкий результат не диагностирует низкую мотивацию; такую же картину могут создать способности",
+            "возможность": null,
+            "здоровье": null,
+            "недоступная среда и конкурирующие цели.": null,
+            "принуждение": null,
+            "усталость": null
           },
           "mapped_memberships": [
             {
@@ -20924,38 +21999,130 @@
               "expected_type": "Mechanism",
               "family_id": "reward-learning",
               "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:construct:goal-directed-motivation",
+              "expected_type": "Construct",
+              "family_id": "motivation-process",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:construct:expected-success",
+              "expected_type": "Construct",
+              "family_id": "motivation-process",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:construct:subjective-task-value",
+              "expected_type": "Construct",
+              "family_id": "motivation-process",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:construct:autonomous-motivation",
+              "expected_type": "Construct",
+              "family_id": "motivation-process",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:construct:controlled-motivation",
+              "expected_type": "Construct",
+              "family_id": "motivation-process",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:state:perceived-effort-cost",
+              "expected_type": "State",
+              "family_id": "motivation-process",
+              "role": "state_example"
+            },
+            {
+              "canonical_id": "pmm:behavior:goal-directed-effort-persistence",
+              "expected_type": "Behavior",
+              "family_id": "motivation-process",
+              "role": "behavior_example"
+            },
+            {
+              "canonical_id": "pmm:intervention:need-supportive-motivation-intervention",
+              "expected_type": "Intervention",
+              "family_id": "motivation-process",
+              "role": "intervention_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:situated-expectancy-value-cost-integration",
+              "expected_type": "Mechanism",
+              "family_id": "motivation-process",
+              "role": "mechanism_example"
             }
           ],
           "measurements": {
-            "and neural activity.": null,
-            "en": "Choice",
-            "experienced outcome": null,
+            "and barriers.": null,
+            "en": "Expectancy",
+            "experienced outcomes": null,
+            "initiation": null,
             "model parameters": null,
-            "response rate": null,
-            "ru": "Выбор",
-            "параметры модели и нейронная активность.": null,
-            "пережитый исход": null,
-            "частота реакции": null
+            "persistence": null,
+            "quality": null,
+            "quantity": null,
+            "regulation and need-support reports; choice": null,
+            "ru": "Самоотчёты об ожидании",
+            "value": null,
+            "качество": null,
+            "количество": null,
+            "начало": null,
+            "параметры модели и барьеры.": null,
+            "полученные результаты": null,
+            "продолжительность": null,
+            "регуляции и поддержке потребностей; выбор": null,
+            "ценности": null
           },
           "model_kind": "motivational_framework",
           "plain_summary": {
-            "and consequences shape which actions are selected and repeated.": null,
-            "current needs": null,
-            "en": "Expected value",
-            "prediction error": null,
-            "ru": "Ожидаемая ценность",
-            "ошибка прогноза": null,
-            "текущие потребности и последствия влияют на выбор и повторение действий.": null
+            "and is actually possible.": null,
+            "en": "Action depends not only on reward but also on whether an outcome matters",
+            "fits a person's reasons": null,
+            "has acceptable costs": null,
+            "ru": "Действие зависит не только от награды",
+            "seems achievable": null,
+            "важен ли результат": null,
+            "кажется ли он достижимым": null,
+            "но и от того": null,
+            "приемлема ли цена": null,
+            "согласуется ли он с причинами человека и возможен ли в реальности.": null
           },
           "practical_focus": {
-            "en": "Make valued outcomes and contingencies observable; change one consequence at a time and monitor behavior.",
-            "ru": "Сделайте ценные исходы и зависимости наблюдаемыми; меняйте по одному последствию и отслеживайте поведение."
+            "cost": null,
+            "en": "Identify whether the current bottleneck is value",
+            "expected success": null,
+            "opportunity": null,
+            "or a competing goal; change one candidate and measure the next action.": null,
+            "pressure": null,
+            "ru": "Определите",
+            "skill": null,
+            "возможностью": null,
+            "давлением или конкурирующей целью; измените один фактор и измерьте следующее действие.": null,
+            "навыком": null,
+            "ожиданием успеха": null,
+            "связано ли текущее узкое место с ценностью": null,
+            "ценой": null
           },
           "proposed": {
-            "en": "Computational prediction errors and dopamine signals are not interchangeable explanations.",
-            "ru": "Вычислительные ошибки прогноза и дофаминовые сигналы не являются взаимозаменяемыми объяснениями."
+            "and reward are not interchangeable explanations.": null,
+            "autonomy": null,
+            "dopamine": null,
+            "en": "Complete expectancy-value-cost integration and need-support pathways remain mechanism hypotheses; prediction error",
+            "ru": "Полная интеграция ожидания",
+            "автономия и награда не являются взаимозаменяемыми объяснениями.": null,
+            "дофамин": null,
+            "ценности и цены и пути поддержки потребностей остаются гипотезами механизмов; ошибка прогноза": null
           },
-          "source_ids": []
+          "source_ids": [
+            "source:eccles-wigfield-sevt-2020",
+            "source:ryan-deci-sdt-2020",
+            "source:cerasoli-intrinsic-incentives-2014",
+            "source:sheeran-sdt-health-2020",
+            "source:gillison-need-support-2019"
+          ]
         },
         {
           "chain": [
@@ -21568,7 +22735,11 @@
             "en": "Broad defense labels and one universal coping hierarchy are not established mechanisms.",
             "ru": "Широкие ярлыки защит и единая универсальная иерархия совладания не являются установленными механизмами."
           },
-          "source_ids": []
+          "source_ids": [
+            "source:gross-reappraisal-1998",
+            "source:won-hpa-feedback-1986",
+            "source:donzella-social-buffering-2026"
+          ]
         }
       ],
       "process_based_note": {
@@ -22334,15 +23505,61 @@
               "expected_type": "Mechanism",
               "family_id": "reward-learning",
               "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:construct:goal-directed-motivation",
+              "expected_type": "Construct",
+              "family_id": "motivation-process",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:construct:expected-success",
+              "expected_type": "Construct",
+              "family_id": "motivation-process",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:construct:subjective-task-value",
+              "expected_type": "Construct",
+              "family_id": "motivation-process",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:state:perceived-effort-cost",
+              "expected_type": "State",
+              "family_id": "motivation-process",
+              "role": "state_example"
+            },
+            {
+              "canonical_id": "pmm:behavior:goal-directed-effort-persistence",
+              "expected_type": "Behavior",
+              "family_id": "motivation-process",
+              "role": "behavior_example"
+            },
+            {
+              "canonical_id": "pmm:intervention:need-supportive-motivation-intervention",
+              "expected_type": "Intervention",
+              "family_id": "motivation-process",
+              "role": "intervention_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:situated-expectancy-value-cost-integration",
+              "expected_type": "Mechanism",
+              "family_id": "motivation-process",
+              "role": "mechanism_example"
             }
           ],
           "ontological_note": {
-            "en": "Expected value, received reward, reward-seeking behavior, computational prediction error, and a learning mechanism are distinct PMM records.",
-            "ru": "Ожидаемая ценность, полученная награда, поисковое поведение, вычислительная ошибка прогноза и механизм научения являются разными записями PMM."
+            "en": "Expected success, subjective value, effort cost, autonomous and controlled reasons, actual opportunity, persistence, received reward, prediction error, and performance are distinct PMM records.",
+            "ru": "Ожидание успеха, субъективная ценность, цена усилия, автономные и контролируемые причины, реальная возможность, упорство, полученная награда, ошибка прогноза и результат являются разными записями PMM."
           },
           "parent_id": "gp:emotion-motivation",
           "source_ids": [
-            "source:rdoc-definitions"
+            "source:rdoc-definitions",
+            "source:eccles-wigfield-sevt-2020",
+            "source:ryan-deci-sdt-2020",
+            "source:cerasoli-intrinsic-incentives-2014",
+            "source:sheeran-sdt-health-2020"
           ]
         },
         {
@@ -23861,6 +25078,54 @@
         "organization": "Journal of Comparative Psychology",
         "title": "What's social about social learning?",
         "url": "https://pubmed.ncbi.nlm.nih.gov/21895355/"
+      },
+      {
+        "id": "source:eccles-wigfield-sevt-2020",
+        "organization": "Contemporary Educational Psychology",
+        "title": "From expectancy-value theory to situated expectancy-value theory",
+        "url": "https://doi.org/10.1016/j.cedpsych.2020.101859"
+      },
+      {
+        "id": "source:ryan-deci-sdt-2020",
+        "organization": "Contemporary Educational Psychology",
+        "title": "Intrinsic and extrinsic motivation from a self-determination theory perspective",
+        "url": "https://doi.org/10.1016/j.cedpsych.2020.101860"
+      },
+      {
+        "id": "source:cerasoli-intrinsic-incentives-2014",
+        "organization": "Psychological Bulletin",
+        "title": "Intrinsic motivation and extrinsic incentives jointly predict performance",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24491020/"
+      },
+      {
+        "id": "source:sheeran-sdt-health-2020",
+        "organization": "Journal of Consulting and Clinical Psychology",
+        "title": "Self-determination theory interventions for health behavior change",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32437175/"
+      },
+      {
+        "id": "source:gillison-need-support-2019",
+        "organization": "Health Psychology Review",
+        "title": "Techniques to promote motivation for health behaviour change",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30295176/"
+      },
+      {
+        "id": "source:gross-reappraisal-1998",
+        "organization": "Journal of Personality and Social Psychology",
+        "title": "Antecedent- and response-focused emotion regulation",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/9457784/"
+      },
+      {
+        "id": "source:won-hpa-feedback-1986",
+        "organization": "Metabolism",
+        "title": "Delayed, integral, and proportional glucocorticoid feedback on ACTH secretion",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/3005801/"
+      },
+      {
+        "id": "source:donzella-social-buffering-2026",
+        "organization": "Psychoneuroendocrinology",
+        "title": "Parental social buffering of adolescent cortisol responses",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41412195/"
       }
     ],
     "status": "pilot",

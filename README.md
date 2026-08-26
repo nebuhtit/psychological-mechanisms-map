@@ -45,7 +45,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains twenty-three deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains twenty-four deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -72,6 +72,7 @@ The live explorer contains twenty-three deliberately heterogeneous evidence fami
 | Developmental temperament | Dimensional reactivity and regulation, current state, observed response, caregiver item, scale profile, structured observation, longitudinal stability, later personality, and a proposed developmental transaction |
 | Goal monitoring and self-regulation | Goal standard, perceived progress, discrepancy, monitoring, recorded feedback, action, attainment, causal monitoring effects, mixed generic feedback, and a proposed control loop |
 | Personality development and change | Repeated trait score, mean-level change, rank continuity, individual change variance, life event, intervention, behavior, later score, and a proposed person-environment transaction |
+| Motivation beyond reinforcement | Expected success, subjective value, effort cost, intrinsic, autonomous and controlled motivation, opportunity, persistence, performance, intervention effects, statistical mediation, and proposed integration |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
@@ -79,7 +80,7 @@ Each family is a small evidence pack, not a textbook chapter. Null findings, inc
 
 PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Nineteen topics currently have at least one evidence-linked pilot; five remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
-Each of the 23 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
+Each of the 24 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
 
 PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Every current evidence family has at least one bilingual practical interpretation. Every individual Claim also displays either a curated application or a conservative practical inference rule specific to its claim type.
 
@@ -197,6 +198,8 @@ data/evidence-pack-self-regulation-v0.3.yaml
                                      Goal monitoring, feedback, attainment, and control-loop boundary pack
 data/evidence-pack-personality-development-v0.3.yaml
                                      Longitudinal personality change, intervention, event, and transaction boundary pack
+data/evidence-pack-motivation-process-v0.3.yaml
+                                     Expectancy, value, regulation, effort, intervention, and motivation-mechanism boundary pack
 schema/research-questions-v0.1.schema.yaml
                                      Separate contract for open-gap annotations
 data/research-questions-v0.1.yaml    Bilingual source-linked questions, one per public family
