@@ -301,6 +301,26 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:person-environment-transaction-is-developmental-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which existing dispositions influence selection, interpretation, evocation, and modification of environments, while repeated roles, relationships, behavior, learning, and consequences contribute to later personality-relevant patterns.",
+      "evidence_count": 1,
+      "family_id": "personality-development",
+      "family_title": "Personality development and change",
+      "id": "pmm:mechanism:person-environment-personality-transaction",
+      "label": "Person-environment personality transaction",
+      "mechanism_kind": "developmental",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
         "pmm:claim:expectation-opioid-mechanism-hypothesis"
       ],
       "claim_status_counts": {

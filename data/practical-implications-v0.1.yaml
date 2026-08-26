@@ -836,3 +836,38 @@ applications:
     claim_ids: [pmm:claim:self-regulation-cycle-is-theoretical-framework, pmm:claim:monitoring-interventions-improve-goal-attainment, pmm:claim:monitoring-frequency-statistically-mediates-attainment, pmm:claim:generic-feedback-has-mixed-performance-effects, pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis]
     source_ids: [pmm:source:carver-2019-control-theory, pmm:source:harkin-2016-monitoring, pmm:source:kluger-denisi-1996-feedback]
     provenance: *provenance
+
+  - id: pmm:application:change-repeated-pattern-not-personality-label
+    family_id: personality-development
+    title:
+      en: Change a repeated pattern, not a personality label
+      ru: Меняйте повторяющийся паттерн, а не ярлык личности
+    practical_question:
+      en: Which current repeated behavior, relationship pattern, role demand, or environment matters more than the broad trait label?
+      ru: Какое текущее повторяющееся поведение, паттерн отношений, требование роли или условие среды важнее широкого ярлыка черты?
+    action:
+      en: >-
+        Define one repeated situation and one observable behavior or outcome. Record its frequency and context, then change one current process such as opportunity, role expectation, skill, feedback, support, avoidance, or routine. Reassess the behavior first and any trait score only after enough repeated observations.
+      ru: >-
+        Определите одну повторяющуюся ситуацию и одно наблюдаемое поведение или результат. Запишите частоту и контекст, затем измените один текущий процесс: возможность, ожидание роли, навык, обратную связь, поддержку, избегание или распорядок. Сначала повторно оцените поведение, а показатель черты — только после достаточного числа наблюдений.
+    expected_change:
+      en: A testable change in current behavior or functioning and better evidence about whether a broader trait measure changes later, without requiring replacement of identity.
+      ru: Проверяемое изменение текущего поведения или функционирования и более надёжные данные о последующем изменении широкой черты без попытки заменить идентичность.
+    evidence_basis:
+      en: Longitudinal evidence shows average and individual change, and intervention studies show trait-score change during treatment. Evidence does not identify one universal person-environment mechanism or a guaranteed method for changing a chosen trait.
+      ru: Продольные данные показывают средние и индивидуальные изменения, а исследования вмешательств — изменение показателей черт во время лечения. Данные не устанавливают универсальный механизм «человек–среда» или гарантированный способ изменить выбранную черту.
+    applicability:
+      en: Repeated low-risk patterns with observable contexts and outcomes where changing current behavior, skill, support, or environment is acceptable.
+      ru: Повторяющиеся низкорисковые паттерны с наблюдаемыми условиями и результатами, где допустимо менять текущее поведение, навык, поддержку или среду.
+    not_established:
+      en: A trait score does not reveal a fixed essence, the cause of a problem, the correct intervention, or an irreversible developmental history.
+      ru: Балл черты не выявляет неизменную сущность, причину проблемы, правильное вмешательство или необратимую историю развития.
+    safety_note:
+      en: Do not use personality change as a demand for conformity, coercive treatment, masking disability, tolerating abuse, or blaming a person for structural constraints.
+      ru: Не используйте изменение личности как требование соответствовать норме, основание для принуждения, маскировки инвалидности, терпимости к насилию или обвинения человека в структурных ограничениях.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [individual, educator, clinician, researcher, designer]
+    claim_ids: [pmm:claim:personality-development-requires-distinct-change-indices, pmm:claim:personality-mean-levels-change-across-life, pmm:claim:people-differ-in-personality-change, pmm:claim:interventions-associated-with-personality-score-change, pmm:claim:life-events-have-preliminary-trait-change-evidence, pmm:claim:person-environment-transaction-is-developmental-hypothesis]
+    source_ids: [pmm:source:roberts-walton-viechtbauer-2006, pmm:source:haehner-2026-individual-change, pmm:source:roberts-2017-intervention-change, pmm:source:bleidorn-2018-life-events]
+    provenance: *provenance

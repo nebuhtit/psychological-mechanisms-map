@@ -405,3 +405,21 @@ questions:
     about_ids: [pmm:mechanism:goal-discrepancy-feedback-control, pmm:construct:represented-goal-standard, pmm:behavior:goal-progress-monitoring, pmm:behavior:self-regulatory-action, pmm:outcome:goal-attainment]
     source_ids: [pmm:source:carver-2019-control-theory, pmm:source:harkin-2016-monitoring, pmm:source:kluger-denisi-1996-feedback]
     provenance: *provenance
+
+  - id: pmm:research-question:personality-within-person-developmental-transaction
+    family_id: personality-development
+    question:
+      en: Which repeated role, relationship, behavior, learning consequence, or intervention causally changes which personality-relevant pattern for a particular person, over what time, and with what costs?
+      ru: Какая повторяющаяся роль, отношение, поведение, последствие научения или вмешательство причинно меняет какой личностно значимый паттерн у конкретного человека, за какое время и с какими издержками?
+    why_open:
+      en: Mean trends, individual change variance, event associations, and pooled intervention score changes do not jointly identify direction, timing, reciprocal selection, behavioral transfer, durability, or person-specific mechanisms.
+      ru: Средние тенденции, разброс индивидуальных изменений, связи с событиями и сводные изменения баллов при вмешательствах совместно не устанавливают направление, время, взаимный отбор среды, перенос в поведение, устойчивость и индивидуальный механизм.
+    what_would_help:
+      en: Preregistered dense longitudinal studies measuring traits, actual environments, roles, behavior, consequences, symptoms, and functioning before and after sequential or randomized low-risk changes, with measurement-invariance and competing-model tests.
+      ru: Пререгистрированные частые продольные исследования черт, реальной среды, ролей, поведения, последствий, симптомов и функционирования до и после последовательных или рандомизированных низкорисковых изменений с проверкой сопоставимости измерений и конкурирующих моделей.
+    question_kind: causal
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:person-environment-personality-transaction, pmm:context:repeated-role-and-environment, pmm:behavior:repeated-personality-relevant-behavior, pmm:outcome:later-personality-trait-score]
+    source_ids: [pmm:source:haehner-2026-individual-change, pmm:source:roberts-2017-intervention-change, pmm:source:bleidorn-2018-life-events]
+    provenance: *provenance

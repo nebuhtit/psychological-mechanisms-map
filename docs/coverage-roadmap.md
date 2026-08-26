@@ -8,7 +8,7 @@ The educational scaffold contains 24 topics across seven broad domains:
 
 - 19 topics have `partial` coverage: at least one canonical PMM record is linked;
 - 5 topics are `planned`: the gap is visible and no placeholder scientific records are invented;
-- 22 public evidence-pack families currently test the data model.
+- 23 public evidence-pack families currently test the data model.
 
 `partial` does not mean comprehensive, representative, clinically valid, or expert-approved. A narrow laboratory pilot can make an area partial while leaving most of that area unmodeled.
 
@@ -23,7 +23,7 @@ The educational scaffold contains 24 topics across seven broad domains:
 | 5 | Mental imagery and imagination | Separate imagery ability, imagery generation tasks, vividness reports, objective measures, and perceptual overlap hypotheses |
 | 6 | Consciousness and awareness | Separate conscious report, metacognitive access, perceptual performance, arousal state, and competing theories |
 
-Temperament passed the breadth gate with a dedicated dimensional and developmental pack. Self-regulation now has a dedicated goal-monitoring and feedback-control pack without promoting the full loop to an established mechanism. The next breadth priority is abilities and intelligence; the next foundational-model depth priority is personality development.
+Temperament, self-regulation, and personality development now have dedicated packs that keep measurements, average change, individual change, interventions, and mechanism hypotheses separate. The next breadth priority is abilities and intelligence; the next foundational-model depth priority is motivation beyond reinforcement.
 
 ## Quality gate for every topic
 

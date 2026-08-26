@@ -1,30 +1,30 @@
 {
   "causal_support": {
     "direct": 36,
-    "indirect": 38,
-    "none": 17
+    "indirect": 40,
+    "none": 20
   },
   "claim_types": {
-    "association": 17,
+    "association": 21,
     "causal_effect": 28,
     "causal_hypothesis": 1,
-    "definition": 20,
-    "mechanism_hypothesis": 23,
+    "definition": 21,
+    "mechanism_hypothesis": 24,
     "mediation": 4,
     "moderation": 2,
     "prediction": 1
   },
   "confidence_levels": {
-    "high": 8,
-    "low": 21,
-    "moderate": 65,
+    "high": 9,
+    "low": 23,
+    "moderate": 68,
     "not_applicable": 2
   },
   "epistemic_statuses": {
-    "mixed": 4,
+    "mixed": 5,
     "not_assessed": 2,
-    "proposed": 24,
-    "supported": 63,
+    "proposed": 25,
+    "supported": 67,
     "unsupported": 3
   },
   "evidence_kinds": {
@@ -32,8 +32,8 @@
     "controlled_experiment": 32,
     "cross_sectional_observational": 5,
     "longitudinal_observational": 2,
-    "meta_analysis": 14,
-    "narrative_review": 13,
+    "meta_analysis": 17,
+    "narrative_review": 15,
     "randomized_experiment": 20,
     "systematic_review": 2
   },
@@ -235,19 +235,28 @@
       "source": "data/evidence-pack-self-regulation-v0.3.yaml",
       "sources": 3,
       "title": "Goal monitoring and self-regulation"
+    },
+    {
+      "claims": 6,
+      "evidence": 5,
+      "id": "personality-development",
+      "objects": 12,
+      "source": "data/evidence-pack-personality-development-v0.3.yaml",
+      "sources": 4,
+      "title": "Personality development and change"
     }
   ],
-  "family_count": 22,
+  "family_count": 23,
   "object_types": {
-    "Behavior": 24,
-    "Construct": 43,
-    "Context": 37,
+    "Behavior": 25,
+    "Construct": 44,
+    "Context": 41,
     "Contingency": 3,
     "Event": 4,
-    "Intervention": 30,
-    "Measurement": 49,
-    "Mechanism": 25,
-    "Outcome": 19,
+    "Intervention": 31,
+    "Measurement": 52,
+    "Mechanism": 26,
+    "Outcome": 20,
     "State": 24
   },
   "report_version": 1,
@@ -671,18 +680,34 @@
         "proposed claim",
         "low confidence"
       ]
+    },
+    {
+      "claim_id": "pmm:claim:life-events-have-preliminary-trait-change-evidence",
+      "family_id": "personality-development",
+      "reasons": [
+        "low confidence",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:person-environment-transaction-is-developmental-hypothesis",
+      "family_id": "personality-development",
+      "reasons": [
+        "proposed claim",
+        "low confidence"
+      ]
     }
   ],
   "scope": "public_families",
   "support_directions": {
     "challenges": 9,
-    "mixed": 15,
-    "supports": 67
+    "mixed": 17,
+    "supports": 70
   },
   "totals": {
-    "claims": 96,
-    "evidence": 91,
-    "objects": 258,
-    "sources": 98
+    "claims": 102,
+    "evidence": 96,
+    "objects": 270,
+    "sources": 102
   }
 }

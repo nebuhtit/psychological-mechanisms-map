@@ -2,7 +2,7 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 25 mechanisms across 22 families.
+**Current inventory:** 26 mechanisms across 23 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|
@@ -21,6 +21,7 @@ This generated index makes mechanisms comparable across public evidence packs. I
 | Interoception and anxiety | **Appraisal of cardiorespiratory sensation**<br>Proposed process by which perceived cardiorespiratory changes are evaluated in a way that can contribute to anxiety experience. | integrative | 1 | 1 | 1 |
 | Language comprehension | **Automatic semantic preactivation**<br>Proposed rapid process by which processing a prime makes related target information more available before the target decision without requiring deliberate prediction. | cognitive | 1 | 1 | 1 |
 | Language comprehension | **Strategic expectancy or post-lexical matching**<br>Proposed task-sensitive process in which participants predict likely targets or use the detected prime-target relation to influence a decision after target information becomes available. | cognitive | 1 | 2 | 2 |
+| Personality development and change | **Person-environment personality transaction**<br>Proposed process in which existing dispositions influence selection, interpretation, evocation, and modification of environments, while repeated roles, relationships, behavior, learning, and consequences contribute to later personality-relevant patterns. | developmental | 1 | 1 | 1 |
 | Placebo analgesia | **Endogenous opioid pain modulation**<br>Proposed process in which treatment expectation recruits endogenous opioid signaling that changes pain responding. | physiological | 1 | 3 | 3 |
 | Reward prediction error | **Temporal-difference value updating**<br>Computational process that updates a value estimate using a prediction-error term and learning-rate parameter. | computational | 1 | 1 | 1 |
 | Social and observational learning | **Observation-to-performance selection**<br>Proposed process in which model exposure supports retention of action-relevant information while observed and direct consequences alter whether and when a matching response is performed. | learning | 1 | 2 | 2 |

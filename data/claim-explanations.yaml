@@ -650,3 +650,39 @@ entries:
       The proposed loop says that a person compares current progress with a goal, selects an available action, observes the consequence, and then adjusts the action, strategy, or goal. Existing studies support some components but not the whole person-specific causal chain. Test one link and one outcome at a time rather than assuming the loop explains a failure.
     ru: >-
       Предполагаемая петля означает, что человек сравнивает текущий прогресс с целью, выбирает доступное действие, наблюдает последствие и затем корректирует действие, стратегию или саму цель. Исследования поддерживают отдельные звенья, но не всю индивидуальную причинную цепь. Нужно проверять по одному звену и результату, а не заранее объяснять петлёй любую неудачу.
+
+  - claim_id: pmm:claim:personality-development-requires-distinct-change-indices
+    en: >-
+      “Personality change” can mean several different things: the group average moved, people changed their relative order, individuals followed different trajectories, or a questionnaire score changed. These results are not interchangeable and none of them represents the whole person.
+    ru: >-
+      «Изменение личности» может означать разные явления: изменился средний показатель группы, поменялось относительное положение людей, у людей были разные траектории или изменился балл опросника. Эти результаты не взаимозаменяемы, и ни один из них не представляет человека целиком.
+
+  - claim_id: pmm:claim:personality-mean-levels-change-across-life
+    en: >-
+      Across longitudinal samples, average trait scores changed with age, but not in one direction for every trait. Conscientiousness, emotional stability, and social dominance tended to rise especially in young adulthood, while other traits followed different age patterns. This is a group trend, not a timetable for an individual.
+    ru: >-
+      В продольных выборках средние показатели черт менялись с возрастом, но не одинаково для всех черт. Добросовестность, эмоциональная стабильность и социальная доминантность особенно часто росли в молодой взрослости, а другие черты имели иные возрастные траектории. Это тенденция группы, а не расписание для отдельного человека.
+
+  - claim_id: pmm:claim:people-differ-in-personality-change
+    en: >-
+      A large 2026 meta-analysis found that people reliably differed in how every studied trait changed, even when the average group pattern looked stable. The finding rules out one universal trajectory but does not explain or predict why a particular person changes.
+    ru: >-
+      Крупный метаанализ 2026 года показал, что люди надёжно различались по изменениям каждой изученной черты, даже когда средняя картина группы выглядела устойчивой. Результат исключает единую универсальную траекторию, но не объясняет и не предсказывает изменение конкретного человека.
+
+  - claim_id: pmm:claim:interventions-associated-with-personality-score-change
+    en: >-
+      Personality scores changed during psychological interventions by about d = .37 on average, especially emotional stability measures. The review mixed randomized experiments with uncontrolled before-after studies, so this is evidence that scores can change during intervention, not one causal effect of “therapy on personality” or proof of a specific mechanism.
+    ru: >-
+      Во время психологических вмешательств показатели личности менялись в среднем примерно на d = 0,37, особенно показатели эмоциональной стабильности. Обзор объединил рандомизированные эксперименты с неконтролируемыми исследованиями «до–после», поэтому он показывает возможность изменения баллов во время вмешательства, но не единый причинный эффект «терапии на личность» и не конкретный механизм.
+
+  - claim_id: pmm:claim:life-events-have-preliminary-trait-change-evidence
+    en: >-
+      Some major relationship and work events were followed by trait-score changes, but findings differed by event, trait, timing, and study. People also select and interpret events partly through prior characteristics. An event label is therefore a hypothesis about exposure, not a proven cause of personality change.
+    ru: >-
+      После некоторых крупных событий в отношениях и работе наблюдались изменения показателей черт, но результаты зависели от события, черты, времени и исследования. Кроме того, прежние особенности человека влияют на выбор и восприятие событий. Поэтому название события — это гипотеза о воздействии, а не доказанная причина изменения личности.
+
+  - claim_id: pmm:claim:person-environment-transaction-is-developmental-hypothesis
+    en: >-
+      A plausible model says that existing dispositions influence which environments people enter or evoke, while repeated roles, relationships, actions, and consequences may feed back into later patterns. Separate literatures are compatible with this loop, but the full reciprocal causal sequence has not been demonstrated within one person.
+    ru: >-
+      Правдоподобная модель предполагает, что имеющиеся склонности влияют на выбор и создание среды, а повторяющиеся роли, отношения, действия и последствия могут влиять на последующие паттерны. Разные области исследований совместимы с такой петлёй, но полная взаимная причинная последовательность у одного человека не доказана.

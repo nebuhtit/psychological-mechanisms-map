@@ -418,6 +418,47 @@ class SelfRegulationEvidencePackTests(unittest.TestCase):
         self.assertEqual(mechanism["confidence"]["level"], "low")
 
 
+class PersonalityDevelopmentEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-personality-development-v0.3.yaml"
+        )
+
+    def test_personality_development_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_construct_behavior_measurements_intervention_outcome_and_mechanism_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:personality-trait-development"], "Construct")
+        self.assertEqual(records["pmm:behavior:repeated-personality-relevant-behavior"], "Behavior")
+        self.assertEqual(records["pmm:measurement:mean-level-trait-change"], "Measurement")
+        self.assertEqual(records["pmm:measurement:individual-trait-change-variance"], "Measurement")
+        self.assertEqual(records["pmm:intervention:psychological-personality-change-intervention"], "Intervention")
+        self.assertEqual(records["pmm:outcome:later-personality-trait-score"], "Outcome")
+        self.assertEqual(records["pmm:mechanism:person-environment-personality-transaction"], "Mechanism")
+
+    def test_mean_individual_event_and_intervention_results_remain_noncausal(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        for claim_id in (
+            "pmm:claim:personality-mean-levels-change-across-life",
+            "pmm:claim:people-differ-in-personality-change",
+            "pmm:claim:interventions-associated-with-personality-score-change",
+            "pmm:claim:life-events-have-preliminary-trait-change-evidence",
+        ):
+            self.assertEqual(claims[claim_id]["claim_type"], "association")
+            self.assertNotIn("causal_estimand", claims[claim_id])
+
+    def test_transaction_remains_low_confidence_hypothesis(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:person-environment-transaction-is-developmental-hypothesis"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertEqual(claim["confidence"]["level"], "low")
+
+
 class InferentialModeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:

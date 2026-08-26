@@ -77,6 +77,22 @@ sources:
     title: The Effects of Feedback Interventions on Performance
     organization: Psychological Bulletin
     url: https://doi.org/10.1037/0033-2909.119.2.254
+  - id: source:roberts-mean-change-2006
+    title: Patterns of Mean-Level Change in Personality Traits Across the Life Course
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/16435954/
+  - id: source:haehner-individual-change-2026
+    title: Individual Differences in Personality Trait Changes Across the Lifespan
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/42423713/
+  - id: source:roberts-intervention-change-2017
+    title: A Systematic Review of Personality Trait Change Through Intervention
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/28054797/
+  - id: source:bleidorn-life-events-2018
+    title: Life Events and Personality Trait Change
+    organization: Journal of Personality
+    url: https://pubmed.ncbi.nlm.nih.gov/27716921/
   - id: source:big-five-review
     title: An Introduction to the Five-Factor Model and Its Applications
     organization: Journal of Personality
@@ -787,11 +803,11 @@ general_psychology:
         ru: Как время опыта, ухода, повреждения и созревания меняет наблюдаемую организацию психики и адаптацию.
       ontological_note:
         en: >-
-          Current records provide narrow developmental examples in social buffering, attachment continuity, and developmental amnesia; none is a complete theory of development.
+          Current records provide bounded examples in social buffering, attachment continuity, developmental amnesia, temperament, and personality change; none is a complete causal theory of development.
         ru: >-
-          Сейчас представлены узкие примеры развития из социальной поддержки, устойчивости привязанности и амнезии развития; ни один из них не является полной теорией развития.
+          Сейчас представлены ограниченные примеры социальной поддержки, устойчивости привязанности, амнезии развития, темперамента и изменений личности; ни один из них не является полной причинной теорией развития.
       coverage: partial
-      source_ids: [source:vargha-khadem-1997, source:fraley-shaver-attachment-2000, source:roberts-delvecchio-stability-2000, source:ringwald-temperament-personality-2026, source:briley-tucker-drob-continuity-2014]
+      source_ids: [source:vargha-khadem-1997, source:fraley-shaver-attachment-2000, source:roberts-delvecchio-stability-2000, source:ringwald-temperament-personality-2026, source:briley-tucker-drob-continuity-2014, source:roberts-mean-change-2006, source:haehner-individual-change-2026, source:roberts-intervention-change-2017, source:bleidorn-life-events-2018]
       memberships:
         - {family_id: social-buffering, canonical_id: pmm:context:early-institutional-care-history, role: task_context_example, expected_type: Context}
         - {family_id: declarative-memory, canonical_id: pmm:context:developmental-amnesia-assessment, role: task_context_example, expected_type: Context}
@@ -801,6 +817,11 @@ general_psychology:
         - {family_id: temperament, canonical_id: pmm:context:longitudinal-temperament-personality-assessment, role: task_context_example, expected_type: Context}
         - {family_id: temperament, canonical_id: pmm:outcome:later-personality-trait-standing, role: outcome_example, expected_type: Outcome}
         - {family_id: temperament, canonical_id: pmm:mechanism:developmental-temperament-transaction, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: personality-development, canonical_id: pmm:construct:personality-trait-development, role: construct_example, expected_type: Construct}
+        - {family_id: personality-development, canonical_id: pmm:context:major-life-event-exposure, role: task_context_example, expected_type: Context}
+        - {family_id: personality-development, canonical_id: pmm:measurement:mean-level-trait-change, role: measurement_example, expected_type: Measurement}
+        - {family_id: personality-development, canonical_id: pmm:measurement:individual-trait-change-variance, role: measurement_example, expected_type: Measurement}
+        - {family_id: personality-development, canonical_id: pmm:mechanism:person-environment-personality-transaction, role: mechanism_example, expected_type: Mechanism}
 
     - id: gp:personality-individual-differences
       parent_id: gp:mind
@@ -1097,18 +1118,27 @@ foundational_models:
         - {en: Repeated choices and feedback, ru: Повторяющиеся выборы и обратная связь}
         - {en: Habits, expectations, and roles, ru: Привычки, ожидания и роли}
         - {en: Relative continuity with possible change, ru: Относительная устойчивость с возможностью изменения}
-      practical_focus: {en: Target current environments, roles, relationships, and repeated behaviors rather than trying to replace a personality label., ru: Воздействуйте на текущую среду, роли, отношения и повторяющееся поведение вместо попытки заменить ярлык личности.}
-      established: {en: Trait and temperament profiles show imperfect relative stability and cross-age associations; attachment continuity is moderate., ru: Профили черт и темперамента показывают неполную относительную устойчивость и связи между возрастами; устойчивость привязанности умеренная.}
-      proposed: {en: The causal pathways producing individual developmental change remain incompletely identified., ru: Причинные пути индивидуальных изменений в развитии установлены не полностью.}
-      measurements: {en: Longitudinal trait scales, behavior, informant reports, life events, roles, and relationship-specific measures., ru: Продольные шкалы черт, поведение, отчёты других людей, жизненные события, роли и измерения конкретных отношений.}
+      practical_focus: {en: Define one repeated situation and observable behavior, change one current role, skill, support, routine, consequence, or environment, and measure behavior before interpreting a broad trait score., ru: Определите одну повторяющуюся ситуацию и наблюдаемое поведение, измените одну текущую роль, навык, поддержку, рутину, последствие или условие среды и измеряйте поведение до интерпретации широкой черты.}
+      established: {en: Mean trait levels change across the lifespan, people differ reliably in their changes, and trait scores change during interventions; life-event findings remain preliminary and intervention estimates mix causal and noncausal designs., ru: Средние уровни черт меняются в течение жизни, люди надёжно различаются по изменениям, а показатели черт меняются во время вмешательств; данные о жизненных событиях предварительны, а оценки вмешательств смешивают причинные и непричинные дизайны.}
+      proposed: {en: Reciprocal person-environment transactions are a plausible developmental mechanism but have not been jointly identified as one within-person causal loop., ru: Взаимные взаимодействия человека и среды являются правдоподобным механизмом развития, но не установлены как единая внутрииндивидуальная причинная петля.}
+      measurements: {en: Repeated trait scores, rank-order continuity, mean-level change, individual change variance, actual behavior, roles, events, symptoms, functioning, and measurement invariance., ru: Повторные показатели черт, устойчивость относительного порядка, средние изменения, разброс индивидуальных изменений, реальное поведение, роли, события, симптомы, функционирование и сопоставимость измерений.}
       limitation: {en: Stability is not immutability, and retrospective stories do not establish developmental causes., ru: Устойчивость не равна неизменности, а ретроспективные истории не устанавливают причины развития.}
-      source_ids: [source:roberts-delvecchio-stability-2000, source:ringwald-temperament-personality-2026, source:briley-tucker-drob-continuity-2014]
+      source_ids: [source:roberts-delvecchio-stability-2000, source:ringwald-temperament-personality-2026, source:briley-tucker-drob-continuity-2014, source:roberts-mean-change-2006, source:haehner-individual-change-2026, source:roberts-intervention-change-2017, source:bleidorn-life-events-2018]
       mapped_memberships:
         - {family_id: big-five, canonical_id: pmm:construct:big-five-trait-taxonomy, role: construct_example, expected_type: Construct}
         - {family_id: attachment-system, canonical_id: pmm:construct:relational-availability-expectations, role: construct_example, expected_type: Construct}
         - {family_id: temperament, canonical_id: pmm:construct:developmental-temperament-dimensions, role: construct_example, expected_type: Construct}
         - {family_id: temperament, canonical_id: pmm:measurement:longitudinal-trait-stability-estimate, role: measurement_example, expected_type: Measurement}
         - {family_id: temperament, canonical_id: pmm:mechanism:developmental-temperament-transaction, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: personality-development, canonical_id: pmm:construct:personality-trait-development, role: construct_example, expected_type: Construct}
+        - {family_id: personality-development, canonical_id: pmm:measurement:repeated-personality-trait-score, role: measurement_example, expected_type: Measurement}
+        - {family_id: personality-development, canonical_id: pmm:measurement:mean-level-trait-change, role: measurement_example, expected_type: Measurement}
+        - {family_id: personality-development, canonical_id: pmm:measurement:individual-trait-change-variance, role: measurement_example, expected_type: Measurement}
+        - {family_id: personality-development, canonical_id: pmm:context:major-life-event-exposure, role: task_context_example, expected_type: Context}
+        - {family_id: personality-development, canonical_id: pmm:intervention:psychological-personality-change-intervention, role: intervention_example, expected_type: Intervention}
+        - {family_id: personality-development, canonical_id: pmm:behavior:repeated-personality-relevant-behavior, role: behavior_example, expected_type: Behavior}
+        - {family_id: personality-development, canonical_id: pmm:outcome:later-personality-trait-score, role: outcome_example, expected_type: Outcome}
+        - {family_id: personality-development, canonical_id: pmm:mechanism:person-environment-personality-transaction, role: mechanism_example, expected_type: Mechanism}
     - id: model:temperament-traits
       label: {en: Temperament and traits, ru: Темперамент и черты}
       model_kind: individual_differences_framework

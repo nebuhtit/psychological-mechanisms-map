@@ -136,3 +136,9 @@ datasets:
       id: self-regulation
       title: Goal monitoring and self-regulation
       description: Goal, perceived progress, discrepancy, monitoring, action, feedback, attainment, intervention effects, and the proposed control loop kept distinct.
+  - source: data/evidence-pack-personality-development-v0.3.yaml
+    output: build/evidence-pack-personality-development-v0.3.json
+    family:
+      id: personality-development
+      title: Personality development and change
+      description: Trait construct, repeated score, mean change, rank continuity, individual change, life event, intervention, behavior, later score, and proposed transaction kept distinct.

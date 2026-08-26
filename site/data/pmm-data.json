@@ -18841,9 +18841,974 @@
       ],
       "title": "Goal monitoring and self-regulation",
       "version": "0.3.4"
+    },
+    {
+      "claims": [
+        {
+          "claim_type": "definition",
+          "confidence": {
+            "level": "high",
+            "rationale": "These indices have different statistical definitions and can vary independently; the included longitudinal meta-analyses explicitly address different forms of change."
+          },
+          "defined_object_id": "pmm:construct:personality-trait-development",
+          "epistemic_status": "supported",
+          "evidence_ids": [],
+          "id": "pmm:claim:personality-development-requires-distinct-change-indices",
+          "limitations": [
+            "The distinction does not select one personality taxonomy or establish the causes of change."
+          ],
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "“Personality change” can mean several different things: the group average moved, people changed their relative order, individuals followed different trajectories, or a questionnaire score changed. These results are not interchangeable and none of them represents the whole person.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:longitudinal-personality-assessment"
+            ],
+            "population": "Humans assessed repeatedly with declared personality trait measures.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Two or more comparable personality assessments."
+          },
+          "source_ids": [
+            "pmm:source:roberts-walton-viechtbauer-2006",
+            "pmm:source:haehner-2026-individual-change"
+          ],
+          "statement": "Personality development must distinguish rank-order continuity, mean-level change, individual differences in change, repeated behavior, and measurement change rather than treating any one index as the whole person."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The meta-analysis synthesized many longitudinal samples, but historical measures, cohort differences, attrition, age coverage, and trait categorization limit a universal developmental schedule."
+          },
+          "confounding_note": "Cohort, period, instrument, attrition, retest interval, sampling, health, roles, and historical context can contribute to observed age-related mean changes.",
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "mixed",
+            "metric": "meta-analytic standardized mean-level change by trait and age",
+            "notes": "Social dominance, conscientiousness, and emotional stability increased especially from ages 20 to 40; social vitality and openness rose in adolescence and declined in old age; agreeableness changed mainly in old age.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_ids": [
+            "pmm:evidence:roberts-2006-mean-level-meta"
+          ],
+          "exposure_id": "pmm:measurement:repeated-personality-trait-score",
+          "id": "pmm:claim:personality-mean-levels-change-across-life",
+          "limitations": [
+            "A population average is not a prescription, universal maturation law, or prediction for one person."
+          ],
+          "outcome_id": "pmm:measurement:mean-level-trait-change",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Across longitudinal samples, average trait scores changed with age, but not in one direction for every trait. Conscientiousness, emotional stability, and social dominance tended to rise especially in young adulthood, while other traits followed different age patterns. This is a group trend, not a timetable for an individual.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "The six trait categories, age groups, instruments, cohorts, and intervals represented in the 2006 meta-analysis."
+            ],
+            "context_ids": [
+              "pmm:context:longitudinal-personality-assessment"
+            ],
+            "population": "Participants represented in 92 longitudinal personality samples across adolescence, adulthood, and old age.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Source-specific longitudinal intervals across the life course."
+          },
+          "statement": "Across 92 longitudinal samples, average personality trait scores changed across the life course, with especially notable young-adult increases in social dominance, conscientiousness, and emotional stability and different patterns for other traits and ages."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The large preregistered synthesis quantified change heterogeneity across 230,492 participants, while estimates still depend on model, measure, interval, age, reliability, and publication coverage."
+          },
+          "confounding_note": "Reliability, longitudinal invariance, attrition, interval, age, trait breadth, model specification, and sample selection affect estimated change heterogeneity.",
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "positive",
+            "metric": "meta-analytic variance in individual personality trait change",
+            "notes": "Significant individual differences occurred for all traits, were most pronounced in childhood, remained present across the lifespan, and increased with longer intervals.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_ids": [
+            "pmm:evidence:haehner-2026-individual-change-meta"
+          ],
+          "exposure_id": "pmm:measurement:repeated-personality-trait-score",
+          "id": "pmm:claim:people-differ-in-personality-change",
+          "limitations": [
+            "Evidence that people differ in change does not reveal the causal source or allow accurate prediction of one person's trajectory."
+          ],
+          "outcome_id": "pmm:measurement:individual-trait-change-variance",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A large 2026 meta-analysis found that people reliably differed in how every studied trait changed, even when the average group pattern looked stable. The finding rules out one universal trajectory but does not explain or predict why a particular person changes.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Individual change variance is interpreted after accounting for measurement error under the included models."
+            ],
+            "context_ids": [
+              "pmm:context:longitudinal-personality-assessment"
+            ],
+            "population": "230,492 participants represented in 229 longitudinal studies from childhood through old age.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Source-specific repeated assessments across the lifespan."
+          },
+          "statement": "A 2026 meta-analysis of 229 longitudinal studies found reliable individual differences in change for every studied personality trait across the lifespan."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Changes replicated across experimental and nonexperimental subsets and follow-ups, yet the pooled estimate mixes designs, clinical populations, intervention targets, symptoms, measures, and comparators."
+          },
+          "confounding_note": "Symptom improvement, regression to the mean, expectancy, repeated testing, attrition, treatment selection, measurement overlap, and uncontrolled history can inflate pre-post change estimates.",
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "mixed",
+            "metric": "standardized pre-post or experimental personality trait score change",
+            "notes": "Average marked change around d = .37; emotional stability changed most, followed by extraversion; experimental and nonexperimental subsets both showed change.",
+            "value_status": "reported"
+          },
+          "evidence_ids": [
+            "pmm:evidence:roberts-2017-intervention-review"
+          ],
+          "exposure_id": "pmm:intervention:psychological-personality-change-intervention",
+          "id": "pmm:claim:interventions-associated-with-personality-score-change",
+          "limitations": [
+            "The pooled association does not prove that every intervention changes traits, that score change is durable behavioral change, or which treatment component caused it."
+          ],
+          "outcome_id": "pmm:outcome:later-personality-trait-score",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Personality scores changed during psychological interventions by about d = .37 on average, especially emotional stability measures. The review mixed randomized experiments with uncontrolled before-after studies, so this is evidence that scores can change during intervention, not one causal effect of “therapy on personality” or proof of a specific mechanism.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Trait measure, symptom overlap, intervention, comparator, baseline severity, and follow-up must be specified."
+            ],
+            "context_ids": [
+              "pmm:context:personality-intervention-assessment"
+            ],
+            "population": "Clinical and nonclinical participants represented in 207 psychological intervention studies.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Average intervention period of approximately 24 weeks plus source-specific follow-up."
+          },
+          "statement": "Across 207 intervention studies, personality trait measures changed by about d = .37 on average over roughly 24 weeks, with the largest reported changes in emotional stability, but pooled designs included both true experiments and uncontrolled pre-post studies."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "low",
+            "rationale": "The review covered nine major events and found some event-trait patterns, while selection, nonrandom exposure, inconsistent timing, appraisal, measurement, and limited replication prevent strong causal conclusions."
+          },
+          "confounding_note": "Prior traits can influence event selection and reporting; shared causes, anticipation, age trends, cohort, role demands, appraisal, and concurrent events can produce associations.",
+          "epistemic_status": "mixed",
+          "estimate": {
+            "direction": "mixed",
+            "metric": "prospective event-associated personality trait change",
+            "notes": "Some evidence of event-specific trait change was found, but the overall evidence was characterized as preliminary.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_ids": [
+            "pmm:evidence:bleidorn-2018-life-events-review"
+          ],
+          "exposure_id": "pmm:context:major-life-event-exposure",
+          "id": "pmm:claim:life-events-have-preliminary-trait-change-evidence",
+          "limitations": [
+            "A life event label does not specify the actual exposure and does not establish that the event caused the observed change."
+          ],
+          "outcome_id": "pmm:outcome:later-personality-trait-score",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Some major relationship and work events were followed by trait-score changes, but findings differed by event, trait, timing, and study. People also select and interpret events partly through prior characteristics. An event label is therefore a hypothesis about exposure, not a proven cause of personality change.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Event occurrence, subjective appraisal, timing, anticipation, adaptation, prior trajectory, and comparison group are distinguished."
+            ],
+            "context_ids": [
+              "pmm:context:major-life-event-exposure"
+            ],
+            "population": "Adults represented in prospective studies of nine major love and work life events.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Personality assessment before and after source-specific life events when available."
+          },
+          "statement": "Prospective studies provide some evidence that major love and work events are associated with personality trait change, but the nature, timing, shape, and trait specificity of these changes remain preliminary."
+        },
+        {
+          "claim_type": "mechanism_hypothesis",
+          "confidence": {
+            "level": "low",
+            "rationale": "Longitudinal change, intervention-linked score change, and event associations are compatible with transactional accounts, but the full reciprocal within-person process has not been jointly measured and causally identified."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:person-environment-transaction-indirect"
+          ],
+          "exposure_id": "pmm:context:repeated-role-and-environment",
+          "falsifiable_boundary": "The account is weakened when repeated independently measured roles, behavior, and consequences do not predict within-person change beyond measurement artifacts and when changing a candidate process does not alter the prespecified later pattern.",
+          "id": "pmm:claim:person-environment-transaction-is-developmental-hypothesis",
+          "limitations": [
+            "The hypothesis must not be used to reconstruct a deterministic developmental cause from an adult trait score or biography."
+          ],
+          "mechanism_id": "pmm:mechanism:person-environment-personality-transaction",
+          "outcome_id": "pmm:outcome:later-personality-trait-score",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A plausible model says that existing dispositions influence which environments people enter or evoke, while repeated roles, relationships, actions, and consequences may feed back into later patterns. Separate literatures are compatible with this loop, but the full reciprocal causal sequence has not been demonstrated within one person.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Earlier traits, actual exposures, behavior, consequences, later traits, and alternative causes are measured separately."
+            ],
+            "context_ids": [
+              "pmm:context:longitudinal-personality-assessment",
+              "pmm:context:major-life-event-exposure",
+              "pmm:context:repeated-role-and-environment"
+            ],
+            "population": "Humans followed repeatedly across changing roles, relationships, environments, or interventions.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Repeated person-context interactions over months to decades."
+          },
+          "statement": "Personality development may partly emerge from repeated reciprocal transactions among existing dispositions, selected or imposed environments, roles, relationships, behavior, learning, and consequences.",
+          "temporal_ordering": "Earlier disposition and context precede repeated behavior and consequences, which precede later measurement, while reciprocal selection remains possible."
+        }
+      ],
+      "dataset_id": "pmm:dataset:personality-development-evidence-v0-3",
+      "description": "Trait construct, repeated score, mean change, rank continuity, individual change, life event, intervention, behavior, later score, and proposed transaction kept distinct.",
+      "evidence": [
+        {
+          "causal_support": "none",
+          "claim_ids": [
+            "pmm:claim:personality-mean-levels-change-across-life"
+          ],
+          "design": "Meta-analysis of longitudinal within-sample mean-level change across six broad personality trait categories and life stages.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "mixed",
+            "metric": "standardized mean-level personality trait change",
+            "notes": "Trait- and age-specific increases and decreases were reported rather than one universal maturation trajectory.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract reporting 92 longitudinal samples and trait-specific mean-level patterns by age.",
+          "id": "pmm:evidence:roberts-2006-mean-level-meta",
+          "inference_support": "association",
+          "limitations": [
+            "Historical cohorts and measures, sparse ages for some traits, and observational longitudinal designs limit causal and current-population interpretation."
+          ],
+          "population": "Participants from 92 longitudinal samples across adolescence, adulthood, middle age, and old age.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:roberts-walton-viechtbauer-2006",
+          "species": [
+            "human"
+          ],
+          "summary": "Average personality trait scores changed across the lifespan in trait- and age-specific patterns.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "none",
+          "claim_ids": [
+            "pmm:claim:people-differ-in-personality-change"
+          ],
+          "design": "Meta-analysis of reliable individual differences in longitudinal personality trait change across the lifespan.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "variance in individual personality trait change",
+            "notes": "Reliable individual differences were present for all traits and across the lifespan, with the greatest differences in childhood.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract reporting 229 studies, N = 230,492, change heterogeneity for all traits, age patterns, intervals, and measurement moderators.",
+          "id": "pmm:evidence:haehner-2026-individual-change-meta",
+          "inference_support": "association",
+          "limitations": [
+            "Meta-analytic change variance remains model- and measure-dependent and does not identify individual causes."
+          ],
+          "population": "230,492 participants in 229 longitudinal studies from childhood through old age.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:haehner-2026-individual-change",
+          "species": [
+            "human"
+          ],
+          "summary": "People differed reliably in how their measured personality traits changed, including during periods of high average stability.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:interventions-associated-with-personality-score-change"
+          ],
+          "design": "Systematic review and meta-analysis of personality trait score change during clinical and nonclinical interventions, combining true experiments and pre-post designs.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "partially_indirect",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "high"
+          },
+          "effect": {
+            "direction": "mixed",
+            "metric": "standardized personality trait score change",
+            "notes": "Average change approximately d = .37 over 24 weeks; emotional stability changed most, with variation by presenting problem.",
+            "value_status": "reported"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract reporting 207 studies, average 24-week duration, d = .37, experimental and pre-post designs, domains, populations, and follow-up persistence.",
+          "id": "pmm:evidence:roberts-2017-intervention-review",
+          "inference_support": "association",
+          "limitations": [
+            "Combining controlled experiments with uncontrolled pre-post designs prevents interpreting the pooled estimate as one causal treatment effect."
+          ],
+          "population": "Participants represented in 207 intervention studies, primarily clinical samples.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:roberts-2017-intervention-change",
+          "species": [
+            "human"
+          ],
+          "summary": "Personality trait measures changed during interventions, but pooled causal interpretation is limited by mixed designs and symptom-trait overlap.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "none",
+          "claim_ids": [
+            "pmm:claim:life-events-have-preliminary-trait-change-evidence"
+          ],
+          "design": "Review of prospective longitudinal research on personality trait change around nine major love and work life events.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "partially_indirect",
+            "precision": "limited",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "high"
+          },
+          "effect": {
+            "direction": "mixed",
+            "metric": "event-associated personality trait change",
+            "notes": "Some event- and trait-specific evidence with unresolved nature, timing, shape, and replication.",
+            "value_status": "qualitative_only"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "PubMed abstract reviewing prospective evidence for nine major love and work events and describing the overall evidence as preliminary.",
+          "id": "pmm:evidence:bleidorn-2018-life-events-review",
+          "inference_support": "association",
+          "limitations": [
+            "Nonrandom events, personality selection, retrospective event reports, anticipation, adaptation, and inconsistent measurement constrain inference."
+          ],
+          "population": "Adults represented in longitudinal life-event studies.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:bleidorn-2018-life-events",
+          "species": [
+            "human"
+          ],
+          "summary": "Major life events sometimes accompanied trait-score changes, but evidence was too preliminary for deterministic or general causal claims.",
+          "support_direction": "mixed"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:person-environment-transaction-is-developmental-hypothesis"
+          ],
+          "design": "Theoretical integration of prospective event research with longitudinal and intervention evidence represented in this pack.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "indirect",
+            "precision": "not_reported",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "high"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "Review rationale linking lasting event-related changes in thoughts, feelings, and behavior to candidate trait change, interpreted with intervention and longitudinal meta-analytic constraints.",
+          "id": "pmm:evidence:person-environment-transaction-indirect",
+          "inference_support": "mechanism",
+          "limitations": [
+            "Compatibility across separate literatures is not direct evidence for temporal links in one within-person causal network."
+          ],
+          "population": "Humans represented in personality development, life-event, and intervention studies.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:bleidorn-2018-life-events",
+          "species": [
+            "human"
+          ],
+          "summary": "Existing evidence is compatible with repeated person-environment transactions but does not identify the complete reciprocal mechanism.",
+          "support_direction": "mixed"
+        }
+      ],
+      "id": "personality-development",
+      "objects": [
+        {
+          "boundary_notes": [
+            "Personality development is not one score, one life story, one age trend, or one causal process.",
+            "Mean-level change, rank-order continuity, individual differences in change, and measurement change answer different questions.",
+            "A trait description is not a diagnosis, moral evaluation, fixed identity, or direct mechanism."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "Continuity and change over time in relatively enduring individual differences in characteristic patterns of thought, feeling, motivation, and behavior, represented through declared trait models and measures.",
+          "id": "pmm:construct:personality-trait-development",
+          "label": "Personality trait development",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "context_kind": "developmental",
+          "curation_status": "accepted",
+          "definition": "Repeated-measurement context in which comparable personality trait indicators are collected across two or more occasions.",
+          "dimensions": {
+            "age_range": "source-specific childhood through old age",
+            "comparability": "declared trait model, instrument, informant, and invariance evidence",
+            "interval": "source-specific months or years",
+            "waves": "two or more"
+          },
+          "id": "pmm:context:longitudinal-personality-assessment",
+          "label": "Longitudinal personality assessment",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Longitudinal personality studies represented in the included meta-analyses.",
+          "type": "Context"
+        },
+        {
+          "boundary_notes": [
+            "Events are not randomly assigned and may be selected by prior personality, circumstances, or both."
+          ],
+          "context_kind": "developmental",
+          "curation_status": "provisional",
+          "definition": "Prospective or retrospective assessment context involving a declared transition or event in love, work, health, residence, education, or another life domain.",
+          "dimensions": {
+            "appraisal": "occurrence and subjective meaning measured separately when available",
+            "comparator": "nonexposed, differently exposed, or within-person pre-event trajectory",
+            "event": "source-specific transition or exposure",
+            "timing": "before, during, and after when available"
+          },
+          "id": "pmm:context:major-life-event-exposure",
+          "label": "Major life-event exposure",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Prospective personality-change research reviewed by Bleidorn and colleagues.",
+          "type": "Context"
+        },
+        {
+          "boundary_notes": [
+            "An intervention can target symptoms or functioning rather than personality even when trait scores also change."
+          ],
+          "context_kind": "experimental",
+          "curation_status": "accepted",
+          "definition": "Study context measuring personality trait scores before, during, or after a clinical or nonclinical intervention.",
+          "dimensions": {
+            "design": "randomized experiment, controlled comparison, or pre-post design",
+            "duration": "source-specific intervention period",
+            "follow_up": "source-specific postintervention assessment",
+            "target": "symptoms, behavior, functioning, or personality change"
+          },
+          "id": "pmm:context:personality-intervention-assessment",
+          "label": "Personality intervention assessment",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Intervention studies included in Roberts et al. 2017.",
+          "type": "Context"
+        },
+        {
+          "context_kind": "social",
+          "curation_status": "provisional",
+          "definition": "Recurring social, occupational, educational, relational, cultural, or material conditions that structure opportunities, expectations, rewards, constraints, and repeated behavior.",
+          "dimensions": {
+            "affordances": "available actions, relationships, and consequences",
+            "duration": "repeated or sustained exposure",
+            "role": "source-specific position and expectations",
+            "selection": "person may partly choose, evoke, or alter the context"
+          },
+          "id": "pmm:context:repeated-role-and-environment",
+          "label": "Repeated role and environment",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Candidate environmental input in transactional accounts of personality development.",
+          "type": "Context"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "response_pattern",
+          "curation_status": "provisional",
+          "definition": "Observable action pattern relevant to a declared trait, role, goal, or context and sampled repeatedly across situations or time.",
+          "function_note": "Behavior can express a trait, adapt to a situation, shape later environments, or reflect skills and states; repeated behavior is not the trait construct itself.",
+          "id": "pmm:behavior:repeated-personality-relevant-behavior",
+          "label": "Repeated personality-relevant behavior",
+          "observability": "direct",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "response_topography": "Source-specific social, task, emotional, self-regulatory, exploratory, cooperative, or avoidance behavior.",
+          "type": "Behavior"
+        },
+        {
+          "boundary_notes": [
+            "Score change can reflect trait change, symptoms, response style, reference group, instrument sensitivity, regression to the mean, or measurement noninvariance."
+          ],
+          "curation_status": "accepted",
+          "definition": "Score on a declared personality domain or facet collected on comparable occasions from self-report, informant report, or behavioral indicators.",
+          "id": "pmm:measurement:repeated-personality-trait-score",
+          "label": "Repeated personality trait score",
+          "measurement_kind": "psychometric_scale",
+          "method": "Report trait model, instrument, language, informant, scoring, reliability, assessment age, interval, attrition, and longitudinal measurement comparability.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:construct:personality-trait-development"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "self_report"
+        },
+        {
+          "boundary_notes": [
+            "Average change does not describe every individual and does not preserve rank order by itself."
+          ],
+          "curation_status": "accepted",
+          "definition": "Statistical estimate of average change in a declared trait score within a sample between measurement occasions.",
+          "id": "pmm:measurement:mean-level-trait-change",
+          "label": "Mean-level personality change estimate",
+          "measurement_kind": "computational_parameter",
+          "method": "Estimate standardized within-sample mean change while reporting age, interval, measure, attrition, cohort, and uncertainty.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "model_parameter",
+          "target_ids": [
+            "pmm:measurement:repeated-personality-trait-score"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "paradigm"
+        },
+        {
+          "boundary_notes": [
+            "Change variance does not identify why a person changed or whether change was beneficial."
+          ],
+          "curation_status": "accepted",
+          "definition": "Statistical estimate of between-person variation in longitudinal change in a declared personality trait.",
+          "id": "pmm:measurement:individual-trait-change-variance",
+          "label": "Individual differences in personality change",
+          "measurement_kind": "computational_parameter",
+          "method": "Estimate reliable variance in individual slopes or change scores while separating measurement error and reporting age, interval, measure, and sampling assumptions.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "model_parameter",
+          "target_ids": [
+            "pmm:measurement:repeated-personality-trait-score"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "paradigm"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Clinical or nonclinical intervention during which declared personality trait measures are repeatedly assessed, whether or not trait change is the primary target.",
+          "delivery": "Source-specific psychotherapy, psychological treatment, training, or structured intervention compared with a control or preintervention baseline when available.",
+          "id": "pmm:intervention:psychological-personality-change-intervention",
+          "intended_direction": "test",
+          "intervention_kind": "behavioral",
+          "label": "Psychological intervention with personality measurement",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:measurement:repeated-personality-trait-score",
+            "pmm:behavior:repeated-personality-relevant-behavior"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "boundary_notes": [
+            "Later score is an observed estimate, not a final identity, developmental endpoint, or proof of the process that produced it."
+          ],
+          "curation_status": "accepted",
+          "definition": "Declared personality domain or facet score measured after a developmental interval, life event, role exposure, or intervention.",
+          "id": "pmm:outcome:later-personality-trait-score",
+          "label": "Later personality trait score",
+          "ontological_level": "type",
+          "outcome_kind": "performance",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Outcome",
+          "valence": "not_applicable"
+        },
+        {
+          "boundary_notes": [
+            "Life-event association, age trend, intervention-linked score change, and heritability do not individually identify this complete mechanism.",
+            "The process permits stability, change, nonlinear trajectories, different paths to similar scores, and similar experiences producing different changes."
+          ],
+          "curation_status": "provisional",
+          "definition": "Proposed process in which existing dispositions influence selection, interpretation, evocation, and modification of environments, while repeated roles, relationships, behavior, learning, and consequences contribute to later personality-relevant patterns.",
+          "id": "pmm:mechanism:person-environment-personality-transaction",
+          "label": "Person-environment personality transaction",
+          "mechanism_kind": "developmental",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "realization_conditions": [
+            "Personality, behavior, and environment are measured repeatedly with explicit temporal ordering.",
+            "Selection into environments and environmental effects are modeled as potentially reciprocal.",
+            "Measurement change is distinguished from durable behavioral and trait change."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:measurement:repeated-personality-trait-score",
+              "role": "earlier measured disposition"
+            },
+            {
+              "object_id": "pmm:context:repeated-role-and-environment",
+              "role": "recurring context"
+            },
+            {
+              "object_id": "pmm:behavior:repeated-personality-relevant-behavior",
+              "role": "repeated action"
+            },
+            {
+              "object_id": "pmm:outcome:later-personality-trait-score",
+              "role": "later measured disposition"
+            }
+          ],
+          "type": "Mechanism"
+        }
+      ],
+      "practical_implications": [
+        {
+          "action": {
+            "en": "Define one repeated situation and one observable behavior or outcome. Record its frequency and context, then change one current process such as opportunity, role expectation, skill, feedback, support, avoidance, or routine. Reassess the behavior first and any trait score only after enough repeated observations.",
+            "ru": "Определите одну повторяющуюся ситуацию и одно наблюдаемое поведение или результат. Запишите частоту и контекст, затем измените один текущий процесс: возможность, ожидание роли, навык, обратную связь, поддержку, избегание или распорядок. Сначала повторно оцените поведение, а показатель черты — только после достаточного числа наблюдений."
+          },
+          "actionability": "interpretation_only",
+          "applicability": {
+            "en": "Repeated low-risk patterns with observable contexts and outcomes where changing current behavior, skill, support, or environment is acceptable.",
+            "ru": "Повторяющиеся низкорисковые паттерны с наблюдаемыми условиями и результатами, где допустимо менять текущее поведение, навык, поддержку или среду."
+          },
+          "audience": [
+            "individual",
+            "educator",
+            "clinician",
+            "researcher",
+            "designer"
+          ],
+          "claim_ids": [
+            "pmm:claim:personality-development-requires-distinct-change-indices",
+            "pmm:claim:personality-mean-levels-change-across-life",
+            "pmm:claim:people-differ-in-personality-change",
+            "pmm:claim:interventions-associated-with-personality-score-change",
+            "pmm:claim:life-events-have-preliminary-trait-change-evidence",
+            "pmm:claim:person-environment-transaction-is-developmental-hypothesis"
+          ],
+          "confidence": "moderate",
+          "evidence_basis": {
+            "en": "Longitudinal evidence shows average and individual change, and intervention studies show trait-score change during treatment. Evidence does not identify one universal person-environment mechanism or a guaranteed method for changing a chosen trait.",
+            "ru": "Продольные данные показывают средние и индивидуальные изменения, а исследования вмешательств — изменение показателей черт во время лечения. Данные не устанавливают универсальный механизм «человек–среда» или гарантированный способ изменить выбранную черту."
+          },
+          "expected_change": {
+            "en": "A testable change in current behavior or functioning and better evidence about whether a broader trait measure changes later, without requiring replacement of identity.",
+            "ru": "Проверяемое изменение текущего поведения или функционирования и более надёжные данные о последующем изменении широкой черты без попытки заменить идентичность."
+          },
+          "family_id": "personality-development",
+          "id": "pmm:application:change-repeated-pattern-not-personality-label",
+          "not_established": {
+            "en": "A trait score does not reveal a fixed essence, the cause of a problem, the correct intervention, or an irreversible developmental history.",
+            "ru": "Балл черты не выявляет неизменную сущность, причину проблемы, правильное вмешательство или необратимую историю развития."
+          },
+          "practical_question": {
+            "en": "Which current repeated behavior, relationship pattern, role demand, or environment matters more than the broad trait label?",
+            "ru": "Какое текущее повторяющееся поведение, паттерн отношений, требование роли или условие среды важнее широкого ярлыка черты?"
+          },
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "safety_note": {
+            "en": "Do not use personality change as a demand for conformity, coercive treatment, masking disability, tolerating abuse, or blaming a person for structural constraints.",
+            "ru": "Не используйте изменение личности как требование соответствовать норме, основание для принуждения, маскировки инвалидности, терпимости к насилию или обвинения человека в структурных ограничениях."
+          },
+          "source_ids": [
+            "pmm:source:roberts-walton-viechtbauer-2006",
+            "pmm:source:haehner-2026-individual-change",
+            "pmm:source:roberts-2017-intervention-change",
+            "pmm:source:bleidorn-2018-life-events"
+          ],
+          "title": {
+            "en": "Change a repeated pattern, not a personality label",
+            "ru": "Меняйте повторяющийся паттерн, а не ярлык личности"
+          }
+        }
+      ],
+      "relations": [
+        {
+          "id": "pmm:relation:personality-development-measured-by-repeated-score",
+          "object_id": "pmm:measurement:repeated-personality-trait-score",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:construct:personality-trait-development"
+        },
+        {
+          "id": "pmm:relation:mean-change-operationalizes-development",
+          "object_id": "pmm:construct:personality-trait-development",
+          "predicate": "operationalizes",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:measurement:mean-level-trait-change"
+        },
+        {
+          "id": "pmm:relation:individual-change-operationalizes-development",
+          "object_id": "pmm:construct:personality-trait-development",
+          "predicate": "operationalizes",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:measurement:individual-trait-change-variance"
+        }
+      ],
+      "research_questions": [
+        {
+          "about_ids": [
+            "pmm:mechanism:person-environment-personality-transaction",
+            "pmm:context:repeated-role-and-environment",
+            "pmm:behavior:repeated-personality-relevant-behavior",
+            "pmm:outcome:later-personality-trait-score"
+          ],
+          "display_prominence": "peripheral",
+          "family_id": "personality-development",
+          "id": "pmm:research-question:personality-within-person-developmental-transaction",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "question": {
+            "en": "Which repeated role, relationship, behavior, learning consequence, or intervention causally changes which personality-relevant pattern for a particular person, over what time, and with what costs?",
+            "ru": "Какая повторяющаяся роль, отношение, поведение, последствие научения или вмешательство причинно меняет какой личностно значимый паттерн у конкретного человека, за какое время и с какими издержками?"
+          },
+          "question_kind": "causal",
+          "source_ids": [
+            "pmm:source:haehner-2026-individual-change",
+            "pmm:source:roberts-2017-intervention-change",
+            "pmm:source:bleidorn-2018-life-events"
+          ],
+          "status": "open",
+          "what_would_help": {
+            "en": "Preregistered dense longitudinal studies measuring traits, actual environments, roles, behavior, consequences, symptoms, and functioning before and after sequential or randomized low-risk changes, with measurement-invariance and competing-model tests.",
+            "ru": "Пререгистрированные частые продольные исследования черт, реальной среды, ролей, поведения, последствий, симптомов и функционирования до и после последовательных или рандомизированных низкорисковых изменений с проверкой сопоставимости измерений и конкурирующих моделей."
+          },
+          "why_open": {
+            "en": "Mean trends, individual change variance, event associations, and pooled intervention score changes do not jointly identify direction, timing, reciprocal selection, behavioral transfer, durability, or person-specific mechanisms.",
+            "ru": "Средние тенденции, разброс индивидуальных изменений, связи с событиями и сводные изменения баллов при вмешательствах совместно не устанавливают направление, время, взаимный отбор среды, перенос в поведение, устойчивость и индивидуальный механизм."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Lifespan longitudinal meta-analysis used for bounded mean-level change patterns, not individual prediction or causal explanation.",
+          "authors": [
+            "Brent W. Roberts",
+            "Kate E. Walton",
+            "Wolfgang Viechtbauer"
+          ],
+          "doi": "10.1037/0033-2909.132.1.1",
+          "id": "pmm:source:roberts-walton-viechtbauer-2006",
+          "pmid": "16435954",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Patterns of mean-level change in personality traits across the life course — a meta-analysis of longitudinal studies",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16435954/",
+          "year": 2006
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Recent large meta-analysis used to distinguish reliable individual differences in change from mean-level and rank-order summaries.",
+          "authors": [
+            "Peter Haehner",
+            "Christopher J. Hopwood",
+            "Lukas Schellenberg",
+            "Ted Schwaba",
+            "Wiebke Bleidorn"
+          ],
+          "doi": "10.1037/bul0000525",
+          "id": "pmm:source:haehner-2026-individual-change",
+          "pmid": "42423713",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Individual differences in personality trait changes across the lifespan — a meta-analysis of longitudinal studies",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42423713/",
+          "year": 2026
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Large intervention meta-analysis used with an association claim because the pooled evidence combines experiments and uncontrolled pre-post designs.",
+          "authors": [
+            "Brent W. Roberts",
+            "Jing Luo",
+            "Daniel A. Briley",
+            "Philip I. Chow",
+            "Rong Su",
+            "Patrick L. Hill"
+          ],
+          "doi": "10.1037/bul0000088",
+          "id": "pmm:source:roberts-2017-intervention-change",
+          "pmid": "28054797",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "A systematic review of personality trait change through intervention",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28054797/",
+          "year": 2017
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Prospective life-event review used to show preliminary event associations and constrain deterministic socialization claims.",
+          "authors": [
+            "Wiebke Bleidorn",
+            "Christopher J. Hopwood",
+            "Richard E. Lucas"
+          ],
+          "doi": "10.1111/jopy.12286",
+          "id": "pmm:source:bleidorn-2018-life-events",
+          "pmid": "27716921",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Life events and personality trait change",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27716921/",
+          "year": 2018
+        }
+      ],
+      "title": "Personality development and change",
+      "version": "0.3.4"
     }
   ],
-  "interface_version": "0.19.0",
+  "interface_version": "0.20.0",
   "mechanism_index": [
     {
       "claim_ids": [
@@ -19141,6 +20106,26 @@
       "label": "Strategic expectancy or post-lexical matching",
       "mechanism_kind": "cognitive",
       "source_count": 2
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:person-environment-transaction-is-developmental-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which existing dispositions influence selection, interpretation, evocation, and modification of environments, while repeated roles, relationships, behavior, learning, and consequences contribute to later personality-relevant patterns.",
+      "evidence_count": 1,
+      "family_id": "personality-development",
+      "family_title": "Personality development and change",
+      "id": "pmm:mechanism:person-environment-personality-transaction",
+      "label": "Person-environment personality transaction",
+      "mechanism_kind": "developmental",
+      "source_count": 1
     },
     {
       "claim_ids": [
@@ -20183,8 +21168,13 @@
           ],
           "coverage": "partial",
           "established": {
-            "en": "Trait and temperament profiles show imperfect relative stability and cross-age associations; attachment continuity is moderate.",
-            "ru": "Профили черт и темперамента показывают неполную относительную устойчивость и связи между возрастами; устойчивость привязанности умеренная."
+            "and trait scores change during interventions; life-event findings remain preliminary and intervention estimates mix causal and noncausal designs.": null,
+            "en": "Mean trait levels change across the lifespan",
+            "people differ reliably in their changes": null,
+            "ru": "Средние уровни черт меняются в течение жизни",
+            "а оценки вмешательств смешивают причинные и непричинные дизайны.": null,
+            "а показатели черт меняются во время вмешательств; данные о жизненных событиях предварительны": null,
+            "люди надёжно различаются по изменениям": null
           },
           "id": "model:personality-development",
           "label": {
@@ -20227,20 +21217,82 @@
               "expected_type": "Mechanism",
               "family_id": "temperament",
               "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:construct:personality-trait-development",
+              "expected_type": "Construct",
+              "family_id": "personality-development",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:measurement:repeated-personality-trait-score",
+              "expected_type": "Measurement",
+              "family_id": "personality-development",
+              "role": "measurement_example"
+            },
+            {
+              "canonical_id": "pmm:measurement:mean-level-trait-change",
+              "expected_type": "Measurement",
+              "family_id": "personality-development",
+              "role": "measurement_example"
+            },
+            {
+              "canonical_id": "pmm:measurement:individual-trait-change-variance",
+              "expected_type": "Measurement",
+              "family_id": "personality-development",
+              "role": "measurement_example"
+            },
+            {
+              "canonical_id": "pmm:context:major-life-event-exposure",
+              "expected_type": "Context",
+              "family_id": "personality-development",
+              "role": "task_context_example"
+            },
+            {
+              "canonical_id": "pmm:intervention:psychological-personality-change-intervention",
+              "expected_type": "Intervention",
+              "family_id": "personality-development",
+              "role": "intervention_example"
+            },
+            {
+              "canonical_id": "pmm:behavior:repeated-personality-relevant-behavior",
+              "expected_type": "Behavior",
+              "family_id": "personality-development",
+              "role": "behavior_example"
+            },
+            {
+              "canonical_id": "pmm:outcome:later-personality-trait-score",
+              "expected_type": "Outcome",
+              "family_id": "personality-development",
+              "role": "outcome_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:person-environment-personality-transaction",
+              "expected_type": "Mechanism",
+              "family_id": "personality-development",
+              "role": "mechanism_example"
             }
           ],
           "measurements": {
-            "and relationship-specific measures.": null,
-            "behavior": null,
-            "en": "Longitudinal trait scales",
-            "informant reports": null,
-            "life events": null,
+            "actual behavior": null,
+            "and measurement invariance.": null,
+            "en": "Repeated trait scores",
+            "events": null,
+            "functioning": null,
+            "individual change variance": null,
+            "mean-level change": null,
+            "rank-order continuity": null,
             "roles": null,
-            "ru": "Продольные шкалы черт",
-            "жизненные события": null,
-            "отчёты других людей": null,
-            "поведение": null,
-            "роли и измерения конкретных отношений.": null
+            "ru": "Повторные показатели черт",
+            "symptoms": null,
+            "разброс индивидуальных изменений": null,
+            "реальное поведение": null,
+            "роли": null,
+            "симптомы": null,
+            "события": null,
+            "средние изменения": null,
+            "устойчивость относительного порядка": null,
+            "функционирование и сопоставимость измерений.": null
           },
           "model_kind": "developmental_framework",
           "plain_summary": {
@@ -20255,22 +21307,34 @@
             "роли и повторяющиеся взаимодействия человека со средой.": null
           },
           "practical_focus": {
-            "and repeated behaviors rather than trying to replace a personality label.": null,
-            "en": "Target current environments",
-            "relationships": null,
-            "roles": null,
-            "ru": "Воздействуйте на текущую среду",
-            "отношения и повторяющееся поведение вместо попытки заменить ярлык личности.": null,
-            "роли": null
+            "and measure behavior before interpreting a broad trait score.": null,
+            "change one current role": null,
+            "consequence": null,
+            "en": "Define one repeated situation and observable behavior",
+            "or environment": null,
+            "routine": null,
+            "ru": "Определите одну повторяющуюся ситуацию и наблюдаемое поведение",
+            "skill": null,
+            "support": null,
+            "измените одну текущую роль": null,
+            "навык": null,
+            "поддержку": null,
+            "последствие или условие среды и измеряйте поведение до интерпретации широкой черты.": null,
+            "рутину": null
           },
           "proposed": {
-            "en": "The causal pathways producing individual developmental change remain incompletely identified.",
-            "ru": "Причинные пути индивидуальных изменений в развитии установлены не полностью."
+            "en": "Reciprocal person-environment transactions are a plausible developmental mechanism but have not been jointly identified as one within-person causal loop.",
+            "ru": "Взаимные взаимодействия человека и среды являются правдоподобным механизмом развития",
+            "но не установлены как единая внутрииндивидуальная причинная петля.": null
           },
           "source_ids": [
             "source:roberts-delvecchio-stability-2000",
             "source:ringwald-temperament-personality-2026",
-            "source:briley-tucker-drob-continuity-2014"
+            "source:briley-tucker-drob-continuity-2014",
+            "source:roberts-mean-change-2006",
+            "source:haehner-individual-change-2026",
+            "source:roberts-intervention-change-2017",
+            "source:bleidorn-life-events-2018"
           ]
         },
         {
@@ -21820,11 +22884,41 @@
               "expected_type": "Mechanism",
               "family_id": "temperament",
               "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:construct:personality-trait-development",
+              "expected_type": "Construct",
+              "family_id": "personality-development",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:context:major-life-event-exposure",
+              "expected_type": "Context",
+              "family_id": "personality-development",
+              "role": "task_context_example"
+            },
+            {
+              "canonical_id": "pmm:measurement:mean-level-trait-change",
+              "expected_type": "Measurement",
+              "family_id": "personality-development",
+              "role": "measurement_example"
+            },
+            {
+              "canonical_id": "pmm:measurement:individual-trait-change-variance",
+              "expected_type": "Measurement",
+              "family_id": "personality-development",
+              "role": "measurement_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:person-environment-personality-transaction",
+              "expected_type": "Mechanism",
+              "family_id": "personality-development",
+              "role": "mechanism_example"
             }
           ],
           "ontological_note": {
-            "en": "Current records provide narrow developmental examples in social buffering, attachment continuity, and developmental amnesia; none is a complete theory of development.",
-            "ru": "Сейчас представлены узкие примеры развития из социальной поддержки, устойчивости привязанности и амнезии развития; ни один из них не является полной теорией развития."
+            "en": "Current records provide bounded examples in social buffering, attachment continuity, developmental amnesia, temperament, and personality change; none is a complete causal theory of development.",
+            "ru": "Сейчас представлены ограниченные примеры социальной поддержки, устойчивости привязанности, амнезии развития, темперамента и изменений личности; ни один из них не является полной причинной теорией развития."
           },
           "parent_id": "gp:development",
           "source_ids": [
@@ -21832,7 +22926,11 @@
             "source:fraley-shaver-attachment-2000",
             "source:roberts-delvecchio-stability-2000",
             "source:ringwald-temperament-personality-2026",
-            "source:briley-tucker-drob-continuity-2014"
+            "source:briley-tucker-drob-continuity-2014",
+            "source:roberts-mean-change-2006",
+            "source:haehner-individual-change-2026",
+            "source:roberts-intervention-change-2017",
+            "source:bleidorn-life-events-2018"
           ]
         },
         {
@@ -22451,6 +23549,30 @@
         "organization": "Psychological Bulletin",
         "title": "The Effects of Feedback Interventions on Performance",
         "url": "https://doi.org/10.1037/0033-2909.119.2.254"
+      },
+      {
+        "id": "source:roberts-mean-change-2006",
+        "organization": "Psychological Bulletin",
+        "title": "Patterns of Mean-Level Change in Personality Traits Across the Life Course",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16435954/"
+      },
+      {
+        "id": "source:haehner-individual-change-2026",
+        "organization": "Psychological Bulletin",
+        "title": "Individual Differences in Personality Trait Changes Across the Lifespan",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42423713/"
+      },
+      {
+        "id": "source:roberts-intervention-change-2017",
+        "organization": "Psychological Bulletin",
+        "title": "A Systematic Review of Personality Trait Change Through Intervention",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28054797/"
+      },
+      {
+        "id": "source:bleidorn-life-events-2018",
+        "organization": "Journal of Personality",
+        "title": "Life Events and Personality Trait Change",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27716921/"
       },
       {
         "id": "source:big-five-review",
