@@ -4,7 +4,7 @@ PMM now exposes three projections over one canonical evidence model.
 
 ## 1. General Psychology
 
-This is an educational navigation facet. It starts with familiar areas such as Memory, Emotional states and regulation, Temperament, and Big Five. These headings are not added as new PMM object types and do not form one strict ontology.
+This is an educational navigation facet. It starts with familiar areas such as Memory, Attention, Perception, Emotional states and regulation, Temperament, and Big Five. These headings are not added as new PMM object types and do not form one strict ontology.
 
 Every linked card retains its canonical type:
 
@@ -12,11 +12,12 @@ Every linked card retains its canonical type:
 - N-back is a task `Context`;
 - an N-back score is a `Measurement`;
 - episodic retrieval is a proposed `Mechanism`;
+- spatial selective attention is a `Construct`, while the cueing task is a `Context`, cue validity is an `Intervention`, and latency or accuracy are outcomes and measurements;
 - anxiety is represented according to its use in a particular record, not forced into one universal type;
 - Big Five is a descriptive trait taxonomy, not a causal mechanism;
 - temperament is an area of stable individual differences in reactivity and self-regulation, not merely a list of classical types.
 
-Coverage labels are epistemically important. `partial` means that some canonical records exist. `planned` means that PMM does not yet contain curated records for the area.
+Coverage labels are epistemically important. `partial` means that some canonical records exist. `planned` means that PMM does not yet contain curated records for the area. Attention is currently partial and narrowly limited to predictive spatial cueing. Perception remains planned: using visual stimuli does not by itself create a validated model of perception.
 
 ## 2. Mechanisms & Evidence
 
@@ -27,7 +28,7 @@ This is the strict scientific core. It separates objects, structural relations, 
 This is a crosswalk, not a merged hierarchy:
 
 - RDoC is a dimensional research framework, not a diagnostic manual or complete ontology.
-- Cognitive Atlas distinguishes cognitive concepts from experimental tasks. Linked Working Memory and N-back records are currently marked `Unreviewed`, so PMM mappings are provisional.
+- Cognitive Atlas distinguishes cognitive concepts from experimental tasks. Linked Working Memory, N-back, spatial-attention, and visuospatial-cueing records are marked `Unreviewed`, so PMM mappings are provisional.
 - Big Five organizes broad personality trait variation but does not identify mechanisms by itself.
 - modern temperament models organize developmental dimensions of reactivity and self-regulation; PMM has not selected one universal model.
 - HiTOP organizes psychopathology and must not be used as a general classification of normal mental functions.
@@ -36,4 +37,4 @@ This is a crosswalk, not a merged hierarchy:
 
 The human-editable projection is [`data/navigation-views-v0.1.yaml`](../data/navigation-views-v0.1.yaml). `scripts/build_site_data.py` rejects unknown family IDs, unresolved canonical IDs, type mismatches, broken parents, and unknown source references. The generated website bundle remains disposable.
 
-The next expansion should add heterogeneous domains only after their boundaries are reviewed: attention/perception, episodic and semantic memory, motivation, social processes, development, and personality/temperament measures.
+The next expansion should continue with a genuinely different boundary test rather than treating the taxonomy as complete. A declarative-memory pilot should separate episodic and semantic constructs, encoding and retrieval tasks, observed performance, and candidate memory mechanisms. Visual perception should remain a separate later pilot unless its own measurements and causal claims are curated.

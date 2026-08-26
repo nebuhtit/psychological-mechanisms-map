@@ -1,35 +1,35 @@
 {
   "causal_support": {
-    "direct": 23,
-    "indirect": 17,
+    "direct": 25,
+    "indirect": 21,
     "none": 6
   },
   "claim_types": {
     "association": 6,
-    "causal_effect": 16,
+    "causal_effect": 18,
     "causal_hypothesis": 1,
-    "definition": 4,
-    "mechanism_hypothesis": 10,
+    "definition": 5,
+    "mechanism_hypothesis": 12,
     "mediation": 2,
     "moderation": 2,
     "prediction": 1
   },
   "confidence_levels": {
-    "high": 3,
+    "high": 4,
     "low": 9,
-    "moderate": 28,
+    "moderate": 32,
     "not_applicable": 2
   },
   "epistemic_statuses": {
     "mixed": 2,
     "not_assessed": 2,
-    "proposed": 11,
-    "supported": 24,
+    "proposed": 13,
+    "supported": 27,
     "unsupported": 3
   },
   "evidence_kinds": {
     "computational_model": 1,
-    "controlled_experiment": 12,
+    "controlled_experiment": 18,
     "cross_sectional_observational": 3,
     "meta_analysis": 3,
     "narrative_review": 7,
@@ -125,19 +125,28 @@
       "source": "data/evidence-pack-placebo-analgesia-v0.3.yaml",
       "sources": 5,
       "title": "Placebo analgesia"
+    },
+    {
+      "claims": 5,
+      "evidence": 6,
+      "id": "spatial-attention",
+      "objects": 10,
+      "source": "data/evidence-pack-spatial-attention-v0.3.yaml",
+      "sources": 4,
+      "title": "Spatial attention"
     }
   ],
-  "family_count": 10,
+  "family_count": 11,
   "object_types": {
-    "Behavior": 8,
-    "Construct": 11,
-    "Context": 18,
+    "Behavior": 9,
+    "Construct": 12,
+    "Context": 19,
     "Contingency": 3,
     "Event": 4,
-    "Intervention": 17,
-    "Measurement": 24,
-    "Mechanism": 12,
-    "Outcome": 6,
+    "Intervention": 18,
+    "Measurement": 26,
+    "Mechanism": 14,
+    "Outcome": 8,
     "State": 15
   },
   "report_version": 1,
@@ -392,18 +401,43 @@
         "proposed claim",
         "limited precision"
       ]
+    },
+    {
+      "claim_id": "pmm:claim:valid-endogenous-cues-improve-sequential-accuracy",
+      "family_id": "spatial-attention",
+      "reasons": [
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:sensory-enhancement-may-contribute-to-spatial-cueing",
+      "family_id": "spatial-attention",
+      "reasons": [
+        "proposed claim",
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:decision-weighting-may-contribute-to-spatial-cueing",
+      "family_id": "spatial-attention",
+      "reasons": [
+        "proposed claim",
+        "single-source support",
+        "limited precision"
+      ]
     }
   ],
   "scope": "public_families",
   "support_directions": {
-    "challenges": 7,
+    "challenges": 8,
     "mixed": 4,
-    "supports": 35
+    "supports": 40
   },
   "totals": {
-    "claims": 42,
-    "evidence": 46,
-    "objects": 118,
-    "sources": 38
+    "claims": 47,
+    "evidence": 52,
+    "objects": 128,
+    "sources": 42
   }
 }

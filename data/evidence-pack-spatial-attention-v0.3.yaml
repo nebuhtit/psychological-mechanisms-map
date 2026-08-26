@@ -1,0 +1,487 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:spatial-attention-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for spatial attention and visuospatial cueing
+  description: Separates the attention construct, cueing task, cue-validity manipulation, target response, performance measurements, and sensory versus decisional mechanism hypotheses.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T16:30:00+03:00'
+    modified_at: '2026-08-26T16:30:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:construct:spatial-selective-attention
+    type: Construct
+    label: Spatial selective attention
+    definition: Selective prioritization of information from one or more spatial locations relative to competing locations.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Attention is not identical to visual perception, target detection, response speed, or a score from one cueing task.
+      - Spatial attention is narrower than the broad RDoC Attention construct.
+    external_mappings:
+      - system: RDoC
+        external_iri: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs
+        external_label: Attention
+        mapping_relation: narrow_match
+        mapping_status: label_verified
+        rationale: PMM spatial selective attention is one narrower form of the broader RDoC construct regulating access to capacity-limited systems.
+        accessed_at: '2026-08-26'
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/concept/id/trm_557b4abe521af/
+        external_label: spatial selective attention
+        mapping_relation: close_match
+        mapping_status: provisional
+        rationale: The labels and boundaries are close, but the Cognitive Atlas record is marked Unreviewed and PMM does not import its hierarchy as authoritative.
+        accessed_at: '2026-08-26'
+    provenance: *provenance
+
+  - id: pmm:context:predictive-visuospatial-cueing-task
+    type: Context
+    label: Predictive visuospatial cueing task
+    definition: Experimental task in which a spatial cue precedes a visual target and target location is more or less consistent with the cued location.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      modality: visual
+      cue_type: endogenous or expectancy-inducing spatial cue
+      conditions: valid, invalid, and sometimes neutral cue-target relations
+      response: target detection, discrimination, or localization
+    scope: Human laboratory cueing tasks with fixation control, declared cue validity, target timing, and response rules.
+    boundary_notes:
+      - The task operationalizes attention under a protocol; it is not the attention construct itself.
+    external_mappings:
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/task/id/tsk_4a57abb949ee9/
+        external_label: visuospatial cueing task
+        mapping_relation: close_match
+        mapping_status: provisional
+        rationale: The external task describes the same broad cue-target paradigm, but it is marked Unreviewed and does not fix one implementation.
+        accessed_at: '2026-08-26'
+    provenance: *provenance
+
+  - id: pmm:intervention:spatial-cue-validity-manipulation
+    type: Intervention
+    label: Spatial cue-validity manipulation
+    definition: Experimental variation of whether a cue correctly or incorrectly indicates the later target location or interval.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:construct:spatial-selective-attention
+      - pmm:behavior:visual-target-response
+    delivery: Present protocol-defined predictive cues before targets and compare valid, invalid, or neutral cue-target conditions.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:behavior:visual-target-response
+    type: Behavior
+    label: Visual target response
+    definition: Observable button press or equivalent response indicating target detection, discrimination, localization, or absence.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Protocol-defined manual response while gaze remains within the fixation criterion.
+    provenance: *provenance
+
+  - id: pmm:outcome:visual-target-response-latency
+    type: Outcome
+    label: Visual target response latency
+    definition: Time between target onset and a protocol-valid visual target response.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: performance
+    valence: not_applicable
+    provenance: *provenance
+
+  - id: pmm:outcome:visual-target-discrimination-accuracy
+    type: Outcome
+    label: Visual target discrimination accuracy
+    definition: Probability or proportion of correct target detection, discrimination, or localization responses under a declared condition.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: performance
+    valence: not_applicable
+    provenance: *provenance
+
+  - id: pmm:measurement:cueing-response-latency
+    type: Measurement
+    label: Cueing-task response-latency measurement
+    definition: Trial-level response time and prespecified valid-minus-invalid or invalid-minus-valid latency contrast.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids:
+      - pmm:outcome:visual-target-response-latency
+      - pmm:behavior:visual-target-response
+      - pmm:construct:spatial-selective-attention
+    method: Record target-locked response time, apply declared exclusion rules, and compare cue-target conditions.
+    unit_of_analysis: behavior
+    result_type: continuous
+    boundary_notes:
+      - A latency contrast is not a direct observation of a unique attention mechanism.
+    provenance: *provenance
+
+  - id: pmm:measurement:cueing-accuracy-and-sdt
+    type: Measurement
+    label: Cueing-task accuracy and signal-detection measurement
+    definition: Condition-specific accuracy plus model-based sensitivity and choice-bias estimates when the task design supports their separation.
+    ontological_level: type
+    curation_status: provisional
+    measurement_kind: behavioral_task
+    target_ids:
+      - pmm:outcome:visual-target-discrimination-accuracy
+      - pmm:construct:spatial-selective-attention
+      - pmm:mechanism:sensory-evidence-enhancement
+      - pmm:mechanism:spatial-decision-weighting
+    method: Estimate accuracy and, when identified by the response contingency table, perceptual sensitivity and choice criterion or bias.
+    unit_of_analysis: behavior
+    result_type: continuous
+    boundary_notes:
+      - Raw accuracy alone does not distinguish sensitivity from response bias.
+      - Model-based separation depends on task design and model assumptions.
+    provenance: *provenance
+
+  - id: pmm:mechanism:sensory-evidence-enhancement
+    type: Mechanism
+    label: Sensory evidence enhancement at an attended location
+    definition: Proposed process in which allocating attention increases the quality or discriminability of sensory evidence at the attended location.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: cognitive
+    role_bindings:
+      - {role: attentional allocation, object_id: pmm:construct:spatial-selective-attention}
+      - {role: measured sensory discriminability, object_id: pmm:measurement:cueing-accuracy-and-sdt}
+      - {role: target response, object_id: pmm:behavior:visual-target-response}
+    realization_conditions:
+      - The task and analysis can distinguish perceptual sensitivity from choice bias.
+      - Cue timing and stimulus properties permit attentional modulation before the response.
+    boundary_notes:
+      - A valid-cue performance benefit alone does not establish sensory enhancement.
+    provenance: *provenance
+
+  - id: pmm:mechanism:spatial-decision-weighting
+    type: Mechanism
+    label: Spatial weighting of evidence for decision
+    definition: Proposed process in which cue information changes the relative decision weight or criterion assigned to evidence from different locations or intervals.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: cognitive
+    role_bindings:
+      - {role: predictive cue information, object_id: pmm:intervention:spatial-cue-validity-manipulation}
+      - {role: measured choice bias, object_id: pmm:measurement:cueing-accuracy-and-sdt}
+      - {role: target response, object_id: pmm:behavior:visual-target-response}
+    realization_conditions:
+      - Cue information is available before the response decision.
+      - The task permits evidence or response options from multiple locations or intervals.
+    boundary_notes:
+      - Decision weighting does not imply that sensory encoding is unchanged in every task.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:spatial-attention-measured-by-latency
+    subject_id: pmm:construct:spatial-selective-attention
+    predicate: measured_by
+    object_id: pmm:measurement:cueing-response-latency
+    provenance: *provenance
+  - id: pmm:relation:spatial-attention-measured-by-sdt
+    subject_id: pmm:construct:spatial-selective-attention
+    predicate: measured_by
+    object_id: pmm:measurement:cueing-accuracy-and-sdt
+    provenance: *provenance
+  - id: pmm:relation:visual-target-response-occurs-in-cueing-task
+    subject_id: pmm:behavior:visual-target-response
+    predicate: occurs_in_context
+    object_id: pmm:context:predictive-visuospatial-cueing-task
+    provenance: *provenance
+  - id: pmm:relation:sensory-enhancement-occurs-in-cueing-task
+    subject_id: pmm:mechanism:sensory-evidence-enhancement
+    predicate: occurs_in_context
+    object_id: pmm:context:predictive-visuospatial-cueing-task
+    provenance: *provenance
+  - id: pmm:relation:decision-weighting-occurs-in-cueing-task
+    subject_id: pmm:mechanism:spatial-decision-weighting
+    predicate: occurs_in_context
+    object_id: pmm:context:predictive-visuospatial-cueing-task
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:rdoc-attention-regulates-limited-access
+    claim_type: definition
+    statement: RDoC Attention covers processes that regulate access to capacity-limited systems including awareness, higher perception, and motor action.
+    epistemic_status: supported
+    confidence: {level: high, rationale: 'This is the current official RDoC construct definition, used as an external alignment rather than a complete PMM mechanism theory.'}
+    scope:
+      population: Research framework spanning normal-to-abnormal human functioning.
+      species: [human]
+      context_ids: [pmm:context:predictive-visuospatial-cueing-task]
+      temporal_scope: Current NIMH RDoC framework as accessed on 2026-08-26.
+    defined_object_id: pmm:construct:spatial-selective-attention
+    source_ids: [pmm:source:nimh-rdoc-attention-2026]
+    evidence_ids: []
+    limitations: [The PMM spatial construct is narrower than broad RDoC Attention and the RDoC matrix is designed to evolve.]
+    provenance: *provenance
+
+  - id: pmm:claim:valid-spatial-cues-reduce-detection-latency
+    claim_type: causal_effect
+    statement: Across the tested visual-signal experiments, cues indicating the likely target location reduced detection latency relative to unexpected target locations.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Five controlled experiments showed cue-related latency benefits, but historical reporting and task-specific designs limit quantitative generalization.'}
+    scope:
+      population: 52 paid human participants across five experiments reported by Posner, Snyder, and Davidson in 1980.
+      species: [human]
+      context_ids: [pmm:context:predictive-visuospatial-cueing-task]
+      temporal_scope: Cue-to-target and target-to-response intervals within the reported experiments.
+      boundary_conditions: [Restricted to the reported luminance and form detection tasks, cue probabilities, locations, timing, and response procedures.]
+    exposure_id: pmm:intervention:spatial-cue-validity-manipulation
+    outcome_id: pmm:outcome:visual-target-response-latency
+    causal_estimand: Within-protocol difference in visual target response latency for expected or valid versus unexpected or invalid cue-target locations.
+    identification_strategy: controlled_contingency
+    temporal_ordering: The cue and expectancy condition preceded target presentation and the measured detection response.
+    causal_assumptions:
+      consistency: Cue-target conditions follow the reported trial and block procedures.
+      exchangeability: Within-experiment controlled condition comparisons reduce stable participant confounding, while historical counterbalancing details remain source-specific.
+      positivity: Participants encountered the compared expected and unexpected conditions in the reported designs.
+      interference: Cross-participant interference is assumed absent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:posner-1980-cue-latency]
+    limitations: [The effect does not uniquely identify sensory enhancement, decision criterion change, or one neural attention system.]
+    provenance: *provenance
+
+  - id: pmm:claim:valid-endogenous-cues-improve-sequential-accuracy
+    claim_type: causal_effect
+    statement: In a detection-like coarse-orientation task, valid endogenous cues improved accuracy in both simultaneous and long-SOA sequential conditions relative to invalid cues.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Controlled within-participant cue-validity comparisons yielded reliable effects, but the analyzed sample was 13 and the task was deliberately narrow.'}
+    scope:
+      population: 13 human participants in the Johnson et al. 2020 experiment.
+      species: [human]
+      context_ids: [pmm:context:predictive-visuospatial-cueing-task]
+      temporal_scope: Simultaneous trials and sequential trials with sufficient cue-target timing for attention switching.
+      boundary_conditions: [Clear displays, endogenous partially valid cues, coarse orientation discrimination, and the reported simultaneous-sequential protocol.]
+    exposure_id: pmm:intervention:spatial-cue-validity-manipulation
+    outcome_id: pmm:outcome:visual-target-discrimination-accuracy
+    estimate: {metric: valid-minus-invalid sequential-condition accuracy difference in percentage points, value_status: reported, value: 7, direction: positive, notes: 'Reported as 7 ± 2 percentage points, t(12)=4.13, 95% CI [3.4, 11.1].'}
+    causal_estimand: Within-participant difference in proportion correct for valid versus invalid cues under simultaneous and sequential display conditions.
+    identification_strategy: controlled_contingency
+    temporal_ordering: The predictive cue preceded the target displays and target response.
+    causal_assumptions:
+      consistency: Valid and invalid trials implement the reported partially valid cueing procedure.
+      exchangeability: Repeated controlled trial conditions reduce stable participant confounding; trial sequence and exclusions follow the source protocol.
+      positivity: Both valid and invalid trials occurred in each display condition.
+      interference: Cross-participant interference is assumed absent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:johnson-2020-cue-accuracy]
+    limitations: [A cueing effect on accuracy alone does not identify whether perception or decision changed.]
+    provenance: *provenance
+
+  - id: pmm:claim:sensory-enhancement-may-contribute-to-spatial-cueing
+    claim_type: mechanism_hypothesis
+    statement: Spatial attention may improve performance in some cueing tasks by increasing perceptual sensitivity at the attended location.
+    epistemic_status: proposed
+    confidence: {level: moderate, rationale: 'Model-based signal-detection results support sensitivity enhancement in a multialternative task, while a different detection-like task challenged sensory enhancement as a universal account.'}
+    scope:
+      population: Humans performing predictive endogenous visuospatial cueing tasks that identify sensitivity separately from choice bias.
+      species: [human]
+      context_ids: [pmm:context:predictive-visuospatial-cueing-task]
+      temporal_scope: Cue-driven allocation before target discrimination and response.
+      boundary_conditions: [Requires a design and model that can distinguish sensitivity from criterion or choice bias; effects may depend on stimulus and task complexity.]
+    mechanism_id: pmm:mechanism:sensory-evidence-enhancement
+    exposure_id: pmm:intervention:spatial-cue-validity-manipulation
+    outcome_id: pmm:outcome:visual-target-discrimination-accuracy
+    temporal_ordering: Cue-driven attentional allocation precedes target encoding and the later response.
+    falsifiable_boundary: The mechanism is challenged in a prespecified task if identified perceptual-sensitivity estimates do not differ between attended and comparison locations despite a reliable overall cueing effect.
+    evidence_ids: [pmm:evidence:banerjee-2019-sensitivity, pmm:evidence:johnson-2020-challenges-universal-sensory-account]
+    limitations: [Sensitivity estimates are model-dependent and do not by themselves localize a neural mechanism.]
+    provenance: *provenance
+
+  - id: pmm:claim:decision-weighting-may-contribute-to-spatial-cueing
+    claim_type: mechanism_hypothesis
+    statement: Predictive spatial cues may improve performance partly by changing how evidence from cued locations or intervals is weighted during decision-making.
+    epistemic_status: proposed
+    confidence: {level: moderate, rationale: 'Two controlled studies used different designs to separate decision-related effects from sensory sensitivity, but both remain task- and model-dependent.'}
+    scope:
+      population: Humans performing predictive endogenous cueing tasks with multiple locations or intervals.
+      species: [human]
+      context_ids: [pmm:context:predictive-visuospatial-cueing-task]
+      temporal_scope: Cue interpretation through response selection.
+      boundary_conditions: [Requires predictive cue information and a task permitting distinct evidence sources or response alternatives.]
+    mechanism_id: pmm:mechanism:spatial-decision-weighting
+    exposure_id: pmm:intervention:spatial-cue-validity-manipulation
+    outcome_id: pmm:outcome:visual-target-discrimination-accuracy
+    temporal_ordering: Cue information is available before evidence evaluation and the target response.
+    falsifiable_boundary: The account is challenged if a preregistered model comparison finds no cue-related criterion, bias, or evidence-weight change while an alternative sensory model explains held-out responses better.
+    evidence_ids: [pmm:evidence:johnson-2020-decision-account, pmm:evidence:banerjee-2019-choice-bias]
+    limitations: [Decision weighting can coexist with sensory enhancement and should not be represented as its universal replacement.]
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:posner-1980-cue-latency
+    claim_ids: [pmm:claim:valid-spatial-cues-reduce-detection-latency]
+    source_id: pmm:source:posner-1980-detection-signals
+    extraction_locator: Article abstract and experiment summaries reporting five experiments, total N=52, and reduced detection latency at expected locations.
+    evidence_kind: controlled_experiment
+    design: Five human visual-signal experiments comparing expected, unexpected, and in some cases neutral location or form cue conditions.
+    population: 52 paid human participants across five experiments.
+    species: [human]
+    sample_size: 52
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: expected-versus-unexpected target detection latency, value_status: qualitative_only, direction: negative, notes: Detection latency was reduced when cues indicated where the signal would occur.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: not_reported, replication: conceptual_replication}
+    summary: Controlled cue-location comparisons produced faster target detection at expected locations across the reported experiments.
+    limitations: [Historical study with heterogeneous experiments and no extracted pooled effect size.]
+    provenance: *provenance
+
+  - id: pmm:evidence:johnson-2020-cue-accuracy
+    claim_ids: [pmm:claim:valid-endogenous-cues-improve-sequential-accuracy]
+    source_id: pmm:source:johnson-2020-decision-model
+    extraction_locator: Results and general discussion; simultaneous and sequential valid-invalid accuracy contrasts.
+    evidence_kind: controlled_experiment
+    design: Within-participant partially valid endogenous cueing with simultaneous and long-SOA sequential coarse-orientation displays.
+    population: 13 human participants included in the reported t(12) contrasts.
+    species: [human]
+    sample_size: 13
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: valid-minus-invalid sequential-condition accuracy difference in percentage points, value_status: reported, value: 7, direction: positive, interval: {level: 0.95, lower: 3.4, upper: 11.1}, notes: 't(12)=4.13; simultaneous difference was 8 ± 2 percentage points.'}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: consistent, precision: limited, replication: unreplicated}
+    summary: Valid cues improved accuracy by similar amounts in simultaneous and sequential conditions in the tested task.
+    limitations: [Small sample and narrow detection-like task.]
+    provenance: *provenance
+
+  - id: pmm:evidence:banerjee-2019-sensitivity
+    claim_ids: [pmm:claim:sensory-enhancement-may-contribute-to-spatial-cueing]
+    source_id: pmm:source:banerjee-2019-sensory-decisional
+    extraction_locator: Results section on endogenous cueing effects on sensitivity; Figure 2 and accompanying model-based comparisons.
+    evidence_kind: controlled_experiment
+    design: Predictively cued four-location change-detection task analyzed with a multidimensional signal-detection model.
+    population: 30 analyzed human participants with normal or corrected-to-normal vision.
+    species: [human]
+    sample_size: 30
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: model-estimated sensitivity at cued versus uncued locations, value_status: qualitative_only, direction: positive, notes: Sensitivity and asymptotic sensitivity were higher at the cued location; reported corrected P values were below .001.}
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: Model-estimated perceptual sensitivity was higher at the cued location in the multialternative task.
+    limitations: [Seven of 37 participants were excluded for fixation and the mechanism inference depends on the m-ADC model.]
+    provenance: *provenance
+
+  - id: pmm:evidence:johnson-2020-challenges-universal-sensory-account
+    claim_ids: [pmm:claim:sensory-enhancement-may-contribute-to-spatial-cueing]
+    source_id: pmm:source:johnson-2020-decision-model
+    extraction_locator: General discussion comparing selective-perception and selective-decision predictions.
+    evidence_kind: controlled_experiment
+    design: Simultaneous-sequential cueing test designed so long-SOA sequential displays allowed attention switching while preserving cue information for decision.
+    population: 13 human participants.
+    species: [human]
+    sample_size: 13
+    inference_support: mechanism
+    support_direction: challenges
+    causal_support: indirect
+    effect: {metric: similarity of cueing effects across simultaneous and sequential conditions, value_status: reported, direction: positive, notes: Similar reliable valid-cue benefits were inconsistent with selective perception as the sole account for this task.}
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: A reliable sequential cueing effect challenged sensory enhancement as the universal explanation for partially valid cueing.
+    limitations: [The result does not refute sensory enhancement in more complex or differently masked tasks.]
+    provenance: *provenance
+
+  - id: pmm:evidence:johnson-2020-decision-account
+    claim_ids: [pmm:claim:decision-weighting-may-contribute-to-spatial-cueing]
+    source_id: pmm:source:johnson-2020-decision-model
+    extraction_locator: Abstract, results, and conclusion of the simultaneous-sequential mechanism comparison.
+    evidence_kind: controlled_experiment
+    design: Endogenous cueing experiment contrasting predictions of selective-perception and selective-decision accounts.
+    population: 13 human participants.
+    species: [human]
+    sample_size: 13
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: sequential valid-cue accuracy benefit, value_status: reported, value: 7, direction: positive, notes: Persistence at a long SOA was consistent with using cue information in decision-making.}
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: The simultaneous-sequential dissociation supported a selective-decision account for the tested detection-like task.
+    limitations: [Mechanism inference is comparative and does not directly manipulate decision weighting.]
+    provenance: *provenance
+
+  - id: pmm:evidence:banerjee-2019-choice-bias
+    claim_ids: [pmm:claim:decision-weighting-may-contribute-to-spatial-cueing]
+    source_id: pmm:source:banerjee-2019-sensory-decisional
+    extraction_locator: Results and discussion on choice-criterion bias, graded cue validity, and dissociation from sensitivity.
+    evidence_kind: controlled_experiment
+    design: Predictively cued multialternative task with model-estimated sensitivity and choice bias across four locations.
+    population: 30 analyzed human participants.
+    species: [human]
+    sample_size: 30
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: model-estimated choice bias by cue validity, value_status: qualitative_only, direction: positive, notes: Bias varied systematically with cue validity and was dissociable from sensitivity modulation.}
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: conceptual_replication}
+    summary: Choice-bias estimates varied with predictive cue validity independently of sensitivity estimates.
+    limitations: [The inferred component depends on the multidimensional signal-detection model and task response structure.]
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:nimh-rdoc-attention-2026
+    title: Definitions of the RDoC Domains and Constructs — Attention
+    source_type: official_framework
+    organization: National Institute of Mental Health
+    version: accessed 2026-08-26
+    url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/definitions-of-the-rdoc-domains-and-constructs
+    accessed_at: '2026-08-26'
+    authority_note: Current official RDoC construct definition; the framework is explicitly evolving and is not a complete ontology.
+    provenance: *provenance
+
+  - id: pmm:source:posner-1980-detection-signals
+    title: Attention and the detection of signals
+    source_type: peer_reviewed_article
+    authors: [Michael I. Posner, Charles R. R. Snyder, Brian J. Davidson]
+    year: 1980
+    doi: 10.1037/0096-3445.109.2.160
+    pmid: '7381367'
+    url: https://doi.org/10.1037/0096-3445.109.2.160
+    accessed_at: '2026-08-26'
+    authority_note: Foundational primary report of five controlled spatial-expectancy and visual-detection experiments.
+    provenance: *provenance
+
+  - id: pmm:source:johnson-2020-decision-model
+    title: Endogenous cueing effects for detection can be accounted for by a decision model of selective attention
+    source_type: peer_reviewed_article
+    authors: [Miranda L. Johnson, John Palmer, Cathleen M. Moore, Geoffrey M. Boynton]
+    year: 2020
+    doi: 10.3758/s13423-019-01698-3
+    pmid: '31907851'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7093364/
+    accessed_at: '2026-08-26'
+    authority_note: Primary controlled experiment designed to distinguish selective-perception from selective-decision explanations of endogenous cueing.
+    provenance: *provenance
+
+  - id: pmm:source:banerjee-2019-sensory-decisional
+    title: Sensory and decisional components of endogenous attention are dissociable
+    source_type: peer_reviewed_article
+    authors: [Sanjna Banerjee, Shrey Grover, Suhas Ganesh, Devarajan Sridharan]
+    year: 2019
+    doi: 10.1152/jn.00257.2019
+    pmid: '31268805'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6843089/
+    accessed_at: '2026-08-26'
+    authority_note: Primary multialternative cueing study separating model-estimated perceptual sensitivity and choice bias in 30 analyzed participants.
+    provenance: *provenance

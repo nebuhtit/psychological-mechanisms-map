@@ -63,7 +63,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.5.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.6.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -71,7 +71,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.5.1";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.6.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -83,6 +83,10 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(
             bundle["translations"]["RDoC Potential Threat (Anxiety) concerns responses when harm may occur but is distant, ambiguous, or uncertain in probability."],
             "Конструкт RDoC «Потенциальная угроза (тревога)» описывает реакции на возможный вред, который отдалён во времени, неоднозначен или имеет неопределённую вероятность.",
+        )
+        self.assertEqual(
+            bundle["translations"]["Spatial attention may improve performance in some cueing tasks by increasing perceptual sensitivity at the attended location."],
+            "В некоторых заданиях с пространственной подсказкой внимание может улучшать результат за счёт повышения перцептивной чувствительности в указанном месте.",
         )
 
     def test_every_claim_has_a_source_checked_bilingual_explanation(self) -> None:
@@ -205,6 +209,28 @@ class SiteBundleTests(unittest.TestCase):
             self.assertEqual(nodes[node_id]["coverage"], "planned")
             self.assertEqual(nodes[node_id]["memberships"], [])
 
+        attention = nodes["gp:attention"]
+        attention_types = {
+            item["canonical_id"]: item["expected_type"] for item in attention["memberships"]
+        }
+        self.assertEqual(attention["coverage"], "partial")
+        self.assertEqual(
+            attention_types["pmm:context:predictive-visuospatial-cueing-task"], "Context"
+        )
+        self.assertEqual(
+            attention_types["pmm:measurement:cueing-accuracy-and-sdt"], "Measurement"
+        )
+        self.assertEqual(
+            attention_types["pmm:mechanism:spatial-decision-weighting"], "Mechanism"
+        )
+        self.assertEqual(nodes["gp:perception"]["coverage"], "planned")
+        self.assertEqual(nodes["gp:perception"]["memberships"], [])
+
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('"Task context, not the construct"', javascript)
+        self.assertNotIn('"Task context, not memory"', javascript)
+        self.assertIn("Attention now has one narrow pilot", javascript)
+
     def test_framework_cards_preserve_scope_and_mapping_uncertainty(self) -> None:
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         systems = {
@@ -222,6 +248,16 @@ class SiteBundleTests(unittest.TestCase):
             for item in family["objects"] if item["id"] == "pmm:construct:working-memory-capacity"
         )
         mappings = {item["system"]: item for item in working_memory["external_mappings"]}
+        self.assertEqual(mappings["RDoC"]["mapping_relation"], "narrow_match")
+        self.assertEqual(mappings["CognitiveAtlas"]["mapping_status"], "provisional")
+
+        spatial_attention = next(
+            item
+            for family in document["families"] if family["id"] == "spatial-attention"
+            for item in family["objects"]
+            if item["id"] == "pmm:construct:spatial-selective-attention"
+        )
+        mappings = {item["system"]: item for item in spatial_attention["external_mappings"]}
         self.assertEqual(mappings["RDoC"]["mapping_relation"], "narrow_match")
         self.assertEqual(mappings["CognitiveAtlas"]["mapping_status"], "provisional")
 

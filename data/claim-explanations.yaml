@@ -334,3 +334,33 @@ entries:
       Treatment expectations may recruit the body’s own opioid system and thereby reduce pain in some placebo procedures. Naloxone studies and a meta-analysis support this pathway, but effects vary across protocols and people, so it is not a universal placebo mechanism.
     ru: >-
       Ожидание эффекта лечения может в некоторых плацебо-процедурах активировать собственную опиоидную систему организма и тем самым уменьшать боль. Исследования с налоксоном и метаанализ поддерживают этот путь, но результаты различаются между протоколами и людьми, поэтому это не универсальный механизм любого плацебо.
+
+  - claim_id: pmm:claim:rdoc-attention-regulates-limited-access
+    en: >-
+      In RDoC, “Attention” is a broad name for processes that control which information gains priority when awareness, perception, or action cannot process everything equally. PMM’s spatial-attention record covers only one part of that broad construct and is not a mechanism by itself.
+    ru: >-
+      В RDoC «внимание» — это широкое название процессов, которые определяют, какая информация получает приоритет, когда сознание, восприятие или действие не могут одинаково обработать всё сразу. Запись PMM о пространственном внимании охватывает лишь часть этого понятия и сама по себе не является механизмом.
+
+  - claim_id: pmm:claim:valid-spatial-cues-reduce-detection-latency
+    en: >-
+      In the reported visual experiments, people responded faster when a cue correctly indicated where the target would appear than when the target appeared at an unexpected location. The manipulation establishes a task-specific cueing effect, but response speed alone cannot tell whether the cue changed perception, decision-making, or both.
+    ru: >-
+      В описанных зрительных экспериментах люди быстрее отвечали, когда подсказка правильно указывала место появления цели, чем когда цель появлялась в неожиданном месте. Эксперимент подтверждает эффект подсказки в этих заданиях, но одна скорость ответа не показывает, изменилась ли работа восприятия, принятие решения или оба процесса.
+
+  - claim_id: pmm:claim:valid-endogenous-cues-improve-sequential-accuracy
+    en: >-
+      In one small orientation-discrimination experiment, valid cues improved accuracy even when the two possible target intervals were separated by enough time to redirect attention. This shows a cueing effect in that protocol and weakens a purely sensory explanation, but it does not establish one universal mechanism of attention.
+    ru: >-
+      В небольшом эксперименте по различению ориентации правильные подсказки повышали точность даже тогда, когда два возможных интервала предъявления были достаточно разделены во времени для переноса внимания. Это подтверждает эффект подсказки в данном протоколе и ослабляет чисто сенсорное объяснение, но не устанавливает единый универсальный механизм внимания.
+
+  - claim_id: pmm:claim:sensory-enhancement-may-contribute-to-spatial-cueing
+    en: >-
+      One proposed process is that attention improves the quality of sensory information from the cued location. A multialternative experiment found higher model-estimated sensitivity there, but another detection-like task showed that sensory improvement cannot explain every cueing effect. The mechanism therefore remains conditional and proposed.
+    ru: >-
+      Одна из гипотез состоит в том, что внимание улучшает качество сенсорной информации из указанного подсказкой места. В одном многоальтернативном эксперименте модель оценила чувствительность в этом месте выше, но другое задание показало, что сенсорное улучшение объясняет не каждый эффект подсказки. Поэтому механизм остаётся условной гипотезой.
+
+  - claim_id: pmm:claim:decision-weighting-may-contribute-to-spatial-cueing
+    en: >-
+      Another proposed process is that a predictive cue changes how strongly evidence from each location or time interval influences the final choice. Two experiments support this decision-related contribution, but it may operate together with sensory enhancement and was inferred through task comparisons and models rather than directly observed.
+    ru: >-
+      Другая гипотеза состоит в том, что предсказывающая подсказка меняет вес информации из разных мест или временных интервалов при окончательном выборе ответа. Два эксперимента поддерживают вклад этого процесса принятия решения, но он может работать вместе с сенсорным усилением и был выведен из сравнений заданий и моделей, а не наблюдался напрямую.

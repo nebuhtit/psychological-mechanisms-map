@@ -3,7 +3,7 @@ status: pilot
 canonical_language: en
 provenance:
   created_at: '2026-08-26T13:00:00+03:00'
-  modified_at: '2026-08-26T13:00:00+03:00'
+  modified_at: '2026-08-26T16:30:00+03:00'
   created_by: [OpenAI Codex]
   review_status: source_checked_editorial
   source_snapshot_date: '2026-08-26'
@@ -45,6 +45,26 @@ sources:
     title: An Introduction to the Five-Factor Model and Its Applications
     organization: Journal of Personality
     url: https://doi.org/10.1111/j.1467-6494.1992.tb00970.x
+  - id: source:cognitive-atlas-spatial-attention
+    title: Cognitive Atlas concept — spatial selective attention
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/concept/id/trm_557b4abe521af/
+  - id: source:cognitive-atlas-visuospatial-cueing
+    title: Cognitive Atlas task — visuospatial cueing task
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/task/id/tsk_4a57abb949ee9/
+  - id: source:posner-1980-detection
+    title: Attention and the detection of signals
+    organization: Journal of Experimental Psychology — General
+    url: https://doi.org/10.1037/0096-3445.109.2.160
+  - id: source:johnson-2020-decision
+    title: Endogenous cueing effects for detection can be accounted for by a decision model of selective attention
+    organization: Psychonomic Bulletin & Review
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7093364/
+  - id: source:banerjee-2019-components
+    title: Sensory and decisional components of endogenous attention are dissociable
+    organization: Journal of Neurophysiology
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6843089/
 
 general_psychology:
   id: general-psychology
@@ -106,6 +126,60 @@ general_psychology:
           canonical_id: pmm:mechanism:episodic-retrieval-n-back
           role: mechanism_example
           expected_type: Mechanism
+    - id: gp:attention
+      parent_id: gp:cognitive-processes
+      kind: topic
+      label: {en: Attention, ru: Внимание}
+      description:
+        en: Processes that prioritize some information for awareness, perception, or action when processing capacity is limited.
+        ru: Процессы, которые дают приоритет части информации для осознания, восприятия или действия, когда возможности обработки ограничены.
+      ontological_note:
+        en: PMM currently covers one narrow case — spatial selective attention in predictive cueing tasks. The construct, task, manipulation, response, measurement, and candidate mechanisms remain separate records.
+        ru: Сейчас PMM охватывает один узкий случай — пространственное избирательное внимание в заданиях с предсказывающими подсказками. Конструкт, задача, воздействие, ответ, измерение и кандидатные механизмы остаются разными записями.
+      coverage: partial
+      source_ids: [source:rdoc-definitions, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing, source:posner-1980-detection, source:johnson-2020-decision, source:banerjee-2019-components]
+      memberships:
+        - family_id: spatial-attention
+          canonical_id: pmm:construct:spatial-selective-attention
+          role: construct_example
+          expected_type: Construct
+        - family_id: spatial-attention
+          canonical_id: pmm:context:predictive-visuospatial-cueing-task
+          role: task_context_example
+          expected_type: Context
+        - family_id: spatial-attention
+          canonical_id: pmm:intervention:spatial-cue-validity-manipulation
+          role: intervention_example
+          expected_type: Intervention
+        - family_id: spatial-attention
+          canonical_id: pmm:behavior:visual-target-response
+          role: behavior_example
+          expected_type: Behavior
+        - family_id: spatial-attention
+          canonical_id: pmm:measurement:cueing-accuracy-and-sdt
+          role: measurement_example
+          expected_type: Measurement
+        - family_id: spatial-attention
+          canonical_id: pmm:mechanism:sensory-evidence-enhancement
+          role: mechanism_example
+          expected_type: Mechanism
+        - family_id: spatial-attention
+          canonical_id: pmm:mechanism:spatial-decision-weighting
+          role: mechanism_example
+          expected_type: Mechanism
+    - id: gp:perception
+      parent_id: gp:cognitive-processes
+      kind: topic
+      label: {en: Perception, ru: Восприятие}
+      description:
+        en: Processes that compute over sensory data to construct and transform representations of the external environment and guide action.
+        ru: Процессы обработки сенсорных данных, которые создают и преобразуют представления о внешней среде и направляют действие.
+      ontological_note:
+        en: The spatial-attention pilot uses visual stimuli, but that does not make it a validated model of visual perception. Perception remains a separate planned area.
+        ru: Пилот пространственного внимания использует зрительные стимулы, но это не превращает его в проверенную модель зрительного восприятия. Восприятие остаётся отдельной запланированной областью.
+      coverage: planned
+      source_ids: [source:rdoc-definitions]
+      memberships: []
     - id: gp:emotion-motivation
       parent_id: gp:mind
       kind: domain
@@ -207,6 +281,8 @@ scientific_systems:
           canonical_id: pmm:construct:rdoc-potential-threat-anxiety
         - family_id: working-memory
           canonical_id: pmm:construct:working-memory-capacity
+        - family_id: spatial-attention
+          canonical_id: pmm:construct:spatial-selective-attention
     - id: system:cognitive-atlas
       label: {en: Cognitive Atlas, ru: Cognitive Atlas}
       system_kind: collaborative_knowledge_base
@@ -214,15 +290,19 @@ scientific_systems:
         en: A knowledge base of cognitive concepts and experimental tasks with explicit relationships between them.
         ru: База знаний о когнитивных понятиях и экспериментальных задачах с явными связями между ними.
       limitation:
-        en: Record review status matters. The linked working-memory and N-back pages are currently marked “Unreviewed,” so PMM treats these alignments as provisional.
-        ru: Важен статус проверки записи. Связанные страницы рабочей памяти и N-back сейчас помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
+        en: Record review status matters. The linked working-memory, N-back, spatial-attention, and visuospatial-cueing pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
+        ru: Важен статус проверки записи. Связанные страницы рабочей памяти, N-back, пространственного внимания и зрительно-пространственной подсказки помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
       coverage: partial
-      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back]
+      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing]
       mapped_memberships:
         - family_id: working-memory
           canonical_id: pmm:construct:working-memory-capacity
         - family_id: working-memory
           canonical_id: pmm:context:n-back-task
+        - family_id: spatial-attention
+          canonical_id: pmm:construct:spatial-selective-attention
+        - family_id: spatial-attention
+          canonical_id: pmm:context:predictive-visuospatial-cueing-task
     - id: system:big-five
       label: {en: Big Five, ru: Большая пятёрка}
       system_kind: trait_taxonomy

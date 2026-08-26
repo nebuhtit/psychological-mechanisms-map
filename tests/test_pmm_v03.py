@@ -504,5 +504,43 @@ class PlaceboAnalgesiaEvidencePackTests(unittest.TestCase):
         self.assertIn("pmm:evidence:sauro-2005-opioid-meta-analysis", claim["evidence_ids"])
 
 
+class SpatialAttentionEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-spatial-attention-v0.3.yaml"
+        )
+
+    def test_spatial_attention_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_construct_task_intervention_response_measurement_and_mechanisms_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:spatial-selective-attention"], "Construct")
+        self.assertEqual(records["pmm:context:predictive-visuospatial-cueing-task"], "Context")
+        self.assertEqual(records["pmm:intervention:spatial-cue-validity-manipulation"], "Intervention")
+        self.assertEqual(records["pmm:behavior:visual-target-response"], "Behavior")
+        self.assertEqual(records["pmm:measurement:cueing-accuracy-and-sdt"], "Measurement")
+        self.assertEqual(records["pmm:mechanism:sensory-evidence-enhancement"], "Mechanism")
+        self.assertEqual(records["pmm:mechanism:spatial-decision-weighting"], "Mechanism")
+
+    def test_candidate_mechanisms_remain_proposed(self) -> None:
+        mechanism_claims = [
+            claim for claim in self.document["claims"]
+            if claim["claim_type"] == "mechanism_hypothesis"
+        ]
+        self.assertEqual(len(mechanism_claims), 2)
+        self.assertTrue(all(claim["epistemic_status"] == "proposed" for claim in mechanism_claims))
+
+    def test_sensory_account_preserves_support_and_challenge(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:sensory-enhancement-may-contribute-to-spatial-cueing"
+        )
+        evidence = {item["id"]: item for item in self.document["evidence"]}
+        directions = {evidence[item]["support_direction"] for item in claim["evidence_ids"]}
+        self.assertEqual(directions, {"supports", "challenges"})
+
+
 if __name__ == "__main__":
     unittest.main()

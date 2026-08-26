@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.5.0";
-const RU_URL = "data/i18n-ru.json?v=0.5.1";
+const DATA_URL = "data/pmm-data.json?v=0.6.0";
+const RU_URL = "data/i18n-ru.json?v=0.6.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -753,16 +753,39 @@ function coverageLabel(coverage) {
 function membershipRole(role) {
   const labels = {
     construct_example: ["Construct", "Конструкт"],
-    task_context_example: ["Task context, not memory", "Контекст задачи, не сама память"],
+    task_context_example: ["Task context, not the construct", "Контекст задания, не сам конструкт"],
     measurement_example: ["Measurement, not the ability itself", "Измерение, не сама способность"],
     mechanism_example: ["Proposed mechanism", "Предложенный механизм"],
     state_example: ["Momentary state", "Текущее состояние"],
     regulation_mechanism_example: ["Regulation mechanism", "Механизм регуляции"],
-    intervention_example: ["Experimental instruction", "Экспериментальная инструкция"],
+    intervention_example: ["Experimental intervention", "Экспериментальное воздействие"],
     appraisal_mechanism_example: ["Appraisal mechanism", "Механизм оценки"],
+    behavior_example: ["Observable response", "Наблюдаемый ответ"],
     mapped_record: ["Mapped canonical record", "Сопоставленная каноническая запись"],
   };
   const [en, ru] = labels[role] || [role, role];
+  return ui(en, ru);
+}
+
+function nodeKindLabel(kind) {
+  const labels = {
+    topic: ["Topic", "Тема"],
+    taxonomy: ["Taxonomy", "Классификация"],
+    domain: ["Domain", "Раздел"],
+  };
+  const [en, ru] = labels[kind] || [kind.replaceAll("_", " "), kind.replaceAll("_", " ")];
+  return ui(en, ru);
+}
+
+function systemKindLabel(kind) {
+  const labels = {
+    research_framework: ["Research framework", "Исследовательская система"],
+    collaborative_knowledge_base: ["Collaborative knowledge base", "Совместная база знаний"],
+    trait_taxonomy: ["Trait taxonomy", "Классификация черт"],
+    developmental_individual_differences_framework: ["Developmental framework", "Модель индивидуального развития"],
+    psychopathology_taxonomy: ["Psychopathology taxonomy", "Классификация психопатологии"],
+  };
+  const [en, ru] = labels[kind] || [kind.replaceAll("_", " "), kind.replaceAll("_", " ")];
   return ui(en, ru);
 }
 
@@ -850,7 +873,7 @@ function renderGeneralPsychology() {
                 <section class="topic-card coverage-${topic.coverage}">
                   <div class="topic-heading">
                     <div>
-                      <span>${escapeHtml(topic.kind)}</span>
+                      <span>${escapeHtml(nodeKindLabel(topic.kind))}</span>
                       <h4>${escapeHtml(localText(topic.label))}</h4>
                     </div>
                     <span class="coverage-chip">${coverageLabel(topic.coverage)}</span>
@@ -867,8 +890,8 @@ function renderGeneralPsychology() {
       }).join("")}
     </div>
     <p class="scope-footer">${ui(
-      "This first release intentionally covers only three branches. Attention, perception, motivation, social processes, development, and psychophysiological regulation will be added after their object boundaries are reviewed.",
-      "Первая версия намеренно охватывает только три ветви. Внимание, восприятие, мотивация, социальные процессы, развитие и психофизиологическая регуляция будут добавлены после проверки границ объектов."
+      "Coverage remains intentionally incomplete. Attention now has one narrow pilot; perception, declarative memory, personality measures, development, and other areas remain explicit gaps until their object boundaries are reviewed.",
+      "Охват намеренно остаётся неполным. Для внимания уже есть один узкий пилот; восприятие, декларативная память, измерения личности, развитие и другие области остаются явными пробелами до проверки границ объектов."
     )}</p>
   `;
   bindCanonicalLinks(container);
@@ -897,7 +920,7 @@ function renderScientificSystems() {
         <article class="system-card coverage-${system.coverage}">
           <header>
             <span>${String(index + 1).padStart(2, "0")}</span>
-            <div><p>${escapeHtml(system.system_kind.replaceAll("_", " "))}</p><h3>${escapeHtml(localText(system.label))}</h3></div>
+            <div><p>${escapeHtml(systemKindLabel(system.system_kind))}</p><h3>${escapeHtml(localText(system.label))}</h3></div>
             <span class="coverage-chip">${coverageLabel(system.coverage)}</span>
           </header>
           <section><strong>${ui("What it is", "Что это")}</strong><p>${escapeHtml(localText(system.scope))}</p></section>

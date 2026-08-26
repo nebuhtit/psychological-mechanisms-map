@@ -43,7 +43,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains ten deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains eleven deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -57,6 +57,7 @@ The live explorer contains ten deliberately heterogeneous mechanism families. Br
 | Reward prediction error | Computational error, expected value, temporal-difference updating, dopamine activity, neural manipulation, and learned behavior |
 | HPA feedback | Cortisol level, ACTH secretory drive, serial assays, pharmacological probes, and multi-site feedback |
 | Placebo analgesia | Treatment expectation, pain report, naloxone challenge, dopamine null result, and statistical neural mediation |
+| Spatial attention | Attention construct, predictive cueing task, cue-validity manipulation, response time, accuracy, and competing sensory and decision hypotheses |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
@@ -147,6 +148,8 @@ data/evidence-pack-hpa-feedback-v0.3.yaml
                                      Cortisol, ACTH dynamics, probes, and feedback boundary pack
 data/evidence-pack-placebo-analgesia-v0.3.yaml
                                      Expectation, pain, pharmacological perturbation, and mediation boundary pack
+data/evidence-pack-spatial-attention-v0.3.yaml
+                                     Attention, cueing-task, measurement, and competing-mechanism boundary pack
 data/navigation-views-v0.1.yaml      Validated educational and framework projections over canonical IDs
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/navigation-views.md             Faceted-view semantics and boundaries
