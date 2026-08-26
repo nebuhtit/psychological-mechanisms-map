@@ -198,6 +198,7 @@ objects:
 
   - id: pmm:contingency:avoidance-response-outcome
     type: Contingency
+    contingency_kind: response_consequence
     label: Avoidance response-outcome contingency
     definition: >-
       An n-ary dependency in which a specified response changes the probability,

@@ -324,14 +324,16 @@ $defs:
           valence:
             enum: [aversive, appetitive, neutral, mixed, not_applicable]
   contingency:
-    description: N-ary dependency among antecedent, response, consequence, comparator, and temporal schedule.
+    description: N-ary programmed dependency among stimulus or response, consequence, comparator, and temporal schedule; it is not evidence that learning occurred.
     unevaluatedProperties: false
     allOf:
       - $ref: '#/$defs/entityBase'
       - type: object
-        required: [response_id, consequence_id, response_dependency, comparator, temporal_relation]
+        required: [contingency_kind, consequence_id, response_dependency, comparator, temporal_relation]
         properties:
           type: {const: Contingency}
+          contingency_kind:
+            enum: [response_consequence, stimulus_consequence]
           antecedent_ids:
             type: array
             items: {$ref: '#/$defs/objectId'}
@@ -344,6 +346,13 @@ $defs:
           temporal_relation: {$ref: '#/$defs/nonEmptyString'}
           schedule:
             type: string
+        allOf:
+          - if: {properties: {contingency_kind: {const: response_consequence}}}
+            then: {required: [response_id]}
+          - if: {properties: {contingency_kind: {const: stimulus_consequence}}}
+            then:
+              required: [antecedent_ids]
+              not: {required: [response_id]}
   observation:
     description: Measurement result instance; it does not replace the measured target or the Claim interpreting it.
     unevaluatedProperties: false

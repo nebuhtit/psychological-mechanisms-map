@@ -15,7 +15,7 @@ PMM models scientific assertions, not a literal complete map of the psyche. A la
 | Context | Conditions bounding objects or claims | Treating threat context as anxiety itself |
 | Event | Occurrent with temporal boundaries | Treating omission as a persistent state |
 | Outcome | Consequence type or evaluated endpoint | Treating a numerical effect estimate as an outcome object |
-| Contingency | N-ary antecedent-response-consequence-comparator dependency | Reducing a dependency to an ambiguous binary arrow |
+| Contingency | Programmed stimulus-consequence or response-consequence dependency with comparator and schedule | Treating a cue as a behavior, or reducing a dependency to an ambiguous binary arrow |
 | Observation | Measurement-result instance | Replacing the measured target with its value |
 | Relation | Structural or operational edge | Using an edge to imply correlation or causation |
 | Claim | Scoped definition, result, effect, or hypothesis | Attaching epistemic status directly to an ontology object |
@@ -58,7 +58,8 @@ The v0.3 pilot makes the following distinctions:
 2. Aversive-outcome omission is an Event. Subjective relief is a State and requires its own measurement.
 3. Negative reinforcement requires a response-consequence contingency and a later change in responding; omission or relief alone is insufficient.
 4. The programmed contingency is part of a design. Whether learning occurred is an empirical Claim.
-5. Anxiety-related avoidance and a longitudinal clinical maintenance loop are not universal laws; the broad loop is kept proposed and falsifiable.
+5. `stimulus_consequence` contingencies require an antecedent and forbid a response role; `response_consequence` contingencies require an actual Behavior response.
+6. Anxiety-related avoidance and a longitudinal clinical maintenance loop are not universal laws; the broad loop is kept proposed and falsifiable.
 
 ## Heterogeneous validation lessons
 

@@ -67,3 +67,21 @@ pmmv:StatisticalModerationShape a sh:NodeShape ;
       }
     """
   ] .
+
+pmmv:ContingencyRoleShape a sh:NodeShape ;
+  sh:targetClass pmmv:Contingency ;
+  sh:sparql [
+    sh:message "response_consequence requires a response; stimulus_consequence requires an antecedent and forbids a response role." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this pmmv:contingency_kind ?kind .
+        FILTER (
+          (?kind = "response_consequence" && NOT EXISTS { $this pmmv:response_id ?response }) ||
+          (?kind = "stimulus_consequence" && (
+            NOT EXISTS { $this pmmv:antecedent_ids ?antecedent } ||
+            EXISTS { $this pmmv:response_id ?response }
+          ))
+        )
+      }
+    """
+  ] .

@@ -602,6 +602,7 @@
           ],
           "comparator": "Alternative response, no response, or noncontingent/yoked consequence schedule.",
           "consequence_id": "pmm:event:aversive-outcome-omission",
+          "contingency_kind": "response_consequence",
           "curation_status": "accepted",
           "definition": "An n-ary dependency in which a specified response changes the probability, intensity, or duration of a specified aversive consequence relative to a comparator.",
           "id": "pmm:contingency:avoidance-response-outcome",
@@ -1386,6 +1387,64 @@
           "type": "Event"
         },
         {
+          "curation_status": "accepted",
+          "definition": "Protocol-defined presentation of a stimulus with a prior aversive-outcome history.",
+          "event_kind": "cue_presentation",
+          "id": "pmm:event:conditioned-cue-presentation",
+          "label": "Conditioned-cue presentation",
+          "ontological_level": "type",
+          "participant_ids": [
+            "pmm:state:conditioned-defensive-response"
+          ],
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "temporal_scale": "seconds",
+          "type": "Event"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Delivery or non-delivery of the protocol-defined electric shock or loud-noise consequence.",
+          "id": "pmm:outcome:aversive-stimulus-occurrence",
+          "label": "Aversive stimulus occurrence",
+          "ontological_level": "type",
+          "outcome_kind": "event_occurrence",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Outcome",
+          "valence": "aversive"
+        },
+        {
+          "antecedent_ids": [
+            "pmm:event:conditioned-cue-presentation"
+          ],
+          "boundary_notes": [
+            "A programmed cue-outcome dependency is not itself a learned expectation or extinction mechanism."
+          ],
+          "comparator": "CS- schedule during acquisition or the cue-only omission schedule during extinction.",
+          "consequence_id": "pmm:outcome:aversive-stimulus-occurrence",
+          "contingency_kind": "stimulus_consequence",
+          "curation_status": "accepted",
+          "definition": "Programmed dependency between conditioned-cue presentation and aversive-stimulus occurrence or omission.",
+          "id": "pmm:contingency:conditioned-cue-aversive-outcome",
+          "label": "Conditioned cue–aversive outcome contingency",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "response_dependency": "manipulated",
+          "schedule": "Source-specific acquisition and extinction probabilities must be reported rather than inferred from the labels CS+ and CS-.",
+          "temporal_relation": "Cue presentation precedes scheduled delivery or omission of the aversive outcome.",
+          "type": "Contingency"
+        },
+        {
           "actor_scope": "person",
           "behavior_kind": "response_pattern",
           "curation_status": "accepted",
@@ -1542,6 +1601,17 @@
         }
       ],
       "relations": [
+        {
+          "id": "pmm:relation:cue-contingency-occurs-in-conditioning",
+          "object_id": "pmm:context:differential-threat-conditioning",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:contingency:conditioned-cue-aversive-outcome"
+        },
         {
           "id": "pmm:relation:defensive-response-measured-by-scr",
           "object_id": "pmm:measurement:skin-conductance-differential",
@@ -2129,6 +2199,47 @@
           "type": "Behavior"
         },
         {
+          "curation_status": "accepted",
+          "definition": "Food, monetary, or other appetitive consequence produced by a trained instrumental action in the source-specific task.",
+          "id": "pmm:outcome:instrumental-task-outcome",
+          "label": "Instrumental task outcome",
+          "ontological_level": "type",
+          "outcome_kind": "event_occurrence",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Outcome",
+          "valence": "appetitive"
+        },
+        {
+          "antecedent_ids": [
+            "pmm:context:instrumental-outcome-devaluation-task"
+          ],
+          "boundary_notes": [
+            "The programmed dependency is not equivalent to acquired action-outcome knowledge or goal-directed control."
+          ],
+          "comparator": "Alternative trained response and its distinct outcome, or omission of the response.",
+          "consequence_id": "pmm:outcome:instrumental-task-outcome",
+          "contingency_kind": "response_consequence",
+          "curation_status": "accepted",
+          "definition": "Programmed dependency between a specified instrumental response and its task outcome.",
+          "id": "pmm:contingency:instrumental-action-outcome",
+          "label": "Instrumental action–outcome contingency",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "response_dependency": "required",
+          "response_id": "pmm:behavior:instrumental-response",
+          "schedule": "Source-specific deterministic or probabilistic action-outcome schedule.",
+          "temporal_relation": "Instrumental response precedes delivery of its assigned outcome during acquisition.",
+          "type": "Contingency"
+        },
+        {
           "actor_scope": "person",
           "behavior_kind": "response_pattern",
           "curation_status": "provisional",
@@ -2323,6 +2434,17 @@
         }
       ],
       "relations": [
+        {
+          "id": "pmm:relation:action-contingency-occurs-in-devaluation-task",
+          "object_id": "pmm:context:instrumental-outcome-devaluation-task",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.3.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:contingency:instrumental-action-outcome"
+        },
         {
           "id": "pmm:relation:outcome-insensitivity-measured-by-devaluation",
           "object_id": "pmm:measurement:devaluation-sensitivity-index",

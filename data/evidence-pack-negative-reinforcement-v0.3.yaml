@@ -140,6 +140,7 @@ objects:
 
   - id: pmm:contingency:response-produced-safety-signal
     type: Contingency
+    contingency_kind: response_consequence
     label: Response-produced safety-signal contingency
     definition: >-
       Dependency in which an instrumental avoidance response produces a trained
@@ -158,6 +159,7 @@ objects:
 
   - id: pmm:contingency:assigned-monetary-loss-probability
     type: Contingency
+    contingency_kind: response_consequence
     label: Assigned monetary-loss probability contingency
     definition: >-
       Counterbalanced dependency assigning one action a lower probability of
@@ -174,6 +176,7 @@ objects:
 
   - id: pmm:contingency:active-shock-control
     type: Contingency
+    contingency_kind: response_consequence
     label: Active shock-control contingency
     definition: >-
       Dependency allowing a learned grid-movement response to prevent shock,

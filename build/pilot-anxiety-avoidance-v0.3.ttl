@@ -679,6 +679,7 @@
     ns1:boundary_notes "A programmed contingency is part of the experimental design, not by itself evidence that learning occurred." ;
     ns1:comparator "Alternative response, no response, or noncontingent/yoked consequence schedule." ;
     ns1:consequence_id <https://pmm.local/id/event:aversive-outcome-omission> ;
+    ns1:contingency_kind "response_consequence" ;
     ns1:curation_status "accepted" ;
     ns1:definition "An n-ary dependency in which a specified response changes the probability, intensity, or duration of a specified aversive consequence relative to a comparator." ;
     ns1:label "Avoidance response-outcome contingency" ;

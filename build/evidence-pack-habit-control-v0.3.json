@@ -550,6 +550,57 @@
       "type": "Behavior"
     },
     {
+      "curation_status": "accepted",
+      "definition": "Food, monetary, or other appetitive consequence produced by a trained instrumental action in the source-specific task.",
+      "id": "pmm:outcome:instrumental-task-outcome",
+      "label": "Instrumental task outcome",
+      "ontological_level": "type",
+      "outcome_kind": "event_occurrence",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "appetitive"
+    },
+    {
+      "antecedent_ids": [
+        "pmm:context:instrumental-outcome-devaluation-task"
+      ],
+      "boundary_notes": [
+        "The programmed dependency is not equivalent to acquired action-outcome knowledge or goal-directed control."
+      ],
+      "comparator": "Alternative trained response and its distinct outcome, or omission of the response.",
+      "consequence_id": "pmm:outcome:instrumental-task-outcome",
+      "contingency_kind": "response_consequence",
+      "curation_status": "accepted",
+      "definition": "Programmed dependency between a specified instrumental response and its task outcome.",
+      "id": "pmm:contingency:instrumental-action-outcome",
+      "label": "Instrumental action–outcome contingency",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_dependency": "required",
+      "response_id": "pmm:behavior:instrumental-response",
+      "schedule": "Source-specific deterministic or probabilistic action-outcome schedule.",
+      "temporal_relation": "Instrumental response precedes delivery of its assigned outcome during acquisition.",
+      "type": "Contingency"
+    },
+    {
       "actor_scope": "person",
       "behavior_kind": "response_pattern",
       "curation_status": "provisional",
@@ -790,6 +841,22 @@
   ],
   "pmm_version": "0.3.4",
   "relations": [
+    {
+      "id": "pmm:relation:action-contingency-occurs-in-devaluation-task",
+      "object_id": "pmm:context:instrumental-outcome-devaluation-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:contingency:instrumental-action-outcome"
+    },
     {
       "id": "pmm:relation:outcome-insensitivity-measured-by-devaluation",
       "object_id": "pmm:measurement:devaluation-sensitivity-index",

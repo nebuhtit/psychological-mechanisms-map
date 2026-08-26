@@ -83,6 +83,33 @@ objects:
     function_note: Repetition or speed alone does not establish habitual control.
     provenance: *provenance
 
+  - id: pmm:outcome:instrumental-task-outcome
+    type: Outcome
+    label: Instrumental task outcome
+    definition: Food, monetary, or other appetitive consequence produced by a trained instrumental action in the source-specific task.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: event_occurrence
+    valence: appetitive
+    provenance: *provenance
+
+  - id: pmm:contingency:instrumental-action-outcome
+    type: Contingency
+    contingency_kind: response_consequence
+    label: Instrumental action–outcome contingency
+    definition: Programmed dependency between a specified instrumental response and its task outcome.
+    ontological_level: type
+    curation_status: accepted
+    antecedent_ids: [pmm:context:instrumental-outcome-devaluation-task]
+    response_id: pmm:behavior:instrumental-response
+    consequence_id: pmm:outcome:instrumental-task-outcome
+    response_dependency: required
+    comparator: Alternative trained response and its distinct outcome, or omission of the response.
+    temporal_relation: Instrumental response precedes delivery of its assigned outcome during acquisition.
+    schedule: Source-specific deterministic or probabilistic action-outcome schedule.
+    boundary_notes: [The programmed dependency is not equivalent to acquired action-outcome knowledge or goal-directed control.]
+    provenance: *provenance
+
   - id: pmm:behavior:outcome-insensitive-responding
     type: Behavior
     label: Outcome-insensitive response pattern
@@ -216,6 +243,11 @@ objects:
     provenance: *provenance
 
 relations:
+  - id: pmm:relation:action-contingency-occurs-in-devaluation-task
+    subject_id: pmm:contingency:instrumental-action-outcome
+    predicate: occurs_in_context
+    object_id: pmm:context:instrumental-outcome-devaluation-task
+    provenance: *provenance
   - id: pmm:relation:outcome-insensitivity-measured-by-devaluation
     subject_id: pmm:behavior:outcome-insensitive-responding
     predicate: measured_by

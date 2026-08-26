@@ -330,6 +330,7 @@
       ],
       "comparator": "Alternative response, no response, or noncontingent/yoked consequence schedule.",
       "consequence_id": "pmm:event:aversive-outcome-omission",
+      "contingency_kind": "response_consequence",
       "curation_status": "accepted",
       "definition": "An n-ary dependency in which a specified response changes the probability, intensity, or duration of a specified aversive consequence relative to a comparator.",
       "label": "Avoidance response-outcome contingency",

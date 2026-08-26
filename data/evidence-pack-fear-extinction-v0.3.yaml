@@ -101,6 +101,43 @@ objects:
     temporal_scale: seconds
     provenance: *provenance
 
+  - id: pmm:event:conditioned-cue-presentation
+    type: Event
+    label: Conditioned-cue presentation
+    definition: Protocol-defined presentation of a stimulus with a prior aversive-outcome history.
+    ontological_level: type
+    curation_status: accepted
+    event_kind: cue_presentation
+    participant_ids: [pmm:state:conditioned-defensive-response]
+    temporal_scale: seconds
+    provenance: *provenance
+
+  - id: pmm:outcome:aversive-stimulus-occurrence
+    type: Outcome
+    label: Aversive stimulus occurrence
+    definition: Delivery or non-delivery of the protocol-defined electric shock or loud-noise consequence.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: event_occurrence
+    valence: aversive
+    provenance: *provenance
+
+  - id: pmm:contingency:conditioned-cue-aversive-outcome
+    type: Contingency
+    contingency_kind: stimulus_consequence
+    label: Conditioned cue–aversive outcome contingency
+    definition: Programmed dependency between conditioned-cue presentation and aversive-stimulus occurrence or omission.
+    ontological_level: type
+    curation_status: accepted
+    antecedent_ids: [pmm:event:conditioned-cue-presentation]
+    consequence_id: pmm:outcome:aversive-stimulus-occurrence
+    response_dependency: manipulated
+    comparator: CS- schedule during acquisition or the cue-only omission schedule during extinction.
+    temporal_relation: Cue presentation precedes scheduled delivery or omission of the aversive outcome.
+    schedule: Source-specific acquisition and extinction probabilities must be reported rather than inferred from the labels CS+ and CS-.
+    boundary_notes: [A programmed cue-outcome dependency is not itself a learned expectation or extinction mechanism.]
+    provenance: *provenance
+
   - id: pmm:behavior:within-session-response-decrement
     type: Behavior
     label: Within-session conditioned-response decrement
@@ -210,6 +247,11 @@ objects:
     provenance: *provenance
 
 relations:
+  - id: pmm:relation:cue-contingency-occurs-in-conditioning
+    subject_id: pmm:contingency:conditioned-cue-aversive-outcome
+    predicate: occurs_in_context
+    object_id: pmm:context:differential-threat-conditioning
+    provenance: *provenance
   - id: pmm:relation:defensive-response-measured-by-scr
     subject_id: pmm:state:conditioned-defensive-response
     predicate: measured_by

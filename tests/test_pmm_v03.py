@@ -39,6 +39,20 @@ class PMMV03ValidationTests(unittest.TestCase):
         errors = pmm_v03.validate(document)
         self.assertTrue(any("does not allow object type Behavior" in error for error in errors))
 
+    def test_stimulus_contingency_forbids_response_role(self) -> None:
+        document = copy.deepcopy(self.document)
+        contingency = next(item for item in document["objects"] if item["type"] == "Contingency")
+        contingency["contingency_kind"] = "stimulus_consequence"
+        self.assertTrue(pmm_v03.validate(document))
+
+    def test_stimulus_contingency_requires_antecedent(self) -> None:
+        document = copy.deepcopy(self.document)
+        contingency = next(item for item in document["objects"] if item["type"] == "Contingency")
+        contingency["contingency_kind"] = "stimulus_consequence"
+        contingency.pop("response_id")
+        contingency.pop("antecedent_ids")
+        self.assertTrue(pmm_v03.validate(document))
+
     def test_causal_effect_requires_direct_evidence(self) -> None:
         document = copy.deepcopy(self.document)
         evidence = next(item for item in document["evidence"] if item["causal_support"] == "direct")
