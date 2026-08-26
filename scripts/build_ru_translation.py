@@ -19,6 +19,7 @@ OUTPUT_PATH = ROOT / "site" / "data" / "i18n-ru.json"
 OVERRIDES = {
     "Fear extinction": "Угасание страха",
     "Multi-task working-memory battery": "Батарея заданий на рабочую память",
+    "RDoC Potential Threat (Anxiety) concerns responses when harm may occur but is distant, ambiguous, or uncertain in probability.": "Конструкт RDoC «Потенциальная угроза (тревога)» описывает реакции на возможный вред, который отдалён во времени, неоднозначен или имеет неопределённую вероятность.",
     "Working-memory capacity": "Ёмкость рабочей памяти",
     "Working-memory control": "Контроль рабочей памяти",
 }

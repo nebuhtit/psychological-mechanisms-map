@@ -346,6 +346,7 @@ h1 em { color: var(--forest); font-weight: 500; }
 .family-sources .source-list { max-height: 245px; overflow-y: auto; padding-right: 5px; }
 .family-select-hint { padding: 11px 12px; margin: 14px 0 0; border-left: 3px solid var(--blue); background: rgba(39,113,148,.07); color: var(--ink) !important; font-size: 10px !important; }
 .inspector h2 { margin: 8px 0 10px; font-family: "Newsreader", serif; font-size: 32px; font-weight: 500; line-height: 1; }
+.inspector h2.claim-heading { font-size: clamp(24px, 2.15vw, 32px); line-height: 1.08; overflow-wrap: anywhere; }
 .inspector p { color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
 .inspector-kicker { margin: 0 0 7px; color: var(--forest); font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
 .status-line { display: flex; flex-wrap: wrap; gap: 6px; margin: 15px 0; }

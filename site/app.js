@@ -503,12 +503,13 @@ function renderInspector(record) {
   const sources = relatedSources(record);
   const evidence = evidenceFor(record);
   const definition = t(record.kind === "claim" ? record.statement : record.definition);
+  const heading = record.kind === "claim" ? t(record.statement) : t(record.label);
   const status = record.epistemic_status || record.curation_status;
   const confidence = record.confidence?.level;
   const scope = typeof record.scope === "string" ? record.scope : record.scope?.population;
   inspector.innerHTML = `
     <p class="inspector-kicker">${escapeHtml(t(TYPE_LABELS[record.type] || record.type))} · ${escapeHtml(record.id.split(":").at(-1))}</p>
-    <h2>${escapeHtml(record.kind === "claim" ? wrapLabel(t(record.statement), 48).join(" ") : t(record.label))}</h2>
+    <h2 class="${record.kind === "claim" ? "claim-heading" : ""}">${escapeHtml(heading)}</h2>
     <section class="meaning-card">
       <span class="section-eyebrow">${record.kind === "claim" ? ui("What is being claimed", "Что утверждается") : ui("What this means", "Что это значит")}</span>
       <p>${escapeHtml(definition)}</p>

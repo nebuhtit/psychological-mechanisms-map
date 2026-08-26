@@ -61,6 +61,10 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(bundle["translation_status"], "machine_translated_pending_review")
         self.assertEqual(set(bundle["translations"]), displayed_strings(document))
         self.assertTrue(all(value.strip() for value in bundle["translations"].values()))
+        self.assertEqual(
+            bundle["translations"]["RDoC Potential Threat (Anxiety) concerns responses when harm may occur but is distant, ambiguous, or uncertain in probability."],
+            "Конструкт RDoC «Потенциальная угроза (тревога)» описывает реакции на возможный вред, который отдалён во времени, неоднозначен или имеет неопределённую вероятность.",
+        )
 
     def test_reading_guide_is_collapsed_and_explains_visual_encoding(self) -> None:
         page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
@@ -95,6 +99,13 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn('const moderator = claim.moderator_id', javascript)
         self.assertIn('"associated; no causal direction"', javascript)
         self.assertIn('"predicts; does not prove cause"', javascript)
+
+    def test_inspector_does_not_truncate_claim_heading(self) -> None:
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        stylesheet = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('const heading = record.kind === "claim" ? t(record.statement) : t(record.label);', javascript)
+        self.assertNotIn('wrapLabel(t(record.statement), 48)', javascript)
+        self.assertIn(".inspector h2.claim-heading", stylesheet)
 
     def test_family_overview_explains_scope_and_links_sources(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
