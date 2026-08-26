@@ -196,7 +196,7 @@ def main() -> None:
     families = [build_family(*family, explanations) for family in load_families()]
     payload = {
         "pmm_version": "0.3.4",
-        "interface_version": "0.6.0",
+        "interface_version": "0.7.0",
         "families": families,
         "mechanism_index": build_mechanism_index(families),
         "navigation_views": load_navigation_views(families),

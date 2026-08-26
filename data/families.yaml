@@ -70,3 +70,9 @@ datasets:
       id: spatial-attention
       title: Spatial attention
       description: Attention construct, visuospatial cueing task, response latency, accuracy, sensory enhancement, and decision weighting kept distinct.
+  - source: data/evidence-pack-declarative-memory-v0.3.yaml
+    output: build/evidence-pack-declarative-memory-v0.3.json
+    family:
+      id: declarative-memory
+      title: Declarative memory
+      description: Declarative, episodic, and semantic constructs, encoding manipulation, recognition measurement, dissociation evidence, and elaborative encoding kept distinct.

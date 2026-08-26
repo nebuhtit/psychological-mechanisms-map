@@ -2,11 +2,12 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 14 mechanisms across 11 families.
+**Current inventory:** 15 mechanisms across 12 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|
 | Cognitive reappraisal | **Meaning reinterpretation**<br>Proposed cognitive process that changes the construed meaning of an eliciting situation and thereby changes later emotional responding. | cognitive | 1 | 3 | 3 |
+| Declarative memory | **Elaborative semantic encoding**<br>Proposed process in which a new item is analyzed for meaning and related to contextual or existing knowledge, producing a more discriminable later memory representation. | cognitive | 1 | 1 | 1 |
 | Fear extinction | **Extinction-memory formation and retrieval**<br>Proposed learning process in which aversive-outcome omission supports a new memory that reduces conditioned responding when later retrieved. | learning | 1 | 4 | 3 |
 | HPA feedback | **Glucocorticoid negative feedback on HPA activity**<br>Receptor-linked physiological processes through which glucocorticoid signaling limits or reshapes later HPA secretory activity. | physiological | 2 | 1 | 1 |
 | Habit control | **Goal-directed action control**<br>Proposed action-selection process that uses action-outcome knowledge and current outcome value to guide responding. | learning | 0 | 0 | 0 |

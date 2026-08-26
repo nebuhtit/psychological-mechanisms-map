@@ -1,0 +1,911 @@
+{
+  "claims": [
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "high",
+        "rationale": "This is the current official RDoC construct definition, used for alignment rather than as a complete theory of all memory systems."
+      },
+      "defined_object_id": "pmm:construct:declarative-memory",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:rdoc-declarative-memory-covers-facts-and-events",
+      "limitations": [
+        "RDoC is an evolving research framework and does not make every memory task or neural signal equivalent to the construct."
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:incidental-word-encoding-recognition",
+          "pmm:context:developmental-amnesia-assessment"
+        ],
+        "population": "Research framework spanning normal-to-abnormal human functioning.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Current NIMH RDoC framework as accessed on 2026-08-26."
+      },
+      "source_ids": [
+        "pmm:source:nimh-rdoc-declarative-memory-2026"
+      ],
+      "statement": "RDoC Declarative Memory covers encoding, storage, consolidation, and retrieval of representations of facts and events."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Each encoding condition follows the reported orienting-question procedure.",
+        "exchangeability": "Controlled condition assignment and counterbalancing reduce stable participant and item confounding, subject to source-specific implementation details.",
+        "interference": "Cross-participant interference is assumed absent.",
+        "positivity": "Participants or counterbalanced items were represented across the compared encoding conditions."
+      },
+      "causal_estimand": "Within-protocol difference in later recognition performance after meaning-based versus structural or phonemic encoding questions.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Ten controlled experiments supported a robust within-protocol encoding effect, while historical reporting and task specificity limit quantitative generalization."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:craik-tulving-1975-encoding-effect"
+      ],
+      "exposure_id": "pmm:intervention:encoding-question-depth-manipulation",
+      "id": "pmm:claim:semantic-encoding-questions-improve-later-word-recognition",
+      "identification_strategy": "controlled_contingency",
+      "limitations": [
+        "The effect establishes an encoding-condition difference but does not uniquely identify one memory mechanism or guarantee transfer to other materials and retrieval tests."
+      ],
+      "outcome_id": "pmm:outcome:later-word-recognition-accuracy",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Words, incidental orienting questions, later recognition, and the specific structural, phonemic, and semantic comparisons reported in the source."
+        ],
+        "context_ids": [
+          "pmm:context:incidental-word-encoding-recognition"
+        ],
+        "population": "Undergraduate participants in ten experiments reported by Craik and Tulving in 1975.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Encoding questions followed by an unexpected recognition test within the reported sessions."
+      },
+      "statement": "In the reported incidental-learning experiments, meaning-based encoding questions increased later word recognition relative to structural or phonemic questions.",
+      "temporal_ordering": "The assigned orienting question preceded word encoding and the later recognition response."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "low",
+        "rationale": "The cases show a striking within-person dissociation, but the sample is three, lesion extent is not experimentally assigned, and population generalization is limited."
+      },
+      "confounding_note": "Developmental plasticity, lesion extent beyond the hippocampus, premorbid differences, education, and measurement choice can influence the observed profile.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "mixed",
+        "metric": "within-case episodic versus semantic profile",
+        "notes": "Pronounced episodic amnesia coexisted with speech, literacy, and factual knowledge in the low-average to average range.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_ids": [
+        "pmm:evidence:vargha-khadem-1997-dissociation"
+      ],
+      "exposure_id": "pmm:context:developmental-amnesia-assessment",
+      "id": "pmm:claim:developmental-amnesia-dissociates-episodic-and-semantic-memory",
+      "limitations": [
+        "The result supports separability of measured memory functions but does not prove that the hippocampus is unnecessary for all semantic learning."
+      ],
+      "outcome_id": "pmm:measurement:episodic-semantic-profile",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Clinical case series with early pathology and extensive neuropsychological characterization."
+        ],
+        "context_ids": [
+          "pmm:context:developmental-amnesia-assessment"
+        ],
+        "population": "Three individuals with early-onset bilateral hippocampal pathology described by Vargha-Khadem and colleagues in 1997.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Childhood injury followed by assessment in adolescence or early adulthood."
+      },
+      "statement": "In three reported developmental-amnesia cases with early hippocampal pathology, severe episodic-memory impairment coexisted with substantially better semantic knowledge and academic attainment."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Controlled encoding effects are consistent with elaboration and distinctiveness, but the experiments did not isolate one unique latent process."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:craik-tulving-1975-elaboration-account"
+      ],
+      "exposure_id": "pmm:intervention:encoding-question-depth-manipulation",
+      "falsifiable_boundary": "The account is weakened if preregistered manipulations equating elaboration and distinctiveness eliminate their contribution while a semantic-versus-shallow recognition advantage remains reliably attributable to another process.",
+      "id": "pmm:claim:elaborative-semantic-encoding-may-support-retention",
+      "limitations": [
+        "Semantic processing, semantic memory, elaboration, distinctiveness, and retrieval match must not be collapsed into one construct."
+      ],
+      "mechanism_id": "pmm:mechanism:elaborative-semantic-encoding",
+      "outcome_id": "pmm:outcome:later-word-recognition-accuracy",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The task must induce meaningful analysis and later test memory for the studied items."
+        ],
+        "context_ids": [
+          "pmm:context:incidental-word-encoding-recognition"
+        ],
+        "population": "Humans performing incidental word-encoding tasks followed by recognition.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Meaning analysis during encoding through later recognition."
+      },
+      "statement": "Meaning-based encoding may improve later episodic recognition by producing a more elaborated and distinctive representation of the studied item.",
+      "temporal_ordering": "Meaning-based analysis occurs during study before formation and later retrieval of the tested representation."
+    }
+  ],
+  "dataset_id": "pmm:dataset:declarative-memory-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:semantic-encoding-questions-improve-later-word-recognition"
+      ],
+      "design": "Ten experiments manipulating word-encoding questions and measuring later recognition or retention.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "recognition after semantic versus phonemic or structural encoding",
+        "notes": "Meaning-based questions generally produced higher later retention; processing time alone did not account for the pattern in follow-up experiments.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Article summary and experiments I-X comparing structural, phonemic, and semantic orienting questions followed by unexpected retention tests.",
+      "id": "pmm:evidence:craik-tulving-1975-encoding-effect",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Historical multi-experiment report without a pooled modern effect estimate or preregistration."
+      ],
+      "population": "Undergraduate participants in the reported experiments; total sample size was not extracted as one pooled number.",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:craik-tulving-1975-depth-processing",
+      "species": [
+        "human"
+      ],
+      "summary": "Controlled meaning-based encoding conditions produced better later word memory than shallower structural or sound-based conditions.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:developmental-amnesia-dissociates-episodic-and-semantic-memory"
+      ],
+      "design": "Neuropsychological and neuroanatomical case series of three people with early-onset amnesia.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "very_limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "high"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "episodic-to-semantic functional dissociation",
+        "notes": "Severe everyday episodic amnesia occurred alongside low-average to average speech, literacy, and factual knowledge.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "cross_sectional_observational",
+      "extraction_locator": "PubMed abstract describing three cases, early injury, episodic amnesia, schooling, language, literacy, and factual knowledge.",
+      "id": "pmm:evidence:vargha-khadem-1997-dissociation",
+      "inference_support": "association",
+      "limitations": [
+        "Very small selected case series; pathology and developmental adaptation were not experimentally controlled."
+      ],
+      "population": "Three individuals with injury at birth, by age four, or at age nine.",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 3,
+      "source_id": "pmm:source:vargha-khadem-1997-developmental-amnesia",
+      "species": [
+        "human"
+      ],
+      "summary": "Three developmental-amnesia cases showed much greater impairment of episodic remembering than of acquired semantic knowledge.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:elaborative-semantic-encoding-may-support-retention"
+      ],
+      "design": "Follow-up encoding experiments testing alternatives to a simple processing-time explanation of later retention.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "retention pattern after qualitative encoding manipulations",
+        "notes": "Results were consistent with qualitative semantic elaboration and congruity rather than processing duration alone.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Article summary and experiments V-X addressing processing duration, decision type, congruity, and qualitative encoding differences.",
+      "id": "pmm:evidence:craik-tulving-1975-elaboration-account",
+      "inference_support": "mechanism",
+      "limitations": [
+        "The proposed internal representation was inferred from task contrasts rather than directly measured or uniquely manipulated."
+      ],
+      "population": "Undergraduate participants in the reported experiments.",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:craik-tulving-1975-depth-processing",
+      "species": [
+        "human"
+      ],
+      "summary": "Follow-up experiments supported qualitative meaning-based encoding over a simple longer-processing-time explanation.",
+      "support_direction": "supports"
+    }
+  ],
+  "metadata": {
+    "description": "Separates memory constructs, encoding manipulation, recognition behavior, performance measurement, neuropsychological dissociation, and an elaborative-encoding mechanism hypothesis.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T17:30:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T17:30:00+03:00",
+      "record_version": "0.1.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for declarative, episodic, and semantic memory"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "boundary_notes": [
+        "Declarative memory is broader than episodic memory and semantic memory considered separately.",
+        "The construct is not identical to a recognition score or to one neural structure."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Acquisition, storage, consolidation, and retrieval of representations of facts and events that can support flexible use of relational information.",
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/declarative-memory",
+          "external_label": "Declarative Memory",
+          "mapping_relation": "exact_match",
+          "mapping_status": "identifier_verified",
+          "rationale": "The PMM label and definition follow the current official RDoC construct page while preserving narrower child constructs separately.",
+          "system": "RDoC"
+        }
+      ],
+      "id": "pmm:construct:declarative-memory",
+      "label": "Declarative memory",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "Episodic memory is not equivalent to all long-term memory or to recognition performance alone."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Memory for events together with spatial, temporal, or other contextual relations that locate what happened within a particular episode.",
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a1f4/",
+          "external_label": "episodic memory",
+          "mapping_relation": "close_match",
+          "mapping_status": "provisional",
+          "rationale": "The external concept is marked Unreviewed; PMM therefore preserves the alignment without importing its asserted hierarchy as settled.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:construct:episodic-memory",
+      "label": "Episodic memory",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "Semantic memory as stored knowledge is not the same object as semantic processing performed during an encoding task."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Organized knowledge of concepts, word meanings, and facts that is not tied to remembering one specific learning episode.",
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b083/",
+          "external_label": "semantic memory",
+          "mapping_relation": "close_match",
+          "mapping_status": "provisional",
+          "rationale": "The labels are close, but the Cognitive Atlas record is marked Unreviewed and contains task assertions that PMM does not treat as validated automatically.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:construct:semantic-memory",
+      "label": "Semantic memory",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "This task samples particular encoding and recognition operations; it is not declarative memory itself."
+      ],
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Laboratory task in which participants answer questions about words without initially expecting a later old-new memory test.",
+      "dimensions": {
+        "encoding": "structural, phonemic, or semantic orienting questions",
+        "material": "words",
+        "retrieval": "unexpected later recognition"
+      },
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/task/id/tsk_4a57abb949d40/",
+          "external_label": "recognition memory test",
+          "mapping_relation": "narrow_match",
+          "mapping_status": "provisional",
+          "rationale": "The PMM task is one narrower incidental-encoding implementation of the broader unreviewed recognition-memory task record.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:context:incidental-word-encoding-recognition",
+      "label": "Incidental word-encoding and recognition task",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Human laboratory studies using incidental encoding questions followed by a recognition test.",
+      "type": "Context"
+    },
+    {
+      "boundary_notes": [
+        "A small lesion case series can demonstrate a dissociation pattern but cannot estimate a population-average causal effect."
+      ],
+      "context_kind": "developmental",
+      "curation_status": "provisional",
+      "definition": "Clinical assessment context comparing episodic remembering and acquired factual knowledge after early bilateral hippocampal pathology.",
+      "dimensions": {
+        "comparison": "episodic-memory impairment versus semantic-knowledge attainment",
+        "onset": "birth to nine years in the indexed case series",
+        "pathology": "bilateral hippocampal damage or marked volume reduction"
+      },
+      "id": "pmm:context:developmental-amnesia-assessment",
+      "label": "Developmental-amnesia neuropsychological assessment",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "The three developmental-amnesia cases described by Vargha-Khadem and colleagues in 1997.",
+      "type": "Context"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental assignment of structural, phonemic, or meaning-based questions about each study word before a later memory test.",
+      "delivery": "Present protocol-defined orienting questions about word appearance, sound, category, or sentence meaning during incidental encoding.",
+      "id": "pmm:intervention:encoding-question-depth-manipulation",
+      "intended_direction": "test",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Encoding-question depth manipulation",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:behavior:old-new-recognition-response",
+        "pmm:outcome:later-word-recognition-accuracy"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable response indicating whether a test item was encountered during the earlier study phase.",
+      "id": "pmm:behavior:old-new-recognition-response",
+      "label": "Old-new recognition response",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Protocol-defined old or new judgment for each test word.",
+      "type": "Behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Correct discrimination of previously studied words from unstudied words on the later recognition test.",
+      "id": "pmm:outcome:later-word-recognition-accuracy",
+      "label": "Later word-recognition accuracy",
+      "ontological_level": "type",
+      "outcome_kind": "performance",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "not_applicable"
+    },
+    {
+      "boundary_notes": [
+        "Recognition accuracy reflects both memory discrimination and response policy unless the design and analysis separate them."
+      ],
+      "curation_status": "accepted",
+      "definition": "Condition-specific hits, misses, false alarms, correct rejections, or a derived discrimination measure from an old-new test.",
+      "id": "pmm:measurement:old-new-recognition-performance",
+      "label": "Old-new recognition-memory measurement",
+      "measurement_kind": "behavioral_task",
+      "method": "Administer an old-new recognition test after encoding and compare prespecified response measures between encoding conditions.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:episodic-memory",
+        "pmm:behavior:old-new-recognition-response",
+        "pmm:outcome:later-word-recognition-accuracy"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "Relative preservation does not mean completely normal semantic memory, and test batteries do not make the constructs process-identical."
+      ],
+      "curation_status": "provisional",
+      "definition": "A battery comparing memory for personally experienced events with language, literacy, and factual-knowledge attainment.",
+      "id": "pmm:measurement:episodic-semantic-profile",
+      "label": "Episodic-semantic neuropsychological profile",
+      "measurement_kind": "clinical_rating",
+      "method": "Integrate standardized neuropsychological tests and real-life memory characterization across episodic and semantic domains.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:episodic-memory",
+        "pmm:construct:semantic-memory"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "person"
+    },
+    {
+      "boundary_notes": [
+        "Superior memory after semantic questions does not uniquely identify elaboration, distinctiveness, congruity, or one neural implementation."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which a new item is analyzed for meaning and related to contextual or existing knowledge, producing a more discriminable later memory representation.",
+      "id": "pmm:mechanism:elaborative-semantic-encoding",
+      "label": "Elaborative semantic encoding",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "The encoding question requires meaningful analysis rather than only visual or phonological classification.",
+        "Later retrieval can use information made distinctive or relational during encoding."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:intervention:encoding-question-depth-manipulation",
+          "role": "encoding operation"
+        },
+        {
+          "object_id": "pmm:behavior:old-new-recognition-response",
+          "role": "later recognition behavior"
+        },
+        {
+          "object_id": "pmm:measurement:old-new-recognition-performance",
+          "role": "measured memory performance"
+        }
+      ],
+      "type": "Mechanism"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:episodic-memory-part-of-declarative-memory",
+      "object_id": "pmm:construct:declarative-memory",
+      "predicate": "part_of",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:episodic-memory"
+    },
+    {
+      "id": "pmm:relation:semantic-memory-part-of-declarative-memory",
+      "object_id": "pmm:construct:declarative-memory",
+      "predicate": "part_of",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:semantic-memory"
+    },
+    {
+      "id": "pmm:relation:episodic-memory-measured-by-recognition",
+      "object_id": "pmm:measurement:old-new-recognition-performance",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:episodic-memory"
+    },
+    {
+      "id": "pmm:relation:episodic-memory-measured-by-profile",
+      "object_id": "pmm:measurement:episodic-semantic-profile",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:episodic-memory"
+    },
+    {
+      "id": "pmm:relation:semantic-memory-measured-by-profile",
+      "object_id": "pmm:measurement:episodic-semantic-profile",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:semantic-memory"
+    },
+    {
+      "id": "pmm:relation:recognition-response-occurs-in-word-task",
+      "object_id": "pmm:context:incidental-word-encoding-recognition",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:old-new-recognition-response"
+    },
+    {
+      "id": "pmm:relation:elaborative-encoding-occurs-in-word-task",
+      "object_id": "pmm:context:incidental-word-encoding-recognition",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:mechanism:elaborative-semantic-encoding"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Current official RDoC construct definition and matrix elements; the framework is evolving and not an exhaustive memory ontology.",
+      "id": "pmm:source:nimh-rdoc-declarative-memory-2026",
+      "organization": "National Institute of Mental Health",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "official_framework",
+      "title": "Declarative Memory — NIMH RDoC",
+      "url": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/declarative-memory",
+      "version": "accessed 2026-08-26"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Collaborative concept record used only for provisional terminology alignment.",
+      "id": "pmm:source:cognitive-atlas-episodic-memory-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas concept — episodic memory",
+      "url": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a1f4/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Collaborative concept record used only for provisional terminology alignment.",
+      "id": "pmm:source:cognitive-atlas-semantic-memory-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas concept — semantic memory",
+      "url": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b083/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Foundational primary report of ten controlled encoding and later-retention experiments.",
+      "authors": [
+        "Fergus I. M. Craik",
+        "Endel Tulving"
+      ],
+      "doi": "10.1037/0096-3445.104.3.268",
+      "id": "pmm:source:craik-tulving-1975-depth-processing",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Depth of processing and the retention of words in episodic memory",
+      "url": "https://doi.org/10.1037/0096-3445.104.3.268",
+      "year": 1975
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary three-case developmental-amnesia report showing a marked episodic-semantic performance dissociation.",
+      "authors": [
+        "Faraneh Vargha-Khadem",
+        "David G. Gadian",
+        "Kate E. Watkins",
+        "Alan Connelly",
+        "Willem Van Paesschen",
+        "Mortimer Mishkin"
+      ],
+      "doi": "10.1126/science.277.5324.376",
+      "id": "pmm:source:vargha-khadem-1997-developmental-amnesia",
+      "pmid": "9219696",
+      "provenance": {
+        "created_at": "2026-08-26T17:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T17:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Differential effects of early hippocampal pathology on episodic and semantic memory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9219696/",
+      "year": 1997
+    }
+  ]
+}

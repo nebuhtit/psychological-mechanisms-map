@@ -1,36 +1,36 @@
 {
   "causal_support": {
-    "direct": 25,
-    "indirect": 21,
-    "none": 6
+    "direct": 26,
+    "indirect": 22,
+    "none": 7
   },
   "claim_types": {
-    "association": 6,
-    "causal_effect": 18,
+    "association": 7,
+    "causal_effect": 19,
     "causal_hypothesis": 1,
-    "definition": 5,
-    "mechanism_hypothesis": 12,
+    "definition": 6,
+    "mechanism_hypothesis": 13,
     "mediation": 2,
     "moderation": 2,
     "prediction": 1
   },
   "confidence_levels": {
-    "high": 4,
-    "low": 9,
-    "moderate": 32,
+    "high": 5,
+    "low": 10,
+    "moderate": 34,
     "not_applicable": 2
   },
   "epistemic_statuses": {
     "mixed": 2,
     "not_assessed": 2,
-    "proposed": 13,
-    "supported": 27,
+    "proposed": 14,
+    "supported": 30,
     "unsupported": 3
   },
   "evidence_kinds": {
     "computational_model": 1,
-    "controlled_experiment": 18,
-    "cross_sectional_observational": 3,
+    "controlled_experiment": 20,
+    "cross_sectional_observational": 4,
     "meta_analysis": 3,
     "narrative_review": 7,
     "randomized_experiment": 20
@@ -134,19 +134,28 @@
       "source": "data/evidence-pack-spatial-attention-v0.3.yaml",
       "sources": 4,
       "title": "Spatial attention"
+    },
+    {
+      "claims": 4,
+      "evidence": 3,
+      "id": "declarative-memory",
+      "objects": 11,
+      "source": "data/evidence-pack-declarative-memory-v0.3.yaml",
+      "sources": 5,
+      "title": "Declarative memory"
     }
   ],
-  "family_count": 11,
+  "family_count": 12,
   "object_types": {
-    "Behavior": 9,
-    "Construct": 12,
-    "Context": 19,
+    "Behavior": 10,
+    "Construct": 15,
+    "Context": 21,
     "Contingency": 3,
     "Event": 4,
-    "Intervention": 18,
-    "Measurement": 26,
-    "Mechanism": 14,
-    "Outcome": 8,
+    "Intervention": 19,
+    "Measurement": 28,
+    "Mechanism": 15,
+    "Outcome": 9,
     "State": 15
   },
   "report_version": 1,
@@ -426,18 +435,33 @@
         "single-source support",
         "limited precision"
       ]
+    },
+    {
+      "claim_id": "pmm:claim:developmental-amnesia-dissociates-episodic-and-semantic-memory",
+      "family_id": "declarative-memory",
+      "reasons": [
+        "low confidence",
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:elaborative-semantic-encoding-may-support-retention",
+      "family_id": "declarative-memory",
+      "reasons": [
+        "proposed claim"
+      ]
     }
   ],
   "scope": "public_families",
   "support_directions": {
     "challenges": 8,
     "mixed": 4,
-    "supports": 40
+    "supports": 43
   },
   "totals": {
-    "claims": 47,
-    "evidence": 52,
-    "objects": 128,
-    "sources": 42
+    "claims": 51,
+    "evidence": 55,
+    "objects": 139,
+    "sources": 47
   }
 }

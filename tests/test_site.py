@@ -63,7 +63,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.6.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.7.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -71,7 +71,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.6.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.7.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -204,7 +204,7 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(types["pmm:context:n-back-task"], "Context")
         self.assertEqual(types["pmm:measurement:n-back-performance"], "Measurement")
         self.assertEqual(types["pmm:mechanism:episodic-retrieval-n-back"], "Mechanism")
-        self.assertIn("neither is memory itself", memory["ontological_note"]["en"])
+        self.assertIn("rather than memory itself", memory["ontological_note"]["en"])
         for node_id in ("gp:temperament", "gp:big-five"):
             self.assertEqual(nodes[node_id]["coverage"], "planned")
             self.assertEqual(nodes[node_id]["memberships"], [])
@@ -226,10 +226,69 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(nodes["gp:perception"]["coverage"], "planned")
         self.assertEqual(nodes["gp:perception"]["memberships"], [])
 
+        self.assertEqual(types["pmm:construct:declarative-memory"], "Construct")
+        self.assertEqual(types["pmm:construct:episodic-memory"], "Construct")
+        self.assertEqual(types["pmm:construct:semantic-memory"], "Construct")
+        self.assertEqual(
+            types["pmm:context:incidental-word-encoding-recognition"], "Context"
+        )
+        self.assertEqual(
+            types["pmm:measurement:old-new-recognition-performance"], "Measurement"
+        )
+
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('"Task context, not the construct"', javascript)
         self.assertNotIn('"Task context, not memory"', javascript)
-        self.assertIn("Attention now has one narrow pilot", javascript)
+        self.assertIn("The main-area scaffold is now visible", javascript)
+        self.assertIn("partialTopicCount", javascript)
+
+    def test_general_psychology_exposes_the_main_area_scaffold(self) -> None:
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        nodes = {
+            node["id"]: node
+            for node in document["navigation_views"]["general_psychology"]["nodes"]
+        }
+        required_domains = {
+            "gp:cognitive-processes",
+            "gp:emotion-motivation",
+            "gp:action-self-regulation",
+            "gp:social-processes",
+            "gp:body-consciousness",
+            "gp:development",
+            "gp:personality-individual-differences",
+        }
+        required_topics = {
+            "gp:memory",
+            "gp:attention",
+            "gp:perception",
+            "gp:sensation-interoception",
+            "gp:learning",
+            "gp:thinking-reasoning",
+            "gp:language",
+            "gp:imagery-imagination",
+            "gp:emotional-states-regulation",
+            "gp:motivation-reward",
+            "gp:stress-coping",
+            "gp:goal-directed-habitual-action",
+            "gp:cognitive-control",
+            "gp:volition",
+            "gp:social-regulation-support",
+            "gp:social-cognition",
+            "gp:physiological-regulation",
+            "gp:pain",
+            "gp:consciousness",
+            "gp:developmental-context",
+            "gp:temperament",
+            "gp:big-five",
+            "gp:abilities-intelligence",
+            "gp:self-concept",
+        }
+        self.assertTrue(required_domains.issubset(nodes))
+        self.assertTrue(required_topics.issubset(nodes))
+        for node_id in required_topics:
+            self.assertIn(nodes[node_id]["coverage"], {"partial", "planned"})
+            if nodes[node_id]["coverage"] == "planned":
+                self.assertEqual(nodes[node_id]["memberships"], [])
 
     def test_framework_cards_preserve_scope_and_mapping_uncertainty(self) -> None:
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
@@ -260,6 +319,16 @@ class SiteBundleTests(unittest.TestCase):
         mappings = {item["system"]: item for item in spatial_attention["external_mappings"]}
         self.assertEqual(mappings["RDoC"]["mapping_relation"], "narrow_match")
         self.assertEqual(mappings["CognitiveAtlas"]["mapping_status"], "provisional")
+
+        declarative_memory = next(
+            item
+            for family in document["families"] if family["id"] == "declarative-memory"
+            for item in family["objects"]
+            if item["id"] == "pmm:construct:declarative-memory"
+        )
+        mappings = {item["system"]: item for item in declarative_memory["external_mappings"]}
+        self.assertEqual(mappings["RDoC"]["mapping_relation"], "exact_match")
+        self.assertEqual(mappings["RDoC"]["mapping_status"], "identifier_verified")
 
 
 if __name__ == "__main__":

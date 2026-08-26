@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.6.0";
-const RU_URL = "data/i18n-ru.json?v=0.6.0";
+const DATA_URL = "data/pmm-data.json?v=0.7.0";
+const RU_URL = "data/i18n-ru.json?v=0.7.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -827,6 +827,9 @@ function bindCanonicalLinks(container) {
 
 function renderGeneralPsychology() {
   const view = state.data.navigation_views.general_psychology;
+  const coverageTopics = view.nodes.filter(node => ["topic", "taxonomy"].includes(node.kind));
+  const partialTopicCount = coverageTopics.filter(node => node.coverage === "partial").length;
+  const plannedTopicCount = coverageTopics.filter(node => node.coverage === "planned").length;
   const byParent = new Map();
   for (const node of view.nodes) {
     const key = node.parent_id || "root";
@@ -849,6 +852,8 @@ function renderGeneralPsychology() {
     <div class="view-legend">
       <span><i class="coverage-dot partial"></i>${coverageLabel("partial")}</span>
       <span><i class="coverage-dot planned"></i>${coverageLabel("planned")}</span>
+      <span><strong>${partialTopicCount}</strong> ${ui("areas with evidence", "областей с данными")}</span>
+      <span><strong>${plannedTopicCount}</strong> ${ui("explicit gaps", "явных пробелов")}</span>
       <p>${ui(
         "A category is a navigation facet. Colored record cards below are the canonical scientific objects.",
         "Категория — это способ навигации. Цветные карточки ниже — канонические научные объекты."
@@ -890,8 +895,8 @@ function renderGeneralPsychology() {
       }).join("")}
     </div>
     <p class="scope-footer">${ui(
-      "Coverage remains intentionally incomplete. Attention now has one narrow pilot; perception, declarative memory, personality measures, development, and other areas remain explicit gaps until their object boundaries are reviewed.",
-      "Охват намеренно остаётся неполным. Для внимания уже есть один узкий пилот; восприятие, декларативная память, измерения личности, развитие и другие области остаются явными пробелами до проверки границ объектов."
+      "The main-area scaffold is now visible, but partial means only that at least one evidence pack exists. It does not mean that the area is complete or scientifically settled.",
+      "Каркас основных областей теперь виден полностью, но статус «частично» означает лишь наличие хотя бы одного пакета доказательств. Он не означает, что область заполнена полностью или научно закрыта."
     )}</p>
   `;
   bindCanonicalLinks(container);

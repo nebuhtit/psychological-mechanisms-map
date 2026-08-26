@@ -24,6 +24,26 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:elaborative-semantic-encoding-may-support-retention"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which a new item is analyzed for meaning and related to contextual or existing knowledge, producing a more discriminable later memory representation.",
+      "evidence_count": 1,
+      "family_id": "declarative-memory",
+      "family_title": "Declarative memory",
+      "id": "pmm:mechanism:elaborative-semantic-encoding",
+      "label": "Elaborative semantic encoding",
+      "mechanism_kind": "cognitive",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
         "pmm:claim:extinction-memory-mechanism-hypothesis"
       ],
       "claim_status_counts": {

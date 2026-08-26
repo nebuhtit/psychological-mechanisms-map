@@ -9,7 +9,7 @@
 
 **[Inspect Curation Protocol v0.1](curation/protocol-v0.1.yaml)** · **[Review the social-buffering search pilot](curation/logs/social-buffering-retrospective-v0.1.yaml)**
 
-**[Read the strategy reset](docs/strategy-reset.md)** · **[Compare all modeled mechanisms](docs/mechanism-index.md)**
+**[Read the strategy reset](docs/strategy-reset.md)** · **[See the coverage roadmap](docs/coverage-roadmap.md)** · **[Compare all modeled mechanisms](docs/mechanism-index.md)**
 
 PMM is an open, versioned, evidence-aware ontology and knowledge-graph project for psychological mechanisms. It represents psychological constructs, mental states, behaviors, interventions, measurements, contexts, empirical claims, evidence records, and scientific sources without collapsing them into an ambiguous diagram.
 
@@ -43,7 +43,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains eleven deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains twelve deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -58,8 +58,13 @@ The live explorer contains eleven deliberately heterogeneous mechanism families.
 | HPA feedback | Cortisol level, ACTH secretory drive, serial assays, pharmacological probes, and multi-site feedback |
 | Placebo analgesia | Treatment expectation, pain report, naloxone challenge, dopamine null result, and statistical neural mediation |
 | Spatial attention | Attention construct, predictive cueing task, cue-validity manipulation, response time, accuracy, and competing sensory and decision hypotheses |
+| Declarative memory | Declarative, episodic, and semantic constructs, encoding-depth manipulation, recognition measurement, developmental dissociation, and proposed elaborative encoding |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
+
+### Coverage goal
+
+PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Thirteen topics currently have at least one evidence-linked pilot; eleven remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
 The website provides three switchable views over the same canonical records:
 
@@ -150,9 +155,12 @@ data/evidence-pack-placebo-analgesia-v0.3.yaml
                                      Expectation, pain, pharmacological perturbation, and mediation boundary pack
 data/evidence-pack-spatial-attention-v0.3.yaml
                                      Attention, cueing-task, measurement, and competing-mechanism boundary pack
+data/evidence-pack-declarative-memory-v0.3.yaml
+                                     Declarative, episodic, semantic, recognition, and encoding boundary pack
 data/navigation-views-v0.1.yaml      Validated educational and framework projections over canonical IDs
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/navigation-views.md             Faceted-view semantics and boundaries
+docs/coverage-roadmap.md             Major-area breadth target, queue, and per-topic quality gate
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
 scripts/build_site_data.py           Deterministic interactive-map data bundle

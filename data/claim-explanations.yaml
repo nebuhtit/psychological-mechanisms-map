@@ -364,3 +364,27 @@ entries:
       Another proposed process is that a predictive cue changes how strongly evidence from each location or time interval influences the final choice. Two experiments support this decision-related contribution, but it may operate together with sensory enhancement and was inferred through task comparisons and models rather than directly observed.
     ru: >-
       Другая гипотеза состоит в том, что предсказывающая подсказка меняет вес информации из разных мест или временных интервалов при окончательном выборе ответа. Два эксперимента поддерживают вклад этого процесса принятия решения, но он может работать вместе с сенсорным усилением и был выведен из сравнений заданий и моделей, а не наблюдался напрямую.
+
+  - claim_id: pmm:claim:rdoc-declarative-memory-covers-facts-and-events
+    en: >-
+      RDoC uses “declarative memory” for processes that encode, retain, consolidate, and retrieve facts and events. It includes contributions to episodic and semantic memory, but it is not one test score, one brain region, or all forms of memory.
+    ru: >-
+      В RDoC «декларативная память» охватывает процессы кодирования, сохранения, консолидации и извлечения фактов и событий. Она включает эпизодическую и семантическую память, но не сводится к одному тесту, одной области мозга или всем видам памяти вообще.
+
+  - claim_id: pmm:claim:semantic-encoding-questions-improve-later-word-recognition
+    en: >-
+      People later recognized words better when they had previously answered a question about each word’s meaning than when they had answered only about its appearance or sound. The experiment shows that the assigned encoding operation changed later performance, but it does not by itself reveal one unique memory mechanism.
+    ru: >-
+      Люди лучше узнавали слова, если ранее отвечали на вопрос об их значении, а не только о внешнем виде или звучании. Эксперимент показывает, что заданный способ обработки слова изменил последующий результат, но сам по себе не выявляет единственный механизм памяти.
+
+  - claim_id: pmm:claim:developmental-amnesia-dissociates-episodic-and-semantic-memory
+    en: >-
+      Three people with early hippocampal pathology had profound difficulty remembering personally experienced events while acquiring much more factual, language, and school knowledge. This supports a distinction between episodic and semantic memory, but three clinical cases cannot establish a general causal rule.
+    ru: >-
+      Три человека с ранним повреждением гиппокампа испытывали выраженные трудности с воспоминанием лично пережитых событий, но значительно лучше усваивали факты, язык и школьные знания. Это поддерживает различие эпизодической и семантической памяти, однако три клинических случая не устанавливают общее причинное правило.
+
+  - claim_id: pmm:claim:elaborative-semantic-encoding-may-support-retention
+    en: >-
+      One proposed explanation is that analyzing a word’s meaning connects it with context and existing knowledge, leaving a more distinctive representation for later recognition. The experiments are compatible with this explanation, but elaboration was inferred rather than isolated as the only process.
+    ru: >-
+      Возможное объяснение состоит в том, что анализ значения слова связывает его с контекстом и имеющимися знаниями, формируя более различимое представление для последующего узнавания. Эксперименты согласуются с этим объяснением, но проработка была выведена косвенно и не выделена как единственный процесс.

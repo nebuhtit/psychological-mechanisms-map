@@ -3,7 +3,7 @@ status: pilot
 canonical_language: en
 provenance:
   created_at: '2026-08-26T13:00:00+03:00'
-  modified_at: '2026-08-26T16:30:00+03:00'
+  modified_at: '2026-08-26T17:30:00+03:00'
   created_by: [OpenAI Codex]
   review_status: source_checked_editorial
   source_snapshot_date: '2026-08-26'
@@ -65,6 +65,30 @@ sources:
     title: Sensory and decisional components of endogenous attention are dissociable
     organization: Journal of Neurophysiology
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6843089/
+  - id: source:rdoc-declarative-memory
+    title: Declarative Memory — NIMH RDoC
+    organization: National Institute of Mental Health
+    url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/declarative-memory
+  - id: source:cognitive-atlas-episodic-memory
+    title: Cognitive Atlas concept — episodic memory
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a1f4/
+  - id: source:cognitive-atlas-semantic-memory
+    title: Cognitive Atlas concept — semantic memory
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b083/
+  - id: source:cognitive-atlas-recognition-memory
+    title: Cognitive Atlas task — recognition memory test
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/task/id/tsk_4a57abb949d40/
+  - id: source:craik-tulving-1975
+    title: Depth of processing and the retention of words in episodic memory
+    organization: Journal of Experimental Psychology — General
+    url: https://doi.org/10.1037/0096-3445.104.3.268
+  - id: source:vargha-khadem-1997
+    title: Differential effects of early hippocampal pathology on episodic and semantic memory
+    organization: Science
+    url: https://pubmed.ncbi.nlm.nih.gov/9219696/
 
 general_psychology:
   id: general-psychology
@@ -105,10 +129,10 @@ general_psychology:
         en: Multiple partly distinct systems and processes for retaining and retrieving information; it is not one unitary faculty.
         ru: Несколько частично различающихся систем и процессов сохранения и извлечения информации, а не одна единая способность.
       ontological_note:
-        en: PMM currently covers working-memory constructs and N-back-related mechanisms. N-back is a task, and its score is a measurement; neither is memory itself.
-        ru: Сейчас PMM охватывает конструкты рабочей памяти и механизмы, связанные с N-back. N-back — это задача, а её результат — измерение; ни то ни другое не является самой памятью.
+        en: PMM currently covers working memory plus one declarative-memory pilot. Episodic and semantic memory remain separate Constructs; N-back and word recognition are task Contexts, and their scores are Measurements rather than memory itself.
+        ru: Сейчас PMM охватывает рабочую память и один пилот декларативной памяти. Эпизодическая и семантическая память остаются отдельными конструктами; N-back и узнавание слов являются контекстами заданий, а их показатели — измерениями, но не самой памятью.
       coverage: partial
-      source_ids: [source:memory-systems-review, source:rdoc-definitions, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back]
+      source_ids: [source:memory-systems-review, source:rdoc-definitions, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:rdoc-declarative-memory, source:cognitive-atlas-episodic-memory, source:cognitive-atlas-semantic-memory, source:cognitive-atlas-recognition-memory, source:craik-tulving-1975, source:vargha-khadem-1997]
       memberships:
         - family_id: working-memory
           canonical_id: pmm:construct:working-memory-capacity
@@ -124,6 +148,30 @@ general_psychology:
           expected_type: Measurement
         - family_id: working-memory
           canonical_id: pmm:mechanism:episodic-retrieval-n-back
+          role: mechanism_example
+          expected_type: Mechanism
+        - family_id: declarative-memory
+          canonical_id: pmm:construct:declarative-memory
+          role: construct_example
+          expected_type: Construct
+        - family_id: declarative-memory
+          canonical_id: pmm:construct:episodic-memory
+          role: construct_example
+          expected_type: Construct
+        - family_id: declarative-memory
+          canonical_id: pmm:construct:semantic-memory
+          role: construct_example
+          expected_type: Construct
+        - family_id: declarative-memory
+          canonical_id: pmm:context:incidental-word-encoding-recognition
+          role: task_context_example
+          expected_type: Context
+        - family_id: declarative-memory
+          canonical_id: pmm:measurement:old-new-recognition-performance
+          role: measurement_example
+          expected_type: Measurement
+        - family_id: declarative-memory
+          canonical_id: pmm:mechanism:elaborative-semantic-encoding
           role: mechanism_example
           expected_type: Mechanism
     - id: gp:attention
@@ -180,6 +228,70 @@ general_psychology:
       coverage: planned
       source_ids: [source:rdoc-definitions]
       memberships: []
+    - id: gp:sensation-interoception
+      parent_id: gp:cognitive-processes
+      kind: topic
+      label: {en: Sensation and interoception, ru: Ощущения и интероцепция}
+      description:
+        en: Detection and evaluation of signals from the body and environment, including but not limited to conscious sensation.
+        ru: Обнаружение и оценка сигналов от тела и внешней среды, включая, но не ограничивая этим, осознаваемые ощущения.
+      ontological_note:
+        en: PMM currently models a narrow cardiac-interoception case. Physiological activation, perceived sensation, task accuracy, self-report, metacognitive awareness, and appraisal are different records.
+        ru: Сейчас PMM моделирует узкий случай сердечной интероцепции. Физиологическая активация, ощущение, точность задания, самоотчёт, метакогнитивная осведомлённость и оценка представлены разными записями.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: interoception, canonical_id: pmm:construct:cardiac-interoceptive-accuracy, role: construct_example, expected_type: Construct}
+        - {family_id: interoception, canonical_id: pmm:state:perceived-cardiorespiratory-sensation, role: state_example, expected_type: State}
+        - {family_id: interoception, canonical_id: pmm:measurement:heartbeat-task-performance, role: measurement_example, expected_type: Measurement}
+        - {family_id: interoception, canonical_id: pmm:mechanism:cardiorespiratory-appraisal, role: mechanism_example, expected_type: Mechanism}
+    - id: gp:learning
+      parent_id: gp:cognitive-processes
+      kind: topic
+      label: {en: Learning, ru: Научение}
+      description:
+        en: Relatively lasting change in behavior or knowledge resulting from experience, practice, or contingency exposure.
+        ru: Относительно устойчивое изменение поведения или знания в результате опыта, практики или действия связей между событиями.
+      ontological_note:
+        en: PMM separates learning procedures, observed response change, programmed contingencies, and candidate learning mechanisms.
+        ru: PMM разделяет процедуры научения, наблюдаемое изменение ответа, заданные зависимости и предполагаемые механизмы научения.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: avoidance, canonical_id: pmm:mechanism:negative-reinforcement, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: extinction, canonical_id: pmm:mechanism:extinction-memory-formation, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: habit, canonical_id: pmm:mechanism:habitual-action-control, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: reward-learning, canonical_id: pmm:mechanism:temporal-difference-value-update, role: mechanism_example, expected_type: Mechanism}
+    - id: gp:thinking-reasoning
+      parent_id: gp:cognitive-processes
+      kind: topic
+      label: {en: Thinking and reasoning, ru: Мышление и рассуждение}
+      description:
+        en: Forming, transforming, and evaluating representations to solve problems, infer relations, and make judgments.
+        ru: Формирование, преобразование и оценка представлений для решения задач, выявления отношений и вынесения суждений.
+      coverage: planned
+      source_ids: [source:rdoc-definitions]
+      memberships: []
+    - id: gp:language
+      parent_id: gp:cognitive-processes
+      kind: topic
+      label: {en: Language, ru: Язык и речь}
+      description:
+        en: Processes supporting comprehension, production, and meaningful symbolic communication.
+        ru: Процессы понимания, порождения и осмысленного символического общения.
+      coverage: planned
+      source_ids: [source:rdoc-definitions]
+      memberships: []
+    - id: gp:imagery-imagination
+      parent_id: gp:cognitive-processes
+      kind: topic
+      label: {en: Mental imagery and imagination, ru: Мысленные образы и воображение}
+      description:
+        en: Constructing or transforming representations in the absence of a matching current sensory input.
+        ru: Создание или преобразование представлений без соответствующего текущего сенсорного воздействия.
+      coverage: planned
+      source_ids: []
+      memberships: []
     - id: gp:emotion-motivation
       parent_id: gp:mind
       kind: domain
@@ -222,6 +334,202 @@ general_psychology:
           canonical_id: pmm:mechanism:cardiorespiratory-appraisal
           role: appraisal_mechanism_example
           expected_type: Mechanism
+    - id: gp:motivation-reward
+      parent_id: gp:emotion-motivation
+      kind: topic
+      label: {en: Motivation and reward, ru: Мотивация и вознаграждение}
+      description:
+        en: Processes that assign value, energize behavior, support goal pursuit, and update choices after outcomes.
+        ru: Процессы оценки ценности, побуждения поведения, достижения целей и изменения выбора после полученных результатов.
+      ontological_note:
+        en: Expected value, received reward, reward-seeking behavior, computational prediction error, and a learning mechanism are distinct PMM records.
+        ru: Ожидаемая ценность, полученная награда, поисковое поведение, вычислительная ошибка прогноза и механизм научения являются разными записями PMM.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: reward-learning, canonical_id: pmm:construct:reward-prediction-error, role: construct_example, expected_type: Construct}
+        - {family_id: reward-learning, canonical_id: pmm:state:expected-reward-value, role: state_example, expected_type: State}
+        - {family_id: reward-learning, canonical_id: pmm:behavior:cue-elicited-reward-seeking, role: behavior_example, expected_type: Behavior}
+        - {family_id: reward-learning, canonical_id: pmm:mechanism:temporal-difference-value-update, role: mechanism_example, expected_type: Mechanism}
+    - id: gp:stress-coping
+      parent_id: gp:emotion-motivation
+      kind: topic
+      label: {en: Stress and coping, ru: Стресс и совладание}
+      description:
+        en: Psychological, behavioral, social, and physiological responses to demanding or threatening conditions and attempts to regulate them.
+        ru: Психологические, поведенческие, социальные и физиологические реакции на трудные или угрожающие условия и попытки их регулировать.
+      ontological_note:
+        en: PMM currently covers narrow laboratory cases of threat, reappraisal, social buffering, and HPA feedback rather than one universal stress construct.
+        ru: Сейчас PMM охватывает узкие лабораторные случаи угрозы, переоценки, социальной поддержки и обратной связи ГГН-оси, а не единый универсальный конструкт стресса.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: avoidance, canonical_id: pmm:state:anxiety-response, role: state_example, expected_type: State}
+        - {family_id: reappraisal, canonical_id: pmm:intervention:reappraisal-instruction, role: intervention_example, expected_type: Intervention}
+        - {family_id: social-buffering, canonical_id: pmm:mechanism:social-co-regulation, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: hpa-feedback, canonical_id: pmm:mechanism:glucocorticoid-negative-feedback, role: mechanism_example, expected_type: Mechanism}
+
+    - id: gp:action-self-regulation
+      parent_id: gp:mind
+      kind: domain
+      label: {en: Action and self-regulation, ru: Действие и саморегуляция}
+      description:
+        en: Selection, maintenance, inhibition, and adjustment of actions in relation to goals, outcomes, habits, and changing conditions.
+        ru: Выбор, поддержание, торможение и изменение действий в соответствии с целями, результатами, привычками и меняющимися условиями.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+    - id: gp:goal-directed-habitual-action
+      parent_id: gp:action-self-regulation
+      kind: topic
+      label: {en: Goal-directed and habitual action, ru: Целенаправленные действия и привычки}
+      description:
+        en: Control of action by expected outcomes versus relatively outcome-insensitive learned response tendencies.
+        ru: Управление действием ожидаемыми результатами в сравнении с усвоенными тенденциями реагировать относительно независимо от текущей ценности результата.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: habit, canonical_id: pmm:mechanism:goal-directed-action-control, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: habit, canonical_id: pmm:mechanism:habitual-action-control, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: habit, canonical_id: pmm:intervention:selective-outcome-devaluation, role: intervention_example, expected_type: Intervention}
+        - {family_id: habit, canonical_id: pmm:behavior:outcome-insensitive-responding, role: behavior_example, expected_type: Behavior}
+    - id: gp:cognitive-control
+      parent_id: gp:action-self-regulation
+      kind: topic
+      label: {en: Cognitive control, ru: Когнитивный контроль}
+      description:
+        en: Maintaining task goals, selecting responses, controlling interference, monitoring performance, and adjusting behavior.
+        ru: Поддержание целей задания, выбор ответа, контроль помех, отслеживание результата и корректировка поведения.
+      ontological_note:
+        en: PMM currently contains only working-memory and response-control examples; this is not yet full coverage of inhibition, monitoring, or task switching.
+        ru: Сейчас PMM содержит только примеры из рабочей памяти и контроля ответа; торможение, мониторинг и переключение задач ещё не охвачены полноценно.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: working-memory, canonical_id: pmm:construct:working-memory-capacity, role: construct_example, expected_type: Construct}
+        - {family_id: working-memory, canonical_id: pmm:mechanism:familiarity-control, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: working-memory, canonical_id: pmm:measurement:n-back-performance, role: measurement_example, expected_type: Measurement}
+    - id: gp:volition
+      parent_id: gp:action-self-regulation
+      kind: topic
+      label: {en: Volition and intention, ru: Воля и намерение}
+      description:
+        en: Formation and maintenance of intentions and effortful action toward selected goals.
+        ru: Формирование и поддержание намерений и требующих усилия действий для достижения выбранных целей.
+      coverage: planned
+      source_ids: []
+      memberships: []
+
+    - id: gp:social-processes
+      parent_id: gp:mind
+      kind: domain
+      label: {en: Social processes, ru: Социальные процессы}
+      description:
+        en: Perceiving, interpreting, and regulating behavior and emotion in relation to other people and groups.
+        ru: Восприятие, интерпретация и регуляция поведения и эмоций во взаимодействии с другими людьми и группами.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+    - id: gp:social-regulation-support
+      parent_id: gp:social-processes
+      kind: topic
+      label: {en: Social regulation and support, ru: Социальная регуляция и поддержка}
+      description:
+        en: Changes in psychological or physiological responding produced in the presence of or through interaction with another person.
+        ru: Изменения психологической или физиологической реакции, возникающие в присутствии другого человека или во взаимодействии с ним.
+      ontological_note:
+        en: The current evidence pack concerns caregiver buffering of child cortisol responses; it does not represent all attachment, support, or group processes.
+        ru: Текущий пакет касается влияния поддержки взрослого на кортизоловую реакцию ребёнка; он не охватывает всю привязанность, поддержку или групповые процессы.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: social-buffering, canonical_id: pmm:intervention:parent-buffer-condition, role: intervention_example, expected_type: Intervention}
+        - {family_id: social-buffering, canonical_id: pmm:state:cortisol-stress-response, role: state_example, expected_type: State}
+        - {family_id: social-buffering, canonical_id: pmm:mechanism:social-co-regulation, role: mechanism_example, expected_type: Mechanism}
+    - id: gp:social-cognition
+      parent_id: gp:social-processes
+      kind: topic
+      label: {en: Social cognition, ru: Социальное познание}
+      description:
+        en: Processes for representing other people, intentions, beliefs, relationships, and social norms.
+        ru: Процессы представления других людей, их намерений и убеждений, отношений и социальных норм.
+      coverage: planned
+      source_ids: [source:rdoc-definitions]
+      memberships: []
+
+    - id: gp:body-consciousness
+      parent_id: gp:mind
+      kind: domain
+      label: {en: Body, regulation, and consciousness, ru: Тело, регуляция и сознание}
+      description:
+        en: Bodily regulation, internal sensing, pain, arousal, conscious access, and their interaction with behavior.
+        ru: Телесная регуляция, внутренние ощущения, боль, возбуждение, сознательный доступ и их взаимодействие с поведением.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+    - id: gp:physiological-regulation
+      parent_id: gp:body-consciousness
+      kind: topic
+      label: {en: Physiological regulation, ru: Физиологическая регуляция}
+      description:
+        en: Dynamic control of bodily variables through interacting endocrine, neural, and behavioral processes.
+        ru: Динамическое управление состоянием организма через взаимодействующие эндокринные, нервные и поведенческие процессы.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: hpa-feedback, canonical_id: pmm:state:circulating-cortisol-level, role: state_example, expected_type: State}
+        - {family_id: hpa-feedback, canonical_id: pmm:mechanism:glucocorticoid-negative-feedback, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: hpa-feedback, canonical_id: pmm:measurement:serial-acth-assay, role: measurement_example, expected_type: Measurement}
+    - id: gp:pain
+      parent_id: gp:body-consciousness
+      kind: topic
+      label: {en: Pain, ru: Боль}
+      description:
+        en: Aversive experience shaped by sensory input, context, expectation, learning, and endogenous modulation.
+        ru: Неприятное переживание, зависящее от сенсорного сигнала, контекста, ожиданий, научения и внутренней модуляции.
+      coverage: partial
+      source_ids: [source:rdoc-definitions]
+      memberships:
+        - {family_id: placebo-analgesia, canonical_id: pmm:state:pain-experience, role: state_example, expected_type: State}
+        - {family_id: placebo-analgesia, canonical_id: pmm:construct:positive-treatment-expectation, role: construct_example, expected_type: Construct}
+        - {family_id: placebo-analgesia, canonical_id: pmm:measurement:pain-rating, role: measurement_example, expected_type: Measurement}
+        - {family_id: placebo-analgesia, canonical_id: pmm:mechanism:endogenous-opioid-modulation, role: mechanism_example, expected_type: Mechanism}
+    - id: gp:consciousness
+      parent_id: gp:body-consciousness
+      kind: topic
+      label: {en: Consciousness and awareness, ru: Сознание и осознавание}
+      description:
+        en: Conscious access, subjective awareness, and their relations to perception, memory, bodily signals, and action.
+        ru: Сознательный доступ, субъективное осознавание и их связь с восприятием, памятью, телесными сигналами и действием.
+      coverage: planned
+      source_ids: []
+      memberships: []
+
+    - id: gp:development
+      parent_id: gp:mind
+      kind: domain
+      label: {en: Development across the lifespan, ru: Развитие в течение жизни}
+      description:
+        en: Change and continuity in psychological functions, regulation, relationships, and individual differences across age and experience.
+        ru: Изменение и устойчивость психических функций, регуляции, отношений и индивидуальных различий с возрастом и опытом.
+      coverage: partial
+      source_ids: [source:rothbart-temperament, source:vargha-khadem-1997]
+    - id: gp:developmental-context
+      parent_id: gp:development
+      kind: topic
+      label: {en: Developmental context and plasticity, ru: Контекст развития и пластичность}
+      description:
+        en: How timing of experience, care, injury, and maturation changes observed psychological organization and adaptation.
+        ru: Как время опыта, ухода, повреждения и созревания меняет наблюдаемую организацию психики и адаптацию.
+      ontological_note:
+        en: >-
+          Current records provide only two narrow developmental contexts: early care history in social buffering and early hippocampal pathology in developmental amnesia.
+        ru: >-
+          Сейчас представлены только два узких контекста развития: ранняя история ухода при социальной поддержке и ранняя патология гиппокампа при амнезии развития.
+      coverage: partial
+      source_ids: [source:vargha-khadem-1997]
+      memberships:
+        - {family_id: social-buffering, canonical_id: pmm:context:early-institutional-care-history, role: task_context_example, expected_type: Context}
+        - {family_id: declarative-memory, canonical_id: pmm:context:developmental-amnesia-assessment, role: task_context_example, expected_type: Context}
+        - {family_id: declarative-memory, canonical_id: pmm:measurement:episodic-semantic-profile, role: measurement_example, expected_type: Measurement}
+
     - id: gp:personality-individual-differences
       parent_id: gp:mind
       kind: domain
@@ -257,6 +565,29 @@ general_psychology:
       coverage: planned
       source_ids: [source:big-five-review]
       memberships: []
+    - id: gp:abilities-intelligence
+      parent_id: gp:personality-individual-differences
+      kind: topic
+      label: {en: Abilities and intelligence, ru: Способности и интеллект}
+      description:
+        en: Individual differences in learning, reasoning, knowledge, and performance across tasks and domains.
+        ru: Индивидуальные различия в научении, рассуждении, знаниях и выполнении заданий в разных областях.
+      ontological_note:
+        en: Task performance, latent psychometric abilities, acquired knowledge, and causal cognitive mechanisms must be represented separately.
+        ru: Выполнение задания, латентные психометрические способности, приобретённые знания и причинные когнитивные механизмы должны быть представлены раздельно.
+      coverage: planned
+      source_ids: []
+      memberships: []
+    - id: gp:self-concept
+      parent_id: gp:personality-individual-differences
+      kind: topic
+      label: {en: Self-concept and identity, ru: Я-концепция и идентичность}
+      description:
+        en: Relatively organized representations and evaluations of oneself across roles, time, and social contexts.
+        ru: Относительно организованные представления и оценки самого себя в разных ролях, периодах жизни и социальных контекстах.
+      coverage: planned
+      source_ids: []
+      memberships: []
 
 scientific_systems:
   id: scientific-systems
@@ -275,7 +606,7 @@ scientific_systems:
         en: It is not a diagnostic manual, a complete ontology, or a fixed final taxonomy.
         ru: Это не диагностическое руководство, не полная онтология и не окончательная неизменная классификация.
       coverage: partial
-      source_ids: [source:rdoc-about, source:rdoc-definitions]
+      source_ids: [source:rdoc-about, source:rdoc-definitions, source:rdoc-declarative-memory]
       mapped_memberships:
         - family_id: avoidance
           canonical_id: pmm:construct:rdoc-potential-threat-anxiety
@@ -283,6 +614,8 @@ scientific_systems:
           canonical_id: pmm:construct:working-memory-capacity
         - family_id: spatial-attention
           canonical_id: pmm:construct:spatial-selective-attention
+        - family_id: declarative-memory
+          canonical_id: pmm:construct:declarative-memory
     - id: system:cognitive-atlas
       label: {en: Cognitive Atlas, ru: Cognitive Atlas}
       system_kind: collaborative_knowledge_base
@@ -290,10 +623,10 @@ scientific_systems:
         en: A knowledge base of cognitive concepts and experimental tasks with explicit relationships between them.
         ru: База знаний о когнитивных понятиях и экспериментальных задачах с явными связями между ними.
       limitation:
-        en: Record review status matters. The linked working-memory, N-back, spatial-attention, and visuospatial-cueing pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
-        ru: Важен статус проверки записи. Связанные страницы рабочей памяти, N-back, пространственного внимания и зрительно-пространственной подсказки помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
+        en: Record review status matters. The linked working-memory, N-back, spatial-attention, cueing, episodic-memory, semantic-memory, and recognition-task pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
+        ru: Важен статус проверки записи. Связанные страницы рабочей памяти, N-back, пространственного внимания, подсказки, эпизодической и семантической памяти и задания узнавания помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
       coverage: partial
-      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing]
+      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing, source:cognitive-atlas-episodic-memory, source:cognitive-atlas-semantic-memory, source:cognitive-atlas-recognition-memory]
       mapped_memberships:
         - family_id: working-memory
           canonical_id: pmm:construct:working-memory-capacity
@@ -303,6 +636,12 @@ scientific_systems:
           canonical_id: pmm:construct:spatial-selective-attention
         - family_id: spatial-attention
           canonical_id: pmm:context:predictive-visuospatial-cueing-task
+        - family_id: declarative-memory
+          canonical_id: pmm:construct:episodic-memory
+        - family_id: declarative-memory
+          canonical_id: pmm:construct:semantic-memory
+        - family_id: declarative-memory
+          canonical_id: pmm:context:incidental-word-encoding-recognition
     - id: system:big-five
       label: {en: Big Five, ru: Большая пятёрка}
       system_kind: trait_taxonomy

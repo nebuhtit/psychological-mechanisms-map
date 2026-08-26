@@ -542,5 +542,65 @@ class SpatialAttentionEvidencePackTests(unittest.TestCase):
         self.assertEqual(directions, {"supports", "challenges"})
 
 
+class DeclarativeMemoryEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-declarative-memory-v0.3.yaml"
+        )
+
+    def test_declarative_memory_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_constructs_task_measurement_and_mechanism_remain_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:declarative-memory"], "Construct")
+        self.assertEqual(records["pmm:construct:episodic-memory"], "Construct")
+        self.assertEqual(records["pmm:construct:semantic-memory"], "Construct")
+        self.assertEqual(
+            records["pmm:context:incidental-word-encoding-recognition"], "Context"
+        )
+        self.assertEqual(
+            records["pmm:intervention:encoding-question-depth-manipulation"],
+            "Intervention",
+        )
+        self.assertEqual(
+            records["pmm:measurement:old-new-recognition-performance"], "Measurement"
+        )
+        self.assertEqual(
+            records["pmm:mechanism:elaborative-semantic-encoding"], "Mechanism"
+        )
+
+    def test_semantic_memory_is_not_semantic_encoding(self) -> None:
+        records = {item["id"]: item for item in self.document["objects"]}
+        semantic_memory = records["pmm:construct:semantic-memory"]
+        encoding = records["pmm:mechanism:elaborative-semantic-encoding"]
+        self.assertEqual(semantic_memory["type"], "Construct")
+        self.assertEqual(encoding["type"], "Mechanism")
+        self.assertNotEqual(semantic_memory["id"], encoding["id"])
+        self.assertIn("not the same object", semantic_memory["boundary_notes"][0])
+
+    def test_case_series_is_association_not_causal_effect(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:developmental-amnesia-dissociates-episodic-and-semantic-memory"
+        )
+        evidence = next(
+            item for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:vargha-khadem-1997-dissociation"
+        )
+        self.assertEqual(claim["claim_type"], "association")
+        self.assertEqual(evidence["causal_support"], "none")
+        self.assertEqual(evidence["sample_size"], 3)
+
+    def test_elaborative_encoding_remains_proposed(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:elaborative-semantic-encoding-may-support-retention"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+
+
 if __name__ == "__main__":
     unittest.main()
