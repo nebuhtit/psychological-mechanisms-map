@@ -339,6 +339,29 @@ h1 em { color: var(--forest); font-weight: 500; }
 .inspector-kicker { margin: 0 0 7px; color: var(--forest); font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
 .status-line { display: flex; flex-wrap: wrap; gap: 6px; margin: 15px 0; }
 .status-chip { padding: 5px 8px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 9px; font-weight: 700; }
+.section-eyebrow { display: block; margin-bottom: 7px; color: var(--ink-soft); font-size: 8px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.meaning-card { padding: 14px 15px; margin-top: 18px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.42); }
+.meaning-card p { margin: 0; color: var(--ink); font-size: 13px; line-height: 1.55; }
+.evidence-summary { display: grid; grid-template-columns: repeat(2, minmax(0, auto)); gap: 10px 20px; padding: 14px 15px; margin-top: 10px; border-left: 4px solid var(--line-strong); background: rgba(255,255,255,.3); }
+.evidence-summary.status-supported, .evidence-summary.status-accepted { border-color: var(--forest); }
+.evidence-summary.status-mixed, .evidence-summary.status-unsupported { border-color: var(--amber); }
+.evidence-summary.status-proposed, .evidence-summary.status-provisional { border-color: var(--blue); }
+.evidence-summary strong { display: block; font-size: 13px; text-transform: capitalize; }
+.evidence-summary p { grid-column: 1 / -1; margin: 0; font-size: 11px; }
+.explain-section { padding-top: 17px; margin-top: 17px; border-top: 2px solid var(--ink); }
+.explain-section h3 { margin: 0 0 10px; font-family: "Newsreader", serif; font-size: 19px; font-weight: 600; }
+.inference-note { padding: 10px 12px; margin: 0 0 10px !important; border-radius: 7px; background: #eee7d6; color: var(--ink) !important; }
+.connection-list { display: grid; gap: 8px; }
+.connection-card, .inspector-node-link { width: 100%; border: 1px solid var(--line); color: var(--ink); text-align: left; cursor: pointer; }
+.connection-card { display: grid; gap: 7px; padding: 11px 12px; border-radius: 8px; background: rgba(255,255,255,.45); font: inherit; font-size: 11px; line-height: 1.45; }
+.connection-card:hover, .connection-card:focus-visible, .inspector-node-link:hover, .inspector-node-link:focus-visible { border-color: var(--forest); background: #fffdf7; outline: none; }
+.connection-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: var(--forest); font-size: 8px; letter-spacing: .06em; text-transform: uppercase; }
+.connection-role { width: fit-content; padding: 3px 6px; border-radius: 999px; background: #eee7d6; color: var(--ink-soft); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+.connection-card small { color: var(--ink-soft); font-size: 9px; }
+.claim-path { display: flex; align-items: stretch; gap: 5px; overflow-x: auto; padding-bottom: 4px; }
+.inspector-node-link { min-width: 115px; padding: 9px; border-radius: 7px; background: rgba(255,255,255,.45); font-family: "Manrope", sans-serif; font-size: 10px; font-weight: 700; line-height: 1.3; }
+.inspector-node-link small { display: block; margin-bottom: 4px; color: var(--ink-soft); font-size: 7px; letter-spacing: .08em; text-transform: uppercase; }
+.path-arrow { align-self: center; color: var(--amber); font-size: 18px; }
 .detail-section { padding-top: 15px; margin-top: 15px; border-top: 1px solid var(--line); }
 .detail-section h3 { margin: 0 0 7px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
 .detail-section p { margin: 0; }

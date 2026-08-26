@@ -76,6 +76,17 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn('if (event.key === "Escape") clearSelection();', javascript)
         self.assertIn('element.classList.remove("is-selected", "is-dimmed")', javascript)
 
+    def test_inspector_explains_status_inference_and_element_roles(self) -> None:
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        stylesheet = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        for function in ("statusExplanation", "inferenceExplanation", "roleFor", "renderConnections"):
+            self.assertIn(f"function {function}(", javascript)
+        self.assertIn('"Degree of evidence", "Степень доказанности"', javascript)
+        self.assertIn('"Association only:', javascript)
+        self.assertIn(".evidence-summary", stylesheet)
+        self.assertIn(".connection-card", stylesheet)
+        self.assertIn(".claim-path", stylesheet)
+
 
 if __name__ == "__main__":
     unittest.main()

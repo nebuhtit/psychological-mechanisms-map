@@ -67,6 +67,10 @@ const UI_RU = {
   "unsupported": "не поддерживается",
   "refuted": "опровергнуто",
   "not assessed": "не оценено",
+  "accepted": "принято",
+  "provisional": "предварительно",
+  "draft": "черновик",
+  "deprecated": "устарело",
   "high": "высокая",
   "moderate": "умеренная",
   "low": "низкая",
@@ -75,8 +79,10 @@ const UI_RU = {
   "challenges": "оспаривает",
   "neutral": "нейтрально",
   "causal_effect": "причинный эффект",
-  "causal_mechanism": "причинный механизм",
-  "correlation": "корреляция",
+  "causal_hypothesis": "причинная гипотеза",
+  "mechanism_hypothesis": "гипотеза механизма",
+  "association": "связь без доказанной причинности",
+  "definition": "определение",
   "prediction": "предсказание",
   "mediation": "медиация",
   "moderation": "модерация",
@@ -364,6 +370,102 @@ function listSection(title, items) {
   return `<section class="detail-section"><h3>${escapeHtml(title)}</h3><ul class="detail-list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>`;
 }
 
+function ui(english, russian) {
+  return state.lang === "ru" ? russian : english;
+}
+
+function statusExplanation(record) {
+  if (record.kind !== "claim") {
+    return record.curation_status === "provisional"
+      ? ui("Working definition: useful for the map, but its boundaries may still change. This is not an evidence rating.", "Рабочее определение: оно уже используется на карте, но его границы ещё могут измениться. Это не оценка доказанности.")
+      : ui("Curated ontology object. Its status describes the definition, not whether every related scientific claim is proven.", "Проверенный объект онтологии. Его статус относится к качеству определения, а не к доказанности всех связанных утверждений.");
+  }
+  const explanations = {
+    supported: ui("The linked evidence supports this statement within the stated population and conditions.", "Связанные исследования поддерживают это утверждение в указанной выборке и условиях."),
+    mixed: ui("Studies or analyses disagree. The statement should not be treated as settled.", "Исследования или анализы расходятся. Утверждение нельзя считать установленным."),
+    unsupported: ui("The mapped evidence currently does not support this statement.", "Собранные данные сейчас не поддерживают это утверждение."),
+    refuted: ui("The mapped evidence contradicts this statement within its tested scope.", "Собранные данные противоречат утверждению в проверенных границах."),
+    proposed: ui("This is a testable hypothesis, not an established result.", "Это проверяемая гипотеза, а не установленный результат."),
+    not_assessed: ui("The statement is represented, but its evidence has not yet been assessed.", "Утверждение представлено, но его доказательства ещё не оценены."),
+  };
+  return explanations[record.epistemic_status] || "";
+}
+
+function inferenceExplanation(claim) {
+  const explanations = {
+    causal_effect: ui("Causal claim: the study changed one factor and tested whether another changed as a consequence.", "Причинное утверждение: исследование изменяло один фактор и проверяло, изменился ли другой вследствие этого."),
+    causal_hypothesis: ui("Causal hypothesis: a possible cause-and-effect path proposed for future testing.", "Причинная гипотеза: возможная цепочка причины и следствия, которую ещё нужно проверить."),
+    association: ui("Association only: the elements vary together, but this does not show that one causes the other.", "Только связь: элементы изменяются совместно, но это не доказывает, что один вызывает другой."),
+    prediction: ui("Prediction: one element forecasts another in data not used for fitting; prediction is not causation.", "Предсказание: один элемент прогнозирует другой на данных, не использованных для подгонки; прогноз не равен причинности."),
+    mediation: claim.mediation_inference === "causal"
+      ? ui("Causal mediation: the evidence aims to identify an intervening causal pathway.", "Причинная медиация: данные направлены на выявление промежуточного причинного пути.")
+      : ui("Statistical mediation: the middle element explains part of an association statistically, not necessarily causally.", "Статистическая медиация: промежуточный элемент статистически объясняет часть связи, но не обязательно является причиной."),
+    moderation: ui("Moderation: the strength or direction of a relationship differs depending on another condition.", "Модерация: сила или направление связи различается в зависимости от другого условия."),
+    mechanism_hypothesis: ui("Mechanism hypothesis: a proposed process that could produce the outcome; it remains falsifiable.", "Гипотеза механизма: предполагаемый процесс, который может приводить к результату; его ещё можно опровергнуть."),
+    definition: ui("Definition: this claim states how a concept is delimited, not an observed cause-and-effect result.", "Определение: утверждение задаёт границы понятия, а не описывает наблюдавшийся причинный эффект."),
+  };
+  return explanations[claim.claim_type] || "";
+}
+
+function roleFor(claim, id) {
+  if (claim.exposure_id === id) return claim.claim_type === "causal_effect" ? ui("tested cause", "проверяемая причина") : ui("starting factor", "исходный фактор");
+  if (claim.mechanism_id === id) return ui("proposed process", "предполагаемый процесс");
+  if (claim.mediator_id === id) return ui("intermediate link", "промежуточное звено");
+  if (claim.moderator_id === id) return ui("condition changing the relationship", "условие, изменяющее связь");
+  if (claim.outcome_id === id) return claim.claim_type === "causal_effect" ? ui("tested consequence", "проверяемое следствие") : ui("result", "результат");
+  if (claim.defined_object_id === id) return ui("defined concept", "определяемое понятие");
+  return ui("related element", "связанный элемент");
+}
+
+function nodeLink(id, role) {
+  const record = recordById(id);
+  if (!record) return "";
+  const label = record.kind === "claim" ? record.statement : record.label;
+  return `<button class="inspector-node-link" type="button" data-select-id="${escapeHtml(id)}"><small>${escapeHtml(role)}</small>${escapeHtml(t(label))}</button>`;
+}
+
+function claimPath(claim) {
+  const parts = [];
+  for (const [field, role] of [
+    ["exposure_id", ui("starting factor", "исходный фактор")],
+    ["mechanism_id", ui("proposed process", "предполагаемый процесс")],
+    ["mediator_id", ui("intermediate link", "промежуточное звено")],
+    ["moderator_id", ui("condition", "условие")],
+    ["outcome_id", ui("result", "результат")],
+  ]) {
+    if (claim[field]) parts.push(nodeLink(claim[field], role));
+  }
+  if (!parts.length && claim.defined_object_id) parts.push(nodeLink(claim.defined_object_id, ui("defined concept", "определяемое понятие")));
+  return parts.join('<span class="path-arrow" aria-hidden="true">→</span>');
+}
+
+function relatedClaims(record) {
+  if (record.kind === "claim") return [];
+  return state.family.claims.filter(claim => linkedObjectIds(claim).includes(record.id) || claim.defined_object_id === record.id);
+}
+
+function renderConnections(record) {
+  if (record.kind === "claim") {
+    const path = claimPath(record);
+    return path ? `<section class="explain-section"><h3>${ui("How the elements connect", "Как связаны элементы")}</h3><p class="inference-note">${escapeHtml(inferenceExplanation(record))}</p><div class="claim-path">${path}</div></section>` : "";
+  }
+  const claims = relatedClaims(record);
+  if (!claims.length) return `<section class="explain-section"><h3>${ui("Connections", "Связи")}</h3><p>${ui("No empirical claim currently links this object to another map element.", "Пока нет эмпирического утверждения, связывающего этот объект с другим элементом карты.")}</p></section>`;
+  return `<section class="explain-section"><h3>${ui("How it affects or relates to other elements", "Как влияет или связано с другими элементами")}</h3><div class="connection-list">${claims.map(claim => `
+    <button class="connection-card" type="button" data-select-id="${escapeHtml(claim.id)}">
+      <span class="connection-top"><strong>${escapeHtml(t(claim.claim_type))}</strong><span>${escapeHtml(t(STATUS_LABELS[claim.epistemic_status] || claim.epistemic_status))}</span></span>
+      <span class="connection-role">${escapeHtml(roleFor(claim, record.id))}</span>
+      <span>${escapeHtml(t(claim.statement))}</span>
+      <small>${escapeHtml(inferenceExplanation(claim))}</small>
+    </button>`).join("")}</div></section>`;
+}
+
+function bindInspectorLinks() {
+  inspector.querySelectorAll("[data-select-id]").forEach(button => {
+    button.addEventListener("click", () => selectNode(button.dataset.selectId));
+  });
+}
+
 function renderInspector(record) {
   const sources = relatedSources(record);
   const evidence = evidenceFor(record);
@@ -374,18 +476,23 @@ function renderInspector(record) {
   inspector.innerHTML = `
     <p class="inspector-kicker">${escapeHtml(t(TYPE_LABELS[record.type] || record.type))} · ${escapeHtml(record.id.split(":").at(-1))}</p>
     <h2>${escapeHtml(record.kind === "claim" ? wrapLabel(t(record.statement), 48).join(" ") : t(record.label))}</h2>
-    <div class="status-line">
-      ${status ? `<span class="status-chip">${escapeHtml(t(STATUS_LABELS[status] || status))}</span>` : ""}
-      ${confidence ? `<span class="status-chip">${state.lang === "ru" ? "уверенность" : "confidence"}: ${escapeHtml(t(confidence))}</span>` : ""}
-      ${record.claim_type ? `<span class="status-chip">${escapeHtml(t(record.claim_type))}</span>` : ""}
+    <section class="meaning-card">
+      <span class="section-eyebrow">${record.kind === "claim" ? ui("What is being claimed", "Что утверждается") : ui("What this means", "Что это значит")}</span>
+      <p>${escapeHtml(definition)}</p>
+    </section>
+    <div class="evidence-summary status-${escapeHtml(status || "neutral")}">
+      <div><span class="section-eyebrow">${record.kind === "claim" ? ui("Degree of evidence", "Степень доказанности") : ui("Definition status", "Статус определения")}</span><strong>${escapeHtml(t(STATUS_LABELS[status] || status))}</strong></div>
+      ${confidence ? `<div><span class="section-eyebrow">${ui("Confidence", "Уверенность")}</span><strong>${escapeHtml(t(confidence))}</strong></div>` : ""}
+      <p>${escapeHtml(statusExplanation(record))}</p>
     </div>
-    <p>${escapeHtml(definition)}</p>
+    ${renderConnections(record)}
     ${scope ? `<section class="detail-section"><h3>${t("Scope")}</h3><p>${escapeHtml(t(scope))}</p></section>` : ""}
     ${record.confidence?.rationale ? `<section class="detail-section"><h3>${t("Confidence rationale")}</h3><p>${escapeHtml(t(record.confidence.rationale))}</p></section>` : ""}
     ${evidence.length ? `<section class="detail-section"><h3>${t("Evidence")}</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(t(item.support_direction))}</strong> · ${escapeHtml(t(item.summary))}</li>`).join("")}</ul></section>` : ""}
     ${listSection(t("Limitations"), (record.limitations || record.boundary_notes || record.scope?.boundary_conditions)?.map(t))}
     ${sources.length ? `<section class="detail-section"><h3>${t("Sources")}</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(t(source.title))}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
   `;
+  bindInspectorLinks();
 }
 
 function emphasizeSelection(id) {
