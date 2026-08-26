@@ -104,39 +104,27 @@ function graphModel() {
   return { nodes, edges };
 }
 
-function layoutNodes(nodes, width, height) {
-  const columns = {
-    Context: 0.11,
-    Intervention: 0.11,
-    Event: 0.30,
-    Contingency: 0.30,
-    Construct: 0.34,
-    Mechanism: 0.38,
-    claim: 0.60,
-    State: 0.84,
-    Behavior: 0.84,
-    Outcome: 0.84,
-    Measurement: 0.96,
-    Observation: 0.96,
+function layoutNodes(nodes, width, height, compact) {
+  const typeOrder = {
+    Context: 0, Intervention: 1, Event: 2, Contingency: 3,
+    Construct: 4, Mechanism: 5, claim: 6, State: 7,
+    Behavior: 8, Outcome: 9, Measurement: 10, Observation: 11,
   };
-  const groups = new Map();
-  for (const node of nodes) {
-    const key = node.type || "claim";
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(node);
-  }
+  const columnCount = compact ? 3 : 5;
+  const ordered = [...nodes].sort((first, second) => {
+    const firstOrder = typeOrder[first.type || "claim"] ?? 12;
+    const secondOrder = typeOrder[second.type || "claim"] ?? 12;
+    return firstOrder - secondOrder || first.label.localeCompare(second.label);
+  });
   const positions = new Map();
-  for (const [type, items] of groups) {
-    items.sort((a, b) => a.label.localeCompare(b.label));
-    const xBase = (columns[type] || 0.5) * width;
-    items.forEach((item, index) => {
-      const spacing = Math.min(92, (height - 120) / Math.max(items.length, 1));
-      const total = spacing * (items.length - 1);
-      const y = 78 + (height - 135 - total) / 2 + index * spacing;
-      const jitter = ((index % 2) - 0.5) * 20;
-      positions.set(item.id, { x: xBase + jitter, y });
+  ordered.forEach((node, index) => {
+    const column = index % columnCount;
+    const row = Math.floor(index / columnCount);
+    positions.set(node.id, {
+      x: ((column + 0.5) / columnCount) * width,
+      y: 86 + row * 108,
     });
-  }
+  });
   return positions;
 }
 
@@ -155,7 +143,15 @@ function renderMap() {
     countsByType.set(key, (countsByType.get(key) || 0) + 1);
   }
   const largestColumn = Math.max(...countsByType.values(), 1);
-  const height = Math.max(svg.clientHeight || 610, 150 + (largestColumn - 1) * 92);
+  const compact = window.innerWidth < 900;
+  const gridColumns = compact ? 3 : 5;
+  const gridRows = Math.ceil(nodes.length / gridColumns);
+  const height = Math.max(
+    610,
+    150 + (largestColumn - 1) * 92,
+    160 + gridRows * 108,
+  );
+  svg.style.height = `${height}px`;
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.replaceChildren();
 
@@ -165,7 +161,7 @@ function renderMap() {
   defs.append(marker);
   svg.append(defs);
 
-  const positions = layoutNodes(nodes, width, height);
+  const positions = layoutNodes(nodes, width, height, compact);
   const edgesGroup = svgElement("g", { "aria-hidden": "true" });
   for (const edge of edges) {
     const source = positions.get(edge.source);
