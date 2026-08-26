@@ -64,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.12.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.13.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -72,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.12.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.13.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -168,7 +168,8 @@ class SiteBundleTests(unittest.TestCase):
             for family in document["families"]
             for application in family["practical_implications"]
         ]
-        self.assertEqual(len(applications), 4)
+        self.assertEqual(len(applications), len(document["families"]))
+        self.assertTrue(all(len(family["practical_implications"]) >= 1 for family in document["families"]))
         self.assertTrue(all(application["id"].startswith("pmm:application:") for application in applications))
         self.assertTrue(all(application["actionability"] in {"direct_within_tested_scope", "transfer_uncertain", "interpretation_only"} for application in applications))
         self.assertTrue(all(application["not_established"]["en"] for application in applications))

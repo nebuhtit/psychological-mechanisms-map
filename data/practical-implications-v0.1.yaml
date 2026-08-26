@@ -124,3 +124,326 @@ applications:
     claim_ids: [pmm:claim:assigned-loss-probability-changes-choice, pmm:claim:negative-reinforcement-mechanism-hypothesis, pmm:claim:clinical-maintenance-loop-hypothesis]
     source_ids: [pmm:source:kim-2006-avoidance, pmm:source:hofmann-hay-2018]
     provenance: *provenance
+
+  - id: pmm:application:plan-extinction-for-context-and-time
+    family_id: extinction
+    title: {en: Plan for return outside the learning context, ru: Учитывайте возврат реакции вне контекста обучения}
+    practical_question:
+      en: How can new safety learning be made less dependent on one place and one session?
+      ru: Как сделать новое безопасное научение менее зависимым от одного места и одного занятия?
+    action:
+      en: In a professionally appropriate and safe learning plan, rehearse the new response across more than one context and check it again after a delay rather than treating one successful session as erasure.
+      ru: В профессионально составленном и безопасном плане повторяйте новую реакцию в нескольких контекстах и проверяйте её спустя время, а не считайте один успешный сеанс стиранием прежнего научения.
+    expected_change:
+      en: Better detection and possible reduction of context-specific or delayed return of conditioned responding.
+      ru: Более раннее выявление и возможное уменьшение зависящего от контекста или отсроченного возврата условной реакции.
+    evidence_basis:
+      en: Controlled human laboratory studies found renewal after context change and recovery after delays; clinical transfer is not directly established by this pack.
+      ru: В контролируемых лабораторных исследованиях у людей реакция возвращалась после смены контекста и задержки; клинический перенос этим пакетом напрямую не установлен.
+    applicability:
+      en: Design principle for exposure-based learning, relapse planning, and laboratory extinction protocols.
+      ru: Принцип проектирования экспозиционного научения, планирования возможного возврата реакции и лабораторных протоколов угасания.
+    not_established:
+      en: Varying contexts is not guaranteed to prevent relapse, and the mapped evidence does not specify a universal clinical dose or sequence.
+      ru: Изменение контекстов не гарантирует предотвращение возврата реакции, а представленные данные не задают универсальную клиническую дозу или последовательность.
+    safety_note:
+      en: Exposure involving severe anxiety, trauma, medical risk, or real danger should be planned with a qualified professional.
+      ru: Экспозицию при тяжёлой тревоге, травме, медицинском риске или реальной опасности следует планировать с квалифицированным специалистом.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [clinician, researcher, individual]
+    claim_ids: [pmm:claim:context-shift-causes-renewal, pmm:claim:time-allows-spontaneous-recovery, pmm:claim:extinction-memory-mechanism-hypothesis]
+    source_ids: [pmm:source:alvarez-johnson-grillon-2007, pmm:source:huff-hernandez-blanding-labar-2009, pmm:source:coelho-dunsmoor-phelps-2015]
+    provenance: *provenance
+
+  - id: pmm:application:test-habit-by-changing-outcome-value
+    family_id: habit
+    title: {en: Test a habit instead of inferring it from repetition, ru: "Проверяйте привычку, а не выводите её из повторения"}
+    practical_question:
+      en: How can one distinguish repeated goal-directed action from outcome-insensitive responding?
+      ru: Как отличить повторяющееся целенаправленное действие от реакции, нечувствительной к результату?
+    action:
+      en: Change the value, cost, or availability of the expected outcome and observe whether the action changes; combine this with context and self-report rather than relying on repetition alone.
+      ru: Измените ценность, цену или доступность ожидаемого результата и посмотрите, меняется ли действие; учитывайте контекст и самоотчёт, а не полагайтесь только на повторяемость.
+    expected_change:
+      en: A more cautious classification of behavior as goal-directed, outcome-insensitive, or unresolved.
+      ru: Более осторожная классификация поведения как целенаправленного, нечувствительного к результату или пока неопределённого.
+    evidence_basis:
+      en: Human devaluation results are mixed, and different habit tasks and questionnaires do not behave as interchangeable measures.
+      ru: Результаты девальвации у людей смешанные, а разные задания и опросники привычек не являются взаимозаменяемыми измерениями.
+    applicability:
+      en: Behavioral assessment, intervention design, and research on repeated actions.
+      ru: Поведенческая оценка, проектирование вмешательств и исследования повторяющихся действий.
+    not_established:
+      en: One failed devaluation test does not prove a stable habit, and extended repetition or acute stress does not reliably create habitual control in the mapped evidence.
+      ru: Один неудачный тест девальвации не доказывает устойчивую привычку, а длительное повторение или острый стресс по представленным данным не создают привычный контроль надёжно.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [individual, clinician, researcher]
+    claim_ids: [pmm:claim:extended-training-causes-outcome-insensitivity, pmm:claim:habit-measures-converge, pmm:claim:habitual-control-mechanism-hypothesis]
+    source_ids: [pmm:source:tricomi-balleine-odoherty-2009, pmm:source:pool-2022-multilaboratory, pmm:source:nebe-2024-characterizing-habits]
+    provenance: *provenance
+
+  - id: pmm:application:reappraise-meaning-for-subjective-distress
+    family_id: reappraisal
+    title: {en: Reinterpret meaning to change subjective emotion, ru: Переосмысливайте значение для изменения субъективной эмоции}
+    practical_question:
+      en: What can be changed when a situation triggers a strong negative emotional response?
+      ru: Что можно изменить, когда ситуация вызывает сильную отрицательную эмоцию?
+    action:
+      en: Generate a plausible alternative interpretation of what the situation means, such as viewing an image as staged or an event as temporary, without denying relevant facts.
+      ru: Сформулируйте правдоподобное альтернативное понимание смысла ситуации, например рассмотрите изображение как постановочное или событие как временное, не отрицая значимые факты.
+    expected_change:
+      en: Reduced self-reported negative emotion in the short term under conditions similar to brief reappraisal tasks.
+      ru: Кратковременное уменьшение субъективно сообщаемой отрицательной эмоции в условиях, близких к коротким заданиям переоценки.
+    evidence_basis:
+      en: Randomized laboratory instructions repeatedly reduced subjective negative emotion, while autonomic effects were mixed.
+      ru: Рандомизированные лабораторные инструкции неоднократно уменьшали субъективную отрицательную эмоцию, но физиологические эффекты были смешанными.
+    applicability:
+      en: Low-risk emotion-regulation practice for ordinary situations when a different truthful interpretation is available.
+      ru: Низкорисковая практика регуляции эмоций в обычных ситуациях, когда возможно другое правдивое толкование.
+    not_established:
+      en: Reappraisal does not guarantee bodily calming, long-term benefit, superiority to acceptance, or suitability for every event and person.
+      ru: Переоценка не гарантирует физиологическое успокоение, долгосрочную пользу, превосходство над принятием или пригодность для любой ситуации и человека.
+    safety_note:
+      en: Reinterpretation should not be used to dismiss real danger, abuse, medical symptoms, or the need for action.
+      ru: Переосмысление нельзя использовать для отрицания реальной опасности, насилия, медицинских симптомов или необходимости действовать.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [individual, clinician, educator]
+    claim_ids: [pmm:claim:reappraisal-reduces-reported-negative-emotion, pmm:claim:reappraisal-reduces-autonomic-reactivity, pmm:claim:meaning-reinterpretation-mechanism-hypothesis]
+    source_ids: [pmm:source:gross-1998-emotion-regulation, pmm:source:wolgast-lundh-viborg-2011, pmm:source:hamza-2024-reappraisal-stress]
+    provenance: *provenance
+
+  - id: pmm:application:match-working-memory-measure-to-goal
+    family_id: working-memory
+    title: {en: Match the working-memory task to the actual goal, ru: Подбирайте задание рабочей памяти под реальную цель}
+    practical_question:
+      en: Can an N-back score be treated as a general measure or training target for working memory?
+      ru: Можно ли считать результат N-back общей мерой или целью тренировки рабочей памяти?
+    action:
+      en: Define the target first, such as updating, resisting familiarity, backward recall, or complex-span performance, and use more than one task when making broad conclusions.
+      ru: Сначала определите цель — обновление, подавление знакомости, обратное воспроизведение или выполнение complex span — и используйте несколько заданий для широких выводов.
+    expected_change:
+      en: More valid assessment and fewer false conclusions that improvement on one task means general working-memory improvement.
+      ru: Более валидная оценка и меньше ошибочных выводов о том, что улучшение одного задания означает общее улучшение рабочей памяти.
+    evidence_basis:
+      en: N-back, operation span, and backward recall converge imperfectly, while lure trials show that familiarity control contributes to N-back performance.
+      ru: N-back, operation span и обратное воспроизведение сходятся неполностью, а пробы-ловушки показывают вклад контроля знакомости в выполнение N-back.
+    applicability:
+      en: Cognitive assessment, educational testing, training studies, and interpretation of commercial brain-training claims.
+      ru: Когнитивная оценка, образовательное тестирование, исследования тренировки и интерпретация обещаний коммерческих тренажёров мозга.
+    not_established:
+      en: The pack does not show that N-back training broadly improves memory, intelligence, study performance, or daily functioning.
+      ru: Пакет не показывает, что тренировка N-back широко улучшает память, интеллект, учёбу или повседневное функционирование.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [educator, clinician, researcher, individual]
+    claim_ids: [pmm:claim:lures-increase-n-back-false-alarms, pmm:claim:n-back-weakly-converges-with-complex-span, pmm:claim:n-back-and-backward-recall-are-distinct-factors]
+    source_ids: [pmm:source:kane-2007-n-back-validity, pmm:source:byrne-2024-n-back-factors]
+    provenance: *provenance
+
+  - id: pmm:application:separate-interoceptive-dimensions
+    family_id: interoception
+    title: {en: Measure bodily awareness as several dimensions, ru: Измеряйте телесное осознавание по нескольким измерениям}
+    practical_question:
+      en: What should be assessed when someone reports unusually strong or weak awareness of bodily signals?
+      ru: Что следует оценивать, когда человек сообщает о необычно сильном или слабом ощущении сигналов тела?
+    action:
+      en: Separate objective task performance, subjective sensibility, and confidence calibration instead of summarizing them as one interoception score.
+      ru: Разделяйте объективное выполнение задания, субъективную чувствительность и соответствие уверенности точности вместо объединения в один показатель интероцепции.
+    expected_change:
+      en: A clearer profile of whether the issue concerns detection performance, self-belief, metacognitive calibration, or their mismatch.
+      ru: Более ясный профиль того, относится ли особенность к обнаружению сигнала, представлению о себе, метакогнитивной калибровке или их несовпадению.
+    evidence_basis:
+      en: These dimensions were empirically dissociable, and objective cardiac accuracy was not generally associated with anxiety in a preregistered meta-analysis.
+      ru: Эти измерения эмпирически различались, а объективная сердечная точность в пререгистрированном метаанализе не была в целом связана с тревогой.
+    applicability:
+      en: Research and clinical assessment design; useful for avoiding overinterpretation of a heartbeat-task score or questionnaire.
+      ru: Проектирование исследований и клинической оценки; помогает не переоценивать результат задания на сердцебиение или опросника.
+    not_established:
+      en: A high or low score on one dimension does not diagnose anxiety, prove abnormal bodily processing, or identify the causal mechanism of symptoms.
+      ru: Высокий или низкий результат по одному измерению не диагностирует тревогу, не доказывает нарушение телесной обработки и не выявляет причину симптомов.
+    safety_note:
+      en: New or severe cardiorespiratory symptoms require medical assessment rather than interpretation through this map alone.
+      ru: Новые или тяжёлые сердечно-дыхательные симптомы требуют медицинской оценки, а не только интерпретации по этой карте.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [clinician, researcher, individual]
+    claim_ids: [pmm:claim:interoceptive-dimensions-are-dissociable, pmm:claim:cardiac-accuracy-not-generally-associated-with-anxiety, pmm:claim:appraisal-may-link-bodily-signals-to-anxiety]
+    source_ids: [pmm:source:garfinkel-2015-knowing-heart, pmm:source:adams-2022-anxiety-accuracy]
+    provenance: *provenance
+
+  - id: pmm:application:use-familiar-support-during-acute-stress
+    family_id: social-buffering
+    title: {en: Use familiar support during acute stress, ru: Используйте поддержку знакомого человека при остром стрессе}
+    practical_question:
+      en: Can the presence of a trusted person change a child's stress response?
+      ru: Может ли присутствие близкого человека изменить стрессовую реакцию ребёнка?
+    action:
+      en: When appropriate, arrange calm support from a familiar caregiver before and during a predictable stressful event rather than assuming any available adult is equivalent.
+      ru: Когда это уместно, организуйте спокойную поддержку знакомого взрослого до и во время предсказуемого стрессового события, не считая любого присутствующего взрослого равноценным.
+    expected_change:
+      en: A potentially different cortisol trajectory and subjective stress experience under conditions resembling the studied child stress tasks.
+      ru: Возможное изменение динамики кортизола и субъективного стресса в условиях, близких к изученным детским стрессовым заданиям.
+    evidence_basis:
+      en: Randomized support conditions changed cortisol trajectories, but effects depended on developmental and care-history context.
+      ru: Рандомизированные условия поддержки меняли динамику кортизола, однако эффект зависел от развития и истории ухода.
+    applicability:
+      en: Planning support around medical procedures, evaluations, transitions, or other predictable acute stressors in children.
+      ru: Планирование поддержки при медицинских процедурах, оценивании, переходах и других предсказуемых острых стрессорах у детей.
+    not_established:
+      en: Familiar support is not guaranteed to reduce stress for every child and does not replace treatment, safeguarding, or changes to a harmful environment.
+      ru: Знакомая поддержка не гарантирует уменьшение стресса у каждого ребёнка и не заменяет лечение, защиту или изменение вредной среды.
+    actionability: transfer_uncertain
+    confidence: low
+    audience: [individual, clinician, educator]
+    claim_ids: [pmm:claim:parent-buffer-changes-cortisol-trajectory, pmm:claim:care-history-moderates-parent-support-effect, pmm:claim:co-regulation-may-produce-buffering]
+    source_ids: [pmm:source:donzella-2026-social-buffering, pmm:source:hostinar-2015-early-deprivation]
+    provenance: *provenance
+
+  - id: pmm:application:align-feedback-with-the-target-action
+    family_id: reward-learning
+    title: {en: Align feedback closely with the target action, ru: Связывайте обратную связь с целевым действием по времени}
+    practical_question:
+      en: What does prediction-error research suggest about the timing of learning feedback?
+      ru: Что исследования ошибки предсказания говорят о времени обратной связи при обучении?
+    action:
+      en: Make the informative outcome or feedback clearly attributable to the target cue or action and deliver it at a consistent, interpretable time.
+      ru: Делайте информативный результат или обратную связь однозначно связанными с целевым сигналом или действием и предъявляйте их в последовательный, понятный момент.
+    expected_change:
+      en: Clearer updating of expectations about which cue or action predicts an outcome.
+      ru: Более ясное обновление ожиданий о том, какой сигнал или действие предсказывает результат.
+    evidence_basis:
+      en: Temporally precise dopamine-neuron stimulation changed later reward seeking in rats, and prediction-error models formalize value updating; direct human educational transfer is not tested here.
+      ru: Точная по времени стимуляция дофаминовых нейронов меняла последующий поиск награды у крыс, а модели ошибки предсказания описывают обновление ценности; прямой перенос на обучение людей здесь не проверен.
+    applicability:
+      en: Candidate principle for feedback systems, behavioral training, and experimental task design.
+      ru: Кандидатный принцип для систем обратной связи, поведенческого обучения и экспериментальных заданий.
+    not_established:
+      en: The evidence does not show that faster feedback is always better, that dopamine equals prediction error, or that the animal manipulation specifies a human learning recipe.
+      ru: Данные не показывают, что более быстрая обратная связь всегда лучше, что дофамин равен ошибке предсказания или что эксперимент на животных задаёт готовый способ обучения людей.
+    actionability: interpretation_only
+    confidence: low
+    audience: [educator, designer, researcher]
+    claim_ids: [pmm:claim:rpe-is-model-defined-discrepancy, pmm:claim:timed-dopamine-stimulation-increases-learned-seeking, pmm:claim:rpe-may-drive-temporal-difference-updating]
+    source_ids: [pmm:source:steinberg-2013-causal-link, pmm:source:gershman-2024-dopamine-beyond]
+    provenance: *provenance
+
+  - id: pmm:application:interpret-hpa-dynamics-with-serial-measures
+    family_id: hpa-feedback
+    title: {en: Interpret HPA feedback as a time course, ru: Интерпретируйте обратную связь ГГН-оси во времени}
+    practical_question:
+      en: Can one cortisol value reveal whether HPA negative feedback is functioning normally?
+      ru: Может ли одно значение кортизола показать нормальность отрицательной обратной связи ГГН-оси?
+    action:
+      en: For research or qualified clinical assessment, use protocol-timed serial cortisol and ACTH measurements and document medication, circadian timing, and perturbation conditions.
+      ru: В исследовании или квалифицированной клинической оценке используйте серийные измерения кортизола и ACTH по протоколу и фиксируйте лекарства, время суток и условия воздействия.
+    expected_change:
+      en: Better separation of hormone level, delayed feedback, continuous secretion, and pulsatile secretory dynamics.
+      ru: Более точное разделение уровня гормона, отсроченной обратной связи, непрерывной секреции и пульсирующей динамики.
+    evidence_basis:
+      en: Controlled pharmacological studies showed delayed and multi-component ACTH responses when cortisol signaling was changed.
+      ru: Контролируемые фармакологические исследования показали отсроченные и многокомпонентные изменения ACTH при изменении сигналов кортизола.
+    applicability:
+      en: Endocrine research design and specialist interpretation of dynamic HPA tests.
+      ru: Проектирование эндокринных исследований и специализированная интерпретация динамических тестов ГГН-оси.
+    not_established:
+      en: A single home or laboratory cortisol sample does not measure feedback capacity, chronic stress, or mental health, and this map does not define diagnostic thresholds.
+      ru: Один домашний или лабораторный анализ кортизола не измеряет способность обратной связи, хронический стресс или психическое здоровье, а карта не задаёт диагностические пороги.
+    safety_note:
+      en: Metyrapone, cortisol, and other endocrine perturbations require medical supervision and are not self-experiments.
+      ru: Метирапон, кортизол и другие эндокринные воздействия требуют медицинского контроля и не предназначены для самостоятельных экспериментов.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [clinician, researcher]
+    claim_ids: [pmm:claim:hpa-feedback-is-multiple-receptor-linked-processes, pmm:claim:cortisol-replacement-suppresses-acth-after-delay, pmm:claim:metyrapone-increases-continuous-and-pulsatile-acth]
+    source_ids: [pmm:source:won-1986-feedback-phases, pmm:source:dorin-1996-acth-dynamics, pmm:source:gjerstad-2018-hpa-feedback]
+    provenance: *provenance
+
+  - id: pmm:application:use-treatment-context-without-replacing-care
+    family_id: placebo-analgesia
+    title: {en: Use credible treatment context without replacing active care, ru: "Используйте убедительный контекст лечения, не заменяя само лечение"}
+    practical_question:
+      en: Can communication and learned treatment cues contribute to pain relief?
+      ru: Могут ли общение и выученные сигналы лечения вносить вклад в уменьшение боли?
+    action:
+      en: Pair an evidence-based intervention with clear, truthful explanation, predictable procedure, and credible positive expectations without promising a guaranteed response.
+      ru: Сочетайте доказанное вмешательство с ясным правдивым объяснением, предсказуемой процедурой и обоснованными положительными ожиданиями без обещания гарантированного эффекта.
+    expected_change:
+      en: A possible additional reduction in reported pain for some people and protocols.
+      ru: Возможное дополнительное уменьшение сообщаемой боли у части людей и в некоторых протоколах.
+    evidence_basis:
+      en: Pharmacological blockade and pooled imaging data support protocol-dependent expectation and conditioning effects, not one universal placebo pathway.
+      ru: Фармакологическая блокада и объединённые нейровизуализационные данные поддерживают зависящие от протокола эффекты ожидания и обусловливания, но не единый универсальный путь плацебо.
+    applicability:
+      en: Ethical communication and treatment-context design in qualified pain care and research.
+      ru: Этичное общение и проектирование контекста лечения в квалифицированной помощи при боли и исследованиях.
+    not_established:
+      en: Expectation does not reliably eliminate pain, identify its cause, or justify withholding active treatment; dopamine manipulation showed a scoped null result.
+      ru: Ожидание не гарантирует устранение боли, не выявляет её причину и не оправдывает отказ от активного лечения; воздействие на дофамин дало ограниченный нулевой результат.
+    safety_note:
+      en: New, severe, or unexplained pain requires appropriate medical assessment; placebo context must not be used to conceal risk or substitute ineffective care.
+      ru: Новая, сильная или необъяснимая боль требует медицинской оценки; контекст плацебо нельзя использовать для сокрытия риска или замены эффективной помощи.
+    actionability: transfer_uncertain
+    confidence: low
+    audience: [clinician, researcher]
+    claim_ids: [pmm:claim:naloxone-blocks-expectation-placebo-analgesia, pmm:claim:conditioning-neural-statistical-mediation, pmm:claim:expectation-opioid-mechanism-hypothesis]
+    source_ids: [pmm:source:amanzio-1999-neuropharmacological-dissection, pmm:source:spisak-2026-neural-correlates]
+    provenance: *provenance
+
+  - id: pmm:application:use-valid-spatial-cues-for-detection
+    family_id: spatial-attention
+    title: {en: Use reliable spatial cues when fast detection matters, ru: Используйте надёжные пространственные подсказки для быстрого обнаружения}
+    practical_question:
+      en: How can an interface direct attention toward a likely target location?
+      ru: Как интерфейс может направить внимание к вероятному месту появления цели?
+    action:
+      en: Place a clear cue before the target and make its spatial prediction meaningfully reliable; test both response time and errors rather than speed alone.
+      ru: Показывайте ясную подсказку до цели и обеспечьте содержательную надёжность её пространственного прогноза; измеряйте и время ответа, и ошибки, а не только скорость.
+    expected_change:
+      en: Faster detection and, in some tasks, better accuracy at the cued location than at unexpected locations.
+      ru: Более быстрое обнаружение и в некоторых заданиях более высокая точность в подсказанном месте по сравнению с неожиданным.
+    evidence_basis:
+      en: Controlled cue-validity experiments produced response-time and accuracy benefits, while sensory enhancement and decision weighting remain competing explanations.
+      ru: Контролируемые эксперименты с валидностью подсказки дали преимущества во времени и точности, но сенсорное усиление и изменение веса решения остаются конкурирующими объяснениями.
+    applicability:
+      en: Interface alerts, visual search, training displays, and experimental design where target location is probabilistic.
+      ru: Интерфейсные предупреждения, зрительный поиск, учебные экраны и экспериментальные задания с вероятностным положением цели.
+    not_established:
+      en: Invalid or overused cues can misdirect attention, and the evidence does not identify one universal perceptual mechanism or guarantee real-world safety improvement.
+      ru: Неверные или чрезмерные подсказки могут направить внимание ошибочно, а данные не выявляют единый механизм восприятия и не гарантируют улучшение безопасности в реальности.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [designer, educator, researcher]
+    claim_ids: [pmm:claim:valid-spatial-cues-reduce-detection-latency, pmm:claim:valid-endogenous-cues-improve-sequential-accuracy, pmm:claim:decision-weighting-may-contribute-to-spatial-cueing]
+    source_ids: [pmm:source:posner-1980-detection-signals, pmm:source:johnson-2020-decision-model, pmm:source:banerjee-2019-sensory-decisional]
+    provenance: *provenance
+
+  - id: pmm:application:design-contrast-for-spatial-scale
+    family_id: visual-perception
+    title: {en: Design contrast for the relevant visual scale, ru: Подбирайте контраст с учётом размера деталей}
+    practical_question:
+      en: Why can equal nominal contrast produce different visibility for broad and fine patterns?
+      ru: Почему одинаковый формальный контраст может давать разную видимость крупных и мелких деталей?
+    action:
+      en: Test important visual information at its actual size, distance, display, and viewing conditions; increase contrast or simplify fine detail when detection is poor.
+      ru: Проверяйте важную зрительную информацию при реальном размере, расстоянии, экране и условиях просмотра; повышайте контраст или упрощайте мелкие детали при плохом обнаружении.
+    expected_change:
+      en: More reliable detection of important patterns across the spatial scales and conditions actually used.
+      ru: Более надёжное обнаружение важных элементов при реально используемых размерах деталей и условиях.
+    evidence_basis:
+      en: Controlled psychophysics showed that detection threshold changes systematically with grating spatial frequency and waveform.
+      ru: Контролируемые психофизические эксперименты показали закономерную зависимость порога обнаружения от пространственной частоты и формы решётки.
+    applicability:
+      en: Display, document, signage, and experimental-stimulus design; especially useful before formal accessibility testing.
+      ru: Проектирование экранов, документов, знаков и экспериментальных стимулов, особенно перед формальной проверкой доступности.
+    not_established:
+      en: The grating findings do not specify a universal interface threshold, diagnose visual impairment, or prove divisive normalization as the unique human mechanism.
+      ru: Результаты с решётками не задают универсальный порог интерфейса, не диагностируют нарушение зрения и не доказывают дивизивную нормализацию как единственный механизм у человека.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [designer, researcher, clinician]
+    claim_ids: [pmm:claim:contrast-sensitivity-is-reciprocal-threshold, pmm:claim:grating-properties-change-detection-threshold, pmm:claim:divisive-normalization-may-shape-visual-gain]
+    source_ids: [pmm:source:campbell-robson-1968-gratings, pmm:source:carandini-heeger-2012-normalization]
+    provenance: *provenance

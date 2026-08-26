@@ -47,3 +47,5 @@ The language area now has a deliberately narrow visual-word pilot. It separates 
 ## Practical interpretation layer
 
 Practical implications are bilingual annotations over existing Claims and Sources, not new Claims or graph nodes. Each annotation states a possible action, expected change, evidence basis, application setting, what is not established, and any safety boundary. `direct_within_tested_scope` is reserved for the tested manipulation and outcome; `transfer_uncertain` marks extrapolation to a practical setting; `interpretation_only` marks a conceptual aid or untested candidate action. This prevents the interface from silently converting evidence about a laboratory effect into a treatment, learning method, or debiasing promise.
+
+All current public evidence families have at least one practical annotation. “Practical” does not always mean self-help: for HPA feedback it is a measurement-interpretation rule, for working memory it is an assessment rule, and for reward prediction error it is a low-confidence design principle because direct human transfer is not established.

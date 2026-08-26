@@ -71,7 +71,7 @@ PMM now exposes a scaffold of 24 major General Psychology topics across cognitiv
 
 Each of the 15 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
 
-PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Version 0.1 starts with four examples: semantic elaboration for memory, separating validity from believability, semantic context for immediate word recognition, and recognizing a possible short-term-relief avoidance loop.
+PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Every current evidence family now has at least one bilingual practical interpretation, including personal actions, assessment rules, interface principles, research guidance, and safety boundaries where needed.
 
 The website provides three switchable views over the same canonical records:
 
