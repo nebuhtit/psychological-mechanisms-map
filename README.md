@@ -24,10 +24,13 @@ data/evidence-pack-habit-control-v0.3.yaml
 docs/habit-control-preview.md         Provisional habit-control diagram
 data/evidence-pack-cognitive-reappraisal-v0.3.yaml
                                      Reappraisal and multimodal outcome stress test
+data/evidence-pack-working-memory-control-v0.3.yaml
+                                     N-back construct-validity and competing-mechanism pack
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
 scripts/build_site_data.py           Deterministic interactive-map data bundle
+scripts/new_evidence_pack.py         Schema-valid evidence-pack starter generator
 site/                                Static interactive map v0.1
 graph/pmm-context.jsonld             JSON-LD term and reference mapping
 graph/pmm-shapes.ttl                 SHACL inferential constraints
@@ -119,6 +122,11 @@ meaning reinterpretation and from subjective, expressive, autonomic, and BOLD
 measurements. Statistical neural mediation is recorded explicitly without
 upgrading it to causal mediation. See the
 [provisional visual preview](docs/cognitive-reappraisal-preview.md).
+
+The working-memory pack separates the N-back task context, behavioral score,
+latent construct, lure-induced errors, and competing familiarity-control and
+episodic-retrieval accounts. It includes a large preregistered latent-variable
+study and does not treat computational sufficiency as proof of human mechanism.
 
 ## Next steps
 

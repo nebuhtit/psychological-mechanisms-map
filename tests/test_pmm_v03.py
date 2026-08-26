@@ -283,5 +283,42 @@ class InferentialModeTests(unittest.TestCase):
         self.assertTrue(pmm_v03.validate(document))
 
 
+class WorkingMemoryEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-working-memory-control-v0.3.yaml"
+        )
+
+    def test_working_memory_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_task_measurement_and_mechanisms_remain_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:context:n-back-task"], "Context")
+        self.assertEqual(records["pmm:measurement:n-back-performance"], "Measurement")
+        self.assertEqual(records["pmm:measurement:operation-span-performance"], "Measurement")
+        self.assertEqual(records["pmm:mechanism:familiarity-control"], "Mechanism")
+        self.assertEqual(records["pmm:mechanism:episodic-retrieval-n-back"], "Mechanism")
+
+    def test_computational_alternative_remains_a_hypothesis(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:episodic-retrieval-can-support-n-back"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+
+    def test_duplicate_doi_is_rejected(self) -> None:
+        document = copy.deepcopy(self.document)
+        duplicate = copy.deepcopy(document["sources"][0])
+        duplicate["id"] = "pmm:source:duplicate-kane-record"
+        duplicate.pop("pmid")
+        document["sources"].append(duplicate)
+        errors = pmm_v03.validate(document)
+        self.assertTrue(any("duplicate doi" in error for error in errors))
+
+
 if __name__ == "__main__":
     unittest.main()

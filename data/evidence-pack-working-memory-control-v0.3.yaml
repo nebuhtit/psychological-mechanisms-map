@@ -1,0 +1,497 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:working-memory-control-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for working-memory control and N-back validity
+  description: >-
+    Human behavioral, latent-variable, and computational evidence separating
+    working-memory constructs, N-back task performance, lure interference,
+    familiarity control, and episodic-retrieval alternatives.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.3.4
+    created_at: '2026-08-26T00:00:00+03:00'
+    modified_at: '2026-08-26T00:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:context:n-back-task
+    type: Context
+    label: N-back task context
+    definition: Sequential matching task in which each item is judged against the item presented n positions earlier.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      task_family: n-back
+      typical_loads: 2-back and 3-back
+      response: target or non-target judgment
+    scope: Human laboratory N-back variants; stimulus domain, load, lure frequency, and scoring can differ.
+    provenance: *provenance
+
+  - id: pmm:context:working-memory-battery
+    type: Context
+    label: Multi-task working-memory battery
+    definition: Assessment context containing multiple task variants used to estimate common and paradigm-specific latent variance.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      design: individual-differences battery
+      task_families: n-back and backward recall
+    scope: Human psychometric and latent-variable studies using multiple indicators per proposed construct.
+    provenance: *provenance
+
+  - id: pmm:construct:working-memory-capacity
+    type: Construct
+    label: Working-memory capacity
+    definition: Limited ability to maintain accessible information while performing goal-directed processing.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Competing theories disagree about storage, attention, retrieval, and interference contributions.
+      - A score from one task is not identical to the construct.
+    provenance: *provenance
+
+  - id: pmm:construct:n-back-specific-variance
+    type: Construct
+    label: N-back-specific performance variance
+    definition: Shared individual-difference variance among N-back variants after separating variance common with other working-memory paradigms.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - This is a latent statistical construct, not an identified cognitive mechanism.
+    provenance: *provenance
+
+  - id: pmm:state:familiarity-signal
+    type: State
+    label: Familiarity signal during N-back judgment
+    definition: Momentary graded familiarity elicited by a current item relative to recently encountered items.
+    ontological_level: type
+    curation_status: provisional
+    state_kind: cognitive
+    bearer_scope: person
+    temporal_scale: momentary
+    provenance: *provenance
+
+  - id: pmm:behavior:n-back-response
+    type: Behavior
+    label: N-back target judgment
+    definition: Observable response classifying the current item as matching or not matching the item n positions earlier.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Button press or equivalent binary response.
+    provenance: *provenance
+
+  - id: pmm:outcome:lure-false-alarm-rate
+    type: Outcome
+    label: N-back lure false-alarm rate
+    definition: Proportion of lure trials incorrectly classified as N-back targets.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: performance
+    valence: not_applicable
+    provenance: *provenance
+
+  - id: pmm:intervention:n-back-lure-foil
+    type: Intervention
+    label: N-back lure-foil manipulation
+    definition: Experimental presentation of non-target items matching a recently seen position other than the required n-back position.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:state:familiarity-signal
+      - pmm:behavior:n-back-response
+    delivery: Insert n-minus-one lure foils among matched control foils during 2-back and 3-back tasks.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:measurement:n-back-performance
+    type: Measurement
+    label: N-back performance measurement
+    definition: Accuracy, false-alarm, miss, or latency scoring obtained from a specified N-back task variant.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids:
+      - pmm:construct:working-memory-capacity
+      - pmm:construct:n-back-specific-variance
+      - pmm:behavior:n-back-response
+      - pmm:outcome:lure-false-alarm-rate
+    method: Score responses by trial type, load, and prespecified accuracy or latency rule.
+    unit_of_analysis: behavior
+    result_type: continuous
+    boundary_notes:
+      - Construct validity depends on the inferential use and comparison measures.
+    provenance: *provenance
+
+  - id: pmm:measurement:backward-recall-performance
+    type: Measurement
+    label: Backward-recall performance measurement
+    definition: Accuracy or span score for recalling a presented sequence in reverse order.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids: [pmm:construct:working-memory-capacity]
+    method: Present sequences and score correctly recalled items or spans in reverse order.
+    unit_of_analysis: behavior
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:operation-span-performance
+    type: Measurement
+    label: Operation-span performance measurement
+    definition: Complex-span score derived from remembering items while performing an interleaved processing task.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids: [pmm:construct:working-memory-capacity]
+    method: Alternate processing judgments with memoranda and score recall using a prespecified span rule.
+    unit_of_analysis: behavior
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:mechanism:familiarity-control
+    type: Mechanism
+    label: Control over familiarity-based responding
+    definition: Proposed process that uses task position information to override a familiar but currently incorrect target response.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: cognitive
+    role_bindings:
+      - role: familiarity input
+        object_id: pmm:state:familiarity-signal
+      - role: controlled response
+        object_id: pmm:behavior:n-back-response
+      - role: error consequence
+        object_id: pmm:outcome:lure-false-alarm-rate
+    realization_conditions:
+      - A lure item is familiar but does not match the required N-back position.
+      - Positional information is available to guide the response.
+    provenance: *provenance
+
+  - id: pmm:mechanism:episodic-retrieval-n-back
+    type: Mechanism
+    label: Episodic retrieval supporting N-back performance
+    definition: Proposed process in which retrieval from episodic memory supplies prior-item information used for the current N-back judgment.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: cognitive
+    role_bindings:
+      - role: retrieval cue
+        object_id: pmm:context:n-back-task
+      - role: retrieved familiarity information
+        object_id: pmm:state:familiarity-signal
+      - role: response
+        object_id: pmm:behavior:n-back-response
+    realization_conditions:
+      - Recently presented items remain retrievable from episodic memory.
+      - The current item cues temporally diagnostic information.
+    boundary_notes:
+      - Computational sufficiency does not establish exclusive human implementation.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:working-memory-measured-by-n-back
+    subject_id: pmm:construct:working-memory-capacity
+    predicate: measured_by
+    object_id: pmm:measurement:n-back-performance
+    provenance: *provenance
+  - id: pmm:relation:working-memory-measured-by-backward-recall
+    subject_id: pmm:construct:working-memory-capacity
+    predicate: measured_by
+    object_id: pmm:measurement:backward-recall-performance
+    provenance: *provenance
+  - id: pmm:relation:working-memory-measured-by-operation-span
+    subject_id: pmm:construct:working-memory-capacity
+    predicate: measured_by
+    object_id: pmm:measurement:operation-span-performance
+    provenance: *provenance
+  - id: pmm:relation:n-back-response-occurs-in-task
+    subject_id: pmm:behavior:n-back-response
+    predicate: occurs_in_context
+    object_id: pmm:context:n-back-task
+    provenance: *provenance
+  - id: pmm:relation:lure-rate-measured-by-n-back
+    subject_id: pmm:outcome:lure-false-alarm-rate
+    predicate: measured_by
+    object_id: pmm:measurement:n-back-performance
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:lures-increase-n-back-false-alarms
+    claim_type: causal_effect
+    statement: In the tested verbal 2-back and 3-back tasks, n-minus-one lure foils increased false alarms relative to matched control foils.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: The within-task lure manipulation directly contrasted trial types, but the result comes from one study and specific verbal task variants.
+    scope:
+      population: Adults completing the verbal N-back experiments reported by Kane et al. 2007.
+      species: [human]
+      context_ids: [pmm:context:n-back-task]
+      temporal_scope: Trial-level responses during 2-back and 3-back performance.
+      boundary_conditions:
+        - Restricted to the tested n-minus-one lure and control-foil definitions.
+        - Does not identify familiarity control as the unique causal mechanism.
+    exposure_id: pmm:intervention:n-back-lure-foil
+    outcome_id: pmm:outcome:lure-false-alarm-rate
+    causal_estimand: Within-task difference in false-alarm probability for lure versus matched control foils.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Foil type is presented before the participant response on each trial.
+    causal_assumptions:
+      consistency: Lure and control trials follow the study-specific definitions.
+      exchangeability: Supported by controlled within-task trial presentation.
+      positivity: Both foil types are observed under the tested loads.
+      interference: Carryover between trials may occur but is part of the sequential task context.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:kane-2007-lure-effect]
+    limitations:
+      - Trial sequencing and previous-item history can influence lure effects.
+    provenance: *provenance
+
+  - id: pmm:claim:n-back-weakly-converges-with-complex-span
+    claim_type: association
+    statement: Verbal N-back performance showed weak convergence with operation-span performance in Kane et al. 2007.
+    epistemic_status: supported
+    confidence:
+      level: low
+      rationale: The result directly challenges simple task interchangeability, but uses one N-back family and one complex-span marker.
+    scope:
+      population: Adults completing verbal N-back, operation-span, and fluid-intelligence tasks.
+      species: [human]
+      context_ids: [pmm:context:working-memory-battery]
+      temporal_scope: Cross-sectional individual differences within one assessment session.
+      boundary_conditions:
+        - A weak task correlation can reflect reliability and task-specific variance.
+    exposure_id: pmm:measurement:n-back-performance
+    outcome_id: pmm:measurement:operation-span-performance
+    estimate:
+      metric: cross-task association
+      value_status: qualitative_only
+      direction: positive
+      notes: PubMed abstract describes the correlation as weak; the numerical estimate was not extracted.
+    confounding_note: Reliability, method variance, and task-specific processes can alter the observed association.
+    evidence_ids: [pmm:evidence:kane-2007-convergent-validity]
+    provenance: *provenance
+
+  - id: pmm:claim:n-back-and-backward-recall-are-distinct-factors
+    claim_type: association
+    statement: A preregistered large-scale battery was better represented by distinct but related N-back and backward-recall latent factors than by a single working-memory factor.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: Multiple task variants and N=703 reduce single-task contamination, while latent structure remains model- and sample-dependent.
+    scope:
+      population: 703 participants completing spatial and verbal N-back, backward-recall, and reasoning tasks.
+      species: [human]
+      context_ids: [pmm:context:working-memory-battery]
+      temporal_scope: Cross-sectional multi-task assessment.
+      boundary_conditions:
+        - Factor separation does not prove separate cognitive mechanisms.
+        - Results depend on task selection and latent-model specification.
+    exposure_id: pmm:measurement:n-back-performance
+    outcome_id: pmm:measurement:backward-recall-performance
+    estimate:
+      metric: latent-factor correlation
+      value_status: reported
+      direction: positive
+      interval:
+        level: 0.95
+        lower: 0.533
+        upper: 0.823
+      notes: Bootstrap confidence interval reported for the relationship between the two latent constructs.
+    confounding_note: Shared method, stimulus, reliability, and model-selection choices can influence latent relations.
+    evidence_ids: [pmm:evidence:byrne-2024-latent-factors]
+    provenance: *provenance
+
+  - id: pmm:claim:episodic-retrieval-can-support-n-back
+    claim_type: mechanism_hypothesis
+    statement: Episodic retrieval can, in principle, support N-back set-size and lure effects without trial-to-trial retention in a capacity-limited working-memory store.
+    epistemic_status: proposed
+    confidence:
+      level: low
+      rationale: A computational model reproduced selected behavioral patterns, establishing plausibility rather than unique human implementation.
+    scope:
+      population: Computational account fitted to qualitative patterns from human N-back performance.
+      species: [human]
+      context_ids: [pmm:context:n-back-task]
+      temporal_scope: Sequential item presentation and response within N-back tasks.
+      boundary_conditions:
+        - Does not show that working-memory retention never contributes in humans.
+        - Generalization to other task variants requires testing.
+    mechanism_id: pmm:mechanism:episodic-retrieval-n-back
+    exposure_id: pmm:context:n-back-task
+    outcome_id: pmm:behavior:n-back-response
+    temporal_ordering: Current stimuli cue retrieval before the target judgment is emitted.
+    falsifiable_boundary: The account is weakened if preregistered task manipulations uniquely requiring active cross-trial maintenance outperform episodic-retrieval models under matched complexity.
+    evidence_ids: [pmm:evidence:beukers-2024-computational-account]
+    limitations:
+      - Computational fit is not direct process measurement.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:kane-2007-lure-effect
+    claim_ids: [pmm:claim:lures-increase-n-back-false-alarms]
+    source_id: pmm:source:kane-2007-n-back-validity
+    extraction_locator: PubMed abstract, experimental lure results.
+    evidence_kind: controlled_experiment
+    design: Within-task comparison of n-minus-one lure foils and control foils in verbal 2-back and 3-back tasks.
+    population: Adults completing verbal N-back tasks.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: lure-versus-control false-alarm difference
+      value_status: qualitative_only
+      direction: positive
+      notes: Lures elicited more false alarms under both tested loads.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: not_reported
+      replication: unreplicated
+    summary: Controlled lure trials increased false alarms relative to control foils.
+    limitations:
+      - Numerical effect and sample size were not extracted from the full text.
+    provenance: *provenance
+
+  - id: pmm:evidence:kane-2007-convergent-validity
+    claim_ids: [pmm:claim:n-back-weakly-converges-with-complex-span]
+    source_id: pmm:source:kane-2007-n-back-validity
+    extraction_locator: PubMed abstract, correlational construct-validity result.
+    evidence_kind: cross_sectional_observational
+    design: Correlation of verbal N-back, operation span, and fluid-intelligence performance.
+    population: Adults completing the combined experimental-correlational battery.
+    species: [human]
+    inference_support: association
+    support_direction: supports
+    causal_support: none
+    effect:
+      metric: N-back to operation-span correlation
+      value_status: qualitative_only
+      direction: positive
+      notes: Described as weak in the indexed abstract.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: not_reported
+      replication: unreplicated
+    summary: N-back and operation span did not behave as interchangeable measures of one construct.
+    limitations:
+      - One marker task cannot define the full working-memory construct.
+    provenance: *provenance
+
+  - id: pmm:evidence:byrne-2024-latent-factors
+    claim_ids: [pmm:claim:n-back-and-backward-recall-are-distinct-factors]
+    source_id: pmm:source:byrne-2024-n-back-factors
+    extraction_locator: PubMed abstract and Figure 3 caption.
+    evidence_kind: cross_sectional_observational
+    design: Preregistered latent-variable comparison using multiple spatial and verbal N-back and backward-recall tasks.
+    population: 703 participants completing the task battery.
+    species: [human]
+    sample_size: 703
+    inference_support: association
+    support_direction: supports
+    causal_support: none
+    effect:
+      metric: latent-factor relationship
+      value_status: reported
+      direction: positive
+      interval:
+        level: 0.95
+        lower: 0.533
+        upper: 0.823
+      notes: Best-fitting model separated two related paradigm factors.
+    domains:
+      directness: direct
+      risk_of_bias: low
+      consistency: single_source
+      precision: adequate
+      replication: unreplicated
+    summary: N-back and backward recall formed distinct but related latent factors rather than one interchangeable task factor.
+    limitations:
+      - Cross-sectional factor structure does not identify mechanisms.
+    provenance: *provenance
+
+  - id: pmm:evidence:beukers-2024-computational-account
+    claim_ids: [pmm:claim:episodic-retrieval-can-support-n-back]
+    source_id: pmm:source:beukers-2024-working-not-memory
+    extraction_locator: PubMed abstract, computational-model result.
+    evidence_kind: computational_model
+    design: Neural-network model augmented with episodic memory but without cross-trial working-memory retention.
+    population: Model evaluated against qualitative set-size and lure effects reported in human N-back research.
+    species: [human]
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect:
+      metric: qualitative reproduction of set-size and lure effects
+      value_status: qualitative_only
+      direction: positive
+      notes: Model reproduced selected empirical patterns without a cross-trial WM retention capacity.
+    domains:
+      directness: indirect
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: not_reported
+      replication: unreplicated
+    summary: The model demonstrates that episodic retrieval is a viable alternative contributor to canonical N-back effects.
+    limitations:
+      - Model sufficiency does not establish human process identity or exclusivity.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:kane-2007-n-back-validity
+    title: "Working memory, attention control, and the N-back task: a question of construct validity"
+    source_type: peer_reviewed_article
+    authors: [Michael J. Kane, Andrew R. A. Conway, Timothy K. Miura, Gregory J. H. Colflesh]
+    year: 2007
+    doi: 10.1037/0278-7393.33.3.615
+    pmid: '17470009'
+    url: https://pubmed.ncbi.nlm.nih.gov/17470009/
+    accessed_at: '2026-08-26'
+    authority_note: Primary combined experiment and construct-validity study preserving experimental and correlational results separately.
+    provenance: *provenance
+
+  - id: pmm:source:byrne-2024-n-back-factors
+    title: "Evidence for separate backward recall and n-back working memory factors: a large-scale latent variable analysis"
+    source_type: peer_reviewed_article
+    authors: [Elizabeth M. Byrne, Rebecca A. Gilbert, Rogier A. Kievit, Joni Holmes]
+    year: 2024
+    doi: 10.1080/09658211.2024.2393388
+    pmid: '39186520'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11441403/
+    accessed_at: '2026-08-26'
+    authority_note: Large preregistered multi-indicator latent-variable analysis directly testing paradigm-specific and common variance.
+    provenance: *provenance
+
+  - id: pmm:source:beukers-2024-working-not-memory
+    title: When working memory may be just working, not memory
+    source_type: peer_reviewed_article
+    authors: [Andre Beukers, Maia Hamin, Kenneth A. Norman, Jonathan D. Cohen]
+    year: 2024
+    doi: 10.1037/rev0000448
+    pmid: '37956060'
+    url: https://pubmed.ncbi.nlm.nih.gov/37956060/
+    accessed_at: '2026-08-26'
+    authority_note: Peer-reviewed computational alternative showing that episodic retrieval can reproduce selected canonical N-back effects.
+    provenance: *provenance

@@ -14,7 +14,7 @@ class SiteBundleTests(unittest.TestCase):
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         self.assertEqual(
             [item["id"] for item in document["families"]],
-            ["avoidance", "extinction", "habit", "reappraisal"],
+            ["avoidance", "extinction", "habit", "reappraisal", "working-memory"],
         )
         self.assertTrue(
             all(item["version"] == document["pmm_version"] for item in document["families"])

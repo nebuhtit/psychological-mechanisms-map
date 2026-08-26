@@ -333,6 +333,24 @@ def validate_semantics(document: dict[str, Any]) -> list[str]:
                 "or moderation inference support"
             )
 
+    source_identifiers: dict[tuple[str, str], str] = {}
+    for index, source in enumerate(document.get("sources", [])):
+        if not isinstance(source, dict):
+            continue
+        for field in ("doi", "pmid"):
+            value = source.get(field)
+            if not isinstance(value, str):
+                continue
+            key = (field, value.casefold())
+            previous = source_identifiers.get(key)
+            if previous:
+                errors.append(
+                    f"sources[{index}] ({source.get('id')}): duplicate {field} "
+                    f"{value} already used by {previous}"
+                )
+            else:
+                source_identifiers[key] = source.get("id", f"sources[{index}]")
+
     # Backlinks are intentionally redundant so edits cannot silently orphan support.
     for claim in document.get("claims", []):
         if not isinstance(claim, dict):

@@ -1,0 +1,914 @@
+{
+  "claims": [
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Lure and control trials follow the study-specific definitions.",
+        "exchangeability": "Supported by controlled within-task trial presentation.",
+        "interference": "Carryover between trials may occur but is part of the sequential task context.",
+        "positivity": "Both foil types are observed under the tested loads."
+      },
+      "causal_estimand": "Within-task difference in false-alarm probability for lure versus matched control foils.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The within-task lure manipulation directly contrasted trial types, but the result comes from one study and specific verbal task variants."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:kane-2007-lure-effect"
+      ],
+      "exposure_id": "pmm:intervention:n-back-lure-foil",
+      "id": "pmm:claim:lures-increase-n-back-false-alarms",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "Trial sequencing and previous-item history can influence lure effects."
+      ],
+      "outcome_id": "pmm:outcome:lure-false-alarm-rate",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Restricted to the tested n-minus-one lure and control-foil definitions.",
+          "Does not identify familiarity control as the unique causal mechanism."
+        ],
+        "context_ids": [
+          "pmm:context:n-back-task"
+        ],
+        "population": "Adults completing the verbal N-back experiments reported by Kane et al. 2007.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Trial-level responses during 2-back and 3-back performance."
+      },
+      "statement": "In the tested verbal 2-back and 3-back tasks, n-minus-one lure foils increased false alarms relative to matched control foils.",
+      "temporal_ordering": "Foil type is presented before the participant response on each trial."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "low",
+        "rationale": "The result directly challenges simple task interchangeability, but uses one N-back family and one complex-span marker."
+      },
+      "confounding_note": "Reliability, method variance, and task-specific processes can alter the observed association.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "positive",
+        "metric": "cross-task association",
+        "notes": "PubMed abstract describes the correlation as weak; the numerical estimate was not extracted.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_ids": [
+        "pmm:evidence:kane-2007-convergent-validity"
+      ],
+      "exposure_id": "pmm:measurement:n-back-performance",
+      "id": "pmm:claim:n-back-weakly-converges-with-complex-span",
+      "outcome_id": "pmm:measurement:operation-span-performance",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "A weak task correlation can reflect reliability and task-specific variance."
+        ],
+        "context_ids": [
+          "pmm:context:working-memory-battery"
+        ],
+        "population": "Adults completing verbal N-back, operation-span, and fluid-intelligence tasks.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Cross-sectional individual differences within one assessment session."
+      },
+      "statement": "Verbal N-back performance showed weak convergence with operation-span performance in Kane et al. 2007."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Multiple task variants and N=703 reduce single-task contamination, while latent structure remains model- and sample-dependent."
+      },
+      "confounding_note": "Shared method, stimulus, reliability, and model-selection choices can influence latent relations.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "positive",
+        "interval": {
+          "level": 0.95,
+          "lower": 0.533,
+          "upper": 0.823
+        },
+        "metric": "latent-factor correlation",
+        "notes": "Bootstrap confidence interval reported for the relationship between the two latent constructs.",
+        "value_status": "reported"
+      },
+      "evidence_ids": [
+        "pmm:evidence:byrne-2024-latent-factors"
+      ],
+      "exposure_id": "pmm:measurement:n-back-performance",
+      "id": "pmm:claim:n-back-and-backward-recall-are-distinct-factors",
+      "outcome_id": "pmm:measurement:backward-recall-performance",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Factor separation does not prove separate cognitive mechanisms.",
+          "Results depend on task selection and latent-model specification."
+        ],
+        "context_ids": [
+          "pmm:context:working-memory-battery"
+        ],
+        "population": "703 participants completing spatial and verbal N-back, backward-recall, and reasoning tasks.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Cross-sectional multi-task assessment."
+      },
+      "statement": "A preregistered large-scale battery was better represented by distinct but related N-back and backward-recall latent factors than by a single working-memory factor."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "low",
+        "rationale": "A computational model reproduced selected behavioral patterns, establishing plausibility rather than unique human implementation."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:beukers-2024-computational-account"
+      ],
+      "exposure_id": "pmm:context:n-back-task",
+      "falsifiable_boundary": "The account is weakened if preregistered task manipulations uniquely requiring active cross-trial maintenance outperform episodic-retrieval models under matched complexity.",
+      "id": "pmm:claim:episodic-retrieval-can-support-n-back",
+      "limitations": [
+        "Computational fit is not direct process measurement."
+      ],
+      "mechanism_id": "pmm:mechanism:episodic-retrieval-n-back",
+      "outcome_id": "pmm:behavior:n-back-response",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Does not show that working-memory retention never contributes in humans.",
+          "Generalization to other task variants requires testing."
+        ],
+        "context_ids": [
+          "pmm:context:n-back-task"
+        ],
+        "population": "Computational account fitted to qualitative patterns from human N-back performance.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Sequential item presentation and response within N-back tasks."
+      },
+      "statement": "Episodic retrieval can, in principle, support N-back set-size and lure effects without trial-to-trial retention in a capacity-limited working-memory store.",
+      "temporal_ordering": "Current stimuli cue retrieval before the target judgment is emitted."
+    }
+  ],
+  "dataset_id": "pmm:dataset:working-memory-control-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:lures-increase-n-back-false-alarms"
+      ],
+      "design": "Within-task comparison of n-minus-one lure foils and control foils in verbal 2-back and 3-back tasks.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "lure-versus-control false-alarm difference",
+        "notes": "Lures elicited more false alarms under both tested loads.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "PubMed abstract, experimental lure results.",
+      "id": "pmm:evidence:kane-2007-lure-effect",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Numerical effect and sample size were not extracted from the full text."
+      ],
+      "population": "Adults completing verbal N-back tasks.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:kane-2007-n-back-validity",
+      "species": [
+        "human"
+      ],
+      "summary": "Controlled lure trials increased false alarms relative to control foils.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:n-back-weakly-converges-with-complex-span"
+      ],
+      "design": "Correlation of verbal N-back, operation span, and fluid-intelligence performance.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "N-back to operation-span correlation",
+        "notes": "Described as weak in the indexed abstract.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "cross_sectional_observational",
+      "extraction_locator": "PubMed abstract, correlational construct-validity result.",
+      "id": "pmm:evidence:kane-2007-convergent-validity",
+      "inference_support": "association",
+      "limitations": [
+        "One marker task cannot define the full working-memory construct."
+      ],
+      "population": "Adults completing the combined experimental-correlational battery.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:kane-2007-n-back-validity",
+      "species": [
+        "human"
+      ],
+      "summary": "N-back and operation span did not behave as interchangeable measures of one construct.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:n-back-and-backward-recall-are-distinct-factors"
+      ],
+      "design": "Preregistered latent-variable comparison using multiple spatial and verbal N-back and backward-recall tasks.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "unreplicated",
+        "risk_of_bias": "low"
+      },
+      "effect": {
+        "direction": "positive",
+        "interval": {
+          "level": 0.95,
+          "lower": 0.533,
+          "upper": 0.823
+        },
+        "metric": "latent-factor relationship",
+        "notes": "Best-fitting model separated two related paradigm factors.",
+        "value_status": "reported"
+      },
+      "evidence_kind": "cross_sectional_observational",
+      "extraction_locator": "PubMed abstract and Figure 3 caption.",
+      "id": "pmm:evidence:byrne-2024-latent-factors",
+      "inference_support": "association",
+      "limitations": [
+        "Cross-sectional factor structure does not identify mechanisms."
+      ],
+      "population": "703 participants completing the task battery.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 703,
+      "source_id": "pmm:source:byrne-2024-n-back-factors",
+      "species": [
+        "human"
+      ],
+      "summary": "N-back and backward recall formed distinct but related latent factors rather than one interchangeable task factor.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:episodic-retrieval-can-support-n-back"
+      ],
+      "design": "Neural-network model augmented with episodic memory but without cross-trial working-memory retention.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "indirect",
+        "precision": "not_reported",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "qualitative reproduction of set-size and lure effects",
+        "notes": "Model reproduced selected empirical patterns without a cross-trial WM retention capacity.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "computational_model",
+      "extraction_locator": "PubMed abstract, computational-model result.",
+      "id": "pmm:evidence:beukers-2024-computational-account",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Model sufficiency does not establish human process identity or exclusivity."
+      ],
+      "population": "Model evaluated against qualitative set-size and lure effects reported in human N-back research.",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:beukers-2024-working-not-memory",
+      "species": [
+        "human"
+      ],
+      "summary": "The model demonstrates that episodic retrieval is a viable alternative contributor to canonical N-back effects.",
+      "support_direction": "supports"
+    }
+  ],
+  "metadata": {
+    "description": "Human behavioral, latent-variable, and computational evidence separating working-memory constructs, N-back task performance, lure interference, familiarity control, and episodic-retrieval alternatives.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T00:00:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T00:00:00+03:00",
+      "record_version": "0.3.4",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for working-memory control and N-back validity"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Sequential matching task in which each item is judged against the item presented n positions earlier.",
+      "dimensions": {
+        "response": "target or non-target judgment",
+        "task_family": "n-back",
+        "typical_loads": "2-back and 3-back"
+      },
+      "id": "pmm:context:n-back-task",
+      "label": "N-back task context",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Human laboratory N-back variants; stimulus domain, load, lure frequency, and scoring can differ.",
+      "type": "Context"
+    },
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Assessment context containing multiple task variants used to estimate common and paradigm-specific latent variance.",
+      "dimensions": {
+        "design": "individual-differences battery",
+        "task_families": "n-back and backward recall"
+      },
+      "id": "pmm:context:working-memory-battery",
+      "label": "Multi-task working-memory battery",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Human psychometric and latent-variable studies using multiple indicators per proposed construct.",
+      "type": "Context"
+    },
+    {
+      "boundary_notes": [
+        "Competing theories disagree about storage, attention, retrieval, and interference contributions.",
+        "A score from one task is not identical to the construct."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Limited ability to maintain accessible information while performing goal-directed processing.",
+      "id": "pmm:construct:working-memory-capacity",
+      "label": "Working-memory capacity",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "This is a latent statistical construct, not an identified cognitive mechanism."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Shared individual-difference variance among N-back variants after separating variance common with other working-memory paradigms.",
+      "id": "pmm:construct:n-back-specific-variance",
+      "label": "N-back-specific performance variance",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "bearer_scope": "person",
+      "curation_status": "provisional",
+      "definition": "Momentary graded familiarity elicited by a current item relative to recently encountered items.",
+      "id": "pmm:state:familiarity-signal",
+      "label": "Familiarity signal during N-back judgment",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "cognitive",
+      "temporal_scale": "momentary",
+      "type": "State"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable response classifying the current item as matching or not matching the item n positions earlier.",
+      "id": "pmm:behavior:n-back-response",
+      "label": "N-back target judgment",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Button press or equivalent binary response.",
+      "type": "Behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Proportion of lure trials incorrectly classified as N-back targets.",
+      "id": "pmm:outcome:lure-false-alarm-rate",
+      "label": "N-back lure false-alarm rate",
+      "ontological_level": "type",
+      "outcome_kind": "performance",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "not_applicable"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental presentation of non-target items matching a recently seen position other than the required n-back position.",
+      "delivery": "Insert n-minus-one lure foils among matched control foils during 2-back and 3-back tasks.",
+      "id": "pmm:intervention:n-back-lure-foil",
+      "intended_direction": "test",
+      "intervention_kind": "experimental_manipulation",
+      "label": "N-back lure-foil manipulation",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:state:familiarity-signal",
+        "pmm:behavior:n-back-response"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "boundary_notes": [
+        "Construct validity depends on the inferential use and comparison measures."
+      ],
+      "curation_status": "accepted",
+      "definition": "Accuracy, false-alarm, miss, or latency scoring obtained from a specified N-back task variant.",
+      "id": "pmm:measurement:n-back-performance",
+      "label": "N-back performance measurement",
+      "measurement_kind": "behavioral_task",
+      "method": "Score responses by trial type, load, and prespecified accuracy or latency rule.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:working-memory-capacity",
+        "pmm:construct:n-back-specific-variance",
+        "pmm:behavior:n-back-response",
+        "pmm:outcome:lure-false-alarm-rate"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Accuracy or span score for recalling a presented sequence in reverse order.",
+      "id": "pmm:measurement:backward-recall-performance",
+      "label": "Backward-recall performance measurement",
+      "measurement_kind": "behavioral_task",
+      "method": "Present sequences and score correctly recalled items or spans in reverse order.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:working-memory-capacity"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Complex-span score derived from remembering items while performing an interleaved processing task.",
+      "id": "pmm:measurement:operation-span-performance",
+      "label": "Operation-span performance measurement",
+      "measurement_kind": "behavioral_task",
+      "method": "Alternate processing judgments with memoranda and score recall using a prespecified span rule.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:working-memory-capacity"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "curation_status": "provisional",
+      "definition": "Proposed process that uses task position information to override a familiar but currently incorrect target response.",
+      "id": "pmm:mechanism:familiarity-control",
+      "label": "Control over familiarity-based responding",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "A lure item is familiar but does not match the required N-back position.",
+        "Positional information is available to guide the response."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:state:familiarity-signal",
+          "role": "familiarity input"
+        },
+        {
+          "object_id": "pmm:behavior:n-back-response",
+          "role": "controlled response"
+        },
+        {
+          "object_id": "pmm:outcome:lure-false-alarm-rate",
+          "role": "error consequence"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "boundary_notes": [
+        "Computational sufficiency does not establish exclusive human implementation."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which retrieval from episodic memory supplies prior-item information used for the current N-back judgment.",
+      "id": "pmm:mechanism:episodic-retrieval-n-back",
+      "label": "Episodic retrieval supporting N-back performance",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "Recently presented items remain retrievable from episodic memory.",
+        "The current item cues temporally diagnostic information."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:context:n-back-task",
+          "role": "retrieval cue"
+        },
+        {
+          "object_id": "pmm:state:familiarity-signal",
+          "role": "retrieved familiarity information"
+        },
+        {
+          "object_id": "pmm:behavior:n-back-response",
+          "role": "response"
+        }
+      ],
+      "type": "Mechanism"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:working-memory-measured-by-n-back",
+      "object_id": "pmm:measurement:n-back-performance",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:working-memory-capacity"
+    },
+    {
+      "id": "pmm:relation:working-memory-measured-by-backward-recall",
+      "object_id": "pmm:measurement:backward-recall-performance",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:working-memory-capacity"
+    },
+    {
+      "id": "pmm:relation:working-memory-measured-by-operation-span",
+      "object_id": "pmm:measurement:operation-span-performance",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:working-memory-capacity"
+    },
+    {
+      "id": "pmm:relation:n-back-response-occurs-in-task",
+      "object_id": "pmm:context:n-back-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:n-back-response"
+    },
+    {
+      "id": "pmm:relation:lure-rate-measured-by-n-back",
+      "object_id": "pmm:measurement:n-back-performance",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:outcome:lure-false-alarm-rate"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary combined experiment and construct-validity study preserving experimental and correlational results separately.",
+      "authors": [
+        "Michael J. Kane",
+        "Andrew R. A. Conway",
+        "Timothy K. Miura",
+        "Gregory J. H. Colflesh"
+      ],
+      "doi": "10.1037/0278-7393.33.3.615",
+      "id": "pmm:source:kane-2007-n-back-validity",
+      "pmid": "17470009",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Working memory, attention control, and the N-back task: a question of construct validity",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17470009/",
+      "year": 2007
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Large preregistered multi-indicator latent-variable analysis directly testing paradigm-specific and common variance.",
+      "authors": [
+        "Elizabeth M. Byrne",
+        "Rebecca A. Gilbert",
+        "Rogier A. Kievit",
+        "Joni Holmes"
+      ],
+      "doi": "10.1080/09658211.2024.2393388",
+      "id": "pmm:source:byrne-2024-n-back-factors",
+      "pmid": "39186520",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Evidence for separate backward recall and n-back working memory factors: a large-scale latent variable analysis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11441403/",
+      "year": 2024
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Peer-reviewed computational alternative showing that episodic retrieval can reproduce selected canonical N-back effects.",
+      "authors": [
+        "Andre Beukers",
+        "Maia Hamin",
+        "Kenneth A. Norman",
+        "Jonathan D. Cohen"
+      ],
+      "doi": "10.1037/rev0000448",
+      "id": "pmm:source:beukers-2024-working-not-memory",
+      "pmid": "37956060",
+      "provenance": {
+        "created_at": "2026-08-26T00:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T00:00:00+03:00",
+        "record_version": "0.3.4",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "When working memory may be just working, not memory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37956060/",
+      "year": 2024
+    }
+  ]
+}

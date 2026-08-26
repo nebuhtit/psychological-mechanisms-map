@@ -35,6 +35,12 @@ FAMILIES = (
         "build/evidence-pack-cognitive-reappraisal-v0.3.json",
         "Instruction, proposed reinterpretation, experience, physiology, and BOLD.",
     ),
+    (
+        "working-memory",
+        "Working-memory control",
+        "build/evidence-pack-working-memory-control-v0.3.json",
+        "N-back performance, construct validity, lure interference, and competing memory mechanisms.",
+    ),
 )
 
 
