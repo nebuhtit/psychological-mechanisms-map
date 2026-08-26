@@ -56,6 +56,8 @@ The live explorer contains ten deliberately heterogeneous mechanism families. Br
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
+See the generated [coverage and curation report](docs/coverage-report.md) for current object, claim, evidence, confidence, and review-queue counts.
+
 ## What makes PMM different
 
 PMM does not attempt to replace established projects. It uses them for complementary purposes while adding claim-level evidence and inferential constraints.
@@ -137,6 +139,7 @@ docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
 scripts/build_site_data.py           Deterministic interactive-map data bundle
 scripts/build_registry.py            Validate/export every registered dataset
+scripts/build_coverage_report.py     Deterministic coverage and curation audit
 data/families.yaml                   Single registry for datasets and public map families
 scripts/new_evidence_pack.py         Schema-valid evidence-pack starter generator
 site/                                Static interactive map v0.1
@@ -191,6 +194,8 @@ python3 -m http.server 8000 --directory site
 ```
 
 `make setup` creates a local `.venv`. Validation applies the complete JSON Schema and additional cross-record constraints to every dataset in `data/families.yaml`. Export produces deterministic JSON in `build/` and rebuilds the public families declared by the same registry.
+
+`make report` rebuilds `docs/coverage-report.md` and `build/coverage-report.json`. The report counts public objects, claim types, evidence profiles, and rule-based review flags; it is a curation audit, not a score of scientific truth or importance.
 
 GitHub Actions runs `make verify` on every push and pull request. The command validates all v0.3 datasets, runs the test suite, rebuilds JSON, and fails if generated JSON differs from the committed artifacts.
 

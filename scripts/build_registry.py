@@ -10,6 +10,7 @@ from pathlib import Path
 import yaml
 
 import build_site_data
+import build_coverage_report
 import pmm_v03
 
 
@@ -69,18 +70,21 @@ def export_all(datasets: list[dict]) -> None:
         ROOT / "build/pilot-anxiety-avoidance-v0.3.ttl",
     )
     build_site_data.main()
+    build_coverage_report.main()
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "export"))
+    parser.add_argument("command", choices=("validate", "export", "report"))
     args = parser.parse_args()
     try:
         datasets = load_registry()
         if args.command == "validate":
             validate_all(datasets)
-        else:
+        elif args.command == "export":
             export_all(datasets)
+        else:
+            build_coverage_report.main()
     except (OSError, pmm_v03.ValidationError) as error:
         print(f"registry build failed: {error}", file=sys.stderr)
         return 1

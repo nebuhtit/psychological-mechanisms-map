@@ -1,0 +1,409 @@
+{
+  "causal_support": {
+    "direct": 23,
+    "indirect": 15,
+    "none": 6
+  },
+  "claim_types": {
+    "association": 7,
+    "causal_effect": 16,
+    "causal_hypothesis": 1,
+    "definition": 4,
+    "mechanism_hypothesis": 10,
+    "mediation": 2,
+    "moderation": 2
+  },
+  "confidence_levels": {
+    "high": 3,
+    "low": 9,
+    "moderate": 28,
+    "not_applicable": 2
+  },
+  "epistemic_statuses": {
+    "mixed": 2,
+    "not_assessed": 2,
+    "proposed": 11,
+    "supported": 24,
+    "unsupported": 3
+  },
+  "evidence_kinds": {
+    "computational_model": 1,
+    "controlled_experiment": 11,
+    "cross_sectional_observational": 3,
+    "meta_analysis": 2,
+    "narrative_review": 7,
+    "randomized_experiment": 20
+  },
+  "families": [
+    {
+      "claims": 6,
+      "evidence": 6,
+      "id": "avoidance",
+      "objects": 13,
+      "source": "data/pilot-anxiety-avoidance-v0.3.yaml",
+      "sources": 7,
+      "title": "Threat and avoidance"
+    },
+    {
+      "claims": 4,
+      "evidence": 5,
+      "id": "extinction",
+      "objects": 12,
+      "source": "data/evidence-pack-fear-extinction-v0.3.yaml",
+      "sources": 4,
+      "title": "Fear extinction"
+    },
+    {
+      "claims": 4,
+      "evidence": 5,
+      "id": "habit",
+      "objects": 13,
+      "source": "data/evidence-pack-habit-control-v0.3.yaml",
+      "sources": 4,
+      "title": "Habit control"
+    },
+    {
+      "claims": 4,
+      "evidence": 6,
+      "id": "reappraisal",
+      "objects": 13,
+      "source": "data/evidence-pack-cognitive-reappraisal-v0.3.yaml",
+      "sources": 4,
+      "title": "Cognitive reappraisal"
+    },
+    {
+      "claims": 4,
+      "evidence": 4,
+      "id": "working-memory",
+      "objects": 13,
+      "source": "data/evidence-pack-working-memory-control-v0.3.yaml",
+      "sources": 3,
+      "title": "Working-memory control"
+    },
+    {
+      "claims": 4,
+      "evidence": 4,
+      "id": "interoception",
+      "objects": 13,
+      "source": "data/evidence-pack-interoception-anxiety-v0.3.yaml",
+      "sources": 3,
+      "title": "Interoception and anxiety"
+    },
+    {
+      "claims": 4,
+      "evidence": 4,
+      "id": "social-buffering",
+      "objects": 8,
+      "source": "data/evidence-pack-social-buffering-v0.3.yaml",
+      "sources": 2,
+      "title": "Social buffering"
+    },
+    {
+      "claims": 4,
+      "evidence": 3,
+      "id": "reward-learning",
+      "objects": 11,
+      "source": "data/evidence-pack-reward-prediction-error-v0.3.yaml",
+      "sources": 3,
+      "title": "Reward prediction error"
+    },
+    {
+      "claims": 4,
+      "evidence": 3,
+      "id": "hpa-feedback",
+      "objects": 9,
+      "source": "data/evidence-pack-hpa-feedback-v0.3.yaml",
+      "sources": 3,
+      "title": "HPA feedback"
+    },
+    {
+      "claims": 4,
+      "evidence": 4,
+      "id": "placebo-analgesia",
+      "objects": 8,
+      "source": "data/evidence-pack-placebo-analgesia-v0.3.yaml",
+      "sources": 3,
+      "title": "Placebo analgesia"
+    }
+  ],
+  "family_count": 10,
+  "object_types": {
+    "Behavior": 8,
+    "Construct": 11,
+    "Context": 18,
+    "Contingency": 1,
+    "Event": 3,
+    "Intervention": 17,
+    "Measurement": 24,
+    "Mechanism": 12,
+    "Outcome": 4,
+    "State": 15
+  },
+  "report_version": 1,
+  "review_queue": [
+    {
+      "claim_id": "pmm:claim:anxiety-avoidance-association",
+      "family_id": "avoidance",
+      "reasons": [
+        "low confidence"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:assigned-loss-probability-changes-choice",
+      "family_id": "avoidance",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:negative-reinforcement-mechanism-hypothesis",
+      "family_id": "avoidance",
+      "reasons": [
+        "proposed claim"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:clinical-maintenance-loop-hypothesis",
+      "family_id": "avoidance",
+      "reasons": [
+        "proposed claim",
+        "low confidence"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:context-shift-causes-renewal",
+      "family_id": "extinction",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:time-allows-spontaneous-recovery",
+      "family_id": "extinction",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:extinction-memory-mechanism-hypothesis",
+      "family_id": "extinction",
+      "reasons": [
+        "proposed claim",
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:extended-training-causes-outcome-insensitivity",
+      "family_id": "habit",
+      "reasons": [
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:habit-measures-converge",
+      "family_id": "habit",
+      "reasons": [
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:habitual-control-mechanism-hypothesis",
+      "family_id": "habit",
+      "reasons": [
+        "proposed claim",
+        "low confidence",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:neural-response-statistically-mediates-reappraisal",
+      "family_id": "reappraisal",
+      "reasons": [
+        "low confidence",
+        "single-source support",
+        "limited precision",
+        "statistical, not causal, mediation"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:meaning-reinterpretation-mechanism-hypothesis",
+      "family_id": "reappraisal",
+      "reasons": [
+        "proposed claim"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:lures-increase-n-back-false-alarms",
+      "family_id": "working-memory",
+      "reasons": [
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:n-back-weakly-converges-with-complex-span",
+      "family_id": "working-memory",
+      "reasons": [
+        "low confidence",
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:n-back-and-backward-recall-are-distinct-factors",
+      "family_id": "working-memory",
+      "reasons": [
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:episodic-retrieval-can-support-n-back",
+      "family_id": "working-memory",
+      "reasons": [
+        "proposed claim",
+        "low confidence",
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:interoceptive-dimensions-are-dissociable",
+      "family_id": "interoception",
+      "reasons": [
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:isoproterenol-increases-anxiety-in-lesion-case-study",
+      "family_id": "interoception",
+      "reasons": [
+        "low confidence",
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:appraisal-may-link-bodily-signals-to-anxiety",
+      "family_id": "interoception",
+      "reasons": [
+        "proposed claim",
+        "low confidence",
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:parent-buffer-changes-cortisol-trajectory",
+      "family_id": "social-buffering",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:buffer-condition-interacts-with-sampling-time",
+      "family_id": "social-buffering",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:care-history-moderates-parent-support-effect",
+      "family_id": "social-buffering",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:co-regulation-may-produce-buffering",
+      "family_id": "social-buffering",
+      "reasons": [
+        "proposed claim",
+        "low confidence",
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:dopamine-population-is-heterogeneous-under-distributional-model",
+      "family_id": "reward-learning",
+      "reasons": [
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:rpe-may-drive-temporal-difference-updating",
+      "family_id": "reward-learning",
+      "reasons": [
+        "proposed claim"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:cortisol-replacement-suppresses-acth-after-delay",
+      "family_id": "hpa-feedback",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:metyrapone-increases-continuous-and-pulsatile-acth",
+      "family_id": "hpa-feedback",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:cortisol-signaling-may-limit-later-hpa-drive",
+      "family_id": "hpa-feedback",
+      "reasons": [
+        "proposed claim"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:naloxone-blocks-expectation-placebo-analgesia",
+      "family_id": "placebo-analgesia",
+      "reasons": [
+        "single-source support",
+        "limited precision"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:dopamine-modulation-null-effect",
+      "family_id": "placebo-analgesia",
+      "reasons": [
+        "single-source support"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:conditioning-neural-statistical-mediation",
+      "family_id": "placebo-analgesia",
+      "reasons": [
+        "statistical, not causal, mediation"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:expectation-opioid-mechanism-hypothesis",
+      "family_id": "placebo-analgesia",
+      "reasons": [
+        "proposed claim",
+        "single-source support",
+        "limited precision"
+      ]
+    }
+  ],
+  "scope": "public_families",
+  "support_directions": {
+    "challenges": 7,
+    "mixed": 4,
+    "supports": 33
+  },
+  "totals": {
+    "claims": 42,
+    "evidence": 44,
+    "objects": 113,
+    "sources": 36
+  }
+}

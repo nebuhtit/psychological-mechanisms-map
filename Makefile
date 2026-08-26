@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 site-data translate-ru test export verify clean
+.PHONY: setup validate validate-v02 site-data translate-ru report test export verify clean
 
 PYTHON := .venv/bin/python
 
@@ -21,11 +21,14 @@ site-data:
 translate-ru:
 	$(PYTHON) -u scripts/build_ru_translation.py
 
+report:
+	$(PYTHON) scripts/build_registry.py report
+
 export:
 	$(PYTHON) scripts/build_registry.py export
 
 verify: validate test export
-	git diff --exit-code -- build site/data/pmm-data.json
+	git diff --exit-code -- build docs/coverage-report.md site/data/pmm-data.json
 
 clean:
 	$(PYTHON) scripts/pmm_v03.py clean build
