@@ -28,6 +28,12 @@ datasets:
       id: reappraisal
       title: Cognitive reappraisal
       description: Instruction, proposed reinterpretation, experience, physiology, and BOLD.
+  - source: data/evidence-pack-emotion-process-v0.3.yaml
+    output: build/evidence-pack-emotion-process-v0.3.json
+    family:
+      id: emotion-process
+      title: Emotion components and appraisal
+      description: Relevant event, appraisal, feeling, physiology, action tendency, expression, overt action, measurement, and proposed coordination kept distinct.
   - source: data/evidence-pack-working-memory-control-v0.3.yaml
     output: build/evidence-pack-working-memory-control-v0.3.json
     family:

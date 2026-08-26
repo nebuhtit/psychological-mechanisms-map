@@ -209,6 +209,18 @@ sources:
     title: Depression in adults — treatment and management
     organization: National Institute for Health and Care Excellence
     url: https://www.nice.org.uk/guidance/ng222/chapter/Recommendations
+  - id: source:yeo-ong-appraisal-2024
+    title: Associations between cognitive appraisals and emotions — a meta-analytic review
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/39404856/
+  - id: source:scherer-moors-emotion-process-2019
+    title: The emotion process — event appraisal and component differentiation
+    organization: Annual Review of Psychology
+    url: https://pubmed.ncbi.nlm.nih.gov/30110576/
+  - id: source:mauss-robinson-emotion-measures-2009
+    title: Measures of emotion — a review
+    organization: Cognition and Emotion
+    url: https://pubmed.ncbi.nlm.nih.gov/19809584/
   - id: source:bandura-1961-modeling
     title: Transmission of aggression through imitation of aggressive models
     organization: Journal of Abnormal and Social Psychology
@@ -476,8 +488,32 @@ general_psychology:
         en: “Emotion” is not one PMM object type. This topic links distinct States, Constructs, Interventions, Behaviors, and Mechanisms. Anxiety is typed according to its use in each record.
         ru: «Эмоция» не является одним типом объекта PMM. Раздел связывает разные состояния, конструкты, вмешательства, поведения и механизмы. Тревога типизируется по её роли в конкретной записи.
       coverage: partial
-      source_ids: [source:rdoc-definitions]
+      source_ids: [source:rdoc-definitions, source:yeo-ong-appraisal-2024, source:scherer-moors-emotion-process-2019, source:mauss-robinson-emotion-measures-2009]
       memberships:
+        - family_id: emotion-process
+          canonical_id: pmm:construct:emotion-episode
+          role: construct_example
+          expected_type: Construct
+        - family_id: emotion-process
+          canonical_id: pmm:construct:event-appraisal-profile
+          role: appraisal_construct_example
+          expected_type: Construct
+        - family_id: emotion-process
+          canonical_id: pmm:state:subjective-emotional-feeling
+          role: state_example
+          expected_type: State
+        - family_id: emotion-process
+          canonical_id: pmm:state:emotion-related-physiological-response
+          role: physiological_state_example
+          expected_type: State
+        - family_id: emotion-process
+          canonical_id: pmm:behavior:emotion-related-action
+          role: behavior_example
+          expected_type: Behavior
+        - family_id: emotion-process
+          canonical_id: pmm:mechanism:appraisal-guided-component-coordination
+          role: proposed_mechanism_example
+          expected_type: Mechanism
         - family_id: reappraisal
           canonical_id: pmm:state:negative-emotional-experience
           role: state_example
@@ -926,14 +962,22 @@ foundational_models:
         - {en: Experience, physiology, and action tendency, ru: Переживание, физиология и тенденция к действию}
         - {en: Regulation attempt, ru: Попытка регуляции}
         - {en: Channel-specific outcome, ru: Результат в отдельных каналах}
-      practical_focus: {en: Choose a target channel and strategy instead of treating emotion as one score., ru: Выбирайте конкретный канал и стратегию вместо обращения с эмоцией как с одним баллом.}
-      established: {en: Reappraisal instructions can change reported emotion in bounded tasks., ru: Инструкции переоценки могут менять сообщаемую эмоцию в ограниченных заданиях.}
-      proposed: {en: Reinterpretation and neural mediation remain more specific hypotheses than the observed instruction effect., ru: Переинтерпретация и нейронная медиация остаются более узкими гипотезами, чем наблюдаемый эффект инструкции.}
-      measurements: {en: Self-report, expressive behavior, autonomic channels, performance, and neural signals., ru: Самоотчёт, выразительное поведение, автономные показатели, выполнение и нейронные сигналы.}
-      limitation: {en: Reduced expression is not necessarily reduced feeling, and one strategy is not optimal in every context., ru: Снижение выражения не обязательно означает снижение переживания, и одна стратегия не оптимальна во всех контекстах.}
-      source_ids: []
+      practical_focus: {en: First name the concrete event, meaning, target response channel, action, and consequence. Then test one low-risk change — interpretation, exposure, bodily regulation, action, communication, or environment — and measure the selected outcome separately., ru: Сначала назовите конкретное событие, его смысл, целевой канал реакции, действие и последствие. Затем проверьте одно безопасное изменение — интерпретации, контакта с ситуацией, телесной регуляции, действия, общения или среды — и отдельно измерьте выбранный результат.}
+      established: {en: Appraisal dimensions show systematic but nonunique associations with reported emotions; subjective, physiological, and behavioral measures are not interchangeable; reappraisal instructions can change reported emotion in bounded tasks., ru: Измерения оценки ситуации систематически, но не однозначно связаны с сообщаемыми эмоциями; субъективные, физиологические и поведенческие показатели не взаимозаменяемы; инструкции переоценки могут менять сообщаемую эмоцию в ограниченных заданиях.}
+      proposed: {en: A dynamic appraisal process may help coordinate feeling, physiology, expression, and action, but the complete causal sequence and its alternatives remain under test., ru: Динамическая оценка ситуации может участвовать в координации переживания, физиологии, выражения и действия, но полная причинная последовательность и альтернативные объяснения ещё проверяются.}
+      measurements: {en: Event and appraisal reports, feeling ratings, channel-specific physiology, expression coding, overt action, timing, and consequences., ru: Описание события и его оценки, оценки переживания, отдельные физиологические каналы, кодирование выражения, наблюдаемое действие, время и последствия.}
+      limitation: {en: Appraisal is not limited to conscious verbal thought, correlation is not causation, an emotion label is not the whole episode, and one strategy is not optimal in every context., ru: Оценка ситуации не ограничена осознанной словесной мыслью, корреляция не равна причинности, название эмоции не является всем эпизодом, а одна стратегия не оптимальна во всех контекстах.}
+      source_ids: [source:yeo-ong-appraisal-2024, source:scherer-moors-emotion-process-2019, source:mauss-robinson-emotion-measures-2009]
       mapped_memberships:
+        - {family_id: emotion-process, canonical_id: pmm:construct:emotion-episode, role: construct_example, expected_type: Construct}
+        - {family_id: emotion-process, canonical_id: pmm:construct:event-appraisal-profile, role: construct_example, expected_type: Construct}
+        - {family_id: emotion-process, canonical_id: pmm:state:subjective-emotional-feeling, role: state_example, expected_type: State}
+        - {family_id: emotion-process, canonical_id: pmm:state:emotion-related-physiological-response, role: state_example, expected_type: State}
+        - {family_id: emotion-process, canonical_id: pmm:behavior:emotion-related-action, role: behavior_example, expected_type: Behavior}
+        - {family_id: emotion-process, canonical_id: pmm:measurement:event-appraisal-report, role: measurement_example, expected_type: Measurement}
+        - {family_id: emotion-process, canonical_id: pmm:mechanism:appraisal-guided-component-coordination, role: mechanism_example, expected_type: Mechanism}
         - {family_id: reappraisal, canonical_id: pmm:construct:situational-meaning-appraisal, role: construct_example, expected_type: Construct}
+        - {family_id: reappraisal, canonical_id: pmm:intervention:reappraisal-instruction, role: intervention_example, expected_type: Intervention}
         - {family_id: reappraisal, canonical_id: pmm:mechanism:meaning-reinterpretation, role: mechanism_example, expected_type: Mechanism}
     - id: model:motivation-reinforcement
       label: {en: Motivation and reinforcement, ru: Мотивация и подкрепление}

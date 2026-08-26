@@ -566,3 +566,27 @@ entries:
       A useful working hypothesis is that observation can make action-relevant information available, while consequences, current incentives, skill, and context determine whether it is performed. The studies do not establish one universal sequence of attention, memory, motivation, and imitation, so those links must be measured separately.
     ru: >-
       Полезная рабочая гипотеза состоит в том, что наблюдение делает информацию о действии доступной, а последствия, текущие стимулы, навык и контекст определяют, будет ли действие выполнено. Исследования не устанавливают универсальную цепочку внимания, памяти, мотивации и подражания, поэтому эти звенья нужно измерять раздельно.
+
+  - claim_id: pmm:claim:emotion-episode-is-multicomponent-process
+    en: >-
+      An emotion is not only a word such as “fear” or one intensity score. For practical analysis, separate what happened, what it meant to the person, what they felt, what changed in the body, what they were inclined to do, what they actually did, and what followed. This does not assume that every component appears or changes together.
+    ru: >-
+      Эмоция — это не только слово вроде «страх» и не один балл интенсивности. Для практического анализа отдельно опишите, что произошло, какой смысл это имело для человека, что он переживал, что изменилось в теле, к какому действию его побуждало, что он действительно сделал и что произошло затем. Не предполагается, что все компоненты обязательно появляются или меняются вместе.
+
+  - claim_id: pmm:claim:emotion-measures-are-not-interchangeable
+    en: >-
+      A person can report less distress while heart rate, skin conductance, facial expression, or behavior changes differently. Therefore decide in advance what outcome matters and measure that channel directly; do not use a calm face as proof of a calm feeling or one bodily signal as the emotion itself.
+    ru: >-
+      Человек может сообщать о меньшем дистрессе, тогда как частота сердцебиения, кожная проводимость, выражение лица или поведение меняются иначе. Поэтому заранее определите важный результат и измеряйте именно его: спокойное лицо не доказывает спокойного переживания, а один телесный показатель не является самой эмоцией.
+
+  - claim_id: pmm:claim:appraisal-patterns-associated-with-emotion-reports
+    en: >-
+      How people evaluate relevance, control, certainty, responsibility, effort, and pleasantness is systematically related to what emotions they report. The profiles overlap and much evidence is correlational, so an appraisal is a useful hypothesis to check, not a hidden cause that can be read from the emotion label.
+    ru: >-
+      То, как человек оценивает значимость, контроль, определённость, ответственность, необходимые усилия и приятность события, систематически связано с называемыми им эмоциями. Профили пересекаются, а многие данные корреляционные, поэтому оценка ситуации — полезная гипотеза для проверки, но не скрытая причина, которую можно вывести из названия эмоции.
+
+  - claim_id: pmm:claim:appraisal-guided-coordination-is-mechanism-hypothesis
+    en: >-
+      One working model says that changing evaluation of an event can reorganize action readiness, bodily response, expression, feeling, and later action over time. The whole loop is not yet one established mechanism. In practice, change one candidate link and check whether the predicted channel changes before accepting the explanation.
+    ru: >-
+      Согласно одной рабочей модели, изменение оценки события может со временем перестраивать готовность к действию, телесную реакцию, выражение, переживание и последующее действие. Вся петля пока не является единым установленным механизмом. На практике изменяйте одно предполагаемое звено и проверяйте, изменился ли ожидаемый показатель, прежде чем принимать объяснение.

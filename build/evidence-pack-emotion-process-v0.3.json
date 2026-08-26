@@ -1,0 +1,779 @@
+{
+  "claims": [
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Major component reviews converge on separating response systems, while theories disagree about their causal organization and the primacy of conscious feeling."
+      },
+      "defined_object_id": "pmm:construct:emotion-episode",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:emotion-episode-is-multicomponent-process",
+      "limitations": [
+        "This representation organizes measurement and does not establish that one component causes the others or that every episode contains every component."
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:emotion-relevant-event"
+        ],
+        "population": "Humans experiencing or reporting time-bounded emotional events.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Seconds to minutes within an emotional episode."
+      },
+      "source_ids": [
+        "pmm:source:mauss-robinson-2009-emotion-measures",
+        "pmm:source:scherer-moors-2019-emotion-process"
+      ],
+      "statement": "An emotion episode should be represented as a time-varying set of experiential, physiological, action-related, and expressive components in context rather than as one interchangeable score or label."
+    },
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The measurement review found unique variance and limited convergence across experiential, physiological, and behavioral systems, although each method also has specific limitations."
+      },
+      "defined_object_id": "pmm:measurement:emotional-feeling-report",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:emotion-measures-are-not-interchangeable",
+      "limitations": [
+        "Self-report is the most direct available measure of conscious feeling but is not a complete measure of physiology, behavior, or an unreported process."
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:emotion-relevant-event"
+        ],
+        "population": "Humans measured during laboratory or naturalistic emotional events represented in the review literature.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Measurement within or after a declared emotional episode."
+      },
+      "source_ids": [
+        "pmm:source:mauss-robinson-2009-emotion-measures"
+      ],
+      "statement": "Self-reported feeling, physiology, expressive behavior, action, and observer labels measure different aspects of an emotional episode and no single channel is a universal gold standard for the others."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "A large mixed-effects meta-analysis synthesized 2,634 effects from 309 studies, but heterogeneous terminology, retrospective self-report, shared method, and noncausal designs limit mechanistic interpretation."
+      },
+      "confounding_note": "Shared self-report method, retrospective reconstruction, emotion-label semantics, event selection, culture, and study design can produce or alter appraisal-emotion associations.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "positive",
+        "metric": "mean correlation for previously hypothesized appraisal-emotion relationships",
+        "notes": "Seventy-five percent of previously hypothesized relationships were statistically significant; unpredicted relationships averaged r = .27.",
+        "value": 0.33,
+        "value_status": "reported"
+      },
+      "evidence_ids": [
+        "pmm:evidence:yeo-ong-2024-appraisal-meta-analysis"
+      ],
+      "exposure_id": "pmm:measurement:event-appraisal-report",
+      "id": "pmm:claim:appraisal-patterns-associated-with-emotion-reports",
+      "limitations": [
+        "Correlation does not show that a measured appraisal uniquely caused the emotion, nor that changing one appraisal will reliably change every response channel."
+      ],
+      "outcome_id": "pmm:measurement:emotional-feeling-report",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Forty-seven appraisal dimensions, 63 emotions, heterogeneous measures, and the study designs included by Yeo and Ong."
+        ],
+        "context_ids": [
+          "pmm:context:emotion-relevant-event"
+        ],
+        "population": "Human participants represented in 309 appraisal-emotion studies across 251 reports.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Event appraisal and reported emotion in experimental, recalled, and other study contexts included in the meta-analysis."
+      },
+      "statement": "Across the studies synthesized by Yeo and Ong, measured appraisal dimensions were systematically associated with reported emotions, but the profiles were overlapping and included many relationships not uniquely predicted in advance."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "low",
+        "rationale": "Experimental appraisal manipulations and component findings constrain the theory, but comprehensive tests of temporal coordination, mediation, and alternatives remain incomplete."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:scherer-moors-2019-component-process-review"
+      ],
+      "exposure_id": "pmm:construct:event-appraisal-profile",
+      "falsifiable_boundary": "The account is weakened when independently manipulated appraisal dimensions fail to alter predicted later components, or when competing bodily, perceptual, learning, or constructionist models explain the temporal data better.",
+      "id": "pmm:claim:appraisal-guided-coordination-is-mechanism-hypothesis",
+      "limitations": [
+        "The review supports a research programme and partial predictions, not one universally established causal sequence for all emotions."
+      ],
+      "mechanism_id": "pmm:mechanism:appraisal-guided-component-coordination",
+      "outcome_id": "pmm:construct:emotion-episode",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Repeated, independently operationalized appraisal and response-component measurements with explicit temporal ordering."
+        ],
+        "context_ids": [
+          "pmm:context:emotion-relevant-event"
+        ],
+        "population": "Humans in appraisal and emotion-process studies.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Dynamic unfolding of an emotional episode over seconds to minutes."
+      },
+      "statement": "Changes in multi-level appraisal may help organize the unfolding pattern of action tendency, physiology, expression, feeling, and overt action during an emotion episode.",
+      "temporal_ordering": "The theory predicts appraisal changes that precede or recursively interact with later component changes, but many studies measure appraisal and feeling retrospectively at the same time."
+    }
+  ],
+  "dataset_id": "pmm:dataset:emotion-process-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:appraisal-patterns-associated-with-emotion-reports"
+      ],
+      "design": "Mixed-effects meta-analysis of 2,634 effect sizes from 309 studies across 251 reports, covering 47 appraisal dimensions, 63 emotions, and 853 specific relationships.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "independent_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "mean correlation for previously hypothesized appraisal-emotion relationships",
+        "notes": "75.0% of hypothesized relationships were statistically significant; unpredicted relationships averaged r = .27.",
+        "value": 0.33,
+        "value_status": "reported"
+      },
+      "evidence_kind": "meta_analysis",
+      "extraction_locator": "PubMed abstract reporting the mixed-effects synthesis, study and effect counts, and mean correlations for predicted and unpredicted appraisal-emotion relationships.",
+      "id": "pmm:evidence:yeo-ong-2024-appraisal-meta-analysis",
+      "inference_support": "association",
+      "limitations": [
+        "The abstract-level extraction does not re-grade every included study, and shared method, retrospective designs, heterogeneity, and publication selection limit causal interpretation."
+      ],
+      "population": "Human participants in the appraisal-emotion studies included by Yeo and Ong.",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:yeo-ong-2024-appraisal-meta",
+      "species": [
+        "human"
+      ],
+      "summary": "Appraisal dimensions showed systematic but nonunique associations with reported emotions across a large heterogeneous literature.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:appraisal-guided-coordination-is-mechanism-hypothesis"
+      ],
+      "design": "Integrative review emphasizing experimental emotion research and neighboring domains relevant to elicitation, action tendencies, physiology, expression, feeling, and labeling.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "not_assessed"
+      },
+      "evidence_kind": "narrative_review",
+      "extraction_locator": "Abstract and review synthesis describing event appraisal, component differentiation, interactions, and unresolved temporal coordination.",
+      "id": "pmm:evidence:scherer-moors-2019-component-process-review",
+      "inference_support": "mechanism",
+      "limitations": [
+        "A narrative review of heterogeneous studies cannot by itself establish the complete appraisal-to-component causal architecture."
+      ],
+      "population": "Human emotion studies reviewed by the authors.",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:scherer-moors-2019-emotion-process",
+      "species": [
+        "human"
+      ],
+      "summary": "The review reports evidence compatible with appraisal-related component differentiation while identifying interactions, timing, and synchronization as unresolved mechanism problems.",
+      "support_direction": "mixed"
+    }
+  ],
+  "metadata": {
+    "description": "Separates an emotion-relevant event, appraisal, subjective feeling, physiology, action tendency, expression, overt action, measurement, and a proposed coordination mechanism.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T23:30:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T23:30:00+03:00",
+      "record_version": "0.1.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Evidence pack for emotion components and appraisal"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "boundary_notes": [
+        "The same event need not be emotionally relevant to every person or on every occasion."
+      ],
+      "context_kind": "composite",
+      "curation_status": "provisional",
+      "definition": "An internal or external event that is potentially relevant to a person's goals, needs, values, relationships, or safety in a declared situation.",
+      "dimensions": {
+        "event_source": "internal or external",
+        "personal_relevance": "study-specific or person-specific",
+        "temporal_scale": "seconds to minutes"
+      },
+      "id": "pmm:context:emotion-relevant-event",
+      "label": "Emotion-relevant event",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Time-bounded human emotional episodes represented by the included literature.",
+      "type": "Context"
+    },
+    {
+      "boundary_notes": [
+        "An emotion word or questionnaire score is not the complete episode.",
+        "The components can differ in timing, intensity, and direction and need not form one invariant package.",
+        "This component definition does not decide among appraisal, basic-emotion, constructionist, interoceptive, or learning accounts of emotion causation."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "A time-bounded, person-in-context process involving some combination of appraisal, subjective experience, physiological change, action tendency, expression, and overt action.",
+      "id": "pmm:construct:emotion-episode",
+      "label": "Emotion episode",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "Appraisal can be rapid, automatic, or partly outside awareness and is not limited to deliberate verbal thought.",
+        "Appraisal dimensions and terminology differ across theories and studies.",
+        "A profile inferred only from an emotion label is circular and is not an independent measurement."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "A pattern of evaluated meaning dimensions such as goal relevance, pleasantness, certainty, control, agency, anticipated effort, and compatibility with current concerns.",
+      "id": "pmm:construct:event-appraisal-profile",
+      "label": "Event appraisal profile",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "bearer_scope": "person",
+      "boundary_notes": [
+        "Subjective feeling is not interchangeable with autonomic activity, facial expression, or an observer's emotion label."
+      ],
+      "curation_status": "accepted",
+      "definition": "The time-indexed conscious experience of affect or emotion reported by a person during or after an event.",
+      "id": "pmm:state:subjective-emotional-feeling",
+      "label": "Subjective emotional feeling",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "affective",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "bearer_scope": "person",
+      "boundary_notes": [
+        "Different physiological channels need not covary or uniquely identify a named emotion."
+      ],
+      "curation_status": "accepted",
+      "definition": "Time-indexed autonomic, endocrine, respiratory, or other bodily change measured during an emotion-relevant event.",
+      "id": "pmm:state:emotion-related-physiological-response",
+      "label": "Emotion-related physiological response",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "physiological",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "boundary_notes": [
+        "A tendency is not the same as an observed action and may be inhibited, redirected, or never performed."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "A context-sensitive readiness or inclination toward a class of actions, such as approach, withdrawal, attack, freezing, support seeking, or repair.",
+      "id": "pmm:construct:emotion-action-tendency",
+      "label": "Emotion-related action tendency",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "response_pattern",
+      "curation_status": "accepted",
+      "definition": "Observable facial, vocal, postural, or gestural behavior occurring during an emotion-relevant event.",
+      "function_note": "Expression can communicate, regulate interaction, or reflect response preparation, but its function cannot be inferred from appearance alone.",
+      "id": "pmm:behavior:emotion-expression",
+      "label": "Emotion-related expression",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Protocol-defined facial, vocal, postural, or gestural change.",
+      "type": "Behavior"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable action taken during or after an emotion-relevant event that may alter the situation, the person's exposure, or social feedback.",
+      "function_note": "Similar-looking actions can serve different functions and the same feeling can precede different actions.",
+      "id": "pmm:behavior:emotion-related-action",
+      "label": "Emotion-related overt action",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Study- or person-specific approach, avoidance, communication, inhibition, or problem-solving action.",
+      "type": "Behavior"
+    },
+    {
+      "boundary_notes": [
+        "Retrospective reports can reconstruct appraisals after the emotion and do not establish temporal or causal order."
+      ],
+      "curation_status": "accepted",
+      "definition": "Self-report or structured rating of declared appraisal dimensions for a specific event or recalled episode.",
+      "id": "pmm:measurement:event-appraisal-report",
+      "label": "Event appraisal report",
+      "measurement_kind": "self_report",
+      "method": "Rate study-defined meaning dimensions independently of the final emotion label where possible.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:event-appraisal-profile"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "self_report"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Self-reported intensity, quality, or category of conscious emotional experience during or after a declared event.",
+      "id": "pmm:measurement:emotional-feeling-report",
+      "label": "Emotional feeling report",
+      "measurement_kind": "self_report",
+      "method": "Use a declared rating scale, emotion vocabulary, timing, and reference period.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:subjective-emotional-feeling"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "self_report"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Channel-specific recording of bodily responses time-locked to an emotion-relevant event.",
+      "id": "pmm:measurement:emotion-physiology-recording",
+      "label": "Emotion-related physiology recording",
+      "measurement_kind": "physiology",
+      "method": "Record and analyze each declared physiological channel with its own baseline, timing, and preprocessing.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:state:emotion-related-physiological-response"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "physiology"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Observer or automated coding of declared facial, vocal, postural, or gestural features during an event.",
+      "id": "pmm:measurement:emotion-expression-coding",
+      "label": "Emotion expression coding",
+      "measurement_kind": "observation",
+      "method": "Apply a declared coding protocol to recorded expressive behavior without treating the code as direct access to subjective feeling.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:behavior:emotion-expression"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "The complete coordination loop is a theoretical mechanism, not a direct consequence of appraisal-emotion correlations.",
+        "Appraisal need not be conscious or verbal, but calling an unmeasured process automatic does not verify it."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed dynamic process in which evaluations of an event's meaning help organize changing action tendencies, physiology, expression, feeling, and action over time.",
+      "id": "pmm:mechanism:appraisal-guided-component-coordination",
+      "label": "Appraisal-guided component coordination",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "Appraisal and response components are measured repeatedly with sufficient temporal resolution.",
+        "Competing bodily, learning, perceptual, and constructionist explanations remain testable.",
+        "Component changes are not inferred from one self-report score alone."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:context:emotion-relevant-event",
+          "role": "relevant event"
+        },
+        {
+          "object_id": "pmm:construct:event-appraisal-profile",
+          "role": "evaluated meaning"
+        },
+        {
+          "object_id": "pmm:state:subjective-emotional-feeling",
+          "role": "subjective experience"
+        },
+        {
+          "object_id": "pmm:state:emotion-related-physiological-response",
+          "role": "bodily response"
+        },
+        {
+          "object_id": "pmm:construct:emotion-action-tendency",
+          "role": "action readiness"
+        },
+        {
+          "object_id": "pmm:behavior:emotion-related-action",
+          "role": "overt action"
+        }
+      ],
+      "type": "Mechanism"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:appraisal-profile-measured-by-report",
+      "object_id": "pmm:measurement:event-appraisal-report",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:event-appraisal-profile"
+    },
+    {
+      "id": "pmm:relation:emotional-feeling-measured-by-report",
+      "object_id": "pmm:measurement:emotional-feeling-report",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:state:subjective-emotional-feeling"
+    },
+    {
+      "id": "pmm:relation:emotion-physiology-measured-by-recording",
+      "object_id": "pmm:measurement:emotion-physiology-recording",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:state:emotion-related-physiological-response"
+    },
+    {
+      "id": "pmm:relation:emotion-expression-measured-by-coding",
+      "object_id": "pmm:measurement:emotion-expression-coding",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:emotion-expression"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Recent large meta-analysis used for quantitative appraisal-emotion associations, not for causal mechanism claims.",
+      "authors": [
+        "Gerard C. Yeo",
+        "Desmond C. Ong"
+      ],
+      "doi": "10.1037/bul0000452",
+      "id": "pmm:source:yeo-ong-2024-appraisal-meta",
+      "pmid": "39404856",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Associations between cognitive appraisals and emotions — a meta-analytic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39404856/",
+      "year": 2024
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Authoritative process review used to define component distinctions and represent appraisal-driven coordination as a theory requiring further tests.",
+      "authors": [
+        "Klaus R. Scherer",
+        "Agnes Moors"
+      ],
+      "doi": "10.1146/annurev-psych-122216-011854",
+      "id": "pmm:source:scherer-moors-2019-emotion-process",
+      "pmid": "30110576",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "The emotion process — event appraisal and component differentiation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30110576/",
+      "year": 2019
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Measurement review used to prevent subjective experience, physiology, and behavior from being treated as interchangeable emotion measures.",
+      "authors": [
+        "Iris B. Mauss",
+        "Michael D. Robinson"
+      ],
+      "doi": "10.1080/02699930802204677",
+      "id": "pmm:source:mauss-robinson-2009-emotion-measures",
+      "pmid": "19809584",
+      "provenance": {
+        "created_at": "2026-08-26T23:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Measures of emotion — a review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19809584/",
+      "year": 2009
+    }
+  ]
+}

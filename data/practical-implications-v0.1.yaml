@@ -699,3 +699,72 @@ applications:
     claim_ids: [pmm:claim:observed-model-consequence-changes-spontaneous-imitation, pmm:claim:direct-incentive-removes-model-consequence-performance-gap]
     source_ids: [pmm:source:bandura-1965-model-consequences]
     provenance: *provenance
+
+  - id: pmm:application:map-emotion-by-components
+    family_id: emotion-process
+    title:
+      en: Map the emotion episode before choosing an intervention
+      ru: Разберите эмоциональный эпизод до выбора воздействия
+    practical_question:
+      en: Where can a difficult emotional episode be changed without assuming one universal cause?
+      ru: На какое звено трудного эмоционального эпизода можно воздействовать, не предполагая единственную универсальную причину?
+    action:
+      en: >-
+        Write one concrete sequence: event and context → interpreted meaning → reported feeling and bodily changes → urge → observed action → immediate and delayed consequences. Mark which entries were observed, self-reported, or only inferred, then select one low-risk link to test.
+      ru: >-
+        Запишите одну конкретную последовательность: событие и контекст → воспринятый смысл → переживание и телесные изменения → побуждение → наблюдаемое действие → немедленные и отсроченные последствия. Отметьте, что наблюдалось, что сообщено человеком, а что только предполагается, затем выберите одно безопасное звено для проверки.
+    expected_change:
+      en: A more precise, testable target such as interpretation, exposure, bodily arousal, action, communication, environmental trigger, or consequence rather than a vague goal to “remove the emotion.”
+      ru: >-
+        Более точная и проверяемая цель: интерпретация, контакт с ситуацией, телесное возбуждение, действие, общение, средовой триггер или последствие вместо расплывчатой цели «убрать эмоцию».
+    evidence_basis:
+      en: Component reviews support separating experience, physiology, expression, and behavior; the appraisal meta-analysis supports checking meaning dimensions while not establishing a unique causal sequence.
+      ru: Компонентные обзоры поддерживают разделение переживания, физиологии, выражения и поведения; метаанализ оценки ситуации поддерживает проверку смысловых измерений, но не устанавливает единственную причинную последовательность.
+    applicability:
+      en: Low-risk reflection, coaching, education, research formulation, and collaborative clinical assessment when the event can be examined safely.
+      ru: Низкорисковая рефлексия, обучение, консультирование, исследовательская формулировка и совместная клиническая оценка, когда эпизод можно безопасно рассматривать.
+    not_established:
+      en: The map does not diagnose a disorder, prove the appraisal caused the feeling, or show which link should be changed for a particular person.
+      ru: Схема не диагностирует расстройство, не доказывает, что оценка ситуации вызвала чувство, и не определяет автоматически, какое звено менять у конкретного человека.
+    safety_note:
+      en: Real danger, severe symptoms, trauma, self-harm, violence, or medical symptoms require appropriate protection and qualified assessment rather than self-experiment alone.
+      ru: Реальная опасность, тяжёлые симптомы, травма, самоповреждение, насилие или медицинские симптомы требуют подходящей защиты и квалифицированной оценки, а не только самостоятельного эксперимента.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [individual, educator, clinician, researcher]
+    claim_ids: [pmm:claim:emotion-episode-is-multicomponent-process, pmm:claim:emotion-measures-are-not-interchangeable, pmm:claim:appraisal-patterns-associated-with-emotion-reports, pmm:claim:appraisal-guided-coordination-is-mechanism-hypothesis]
+    source_ids: [pmm:source:mauss-robinson-2009-emotion-measures, pmm:source:yeo-ong-2024-appraisal-meta]
+    provenance: *provenance
+
+  - id: pmm:application:test-truthful-reappraisal-as-one-route
+    family_id: reappraisal
+    title:
+      en: Test a truthful reinterpretation as one possible route
+      ru: Проверьте правдивое переосмысление как один из возможных путей
+    practical_question:
+      en: When might checking the meaning of a situation help?
+      ru: Когда может помочь проверка смысла ситуации?
+    action:
+      en: State the current interpretation and one observable prediction. Check available evidence and generate a realistic alternative meaning without denying danger or loss. Compare the predicted feeling, action, and consequence with what actually happens; if meaning is not the active link, test another channel.
+      ru: Сформулируйте текущую интерпретацию и один наблюдаемый прогноз. Проверьте доступные факты и создайте реалистичный альтернативный смысл, не отрицая опасность или потерю. Сравните ожидаемое переживание, действие и последствие с тем, что произошло; если смысл не является действующим звеном, проверяйте другой канал.
+    expected_change:
+      en: Possibly lower self-reported negative emotion or a different available action in situations where the original interpretation is incomplete and a credible alternative can be tested.
+      ru: Возможно меньшее субъективное негативное переживание или появление другого доступного действия в ситуациях, где исходная интерпретация неполна и реалистичную альтернативу можно проверить.
+    evidence_basis:
+      en: Randomized reappraisal instructions reduce reported negative emotion in bounded laboratory tasks, while appraisal-emotion associations and the proposed coordination mechanism do not guarantee the same effect in daily life.
+      ru: Рандомизированные инструкции переоценки уменьшают сообщаемую негативную эмоцию в ограниченных лабораторных заданиях, но связи оценки с эмоцией и предполагаемый механизм координации не гарантируют такой же эффект в повседневной жизни.
+    applicability:
+      en: Ordinary low-risk situations with uncertain or incomplete interpretations and an observable way to check the prediction.
+      ru: Обычные низкорисковые ситуации с неопределённой или неполной интерпретацией и наблюдаемым способом проверить прогноз.
+    not_established:
+      en: Reappraisal is not universally better than acceptance, problem solving, exposure, support, environmental change, or protection, and it need not change physiology or feeling for every person.
+      ru: Переоценка не всегда лучше принятия, решения проблемы, экспозиции, поддержки, изменения среды или защиты и не обязана менять физиологию или переживание у каждого человека.
+    safety_note:
+      en: Do not reinterpret away credible danger, abuse, urgent medical symptoms, or another person's boundary.
+      ru: Не переосмысливайте как несущественные реальную опасность, насилие, срочные медицинские симптомы или границы другого человека.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [individual, clinician, educator, researcher]
+    claim_ids: [pmm:claim:reappraisal-reduces-reported-negative-emotion, pmm:claim:meaning-reinterpretation-mechanism-hypothesis]
+    source_ids: [pmm:source:gross-1998-emotion-regulation]
+    provenance: *provenance

@@ -351,3 +351,21 @@ questions:
     about_ids: [pmm:mechanism:observation-performance-selection, pmm:measurement:spontaneous-imitation-coding, pmm:measurement:incentive-assisted-reproduction]
     source_ids: [pmm:source:bandura-1965-model-consequences, pmm:source:heyes-2012-social-learning, pmm:source:greer-2006-observational-learning]
     provenance: *provenance
+
+  - id: pmm:research-question:emotion-within-person-component-dynamics
+    family_id: emotion-process
+    question:
+      en: For a particular person and event, which change in appraisal, bodily response, action tendency, behavior, or context causally changes which later emotion component?
+      ru: Какое изменение оценки ситуации, телесной реакции, побуждения, поведения или контекста причинно меняет какой последующий компонент эмоции у конкретного человека и в конкретном событии?
+    why_open:
+      en: Appraisal-emotion associations are broad but nonunique, response channels only partly converge, and most studies do not repeatedly measure and manipulate competing components within the same person.
+      ru: Связи оценки ситуации с эмоциями широки, но не однозначны, каналы реакции совпадают лишь частично, а большинство исследований не измеряет и не изменяет конкурирующие компоненты многократно у одного человека.
+    what_would_help:
+      en: Preregistered intensive longitudinal and experimental studies with independent appraisal measures, channel-specific outcomes, temporal ordering, safe sequential interventions, and comparison of appraisal, bodily, learning, and constructionist models.
+      ru: Пререгистрированные интенсивные продольные и экспериментальные исследования с независимыми измерениями оценки ситуации, отдельными исходами для каждого канала, временным порядком, безопасными последовательными воздействиями и сравнением оценочных, телесных, обучающих и конструкционистских моделей.
+    question_kind: causal
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:appraisal-guided-component-coordination, pmm:construct:event-appraisal-profile, pmm:state:subjective-emotional-feeling, pmm:state:emotion-related-physiological-response, pmm:behavior:emotion-related-action]
+    source_ids: [pmm:source:yeo-ong-2024-appraisal-meta, pmm:source:scherer-moors-2019-emotion-process, pmm:source:mauss-robinson-2009-emotion-measures]
+    provenance: *provenance

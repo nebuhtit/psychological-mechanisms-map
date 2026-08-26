@@ -45,7 +45,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains nineteen deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains twenty deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -53,6 +53,7 @@ The live explorer contains nineteen deliberately heterogeneous evidence families
 | Fear extinction | Extinction procedure, response reduction, return of fear, and proposed context-sensitive extinction memory |
 | Habit control | Goal-directed and habitual control, outcome devaluation, persistent responding, and failed diagnostic tests |
 | Cognitive reappraisal | Instruction, proposed reinterpretation, subjective experience, expression, physiology, BOLD, and statistical mediation |
+| Emotion components and appraisal | Relevant event, appraisal, feeling, physiology, action tendency, expression, overt action, noninterchangeable measurements, and proposed coordination |
 | Working-memory control | N-back task performance, complex span, backward recall, construct validity, and competing memory mechanisms |
 | Interoception and anxiety | Physiology, objective heartbeat-task performance, self-evaluation, metacognition, appraisal, and anxiety |
 | Social buffering | Randomized support conditions, cortisol trajectories, developmental context, moderation, and proposed co-regulation |
@@ -75,7 +76,7 @@ Each family is a small evidence pack, not a textbook chapter. Null findings, inc
 
 PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Eighteen topics currently have at least one evidence-linked pilot; six remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
-Each of the 19 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
+Each of the 20 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
 
 PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Every current evidence family has at least one bilingual practical interpretation. Every individual Claim also displays either a curated application or a conservative practical inference rule specific to its claim type.
 
@@ -155,6 +156,8 @@ data/evidence-pack-habit-control-v0.3.yaml
 docs/habit-control-preview.md         Provisional habit-control diagram
 data/evidence-pack-cognitive-reappraisal-v0.3.yaml
                                      Reappraisal and multimodal outcome stress test
+data/evidence-pack-emotion-process-v0.3.yaml
+                                     Emotion-component, appraisal-association, measurement, and coordination-hypothesis boundary pack
 data/evidence-pack-working-memory-control-v0.3.yaml
                                      N-back construct-validity and competing-mechanism pack
 data/evidence-pack-interoception-anxiety-v0.3.yaml

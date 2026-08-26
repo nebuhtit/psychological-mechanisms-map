@@ -226,6 +226,7 @@ class CognitiveReappraisalEvidencePackTests(unittest.TestCase):
         self.assertEqual(records["pmm:state:autonomic-emotional-reactivity"], "State")
         self.assertEqual(records["pmm:behavior:emotion-expressive-behavior"], "Behavior")
 
+
     def test_neural_mediation_is_not_marked_direct_causal(self) -> None:
         claim = next(
             item
@@ -279,6 +280,57 @@ class CognitiveReappraisalEvidencePackTests(unittest.TestCase):
         evidence = next(item for item in document["evidence"] if item["inference_support"] == "mediation")
         evidence["causal_support"] = "direct"
         self.assertEqual(pmm_v03.validate(document), [])
+
+
+class EmotionProcessEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-emotion-process-v0.3.yaml"
+        )
+
+    def test_emotion_process_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_event_appraisal_feeling_physiology_tendency_action_and_measurement_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:context:emotion-relevant-event"], "Context")
+        self.assertEqual(records["pmm:construct:event-appraisal-profile"], "Construct")
+        self.assertEqual(records["pmm:state:subjective-emotional-feeling"], "State")
+        self.assertEqual(records["pmm:state:emotion-related-physiological-response"], "State")
+        self.assertEqual(records["pmm:construct:emotion-action-tendency"], "Construct")
+        self.assertEqual(records["pmm:behavior:emotion-related-action"], "Behavior")
+        self.assertEqual(records["pmm:measurement:event-appraisal-report"], "Measurement")
+
+    def test_appraisal_meta_analysis_is_association_not_causation(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:appraisal-patterns-associated-with-emotion-reports"
+        )
+        evidence = next(
+            item for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:yeo-ong-2024-appraisal-meta-analysis"
+        )
+        self.assertEqual(claim["claim_type"], "association")
+        self.assertNotIn("causal_estimand", claim)
+        self.assertEqual(evidence["causal_support"], "none")
+
+    def test_complete_component_coordination_remains_proposed(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:appraisal-guided-coordination-is-mechanism-hypothesis"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertEqual(claim["confidence"]["level"], "low")
+
+    def test_emotion_measure_definition_rejects_one_gold_standard(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:emotion-measures-are-not-interchangeable"
+        )
+        self.assertIn("no single channel", claim["statement"])
+        self.assertEqual(claim["claim_type"], "definition")
 
 
 class InferentialModeTests(unittest.TestCase):

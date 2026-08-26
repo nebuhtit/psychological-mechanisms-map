@@ -104,6 +104,26 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:appraisal-guided-coordination-is-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed dynamic process in which evaluations of an event's meaning help organize changing action tendencies, physiology, expression, feeling, and action over time.",
+      "evidence_count": 1,
+      "family_id": "emotion-process",
+      "family_title": "Emotion components and appraisal",
+      "id": "pmm:mechanism:appraisal-guided-component-coordination",
+      "label": "Appraisal-guided component coordination",
+      "mechanism_kind": "cognitive",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
         "pmm:claim:extinction-memory-mechanism-hypothesis"
       ],
       "claim_status_counts": {
