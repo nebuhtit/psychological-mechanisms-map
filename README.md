@@ -1,8 +1,103 @@
 # Psychological Mechanisms Map (PMM)
 
-PMM is a versioned, evidence-aware knowledge model for psychological mechanisms. The canonical source is human-editable YAML; validated JSON is a build artifact for graph and interface projections. An early interactive map is generated from those artifacts rather than maintained as a separate scientific dataset.
+[![Validate PMM](https://github.com/nebuhtit/psychological-mechanisms-map/actions/workflows/validate.yml/badge.svg)](https://github.com/nebuhtit/psychological-mechanisms-map/actions/workflows/validate.yml)
+[![Deploy Pages](https://github.com/nebuhtit/psychological-mechanisms-map/actions/workflows/pages.yml/badge.svg)](https://github.com/nebuhtit/psychological-mechanisms-map/actions/workflows/pages.yml)
+[![Schema](https://img.shields.io/badge/schema-PMM%20v0.3.4-1f5f4a)](schema/pmm-v0.3.schema.yaml)
+[![Data](https://img.shields.io/badge/data-CC--BY--4.0-b46a2a)](README.md#license-and-reuse)
+
+**[Explore the live interactive map](https://nebuhtit.github.io/psychological-mechanisms-map/)** · **[Read the methodology](docs/methodology-v0.3.md)** · **[Inspect the YAML datasets](data/)**
+
+PMM is an open, versioned, evidence-aware ontology and knowledge-graph project for psychological mechanisms. It represents psychological constructs, mental states, behaviors, interventions, measurements, contexts, empirical claims, evidence records, and scientific sources without collapsing them into an ambiguous diagram.
+
+The canonical scientific data is human-editable YAML validated against JSON Schema and semantic rules. Deterministic JSON, JSON-LD, Turtle/RDF, and the interactive website are generated projections rather than independently maintained sources of truth.
+
+PMM is intended for researchers, ontology engineers, computational psychiatry projects, evidence-synthesis tools, and developers building scientifically traceable mental-health knowledge systems.
+
+> [!IMPORTANT]
+> PMM is an early research prototype, not a diagnostic system, clinical decision-support tool, treatment recommendation engine, or claim that psychology already has a complete causal map of the mind. Most records have not received independent domain-expert review.
 
 **Current version:** PMM Schema v0.3.4. Version 0.2 is preserved as a historical snapshot, not silently overwritten.
+
+## Why this project exists
+
+Psychology and psychiatry use many diagrams in which boxes and arrows mix fundamentally different things:
+
+- a theoretical construct such as working-memory capacity;
+- a momentary state such as anxiety or circulating cortisol;
+- an observable behavior such as avoidance;
+- a task score or questionnaire;
+- a proposed cognitive, learning, social, or physiological mechanism;
+- a statistical association;
+- a causal intervention effect;
+- a paper cited as evidence.
+
+Once these categories are mixed, visual proximity starts to look like scientific proof. PMM addresses this with an **inferential firewall**: ontology objects, structural relations, empirical claims, evidence extractions, and bibliographic sources are represented separately and validated under different constraints.
+
+PMM asks a narrow but demanding question:
+
+> Can a machine-readable map preserve what is measured, what is inferred, what is causally identified, what remains proposed, and exactly which source supports each claim?
+
+## What is currently mapped
+
+The live explorer contains nine deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+
+| Family | Scientific boundary tested |
+|---|---|
+| Threat and avoidance | Threat context, anxiety state, avoidance behavior, relief, omission, contingency, and negative reinforcement |
+| Fear extinction | Extinction procedure, response reduction, return of fear, and proposed context-sensitive extinction memory |
+| Habit control | Goal-directed and habitual control, outcome devaluation, persistent responding, and failed diagnostic tests |
+| Cognitive reappraisal | Instruction, proposed reinterpretation, subjective experience, expression, physiology, BOLD, and statistical mediation |
+| Working-memory control | N-back task performance, complex span, backward recall, construct validity, and competing memory mechanisms |
+| Interoception and anxiety | Physiology, objective heartbeat-task performance, self-evaluation, metacognition, appraisal, and anxiety |
+| Social buffering | Randomized support conditions, cortisol trajectories, developmental context, moderation, and proposed co-regulation |
+| Reward prediction error | Computational error, expected value, temporal-difference updating, dopamine activity, neural manipulation, and learned behavior |
+| HPA feedback | Cortisol level, ACTH secretory drive, serial assays, pharmacological probes, and multi-site feedback |
+
+Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
+
+## What makes PMM different
+
+PMM does not attempt to replace established projects. It uses them for complementary purposes while adding claim-level evidence and inferential constraints.
+
+| Existing resource | Primary strength | PMM's complementary role |
+|---|---|---|
+| [NIMH RDoC](https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc) | Dimensional neurobehavioral domains and units of analysis | Represents scoped mechanism claims and evidence without treating the RDoC matrix as a causal graph |
+| [Cognitive Atlas](https://www.cognitiveatlas.org/) | Cognitive concepts, tasks, and assertions | Adds explicit Evidence and Source records plus causal, mediation, moderation, and prediction boundaries |
+| Mental Functioning Ontology | Formal ontology of mental functioning | Adds source-specific empirical claims and confidence/provenance fields |
+| Neuro Behavior Ontology | Behavioral-process and phenotype vocabulary | Separates behavior topography from experimentally demonstrated function or contingency |
+| [HiTOP](https://www.hitop-system.org/) | Hierarchical dimensional psychopathology taxonomy | Keeps covariance-based phenotype structure distinct from mechanisms and causal effects |
+
+External mappings are conservative. An `exact_match` requires a verified stable identifier; similar labels are not enough.
+
+## Core design principles
+
+1. **Human-editable canonical data.** Curators work in modular YAML rather than editing generated graph files.
+2. **No causal arrows by implication.** Correlation, prediction, statistical mediation, causal mediation, statistical moderation, causal effect modification, causal effects, and hypotheses have different required fields.
+3. **One source-specific extraction per Evidence record.** Multiple experiments, null results, and analysis-sensitive findings remain separate.
+4. **Measurements are not constructs.** A task, questionnaire, assay, fitted parameter, or neural recording does not become the thing it operationalizes.
+5. **Interventions are not mechanisms.** Dexamethasone challenge, reappraisal instruction, outcome devaluation, or optogenetic stimulation can test a process without being that process.
+6. **Computational variables are not neural signals.** Reward prediction error and dopamine activity, for example, remain distinct records connected only by scoped claims.
+7. **Uncertainty is explicit.** Confidence is ordinal and justified in text; PMM avoids pseudo-precise truth scores.
+8. **Generated views are disposable.** JSON, JSON-LD, Turtle, and website data can be rebuilt deterministically from the canonical registry and YAML.
+
+## Possible uses
+
+- curate a mechanism-centered literature review with traceable claim-to-source links;
+- compare how different studies operationalize a nominally similar construct;
+- build retrieval-augmented generation systems that distinguish evidence from hypotheses;
+- export psychology knowledge to JSON, RDF, JSON-LD, or later OWL-compatible tooling;
+- teach causal and ontology modeling using concrete psychology examples;
+- identify where a proposed mechanism has only correlational, indirect, or single-source support;
+- prototype research interfaces without embedding scientific claims directly in frontend code.
+
+## Non-goals
+
+- diagnosing a person or recommending treatment;
+- ranking people, disorders, therapies, or research groups;
+- replacing systematic reviews, meta-analyses, clinical guidelines, or expert judgment;
+- presenting one grand unified theory of mind;
+- converting every statistical association into a graph edge;
+- claiming complete or unbiased coverage of psychological science.
 
 ## Architecture
 
@@ -58,6 +153,29 @@ This is an inferential firewall: an arrow cannot silently become a causal statem
 
 JSON-LD export preserves that firewall by emitting Claims, Evidence, and Sources as separate graph nodes. SHACL mirrors the main causal and statistical constraints; uncertain Claims are not exported as OWL axioms.
 
+### Record model
+
+```text
+Ontology object ── structural Relation ── Ontology object
+       │                                      │
+       └──────────── reified Claim ───────────┘
+                              │
+                    source-specific Evidence
+                              │
+                           Source
+```
+
+An edge such as `anxiety → avoidance` is therefore insufficient. PMM requires a typed claim with population, context, temporal scope, estimate or causal estimand, assumptions, limitations, evidence IDs, provenance, and confidence rationale as appropriate for the inferential mode.
+
+### Machine-readable formats
+
+- YAML is the canonical curation format.
+- JSON is the deterministic application/build format.
+- JSON-LD preserves Claims, Evidence, Sources, and identifiers as graph nodes.
+- Turtle provides an RDF projection.
+- SHACL shapes mirror important graph constraints.
+- OWL export is intentionally conservative because uncertain empirical claims should not become unconditional logical axioms.
+
 ## Run locally
 
 ```bash
@@ -79,6 +197,28 @@ visual proximity into a scientific assertion. GitHub Pages deploys the `site/`
 directory after changes reach `main`.
 
 The working interface and canonical scientific content are English-only while the model is changing quickly. Localization will be added later as a separate UI layer with an explicit language switch; translated labels must never replace canonical English identifiers or source extractions.
+
+## Add a new evidence pack
+
+Create a schema-valid starter:
+
+```bash
+.venv/bin/python scripts/new_evidence_pack.py \
+  cognitive-flexibility \
+  "cognitive flexibility" \
+  data/evidence-pack-cognitive-flexibility-v0.3.yaml
+```
+
+Then:
+
+1. Add ontology objects with narrow definitions and boundary notes.
+2. Add structural relations only where no statistical or causal assertion is implied.
+3. Extract source-specific Claims, Evidence, and Sources.
+4. Register the YAML and generated JSON path in `data/families.yaml`.
+5. Run `make validate` and targeted tests.
+6. Run `make export` to rebuild graph and website projections.
+
+The registry test fails if a new v0.3 dataset is forgotten, duplicated, or omitted from the automated pipeline.
 
 ## ID convention
 
@@ -157,3 +297,38 @@ dexamethasone challenge is represented as a probe, not as the mechanism itself.
 3. Verify stable external ontology identifiers against pinned RDoC, Cognitive Atlas, MF, NBO, and HiTOP releases before promoting mappings.
 4. Decide whether stable nested-resource IRIs are needed before publishing a public RDF endpoint.
 5. Request domain-expert review of definitions and causal assumptions before expanding the interface beyond the current exploratory map.
+
+## Contributing
+
+Contributions are useful when they improve scientific traceability rather than merely add nodes.
+
+Good contributions include:
+
+- correcting an ontological category mistake;
+- adding a primary-study replication, preregistered null result, or boundary condition;
+- separating experiments currently summarized too broadly;
+- improving causal assumptions or inferential classification;
+- verifying stable external ontology identifiers;
+- adding invalid fixtures that catch scientifically misleading modeling;
+- improving accessibility, serialization, or deterministic validation.
+
+Before proposing a large expansion, open an issue describing the mechanism family, candidate primary sources, intended claims, key alternative explanations, and which ontology distinctions the family tests. Every causal claim should identify the intervention or identification strategy, temporal order, assumptions, scope, and direct evidence.
+
+## Project status
+
+- **Schema:** active pilot, v0.3.4
+- **Canonical language:** English
+- **Public interface:** exploratory read-only map
+- **Scientific review:** machine-validated; independent domain-expert review still required
+- **Coverage:** selective stress tests, not comprehensive psychology coverage
+- **Stability:** IDs are intended to remain stable; schema and vocabularies may still change before v1.0
+
+## Search terms
+
+Psychological ontology, psychology knowledge graph, mental mechanisms, cognitive ontology, computational psychiatry, evidence graph, causal knowledge graph, behavioral science ontology, RDoC, Cognitive Atlas, HiTOP, negative reinforcement, fear extinction, habit learning, cognitive reappraisal, working memory, interoception, social buffering, reward prediction error, dopamine learning, and HPA-axis feedback.
+
+## License and reuse
+
+Dataset metadata currently declares `CC-BY-4.0`. Source articles retain their original copyrights; PMM stores bibliographic metadata and concise structured extractions rather than reproducing papers. Before a formal release, the repository should add explicit root-level license files covering data, documentation, and software separately.
+
+If you reuse PMM before a tagged release, cite the repository URL, commit hash, PMM schema version, and access date so the exact evolving dataset can be reconstructed.
