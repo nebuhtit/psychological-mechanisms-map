@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -38,6 +39,13 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text()
         self.assertIn('const DATA_URL = "data/pmm-data.json";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
+
+    def test_interface_source_is_english_only(self) -> None:
+        interface = "\n".join(
+            (ROOT / "site" / filename).read_text(encoding="utf-8")
+            for filename in ("index.html", "app.js")
+        )
+        self.assertIsNone(re.search(r"[А-Яа-яЁё]", interface))
 
 
 if __name__ == "__main__":

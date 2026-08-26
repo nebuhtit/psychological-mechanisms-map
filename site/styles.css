@@ -247,6 +247,7 @@ h1 em { color: var(--forest); font-weight: 500; }
 .node.claim.status-mixed .node-shape, .node.claim.status-unsupported .node-shape { fill: var(--amber); stroke: var(--amber); }
 .node.claim.status-proposed .node-shape { fill: var(--blue); stroke: var(--blue); }
 .node.claim text { fill: #fffaf0; }
+.node.claim > text:not(.node-type) { font-size: 9px; }
 .node.claim .node-type { fill: rgba(255, 250, 240, 0.72); }
 
 .inspector {

@@ -1,27 +1,27 @@
 const DATA_URL = "data/pmm-data.json";
 
 const TYPE_LABELS = {
-  Construct: "Конструкт",
-  Mechanism: "Механизм",
-  State: "Состояние",
-  Behavior: "Поведение",
-  Intervention: "Вмешательство",
-  Measurement: "Измерение",
-  Context: "Контекст",
-  Event: "Событие",
-  Outcome: "Исход",
-  Contingency: "Контингентность",
-  Observation: "Наблюдение",
-  claim: "Утверждение",
+  Construct: "Construct",
+  Mechanism: "Mechanism",
+  State: "State",
+  Behavior: "Behavior",
+  Intervention: "Intervention",
+  Measurement: "Measurement",
+  Context: "Context",
+  Event: "Event",
+  Outcome: "Outcome",
+  Contingency: "Contingency",
+  Observation: "Observation",
+  claim: "Claim",
 };
 
 const STATUS_LABELS = {
-  supported: "поддержано",
-  mixed: "смешанные данные",
-  unsupported: "не поддержано",
-  refuted: "опровергнуто",
-  proposed: "предложено",
-  not_assessed: "не оценено",
+  supported: "supported",
+  mixed: "mixed evidence",
+  unsupported: "unsupported",
+  refuted: "refuted",
+  proposed: "proposed",
+  not_assessed: "not assessed",
 };
 
 const state = { data: null, family: null, filter: "all", selectedId: null };
@@ -112,12 +112,12 @@ function layoutNodes(nodes, width, height) {
     Contingency: 0.30,
     Construct: 0.34,
     Mechanism: 0.38,
-    claim: 0.59,
-    State: 0.80,
-    Behavior: 0.80,
-    Outcome: 0.80,
-    Measurement: 0.92,
-    Observation: 0.92,
+    claim: 0.60,
+    State: 0.84,
+    Behavior: 0.84,
+    Outcome: 0.84,
+    Measurement: 0.96,
+    Observation: 0.96,
   };
   const groups = new Map();
   for (const node of nodes) {
@@ -149,7 +149,13 @@ function svgElement(name, attributes = {}) {
 function renderMap() {
   const { nodes, edges } = graphModel();
   const width = Math.max(svg.clientWidth, 620);
-  const height = svg.clientHeight || 610;
+  const countsByType = new Map();
+  for (const node of nodes) {
+    const key = node.type || "claim";
+    countsByType.set(key, (countsByType.get(key) || 0) + 1);
+  }
+  const largestColumn = Math.max(...countsByType.values(), 1);
+  const height = Math.max(svg.clientHeight || 610, 150 + (largestColumn - 1) * 92);
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.replaceChildren();
 
@@ -190,8 +196,8 @@ function renderMap() {
       "data-id": node.id,
     });
     const isClaim = node.kind === "claim";
-    group.append(svgElement(isClaim ? "polygon" : "rect", isClaim
-      ? { points: "0,-31 74,0 0,31 -74,0", class: "node-shape" }
+    group.append(svgElement("rect", isClaim
+      ? { x: "-86", y: "-38", width: "172", height: "76", rx: "12", class: "node-shape" }
       : { x: "-72", y: "-31", width: "144", height: "62", rx: node.type === "Mechanism" ? "31" : "4", class: "node-shape" }));
 
     const typeText = svgElement("text", { x: "0", y: "-10", "text-anchor": "middle", class: "node-type" });
@@ -213,7 +219,7 @@ function renderMap() {
     nodesGroup.append(group);
   }
   svg.append(nodesGroup);
-  document.getElementById("visible-count").textContent = `${nodes.length} узлов · ${edges.length} связей`;
+  document.getElementById("visible-count").textContent = `${nodes.length} nodes · ${edges.length} edges`;
   if (state.selectedId) emphasizeSelection(state.selectedId);
 }
 
@@ -266,15 +272,15 @@ function renderInspector(record) {
     <h2>${escapeHtml(record.kind === "claim" ? wrapLabel(record.statement, 48).join(" ") : record.label)}</h2>
     <div class="status-line">
       ${status ? `<span class="status-chip">${escapeHtml(STATUS_LABELS[status] || status)}</span>` : ""}
-      ${confidence ? `<span class="status-chip">уверенность: ${escapeHtml(confidence)}</span>` : ""}
+      ${confidence ? `<span class="status-chip">confidence: ${escapeHtml(confidence)}</span>` : ""}
       ${record.claim_type ? `<span class="status-chip">${escapeHtml(record.claim_type)}</span>` : ""}
     </div>
     <p>${escapeHtml(definition)}</p>
-    ${scope ? `<section class="detail-section"><h3>Область применимости</h3><p>${escapeHtml(scope)}</p></section>` : ""}
-    ${record.confidence?.rationale ? `<section class="detail-section"><h3>Почему такой статус</h3><p>${escapeHtml(record.confidence.rationale)}</p></section>` : ""}
-    ${evidence.length ? `<section class="detail-section"><h3>Доказательства</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(item.support_direction)}</strong> · ${escapeHtml(item.summary)}</li>`).join("")}</ul></section>` : ""}
-    ${listSection("Ограничения", record.limitations || record.boundary_notes || record.scope?.boundary_conditions)}
-    ${sources.length ? `<section class="detail-section"><h3>Источники</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.title)}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
+    ${scope ? `<section class="detail-section"><h3>Scope</h3><p>${escapeHtml(scope)}</p></section>` : ""}
+    ${record.confidence?.rationale ? `<section class="detail-section"><h3>Confidence rationale</h3><p>${escapeHtml(record.confidence.rationale)}</p></section>` : ""}
+    ${evidence.length ? `<section class="detail-section"><h3>Evidence</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(item.support_direction)}</strong> · ${escapeHtml(item.summary)}</li>`).join("")}</ul></section>` : ""}
+    ${listSection("Limitations", record.limitations || record.boundary_notes || record.scope?.boundary_conditions)}
+    ${sources.length ? `<section class="detail-section"><h3>Sources</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.title)}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
   `;
 }
 
@@ -309,13 +315,13 @@ function renderFamilies() {
     <button class="family-button ${family.id === state.family.id ? "is-active" : ""}" type="button" role="tab" aria-selected="${family.id === state.family.id}" data-family="${family.id}">
       <span class="family-number">0${index + 1}</span>
       <strong>${escapeHtml(family.title)}</strong>
-      <span>${family.objects.length} объектов · ${family.claims.length} утверждения</span>
+      <span>${family.objects.length} objects · ${family.claims.length} claims</span>
     </button>
   `).join("");
   strip.querySelectorAll("button").forEach(button => button.addEventListener("click", () => {
     state.family = state.data.families.find(item => item.id === button.dataset.family);
     state.selectedId = null;
-    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">0${state.data.families.indexOf(state.family) + 1}</span><h2>${escapeHtml(state.family.title)}</h2><p>Выберите объект или ромб научного утверждения на карте.</p></div>`;
+    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">0${state.data.families.indexOf(state.family) + 1}</span><h2>${escapeHtml(state.family.title)}</h2><p>Select an object or scientific Claim card on the map.</p></div>`;
     renderFamilies();
     renderFamilyDescription();
     renderMap();
@@ -345,7 +351,7 @@ async function init() {
     }));
     new ResizeObserver(() => renderMap()).observe(svg);
   } catch (error) {
-    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">!</span><h2>Данные не загрузились</h2><p>Откройте сайт через локальный сервер или GitHub Pages. ${escapeHtml(error.message)}</p></div>`;
+    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">!</span><h2>Data failed to load</h2><p>Open the site through a local server or GitHub Pages. ${escapeHtml(error.message)}</p></div>`;
   }
 }
 

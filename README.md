@@ -70,6 +70,8 @@ Claims, Evidence, confidence, limitations, and source links without converting
 visual proximity into a scientific assertion. GitHub Pages deploys the `site/`
 directory after changes reach `main`.
 
+The working interface and canonical scientific content are English-only while the model is changing quickly. Localization will be added later as a separate UI layer with an explicit language switch; translated labels must never replace canonical English identifiers or source extractions.
+
 ## ID convention
 
 ```text
