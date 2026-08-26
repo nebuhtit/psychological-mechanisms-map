@@ -69,6 +69,13 @@ class SiteBundleTests(unittest.TestCase):
         for phrase in ("How to read this map", "Claim colours", "Lines and interaction"):
             self.assertIn(phrase, page)
 
+    def test_map_background_and_escape_clear_selection(self) -> None:
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("function clearSelection()", javascript)
+        self.assertIn('if (!event.target.closest(".node")) clearSelection();', javascript)
+        self.assertIn('if (event.key === "Escape") clearSelection();', javascript)
+        self.assertIn('element.classList.remove("is-selected", "is-dimmed")', javascript)
+
 
 if __name__ == "__main__":
     unittest.main()

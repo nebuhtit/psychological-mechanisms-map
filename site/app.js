@@ -50,6 +50,7 @@ const UI_RU = {
   "Select an object or scientific Claim card on the map.": "Выберите на карте объект или карточку научного утверждения.",
   "Data failed to load": "Не удалось загрузить данные",
   "Open the site through a local server or GitHub Pages.": "Откройте сайт через локальный сервер или GitHub Pages.",
+  "Select a node. Click empty space or press Escape to show the full map. Solid lines are structural relations; dashed arrows pass through scientific Claim cards.": "Выберите узел. Нажмите на пустое место или клавишу Escape, чтобы снова показать всю карту. Сплошные линии обозначают структурные связи; пунктирные стрелки проходят через карточки научных утверждений.",
   "Construct": "Конструкт",
   "Mechanism": "Механизм",
   "State": "Состояние",
@@ -412,6 +413,19 @@ function selectNode(id) {
   if (window.innerWidth < 900) inspector.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function renderEmptyInspector() {
+  inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">0${state.data.families.indexOf(state.family) + 1}</span><h2>${escapeHtml(t(state.family.title))}</h2><p>${t("Select an object or scientific Claim card on the map.")}</p></div>`;
+}
+
+function clearSelection() {
+  if (!state.selectedId) return;
+  state.selectedId = null;
+  svg.querySelectorAll(".is-selected, .is-dimmed").forEach(element => {
+    element.classList.remove("is-selected", "is-dimmed");
+  });
+  renderEmptyInspector();
+}
+
 function renderFamilies() {
   const strip = document.getElementById("family-strip");
   strip.innerHTML = state.data.families.map((family, index) => `
@@ -424,7 +438,7 @@ function renderFamilies() {
   strip.querySelectorAll("button").forEach(button => button.addEventListener("click", () => {
     state.family = state.data.families.find(item => item.id === button.dataset.family);
     state.selectedId = null;
-    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">0${state.data.families.indexOf(state.family) + 1}</span><h2>${escapeHtml(t(state.family.title))}</h2><p>${t("Select an object or scientific Claim card on the map.")}</p></div>`;
+    renderEmptyInspector();
     renderFamilies();
     renderFamilyDescription();
     renderMap();
@@ -459,6 +473,12 @@ async function init() {
     renderFamilyDescription();
     renderMap();
     document.getElementById("language-toggle").addEventListener("click", () => setLanguage(state.lang === "ru" ? "en" : "ru"));
+    svg.addEventListener("click", event => {
+      if (!event.target.closest(".node")) clearSelection();
+    });
+    svg.addEventListener("keydown", event => {
+      if (event.key === "Escape") clearSelection();
+    });
     setLanguage(state.lang);
 
     document.querySelectorAll(".filter-button").forEach(button => button.addEventListener("click", () => {
