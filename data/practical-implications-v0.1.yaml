@@ -447,3 +447,62 @@ applications:
     claim_ids: [pmm:claim:contrast-sensitivity-is-reciprocal-threshold, pmm:claim:grating-properties-change-detection-threshold, pmm:claim:divisive-normalization-may-shape-visual-gain]
     source_ids: [pmm:source:campbell-robson-1968-gratings, pmm:source:carandini-heeger-2012-normalization]
     provenance: *provenance
+
+  - id: pmm:application:use-big-five-as-profile-not-type
+    family_id: big-five
+    title: {en: "Use the Big Five as a profile, not a label", ru: "Используйте Большую пятёрку как профиль, а не ярлык"}
+    practical_question:
+      en: How can a Big Five result be used without turning it into a diagnosis or fixed personality type?
+      ru: Как использовать результат Большой пятёрки, не превращая его в диагноз или неизменный тип личности?
+    action:
+      en: Interpret all five domain scores and relevant facets as approximate continua, verify the instrument and language version, and connect the profile to specific modifiable behaviors rather than treating the score itself as a cause.
+      ru: Рассматривайте все пять шкал и важные грани как приблизительные непрерывные показатели, проверяйте методику и языковую версию и связывайте профиль с конкретными изменяемыми действиями, а не считайте балл причиной.
+    expected_change:
+      en: More precise self-reflection, assessment, and research questions with fewer categorical labels and causal overclaims.
+      ru: Более точная саморефлексия, оценка и постановка исследовательских вопросов с меньшим количеством типологических ярлыков и ложных причинных выводов.
+    evidence_basis:
+      en: The BFI-2 validation literature supports a five-domain, 15-facet measurement hierarchy, and meta-analysis links measured Conscientiousness with academic performance only associatively.
+      ru: Исследования BFI-2 поддерживают измерительную иерархию из пяти доменов и 15 граней, а метаанализ связывает измеренную добросовестность с успеваемостью только статистически.
+    applicability:
+      en: Low-stakes self-reflection, research, education, coaching, and qualified personality assessment.
+      ru: Низкорисковая саморефлексия, исследования, образование, коучинг и квалифицированная оценка личности.
+    not_established:
+      en: The profile is not a diagnosis, does not identify a personality mechanism, does not provide universal norms, and should not determine high-stakes educational or employment decisions by itself.
+      ru: Профиль не является диагнозом, не выявляет механизм личности, не имеет универсальных норм и не должен самостоятельно определять важные образовательные или кадровые решения.
+    safety_note:
+      en: Do not use an online personality score as a substitute for clinical assessment or as the sole basis for selecting, excluding, or ranking people.
+      ru: Не используйте результат онлайн-теста вместо клинической оценки или как единственное основание для отбора, исключения или ранжирования людей.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [individual, educator, clinician, researcher]
+    claim_ids: [pmm:claim:big-five-is-dimensional-taxonomy, pmm:claim:bfi2-supports-five-domain-fifteen-facet-profile, pmm:claim:conscientiousness-associated-with-academic-performance]
+    source_ids: [pmm:source:berkeley-bfi2-2026, pmm:source:soto-john-2017-bfi2, pmm:source:poropat-2009-academic-performance]
+    provenance: *provenance
+
+  - id: pmm:application:target-study-behaviors-not-trait-score
+    family_id: big-five
+    title: {en: Target study behavior rather than the trait score, ru: "Воздействуйте на учебные действия, а не на балл черты"}
+    practical_question:
+      en: What is actionable if lower measured Conscientiousness accompanies study difficulties?
+      ru: На что можно воздействовать, если более низкая измеренная добросовестность сопровождается трудностями в учёбе?
+    action:
+      en: Examine concrete routines such as planning, starting work, distraction control, task completion, and feedback use, then test one change at a time instead of trying to raise a personality score directly.
+      ru: "Проверьте конкретные действия: планирование, начало работы, контроль отвлечений, завершение заданий и использование обратной связи, затем изменяйте по одному элементу вместо попытки напрямую повысить балл личности."
+    expected_change:
+      en: A testable change in study behavior or performance, without assuming that the broad trait itself was causally modified.
+      ru: Проверяемое изменение учебного поведения или результата без предположения, что широкая черта была причинно изменена.
+    evidence_basis:
+      en: Conscientiousness and academic performance are associated across studies, but the mapped evidence does not test trait-score change as the cause of better performance.
+      ru: Добросовестность и успеваемость связаны во многих исследованиях, но представленные данные не проверяют изменение балла черты как причину улучшения результата.
+    applicability:
+      en: Educational planning and low-stakes self-experimentation with observable study routines.
+      ru: Планирование учёбы и низкорисковые самостоятельные проверки наблюдаемых учебных привычек.
+    not_established:
+      en: The association does not identify which routine matters for a particular person or prove that personality testing improves academic outcomes.
+      ru: Связь не показывает, какая привычка важна для конкретного человека, и не доказывает, что тестирование личности улучшает успеваемость.
+    actionability: interpretation_only
+    confidence: low
+    audience: [individual, educator]
+    claim_ids: [pmm:claim:conscientiousness-associated-with-academic-performance]
+    source_ids: [pmm:source:poropat-2009-academic-performance]
+    provenance: *provenance

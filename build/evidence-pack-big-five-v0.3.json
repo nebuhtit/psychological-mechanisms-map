@@ -1,0 +1,706 @@
+{
+  "claims": [
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The definition follows the integrative taxonomy literature and BFI-2 authors' description, while boundaries and measurement invariance remain empirical questions."
+      },
+      "defined_object_id": "pmm:construct:big-five-trait-taxonomy",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:big-five-is-dimensional-taxonomy",
+      "limitations": [
+        "The definition does not establish one correct instrument",
+        "universal norms",
+        "causal mechanisms",
+        "or exhaustive coverage of personality."
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:bfi2-self-report-assessment"
+        ],
+        "population": "Humans described with Big Five trait language and measures.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Relatively enduring patterns summarized across observations or self-reports."
+      },
+      "source_ids": [
+        "pmm:source:john-naumann-soto-2008-big-five",
+        "pmm:source:berkeley-bfi2-2026"
+      ],
+      "statement": "The Big Five is a hierarchical dimensional taxonomy of broad personality-trait covariation, not a classification into five person types or a causal theory of personality."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Multiple development and validation studies support the intended hierarchy, but results are instrument-, sample-, language-, and model-dependent."
+      },
+      "confounding_note": "Item wording, response styles, shared method, sample composition, model selection, and criterion measurement can influence the observed structure and validity.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "positive",
+        "metric": "support for five-domain and 15-facet hierarchical measurement structure",
+        "notes": "The studies developed and assessed the BFI-2 hierarchy, reliability, self-peer agreement, and predictive validity.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_ids": [
+        "pmm:evidence:soto-john-2017-bfi2-validation"
+      ],
+      "exposure_id": "pmm:behavior:bfi2-item-rating",
+      "id": "pmm:claim:bfi2-supports-five-domain-fifteen-facet-profile",
+      "limitations": [
+        "Psychometric structure is evidence about measurement organization",
+        "not proof of a biological or causal personality architecture."
+      ],
+      "outcome_id": "pmm:measurement:bfi2-hierarchical-factor-profile",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The reported English-language BFI-2 item pool",
+          "samples",
+          "scoring",
+          "criteria",
+          "and hierarchical model comparisons."
+        ],
+        "context_ids": [
+          "pmm:context:bfi2-self-report-assessment"
+        ],
+        "population": "Participants in the BFI-2 development and validation studies reported by Soto and John.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Questionnaire administration through psychometric model estimation."
+      },
+      "statement": "In the Soto and John BFI-2 development studies, item responses supported a hierarchical measurement profile with 15 facets nested within five broad domains and showed useful reliability and validity patterns."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "A large meta-analysis synthesized samples totaling more than 70,000 for some comparisons, but observational association and heterogeneous measures limit causal and individual prediction."
+      },
+      "confounding_note": "Prior achievement, intelligence, socioeconomic conditions, motivation, study behavior, rater effects, and measurement differences can contribute to observed associations.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "positive",
+        "metric": "meta-analytic association between measured Conscientiousness and academic performance",
+        "notes": "Conscientiousness showed the strongest and most consistent positive academic-performance association among the broad traits in the reported synthesis.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_ids": [
+        "pmm:evidence:poropat-2009-academic-meta-analysis"
+      ],
+      "exposure_id": "pmm:measurement:bfi2-domain-facet-scores",
+      "id": "pmm:claim:conscientiousness-associated-with-academic-performance",
+      "limitations": [
+        "The association does not show that changing a trait score causes better grades or justify high-stakes decisions about an individual."
+      ],
+      "outcome_id": "pmm:outcome:academic-performance",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Included Five-Factor Model personality measures and protocol-defined academic performance criteria."
+        ],
+        "context_ids": [
+          "pmm:context:bfi2-self-report-assessment"
+        ],
+        "population": "Students represented in primary, secondary, and tertiary educational studies included by Poropat.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Personality assessment and academic outcomes in the included studies."
+      },
+      "statement": "Across the studies synthesized by Poropat, higher measured Conscientiousness was positively associated with academic performance, while effect size and relevance varied by educational level, measure, and criterion."
+    }
+  ],
+  "dataset_id": "pmm:dataset:big-five-measurement-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:bfi2-supports-five-domain-fifteen-facet-profile"
+      ],
+      "design": "Multi-study questionnaire development and validation using item selection, hierarchical factor modeling, reliability, self-peer agreement, and criterion relations.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "hierarchical measurement performance across development and validation studies",
+        "notes": "The reported studies supported five domains and 15 distinguishable facets with enhanced bandwidth and fidelity.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "cross_sectional_observational",
+      "extraction_locator": "Article abstract and study overview describing development and assessment of the hierarchical five-domain, 15-facet BFI-2 model.",
+      "id": "pmm:evidence:soto-john-2017-bfi2-validation",
+      "inference_support": "association",
+      "limitations": [
+        "The instrument was developed within particular samples and languages",
+        "and shared self-report method can inflate some relations."
+      ],
+      "population": "Human participants in the BFI-2 development and validation studies; sample totals are not re-extracted in this pilot.",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:soto-john-2017-bfi2",
+      "species": [
+        "human"
+      ],
+      "summary": "Development and validation studies supported the intended BFI-2 domain-facet hierarchy and criterion-related measurement properties.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:conscientiousness-associated-with-academic-performance"
+      ],
+      "design": "Meta-analysis of personality-academic performance associations across educational levels and study designs.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "independent_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "association of broad personality factors with academic performance",
+        "notes": "Conscientiousness showed a positive association with academic performance across the synthesized literature.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "meta_analysis",
+      "extraction_locator": "PubMed abstract and meta-analytic report of Five-Factor Model personality and academic-performance relationships.",
+      "id": "pmm:evidence:poropat-2009-academic-meta-analysis",
+      "inference_support": "association",
+      "limitations": [
+        "Observational measures",
+        "publication selection",
+        "construct heterogeneity",
+        "and educational context limit causal and individual-level interpretation."
+      ],
+      "population": "Students represented in the included primary, secondary, and tertiary education studies; cumulative sample sizes reached more than 70,000 for some analyses.",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:poropat-2009-academic-performance",
+      "species": [
+        "human"
+      ],
+      "summary": "A large meta-analysis found a positive Conscientiousness-academic performance association across heterogeneous educational studies.",
+      "support_direction": "supports"
+    }
+  ],
+  "metadata": {
+    "description": "Separates a descriptive trait taxonomy, five broad trait constructs, questionnaire context, item responses, scores, factor-model parameters, academic performance, and noncausal associations.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T23:00:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T23:00:00+03:00",
+      "record_version": "0.1.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Evidence pack for the Big Five taxonomy and BFI-2 measurement"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "boundary_notes": [
+        "The taxonomy describes dimensions, not five personality types.",
+        "A trait score summarizes responses under a measurement model; it is not a directly observed entity or a causal mechanism.",
+        "The taxonomy does not imply that all personality variation, development, culture, or psychopathology is exhausted by five domains."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Hierarchical descriptive system organizing covariation among relatively enduring personality tendencies into five broad domains and narrower facets.",
+      "id": "pmm:construct:big-five-trait-taxonomy",
+      "label": "Big Five trait taxonomy",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "A domain score is dimensional and does not assign a person to an extravert or introvert type."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Broad trait domain organizing tendencies related to sociability, assertiveness, energy, and engagement with social or rewarding environments.",
+      "id": "pmm:construct:extraversion-trait",
+      "label": "Extraversion",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "Agreeableness is not equivalent to moral worth",
+        "compliance",
+        "or absence of conflict."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Broad trait domain organizing tendencies related to compassion, respectfulness, trust, and cooperative interpersonal orientation.",
+      "id": "pmm:construct:agreeableness-trait",
+      "label": "Agreeableness",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "A conscientiousness score does not identify which habits",
+        "skills",
+        "incentives",
+        "or environments generated the observed responses."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Broad trait domain organizing tendencies related to organization, productiveness, responsibility, and regulation of goal-directed activity.",
+      "id": "pmm:construct:conscientiousness-trait",
+      "label": "Conscientiousness",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "aliases": [
+        "Neuroticism"
+      ],
+      "boundary_notes": [
+        "A trait dimension is not a current emotional state",
+        "symptom diagnosis",
+        "or disorder."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Broad trait domain organizing relatively stable individual differences in anxiety-proneness, depressive affect, and emotional volatility.",
+      "id": "pmm:construct:negative-emotionality-trait",
+      "label": "Negative Emotionality",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "aliases": [
+        "Openness to Experience"
+      ],
+      "boundary_notes": [
+        "Open-Mindedness is not interchangeable with intelligence",
+        "political tolerance",
+        "or creativity performance."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Broad trait domain organizing tendencies related to intellectual curiosity, aesthetic sensitivity, and creative imagination.",
+      "id": "pmm:construct:open-mindedness-trait",
+      "label": "Open-Mindedness",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "The instrument is copyrighted and freely available for noncommercial research under conditions stated by its authors.",
+        "The Berkeley Personality Lab states that there is no official BFI-2 manual with published norms.",
+        "Translation, age, response style, missingness, and administration mode can affect score interpretation."
+      ],
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Standardized questionnaire context in which a respondent rates 60 short personality-descriptive phrases on an agreement scale for scoring five domains and 15 facets.",
+      "dimensions": {
+        "domains": "Extraversion, Agreeableness, Conscientiousness, Negative Emotionality, Open-Mindedness",
+        "facets": "three per domain",
+        "item_count": 60,
+        "respondent": "self-report",
+        "response_scale": "five-point agreement scale"
+      },
+      "id": "pmm:context:bfi2-self-report-assessment",
+      "label": "BFI-2 self-report assessment",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Standard BFI-2 administration and scoring in populations for which the instrument and language version are appropriate.",
+      "type": "Context"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "verbal_behavior",
+      "curation_status": "accepted",
+      "definition": "Observable selection of an agreement response to one personality-descriptive questionnaire phrase.",
+      "function_note": "A rating can reflect trait-relevant self-perception, item interpretation, reference group, response style, impression management, or transient context.",
+      "id": "pmm:behavior:bfi2-item-rating",
+      "label": "BFI-2 item rating",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Selection of one point on the protocol-defined agreement scale.",
+      "type": "Behavior"
+    },
+    {
+      "boundary_notes": [
+        "Scores are estimates conditional on items, scoring, language, population, and response quality.",
+        "Scores should not be converted into categorical personality types without a separately validated rule."
+      ],
+      "curation_status": "accepted",
+      "definition": "Scored composites of item ratings intended to estimate five broad personality domains and 15 narrower facets.",
+      "id": "pmm:measurement:bfi2-domain-facet-scores",
+      "label": "BFI-2 domain and facet scores",
+      "measurement_kind": "psychometric_scale",
+      "method": "Apply the instrument authors' scoring rules to a standard, appropriately translated BFI-2 administration and document missing-data handling.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:extraversion-trait",
+        "pmm:construct:agreeableness-trait",
+        "pmm:construct:conscientiousness-trait",
+        "pmm:construct:negative-emotionality-trait",
+        "pmm:construct:open-mindedness-trait"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "self_report"
+    },
+    {
+      "boundary_notes": [
+        "A factor loading is a statistical parameter, not a psychological mechanism.",
+        "Model fit does not prove that five domains are biologically fundamental or invariant in every population."
+      ],
+      "curation_status": "provisional",
+      "definition": "Model-based representation of item covariation as 15 facet dimensions nested within five broad personality domains.",
+      "id": "pmm:measurement:bfi2-hierarchical-factor-profile",
+      "label": "BFI-2 hierarchical factor profile",
+      "measurement_kind": "computational_parameter",
+      "method": "Fit and compare declared hierarchical psychometric models to item-level responses, reporting fit, loadings, reliability, and validation data.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "model_parameter",
+      "target_ids": [
+        "pmm:construct:big-five-trait-taxonomy",
+        "pmm:measurement:bfi2-domain-facet-scores"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "person"
+    },
+    {
+      "boundary_notes": [
+        "Different educational levels",
+        "subjects",
+        "grading systems",
+        "and raters are not interchangeable outcomes."
+      ],
+      "curation_status": "accepted",
+      "definition": "Protocol-defined educational performance such as grades, grade-point average, examination scores, or teacher-rated achievement.",
+      "id": "pmm:outcome:academic-performance",
+      "label": "Academic performance",
+      "ontological_level": "type",
+      "outcome_kind": "performance",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "not_applicable"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:big-five-measured-by-bfi2-scores",
+      "object_id": "pmm:measurement:bfi2-hierarchical-factor-profile",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:big-five-trait-taxonomy"
+    },
+    {
+      "id": "pmm:relation:conscientiousness-measured-by-bfi2",
+      "object_id": "pmm:measurement:bfi2-domain-facet-scores",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:conscientiousness-trait"
+    },
+    {
+      "id": "pmm:relation:bfi2-rating-occurs-in-assessment",
+      "object_id": "pmm:context:bfi2-self-report-assessment",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:bfi2-item-rating"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Integrative handbook chapter recommended by the Berkeley Personality Lab for the history and conceptual and measurement issues of the Big Five.",
+      "authors": [
+        "Oliver P. John",
+        "Laura P. Naumann",
+        "Christopher J. Soto"
+      ],
+      "id": "pmm:source:john-naumann-soto-2008-big-five",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "book",
+      "title": "Paradigm shift to the integrative Big Five trait taxonomy — history, measurement, and conceptual issues",
+      "url": "https://www.ocf.berkeley.edu/~johnlab/bfi.html",
+      "year": 2008
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Instrument-author page documenting BFI-2 scope, 60-item structure, five domains, 15 facets, use conditions, translations, and absence of an official norms manual.",
+      "id": "pmm:source:berkeley-bfi2-2026",
+      "organization": "Berkeley Personality Lab",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "other",
+      "title": "Big Five Inventory — Berkeley Personality Lab",
+      "url": "https://www.ocf.berkeley.edu/~johnlab/bfi.html",
+      "version": "accessed 2026-08-26"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary multi-study development and validation report for the BFI-2 hierarchy and scales.",
+      "authors": [
+        "Christopher J. Soto",
+        "Oliver P. John"
+      ],
+      "doi": "10.1037/pspp0000096",
+      "id": "pmm:source:soto-john-2017-bfi2",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "The next Big Five Inventory (BFI-2) — developing and assessing a hierarchical model with 15 facets",
+      "url": "https://escholarship.org/uc/item/16x6n05t",
+      "year": 2017
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Large meta-analysis of Five-Factor Model personality measures and academic performance across educational levels.",
+      "authors": [
+        "Arthur E. Poropat"
+      ],
+      "doi": "10.1037/a0014996",
+      "id": "pmm:source:poropat-2009-academic-performance",
+      "pmid": "19254083",
+      "provenance": {
+        "created_at": "2026-08-26T23:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T23:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "A meta-analysis of the five-factor model of personality and academic performance",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19254083/",
+      "year": 2009
+    }
+  ]
+}

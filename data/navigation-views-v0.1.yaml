@@ -3,7 +3,7 @@ status: pilot
 canonical_language: en
 provenance:
   created_at: '2026-08-26T13:00:00+03:00'
-  modified_at: '2026-08-26T21:00:00+03:00'
+  modified_at: '2026-08-26T23:00:00+03:00'
   created_by: [OpenAI Codex]
   review_status: source_checked_editorial
   source_snapshot_date: '2026-08-26'
@@ -177,6 +177,18 @@ sources:
     title: The influence of prime characteristics in semantic priming
     organization: Frontiers in Psychology
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12996092/
+  - id: source:berkeley-bfi2
+    title: Big Five Inventory — Berkeley Personality Lab
+    organization: Berkeley Personality Lab
+    url: https://www.ocf.berkeley.edu/~johnlab/bfi.html
+  - id: source:soto-john-bfi2-2017
+    title: The next Big Five Inventory (BFI-2)
+    organization: Journal of Personality and Social Psychology
+    url: https://escholarship.org/uc/item/16x6n05t
+  - id: source:poropat-academic-2009
+    title: A meta-analysis of the five-factor model of personality and academic performance
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/19254083/
 
 general_psychology:
   id: general-psychology
@@ -682,9 +694,20 @@ general_psychology:
       ontological_note:
         en: Big Five dimensions summarize covariation in traits. The taxonomy is not by itself a theory of mechanisms or a proof that a trait causes behavior.
         ru: Измерения Большой пятёрки обобщают совместную изменчивость черт. Сама классификация не является теорией механизмов и не доказывает, что черта вызывает поведение.
-      coverage: planned
-      source_ids: [source:big-five-review]
-      memberships: []
+      coverage: partial
+      source_ids: [source:big-five-review, source:berkeley-bfi2, source:soto-john-bfi2-2017, source:poropat-academic-2009]
+      memberships:
+        - {family_id: big-five, canonical_id: pmm:construct:big-five-trait-taxonomy, role: construct_example, expected_type: Construct}
+        - {family_id: big-five, canonical_id: pmm:construct:extraversion-trait, role: construct_example, expected_type: Construct}
+        - {family_id: big-five, canonical_id: pmm:construct:agreeableness-trait, role: construct_example, expected_type: Construct}
+        - {family_id: big-five, canonical_id: pmm:construct:conscientiousness-trait, role: construct_example, expected_type: Construct}
+        - {family_id: big-five, canonical_id: pmm:construct:negative-emotionality-trait, role: construct_example, expected_type: Construct}
+        - {family_id: big-five, canonical_id: pmm:construct:open-mindedness-trait, role: construct_example, expected_type: Construct}
+        - {family_id: big-five, canonical_id: pmm:context:bfi2-self-report-assessment, role: task_context_example, expected_type: Context}
+        - {family_id: big-five, canonical_id: pmm:behavior:bfi2-item-rating, role: behavior_example, expected_type: Behavior}
+        - {family_id: big-five, canonical_id: pmm:measurement:bfi2-domain-facet-scores, role: measurement_example, expected_type: Measurement}
+        - {family_id: big-five, canonical_id: pmm:measurement:bfi2-hierarchical-factor-profile, role: measurement_example, expected_type: Measurement}
+        - {family_id: big-five, canonical_id: pmm:outcome:academic-performance, role: outcome_example, expected_type: Outcome}
     - id: gp:abilities-intelligence
       parent_id: gp:personality-individual-differences
       kind: topic
@@ -787,9 +810,12 @@ scientific_systems:
       limitation:
         en: Descriptive trait structure does not itself identify causal psychological mechanisms.
         ru: Описательная структура черт сама по себе не выявляет причинные психологические механизмы.
-      coverage: planned
-      source_ids: [source:big-five-review]
-      mapped_memberships: []
+      coverage: partial
+      source_ids: [source:big-five-review, source:berkeley-bfi2, source:soto-john-bfi2-2017]
+      mapped_memberships:
+        - {family_id: big-five, canonical_id: pmm:construct:big-five-trait-taxonomy}
+        - {family_id: big-five, canonical_id: pmm:measurement:bfi2-domain-facet-scores}
+        - {family_id: big-five, canonical_id: pmm:measurement:bfi2-hierarchical-factor-profile}
     - id: system:temperament
       label: {en: Modern temperament models, ru: Современные модели темперамента}
       system_kind: developmental_individual_differences_framework

@@ -2,7 +2,7 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 19 mechanisms across 15 families.
+**Current inventory:** 19 mechanisms across 16 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|

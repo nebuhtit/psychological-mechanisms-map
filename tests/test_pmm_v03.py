@@ -820,5 +820,31 @@ class LanguageComprehensionEvidencePackTests(unittest.TestCase):
         self.assertEqual(review["causal_support"], "indirect")
 
 
+class BigFiveEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(ROOT / "data" / "evidence-pack-big-five-v0.3.yaml")
+
+    def test_big_five_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_taxonomy_items_scores_factors_and_outcome_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:big-five-trait-taxonomy"], "Construct")
+        self.assertEqual(records["pmm:context:bfi2-self-report-assessment"], "Context")
+        self.assertEqual(records["pmm:behavior:bfi2-item-rating"], "Behavior")
+        self.assertEqual(records["pmm:measurement:bfi2-domain-facet-scores"], "Measurement")
+        self.assertEqual(records["pmm:measurement:bfi2-hierarchical-factor-profile"], "Measurement")
+        self.assertEqual(records["pmm:outcome:academic-performance"], "Outcome")
+
+    def test_factor_model_and_trait_association_are_not_mechanisms_or_causes(self) -> None:
+        self.assertFalse(any(item["type"] == "Mechanism" for item in self.document["objects"]))
+        claim = next(item for item in self.document["claims"] if item["id"] == "pmm:claim:conscientiousness-associated-with-academic-performance")
+        self.assertEqual(claim["claim_type"], "association")
+        self.assertNotIn("causal_estimand", claim)
+        evidence = next(item for item in self.document["evidence"] if item["id"] == "pmm:evidence:poropat-2009-academic-meta-analysis")
+        self.assertEqual(evidence["causal_support"], "none")
+
+
 if __name__ == "__main__":
     unittest.main()

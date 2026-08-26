@@ -545,6 +545,7 @@ h1 em { color: var(--forest); font-weight: 500; }
 .practical-card dt { color: var(--ink-soft); font-size: 7px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .practical-card dd { margin: 0; color: var(--ink); font-size: 10px; line-height: 1.5; }
 .practical-card .practical-safety { padding: 8px; border: 1px solid var(--amber); background: #fff8e9; }
+.practical-fallback { border-style: dashed; background: rgba(244,236,217,.55); }
 .research-question-note { padding: 13px 14px; margin-top: 14px; border: 1px dashed var(--line-strong); background: rgba(255,255,255,.22); }
 .research-question-note p { margin: 0; color: var(--ink-soft); font-size: 11px; line-height: 1.55; }
 .evidence-summary { display: grid; grid-template-columns: repeat(2, minmax(0, auto)); gap: 10px 20px; padding: 14px 15px; margin-top: 10px; border-left: 4px solid var(--line-strong); background: rgba(255,255,255,.3); }

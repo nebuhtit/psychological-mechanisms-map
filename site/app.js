@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.13.0";
-const RU_URL = "data/i18n-ru.json?v=0.13.0";
+const DATA_URL = "data/pmm-data.json?v=0.14.0";
+const RU_URL = "data/i18n-ru.json?v=0.14.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -609,6 +609,63 @@ function renderPracticalImplications(applications, compact = false) {
   </section>`;
 }
 
+function renderClaimPractical(record) {
+  const applications = practicalFor(record);
+  if (applications.length) return renderPracticalImplications(applications);
+  const guidance = {
+    definition: [
+      ui("Use the definition to choose the right object and measurement, and to avoid mixing a construct with a task, score, state, or mechanism.", "Используйте определение для выбора правильного объекта и измерения и не смешивайте конструкт с заданием, баллом, состоянием или механизмом."),
+      ui("Clearer interpretation and fewer category errors.", "Более ясная интерпретация и меньше ошибок классификации."),
+      ui("A definition alone does not show that changing the object will improve an outcome.", "Одно определение не показывает, что изменение объекта улучшит результат."),
+    ],
+    association: [
+      ui("Use the relationship to form a question, select additional measurements, or identify a group-level pattern; do not choose an intervention from the direction of association alone.", "Используйте связь для постановки вопроса, выбора дополнительных измерений или выявления групповой закономерности; не выбирайте вмешательство только по направлению связи."),
+      ui("Better hypothesis generation and fewer false causal conclusions.", "Более точные гипотезы и меньше ложных причинных выводов."),
+      ui("It is not established that changing either associated element will change the other.", "Не доказано, что изменение одного связанного элемента изменит другой."),
+    ],
+    prediction: [
+      ui("Use the predictor only in populations and conditions where it was validated, and monitor errors on new data.", "Используйте предиктор только в тех группах и условиях, где он проверен, и контролируйте ошибки на новых данных."),
+      ui("More disciplined forecasting within the validated scope.", "Более дисциплинированное прогнозирование в проверенных границах."),
+      ui("Prediction does not identify a cause or justify changing the predictor as an intervention.", "Прогноз не выявляет причину и не оправдывает изменение предиктора как вмешательство."),
+    ],
+    causal_effect: [
+      ui("If the tested manipulation is practical and safe, use the claim to estimate only the stated consequence under similar conditions, then verify transfer in the new setting.", "Если проверенное воздействие практично и безопасно, ожидайте только указанное следствие в сходных условиях и отдельно проверяйте перенос в новую ситуацию."),
+      ui("A bounded expectation about what may change after a specific action.", "Ограниченное ожидание того, что может измениться после конкретного действия."),
+      ui("The effect is not automatically a treatment, a durable benefit, or a result for every person and context.", "Эффект не становится автоматически лечением, долговременной пользой или результатом для каждого человека и контекста."),
+    ],
+    mediation: [
+      ui("Use the intermediate variable to plan measurement; target it only when the mediation claim is causally identified and intervention evidence exists.", "Используйте промежуточную переменную для планирования измерений; воздействуйте на неё только при причинно установленной медиации и наличии данных вмешательства."),
+      ui("A more explicit test of a possible pathway.", "Более явная проверка возможного пути воздействия."),
+      ui("Statistical mediation does not prove that changing the mediator will change the outcome.", "Статистическая медиация не доказывает, что изменение посредника изменит результат."),
+    ],
+    moderation: [
+      ui("Check the modifying condition before applying an average relationship to a person or setting.", "Проверяйте изменяющее условие, прежде чем переносить среднюю связь на человека или ситуацию."),
+      ui("Better matching of expectations to context.", "Лучшее соответствие ожиданий конкретному контексту."),
+      ui("A statistical interaction does not by itself identify why the effect differs or how to change it.", "Статистическое взаимодействие само по себе не объясняет причину различия и способ воздействия."),
+    ],
+    mechanism_hypothesis: [
+      ui("Use the proposed process to design a discriminating test against alternatives, not as an established intervention target.", "Используйте предполагаемый процесс для проверки против альтернатив, а не как уже установленную цель вмешательства."),
+      ui("A testable mechanism question and clearer competing explanations.", "Проверяемый вопрос о механизме и более ясные конкурирующие объяснения."),
+      ui("It is not established that the process is necessary, sufficient, unique, or practically modifiable.", "Не доказано, что процесс необходим, достаточен, уникален или практически изменяем."),
+    ],
+    causal_hypothesis: [
+      ui("Use the proposed causal direction to design a controlled test before acting on it.", "Используйте предполагаемое причинное направление для контролируемой проверки до практического применения."),
+      ui("A falsifiable intervention question.", "Опровержимый вопрос о вмешательстве."),
+      ui("The proposed direction is not yet an established effect.", "Предполагаемое направление ещё не является установленным эффектом."),
+    ],
+  };
+  const [action, expected, notEstablished] = guidance[record.claim_type] || guidance.association;
+  return `<section class="practical-section practical-fallback">
+    <div class="practical-heading"><div><span class="section-eyebrow">${ui("Practical meaning of this claim", "Практический смысл этого утверждения")}</span><h3>${ui("How can this be used safely?", "Как это можно использовать без завышения?")}</h3></div><span>${ui("Inference rule", "Правило вывода")}</span></div>
+    <p class="practical-rule">${ui("No claim-specific application has been independently established yet. The guidance below follows from the inference type.", "Отдельное применение именно этого утверждения пока не установлено. Ниже показано безопасное правило, следующее из типа научного вывода.")}</p>
+    <article class="practical-card action-interpretation_only"><dl>
+      <div><dt>${ui("Possible use", "Возможное применение")}</dt><dd>${escapeHtml(action)}</dd></div>
+      <div><dt>${ui("Expected benefit", "Ожидаемая польза")}</dt><dd>${escapeHtml(expected)}</dd></div>
+      <div><dt>${ui("What is not established", "Что не доказано")}</dt><dd>${escapeHtml(notEstablished)}</dd></div>
+    </dl></article>
+  </section>`;
+}
+
 function renderInspector(record) {
   if (record.kind === "question") {
     renderResearchQuestionInspector(record);
@@ -621,7 +678,6 @@ function renderInspector(record) {
   const status = record.epistemic_status || record.curation_status;
   const confidence = record.confidence?.level;
   const scope = typeof record.scope === "string" ? record.scope : record.scope?.population;
-  const applications = practicalFor(record);
   inspector.innerHTML = `
     <p class="inspector-kicker">${escapeHtml(t(TYPE_LABELS[record.type] || record.type))} · ${escapeHtml(record.id.split(":").at(-1))}</p>
     <h2 class="${record.kind === "claim" ? "claim-heading" : ""}">${escapeHtml(heading)}</h2>
@@ -640,7 +696,7 @@ function renderInspector(record) {
       <p>${escapeHtml(statusExplanation(record))}</p>
     </div>
     ${renderConnections(record)}
-    ${renderPracticalImplications(applications)}
+    ${record.kind === "claim" ? renderClaimPractical(record) : ""}
     ${scope ? `<section class="detail-section"><h3>${t("Scope")}</h3><p>${escapeHtml(t(scope))}</p></section>` : ""}
     ${record.confidence?.rationale ? `<section class="detail-section"><h3>${t("Confidence rationale")}</h3><p>${escapeHtml(t(record.confidence.rationale))}</p></section>` : ""}
     ${evidence.length ? `<section class="detail-section"><h3>${t("Evidence")}</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(t(item.support_direction))}</strong> · ${escapeHtml(t(item.summary))}</li>`).join("")}</ul></section>` : ""}

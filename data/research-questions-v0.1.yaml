@@ -4,7 +4,7 @@ canonical_language: en
 provenance: &provenance
   record_version: 0.1.0
   created_at: '2026-08-26T20:15:00+03:00'
-  modified_at: '2026-08-26T21:00:00+03:00'
+  modified_at: '2026-08-26T23:00:00+03:00'
   created_by: [OpenAI Codex]
   review_status: machine_validated
   source_snapshot_date: '2026-08-26'
@@ -278,4 +278,22 @@ questions:
     display_prominence: peripheral
     about_ids: [pmm:mechanism:automatic-semantic-preactivation, pmm:mechanism:strategic-postlexical-matching, pmm:measurement:lexical-decision-diffusion-profile]
     source_ids: [pmm:source:neely-1976, pmm:source:mangat-taikh-gagne-spalding-2026, pmm:source:ratcliff-gomez-mckoon-2004]
+    provenance: *provenance
+
+  - id: pmm:research-question:big-five-cross-context-mechanisms
+    family_id: big-five
+    question:
+      en: Which modifiable processes and environments generate stable Big Five score-behavior associations across contexts and development?
+      ru: Какие изменяемые процессы и условия создают устойчивые связи показателей Большой пятёрки с поведением в разных контекстах и в ходе развития?
+    why_open:
+      en: Trait scores summarize covariation and predict some outcomes, but they do not identify the causal routines, skills, incentives, or environments producing those relations.
+      ru: Показатели черт обобщают совместные различия и связаны с некоторыми результатами, но не выявляют причинные привычки, навыки, стимулы или условия, создающие эти связи.
+    what_would_help:
+      en: Longitudinal multi-informant studies with repeated behavior, environmental measurement, preregistered interventions, and out-of-sample prediction across cultures and ages.
+      ru: Продольные исследования с несколькими информантами, повторными наблюдениями поведения и среды, пререгистрированными вмешательствами и проверкой прогнозов на новых культурах и возрастах.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:construct:big-five-trait-taxonomy, pmm:measurement:bfi2-domain-facet-scores, pmm:outcome:academic-performance]
+    source_ids: [pmm:source:soto-john-2017-bfi2, pmm:source:poropat-2009-academic-performance]
     provenance: *provenance

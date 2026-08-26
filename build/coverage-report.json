@@ -2,13 +2,13 @@
   "causal_support": {
     "direct": 30,
     "indirect": 29,
-    "none": 9
+    "none": 11
   },
   "claim_types": {
-    "association": 9,
+    "association": 11,
     "causal_effect": 22,
     "causal_hypothesis": 1,
-    "definition": 10,
+    "definition": 11,
     "mechanism_hypothesis": 17,
     "mediation": 2,
     "moderation": 2,
@@ -17,21 +17,21 @@
   "confidence_levels": {
     "high": 7,
     "low": 12,
-    "moderate": 43,
+    "moderate": 46,
     "not_applicable": 2
   },
   "epistemic_statuses": {
     "mixed": 2,
     "not_assessed": 2,
     "proposed": 18,
-    "supported": 39,
+    "supported": 42,
     "unsupported": 3
   },
   "evidence_kinds": {
     "computational_model": 3,
     "controlled_experiment": 28,
-    "cross_sectional_observational": 4,
-    "meta_analysis": 4,
+    "cross_sectional_observational": 5,
+    "meta_analysis": 5,
     "narrative_review": 9,
     "randomized_experiment": 20
   },
@@ -170,19 +170,28 @@
       "source": "data/evidence-pack-language-comprehension-v0.3.yaml",
       "sources": 7,
       "title": "Language comprehension"
+    },
+    {
+      "claims": 3,
+      "evidence": 2,
+      "id": "big-five",
+      "objects": 11,
+      "source": "data/evidence-pack-big-five-v0.3.yaml",
+      "sources": 4,
+      "title": "Big Five personality traits"
     }
   ],
-  "family_count": 15,
+  "family_count": 16,
   "object_types": {
-    "Behavior": 13,
-    "Construct": 20,
-    "Context": 25,
+    "Behavior": 14,
+    "Construct": 26,
+    "Context": 26,
     "Contingency": 3,
     "Event": 4,
     "Intervention": 22,
-    "Measurement": 33,
+    "Measurement": 35,
     "Mechanism": 19,
-    "Outcome": 12,
+    "Outcome": 13,
     "State": 15
   },
   "report_version": 1,
@@ -513,12 +522,12 @@
   "support_directions": {
     "challenges": 9,
     "mixed": 5,
-    "supports": 54
+    "supports": 56
   },
   "totals": {
-    "claims": 64,
-    "evidence": 68,
-    "objects": 166,
-    "sources": 69
+    "claims": 67,
+    "evidence": 70,
+    "objects": 177,
+    "sources": 73
   }
 }

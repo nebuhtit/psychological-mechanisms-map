@@ -466,3 +466,21 @@ entries:
       When the prime is visible long enough, a person may predict likely next words or notice after recognizing the target that the two words are related and use that relation to answer “word.” This can also speed responses, so it competes with a purely automatic explanation.
     ru: >-
       Если предыдущее слово видно достаточно долго, человек может ожидать вероятные следующие слова или уже после распознавания заметить смысловую связь между словами и использовать её для ответа «слово». Это тоже способно ускорить ответ, поэтому такое объяснение конкурирует с чисто автоматическим механизмом.
+
+  - claim_id: pmm:claim:big-five-is-dimensional-taxonomy
+    en: >-
+      The Big Five describes people along five broad continua rather than placing each person into one of five types. The dimensions summarize patterns in trait descriptions; they do not by themselves explain why a person behaves as they do or identify five mechanisms in the brain.
+    ru: >-
+      Большая пятёрка описывает человека по пяти широким непрерывным измерениям, а не относит его к одному из пяти типов. Эти измерения обобщают совместные различия черт, но сами по себе не объясняют причины поведения и не являются пятью механизмами мозга.
+
+  - claim_id: pmm:claim:bfi2-supports-five-domain-fifteen-facet-profile
+    en: >-
+      The BFI-2 uses 60 questionnaire items to estimate five broad domains and 15 narrower facets. Its validation studies supported this hierarchy, but the resulting scores and factor loadings are measurement estimates that depend on the questionnaire, language, sample, and model.
+    ru: >-
+      BFI-2 использует 60 пунктов опросника для оценки пяти широких измерений и 15 более узких граней. Исследования поддержали такую иерархию, но полученные баллы и факторные нагрузки являются оценками измерительной модели и зависят от опросника, языка, выборки и модели.
+
+  - claim_id: pmm:claim:conscientiousness-associated-with-academic-performance
+    en: >-
+      Students with higher measured Conscientiousness tended to have better academic performance across the studies in the meta-analysis. This does not show that raising a questionnaire score will improve grades or that one score can determine an individual student's outcome.
+    ru: >-
+      В исследованиях метаанализа учащиеся с более высоким измеренным уровнем добросовестности в среднем показывали более высокую успеваемость. Это не доказывает, что повышение балла опросника улучшит оценки или что по одному баллу можно определить результат конкретного ученика.

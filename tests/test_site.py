@@ -64,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.13.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.14.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -72,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.13.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.14.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -168,7 +168,7 @@ class SiteBundleTests(unittest.TestCase):
             for family in document["families"]
             for application in family["practical_implications"]
         ]
-        self.assertEqual(len(applications), len(document["families"]))
+        self.assertGreaterEqual(len(applications), len(document["families"]))
         self.assertTrue(all(len(family["practical_implications"]) >= 1 for family in document["families"]))
         self.assertTrue(all(application["id"].startswith("pmm:application:") for application in applications))
         self.assertTrue(all(application["actionability"] in {"direct_within_tested_scope", "transfer_uncertain", "interpretation_only"} for application in applications))
@@ -186,6 +186,8 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn("What can be done with this?", javascript)
         self.assertIn("Not automatic advice", javascript)
         self.assertIn("What is not established", javascript)
+        self.assertIn("renderClaimPractical(record)", javascript)
+        self.assertIn("No claim-specific application has been independently established yet", javascript)
 
     def test_cross_family_mechanism_catalog_is_collapsed_and_navigable(self) -> None:
         page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
@@ -493,6 +495,28 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(expected_types["pmm:outcome:lexical-decision-response-latency"], "Outcome")
         self.assertEqual(expected_types["pmm:measurement:lexical-decision-diffusion-profile"], "Measurement")
         self.assertIn("remain unmapped", language["ontological_note"]["en"])
+
+    def test_big_five_is_partial_without_an_invented_mechanism(self) -> None:
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        nodes = {
+            node["id"]: node
+            for node in document["navigation_views"]["general_psychology"]["nodes"]
+        }
+        big_five = nodes["gp:big-five"]
+        self.assertEqual(big_five["coverage"], "partial")
+        expected_types = {
+            membership["canonical_id"]: membership["expected_type"]
+            for membership in big_five["memberships"]
+        }
+        self.assertEqual(expected_types["pmm:construct:big-five-trait-taxonomy"], "Construct")
+        self.assertEqual(expected_types["pmm:context:bfi2-self-report-assessment"], "Context")
+        self.assertEqual(expected_types["pmm:behavior:bfi2-item-rating"], "Behavior")
+        self.assertEqual(expected_types["pmm:measurement:bfi2-domain-facet-scores"], "Measurement")
+        self.assertEqual(expected_types["pmm:outcome:academic-performance"], "Outcome")
+
+        family = next(item for item in document["families"] if item["id"] == "big-five")
+        self.assertFalse(any(item["type"] == "Mechanism" for item in family["objects"]))
+        self.assertEqual(len(family["practical_implications"]), 2)
 
 if __name__ == "__main__":
     unittest.main()

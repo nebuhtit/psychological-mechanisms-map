@@ -43,7 +43,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains fifteen deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains sixteen deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -62,16 +62,17 @@ The live explorer contains fifteen deliberately heterogeneous evidence families.
 | Visual perception | Visual-perception construct, contrast sensitivity, grating manipulation, detection response, threshold measurement, and proposed divisive normalization |
 | Deductive reasoning | Reasoning construct, syllogism task, validity-believability manipulation, judgment, performance, signal-detection decomposition, and proposed parallel evaluation |
 | Language comprehension | Broad comprehension, visual lexical access, lexical-decision task, semantic relatedness and timing, observable response, latency, diffusion parameters, and competing automatic and strategic processes |
+| Big Five personality traits | Descriptive taxonomy, five trait domains, questionnaire context, item responses, scores, factor parameters, academic performance, and noncausal associations |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
 ### Coverage goal
 
-PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Sixteen topics currently have at least one evidence-linked pilot; eight remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
+PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Seventeen topics currently have at least one evidence-linked pilot; seven remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
-Each of the 15 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
+Each of the 16 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
 
-PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Every current evidence family now has at least one bilingual practical interpretation, including personal actions, assessment rules, interface principles, research guidance, and safety boundaries where needed.
+PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Every current evidence family has at least one bilingual practical interpretation. Every individual Claim also displays either a curated application or a conservative practical inference rule specific to its claim type.
 
 The website provides three switchable views over the same canonical records:
 
@@ -170,6 +171,8 @@ data/evidence-pack-deductive-reasoning-v0.3.yaml
                                      Deductive reasoning, belief bias, signal detection, and competing-process boundary pack
 data/evidence-pack-language-comprehension-v0.3.yaml
                                      Language comprehension, semantic priming, lexical decision, diffusion, and competing-process boundary pack
+data/evidence-pack-big-five-v0.3.yaml
+                                     Trait taxonomy, BFI-2 measurement, factor model, and academic-association boundary pack
 schema/research-questions-v0.1.schema.yaml
                                      Separate contract for open-gap annotations
 data/research-questions-v0.1.yaml    Bilingual source-linked questions, one per public family
@@ -401,8 +404,8 @@ challenging evidence.
 
 ## Next steps
 
-1. Add a language pack that separates comprehension and production constructs, linguistic stimuli, behavioral measurements, and proposed lexical or syntactic processes.
-2. Add primary evidence and validated measurements before presenting Temperament or Big Five as covered PMM areas.
+1. Add a temperament pack that separates developmental dimensions, observations, caregiver reports, stability estimates, and mechanism hypotheses.
+2. Add an abilities-and-intelligence pack that separates task performance, psychometric latent variables, acquired knowledge, and cognitive mechanisms.
 3. Add independent primary-study replications and preregistered null results to the negative-reinforcement pack.
 4. Verify stable external ontology identifiers against pinned RDoC, Cognitive Atlas, MF, NBO, and HiTOP releases before promoting mappings.
 5. Request domain-expert review of definitions, mappings, and causal assumptions before broad taxonomic expansion.

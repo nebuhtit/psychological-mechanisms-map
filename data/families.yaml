@@ -94,3 +94,9 @@ datasets:
       id: language-comprehension
       title: Language comprehension
       description: Broad comprehension, visual lexical access, semantic priming, word decisions, latency, model parameters, and competing automatic and strategic processes kept distinct.
+  - source: data/evidence-pack-big-five-v0.3.yaml
+    output: build/evidence-pack-big-five-v0.3.json
+    family:
+      id: big-five
+      title: Big Five personality traits
+      description: Trait taxonomy, five domains, questionnaire context, item responses, scale scores, factor parameters, academic performance, and noncausal associations kept distinct.
