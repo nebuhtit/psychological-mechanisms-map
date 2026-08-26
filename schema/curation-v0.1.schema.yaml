@@ -105,12 +105,13 @@ $defs:
       limits: {type: array, items: {$ref: '#/$defs/nonEmptyString'}, uniqueItems: true}
       result_count_status: {enum: [recorded, not_recorded]}
       result_count: {type: integer, minimum: 0}
+      export_file: {type: string, pattern: '^curation/exports/[a-z0-9]+(?:-[a-z0-9]+)*\.json$'}
       searcher: {$ref: '#/$defs/nonEmptyString'}
       peer_review_status: {enum: [not_reviewed, pending, reviewed]}
       notes: {type: string}
     allOf:
       - if: {properties: {result_count_status: {const: recorded}}}
-        then: {required: [result_count]}
+        then: {required: [result_count, export_file]}
   reviewerDecision:
     type: object
     additionalProperties: false
@@ -151,7 +152,6 @@ $defs:
       screening_status: {enum: [awaiting_screening, awaiting_full_text, provisionally_included, included, excluded]}
       reviewer_decisions:
         type: array
-        minItems: 1
         items: {$ref: '#/$defs/reviewerDecision'}
       consensus: {$ref: '#/$defs/consensus'}
       exclusion_reason: {type: string}

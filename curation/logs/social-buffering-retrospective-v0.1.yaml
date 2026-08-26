@@ -10,143 +10,679 @@ review_question:
   exposure: Experimentally assigned interpersonal support, presence, or preparation condition around the stressor.
   comparator: Another support figure, stranger, alone condition, or another experimentally assigned social condition.
   outcome: Repeated cortisol response or recovery after the acute stressor.
-  eligible_designs: [randomized experiment, controlled experimental study]
+  eligible_designs:
+  - randomized experiment
+  - controlled experimental study
 eligibility:
   include:
-    - Participants are children or adolescents and human data are reported separately.
-    - A social condition is experimentally assigned before or during an acute stressor.
-    - Cortisol reactivity, trajectory, or recovery is measured after assignment.
-    - The report permits extraction of the social-condition contrast or an interaction involving that contrast.
+  - Participants are children or adolescents and human data are reported separately.
+  - A social condition is experimentally assigned before or during an acute stressor.
+  - Cortisol reactivity, trajectory, or recovery is measured after assignment.
+  - The report permits extraction of the social-condition contrast or an interaction involving that contrast.
   exclude:
-    - Parenting programs without an acute experimentally assigned support condition.
-    - Observational association only, with no assigned social condition.
-    - Chronic or hair cortisol without an acute stress-response outcome.
-    - Review, commentary, animal study, protocol, or duplicate report without unique eligible results.
+  - Parenting programs without an acute experimentally assigned support condition.
+  - Observational association only, with no assigned social condition.
+  - Chronic or hair cortisol without an acute stress-response outcome.
+  - Review, commentary, animal study, protocol, or duplicate report without unique eligible results.
 information_sources:
-  - id: source:web-search-pubmed
-    name: Web discovery constrained to PubMed records
-    platform: OpenAI web search
-    url: https://pubmed.ncbi.nlm.nih.gov/
-    coverage_note: Discovery aid only, not a direct PubMed database search or reproducible substitute for one.
+- id: source:pubmed
+  name: PubMed
+  platform: NCBI E-utilities
+  url: https://pubmed.ncbi.nlm.nih.gov/
+  coverage_note: Direct database search with a committed JSON snapshot; search-strategy peer review remains pending.
+- id: source:web-search-pubmed
+  name: Web discovery constrained to PubMed records
+  platform: OpenAI web search
+  url: https://pubmed.ncbi.nlm.nih.gov/
+  coverage_note: Discovery aid only, not a direct PubMed database search or reproducible substitute for one.
 searches:
-  - id: search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
-    information_source_id: source:web-search-pubmed
-    executed_at: '2026-08-26T11:35:00+03:00'
-    strategy: 'Batch of three web queries: (1) site:pubmed.ncbi.nlm.nih.gov social buffering cortisol children parent stress randomized; (2) site:pubmed.ncbi.nlm.nih.gov "social buffering" cortisol childhood experimental study; (3) site:pubmed.ncbi.nlm.nih.gov "social buffering" cortisol adolescents parent.'
-    limits: [Web results constrained to pubmed.ncbi.nlm.nih.gov, Search executed on 2026-08-26]
-    result_count_status: not_recorded
-    searcher: OpenAI Codex web discovery
-    peer_review_status: not_reviewed
-    notes: Retrospective seed audit. Web discovery is not a direct PubMed search; ranking, complete results, export, and hit count were not available, so this run cannot satisfy the protocol search gate.
+- id: search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  information_source_id: source:pubmed
+  executed_at: '2026-08-26T11:35:00+03:00'
+  strategy: '(("social buffering"[Title/Abstract] OR "stress buffering"[Title/Abstract] OR ((parent*[Title/Abstract] OR friend*[Title/Abstract]
+    OR sibling*[Title/Abstract] OR caregiver*[Title/Abstract]) AND support*[Title/Abstract] AND (TSST[Title/Abstract] OR "Trier
+    Social Stress Test"[Title/Abstract]))) AND (cortisol[Title/Abstract] OR "HPA axis"[Title/Abstract] OR hypothalamic-pituitary-adrenal[Title/Abstract])
+    AND (child*[Title/Abstract] OR adolescen*[Title/Abstract] OR youth[Title/Abstract])) AND ("1000/01/01"[Date - Publication]
+    : "2026/08/26"[Date - Publication])'
+  limits:
+  - Publication date through 2026-08-26
+  - Title and abstract terminology plus PubMed date translation
+  result_count_status: recorded
+  result_count: 51
+  export_file: curation/exports/pubmed-social-buffering-cortisol-youth-2026-08-26.json
+  searcher: OpenAI Codex via NCBI E-utilities
+  peer_review_status: pending
+  notes: Direct PubMed snapshot. Eligibility screening and independent search-strategy peer review remain pending.
+- id: search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+  information_source_id: source:web-search-pubmed
+  executed_at: '2026-08-26T11:35:00+03:00'
+  strategy: 'Batch of three web queries: (1) site:pubmed.ncbi.nlm.nih.gov social buffering cortisol children parent stress
+    randomized; (2) site:pubmed.ncbi.nlm.nih.gov "social buffering" cortisol childhood experimental study; (3) site:pubmed.ncbi.nlm.nih.gov
+    "social buffering" cortisol adolescents parent.'
+  limits:
+  - Web results constrained to pubmed.ncbi.nlm.nih.gov
+  - Search executed on 2026-08-26
+  result_count_status: not_recorded
+  searcher: OpenAI Codex web discovery
+  peer_review_status: not_reviewed
+  notes: Retrospective seed audit. Web discovery is not a direct PubMed search; ranking, complete results, export, and hit
+    count were not available, so this run cannot satisfy the protocol search gate.
 records:
-  - id: record:pubmed-41610560
-    title: Social buffering of the cortisol stress response during the Minnesota Imaging Stress Test in Children
-    url: https://pubmed.ncbi.nlm.nih.gov/41610560/
-    identifiers: {pmid: '41610560', doi: 10.1016/j.psyneuen.2026.107760}
-    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
-    deduplication_key: doi:10.1016/j.psyneuen.2026.107760
-    screening_status: provisionally_included
-    reviewer_decisions:
-      - reviewer: OpenAI Codex
-        stage: seed_audit
-        decision: include
-        decided_at: '2026-08-26T11:40:00+03:00'
-        rationale: Existing mapped randomized condition contrast with repeated cortisol sampling; independent full-text review is pending.
-    linked_source_id: pmm:source:donzella-2026-social-buffering
-    linked_evidence_ids: [pmm:evidence:donzella-2026-causal-contrast, pmm:evidence:donzella-2026-moderation]
-  - id: record:pubmed-26322485
-    title: 'Early social deprivation and the social buffering of cortisol stress responses in late childhood: An experimental study'
-    url: https://pubmed.ncbi.nlm.nih.gov/26322485/
-    identifiers: {pmid: '26322485', doi: 10.1037/dev0000029}
-    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
-    deduplication_key: doi:10.1037/dev0000029
-    screening_status: provisionally_included
-    reviewer_decisions:
-      - reviewer: OpenAI Codex
-        stage: seed_audit
-        decision: include
-        decided_at: '2026-08-26T11:40:00+03:00'
-        rationale: Existing mapped randomized support contrast with an observational developmental-history moderator; independent full-text review is pending.
-    linked_source_id: pmm:source:hostinar-2015-early-deprivation
-    linked_evidence_ids: [pmm:evidence:hostinar-2015-developmental-moderation, pmm:evidence:hostinar-2015-mechanism-compatibility]
-  - id: record:pubmed-26899419
-    title: 'Social stress buffering by friends in childhood and adolescence: Effects on HPA and oxytocin activity'
-    url: https://pubmed.ncbi.nlm.nih.gov/26899419/
-    identifiers: {pmid: '26899419', doi: 10.1080/17470919.2016.1149095}
-    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
-    deduplication_key: doi:10.1080/17470919.2016.1149095
-    screening_status: awaiting_full_text
-    reviewer_decisions:
-      - reviewer: OpenAI Codex
-        stage: title_abstract
-        decision: include
-        decided_at: '2026-08-26T11:42:00+03:00'
-        rationale: Randomized parent-versus-friend preparation and repeated cortisol outcomes; the abstract reports age-dependent and potentially amplifying effects.
-  - id: record:pubmed-33427180
-    title: 'Parenting matters: Parents can reduce or amplify children''s anxiety and cortisol responses to acute stress'
-    url: https://pubmed.ncbi.nlm.nih.gov/33427180/
-    identifiers: {pmid: '33427180', doi: 10.1017/S0954579420001285}
-    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
-    deduplication_key: doi:10.1017/S0954579420001285
-    screening_status: awaiting_full_text
-    reviewer_decisions:
-      - reviewer: OpenAI Codex
-        stage: title_abstract
-        decision: include
-        decided_at: '2026-08-26T11:42:00+03:00'
-        rationale: Randomized parent-versus-alone preparation with cortisol outcomes and a reported moderator; may add both buffering and amplification boundaries.
-  - id: record:pubmed-40857990
-    title: Social buffering by siblings in childhood and adolescence
-    url: https://pubmed.ncbi.nlm.nih.gov/40857990/
-    identifiers: {pmid: '40857990', doi: 10.1016/j.psyneuen.2025.107580}
-    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
-    deduplication_key: doi:10.1016/j.psyneuen.2025.107580
-    screening_status: awaiting_full_text
-    reviewer_decisions:
-      - reviewer: OpenAI Codex
-        stage: title_abstract
-        decision: include
-        decided_at: '2026-08-26T11:42:00+03:00'
-        rationale: Randomized sibling-versus-stranger condition with developmental and depressive-symptom moderation of cortisol outcomes.
-  - id: record:pubmed-39644711
-    title: 'Share-the-load vs bring-your-own-judge: The effects of friends on social evaluative stress in early adolescence'
-    url: https://pubmed.ncbi.nlm.nih.gov/39644711/
-    identifiers: {pmid: '39644711'}
-    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
-    deduplication_key: pmid:39644711
-    screening_status: awaiting_full_text
-    reviewer_decisions:
-      - reviewer: OpenAI Codex
-        stage: title_abstract
-        decision: include
-        decided_at: '2026-08-26T11:42:00+03:00'
-        rationale: Preregistered randomized social-role conditions with cortisol reactivity; directly challenges a generic beneficial-support interpretation.
-  - id: record:pubmed-35007962
-    title: 'A randomized controlled trial of an emotion socialization parenting program and its impact on parenting, children''s behavior and parent and child stress cortisol: Tuning in to Toddlers'
-    url: https://pubmed.ncbi.nlm.nih.gov/35007962/
-    identifiers: {pmid: '35007962', doi: 10.1016/j.brat.2021.104016}
-    discovered_by: [search:web-pubmed-social-buffering-cortisol-youth-2026-08-26]
-    deduplication_key: doi:10.1016/j.brat.2021.104016
-    screening_status: excluded
-    reviewer_decisions:
-      - reviewer: OpenAI Codex
-        stage: title_abstract
-        decision: exclude
-        decided_at: '2026-08-26T11:42:00+03:00'
-        rationale: Parenting program with hair cortisol at follow-up, not an acute assigned support condition around a laboratory stressor.
-    exclusion_reason: Wrong intervention and temporal outcome for the declared pilot question.
+- id: record:pubmed-41610560
+  title: Social buffering of the cortisol stress response during the Minnesota Imaging Stress Test in Children
+  url: https://pubmed.ncbi.nlm.nih.gov/41610560/
+  identifiers:
+    pmid: '41610560'
+    doi: 10.1016/j.psyneuen.2026.107760
+  discovered_by:
+  - search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: doi:10.1016/j.psyneuen.2026.107760
+  screening_status: provisionally_included
+  reviewer_decisions:
+  - reviewer: OpenAI Codex
+    stage: seed_audit
+    decision: include
+    decided_at: '2026-08-26T11:40:00+03:00'
+    rationale: Existing mapped randomized condition contrast with repeated cortisol sampling; independent full-text review
+      is pending.
+  linked_source_id: pmm:source:donzella-2026-social-buffering
+  linked_evidence_ids:
+  - pmm:evidence:donzella-2026-causal-contrast
+  - pmm:evidence:donzella-2026-moderation
+- id: record:pubmed-26322485
+  title: 'Early social deprivation and the social buffering of cortisol stress responses in late childhood: An experimental
+    study'
+  url: https://pubmed.ncbi.nlm.nih.gov/26322485/
+  identifiers:
+    pmid: '26322485'
+    doi: 10.1037/dev0000029
+  discovered_by:
+  - search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: doi:10.1037/dev0000029
+  screening_status: provisionally_included
+  reviewer_decisions:
+  - reviewer: OpenAI Codex
+    stage: seed_audit
+    decision: include
+    decided_at: '2026-08-26T11:40:00+03:00'
+    rationale: Existing mapped randomized support contrast with an observational developmental-history moderator; independent
+      full-text review is pending.
+  linked_source_id: pmm:source:hostinar-2015-early-deprivation
+  linked_evidence_ids:
+  - pmm:evidence:hostinar-2015-developmental-moderation
+  - pmm:evidence:hostinar-2015-mechanism-compatibility
+- id: record:pubmed-26899419
+  title: 'Social stress buffering by friends in childhood and adolescence: Effects on HPA and oxytocin activity'
+  url: https://pubmed.ncbi.nlm.nih.gov/26899419/
+  identifiers:
+    pmid: '26899419'
+    doi: 10.1080/17470919.2016.1149095
+  discovered_by:
+  - search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: doi:10.1080/17470919.2016.1149095
+  screening_status: awaiting_full_text
+  reviewer_decisions:
+  - reviewer: OpenAI Codex
+    stage: title_abstract
+    decision: include
+    decided_at: '2026-08-26T11:42:00+03:00'
+    rationale: Randomized parent-versus-friend preparation and repeated cortisol outcomes; the abstract reports age-dependent
+      and potentially amplifying effects.
+- id: record:pubmed-33427180
+  title: 'Parenting matters: Parents can reduce or amplify children''s anxiety and cortisol responses to acute stress'
+  url: https://pubmed.ncbi.nlm.nih.gov/33427180/
+  identifiers:
+    pmid: '33427180'
+    doi: 10.1017/S0954579420001285
+  discovered_by:
+  - search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: doi:10.1017/S0954579420001285
+  screening_status: awaiting_full_text
+  reviewer_decisions:
+  - reviewer: OpenAI Codex
+    stage: title_abstract
+    decision: include
+    decided_at: '2026-08-26T11:42:00+03:00'
+    rationale: Randomized parent-versus-alone preparation with cortisol outcomes and a reported moderator; may add both buffering
+      and amplification boundaries.
+- id: record:pubmed-40857990
+  title: Social buffering by siblings in childhood and adolescence
+  url: https://pubmed.ncbi.nlm.nih.gov/40857990/
+  identifiers:
+    pmid: '40857990'
+    doi: 10.1016/j.psyneuen.2025.107580
+  discovered_by:
+  - search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: doi:10.1016/j.psyneuen.2025.107580
+  screening_status: awaiting_full_text
+  reviewer_decisions:
+  - reviewer: OpenAI Codex
+    stage: title_abstract
+    decision: include
+    decided_at: '2026-08-26T11:42:00+03:00'
+    rationale: Randomized sibling-versus-stranger condition with developmental and depressive-symptom moderation of cortisol
+      outcomes.
+- id: record:pubmed-39644711
+  title: 'Share-the-load vs bring-your-own-judge: The effects of friends on social evaluative stress in early adolescence'
+  url: https://pubmed.ncbi.nlm.nih.gov/39644711/
+  identifiers:
+    pmid: '39644711'
+  discovered_by:
+  - search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:39644711
+  screening_status: awaiting_full_text
+  reviewer_decisions:
+  - reviewer: OpenAI Codex
+    stage: title_abstract
+    decision: include
+    decided_at: '2026-08-26T11:42:00+03:00'
+    rationale: Preregistered randomized social-role conditions with cortisol reactivity; directly challenges a generic beneficial-support
+      interpretation.
+- id: record:pubmed-35007962
+  title: 'A randomized controlled trial of an emotion socialization parenting program and its impact on parenting, children''s
+    behavior and parent and child stress cortisol: Tuning in to Toddlers'
+  url: https://pubmed.ncbi.nlm.nih.gov/35007962/
+  identifiers:
+    pmid: '35007962'
+    doi: 10.1016/j.brat.2021.104016
+  discovered_by:
+  - search:web-pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: doi:10.1016/j.brat.2021.104016
+  screening_status: excluded
+  reviewer_decisions:
+  - reviewer: OpenAI Codex
+    stage: title_abstract
+    decision: exclude
+    decided_at: '2026-08-26T11:42:00+03:00'
+    rationale: Parenting program with hair cortisol at follow-up, not an acute assigned support condition around a laboratory
+      stressor.
+  exclusion_reason: Wrong intervention and temporal outcome for the declared pilot question.
+- id: record:pubmed-42527913
+  title: Investigating interpretation bias and stress responses as risk factors in children of parents with depression
+  url: https://pubmed.ncbi.nlm.nih.gov/42527913/
+  identifiers:
+    pmid: '42527913'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:42527913
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-39457966
+  title: Mechanisms of Social Attachment Between Children and Pet Dogs
+  url: https://pubmed.ncbi.nlm.nih.gov/39457966/
+  identifiers:
+    pmid: '39457966'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:39457966
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-38640970
+  title: 'Feeding under fire: Relations between parental stress hormones and controlling feeding behaviors'
+  url: https://pubmed.ncbi.nlm.nih.gov/38640970/
+  identifiers:
+    pmid: '38640970'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:38640970
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-38484567
+  title: Glucocorticoid response to naturalistic interactions between children and dogs
+  url: https://pubmed.ncbi.nlm.nih.gov/38484567/
+  identifiers:
+    pmid: '38484567'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:38484567
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-37559538
+  title: The Development of Stress Reactivity and Regulation in Children and Adolescents
+  url: https://pubmed.ncbi.nlm.nih.gov/37559538/
+  identifiers:
+    pmid: '37559538'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:37559538
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-36995488
+  title: 'Adolescents'' Hormonal Responses to Social Stress and Associations with Adolescent Social Anxiety and Maternal Comfort:
+    A Preliminary Study'
+  url: https://pubmed.ncbi.nlm.nih.gov/36995488/
+  identifiers:
+    pmid: '36995488'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:36995488
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-36744630
+  title: Effects of pair housing on behavior, cortisol, and clinical outcomes during quarantine-like procedures for rhesus
+    macaques (Macaca mulatta)
+  url: https://pubmed.ncbi.nlm.nih.gov/36744630/
+  identifiers:
+    pmid: '36744630'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:36744630
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-35935109
+  title: The Neurobiology of Infant Attachment-Trauma and Disruption of Parent-Infant Interactions
+  url: https://pubmed.ncbi.nlm.nih.gov/35935109/
+  identifiers:
+    pmid: '35935109'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:35935109
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-35671231
+  title: Targeting the Proximal Mechanisms of Stress Adaptation in Early Adolescence to Prevent Mental Health Problems in
+    Youth in Poverty
+  url: https://pubmed.ncbi.nlm.nih.gov/35671231/
+  identifiers:
+    pmid: '35671231'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:35671231
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-34632877
+  title: 'Within-person patterns of psychobiological stress response correspondence: links to preadolescent internalizing
+    problems and coping behaviors'
+  url: https://pubmed.ncbi.nlm.nih.gov/34632877/
+  identifiers:
+    pmid: '34632877'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:34632877
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-34388607
+  title: Linking post-stressor interpersonal processes in adolescent girls' close friendships with acute HPA stress responses
+  url: https://pubmed.ncbi.nlm.nih.gov/34388607/
+  identifiers:
+    pmid: '34388607'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:34388607
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-33902711
+  title: 'The role of the endogenous oxytocin system under psychosocial stress conditions in adolescents suffering from anxiety
+    disorder: study protocol for a parallel group controlled trial'
+  url: https://pubmed.ncbi.nlm.nih.gov/33902711/
+  identifiers:
+    pmid: '33902711'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:33902711
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-33871320
+  title: 'Parental support and insecure attachment development: the cortisol stress response as a moderator'
+  url: https://pubmed.ncbi.nlm.nih.gov/33871320/
+  identifiers:
+    pmid: '33871320'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:33871320
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-33432595
+  title: Early maternal and paternal caregiving moderates the links between preschoolers' reactivity and regulation and maturation
+    of the HPA-immune axis
+  url: https://pubmed.ncbi.nlm.nih.gov/33432595/
+  identifiers:
+    pmid: '33432595'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:33432595
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-33427186
+  title: Associations between stress reactivity and behavior problems for previously institutionalized youth across puberty
+  url: https://pubmed.ncbi.nlm.nih.gov/33427186/
+  identifiers:
+    pmid: '33427186'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:33427186
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-33305356
+  title: Parental emotional support and social buffering in previously institutionalized and typically developing children
+    and adolescents
+  url: https://pubmed.ncbi.nlm.nih.gov/33305356/
+  identifiers:
+    pmid: '33305356'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:33305356
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-33060454
+  title: 'Perceived Social Support and Children''s Physiological Responses to Stress: An Examination of the Stress-Buffering
+    Hypothesis'
+  url: https://pubmed.ncbi.nlm.nih.gov/33060454/
+  identifiers:
+    pmid: '33060454'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:33060454
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-32979563
+  title: Pubertal recalibration of cortisol reactivity following early life parent-child separation
+  url: https://pubmed.ncbi.nlm.nih.gov/32979563/
+  identifiers:
+    pmid: '32979563'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:32979563
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-32272126
+  title: Human attachment triggers different social buffering mechanisms under high and low early life stress rearing
+  url: https://pubmed.ncbi.nlm.nih.gov/32272126/
+  identifiers:
+    pmid: '32272126'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:32272126
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-32204834
+  title: The development of stress reactivity and regulation during human development
+  url: https://pubmed.ncbi.nlm.nih.gov/32204834/
+  identifiers:
+    pmid: '32204834'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:32204834
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-31677411
+  title: Intranasal oxytocin enhances stress-protective effects of social support in women with negative childhood experiences
+    during a virtual Trier Social Stress Test
+  url: https://pubmed.ncbi.nlm.nih.gov/31677411/
+  identifiers:
+    pmid: '31677411'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:31677411
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-31382947
+  title: 'Acute psychosocial stress and working memory performance: the potential of physical activity to modulate cognitive
+    functions in children'
+  url: https://pubmed.ncbi.nlm.nih.gov/31382947/
+  identifiers:
+    pmid: '31382947'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:31382947
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-31374220
+  title: Neglect, HPA axis reactivity, and development
+  url: https://pubmed.ncbi.nlm.nih.gov/31374220/
+  identifiers:
+    pmid: '31374220'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:31374220
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-31006325
+  title: Adrenocortical and autonomic attunement between romantic partners in emerging adulthood
+  url: https://pubmed.ncbi.nlm.nih.gov/31006325/
+  identifiers:
+    pmid: '31006325'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:31006325
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-30068422
+  title: 'Social buffering of the maternal and infant HPA axes: Mediation and moderation in the intergenerational transmission
+    of adverse childhood experiences'
+  url: https://pubmed.ncbi.nlm.nih.gov/30068422/
+  identifiers:
+    pmid: '30068422'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:30068422
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-30036796
+  title: Glucocorticoid receptor exon 1(F) methylation and the cortisol stress response in health and disease
+  url: https://pubmed.ncbi.nlm.nih.gov/30036796/
+  identifiers:
+    pmid: '30036796'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:30036796
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-28714126
+  title: 'Annual Research Review: Early adversity, the hypothalamic-pituitary-adrenocortical axis, and child psychopathology'
+  url: https://pubmed.ncbi.nlm.nih.gov/28714126/
+  identifiers:
+    pmid: '28714126'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:28714126
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-28498527
+  title: Adolescent Conflict Appraisals Moderate the Link Between Marital Conflict and Physiological Stress Reactivity
+  url: https://pubmed.ncbi.nlm.nih.gov/28498527/
+  identifiers:
+    pmid: '28498527'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:28498527
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-28439150
+  title: Effect of Pet Dogs on Children's Perceived Stress and Cortisol Stress Response
+  url: https://pubmed.ncbi.nlm.nih.gov/28439150/
+  identifiers:
+    pmid: '28439150'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:28439150
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-28377196
+  title: Emotion socialization as a predictor of physiological and psychological responses to stress
+  url: https://pubmed.ncbi.nlm.nih.gov/28377196/
+  identifiers:
+    pmid: '28377196'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:28377196
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-28167135
+  title: Long-term effects of adolescent stress on neophobic behaviors in zebra finches are modulated by social context when
+    in adulthood
+  url: https://pubmed.ncbi.nlm.nih.gov/28167135/
+  identifiers:
+    pmid: '28167135'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:28167135
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-27783306
+  title: Individual and Day-to-Day Differences in Active Coping Predict Diurnal Cortisol Patterns among Early Adolescent Girls
+  url: https://pubmed.ncbi.nlm.nih.gov/27783306/
+  identifiers:
+    pmid: '27783306'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:27783306
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-27540420
+  title: Comparing oxytocin and cortisol regulation in a double-blind, placebo-controlled, hydrocortisone challenge pilot
+    study in children with autism and typical development
+  url: https://pubmed.ncbi.nlm.nih.gov/27540420/
+  identifiers:
+    pmid: '27540420'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:27540420
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-27021231
+  title: 'The role of social buffering on chronic disruptions in quality of care: evidence from caregiver-based interventions
+    in foster children'
+  url: https://pubmed.ncbi.nlm.nih.gov/27021231/
+  identifiers:
+    pmid: '27021231'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:27021231
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-26478822
+  title: Social Support Can Buffer against Stress and Shape Brain Activity
+  url: https://pubmed.ncbi.nlm.nih.gov/26478822/
+  identifiers:
+    pmid: '26478822'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:26478822
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-26230646
+  title: 'The social buffering of the hypothalamic-pituitary-adrenocortical axis in humans: Developmental and experiential
+    determinants'
+  url: https://pubmed.ncbi.nlm.nih.gov/26230646/
+  identifiers:
+    pmid: '26230646'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:26230646
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-26047719
+  title: The roles of puberty and age in explaining the diminished effectiveness of parental buffering of HPA reactivity and
+    recovery in adolescence
+  url: https://pubmed.ncbi.nlm.nih.gov/26047719/
+  identifiers:
+    pmid: '26047719'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:26047719
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-25774280
+  title: Neuroendocrine and behavioral response to social rupture and repair in preschoolers with autism spectrum disorders
+    interacting with mother and father
+  url: https://pubmed.ncbi.nlm.nih.gov/25774280/
+  identifiers:
+    pmid: '25774280'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:25774280
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-24942038
+  title: Parent support is less effective in buffering cortisol stress reactivity for adolescents compared to children
+  url: https://pubmed.ncbi.nlm.nih.gov/24942038/
+  identifiers:
+    pmid: '24942038'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:24942038
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-23746193
+  title: Future directions in the study of social relationships as regulators of the HPA axis across development
+  url: https://pubmed.ncbi.nlm.nih.gov/23746193/
+  identifiers:
+    pmid: '23746193'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:23746193
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-23162482
+  title: Effects of social support by a dog on stress modulation in male children with insecure attachment
+  url: https://pubmed.ncbi.nlm.nih.gov/23162482/
+  identifiers:
+    pmid: '23162482'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:23162482
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-20841560
+  title: Momentary work worries, marital disclosure, and salivary cortisol among parents of young children
+  url: https://pubmed.ncbi.nlm.nih.gov/20841560/
+  identifiers:
+    pmid: '20841560'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:20841560
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-19766938
+  title: Depression, cortisol reactivity, and obesity in childhood and adolescence
+  url: https://pubmed.ncbi.nlm.nih.gov/19766938/
+  identifiers:
+    pmid: '19766938'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:19766938
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-16879926
+  title: 'Asymmetry between salivary cortisol and alpha-amylase reactivity to stress: relation to aggressive behavior in adolescents'
+  url: https://pubmed.ncbi.nlm.nih.gov/16879926/
+  identifiers:
+    pmid: '16879926'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:16879926
+  screening_status: awaiting_screening
+  reviewer_decisions: []
+- id: record:pubmed-11750779
+  title: Social regulation of the cortisol levels in early human development
+  url: https://pubmed.ncbi.nlm.nih.gov/11750779/
+  identifiers:
+    pmid: '11750779'
+  discovered_by:
+  - search:pubmed-social-buffering-cortisol-youth-2026-08-26
+  deduplication_key: pmid:11750779
+  screening_status: awaiting_screening
+  reviewer_decisions: []
 known_gaps:
-  - PubMed was not searched directly; run and export a prospective PubMed strategy with an exact hit count before calling coverage reproducible.
-  - PsycInfo and at least one multidisciplinary citation database remain unsearched.
-  - Backward and forward citation chasing, trial registries, preprints, and grey literature remain unsearched.
-  - No information specialist has peer-reviewed the search strategy.
-  - No record has two independent full-text decisions or two-person extraction verification.
-  - Newly discovered eligible-looking records have not yet been added to PMM Claims or Evidence.
-  - This pilot must not be described as a systematic review or complete evidence synthesis.
+- The direct PubMed strategy and its 51-record snapshot have not received independent information-specialist peer review.
+- PsycInfo and at least one multidisciplinary citation database remain unsearched.
+- Backward and forward citation chasing, trial registries, preprints, and grey literature remain unsearched.
+- Forty-five direct PubMed candidates still await initial title-and-abstract screening.
+- No record has two independent full-text decisions or two-person extraction verification.
+- Newly discovered eligible-looking records have not yet been added to PMM Claims or Evidence.
+- This pilot must not be described as a systematic review or complete evidence synthesis.
 provenance:
-  record_version: 0.1.0
+  record_version: 0.2.0
   created_at: '2026-08-26T11:45:00+03:00'
-  modified_at: '2026-08-26T11:45:00+03:00'
-  created_by: [OpenAI Codex]
+  modified_at: '2026-08-26T12:00:00+03:00'
+  created_by:
+  - OpenAI Codex
   review_status: machine_validated
-  change_note: Retrospective audit of two mapped sources plus a title-and-abstract queue; no independent human review completed.
+  change_note: Added a direct 51-record PubMed snapshot and synchronized screening queue; no independent human review completed.

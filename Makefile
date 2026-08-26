@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 site-data translate-ru report test export verify clean
+.PHONY: setup validate validate-v02 site-data translate-ru report test export verify pubmed-social-buffering clean
 
 PYTHON := .venv/bin/python
 
@@ -30,6 +30,9 @@ export:
 
 verify: validate test export
 	git diff --exit-code -- build docs/coverage-report.md site/data/pmm-data.json
+
+pubmed-social-buffering:
+	$(PYTHON) scripts/pubmed_search.py curation/logs/social-buffering-retrospective-v0.1.yaml search:pubmed-social-buffering-cortisol-youth-2026-08-26 --sync
 
 clean:
 	$(PYTHON) scripts/pmm_v03.py clean build

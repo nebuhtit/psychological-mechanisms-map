@@ -147,6 +147,7 @@ schema/curation-v0.1.schema.yaml     Search, screening, and review-log contract
 curation/protocol-v0.1.yaml          Machine-readable evidence-selection protocol
 curation/logs/                        Per-family searches, decisions, exclusions, and gaps
 scripts/curation.py                  Curation schema and cross-reference validator
+scripts/pubmed_search.py             Reproducible PubMed snapshot and screening-queue sync
 data/families.yaml                   Single registry for datasets and public map families
 scripts/new_evidence_pack.py         Schema-valid evidence-pack starter generator
 site/                                Static interactive map v0.1
@@ -218,6 +219,17 @@ python3 -m http.server 8000 --directory site
 `make setup` creates a local `.venv`. Validation applies the complete JSON Schema and additional cross-record constraints to every dataset in `data/families.yaml`. Export produces deterministic JSON in `build/` and rebuilds the public families declared by the same registry.
 
 `make validate` also validates every YAML file under `curation/`, verifies search and information-source references, checks deduplication keys, resolves linked PMM Source/Evidence IDs, and enforces the independent-review completion gates.
+
+The first direct PubMed snapshot is committed under `curation/exports/`. Re-run and synchronize a declared search with:
+
+```bash
+.venv/bin/python scripts/pubmed_search.py \
+  curation/logs/social-buffering-retrospective-v0.1.yaml \
+  search:pubmed-social-buffering-cortisol-youth-2026-08-26 \
+  --sync
+```
+
+Synchronization is idempotent. It adds new PubMed results only as `awaiting_screening`; it never makes eligibility decisions, creates Evidence, or promotes Claims automatically.
 
 `make report` rebuilds `docs/coverage-report.md` and `build/coverage-report.json`. The report counts public objects, claim types, evidence profiles, and rule-based review flags; it is a curation audit, not a score of scientific truth or importance.
 

@@ -1,0 +1,714 @@
+{
+  "snapshot_version": 1,
+  "database": "PubMed",
+  "platform": "NCBI E-utilities",
+  "search_id": "search:pubmed-social-buffering-cortisol-youth-2026-08-26",
+  "executed_at": "2026-08-26T11:35:00+03:00",
+  "query": "((\"social buffering\"[Title/Abstract] OR \"stress buffering\"[Title/Abstract] OR ((parent*[Title/Abstract] OR friend*[Title/Abstract] OR sibling*[Title/Abstract] OR caregiver*[Title/Abstract]) AND support*[Title/Abstract] AND (TSST[Title/Abstract] OR \"Trier Social Stress Test\"[Title/Abstract]))) AND (cortisol[Title/Abstract] OR \"HPA axis\"[Title/Abstract] OR hypothalamic-pituitary-adrenal[Title/Abstract]) AND (child*[Title/Abstract] OR adolescen*[Title/Abstract] OR youth[Title/Abstract])) AND (\"1000/01/01\"[Date - Publication] : \"2026/08/26\"[Date - Publication])",
+  "query_translation": "(\"social buffering\"[Title/Abstract] OR \"stress buffering\"[Title/Abstract] OR ((\"parent*\"[Title/Abstract] OR \"friend*\"[Title/Abstract] OR \"sibling*\"[Title/Abstract] OR \"caregiver*\"[Title/Abstract]) AND \"support*\"[Title/Abstract] AND (\"TSST\"[Title/Abstract] OR \"Trier Social Stress Test\"[Title/Abstract]))) AND (\"cortisol\"[Title/Abstract] OR \"HPA axis\"[Title/Abstract] OR \"hypothalamic-pituitary-adrenal\"[Title/Abstract]) AND (\"child*\"[Title/Abstract] OR \"adolescen*\"[Title/Abstract] OR \"youth\"[Title/Abstract]) AND 1000/01/01:2026/08/26[Date - Publication]",
+  "result_count": 51,
+  "pmids": [
+    "42527913",
+    "41610560",
+    "40857990",
+    "39644711",
+    "39457966",
+    "38640970",
+    "38484567",
+    "37559538",
+    "36995488",
+    "36744630",
+    "35935109",
+    "35671231",
+    "34632877",
+    "34388607",
+    "33902711",
+    "33871320",
+    "33432595",
+    "33427186",
+    "33427180",
+    "33305356",
+    "33060454",
+    "32979563",
+    "32272126",
+    "32204834",
+    "31677411",
+    "31382947",
+    "31374220",
+    "31006325",
+    "30068422",
+    "30036796",
+    "28714126",
+    "28498527",
+    "28439150",
+    "28377196",
+    "28167135",
+    "27783306",
+    "27540420",
+    "27021231",
+    "26899419",
+    "26478822",
+    "26322485",
+    "26230646",
+    "26047719",
+    "25774280",
+    "24942038",
+    "23746193",
+    "23162482",
+    "20841560",
+    "19766938",
+    "16879926",
+    "11750779"
+  ],
+  "records": [
+    {
+      "pmid": "42527913",
+      "title": "Investigating interpretation bias and stress responses as risk factors in children of parents with depression",
+      "publication_date": "2026 Jul 29",
+      "journal": "BMC psychiatry",
+      "authors": [
+        "Frommelt T",
+        "Bäumler L",
+        "Rohleder N",
+        "Bartosch A",
+        "Schneider L",
+        "Sumpf C",
+        "Sfärlea A",
+        "Schulte-Körne G",
+        "Platt B"
+      ]
+    },
+    {
+      "pmid": "41610560",
+      "title": "Social buffering of the cortisol stress response during the Minnesota Imaging Stress Test in Children",
+      "publication_date": "2026 Apr",
+      "journal": "Psychoneuroendocrinology",
+      "authors": [
+        "Donzella B",
+        "Miller Z",
+        "Tsakonas NC",
+        "Thomas KM",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "40857990",
+      "title": "Social buffering by siblings in childhood and adolescence",
+      "publication_date": "2025 Oct",
+      "journal": "Psychoneuroendocrinology",
+      "authors": [
+        "Han D",
+        "Thwaites NA",
+        "Olson J",
+        "Rivera KM",
+        "Dmitrieva J",
+        "Doom JR"
+      ]
+    },
+    {
+      "pmid": "39644711",
+      "title": "Share-the-load vs bring-your-own-judge: The effects of friends on social evaluative stress in early adolescence",
+      "publication_date": "2025 Feb",
+      "journal": "Psychoneuroendocrinology",
+      "authors": [
+        "Filetti CR",
+        "Tsakonas NC",
+        "Donzella B",
+        "Thomas KM",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "39457966",
+      "title": "Mechanisms of Social Attachment Between Children and Pet Dogs",
+      "publication_date": "2024 Oct 20",
+      "journal": "Animals : an open access journal from MDPI",
+      "authors": [
+        "Reilly OT",
+        "Somerville LH",
+        "Hecht EE"
+      ]
+    },
+    {
+      "pmid": "38640970",
+      "title": "Feeding under fire: Relations between parental stress hormones and controlling feeding behaviors",
+      "publication_date": "2024 Jul 1",
+      "journal": "Appetite",
+      "authors": [
+        "Venkatesh S",
+        "Doan SN"
+      ]
+    },
+    {
+      "pmid": "38484567",
+      "title": "Glucocorticoid response to naturalistic interactions between children and dogs",
+      "publication_date": "2024 May",
+      "journal": "Hormones and behavior",
+      "authors": [
+        "Gnanadesikan GE",
+        "Carranza E",
+        "King KM",
+        "Flyer AC",
+        "Ossello G",
+        "Smith PG",
+        "Steklis NG",
+        "Steklis HD",
+        "Connelly JJ",
+        "Barnett M",
+        "Gee N",
+        "Tecot S",
+        "MacLean EL"
+      ]
+    },
+    {
+      "pmid": "37559538",
+      "title": "The Development of Stress Reactivity and Regulation in Children and Adolescents",
+      "publication_date": "2024",
+      "journal": "Current neuropharmacology",
+      "authors": [
+        "Filetti C",
+        "Kane-Grade F",
+        "Gunnar M"
+      ]
+    },
+    {
+      "pmid": "36995488",
+      "title": "Adolescents' Hormonal Responses to Social Stress and Associations with Adolescent Social Anxiety and Maternal Comfort: A Preliminary Study",
+      "publication_date": "2024 Dec",
+      "journal": "Child psychiatry and human development",
+      "authors": [
+        "Morgan JK",
+        "Conner KK",
+        "Fridley RM",
+        "Olino TM",
+        "Grewen KM",
+        "Silk JS",
+        "Iyengar S",
+        "Cyranowski JM",
+        "Forbes EE"
+      ]
+    },
+    {
+      "pmid": "36744630",
+      "title": "Effects of pair housing on behavior, cortisol, and clinical outcomes during quarantine-like procedures for rhesus macaques (Macaca mulatta)",
+      "publication_date": "2023 Apr",
+      "journal": "Journal of medical primatology",
+      "authors": [
+        "Jackson MN",
+        "Truelove MA",
+        "Williams K",
+        "Chen J",
+        "Moore RH",
+        "Wood JS",
+        "Cohen JK",
+        "Mollie B"
+      ]
+    },
+    {
+      "pmid": "35935109",
+      "title": "The Neurobiology of Infant Attachment-Trauma and Disruption of Parent-Infant Interactions",
+      "publication_date": "2022",
+      "journal": "Frontiers in behavioral neuroscience",
+      "authors": [
+        "Naeem N",
+        "Zanca RM",
+        "Weinstein S",
+        "Urquieta A",
+        "Sosa A",
+        "Yu B",
+        "Sullivan RM"
+      ]
+    },
+    {
+      "pmid": "35671231",
+      "title": "Targeting the Proximal Mechanisms of Stress Adaptation in Early Adolescence to Prevent Mental Health Problems in Youth in Poverty",
+      "publication_date": "2022 May-Jun",
+      "journal": "Journal of clinical child and adolescent psychology : the official journal for the Society of Clinical Child and Adolescent Psychology, American Psychological Association, Division 53",
+      "authors": [
+        "Wadsworth ME",
+        "Ahlkvist JA",
+        "Jones DE",
+        "Pham H",
+        "Rajagopalan A",
+        "Genaro B"
+      ]
+    },
+    {
+      "pmid": "34632877",
+      "title": "Within-person patterns of psychobiological stress response correspondence: links to preadolescent internalizing problems and coping behaviors",
+      "publication_date": "2022 Sep",
+      "journal": "Anxiety, stress, and coping",
+      "authors": [
+        "Bendezú JJ",
+        "Calhoun CD",
+        "Wadsworth ME"
+      ]
+    },
+    {
+      "pmid": "34388607",
+      "title": "Linking post-stressor interpersonal processes in adolescent girls' close friendships with acute HPA stress responses",
+      "publication_date": "2021 Oct",
+      "journal": "Journal of adolescence",
+      "authors": [
+        "Calhoun CD",
+        "Patterson MW",
+        "Bendezú JJ",
+        "Helms SW",
+        "Owens SA",
+        "Rudolph KD",
+        "Hastings PD",
+        "Prinstein MJ"
+      ]
+    },
+    {
+      "pmid": "33902711",
+      "title": "The role of the endogenous oxytocin system under psychosocial stress conditions in adolescents suffering from anxiety disorder: study protocol for a parallel group controlled trial",
+      "publication_date": "2021 Apr 26",
+      "journal": "BMC psychology",
+      "authors": [
+        "Goetz L",
+        "Jarvers I",
+        "Schleicher D",
+        "Mikan K",
+        "Brunner R",
+        "Kandsperger S"
+      ]
+    },
+    {
+      "pmid": "33871320",
+      "title": "Parental support and insecure attachment development: the cortisol stress response as a moderator",
+      "publication_date": "2023 Feb",
+      "journal": "Attachment & human development",
+      "authors": [
+        "Houbrechts M",
+        "Cuyvers B",
+        "Goossens L",
+        "Bijttebier P",
+        "Bröhl AS",
+        "Calders F",
+        "Chubar V",
+        "Claes S",
+        "Geukens F",
+        "Van Leeuwen K",
+        "Noortgate WVD",
+        "Weyn S",
+        "Bosmans G"
+      ]
+    },
+    {
+      "pmid": "33432595",
+      "title": "Early maternal and paternal caregiving moderates the links between preschoolers' reactivity and regulation and maturation of the HPA-immune axis",
+      "publication_date": "2021 Jul",
+      "journal": "Developmental psychobiology",
+      "authors": [
+        "Abraham E",
+        "Zagoory-Sharon O",
+        "Feldman R"
+      ]
+    },
+    {
+      "pmid": "33427186",
+      "title": "Associations between stress reactivity and behavior problems for previously institutionalized youth across puberty",
+      "publication_date": "2020 Dec",
+      "journal": "Development and psychopathology",
+      "authors": [
+        "Perry NB",
+        "DePasquale CE",
+        "Donzella B",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "33427180",
+      "title": "Parenting matters: Parents can reduce or amplify children's anxiety and cortisol responses to acute stress",
+      "publication_date": "2020 Dec",
+      "journal": "Development and psychopathology",
+      "authors": [
+        "Parenteau AM",
+        "Alen NV",
+        "Deer LK",
+        "Nissen AT",
+        "Luck AT",
+        "Hostinar CE"
+      ]
+    },
+    {
+      "pmid": "33305356",
+      "title": "Parental emotional support and social buffering in previously institutionalized and typically developing children and adolescents",
+      "publication_date": "2021 Jul",
+      "journal": "Developmental psychobiology",
+      "authors": [
+        "Perry N",
+        "Johnson A",
+        "Hostinar C",
+        "Gunnar M"
+      ]
+    },
+    {
+      "pmid": "33060454",
+      "title": "Perceived Social Support and Children's Physiological Responses to Stress: An Examination of the Stress-Buffering Hypothesis",
+      "publication_date": "2021 Jan 1",
+      "journal": "Psychosomatic medicine",
+      "authors": [
+        "Chen L",
+        "Zilioli S",
+        "Jiang Y",
+        "Wang X",
+        "Lin D"
+      ]
+    },
+    {
+      "pmid": "32979563",
+      "title": "Pubertal recalibration of cortisol reactivity following early life parent-child separation",
+      "publication_date": "2021 Jan 1",
+      "journal": "Journal of affective disorders",
+      "authors": [
+        "Zhang DD",
+        "Fang J",
+        "Zhang L",
+        "Yuan JY",
+        "Wan YH",
+        "Su PY",
+        "Tao FB",
+        "Sun Y"
+      ]
+    },
+    {
+      "pmid": "32272126",
+      "title": "Human attachment triggers different social buffering mechanisms under high and low early life stress rearing",
+      "publication_date": "2020 Jun",
+      "journal": "International journal of psychophysiology : official journal of the International Organization of Psychophysiology",
+      "authors": [
+        "Yirmiya K",
+        "Motsan S",
+        "Zagoory-Sharon O",
+        "Feldman R"
+      ]
+    },
+    {
+      "pmid": "32204834",
+      "title": "The development of stress reactivity and regulation during human development",
+      "publication_date": "2020",
+      "journal": "International review of neurobiology",
+      "authors": [
+        "Engel ML",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "31677411",
+      "title": "Intranasal oxytocin enhances stress-protective effects of social support in women with negative childhood experiences during a virtual Trier Social Stress Test",
+      "publication_date": "2020 Jan",
+      "journal": "Psychoneuroendocrinology",
+      "authors": [
+        "Riem MME",
+        "Kunst LE",
+        "Bekker MHJ",
+        "Fallon M",
+        "Kupper N"
+      ]
+    },
+    {
+      "pmid": "31382947",
+      "title": "Acute psychosocial stress and working memory performance: the potential of physical activity to modulate cognitive functions in children",
+      "publication_date": "2019 Aug 5",
+      "journal": "BMC pediatrics",
+      "authors": [
+        "Wunsch K",
+        "Meier M",
+        "Ueberholz L",
+        "Strahler J",
+        "Kasten N"
+      ]
+    },
+    {
+      "pmid": "31374220",
+      "title": "Neglect, HPA axis reactivity, and development",
+      "publication_date": "2019 Nov",
+      "journal": "International journal of developmental neuroscience : the official journal of the International Society for Developmental Neuroscience",
+      "authors": [
+        "Reilly EB",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "31006325",
+      "title": "Adrenocortical and autonomic attunement between romantic partners in emerging adulthood",
+      "publication_date": "2019 Jul",
+      "journal": "Stress (Amsterdam, Netherlands)",
+      "authors": [
+        "Phan JM",
+        "R Dismukes A",
+        "Barnett N",
+        "Miocevic O",
+        "L Ruttle P",
+        "Shirtcliff EA"
+      ]
+    },
+    {
+      "pmid": "30068422",
+      "title": "Social buffering of the maternal and infant HPA axes: Mediation and moderation in the intergenerational transmission of adverse childhood experiences",
+      "publication_date": "2018 Aug",
+      "journal": "Development and psychopathology",
+      "authors": [
+        "Thomas JC",
+        "Letourneau N",
+        "Campbell TS",
+        "Giesbrecht GF",
+        "Apron Study Team"
+      ]
+    },
+    {
+      "pmid": "30036796",
+      "title": "Glucocorticoid receptor exon 1(F) methylation and the cortisol stress response in health and disease",
+      "publication_date": "2018 Nov",
+      "journal": "Psychoneuroendocrinology",
+      "authors": [
+        "Schür RR",
+        "van Leeuwen JMC",
+        "Houtepen LC",
+        "Joëls M",
+        "Kahn RS",
+        "Boks MP",
+        "Vinkers CH"
+      ]
+    },
+    {
+      "pmid": "28714126",
+      "title": "Annual Research Review: Early adversity, the hypothalamic-pituitary-adrenocortical axis, and child psychopathology",
+      "publication_date": "2018 Apr",
+      "journal": "Journal of child psychology and psychiatry, and allied disciplines",
+      "authors": [
+        "Koss KJ",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "28498527",
+      "title": "Adolescent Conflict Appraisals Moderate the Link Between Marital Conflict and Physiological Stress Reactivity",
+      "publication_date": "2017 Mar",
+      "journal": "Journal of research on adolescence : the official journal of the Society for Research on Adolescence",
+      "authors": [
+        "Lucas-Thompson RG",
+        "Lunkenheimer ES",
+        "Granger DA"
+      ]
+    },
+    {
+      "pmid": "28439150",
+      "title": "Effect of Pet Dogs on Children's Perceived Stress and Cortisol Stress Response",
+      "publication_date": "2017 May",
+      "journal": "Social development (Oxford, England)",
+      "authors": [
+        "Kertes DA",
+        "Liu J",
+        "Hall NJ",
+        "Hadad NA",
+        "Wynne CDL",
+        "Bhatt SS"
+      ]
+    },
+    {
+      "pmid": "28377196",
+      "title": "Emotion socialization as a predictor of physiological and psychological responses to stress",
+      "publication_date": "2017 Jun 1",
+      "journal": "Physiology & behavior",
+      "authors": [
+        "Guo J",
+        "Mrug S",
+        "Knight DC"
+      ]
+    },
+    {
+      "pmid": "28167135",
+      "title": "Long-term effects of adolescent stress on neophobic behaviors in zebra finches are modulated by social context when in adulthood",
+      "publication_date": "2017 Apr",
+      "journal": "Hormones and behavior",
+      "authors": [
+        "Emmerson MG",
+        "Spencer KA"
+      ]
+    },
+    {
+      "pmid": "27783306",
+      "title": "Individual and Day-to-Day Differences in Active Coping Predict Diurnal Cortisol Patterns among Early Adolescent Girls",
+      "publication_date": "2017 Jan",
+      "journal": "Journal of youth and adolescence",
+      "authors": [
+        "Sladek MR",
+        "Doane LD",
+        "Stroud CB"
+      ]
+    },
+    {
+      "pmid": "27540420",
+      "title": "Comparing oxytocin and cortisol regulation in a double-blind, placebo-controlled, hydrocortisone challenge pilot study in children with autism and typical development",
+      "publication_date": "2016",
+      "journal": "Journal of neurodevelopmental disorders",
+      "authors": [
+        "Corbett BA",
+        "Bales KL",
+        "Swain D",
+        "Sanders K",
+        "Weinstein TA",
+        "Muglia LJ"
+      ]
+    },
+    {
+      "pmid": "27021231",
+      "title": "The role of social buffering on chronic disruptions in quality of care: evidence from caregiver-based interventions in foster children",
+      "publication_date": "2017 Feb",
+      "journal": "Social neuroscience",
+      "authors": [
+        "Flannery JE",
+        "Beauchamp KG",
+        "Fisher PA"
+      ]
+    },
+    {
+      "pmid": "26899419",
+      "title": "Social stress buffering by friends in childhood and adolescence: Effects on HPA and oxytocin activity",
+      "publication_date": "2017 Feb",
+      "journal": "Social neuroscience",
+      "authors": [
+        "Doom JR",
+        "Doyle CM",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "26478822",
+      "title": "Social Support Can Buffer against Stress and Shape Brain Activity",
+      "publication_date": "2015 Jul 1",
+      "journal": "AJOB neuroscience",
+      "authors": [
+        "Hostinar CE",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "26322485",
+      "title": "Early social deprivation and the social buffering of cortisol stress responses in late childhood: An experimental study",
+      "publication_date": "2015 Nov",
+      "journal": "Developmental psychology",
+      "authors": [
+        "Hostinar CE",
+        "Johnson AE",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "26230646",
+      "title": "The social buffering of the hypothalamic-pituitary-adrenocortical axis in humans: Developmental and experiential determinants",
+      "publication_date": "2015",
+      "journal": "Social neuroscience",
+      "authors": [
+        "Gunnar MR",
+        "Hostinar CE"
+      ]
+    },
+    {
+      "pmid": "26047719",
+      "title": "The roles of puberty and age in explaining the diminished effectiveness of parental buffering of HPA reactivity and recovery in adolescence",
+      "publication_date": "2015 Sep",
+      "journal": "Psychoneuroendocrinology",
+      "authors": [
+        "Doom JR",
+        "Hostinar CE",
+        "VanZomeren-Dohm AA",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "25774280",
+      "title": "Neuroendocrine and behavioral response to social rupture and repair in preschoolers with autism spectrum disorders interacting with mother and father",
+      "publication_date": "2015",
+      "journal": "Molecular autism",
+      "authors": [
+        "Ostfeld-Etzion S",
+        "Golan O",
+        "Hirschler-Guttenberg Y",
+        "Zagoory-Sharon O",
+        "Feldman R"
+      ]
+    },
+    {
+      "pmid": "24942038",
+      "title": "Parent support is less effective in buffering cortisol stress reactivity for adolescents compared to children",
+      "publication_date": "2015 Mar",
+      "journal": "Developmental science",
+      "authors": [
+        "Hostinar CE",
+        "Johnson AE",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "23746193",
+      "title": "Future directions in the study of social relationships as regulators of the HPA axis across development",
+      "publication_date": "2013",
+      "journal": "Journal of clinical child and adolescent psychology : the official journal for the Society of Clinical Child and Adolescent Psychology, American Psychological Association, Division 53",
+      "authors": [
+        "Hostinar CE",
+        "Gunnar MR"
+      ]
+    },
+    {
+      "pmid": "23162482",
+      "title": "Effects of social support by a dog on stress modulation in male children with insecure attachment",
+      "publication_date": "2012",
+      "journal": "Frontiers in psychology",
+      "authors": [
+        "Beetz A",
+        "Julius H",
+        "Turner D",
+        "Kotrschal K"
+      ]
+    },
+    {
+      "pmid": "20841560",
+      "title": "Momentary work worries, marital disclosure, and salivary cortisol among parents of young children",
+      "publication_date": "2010 Nov",
+      "journal": "Psychosomatic medicine",
+      "authors": [
+        "Slatcher RB",
+        "Robles TF",
+        "Repetti RL",
+        "Fellows MD"
+      ]
+    },
+    {
+      "pmid": "19766938",
+      "title": "Depression, cortisol reactivity, and obesity in childhood and adolescence",
+      "publication_date": "2009 Oct",
+      "journal": "The Journal of adolescent health : official publication of the Society for Adolescent Medicine",
+      "authors": [
+        "Dockray S",
+        "Susman EJ",
+        "Dorn LD"
+      ]
+    },
+    {
+      "pmid": "16879926",
+      "title": "Asymmetry between salivary cortisol and alpha-amylase reactivity to stress: relation to aggressive behavior in adolescents",
+      "publication_date": "2006 Sep",
+      "journal": "Psychoneuroendocrinology",
+      "authors": [
+        "Gordis EB",
+        "Granger DA",
+        "Susman EJ",
+        "Trickett PK"
+      ]
+    },
+    {
+      "pmid": "11750779",
+      "title": "Social regulation of the cortisol levels in early human development",
+      "publication_date": "2002 Jan-Feb",
+      "journal": "Psychoneuroendocrinology",
+      "authors": [
+        "Gunnar MR",
+        "Donzella B"
+      ]
+    }
+  ]
+}

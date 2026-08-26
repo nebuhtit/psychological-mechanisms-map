@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 from typing import Any
@@ -67,22 +68,60 @@ def load_linked_records(relative_path: str, errors: list[str]) -> dict[str, dict
     }
 
 
+def load_search_snapshot(search: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    relative_path = search.get("export_file")
+    if not isinstance(relative_path, str):
+        return {}
+    path = (ROOT / relative_path).resolve()
+    if ROOT not in path.parents or not path.is_file():
+        errors.append(f"{search.get('id')}: missing or unsafe export_file {relative_path}")
+        return {}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        errors.append(f"{search.get('id')}: invalid search snapshot: {error}")
+        return {}
+    if not isinstance(value, dict):
+        errors.append(f"{search.get('id')}: search snapshot must be a JSON object")
+        return {}
+    return value
+
+
 def validate_log(document: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     information_sources = unique_by_id(document.get("information_sources", []), "information_sources", errors)
     searches = unique_by_id(document.get("searches", []), "searches", errors)
     records = unique_by_id(document.get("records", []), "records", errors)
     linked_records = load_linked_records(document.get("linked_dataset", ""), errors)
+    snapshots: dict[str, dict[str, Any]] = {}
 
     for search_id, search in searches.items():
         if search.get("information_source_id") not in information_sources:
             errors.append(f"{search_id}: unresolved information_source_id {search.get('information_source_id')}")
+        if search.get("result_count_status") == "recorded":
+            snapshot = load_search_snapshot(search, errors)
+            snapshots[search_id] = snapshot
+            pmids = snapshot.get("pmids", [])
+            if snapshot.get("search_id") != search_id:
+                errors.append(f"{search_id}: snapshot search_id does not match")
+            if snapshot.get("query") != search.get("strategy"):
+                errors.append(f"{search_id}: snapshot query does not match strategy")
+            if snapshot.get("result_count") != search.get("result_count"):
+                errors.append(f"{search_id}: snapshot result_count does not match log")
+            if len(pmids) != search.get("result_count") or len(pmids) != len(set(pmids)):
+                errors.append(f"{search_id}: snapshot PMID count is incomplete or duplicated")
 
     deduplication_keys: dict[str, str] = {}
     for record_id, record in records.items():
         for search_id in record.get("discovered_by", []):
             if search_id not in searches:
                 errors.append(f"{record_id}: unresolved discovered_by search {search_id}")
+                continue
+            search = searches[search_id]
+            if search.get("result_count_status") == "recorded" and record.get("identifiers", {}).get("pmid"):
+                snapshot = snapshots.get(search_id, {})
+                if record["identifiers"]["pmid"] not in snapshot.get("pmids", []):
+                    errors.append(f"{record_id}: PMID is absent from snapshot for {search_id}")
 
         deduplication_key = record.get("deduplication_key")
         if isinstance(deduplication_key, str):
