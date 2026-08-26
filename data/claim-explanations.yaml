@@ -620,3 +620,33 @@ entries:
       A plausible working model is that reactivity and regulation repeatedly interact with maturation, learning, relationships, roles, and environments, producing both continuity and change. Current longitudinal and behavioral-genetic evidence does not identify that whole person-environment loop as one established mechanism, so each proposed link requires separate measurement and testing.
     ru: >-
       Правдоподобная рабочая модель предполагает, что реактивность и саморегуляция многократно взаимодействуют с созреванием, научением, отношениями, ролями и средой, создавая и устойчивость, и изменения. Существующие продольные и поведенческо-генетические данные не устанавливают всю эту петлю «человек–среда» как единый доказанный механизм, поэтому каждое предполагаемое звено нужно измерять и проверять отдельно.
+
+  - claim_id: pmm:claim:self-regulation-cycle-is-theoretical-framework
+    en: >-
+      A useful self-regulation map separates the desired result, the person's estimate of current progress, checking behavior, the chosen action, what happens next, and whether the goal or strategy is revised. This is a way to organize observations and hypotheses, not proof that one hidden “willpower system” controls every goal.
+    ru: >-
+      Полезная схема саморегуляции отдельно показывает желаемый результат, оценку текущего прогресса, проверку прогресса, выбранное действие, его последствия и возможную коррекцию цели или стратегии. Это способ организовать наблюдения и гипотезы, а не доказательство единой скрытой «системы силы воли», управляющей всеми целями.
+
+  - claim_id: pmm:claim:monitoring-interventions-improve-goal-attainment
+    en: >-
+      Across 138 randomized studies, prompting people to check progress made checking much more frequent and improved later goal attainment by a moderate amount on average. The benefit was not universal and was larger when results were physically recorded or reported publicly; the finding must not be generalized to harmful, vague, or poorly measured goals.
+    ru: >-
+      В 138 рандомизированных исследованиях побуждение проверять прогресс резко увеличивало частоту проверки и в среднем умеренно улучшало последующее достижение цели. Эффект был не универсальным и оказался больше при физической записи или публичном сообщении результата; вывод нельзя переносить на вредные, расплывчатые или плохо измеряемые цели.
+
+  - claim_id: pmm:claim:monitoring-frequency-statistically-mediates-attainment
+    en: >-
+      In the meta-analysis, the increase in checking frequency statistically accounted for part of the intervention's relation with attainment. This makes monitoring a plausible process to measure, but it does not prove that checking caused improvement for each person or that no other pathway was involved.
+    ru: >-
+      В метаанализе увеличение частоты проверки статистически объясняло часть связи вмешательства с достижением цели. Поэтому мониторинг является правдоподобным процессом для измерения, но это не доказывает, что именно проверка вызвала улучшение у каждого человека или что других путей не было.
+
+  - claim_id: pmm:claim:generic-feedback-has-mixed-performance-effects
+    en: >-
+      Telling people how they performed helped on average in this historical meta-analysis, yet more than 38% of extracted effects were negative. Feedback is information, not an automatic improvement: content, task, skill, timing, attention, and whether the message shifts focus toward the task or the self can change the result.
+    ru: >-
+      В историческом метаанализе сообщение о результате в среднем помогало, но более 38% извлечённых эффектов были отрицательными. Обратная связь — это информация, а не автоматическое улучшение: результат зависит от содержания, задания, навыка, времени, внимания и того, направляет ли сообщение внимание на задачу или на оценку себя.
+
+  - claim_id: pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis
+    en: >-
+      The proposed loop says that a person compares current progress with a goal, selects an available action, observes the consequence, and then adjusts the action, strategy, or goal. Existing studies support some components but not the whole person-specific causal chain. Test one link and one outcome at a time rather than assuming the loop explains a failure.
+    ru: >-
+      Предполагаемая петля означает, что человек сравнивает текущий прогресс с целью, выбирает доступное действие, наблюдает последствие и затем корректирует действие, стратегию или саму цель. Исследования поддерживают отдельные звенья, но не всю индивидуальную причинную цепь. Нужно проверять по одному звену и результату, а не заранее объяснять петлёй любую неудачу.

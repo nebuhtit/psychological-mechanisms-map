@@ -387,3 +387,21 @@ questions:
     about_ids: [pmm:mechanism:developmental-temperament-transaction, pmm:construct:developmental-temperament-dimensions, pmm:state:context-specific-temperamental-reactivity, pmm:behavior:observed-temperament-relevant-response]
     source_ids: [pmm:source:roberts-delvecchio-2000-stability, pmm:source:ringwald-2026-temperament-personality, pmm:source:briley-tucker-drob-2014-continuity]
     provenance: *provenance
+
+  - id: pmm:research-question:self-regulation-person-specific-bottleneck
+    family_id: self-regulation
+    question:
+      en: Which measured bottleneck in a person's goal-action-feedback sequence should be changed first, and does that change improve the prespecified outcome without creating another cost?
+      ru: Какое измеренное узкое место в индивидуальной цепи «цель–действие–обратная связь» следует менять первым и улучшает ли это заранее выбранный результат без нового ущерба?
+    why_open:
+      en: Meta-analyses estimate average intervention effects, but goal conflict, measurement accuracy, available skills, habits, affect, context, feedback content, and decisions to revise or abandon goals vary within and between people.
+      ru: Метаанализы оценивают средние эффекты, но конфликт целей, точность измерения, доступные навыки, привычки, эмоции, контекст, содержание обратной связи и решение изменить или оставить цель различаются внутри одного человека и между людьми.
+    what_would_help:
+      en: Preregistered intensive within-person measurement followed by safe sequential randomization of monitoring, environmental friction, action planning, feedback, and goal revision with competing process models.
+      ru: Пререгистрированные частые внутрииндивидуальные измерения с последующей безопасной последовательной рандомизацией мониторинга, трения среды, планирования действий, обратной связи и пересмотра цели и сравнением конкурирующих моделей процесса.
+    question_kind: causal
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:goal-discrepancy-feedback-control, pmm:construct:represented-goal-standard, pmm:behavior:goal-progress-monitoring, pmm:behavior:self-regulatory-action, pmm:outcome:goal-attainment]
+    source_ids: [pmm:source:carver-2019-control-theory, pmm:source:harkin-2016-monitoring, pmm:source:kluger-denisi-1996-feedback]
+    provenance: *provenance

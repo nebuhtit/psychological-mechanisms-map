@@ -65,6 +65,18 @@ sources:
     title: Genetic and environmental continuity in personality development — a meta-analysis
     organization: Psychological Bulletin
     url: https://pubmed.ncbi.nlm.nih.gov/24956122/
+  - id: source:carver-control-theory-2019
+    title: Control Theory, Goal Attainment, and Psychopathology
+    organization: Cognitive and Behavioral Practice
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6707771/
+  - id: source:harkin-monitoring-2016
+    title: Does Monitoring Goal Progress Promote Goal Attainment? A Meta-Analysis of the Experimental Evidence
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/26479070/
+  - id: source:kluger-denisi-feedback-1996
+    title: The Effects of Feedback Interventions on Performance
+    organization: Psychological Bulletin
+    url: https://doi.org/10.1037/0033-2909.119.2.254
   - id: source:big-five-review
     title: An Introduction to the Five-Factor Model and Its Applications
     organization: Journal of Personality
@@ -414,7 +426,7 @@ general_psychology:
         en: PMM currently models a narrow cardiac-interoception case. Physiological activation, perceived sensation, task accuracy, self-report, metacognitive awareness, and appraisal are different records.
         ru: Сейчас PMM моделирует узкий случай сердечной интероцепции. Физиологическая активация, ощущение, точность задания, самоотчёт, метакогнитивная осведомлённость и оценка представлены разными записями.
       coverage: partial
-      source_ids: [source:rdoc-definitions]
+      source_ids: [source:rdoc-definitions, source:carver-control-theory-2019, source:harkin-monitoring-2016]
       memberships:
         - {family_id: interoception, canonical_id: pmm:construct:cardiac-interoceptive-accuracy, role: construct_example, expected_type: Construct}
         - {family_id: interoception, canonical_id: pmm:state:perceived-cardiorespiratory-sensation, role: state_example, expected_type: State}
@@ -630,6 +642,9 @@ general_psychology:
         - {family_id: habit, canonical_id: pmm:mechanism:habitual-action-control, role: mechanism_example, expected_type: Mechanism}
         - {family_id: habit, canonical_id: pmm:intervention:selective-outcome-devaluation, role: intervention_example, expected_type: Intervention}
         - {family_id: habit, canonical_id: pmm:behavior:outcome-insensitive-responding, role: behavior_example, expected_type: Behavior}
+        - {family_id: self-regulation, canonical_id: pmm:construct:represented-goal-standard, role: construct_example, expected_type: Construct}
+        - {family_id: self-regulation, canonical_id: pmm:behavior:self-regulatory-action, role: behavior_example, expected_type: Behavior}
+        - {family_id: self-regulation, canonical_id: pmm:outcome:goal-attainment, role: outcome_example, expected_type: Outcome}
     - id: gp:cognitive-control
       parent_id: gp:action-self-regulation
       kind: topic
@@ -638,14 +653,18 @@ general_psychology:
         en: Maintaining task goals, selecting responses, controlling interference, monitoring performance, and adjusting behavior.
         ru: Поддержание целей задания, выбор ответа, контроль помех, отслеживание результата и корректировка поведения.
       ontological_note:
-        en: PMM currently contains only working-memory and response-control examples; this is not yet full coverage of inhibition, monitoring, or task switching.
-        ru: Сейчас PMM содержит только примеры из рабочей памяти и контроля ответа; торможение, мониторинг и переключение задач ещё не охвачены полноценно.
+        en: PMM now contains working-memory, response-control, and goal-progress monitoring examples; this is still not full coverage of inhibition, performance monitoring, or task switching.
+        ru: Сейчас PMM содержит примеры рабочей памяти, контроля ответа и мониторинга прогресса цели; торможение, мониторинг выполнения и переключение задач всё ещё охвачены не полностью.
       coverage: partial
-      source_ids: [source:rdoc-definitions]
+      source_ids: [source:rdoc-definitions, source:carver-control-theory-2019, source:harkin-monitoring-2016]
       memberships:
         - {family_id: working-memory, canonical_id: pmm:construct:working-memory-capacity, role: construct_example, expected_type: Construct}
         - {family_id: working-memory, canonical_id: pmm:mechanism:familiarity-control, role: mechanism_example, expected_type: Mechanism}
         - {family_id: working-memory, canonical_id: pmm:measurement:n-back-performance, role: measurement_example, expected_type: Measurement}
+        - {family_id: self-regulation, canonical_id: pmm:behavior:goal-progress-monitoring, role: behavior_example, expected_type: Behavior}
+        - {family_id: self-regulation, canonical_id: pmm:measurement:recorded-goal-progress, role: measurement_example, expected_type: Measurement}
+        - {family_id: self-regulation, canonical_id: pmm:state:goal-progress-discrepancy, role: state_example, expected_type: State}
+        - {family_id: self-regulation, canonical_id: pmm:mechanism:goal-discrepancy-feedback-control, role: mechanism_example, expected_type: Mechanism}
     - id: gp:volition
       parent_id: gp:action-self-regulation
       kind: topic
@@ -1047,15 +1066,26 @@ foundational_models:
         - {en: Select or inhibit a response, ru: Выбор или торможение реакции}
         - {en: Observe progress and cost, ru: Наблюдение прогресса и цены усилия}
         - {en: Adjust strategy or goal, ru: Коррекция стратегии или цели}
-      practical_focus: {en: Clarify the target, reduce friction, create feedback, and test whether the selected strategy changes behavior., ru: Уточните цель, уменьшите трение, создайте обратную связь и проверьте, меняет ли выбранная стратегия поведение.}
-      established: {en: Goal-directed and habitual control can dissociate under specific tasks, but task convergence is limited., ru: Целенаправленный и привычный контроль могут расходиться в отдельных заданиях, но сходимость заданий ограничена.}
-      proposed: {en: A single executive-control capacity rarely explains all failures of self-regulation., ru: Единая способность исполнительного контроля редко объясняет все сбои саморегуляции.}
-      measurements: {en: Choices after devaluation, task errors, latency, persistence, goal progress, and ecological behavior., ru: Выбор после обесценивания, ошибки, время ответа, настойчивость, прогресс цели и поведение в жизни.}
+      practical_focus: {en: Specify one observable goal, record baseline progress, identify one bottleneck, change one link, and compare the next prespecified result rather than judging willpower., ru: Задайте одну наблюдаемую цель, запишите исходный прогресс, найдите одно узкое место, измените одно звено и сравните следующий заранее выбранный результат вместо оценки силы воли.}
+      established: {en: Randomized progress-monitoring interventions moderately improve attainment on average; generic performance feedback is highly variable and sometimes harmful; goal-directed and habitual control can dissociate in bounded tasks., ru: Рандомизированные вмешательства мониторинга прогресса в среднем умеренно улучшают достижение цели; общая обратная связь сильно различается и иногда вредит; целенаправленный и привычный контроль могут расходиться в ограниченных заданиях.}
+      proposed: {en: The complete goal-discrepancy-action-feedback loop is a mechanism hypothesis, not a proven universal control system., ru: Полная петля «цель–расхождение–действие–обратная связь» является гипотезой механизма, а не доказанной универсальной системой контроля.}
+      measurements: {en: Declared goal, recorded progress, monitoring frequency, action, consequence, attainment, devaluation sensitivity, errors, latency, persistence, and costs., ru: Заявленная цель, записанный прогресс, частота мониторинга, действие, последствие, достижение, чувствительность к обесцениванию, ошибки, время ответа, настойчивость и издержки.}
       limitation: {en: Poor performance may reflect knowledge, motivation, fatigue, environment, or measurement rather than weak willpower., ru: Низкий результат может отражать знания, мотивацию, усталость, среду или измерение, а не слабую волю.}
-      source_ids: []
+      source_ids: [source:carver-control-theory-2019, source:harkin-monitoring-2016, source:kluger-denisi-feedback-1996]
       mapped_memberships:
         - {family_id: habit, canonical_id: pmm:mechanism:goal-directed-action-control, role: mechanism_example, expected_type: Mechanism}
         - {family_id: habit, canonical_id: pmm:mechanism:habitual-action-control, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: self-regulation, canonical_id: pmm:construct:self-regulation-feedback-cycle, role: construct_example, expected_type: Construct}
+        - {family_id: self-regulation, canonical_id: pmm:construct:represented-goal-standard, role: construct_example, expected_type: Construct}
+        - {family_id: self-regulation, canonical_id: pmm:state:perceived-goal-progress, role: state_example, expected_type: State}
+        - {family_id: self-regulation, canonical_id: pmm:state:goal-progress-discrepancy, role: state_example, expected_type: State}
+        - {family_id: self-regulation, canonical_id: pmm:behavior:goal-progress-monitoring, role: behavior_example, expected_type: Behavior}
+        - {family_id: self-regulation, canonical_id: pmm:behavior:self-regulatory-action, role: behavior_example, expected_type: Behavior}
+        - {family_id: self-regulation, canonical_id: pmm:measurement:recorded-goal-progress, role: measurement_example, expected_type: Measurement}
+        - {family_id: self-regulation, canonical_id: pmm:intervention:progress-monitoring-prompt, role: intervention_example, expected_type: Intervention}
+        - {family_id: self-regulation, canonical_id: pmm:intervention:external-performance-feedback, role: intervention_example, expected_type: Intervention}
+        - {family_id: self-regulation, canonical_id: pmm:outcome:goal-attainment, role: outcome_example, expected_type: Outcome}
+        - {family_id: self-regulation, canonical_id: pmm:mechanism:goal-discrepancy-feedback-control, role: mechanism_example, expected_type: Mechanism}
     - id: model:personality-development
       label: {en: Personality development, ru: Развитие личности}
       model_kind: developmental_framework

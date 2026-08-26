@@ -1,0 +1,851 @@
+{
+  "claims": [
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Control-theory reviews consistently describe these functional components, while definitions and operationalizations of self-regulation remain heterogeneous."
+      },
+      "defined_object_id": "pmm:construct:self-regulation-feedback-cycle",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:self-regulation-cycle-is-theoretical-framework",
+      "limitations": [
+        "The framework does not establish that all relevant comparisons are conscious or that discrepancy reduction is always adaptive."
+      ],
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:repeated-goal-pursuit-assessment"
+        ],
+        "population": "Humans pursuing represented behavioral or outcome goals.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Repeated goal pursuit in which current progress and consequences can be observed."
+      },
+      "source_ids": [
+        "pmm:source:carver-2019-control-theory"
+      ],
+      "statement": "Feedback-control accounts organize self-regulation around goals, monitoring, comparison, action, and renewed input, but this organization is a theoretical framework rather than one universally established mental mechanism."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Each effect compares the source-specific monitoring intervention with its declared control.",
+        "exchangeability": "Supported within studies by randomized allocation; meta-analytic transport across goals remains limited.",
+        "interference": "Assumed within studies, though public reporting can introduce social interaction.",
+        "positivity": "Included studies contain intervention and control conditions."
+      },
+      "causal_estimand": "Average difference in prespecified goal attainment between assigned progress-monitoring interventions and control conditions.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "A large random-effects meta-analysis found strong effects on monitoring and a smaller effect on attainment, with heterogeneity across goals and larger effects for recorded or public outcomes."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:harkin-2016-monitoring-meta"
+      ],
+      "exposure_id": "pmm:intervention:progress-monitoring-prompt",
+      "id": "pmm:claim:monitoring-interventions-improve-goal-attainment",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "The pooled effect does not show that monitoring is sufficient, beneficial for every goal, or effective when records are inaccurate or the goal is harmful."
+      ],
+      "outcome_id": "pmm:outcome:goal-attainment",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The target, monitoring method, comparator, outcome, and follow-up must match an included or sufficiently similar intervention context."
+        ],
+        "context_ids": [
+          "pmm:context:repeated-goal-pursuit-assessment"
+        ],
+        "population": "19,951 participants represented across 138 goal-monitoring intervention studies.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Source-specific intervention and follow-up periods across behavioral and outcome goals."
+      },
+      "statement": "Across 138 randomized studies, interventions designed to increase goal-progress monitoring increased monitoring frequency and produced a moderate average improvement in goal attainment relative to controls.",
+      "temporal_ordering": "Assignment to monitoring intervention precedes monitoring behavior and later goal attainment."
+    },
+    {
+      "claim_type": "mediation",
+      "confidence": {
+        "level": "low",
+        "rationale": "The meta-analysis reported mediation, but aggregate statistical mediation does not identify a person-level causal mechanism and can be affected by measurement and study-level differences."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:harkin-2016-monitoring-mediation"
+      ],
+      "exposure_id": "pmm:intervention:progress-monitoring-prompt",
+      "id": "pmm:claim:monitoring-frequency-statistically-mediates-attainment",
+      "indirect_effect": {
+        "direction": "positive",
+        "metric": "meta-analytic statistical mediation by change in monitoring frequency",
+        "notes": "Reported across included intervention effects; not interpreted as a causal indirect effect.",
+        "value_status": "qualitative_only"
+      },
+      "limitations": [
+        "Statistical mediation does not prove that monitoring frequency is the sole or causal pathway for any individual."
+      ],
+      "mediation_inference": "statistical",
+      "mediator_id": "pmm:behavior:goal-progress-monitoring",
+      "outcome_id": "pmm:outcome:goal-attainment",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:repeated-goal-pursuit-assessment"
+        ],
+        "population": "Participants represented in the included goal-monitoring intervention studies.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Monitoring measured after intervention assignment and before or alongside attainment assessment."
+      },
+      "statement": "In the Harkin et al. meta-analysis, intervention-induced changes in monitoring frequency statistically mediated the pooled effect on goal attainment.",
+      "temporal_ordering": "Intervention assignment preceded monitoring and attainment, but study-level aggregation and overlapping measurement windows do not establish mediator-outcome causal order."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "plausible",
+        "consistency": "Effects represent heterogeneous feedback interventions and cannot be treated as one uniform treatment.",
+        "exchangeability": "Supported only to the extent that included study assignments and comparisons were valid.",
+        "interference": "Generally assumed and incompletely reported.",
+        "positivity": "Included effects contain a feedback and comparison condition."
+      },
+      "causal_estimand": "Average source-specific performance difference following an external feedback intervention versus the study comparator.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The meta-analysis included 607 effects and documented substantial heterogeneity, while historical studies, dependence among observations, intervention diversity, and moderator uncertainty limit modern transfer."
+      },
+      "epistemic_status": "mixed",
+      "evidence_ids": [
+        "pmm:evidence:kluger-denisi-1996-feedback-meta"
+      ],
+      "exposure_id": "pmm:intervention:external-performance-feedback",
+      "id": "pmm:claim:generic-feedback-has-mixed-performance-effects",
+      "identification_strategy": "randomized_intervention",
+      "limitations": [
+        "The result does not justify giving more feedback, praising, criticizing, or making performance self-relevant without testing the specific design and outcome."
+      ],
+      "outcome_id": "pmm:outcome:goal-attainment",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Feedback content, task, baseline skill, attentional focus, delivery, comparator, and outcome must be specified."
+        ],
+        "context_ids": [
+          "pmm:context:repeated-goal-pursuit-assessment"
+        ],
+        "population": "Participants represented in 131 historical feedback-intervention papers.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Source-specific task performance following externally supplied performance information."
+      },
+      "statement": "External performance-feedback interventions improved performance on average in the Kluger and DeNisi meta-analysis, but more than one third of extracted effects were negative.",
+      "temporal_ordering": "Feedback manipulation precedes subsequent measured performance."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "low",
+        "rationale": "Monitoring interventions support one component and feedback effects constrain the model, but the complete within-person loop and its competing conscious, habitual, emotional, and social processes have not been jointly identified."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:self-regulation-loop-indirect"
+      ],
+      "exposure_id": "pmm:construct:represented-goal-standard",
+      "falsifiable_boundary": "The proposed loop is weakened when changing measured discrepancy or available response does not alter the predicted subsequent action and when competing models predict within-person sequences better.",
+      "id": "pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis",
+      "limitations": [
+        "Aggregate intervention effects do not establish one universal comparator, hierarchy, conscious error signal, or optimal persistence rule."
+      ],
+      "mechanism_id": "pmm:mechanism:goal-discrepancy-feedback-control",
+      "outcome_id": "pmm:outcome:goal-attainment",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Goal, current state, action, consequence, timing, and competing goals are measured separately."
+        ],
+        "context_ids": [
+          "pmm:context:repeated-goal-pursuit-assessment"
+        ],
+        "population": "Humans pursuing measurable goals across repeated opportunities for action and feedback.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Repeated within-person sequence from goal representation through action and renewed observation."
+      },
+      "statement": "Goal pursuit may operate through repeated comparison of perceived progress with a represented standard, followed by action, environmental consequence, renewed monitoring, and possible strategy or goal revision.",
+      "temporal_ordering": "Goal and perceived progress precede a selected action; action precedes consequence and renewed monitoring."
+    }
+  ],
+  "dataset_id": "pmm:dataset:self-regulation-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:monitoring-interventions-improve-goal-attainment"
+      ],
+      "design": "Random-effects meta-analysis of studies randomly assigning participants to an intervention designed to promote goal-progress monitoring or a control condition.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "independent_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "standardized mean difference",
+        "notes": "Monitoring frequency d+ = 1.98, 95% CI [1.71, 2.24]; goal attainment d+ = 0.40, 95% CI [0.32, 0.48].",
+        "value_status": "reported"
+      },
+      "evidence_kind": "meta_analysis",
+      "extraction_locator": "PubMed abstract reporting 138 randomized studies, N = 19,951, monitoring and attainment effects, statistical mediation, and moderators.",
+      "id": "pmm:evidence:harkin-2016-monitoring-meta",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Goals, interventions, measures, follow-up, publication context, and populations were heterogeneous, and public reporting may add social processes beyond monitoring."
+      ],
+      "population": "19,951 participants across 138 studies with varied behavioral and outcome goals.",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:harkin-2016-monitoring",
+      "species": [
+        "human"
+      ],
+      "summary": "Increasing progress monitoring improved goal attainment on average, especially when outcomes were physically recorded or reported publicly.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:generic-feedback-has-mixed-performance-effects"
+      ],
+      "design": "Historical meta-analysis of externally supplied performance-feedback interventions with preliminary moderator tests of feedback-intervention theory.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "partially_indirect",
+        "precision": "adequate",
+        "replication": "independent_replication",
+        "risk_of_bias": "high"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "weighted standardized performance effect",
+        "notes": "Weighted mean d = .41; more than 38% of extracted effects were negative.",
+        "value_status": "reported"
+      },
+      "evidence_kind": "meta_analysis",
+      "extraction_locator": "Article abstract and meta-analysis results reporting 607 effect sizes, 23,663 observations, weighted mean d = .41, over 38% negative effects, and moderator analyses.",
+      "id": "pmm:evidence:kluger-denisi-1996-feedback-meta",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "The review predates current reporting standards, combines diverse interventions and tasks, and includes multiple observations per participant."
+      ],
+      "population": "12,652 participants and 23,663 observations represented in 607 effect sizes from 131 papers.",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:kluger-denisi-1996-feedback",
+      "species": [
+        "human"
+      ],
+      "summary": "Feedback improved performance on average but frequently reduced it, contradicting a universal positive-feedback rule.",
+      "support_direction": "mixed"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:monitoring-frequency-statistically-mediates-attainment"
+      ],
+      "design": "Aggregate statistical mediation analysis within a meta-analysis of randomized progress-monitoring interventions.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "partially_indirect",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "statistical indirect pathway through monitoring frequency",
+        "notes": "Reported as mediation without identification of a causal indirect effect.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "meta_analysis",
+      "extraction_locator": "PubMed abstract reporting that change in monitoring frequency statistically mediated the pooled intervention effect on attainment.",
+      "id": "pmm:evidence:harkin-2016-monitoring-mediation",
+      "inference_support": "mediation",
+      "limitations": [
+        "Aggregate mediation, heterogeneous measures, and possible mediator-outcome confounding prevent person-level causal interpretation."
+      ],
+      "population": "Participants represented in 138 goal-monitoring intervention studies.",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:harkin-2016-monitoring",
+      "species": [
+        "human"
+      ],
+      "summary": "Increased monitoring frequency statistically accounted for part of the pooled association between monitoring interventions and attainment.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis"
+      ],
+      "design": "Theory review constrained by experimental meta-analytic findings on monitoring and external feedback.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "evidence_kind": "narrative_review",
+      "extraction_locator": "Theoretical review sections describing reference values, perceived input, comparison, output, and recurrent feedback, interpreted alongside the bounded monitoring and feedback meta-analyses.",
+      "id": "pmm:evidence:self-regulation-loop-indirect",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Theoretical coherence and component interventions cannot substitute for temporal measurement and manipulation of the full proposed loop."
+      ],
+      "population": "Humans pursuing represented goals in laboratory, applied, and clinical contexts discussed in the review.",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:carver-2019-control-theory",
+      "species": [
+        "human"
+      ],
+      "summary": "Existing findings support some components of feedback control but do not identify the complete recurrent loop as one universal within-person mechanism.",
+      "support_direction": "mixed"
+    }
+  ],
+  "metadata": {
+    "description": "Separates goal standards, perceived progress, discrepancy, monitoring behavior, recorded feedback, action, attainment, interventions, and a proposed feedback-control mechanism.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-27T00:30:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-27T00:30:00+03:00",
+      "record_version": "0.1.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Evidence pack for goal monitoring and self-regulation"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Study or applied context in which a declared goal, monitoring arrangement, action, and later goal-relevant outcome are assessed over time.",
+      "dimensions": {
+        "comparison": "intervention or feedback condition versus declared control",
+        "follow_up": "source-specific observation period",
+        "goal": "source-specific behavioral or outcome criterion",
+        "monitoring": "source-specific private, recorded, digital, or public method"
+      },
+      "id": "pmm:context:repeated-goal-pursuit-assessment",
+      "label": "Repeated goal-pursuit assessment",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Goal-monitoring and performance-feedback studies represented by the included meta-analyses.",
+      "type": "Context"
+    },
+    {
+      "boundary_notes": [
+        "The cycle is a modeling framework, not one directly observed mental object or one established universal mechanism.",
+        "Self-regulation includes goal selection, monitoring, action, learning, context, and possible goal revision; it is not synonymous with inhibition or willpower."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "A theoretical organization of goal pursuit into a represented standard, perception of current progress, comparison, action, consequence, and renewed monitoring.",
+      "id": "pmm:construct:self-regulation-feedback-cycle",
+      "label": "Self-regulation feedback cycle",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "A reported goal may be vague, conflicting, externally imposed, inaccessible in the current context, or unrelated to actual behavior."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "accepted",
+      "definition": "A specified desired state, avoided state, criterion, or outcome against which current progress can be evaluated.",
+      "id": "pmm:construct:represented-goal-standard",
+      "label": "Represented goal or standard",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "bearer_scope": "person",
+      "boundary_notes": [
+        "Perceived progress can differ from recorded behavior or objective outcome."
+      ],
+      "curation_status": "accepted",
+      "definition": "Time-indexed estimate of the person's current position or rate of change relative to a declared goal.",
+      "id": "pmm:state:perceived-goal-progress",
+      "label": "Perceived current goal progress",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "cognitive",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "bearer_scope": "person",
+      "boundary_notes": [
+        "A discrepancy is not automatically motivating; it can be ignored, misestimated, tolerated, acted on, or resolved by revising the goal."
+      ],
+      "curation_status": "provisional",
+      "definition": "Time-indexed represented difference between a goal standard and perceived current progress.",
+      "id": "pmm:state:goal-progress-discrepancy",
+      "label": "Perceived goal-progress discrepancy",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "state_kind": "cognitive",
+      "temporal_scale": "episode",
+      "type": "State"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable checking, counting, recording, reviewing, or reporting of behavior or outcomes relevant to a declared goal.",
+      "function_note": "Monitoring creates information; it does not by itself specify a useful action or guarantee goal attainment.",
+      "id": "pmm:behavior:goal-progress-monitoring",
+      "label": "Goal-progress monitoring behavior",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Source-specific self-weighing, diary entry, checklist completion, device check, performance review, or public report.",
+      "type": "Behavior"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable action, response inhibition, strategy change, environmental modification, help seeking, persistence, or disengagement performed in relation to a declared goal.",
+      "function_note": "The same action can serve different goals, and the same goal can be pursued through different actions.",
+      "id": "pmm:behavior:self-regulatory-action",
+      "label": "Self-regulatory action",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Prespecified goal-relevant behavior recorded in the source-specific task or daily setting.",
+      "type": "Behavior"
+    },
+    {
+      "boundary_notes": [
+        "Recording can change behavior and can also be incomplete, selectively reported, or poorly aligned with the actual goal."
+      ],
+      "curation_status": "accepted",
+      "definition": "Declared behavioral or outcome record used to estimate current progress toward a specified goal.",
+      "id": "pmm:measurement:recorded-goal-progress",
+      "label": "Recorded goal-progress measure",
+      "measurement_kind": "observation",
+      "method": "Define the target behavior or outcome, unit, observation window, recording method, missing-data rule, and whether the record is private, physical, digital, or public.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:behavior:goal-progress-monitoring",
+        "pmm:behavior:self-regulatory-action",
+        "pmm:state:perceived-goal-progress"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "Attainment of a chosen goal does not establish that the goal was healthy, autonomous, optimal, or achieved by the proposed mechanism."
+      ],
+      "curation_status": "accepted",
+      "definition": "Degree to which a declared behavioral or outcome criterion is reached within a specified observation period.",
+      "id": "pmm:outcome:goal-attainment",
+      "label": "Prespecified goal attainment",
+      "ontological_level": "type",
+      "outcome_kind": "performance",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "not_applicable"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental or applied instruction, reminder, tool, or reporting requirement designed to increase the frequency of monitoring progress toward a declared goal.",
+      "delivery": "Source-specific prompt, diary, device, physical record, or reporting arrangement compared with a control condition.",
+      "id": "pmm:intervention:progress-monitoring-prompt",
+      "intended_direction": "increase",
+      "intervention_kind": "behavioral",
+      "label": "Goal-progress monitoring intervention",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:behavior:goal-progress-monitoring",
+        "pmm:measurement:recorded-goal-progress"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Information supplied by an external agent about one or more aspects of a person's task performance.",
+      "delivery": "Source-specific verbal, written, computerized, outcome, process, praise, discouragement, or solution information.",
+      "id": "pmm:intervention:external-performance-feedback",
+      "intended_direction": "test",
+      "intervention_kind": "behavioral",
+      "label": "External performance feedback",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:state:perceived-goal-progress",
+        "pmm:behavior:self-regulatory-action"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "boundary_notes": [
+        "Monitoring effects do not prove that every intervention works through a consciously represented discrepancy.",
+        "Goal conflict, habit, emotion, skill, opportunity, social context, and resource constraints can interrupt or redirect the loop."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which perceived current progress is compared with a represented goal and the resulting discrepancy helps select or revise action, after which consequences provide new input.",
+      "id": "pmm:mechanism:goal-discrepancy-feedback-control",
+      "label": "Goal-discrepancy feedback control",
+      "mechanism_kind": "integrative",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "A sufficiently specified goal and goal-relevant input are available.",
+        "The person can detect or receive information about progress and has at least one available response.",
+        "Consequences can be monitored before the next comparison or goal revision."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:construct:represented-goal-standard",
+          "role": "reference value"
+        },
+        {
+          "object_id": "pmm:state:perceived-goal-progress",
+          "role": "perceived input"
+        },
+        {
+          "object_id": "pmm:state:goal-progress-discrepancy",
+          "role": "comparison result"
+        },
+        {
+          "object_id": "pmm:behavior:self-regulatory-action",
+          "role": "output"
+        },
+        {
+          "object_id": "pmm:measurement:recorded-goal-progress",
+          "role": "renewed observation"
+        }
+      ],
+      "type": "Mechanism"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:monitoring-recorded-as-progress",
+      "object_id": "pmm:measurement:recorded-goal-progress",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:goal-progress-monitoring"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Contemporary theoretical review used to define the feedback-control framework and its scope, not as empirical proof of the complete mechanism.",
+      "authors": [
+        "Charles S. Carver"
+      ],
+      "doi": "10.1016/j.cbpra.2018.12.009",
+      "id": "pmm:source:carver-2019-control-theory",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Control theory, goal attainment, and psychopathology",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6707771/",
+      "year": 2019
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Large meta-analysis of randomized progress-monitoring interventions used for bounded causal and statistical-mediation claims.",
+      "authors": [
+        "Benjamin Harkin",
+        "Thomas L. Webb",
+        "Betty P. I. Chang",
+        "Andrew Prestwich",
+        "Mark Conner",
+        "Ian Kellar",
+        "Yael Benn",
+        "Paschal Sheeran"
+      ],
+      "doi": "10.1037/bul0000025",
+      "id": "pmm:source:harkin-2016-monitoring",
+      "pmid": "26479070",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26479070/",
+      "year": 2016
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Large historical meta-analysis used to prevent treating generic performance feedback as uniformly beneficial and to keep its explanatory theory provisional.",
+      "authors": [
+        "Avraham N. Kluger",
+        "Angelo DeNisi"
+      ],
+      "doi": "10.1037/0033-2909.119.2.254",
+      "id": "pmm:source:kluger-denisi-1996-feedback",
+      "provenance": {
+        "created_at": "2026-08-27T00:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-27T00:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "The effects of feedback interventions on performance — a historical review, a meta-analysis, and a preliminary feedback intervention theory",
+      "url": "https://doi.org/10.1037/0033-2909.119.2.254",
+      "year": 1996
+    }
+  ]
+}

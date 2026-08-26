@@ -64,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.18.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.19.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -72,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.18.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.19.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -118,6 +118,14 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(
             bundle["translations"]["Developmental temperament transaction"],
             "Развивающее взаимодействие темперамента и среды",
+        )
+        self.assertEqual(
+            bundle["translations"]["Goal monitoring and self-regulation"],
+            "Мониторинг цели и саморегуляция",
+        )
+        self.assertEqual(
+            bundle["translations"]["Goal-discrepancy feedback control"],
+            "Контроль через обратную связь о расхождении с целью",
         )
 
     def test_every_claim_has_a_source_checked_bilingual_explanation(self) -> None:

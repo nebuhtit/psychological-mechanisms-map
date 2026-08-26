@@ -380,6 +380,44 @@ class TemperamentEvidencePackTests(unittest.TestCase):
         self.assertEqual(evidence["causal_support"], "indirect")
 
 
+class SelfRegulationEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-self-regulation-v0.3.yaml"
+        )
+
+    def test_self_regulation_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_goal_state_behavior_measurement_outcome_and_mechanism_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:represented-goal-standard"], "Construct")
+        self.assertEqual(records["pmm:state:goal-progress-discrepancy"], "State")
+        self.assertEqual(records["pmm:behavior:goal-progress-monitoring"], "Behavior")
+        self.assertEqual(records["pmm:measurement:recorded-goal-progress"], "Measurement")
+        self.assertEqual(records["pmm:outcome:goal-attainment"], "Outcome")
+        self.assertEqual(records["pmm:mechanism:goal-discrepancy-feedback-control"], "Mechanism")
+
+    def test_monitoring_effect_is_causal_but_mediation_is_statistical(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        effect = claims["pmm:claim:monitoring-interventions-improve-goal-attainment"]
+        mediation = claims["pmm:claim:monitoring-frequency-statistically-mediates-attainment"]
+        self.assertEqual(effect["claim_type"], "causal_effect")
+        self.assertEqual(effect["identification_strategy"], "randomized_intervention")
+        self.assertEqual(mediation["claim_type"], "mediation")
+        self.assertEqual(mediation["mediation_inference"], "statistical")
+        self.assertNotIn("causal_estimand", mediation)
+
+    def test_generic_feedback_is_mixed_and_complete_loop_remains_proposed(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        feedback = claims["pmm:claim:generic-feedback-has-mixed-performance-effects"]
+        mechanism = claims["pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis"]
+        self.assertEqual(feedback["epistemic_status"], "mixed")
+        self.assertEqual(mechanism["epistemic_status"], "proposed")
+        self.assertEqual(mechanism["confidence"]["level"], "low")
+
+
 class InferentialModeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:

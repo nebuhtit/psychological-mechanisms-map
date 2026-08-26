@@ -2,7 +2,7 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 24 mechanisms across 21 families.
+**Current inventory:** 25 mechanisms across 22 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|
@@ -14,6 +14,7 @@ This generated index makes mechanisms comparable across public evidence packs. I
 | Developmental temperament | **Developmental temperament transaction**<br>Proposed process in which biologically influenced reactivity and regulation repeatedly interact with maturation, relationships, learning, roles, and environments, producing both continuity and change in later personality-relevant behavior. | developmental | 1 | 1 | 1 |
 | Emotion components and appraisal | **Appraisal-guided component coordination**<br>Proposed dynamic process in which evaluations of an event's meaning help organize changing action tendencies, physiology, expression, feeling, and action over time. | cognitive | 1 | 1 | 1 |
 | Fear extinction | **Extinction-memory formation and retrieval**<br>Proposed learning process in which aversive-outcome omission supports a new memory that reduces conditioned responding when later retrieved. | learning | 1 | 4 | 3 |
+| Goal monitoring and self-regulation | **Goal-discrepancy feedback control**<br>Proposed process in which perceived current progress is compared with a represented goal and the resulting discrepancy helps select or revise action, after which consequences provide new input. | integrative | 1 | 1 | 1 |
 | HPA feedback | **Glucocorticoid negative feedback on HPA activity**<br>Receptor-linked physiological processes through which glucocorticoid signaling limits or reshapes later HPA secretory activity. | physiological | 2 | 1 | 1 |
 | Habit control | **Goal-directed action control**<br>Proposed action-selection process that uses action-outcome knowledge and current outcome value to guide responding. | learning | 0 | 0 | 0 |
 | Habit control | **Habitual action control**<br>Proposed cue-linked action-selection process whose momentary expression is relatively insensitive to the current value of the action outcome. | learning | 1 | 2 | 2 |

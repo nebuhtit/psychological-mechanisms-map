@@ -803,3 +803,36 @@ applications:
     claim_ids: [pmm:claim:temperament-is-dimensional-and-developmental, pmm:claim:cbq-short-forms-estimate-dimensional-profile, pmm:claim:trait-rank-order-stability-increases-with-age, pmm:claim:adolescent-temperament-associated-with-adult-personality, pmm:claim:temperament-developmental-transaction-is-hypothesis]
     source_ids: [pmm:source:putnam-rothbart-2006-cbq-short, pmm:source:roberts-delvecchio-2000-stability, pmm:source:ringwald-2026-temperament-personality]
     provenance: *provenance
+
+  - id: pmm:application:test-one-self-regulation-link
+    family_id: self-regulation
+    title: {en: Test one link in the goal-action-feedback loop, ru: Проверяйте одно звено петли «цель–действие–обратная связь»}
+    practical_question:
+      en: Where is a concrete goal repeatedly failing to become effective action?
+      ru: На каком звене конкретная цель регулярно не превращается в результативное действие?
+    action:
+      en: >-
+        Specify one observable goal and time window. Record the current result without judgment, then identify one candidate bottleneck: unclear goal, inaccurate monitoring, unavailable action, excessive friction, competing goal, missing skill, delayed consequence, or unhelpful feedback. Change one bottleneck and compare the next prespecified result with baseline.
+      ru: >-
+        Задайте одну наблюдаемую цель и срок. Без оценки запишите текущий результат, затем выберите одно предполагаемое узкое место: неясная цель, неточный мониторинг, недоступное действие, лишнее трение, конкурирующая цель, нехватка навыка, отложенное последствие или бесполезная обратная связь. Измените одно звено и сравните следующий заранее выбранный результат с исходным уровнем.
+    expected_change:
+      en: Better information about which link is modifiable and whether changing it improves the selected behavior or outcome, rather than a global judgment about willpower.
+      ru: Более точное понимание изменяемого звена и того, улучшает ли его изменение выбранное поведение или результат, вместо общей оценки силы воли.
+    evidence_basis:
+      en: Randomized monitoring interventions improved attainment moderately on average, while generic feedback had highly variable and sometimes harmful performance effects. The complete feedback-control loop remains a mechanism hypothesis.
+      ru: Рандомизированные вмешательства мониторинга в среднем умеренно улучшали достижение целей, тогда как общая обратная связь давала сильно различающиеся и иногда ухудшающие результат эффекты. Полная петля контроля остаётся гипотезой механизма.
+    applicability:
+      en: Low-risk, personally acceptable goals with an observable behavior or outcome and enough repeated opportunities to compare change.
+      ru: Низкорисковые и приемлемые для человека цели с наблюдаемым поведением или результатом и достаточным числом повторений для сравнения.
+    not_established:
+      en: Monitoring is not sufficient for every goal, more feedback is not always better, and failure does not prove deficient self-control.
+      ru: Мониторинга недостаточно для любой цели, больше обратной связи не всегда лучше, а неудача не доказывает дефицит самоконтроля.
+    safety_note:
+      en: Do not intensify monitoring when it reinforces compulsive checking, disordered eating, self-punishment, coercive surveillance, or unsafe persistence; change or abandon harmful goals and seek appropriate help.
+      ru: Не усиливайте мониторинг, если он поддерживает навязчивые проверки, расстройство пищевого поведения, самонаказание, принудительный надзор или опасную настойчивость; вредную цель следует изменить или оставить и при необходимости обратиться за помощью.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [individual, educator, clinician, researcher, designer]
+    claim_ids: [pmm:claim:self-regulation-cycle-is-theoretical-framework, pmm:claim:monitoring-interventions-improve-goal-attainment, pmm:claim:monitoring-frequency-statistically-mediates-attainment, pmm:claim:generic-feedback-has-mixed-performance-effects, pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis]
+    source_ids: [pmm:source:carver-2019-control-theory, pmm:source:harkin-2016-monitoring, pmm:source:kluger-denisi-1996-feedback]
+    provenance: *provenance

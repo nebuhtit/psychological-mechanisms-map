@@ -304,7 +304,7 @@ def main() -> None:
     applications_version = attach_practical_implications(families)
     payload = {
         "pmm_version": "0.3.4",
-        "interface_version": "0.18.0",
+        "interface_version": "0.19.0",
         "research_questions_version": questions_version,
         "practical_implications_version": applications_version,
         "families": families,

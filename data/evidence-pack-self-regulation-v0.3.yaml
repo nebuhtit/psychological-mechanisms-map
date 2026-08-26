@@ -1,0 +1,416 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:self-regulation-evidence-v0-3
+metadata:
+  title: Evidence pack for goal monitoring and self-regulation
+  description: Separates goal standards, perceived progress, discrepancy, monitoring behavior, recorded feedback, action, attainment, interventions, and a proposed feedback-control mechanism.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-27T00:30:00+03:00'
+    modified_at: '2026-08-27T00:30:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:context:repeated-goal-pursuit-assessment
+    type: Context
+    label: Repeated goal-pursuit assessment
+    definition: Study or applied context in which a declared goal, monitoring arrangement, action, and later goal-relevant outcome are assessed over time.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      goal: source-specific behavioral or outcome criterion
+      monitoring: source-specific private, recorded, digital, or public method
+      comparison: intervention or feedback condition versus declared control
+      follow_up: source-specific observation period
+    scope: Goal-monitoring and performance-feedback studies represented by the included meta-analyses.
+    provenance: *provenance
+
+  - id: pmm:construct:self-regulation-feedback-cycle
+    type: Construct
+    label: Self-regulation feedback cycle
+    definition: A theoretical organization of goal pursuit into a represented standard, perception of current progress, comparison, action, consequence, and renewed monitoring.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - The cycle is a modeling framework, not one directly observed mental object or one established universal mechanism.
+      - Self-regulation includes goal selection, monitoring, action, learning, context, and possible goal revision; it is not synonymous with inhibition or willpower.
+    provenance: *provenance
+
+  - id: pmm:construct:represented-goal-standard
+    type: Construct
+    label: Represented goal or standard
+    definition: A specified desired state, avoided state, criterion, or outcome against which current progress can be evaluated.
+    ontological_level: type
+    curation_status: accepted
+    construct_kind: psychological
+    boundary_notes:
+      - A reported goal may be vague, conflicting, externally imposed, inaccessible in the current context, or unrelated to actual behavior.
+    provenance: *provenance
+
+  - id: pmm:state:perceived-goal-progress
+    type: State
+    label: Perceived current goal progress
+    definition: Time-indexed estimate of the person's current position or rate of change relative to a declared goal.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: cognitive
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes:
+      - Perceived progress can differ from recorded behavior or objective outcome.
+    provenance: *provenance
+
+  - id: pmm:state:goal-progress-discrepancy
+    type: State
+    label: Perceived goal-progress discrepancy
+    definition: Time-indexed represented difference between a goal standard and perceived current progress.
+    ontological_level: type
+    curation_status: provisional
+    state_kind: cognitive
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes:
+      - A discrepancy is not automatically motivating; it can be ignored, misestimated, tolerated, acted on, or resolved by revising the goal.
+    provenance: *provenance
+
+  - id: pmm:behavior:goal-progress-monitoring
+    type: Behavior
+    label: Goal-progress monitoring behavior
+    definition: Observable checking, counting, recording, reviewing, or reporting of behavior or outcomes relevant to a declared goal.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Source-specific self-weighing, diary entry, checklist completion, device check, performance review, or public report.
+    function_note: Monitoring creates information; it does not by itself specify a useful action or guarantee goal attainment.
+    provenance: *provenance
+
+  - id: pmm:behavior:self-regulatory-action
+    type: Behavior
+    label: Self-regulatory action
+    definition: Observable action, response inhibition, strategy change, environmental modification, help seeking, persistence, or disengagement performed in relation to a declared goal.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Prespecified goal-relevant behavior recorded in the source-specific task or daily setting.
+    function_note: The same action can serve different goals, and the same goal can be pursued through different actions.
+    provenance: *provenance
+
+  - id: pmm:measurement:recorded-goal-progress
+    type: Measurement
+    label: Recorded goal-progress measure
+    definition: Declared behavioral or outcome record used to estimate current progress toward a specified goal.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: observation
+    target_ids: [pmm:behavior:goal-progress-monitoring, pmm:behavior:self-regulatory-action, pmm:state:perceived-goal-progress]
+    method: Define the target behavior or outcome, unit, observation window, recording method, missing-data rule, and whether the record is private, physical, digital, or public.
+    unit_of_analysis: behavior
+    result_type: continuous
+    boundary_notes:
+      - Recording can change behavior and can also be incomplete, selectively reported, or poorly aligned with the actual goal.
+    provenance: *provenance
+
+  - id: pmm:outcome:goal-attainment
+    type: Outcome
+    label: Prespecified goal attainment
+    definition: Degree to which a declared behavioral or outcome criterion is reached within a specified observation period.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: performance
+    valence: not_applicable
+    boundary_notes:
+      - Attainment of a chosen goal does not establish that the goal was healthy, autonomous, optimal, or achieved by the proposed mechanism.
+    provenance: *provenance
+
+  - id: pmm:intervention:progress-monitoring-prompt
+    type: Intervention
+    label: Goal-progress monitoring intervention
+    definition: Experimental or applied instruction, reminder, tool, or reporting requirement designed to increase the frequency of monitoring progress toward a declared goal.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: behavioral
+    target_ids: [pmm:behavior:goal-progress-monitoring, pmm:measurement:recorded-goal-progress]
+    delivery: Source-specific prompt, diary, device, physical record, or reporting arrangement compared with a control condition.
+    intended_direction: increase
+    provenance: *provenance
+
+  - id: pmm:intervention:external-performance-feedback
+    type: Intervention
+    label: External performance feedback
+    definition: Information supplied by an external agent about one or more aspects of a person's task performance.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: behavioral
+    target_ids: [pmm:state:perceived-goal-progress, pmm:behavior:self-regulatory-action]
+    delivery: Source-specific verbal, written, computerized, outcome, process, praise, discouragement, or solution information.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:mechanism:goal-discrepancy-feedback-control
+    type: Mechanism
+    label: Goal-discrepancy feedback control
+    definition: Proposed process in which perceived current progress is compared with a represented goal and the resulting discrepancy helps select or revise action, after which consequences provide new input.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: integrative
+    role_bindings:
+      - {role: reference value, object_id: pmm:construct:represented-goal-standard}
+      - {role: perceived input, object_id: pmm:state:perceived-goal-progress}
+      - {role: comparison result, object_id: pmm:state:goal-progress-discrepancy}
+      - {role: output, object_id: pmm:behavior:self-regulatory-action}
+      - {role: renewed observation, object_id: pmm:measurement:recorded-goal-progress}
+    realization_conditions:
+      - A sufficiently specified goal and goal-relevant input are available.
+      - The person can detect or receive information about progress and has at least one available response.
+      - Consequences can be monitored before the next comparison or goal revision.
+    boundary_notes:
+      - Monitoring effects do not prove that every intervention works through a consciously represented discrepancy.
+      - Goal conflict, habit, emotion, skill, opportunity, social context, and resource constraints can interrupt or redirect the loop.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:monitoring-recorded-as-progress
+    subject_id: pmm:behavior:goal-progress-monitoring
+    predicate: measured_by
+    object_id: pmm:measurement:recorded-goal-progress
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:self-regulation-cycle-is-theoretical-framework
+    claim_type: definition
+    statement: Feedback-control accounts organize self-regulation around goals, monitoring, comparison, action, and renewed input, but this organization is a theoretical framework rather than one universally established mental mechanism.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Control-theory reviews consistently describe these functional components, while definitions and operationalizations of self-regulation remain heterogeneous.'}
+    scope:
+      population: Humans pursuing represented behavioral or outcome goals.
+      species: [human]
+      context_ids: [pmm:context:repeated-goal-pursuit-assessment]
+      temporal_scope: Repeated goal pursuit in which current progress and consequences can be observed.
+    defined_object_id: pmm:construct:self-regulation-feedback-cycle
+    source_ids: [pmm:source:carver-2019-control-theory]
+    evidence_ids: []
+    limitations:
+      - The framework does not establish that all relevant comparisons are conscious or that discrepancy reduction is always adaptive.
+    provenance: *provenance
+
+  - id: pmm:claim:monitoring-interventions-improve-goal-attainment
+    claim_type: causal_effect
+    statement: Across 138 randomized studies, interventions designed to increase goal-progress monitoring increased monitoring frequency and produced a moderate average improvement in goal attainment relative to controls.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'A large random-effects meta-analysis found strong effects on monitoring and a smaller effect on attainment, with heterogeneity across goals and larger effects for recorded or public outcomes.'}
+    scope:
+      population: 19,951 participants represented across 138 goal-monitoring intervention studies.
+      species: [human]
+      context_ids: [pmm:context:repeated-goal-pursuit-assessment]
+      temporal_scope: Source-specific intervention and follow-up periods across behavioral and outcome goals.
+      boundary_conditions:
+        - The target, monitoring method, comparator, outcome, and follow-up must match an included or sufficiently similar intervention context.
+    exposure_id: pmm:intervention:progress-monitoring-prompt
+    outcome_id: pmm:outcome:goal-attainment
+    causal_estimand: Average difference in prespecified goal attainment between assigned progress-monitoring interventions and control conditions.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Assignment to monitoring intervention precedes monitoring behavior and later goal attainment.
+    causal_assumptions:
+      consistency: Each effect compares the source-specific monitoring intervention with its declared control.
+      exchangeability: Supported within studies by randomized allocation; meta-analytic transport across goals remains limited.
+      positivity: Included studies contain intervention and control conditions.
+      interference: Assumed within studies, though public reporting can introduce social interaction.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:harkin-2016-monitoring-meta]
+    limitations:
+      - The pooled effect does not show that monitoring is sufficient, beneficial for every goal, or effective when records are inaccurate or the goal is harmful.
+    provenance: *provenance
+
+  - id: pmm:claim:monitoring-frequency-statistically-mediates-attainment
+    claim_type: mediation
+    statement: In the Harkin et al. meta-analysis, intervention-induced changes in monitoring frequency statistically mediated the pooled effect on goal attainment.
+    epistemic_status: supported
+    confidence: {level: low, rationale: 'The meta-analysis reported mediation, but aggregate statistical mediation does not identify a person-level causal mechanism and can be affected by measurement and study-level differences.'}
+    scope:
+      population: Participants represented in the included goal-monitoring intervention studies.
+      species: [human]
+      context_ids: [pmm:context:repeated-goal-pursuit-assessment]
+      temporal_scope: Monitoring measured after intervention assignment and before or alongside attainment assessment.
+    exposure_id: pmm:intervention:progress-monitoring-prompt
+    mediator_id: pmm:behavior:goal-progress-monitoring
+    outcome_id: pmm:outcome:goal-attainment
+    mediation_inference: statistical
+    indirect_effect: {metric: meta-analytic statistical mediation by change in monitoring frequency, value_status: qualitative_only, direction: positive, notes: 'Reported across included intervention effects; not interpreted as a causal indirect effect.'}
+    temporal_ordering: Intervention assignment preceded monitoring and attainment, but study-level aggregation and overlapping measurement windows do not establish mediator-outcome causal order.
+    evidence_ids: [pmm:evidence:harkin-2016-monitoring-mediation]
+    limitations:
+      - Statistical mediation does not prove that monitoring frequency is the sole or causal pathway for any individual.
+    provenance: *provenance
+
+  - id: pmm:claim:generic-feedback-has-mixed-performance-effects
+    claim_type: causal_effect
+    statement: External performance-feedback interventions improved performance on average in the Kluger and DeNisi meta-analysis, but more than one third of extracted effects were negative.
+    epistemic_status: mixed
+    confidence: {level: moderate, rationale: 'The meta-analysis included 607 effects and documented substantial heterogeneity, while historical studies, dependence among observations, intervention diversity, and moderator uncertainty limit modern transfer.'}
+    scope:
+      population: Participants represented in 131 historical feedback-intervention papers.
+      species: [human]
+      context_ids: [pmm:context:repeated-goal-pursuit-assessment]
+      temporal_scope: Source-specific task performance following externally supplied performance information.
+      boundary_conditions:
+        - Feedback content, task, baseline skill, attentional focus, delivery, comparator, and outcome must be specified.
+    exposure_id: pmm:intervention:external-performance-feedback
+    outcome_id: pmm:outcome:goal-attainment
+    causal_estimand: Average source-specific performance difference following an external feedback intervention versus the study comparator.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Feedback manipulation precedes subsequent measured performance.
+    causal_assumptions:
+      consistency: Effects represent heterogeneous feedback interventions and cannot be treated as one uniform treatment.
+      exchangeability: Supported only to the extent that included study assignments and comparisons were valid.
+      positivity: Included effects contain a feedback and comparison condition.
+      interference: Generally assumed and incompletely reported.
+      assessment: plausible
+    evidence_ids: [pmm:evidence:kluger-denisi-1996-feedback-meta]
+    limitations:
+      - The result does not justify giving more feedback, praising, criticizing, or making performance self-relevant without testing the specific design and outcome.
+    provenance: *provenance
+
+  - id: pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: Goal pursuit may operate through repeated comparison of perceived progress with a represented standard, followed by action, environmental consequence, renewed monitoring, and possible strategy or goal revision.
+    epistemic_status: proposed
+    confidence: {level: low, rationale: 'Monitoring interventions support one component and feedback effects constrain the model, but the complete within-person loop and its competing conscious, habitual, emotional, and social processes have not been jointly identified.'}
+    scope:
+      population: Humans pursuing measurable goals across repeated opportunities for action and feedback.
+      species: [human]
+      context_ids: [pmm:context:repeated-goal-pursuit-assessment]
+      temporal_scope: Repeated within-person sequence from goal representation through action and renewed observation.
+      boundary_conditions:
+        - Goal, current state, action, consequence, timing, and competing goals are measured separately.
+    mechanism_id: pmm:mechanism:goal-discrepancy-feedback-control
+    exposure_id: pmm:construct:represented-goal-standard
+    outcome_id: pmm:outcome:goal-attainment
+    temporal_ordering: Goal and perceived progress precede a selected action; action precedes consequence and renewed monitoring.
+    falsifiable_boundary: The proposed loop is weakened when changing measured discrepancy or available response does not alter the predicted subsequent action and when competing models predict within-person sequences better.
+    evidence_ids: [pmm:evidence:self-regulation-loop-indirect]
+    limitations:
+      - Aggregate intervention effects do not establish one universal comparator, hierarchy, conscious error signal, or optimal persistence rule.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:harkin-2016-monitoring-meta
+    claim_ids: [pmm:claim:monitoring-interventions-improve-goal-attainment]
+    source_id: pmm:source:harkin-2016-monitoring
+    extraction_locator: PubMed abstract reporting 138 randomized studies, N = 19,951, monitoring and attainment effects, statistical mediation, and moderators.
+    evidence_kind: meta_analysis
+    design: Random-effects meta-analysis of studies randomly assigning participants to an intervention designed to promote goal-progress monitoring or a control condition.
+    population: 19,951 participants across 138 studies with varied behavioral and outcome goals.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: standardized mean difference, value_status: reported, direction: positive, notes: 'Monitoring frequency d+ = 1.98, 95% CI [1.71, 2.24]; goal attainment d+ = 0.40, 95% CI [0.32, 0.48].'}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: mixed, precision: adequate, replication: independent_replication}
+    summary: Increasing progress monitoring improved goal attainment on average, especially when outcomes were physically recorded or reported publicly.
+    limitations:
+      - Goals, interventions, measures, follow-up, publication context, and populations were heterogeneous, and public reporting may add social processes beyond monitoring.
+    provenance: *provenance
+
+  - id: pmm:evidence:kluger-denisi-1996-feedback-meta
+    claim_ids: [pmm:claim:generic-feedback-has-mixed-performance-effects]
+    source_id: pmm:source:kluger-denisi-1996-feedback
+    extraction_locator: Article abstract and meta-analysis results reporting 607 effect sizes, 23,663 observations, weighted mean d = .41, over 38% negative effects, and moderator analyses.
+    evidence_kind: meta_analysis
+    design: Historical meta-analysis of externally supplied performance-feedback interventions with preliminary moderator tests of feedback-intervention theory.
+    population: 12,652 participants and 23,663 observations represented in 607 effect sizes from 131 papers.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: mixed
+    causal_support: direct
+    effect: {metric: weighted standardized performance effect, value_status: reported, direction: mixed, notes: 'Weighted mean d = .41; more than 38% of extracted effects were negative.'}
+    domains: {directness: partially_indirect, risk_of_bias: high, consistency: mixed, precision: adequate, replication: independent_replication}
+    summary: Feedback improved performance on average but frequently reduced it, contradicting a universal positive-feedback rule.
+    limitations:
+      - The review predates current reporting standards, combines diverse interventions and tasks, and includes multiple observations per participant.
+    provenance: *provenance
+
+  - id: pmm:evidence:harkin-2016-monitoring-mediation
+    claim_ids: [pmm:claim:monitoring-frequency-statistically-mediates-attainment]
+    source_id: pmm:source:harkin-2016-monitoring
+    extraction_locator: PubMed abstract reporting that change in monitoring frequency statistically mediated the pooled intervention effect on attainment.
+    evidence_kind: meta_analysis
+    design: Aggregate statistical mediation analysis within a meta-analysis of randomized progress-monitoring interventions.
+    population: Participants represented in 138 goal-monitoring intervention studies.
+    species: [human]
+    inference_support: mediation
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: statistical indirect pathway through monitoring frequency, value_status: qualitative_only, direction: positive, notes: 'Reported as mediation without identification of a causal indirect effect.'}
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: mixed, precision: adequate, replication: conceptual_replication}
+    summary: Increased monitoring frequency statistically accounted for part of the pooled association between monitoring interventions and attainment.
+    limitations:
+      - Aggregate mediation, heterogeneous measures, and possible mediator-outcome confounding prevent person-level causal interpretation.
+    provenance: *provenance
+
+  - id: pmm:evidence:self-regulation-loop-indirect
+    claim_ids: [pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis]
+    source_id: pmm:source:carver-2019-control-theory
+    extraction_locator: Theoretical review sections describing reference values, perceived input, comparison, output, and recurrent feedback, interpreted alongside the bounded monitoring and feedback meta-analyses.
+    evidence_kind: narrative_review
+    design: Theory review constrained by experimental meta-analytic findings on monitoring and external feedback.
+    population: Humans pursuing represented goals in laboratory, applied, and clinical contexts discussed in the review.
+    species: [human]
+    inference_support: mechanism
+    support_direction: mixed
+    causal_support: indirect
+    domains: {directness: indirect, risk_of_bias: some_concerns, consistency: mixed, precision: not_reported, replication: conceptual_replication}
+    summary: Existing findings support some components of feedback control but do not identify the complete recurrent loop as one universal within-person mechanism.
+    limitations:
+      - Theoretical coherence and component interventions cannot substitute for temporal measurement and manipulation of the full proposed loop.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:carver-2019-control-theory
+    title: Control theory, goal attainment, and psychopathology
+    source_type: peer_reviewed_article
+    authors: [Charles S. Carver]
+    year: 2019
+    doi: 10.1016/j.cbpra.2018.12.009
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6707771/
+    accessed_at: '2026-08-26'
+    authority_note: Contemporary theoretical review used to define the feedback-control framework and its scope, not as empirical proof of the complete mechanism.
+    provenance: *provenance
+
+  - id: pmm:source:harkin-2016-monitoring
+    title: Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence
+    source_type: peer_reviewed_article
+    authors: [Benjamin Harkin, Thomas L. Webb, Betty P. I. Chang, Andrew Prestwich, Mark Conner, Ian Kellar, Yael Benn, Paschal Sheeran]
+    year: 2016
+    doi: 10.1037/bul0000025
+    pmid: '26479070'
+    url: https://pubmed.ncbi.nlm.nih.gov/26479070/
+    accessed_at: '2026-08-26'
+    authority_note: Large meta-analysis of randomized progress-monitoring interventions used for bounded causal and statistical-mediation claims.
+    provenance: *provenance
+
+  - id: pmm:source:kluger-denisi-1996-feedback
+    title: The effects of feedback interventions on performance — a historical review, a meta-analysis, and a preliminary feedback intervention theory
+    source_type: peer_reviewed_article
+    authors: [Avraham N. Kluger, Angelo DeNisi]
+    year: 1996
+    doi: 10.1037/0033-2909.119.2.254
+    url: https://doi.org/10.1037/0033-2909.119.2.254
+    accessed_at: '2026-08-26'
+    authority_note: Large historical meta-analysis used to prevent treating generic performance feedback as uniformly beneficial and to keep its explanatory theory provisional.
+    provenance: *provenance

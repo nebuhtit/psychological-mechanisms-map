@@ -164,6 +164,26 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which perceived current progress is compared with a represented goal and the resulting discrepancy helps select or revise action, after which consequences provide new input.",
+      "evidence_count": 1,
+      "family_id": "self-regulation",
+      "family_title": "Goal monitoring and self-regulation",
+      "id": "pmm:mechanism:goal-discrepancy-feedback-control",
+      "label": "Goal-discrepancy feedback control",
+      "mechanism_kind": "integrative",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
         "pmm:claim:cortisol-signaling-may-limit-later-hpa-drive",
         "pmm:claim:hpa-feedback-is-multiple-receptor-linked-processes"
       ],

@@ -1,30 +1,30 @@
 {
   "causal_support": {
-    "direct": 34,
-    "indirect": 36,
+    "direct": 36,
+    "indirect": 38,
     "none": 17
   },
   "claim_types": {
     "association": 17,
-    "causal_effect": 26,
+    "causal_effect": 28,
     "causal_hypothesis": 1,
-    "definition": 19,
-    "mechanism_hypothesis": 22,
-    "mediation": 3,
+    "definition": 20,
+    "mechanism_hypothesis": 23,
+    "mediation": 4,
     "moderation": 2,
     "prediction": 1
   },
   "confidence_levels": {
     "high": 8,
-    "low": 19,
-    "moderate": 62,
+    "low": 21,
+    "moderate": 65,
     "not_applicable": 2
   },
   "epistemic_statuses": {
-    "mixed": 3,
+    "mixed": 4,
     "not_assessed": 2,
-    "proposed": 23,
-    "supported": 60,
+    "proposed": 24,
+    "supported": 63,
     "unsupported": 3
   },
   "evidence_kinds": {
@@ -32,8 +32,8 @@
     "controlled_experiment": 32,
     "cross_sectional_observational": 5,
     "longitudinal_observational": 2,
-    "meta_analysis": 11,
-    "narrative_review": 12,
+    "meta_analysis": 14,
+    "narrative_review": 13,
     "randomized_experiment": 20,
     "systematic_review": 2
   },
@@ -226,20 +226,29 @@
       "source": "data/evidence-pack-temperament-v0.3.yaml",
       "sources": 6,
       "title": "Developmental temperament"
+    },
+    {
+      "claims": 5,
+      "evidence": 4,
+      "id": "self-regulation",
+      "objects": 12,
+      "source": "data/evidence-pack-self-regulation-v0.3.yaml",
+      "sources": 3,
+      "title": "Goal monitoring and self-regulation"
     }
   ],
-  "family_count": 21,
+  "family_count": 22,
   "object_types": {
-    "Behavior": 22,
-    "Construct": 41,
-    "Context": 36,
+    "Behavior": 24,
+    "Construct": 43,
+    "Context": 37,
     "Contingency": 3,
     "Event": 4,
-    "Intervention": 28,
-    "Measurement": 48,
-    "Mechanism": 24,
-    "Outcome": 18,
-    "State": 22
+    "Intervention": 30,
+    "Measurement": 49,
+    "Mechanism": 25,
+    "Outcome": 19,
+    "State": 24
   },
   "report_version": 1,
   "review_queue": [
@@ -646,18 +655,34 @@
         "proposed claim",
         "low confidence"
       ]
+    },
+    {
+      "claim_id": "pmm:claim:monitoring-frequency-statistically-mediates-attainment",
+      "family_id": "self-regulation",
+      "reasons": [
+        "low confidence",
+        "statistical, not causal, mediation"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:goal-discrepancy-loop-is-mechanism-hypothesis",
+      "family_id": "self-regulation",
+      "reasons": [
+        "proposed claim",
+        "low confidence"
+      ]
     }
   ],
   "scope": "public_families",
   "support_directions": {
     "challenges": 9,
-    "mixed": 13,
-    "supports": 65
+    "mixed": 15,
+    "supports": 67
   },
   "totals": {
-    "claims": 91,
-    "evidence": 87,
-    "objects": 246,
-    "sources": 95
+    "claims": 96,
+    "evidence": 91,
+    "objects": 258,
+    "sources": 98
   }
 }
