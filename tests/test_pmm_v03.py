@@ -939,5 +939,54 @@ class CbtFormulationEvidencePackTests(unittest.TestCase):
         self.assertIn("sensitivity analyses", trial_evidence["limitations"][0])
 
 
+class SocialLearningEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-social-learning-v0.3.yaml"
+        )
+
+    def test_social_learning_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_observation_behavior_acquisition_performance_and_measurement_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:observational-social-learning"], "Construct")
+        self.assertEqual(records["pmm:intervention:model-behavior-exposure"], "Intervention")
+        self.assertEqual(records["pmm:construct:encoded-modeled-action"], "Construct")
+        self.assertEqual(records["pmm:behavior:observer-matching-response"], "Behavior")
+        self.assertEqual(records["pmm:outcome:spontaneous-modeled-response-frequency"], "Outcome")
+        self.assertEqual(records["pmm:measurement:incentive-assisted-reproduction"], "Measurement")
+        self.assertEqual(records["pmm:mechanism:observation-performance-selection"], "Mechanism")
+
+    def test_model_exposure_effect_is_narrow_and_not_a_mechanism_claim(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:aggressive-model-exposure-increases-matching-aggression"
+        )
+        self.assertEqual(claim["claim_type"], "causal_effect")
+        self.assertEqual(claim["identification_strategy"], "controlled_contingency")
+        self.assertNotIn("mechanism_id", claim)
+        self.assertIn("immediate", claim["scope"]["temporal_scope"].lower())
+        self.assertIn("not durable aggression", claim["limitations"][0])
+
+    def test_observed_and_direct_consequences_are_separate_interventions(self) -> None:
+        records = {item["id"]: item for item in self.document["objects"]}
+        observed = records["pmm:intervention:observed-model-consequence"]
+        direct = records["pmm:intervention:observer-reproduction-incentive"]
+        self.assertNotEqual(observed["id"], direct["id"])
+        self.assertIn("not directly contingent", observed["boundary_notes"][0])
+
+    def test_acquisition_performance_mechanism_remains_proposed(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        incentive = claims["pmm:claim:direct-incentive-removes-model-consequence-performance-gap"]
+        mechanism = claims["pmm:claim:observation-performance-selection-is-integrative-hypothesis"]
+        self.assertEqual(incentive["claim_type"], "causal_effect")
+        self.assertNotIn("mechanism_id", incentive)
+        self.assertEqual(mechanism["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(mechanism["epistemic_status"], "proposed")
+        self.assertEqual(mechanism["confidence"]["level"], "low")
+
+
 if __name__ == "__main__":
     unittest.main()

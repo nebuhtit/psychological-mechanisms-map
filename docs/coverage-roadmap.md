@@ -6,9 +6,9 @@ PMM's long-term coverage goal is to provide at least one validated, source-trace
 
 The educational scaffold contains 24 topics across seven broad domains:
 
-- 17 topics have `partial` coverage: at least one canonical PMM record is linked;
-- 7 topics are `planned`: the gap is visible and no placeholder scientific records are invented;
-- 18 public evidence-pack families currently test the data model.
+- 18 topics have `partial` coverage: at least one canonical PMM record is linked;
+- 6 topics are `planned`: the gap is visible and no placeholder scientific records are invented;
+- 19 public evidence-pack families currently test the data model.
 
 `partial` does not mean comprehensive, representative, clinically valid, or expert-approved. A narrow laboratory pilot can make an area partial while leaving most of that area unmodeled.
 

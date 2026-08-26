@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.15.0";
-const RU_URL = "data/i18n-ru.json?v=0.15.0";
+const DATA_URL = "data/pmm-data.json?v=0.16.0";
+const RU_URL = "data/i18n-ru.json?v=0.16.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",

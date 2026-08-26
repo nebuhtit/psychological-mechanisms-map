@@ -469,6 +469,20 @@ OVERRIDES.update({
     "Protocol-defined cognitive behavior therapy": "КПТ по определённому протоколу",
     "The complete cycle is a formulation hypothesis, not a single universally established mechanism.": "Полная петля является гипотезой формулировки, а не единым доказанным для всех механизмом.",
     "Threat context, attachment activation, support seeking, relational response, distress, expectations, child observation, adult interview, and self-report dimensions kept distinct.": "Контекст угрозы, активация привязанности, поиск поддержки, ответ близкого человека, дистресс, ожидания, наблюдение ребёнка, интервью взрослого и показатели самоотчёта представлены раздельно.",
+    "Social and observational learning": "Социальное научение и научение через наблюдение",
+    "Observational social learning": "Научение через наблюдение за другими",
+    "Modeled-behavior observation context": "Контекст наблюдения за поведением модели",
+    "Modeled demonstration behavior": "Демонстрируемое моделью поведение",
+    "Model-behavior exposure": "Предъявление поведения модели",
+    "Observed consequence for the model": "Наблюдаемое последствие для модели",
+    "Direct incentive for observer reproduction": "Прямой стимул наблюдателю за воспроизведение",
+    "Encoded representation of modeled action": "Сохранённое представление показанного действия",
+    "Observer matching response": "Похожая реакция наблюдателя",
+    "Spontaneous modeled-response frequency": "Частота самопроизвольного воспроизведения показанных действий",
+    "Spontaneous imitation coding": "Кодирование самопроизвольного подражания",
+    "Incentive-assisted reproduction test": "Проверка воспроизведения со стимулом",
+    "Observation-to-performance selection": "Отбор выполнения после наблюдения",
+    "Model exposure, demonstrated action, observed consequences, spontaneous imitation, prompted reproduction, acquisition, performance, and competing mechanisms kept distinct.": "Предъявление модели, показанное действие, наблюдаемые последствия, самопроизвольное подражание, воспроизведение после стимула, усвоение, выполнение и конкурирующие механизмы представлены раздельно.",
 })
 
 

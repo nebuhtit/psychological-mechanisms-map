@@ -209,6 +209,18 @@ sources:
     title: Depression in adults — treatment and management
     organization: National Institute for Health and Care Excellence
     url: https://www.nice.org.uk/guidance/ng222/chapter/Recommendations
+  - id: source:bandura-1961-modeling
+    title: Transmission of aggression through imitation of aggressive models
+    organization: Journal of Abnormal and Social Psychology
+    url: https://pubmed.ncbi.nlm.nih.gov/13864605/
+  - id: source:bandura-1965-model-consequences
+    title: Influence of models' reinforcement contingencies on the acquisition of imitative responses
+    organization: Journal of Personality and Social Psychology
+    url: https://pubmed.ncbi.nlm.nih.gov/14300234/
+  - id: source:heyes-2012-social-learning
+    title: What's social about social learning?
+    organization: Journal of Comparative Psychology
+    url: https://pubmed.ncbi.nlm.nih.gov/21895355/
 
 general_psychology:
   id: general-psychology
@@ -618,11 +630,18 @@ general_psychology:
       kind: topic
       label: {en: Social cognition, ru: Социальное познание}
       description:
-        en: Processes for representing other people, intentions, beliefs, relationships, and social norms.
-        ru: Процессы представления других людей, их намерений и убеждений, отношений и социальных норм.
-      coverage: planned
-      source_ids: [source:rdoc-definitions]
-      memberships: []
+        en: Processes for representing other people, intentions, beliefs, relationships, social norms, and information learned through observing others.
+        ru: Процессы представления других людей, их намерений, убеждений, отношений и социальных норм, а также информации, усваиваемой через наблюдение за другими.
+      ontological_note:
+        en: The current evidence pack covers only model exposure and observational performance; it does not yet model mentalizing, attribution, stereotypes, norms, or group cognition.
+        ru: Текущий доказательный пакет охватывает только наблюдение модели и выполнение после наблюдения; ментализация, атрибуция, стереотипы, нормы и групповое познание пока не смоделированы.
+      coverage: partial
+      source_ids: [source:rdoc-definitions, source:heyes-2012-social-learning]
+      memberships:
+        - {family_id: social-learning, canonical_id: pmm:construct:observational-social-learning, role: construct_example, expected_type: Construct}
+        - {family_id: social-learning, canonical_id: pmm:behavior:observer-matching-response, role: behavior_example, expected_type: Behavior}
+        - {family_id: social-learning, canonical_id: pmm:mechanism:observation-performance-selection, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: social-learning, canonical_id: pmm:measurement:incentive-assisted-reproduction, role: measurement_example, expected_type: Measurement}
 
     - id: gp:body-consciousness
       parent_id: gp:mind
@@ -867,31 +886,35 @@ foundational_models:
         - {en: Future responding changes, ru: Будущая реакция меняется}
       practical_focus: {en: Change cue-outcome or response-outcome contingencies and test behavior, not just verbal insight., ru: Изменяйте зависимости «сигнал–исход» или «действие–исход» и проверяйте поведение, а не только словесное понимание.}
       established: {en: Acquisition, extinction, reinforcement, and avoidance effects occur under specified experimental contingencies., ru: Эффекты научения, угасания, подкрепления и избегания возникают при определённых экспериментальных зависимостях.}
-      proposed: {en: Competing learning and neural mechanisms often explain the same behavioral change., ru: Одно изменение поведения часто объясняется конкурирующими механизмами научения и нейронными механизмами.}
+      proposed: {en: Social learning may reuse associative and reinforcement processes while social attention changes the available input; competing learning and neural mechanisms can explain the same behavioral change., ru: Социальное научение может использовать ассоциативные процессы и подкрепление, тогда как социальное внимание меняет доступную информацию; одно изменение поведения могут объяснять конкурирующие механизмы научения и нейронные процессы.}
       measurements: {en: Trial choices, response rates, expectancy, conditioned responses, and return-of-response tests., ru: Выборы в пробах, частота реакций, ожидания, условные реакции и тесты возврата реакции.}
       limitation: {en: Laboratory contingencies do not automatically explain a person's complex real-world behavior., ru: Лабораторные зависимости не объясняют автоматически сложное поведение человека в жизни.}
-      source_ids: []
+      source_ids: [source:heyes-2012-social-learning]
       mapped_memberships:
         - {family_id: extinction, canonical_id: pmm:mechanism:extinction-memory-formation, role: mechanism_example, expected_type: Mechanism}
         - {family_id: avoidance, canonical_id: pmm:mechanism:negative-reinforcement, role: mechanism_example, expected_type: Mechanism}
     - id: model:social-learning
       label: {en: Social learning, ru: Социальное научение}
       model_kind: learning_framework
-      coverage: planned
-      plain_summary: {en: People can acquire behavior and expectations by observing models, consequences, instructions, and social feedback., ru: Люди могут усваивать поведение и ожидания через наблюдение за моделями, последствиями, инструкциями и социальной обратной связью.}
+      coverage: partial
+      plain_summary: {en: Social input can direct ordinary learning toward another person's actions and outcomes; observing, acquiring, performing, and transferring a response remain distinct., ru: Социальная информация может направлять обычные процессы научения на действия и результаты другого человека; наблюдение, усвоение, выполнение и перенос реакции остаются разными явлениями.}
       chain:
         - {en: Observe another person or social rule, ru: Наблюдение за другим человеком или социальным правилом}
         - {en: Attend and represent the action, ru: Внимание и представление действия}
         - {en: Anticipate consequences, ru: Ожидание последствий}
         - {en: Attempt or avoid the behavior, ru: Попытка или избегание поведения}
         - {en: Social feedback selects future behavior, ru: Социальная обратная связь отбирает будущее поведение}
-      practical_focus: {en: Change models, instructions, opportunities to practice, and feedback, then observe transfer., ru: Изменяйте модели, инструкции, возможности практики и обратную связь, затем наблюдайте перенос.}
-      established: {en: No dedicated PMM evidence pack yet., ru: Отдельного доказательного пакета PMM пока нет.}
-      proposed: {en: Attention, identification, expectancy, imitation, and reinforcement may contribute differently., ru: Внимание, идентификация, ожидания, подражание и подкрепление могут вносить разный вклад.}
-      measurements: {en: Model exposure, imitation, delayed reproduction, expectancy, and behavior outside training., ru: Воздействие модели, подражание, отсроченное воспроизведение, ожидания и поведение вне обучения.}
-      limitation: {en: Seeing behavior does not prove learning, and learning does not guarantee performance., ru: Наблюдение поведения не доказывает научение, а научение не гарантирует выполнение.}
-      source_ids: []
-      mapped_memberships: []
+      practical_focus: {en: Demonstrate one safe target action, check attention and understanding, provide practice and feedback, then test delayed transfer in a changed context., ru: Покажите одно безопасное целевое действие, проверьте внимание и понимание, дайте практику и обратную связь, затем проверьте отсроченный перенос в изменённом контексте.}
+      established: {en: Controlled child experiments show immediate effects of model exposure and observed model consequences on matching performance., ru: Контролируемые эксперименты с детьми показывают немедленное влияние демонстрации и наблюдаемых последствий для модели на похожее выполнение.}
+      proposed: {en: Attention, associative learning, retained representation, emulation, imitation, motor ability, and motivation may contribute differently., ru: Внимание, ассоциативное научение, сохранённое представление, достижение той же цели другим способом, подражание, двигательная способность и мотивация могут вносить разный вклад.}
+      measurements: {en: Model exposure, spontaneous matching responses, incentive-assisted reproduction, delayed retention, and transfer to changed tasks or contexts., ru: Воздействие модели, самопроизвольные похожие реакции, воспроизведение со стимулом, отсроченное сохранение и перенос в изменённое задание или контекст.}
+      limitation: {en: The classic studies used small historical samples and immediate artificial tests; seeing behavior does not prove durable learning or real-world transfer., ru: Классические исследования использовали небольшие исторические выборки и немедленные искусственные проверки; наблюдение поведения не доказывает устойчивое научение или перенос в реальную жизнь.}
+      source_ids: [source:bandura-1961-modeling, source:bandura-1965-model-consequences, source:heyes-2012-social-learning]
+      mapped_memberships:
+        - {family_id: social-learning, canonical_id: pmm:construct:observational-social-learning, role: construct_example, expected_type: Construct}
+        - {family_id: social-learning, canonical_id: pmm:intervention:model-behavior-exposure, role: intervention_example, expected_type: Intervention}
+        - {family_id: social-learning, canonical_id: pmm:behavior:observer-matching-response, role: behavior_example, expected_type: Behavior}
+        - {family_id: social-learning, canonical_id: pmm:mechanism:observation-performance-selection, role: mechanism_example, expected_type: Mechanism}
     - id: model:emotion-appraisal
       label: {en: Emotion and appraisal models, ru: Модели эмоций и когнитивной оценки}
       model_kind: affective_framework

@@ -536,3 +536,33 @@ entries:
       A treatment package can work even when researchers do not know which component produced the benefit. To establish a mechanism, studies must separately change or measure the proposed process and show that it explains the outcome better than alternatives.
     ru: >-
       Пакет лечения может работать, даже если неизвестно, какой компонент создал пользу. Чтобы установить механизм, исследование должно отдельно изменить или измерить предполагаемый процесс и показать, что он объясняет результат лучше альтернатив.
+
+  - claim_id: pmm:claim:observational-learning-is-not-identical-to-imitation
+    en: >-
+      Learning from others is broader than copying their exact movement. Observation can direct attention, teach that an outcome is possible, change expectations, or make an already available response more likely. A matching action is therefore one possible result, not a direct readout of one learning mechanism.
+    ru: >-
+      Научение через других шире, чем точное копирование движения. Наблюдение может направить внимание, показать возможный результат, изменить ожидания или повысить вероятность уже доступной реакции. Поэтому похожее действие — лишь один возможный результат, а не прямой показатель единственного механизма научения.
+
+  - claim_id: pmm:claim:aggressive-model-exposure-increases-matching-aggression
+    en: >-
+      In one small 1961 laboratory experiment, preschool children who watched an adult perform specific aggressive acts later copied more of those acts with the same toy than children in comparison groups. This supports a short-term effect of that demonstration in that setting; it does not show that media exposure creates a stable aggressive personality or predicts ordinary life.
+    ru: >-
+      В небольшом лабораторном эксперименте 1961 года дошкольники, наблюдавшие конкретные агрессивные действия взрослого, затем чаще повторяли их с той же игрушкой, чем дети в группах сравнения. Это подтверждает кратковременный эффект данной демонстрации в данных условиях, но не доказывает формирование устойчивой агрессивной личности и не предсказывает обычную жизнь.
+
+  - claim_id: pmm:claim:observed-model-consequence-changes-spontaneous-imitation
+    en: >-
+      Children spontaneously copied fewer modeled aggressive acts after seeing the model punished than after seeing reward or no consequence. The observed consequence changed immediate performance, but this first test could not tell whether the children had learned different amounts.
+    ru: >-
+      Дети без дополнительного вознаграждения повторяли меньше показанных агрессивных действий после наказания модели, чем после награды или отсутствия последствий. Наблюдаемое последствие изменило немедленное выполнение, но по этой первой проверке нельзя определить, различалось ли само усвоение.
+
+  - claim_id: pmm:claim:direct-incentive-removes-model-consequence-performance-gap
+    en: >-
+      When the same children were then rewarded for showing everything they remembered, reproduction increased and the earlier differences between groups disappeared. This suggests that low spontaneous performance did not mean the modeled actions were unavailable, although the rewarded test is still an imperfect measure of learning.
+    ru: >-
+      Когда тех же детей затем вознаграждали за показ всего запомненного, воспроизведение усилилось, а прежние различия между группами исчезли. Это означает, что низкое самопроизвольное выполнение не обязательно свидетельствовало об отсутствии усвоенного действия, хотя проверка с наградой всё равно не является идеальным измерением научения.
+
+  - claim_id: pmm:claim:observation-performance-selection-is-integrative-hypothesis
+    en: >-
+      A useful working hypothesis is that observation can make action-relevant information available, while consequences, current incentives, skill, and context determine whether it is performed. The studies do not establish one universal sequence of attention, memory, motivation, and imitation, so those links must be measured separately.
+    ru: >-
+      Полезная рабочая гипотеза состоит в том, что наблюдение делает информацию о действии доступной, а последствия, текущие стимулы, навык и контекст определяют, будет ли действие выполнено. Исследования не устанавливают универсальную цепочку внимания, памяти, мотивации и подражания, поэтому эти звенья нужно измерять раздельно.

@@ -2,7 +2,7 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 21 mechanisms across 18 families.
+**Current inventory:** 22 mechanisms across 19 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|
@@ -20,6 +20,7 @@ This generated index makes mechanisms comparable across public evidence packs. I
 | Language comprehension | **Strategic expectancy or post-lexical matching**<br>Proposed task-sensitive process in which participants predict likely targets or use the detected prime-target relation to influence a decision after target information becomes available. | cognitive | 1 | 2 | 2 |
 | Placebo analgesia | **Endogenous opioid pain modulation**<br>Proposed process in which treatment expectation recruits endogenous opioid signaling that changes pain responding. | physiological | 1 | 3 | 3 |
 | Reward prediction error | **Temporal-difference value updating**<br>Computational process that updates a value estimate using a prediction-error term and learning-rate parameter. | computational | 1 | 1 | 1 |
+| Social and observational learning | **Observation-to-performance selection**<br>Proposed process in which model exposure supports retention of action-relevant information while observed and direct consequences alter whether and when a matching response is performed. | learning | 1 | 2 | 2 |
 | Social buffering | **Social co-regulation of stress responding**<br>Proposed process through which interaction with a familiar support figure changes stress appraisal or regulatory activity and thereby alters physiological responding. | social | 1 | 1 | 1 |
 | Spatial attention | **Sensory evidence enhancement at an attended location**<br>Proposed process in which allocating attention increases the quality or discriminability of sensory evidence at the attended location. | cognitive | 1 | 2 | 2 |
 | Spatial attention | **Spatial weighting of evidence for decision**<br>Proposed process in which cue information changes the relative decision weight or criterion assigned to evidence from different locations or intervals. | cognitive | 1 | 2 | 2 |

@@ -112,3 +112,9 @@ datasets:
       id: cbt-formulation
       title: Cognitive-behavioral formulation
       description: Situation, interpretation, emotion, physiology, behavior, consequences, beliefs, interventions, treatment effects, and proposed maintenance mechanisms kept distinct.
+  - source: data/evidence-pack-social-learning-v0.3.yaml
+    output: build/evidence-pack-social-learning-v0.3.json
+    family:
+      id: social-learning
+      title: Social and observational learning
+      description: Model exposure, demonstrated action, observed consequences, spontaneous imitation, prompted reproduction, acquisition, performance, and competing mechanisms kept distinct.

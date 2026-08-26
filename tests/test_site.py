@@ -64,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.15.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.16.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -72,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.15.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.16.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -97,6 +97,14 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(
             bundle["translations"]["Strange Situation Procedure"],
             "Процедура «Незнакомая ситуация»",
+        )
+        self.assertEqual(
+            bundle["translations"]["Social and observational learning"],
+            "Социальное научение и научение через наблюдение",
+        )
+        self.assertEqual(
+            bundle["translations"]["Model-behavior exposure"],
+            "Предъявление поведения модели",
         )
 
     def test_every_claim_has_a_source_checked_bilingual_explanation(self) -> None:
@@ -284,7 +292,7 @@ class SiteBundleTests(unittest.TestCase):
         coverage = {item["id"]: item["coverage"] for item in models["models"]}
         self.assertEqual(coverage["model:attachment"], "partial")
         self.assertEqual(coverage["model:cbt-formulation"], "partial")
-        self.assertEqual(coverage["model:social-learning"], "planned")
+        self.assertEqual(coverage["model:social-learning"], "partial")
 
     def test_navigation_does_not_collapse_tasks_traits_and_mechanisms(self) -> None:
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())

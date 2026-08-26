@@ -1,0 +1,446 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:social-learning-evidence-v0-3
+metadata:
+  title: Evidence pack for social and observational learning
+  description: Separates observing a model, modeled behavior, observed consequences, acquisition, spontaneous performance, incentive-assisted reproduction, and competing social-learning mechanisms.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T17:30:00+03:00'
+    modified_at: '2026-08-26T17:30:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:construct:observational-social-learning
+    type: Construct
+    label: Observational social learning
+    definition: Acquisition or modification of information, expectations, skills, or behavior following observation of another agent or the consequences associated with that agent's behavior.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: social
+    boundary_notes:
+      - Social learning is broader than exact imitation and can involve attention, outcome learning, emulation, instruction, or response facilitation.
+      - A behavior observed immediately after demonstration is performance evidence, not by itself proof of durable learning or transfer.
+    provenance: *provenance
+
+  - id: pmm:context:modeled-behavior-observation
+    type: Context
+    label: Modeled-behavior observation context
+    definition: Declared setting in which an observer is exposed to another agent performing a specified action or sequence before later testing.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      model_medium: live or recorded
+      action_domain: study-specific behavior
+      observer_model_relation: declared by protocol
+    scope: Controlled model-exposure procedures represented by the included studies.
+    provenance: *provenance
+
+  - id: pmm:behavior:modeled-demonstration
+    type: Behavior
+    label: Modeled demonstration behavior
+    definition: Observable action or action sequence performed by a model and made available for an observer to see or hear.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Protocol-defined physical, verbal, or object-directed behavior performed by the model.
+    function_note: Demonstration does not establish what information the observer attended to or retained.
+    provenance: *provenance
+
+  - id: pmm:intervention:model-behavior-exposure
+    type: Intervention
+    label: Model-behavior exposure
+    definition: Experimental assignment to observe a model perform a declared target behavior rather than a comparison model or no model.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:behavior:observer-matching-response]
+    delivery: Study-specific live or recorded modeled behavior shown before the observer test.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:intervention:observed-model-consequence
+    type: Intervention
+    label: Observed consequence for the model
+    definition: Experimentally assigned reward, punishment, or no-consequence event shown after the model performs the target behavior.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:behavior:observer-matching-response]
+    delivery: Film-mediated model consequence presented before spontaneous observer performance testing.
+    intended_direction: test
+    boundary_notes:
+      - The consequence is delivered to the model, not directly contingent on the observer's behavior.
+    provenance: *provenance
+
+  - id: pmm:intervention:observer-reproduction-incentive
+    type: Intervention
+    label: Direct incentive for observer reproduction
+    definition: Offer of a reward contingent on the observer reproducing as many modeled responses as possible during a later test.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:behavior:observer-matching-response]
+    delivery: Explicit attractive incentives offered after the spontaneous imitation test.
+    intended_direction: increase
+    provenance: *provenance
+
+  - id: pmm:construct:encoded-modeled-action
+    type: Construct
+    label: Encoded representation of modeled action
+    definition: Proposed retained information about the observed action that can support later description or reproduction under suitable conditions.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - This representation is inferred from later performance and is not directly observed.
+      - Similar reproduction can arise through different representational or associative processes.
+    provenance: *provenance
+
+  - id: pmm:behavior:observer-matching-response
+    type: Behavior
+    label: Observer matching response
+    definition: Observable response by the observer that matches a protocol-defined feature of the demonstrated action.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: response_pattern
+    observability: direct
+    actor_scope: person
+    response_topography: Study-coded physical, verbal, or object-directed response corresponding to the model's behavior.
+    function_note: Topographic matching does not uniquely identify imitation, learning, identification, or motivation.
+    provenance: *provenance
+
+  - id: pmm:outcome:spontaneous-modeled-response-frequency
+    type: Outcome
+    label: Spontaneous modeled-response frequency
+    definition: Count or rate of matching responses emitted in the post-observation test without a new direct reproduction incentive.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: performance
+    valence: neutral
+    provenance: *provenance
+
+  - id: pmm:measurement:spontaneous-imitation-coding
+    type: Measurement
+    label: Spontaneous imitation coding
+    definition: Trained observation and coding of protocol-defined matching responses during a post-exposure performance test.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: observation
+    target_ids: [pmm:behavior:observer-matching-response, pmm:outcome:spontaneous-modeled-response-frequency]
+    method: Code declared matching and nonmatching responses in fixed observation intervals using the study protocol.
+    unit_of_analysis: behavior
+    result_type: count
+    provenance: *provenance
+
+  - id: pmm:measurement:incentive-assisted-reproduction
+    type: Measurement
+    label: Incentive-assisted reproduction test
+    definition: Count of modeled responses reproduced when the observer is explicitly rewarded for demonstrating what was retained.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids: [pmm:construct:encoded-modeled-action, pmm:behavior:observer-matching-response]
+    method: Offer a declared reward for reproducing modeled responses and code the resulting response repertoire.
+    unit_of_analysis: behavior
+    result_type: count
+    boundary_notes:
+      - Incentive-assisted reproduction is an operational probe of acquisition, not a pure or complete measure of stored knowledge.
+    provenance: *provenance
+
+  - id: pmm:mechanism:observation-performance-selection
+    type: Mechanism
+    label: Observation-to-performance selection
+    definition: Proposed process in which model exposure supports retention of action-relevant information while observed and direct consequences alter whether and when a matching response is performed.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: learning
+    role_bindings:
+      - {role: social input, object_id: pmm:intervention:model-behavior-exposure}
+      - {role: retained information, object_id: pmm:construct:encoded-modeled-action}
+      - {role: observed consequence, object_id: pmm:intervention:observed-model-consequence}
+      - {role: performed response, object_id: pmm:behavior:observer-matching-response}
+    realization_conditions:
+      - The observer has perceptual access to the modeled behavior.
+      - Later tests distinguish spontaneous performance from incentive-assisted reproduction.
+      - Alternative attentional, associative, motor, and motivational accounts remain testable.
+    boundary_notes:
+      - The complete sequence is an integrative hypothesis and does not establish a unique social-cognitive mechanism.
+      - Observed consequences can affect performance without being direct reinforcement of the observer's prior response.
+    provenance: *provenance
+
+relations:
+  - {id: pmm:relation:model-exposure-occurs-in-observation-context, subject_id: pmm:intervention:model-behavior-exposure, predicate: occurs_in_context, object_id: pmm:context:modeled-behavior-observation, provenance: *provenance}
+  - {id: pmm:relation:matching-response-measured-by-spontaneous-coding, subject_id: pmm:behavior:observer-matching-response, predicate: measured_by, object_id: pmm:measurement:spontaneous-imitation-coding, provenance: *provenance}
+  - {id: pmm:relation:encoded-action-probed-by-incentive-test, subject_id: pmm:construct:encoded-modeled-action, predicate: measured_by, object_id: pmm:measurement:incentive-assisted-reproduction, provenance: *provenance}
+
+claims:
+  - id: pmm:claim:observational-learning-is-not-identical-to-imitation
+    claim_type: definition
+    statement: Social learning can change attention, expectations, acquired responses, or performance after observing others; exact imitation is only one possible outcome and mechanism.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Convergent reviews distinguish multiple observational effects, but terminology and mechanism classification remain contested.'}
+    scope: {population: Human and nonhuman observers represented in the cited reviews., species: [mixed], context_ids: [pmm:context:modeled-behavior-observation], temporal_scope: Observation and later behavior under declared tests.}
+    defined_object_id: pmm:construct:observational-social-learning
+    source_ids: [pmm:source:heyes-2012-social-learning, pmm:source:greer-2006-observational-learning]
+    evidence_ids: []
+    limitations:
+      - The definition does not imply that all social-learning effects share one cognitive or neural mechanism.
+    provenance: *provenance
+
+  - id: pmm:claim:aggressive-model-exposure-increases-matching-aggression
+    claim_type: causal_effect
+    statement: In the 1961 nursery-school experiment, assignment to observe an aggressive adult model increased later protocol-coded imitative aggression relative to nonaggressive-model and no-model conditions.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The modeled behavior was experimentally controlled and comparison groups were matched, but the small historical sample and immediate artificial test sharply limit generalization.'}
+    scope:
+      population: 72 children aged 37 to 69 months from one Stanford University nursery school.
+      species: [human]
+      context_ids: [pmm:context:modeled-behavior-observation]
+      temporal_scope: Immediate play test after model exposure and standardized frustration induction.
+      boundary_conditions:
+        - Live adult aggressive-model exposure, Bobo-doll materials, historical nursery-school sample, and immediate coded behavior.
+    exposure_id: pmm:intervention:model-behavior-exposure
+    outcome_id: pmm:outcome:spontaneous-modeled-response-frequency
+    causal_estimand: Difference in immediate protocol-coded imitative aggression between aggressive-model exposure and the declared comparison conditions.
+    identification_strategy: controlled_contingency
+    temporal_ordering: Model exposure preceded the frustration procedure and later behavior observation.
+    causal_assumptions:
+      consistency: Children received the scripted aggressive, nonaggressive, or no-model condition represented by their group.
+      exchangeability: Matching on baseline aggression and sex reduced some imbalance; unmeasured imbalance and historical assignment procedures remain possible.
+      positivity: Children were represented across aggressive, nonaggressive, and no-model conditions.
+      interference: Behavior of one tested child is assumed not to alter another child's assigned exposure or test response.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:bandura-ross-ross-1961-model-exposure]
+    limitations:
+      - The experiment establishes an immediate task effect, not durable aggression, real-world transfer, or one unique learning mechanism.
+    provenance: *provenance
+
+  - id: pmm:claim:observed-model-consequence-changes-spontaneous-imitation
+    claim_type: causal_effect
+    statement: In Bandura's 1965 experiment, the consequence shown for an aggressive model changed children's spontaneous matching responses, with fewer responses after observed punishment than after reward or no consequence.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The model consequence was experimentally manipulated and the immediate performance contrast was clear, but the sample was small and restricted to one aggressive film and setting.'}
+    scope:
+      population: 66 children aged approximately 3 to 5 years from one nursery school.
+      species: [human]
+      context_ids: [pmm:context:modeled-behavior-observation]
+      temporal_scope: Spontaneous reproduction test immediately after the modeled consequence film.
+      boundary_conditions:
+        - Film-mediated aggressive model, rewarded, punished, or no-consequence ending, and immediate matching-response test.
+    exposure_id: pmm:intervention:observed-model-consequence
+    outcome_id: pmm:outcome:spontaneous-modeled-response-frequency
+    causal_estimand: Difference in spontaneous matching responses across assigned model-rewarded, model-punished, and no-consequence conditions.
+    identification_strategy: controlled_contingency
+    temporal_ordering: The observed model consequence preceded spontaneous observer performance testing.
+    causal_assumptions:
+      consistency: The three films differed in the declared consequence ending while retaining the modeled response sequence.
+      exchangeability: Experimental assignment supports comparison, but the source's small sample and matching procedures leave residual uncertainty.
+      positivity: Participants were represented in all three model-consequence conditions.
+      interference: Cross-child interference is assumed absent during individual testing.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:bandura-1965-spontaneous-performance]
+    limitations:
+      - The observed consequence changed immediate performance and does not by itself show different acquisition of the modeled repertoire.
+    provenance: *provenance
+
+  - id: pmm:claim:direct-incentive-removes-model-consequence-performance-gap
+    claim_type: causal_effect
+    statement: In the later incentive test of Bandura's 1965 experiment, offering children direct rewards for reproducing modeled responses increased performance and removed the earlier differences between model-consequence groups.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The within-study incentive phase directly tested available reproduction, while interpretation as equivalent acquisition depends on the validity and ceiling properties of that probe.'}
+    scope:
+      population: The same 66 children represented in the 1965 model-consequence experiment.
+      species: [human]
+      context_ids: [pmm:context:modeled-behavior-observation]
+      temporal_scope: Incentive-assisted reproduction after the spontaneous imitation test.
+      boundary_conditions:
+        - Direct reward for reproducing the same modeled aggressive responses after initial spontaneous testing.
+    exposure_id: pmm:intervention:observer-reproduction-incentive
+    outcome_id: pmm:behavior:observer-matching-response
+    causal_estimand: Within-study change in modeled-response reproduction after direct observer incentives and the remaining difference between prior model-consequence groups.
+    identification_strategy: controlled_contingency
+    temporal_ordering: The direct reproduction incentive was introduced after model exposure and spontaneous performance testing.
+    causal_assumptions:
+      consistency: Children received the declared incentive for reproducing modeled responses.
+      exchangeability: Each prior condition was tested under the incentive phase; order and carryover from spontaneous testing may affect interpretation.
+      positivity: Children from every prior model-consequence condition received the incentive opportunity.
+      interference: Cross-child interference is assumed absent during testing.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:bandura-1965-incentive-reproduction]
+    limitations:
+      - Equal incentive-assisted responding supports an acquisition-performance distinction but does not prove identical memory, attention, or durable learning across groups.
+    provenance: *provenance
+
+  - id: pmm:claim:observation-performance-selection-is-integrative-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: Observation may establish action-relevant information while observed consequences, direct incentives, motor capacity, and context jointly determine whether a matching response is performed.
+    epistemic_status: proposed
+    confidence: {level: low, rationale: 'The acquisition-performance dissociation constrains explanations, but the cited studies do not uniquely identify attention, representation, associative learning, motivation, or motor reproduction as the mechanism.'}
+    scope:
+      population: Human observers in model-exposure paradigms.
+      species: [human]
+      context_ids: [pmm:context:modeled-behavior-observation]
+      temporal_scope: Observation, retention interval, and later spontaneous or prompted performance.
+      boundary_conditions:
+        - Declared model exposure, distinct spontaneous and prompted tests, and observable matching-response criteria.
+    mechanism_id: pmm:mechanism:observation-performance-selection
+    exposure_id: pmm:intervention:model-behavior-exposure
+    outcome_id: pmm:behavior:observer-matching-response
+    temporal_ordering: Observation precedes retention and later opportunities for spontaneous or incentivized response production.
+    falsifiable_boundary: The hypothesis is weakened when observer incentives and opportunity do not reveal retained modeled information or when nonobservational controls explain the response equally well.
+    evidence_ids: [pmm:evidence:bandura-1965-acquisition-performance-interpretation, pmm:evidence:heyes-2012-mechanism-boundary]
+    limitations:
+      - The hypothesis is not a validated universal four-stage sequence and should not be used to infer an unmeasured internal representation from imitation alone.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:bandura-ross-ross-1961-model-exposure
+    claim_ids: [pmm:claim:aggressive-model-exposure-increases-matching-aggression]
+    source_id: pmm:source:bandura-ross-ross-1961
+    extraction_locator: Method, results, and summary reporting 72 children assigned to aggressive-model, nonaggressive-model, or no-model conditions.
+    evidence_kind: controlled_experiment
+    design: Matched controlled laboratory experiment with scripted live-model exposure and immediate behavioral observation.
+    population: 36 girls and 36 boys aged 37 to 69 months from the Stanford University Nursery School.
+    species: [human]
+    sample_size: 72
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: not_assessed}
+    summary: Children exposed to the aggressive model produced substantially more protocol-matching physical and verbal aggression than nonaggressive-model and control groups in the immediate test.
+    limitations:
+      - Small single-site historical sample, artificial materials, induced frustration, immediate outcome measurement, and possible expectancy or demand effects limit generalization.
+    provenance: *provenance
+
+  - id: pmm:evidence:bandura-1965-spontaneous-performance
+    claim_ids: [pmm:claim:observed-model-consequence-changes-spontaneous-imitation]
+    source_id: pmm:source:bandura-1965-model-consequences
+    extraction_locator: Postexposure spontaneous-performance test comparing model rewarded, punished, and no-consequence conditions.
+    evidence_kind: controlled_experiment
+    design: Controlled film-model experiment with three assigned consequence conditions and immediate spontaneous reproduction test.
+    population: 66 nursery-school children, 33 girls and 33 boys, aged approximately 3 to 5 years.
+    species: [human]
+    sample_size: 66
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: not_assessed}
+    summary: Children who observed the model punished produced fewer spontaneous matching responses than children who observed reward or no consequence.
+    limitations:
+      - The result concerns immediate aggressive-response performance after one film and does not directly measure durable acquisition or real-world behavior.
+    provenance: *provenance
+
+  - id: pmm:evidence:bandura-1965-incentive-reproduction
+    claim_ids: [pmm:claim:direct-incentive-removes-model-consequence-performance-gap]
+    source_id: pmm:source:bandura-1965-model-consequences
+    extraction_locator: Incentive phase following spontaneous testing, in which direct rewards were offered for reproducing modeled responses.
+    evidence_kind: controlled_experiment
+    design: Within-study incentive-assisted reproduction phase across the three prior model-consequence groups.
+    population: The same 66 nursery-school children included in the model-consequence experiment.
+    species: [human]
+    sample_size: 66
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: not_assessed}
+    summary: Direct incentives increased reproduction and removed the prior between-group differences, indicating that low spontaneous performance did not imply absence of available modeled responses.
+    limitations:
+      - Incentive-assisted reproduction can be affected by motivation, motor ability, demand characteristics, memory retrieval, and ceiling effects.
+    provenance: *provenance
+
+  - id: pmm:evidence:bandura-1965-acquisition-performance-interpretation
+    claim_ids: [pmm:claim:observation-performance-selection-is-integrative-hypothesis]
+    source_id: pmm:source:bandura-1965-model-consequences
+    extraction_locator: Comparison of spontaneous and incentive-assisted tests interpreted by the author as acquisition versus performance.
+    evidence_kind: controlled_experiment
+    design: Mechanism-oriented interpretation of experimentally separated spontaneous and incentivized reproduction tests.
+    population: 66 nursery-school children in the included experiment.
+    species: [human]
+    sample_size: 66
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: not_assessed}
+    summary: The dissociation is compatible with model consequences affecting performance more than available acquisition, but it does not identify the internal process producing that difference.
+    limitations:
+      - One operational acquisition probe cannot uniquely distinguish attention, retention, response availability, motivation, and demand effects.
+    provenance: *provenance
+
+  - id: pmm:evidence:heyes-2012-mechanism-boundary
+    claim_ids: [pmm:claim:observation-performance-selection-is-integrative-hypothesis]
+    source_id: pmm:source:heyes-2012-social-learning
+    extraction_locator: Review synthesis distinguishing social input mechanisms from domain-general associative learning mechanisms.
+    evidence_kind: narrative_review
+    design: Comparative narrative review of social-learning functions and candidate cognitive mechanisms.
+    population: Human and nonhuman social-learning studies reviewed by the author.
+    species: [mixed]
+    inference_support: mechanism
+    support_direction: mixed
+    causal_support: indirect
+    domains: {directness: indirect, risk_of_bias: not_assessed, consistency: mixed, precision: not_reported, replication: conceptual_replication}
+    summary: The review argues that social and asocial learning can depend on shared associative mechanisms while social perceptual, attentional, and motivational inputs tune what is learned.
+    limitations:
+      - The review advances a theoretical synthesis and does not establish one universal mechanism for human observational learning.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:bandura-ross-ross-1961
+    title: Transmission of aggression through imitation of aggressive models
+    source_type: peer_reviewed_article
+    authors: [Albert Bandura, Dorothea Ross, Sheila A. Ross]
+    year: 1961
+    doi: 10.1037/h0045925
+    pmid: '13864605'
+    url: https://pubmed.ncbi.nlm.nih.gov/13864605/
+    accessed_at: '2026-08-26'
+    authority_note: Classic primary controlled experiment used only for its narrow immediate model-exposure contrast.
+    provenance: *provenance
+
+  - id: pmm:source:bandura-1965-model-consequences
+    title: Influence of models' reinforcement contingencies on the acquisition of imitative responses
+    source_type: peer_reviewed_article
+    authors: [Albert Bandura]
+    year: 1965
+    doi: 10.1037/h0022070
+    pmid: '14300234'
+    url: https://pubmed.ncbi.nlm.nih.gov/14300234/
+    accessed_at: '2026-08-26'
+    authority_note: Primary experiment separating spontaneous performance from incentive-assisted reproduction after observed model consequences.
+    provenance: *provenance
+
+  - id: pmm:source:heyes-2012-social-learning
+    title: What's social about social learning?
+    source_type: peer_reviewed_article
+    authors: [Cecilia Heyes]
+    year: 2012
+    doi: 10.1037/a0025180
+    pmid: '21895355'
+    url: https://pubmed.ncbi.nlm.nih.gov/21895355/
+    accessed_at: '2026-08-26'
+    authority_note: Peer-reviewed comparative review used to prevent social input from being equated with one special-purpose learning mechanism.
+    provenance: *provenance
+
+  - id: pmm:source:greer-2006-observational-learning
+    title: Observational learning
+    source_type: peer_reviewed_article
+    authors: [R. Douglas Greer, Katherine Singer-Dudek, Crystal Gautreaux]
+    year: 2006
+    doi: 10.1080/00207590500492435
+    url: https://doi.org/10.1080/00207590500492435
+    accessed_at: '2026-08-26'
+    authority_note: Review used for explicit distinctions among observational effects on performance, acquisition, and conditioned reinforcement.
+    provenance: *provenance

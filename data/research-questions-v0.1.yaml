@@ -333,3 +333,21 @@ questions:
     about_ids: [pmm:mechanism:reciprocal-cbt-maintenance-cycle, pmm:intervention:behavioral-experiment, pmm:outcome:cbt-short-long-consequences]
     source_ids: [pmm:source:moreno-peral-2020-mediators, pmm:source:cuijpers-2023-cbt-depression]
     provenance: *provenance
+
+  - id: pmm:research-question:social-learning-mechanism-and-transfer
+    family_id: social-learning
+    question:
+      en: Which measured process explains durable transfer after observing a model, rather than only immediate matching performance?
+      ru: Какой измеренный процесс объясняет устойчивый перенос после наблюдения модели, а не только немедленное похожее выполнение?
+    why_open:
+      en: Similar behavior after observation can reflect attention, response facilitation, outcome learning, emulation, exact imitation, direct task incentives, or demand effects, and the classic studies measured immediate performance.
+      ru: Похожее поведение после наблюдения может отражать внимание, облегчение уже доступной реакции, обучение исходу, достижение той же цели другим способом, точное подражание, прямые стимулы задания или ожидания участника, а классические исследования измеряли немедленное выполнение.
+    what_would_help:
+      en: Preregistered experiments with no-model and nonmatching controls, separate acquisition and performance probes, delayed tests, changed materials and contexts, and competing process-model comparison.
+      ru: Пререгистрированные эксперименты с условиями без модели и с непохожими действиями, отдельными проверками усвоения и выполнения, отсроченными тестами, новым материалом и контекстом и сравнением конкурирующих моделей процесса.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:observation-performance-selection, pmm:measurement:spontaneous-imitation-coding, pmm:measurement:incentive-assisted-reproduction]
+    source_ids: [pmm:source:bandura-1965-model-consequences, pmm:source:heyes-2012-social-learning, pmm:source:greer-2006-observational-learning]
+    provenance: *provenance

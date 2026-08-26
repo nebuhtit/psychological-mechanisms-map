@@ -281,6 +281,26 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:observation-performance-selection-is-integrative-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which model exposure supports retention of action-relevant information while observed and direct consequences alter whether and when a matching response is performed.",
+      "evidence_count": 2,
+      "family_id": "social-learning",
+      "family_title": "Social and observational learning",
+      "id": "pmm:mechanism:observation-performance-selection",
+      "label": "Observation-to-performance selection",
+      "mechanism_kind": "learning",
+      "source_count": 2
+    },
+    {
+      "claim_ids": [
         "pmm:claim:co-regulation-may-produce-buffering"
       ],
       "claim_status_counts": {

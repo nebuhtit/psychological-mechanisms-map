@@ -52,7 +52,7 @@ This is a crosswalk, not a merged hierarchy:
 
 The human-editable projection is [`data/navigation-views-v0.1.yaml`](../data/navigation-views-v0.1.yaml). `scripts/build_site_data.py` rejects unknown family IDs, unresolved canonical IDs, type mismatches, broken parents, and unknown source references. The generated website bundle remains disposable.
 
-The attachment and CBT packs deliberately test common modeling errors. Attachment is not reduced to four permanent personality types, and Strange Situation, adult self-report, and Adult Attachment Interview are not treated as interchangeable. CBT treatment efficacy, statistical cognitive mediation, and the proposed person-specific maintenance loop are separate Claims. The next full evidence-pack expansion should test social learning or temperament rather than add more unsupported catalog prose. The complete queue and promotion gate are documented in [`docs/coverage-roadmap.md`](coverage-roadmap.md).
+The attachment and CBT packs deliberately test common modeling errors. Attachment is not reduced to four permanent personality types, and Strange Situation, adult self-report, and Adult Attachment Interview are not treated as interchangeable. CBT treatment efficacy, statistical cognitive mediation, and the proposed person-specific maintenance loop are separate Claims. The social-learning pack now separates model exposure, observed consequences, spontaneous performance, incentive-assisted reproduction, and proposed acquisition mechanisms. The next full evidence-pack expansion should test temperament rather than add more unsupported catalog prose. The complete queue and promotion gate are documented in [`docs/coverage-roadmap.md`](coverage-roadmap.md).
 
 ## Practical interpretation layer
 

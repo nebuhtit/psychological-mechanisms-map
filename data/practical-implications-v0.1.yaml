@@ -639,3 +639,63 @@ applications:
     claim_ids: [pmm:claim:cbt-reduces-depression-versus-controls, pmm:claim:cbt-efficacy-does-not-validate-unique-mechanism]
     source_ids: [pmm:source:cuijpers-2023-cbt-depression, pmm:source:nice-depression-2022]
     provenance: *provenance
+
+  - id: pmm:application:demonstrate-practice-feedback-transfer
+    family_id: social-learning
+    title:
+      en: Demonstrate, let the learner practice, then test transfer
+      ru: Покажите, дайте попробовать и затем проверьте перенос
+    practical_question:
+      en: How can observation be used without assuming that seeing a model is enough for learning?
+      ru: Как использовать наблюдение, не предполагая, что одного показа достаточно для научения?
+    action:
+      en: Show one observable target action and its relevant result, ask the learner to reproduce or explain it, provide task-specific feedback, and later test the same skill with changed materials or context.
+      ru: Покажите одно наблюдаемое целевое действие и важный результат, попросите учащегося воспроизвести или объяснить его, дайте обратную связь по заданию и позже проверьте тот же навык на другом материале или в ином контексте.
+    expected_change:
+      en: Better evidence about whether the learner attended, can reproduce the action, improves with feedback, and transfers it beyond the demonstration.
+      ru: Более точные данные о том, заметил ли учащийся действие, способен ли его воспроизвести, улучшается ли результат после обратной связи и переносится ли навык за пределы показа.
+    evidence_basis:
+      en: Controlled model-exposure studies establish immediate observational effects, while reviews distinguish demonstration, acquisition, performance, and transfer.
+      ru: Контролируемые исследования показа модели подтверждают немедленные эффекты наблюдения, а обзоры разделяют демонстрацию, усвоение, выполнение и перенос.
+    applicability:
+      en: Low-risk teaching, coaching, onboarding, rehabilitation practice, and behavioral-skills training when the modeled action is safe and observable.
+      ru: Низкорисковое обучение, наставничество, ввод в работу, реабилитационная практика и тренировка поведенческих навыков, если показываемое действие безопасно и наблюдаемо.
+    not_established:
+      en: The included studies do not establish one optimal demonstration method, durable transfer to every domain, or that exact imitation is always the desired learning outcome.
+      ru: Представленные исследования не устанавливают единственный лучший способ демонстрации, устойчивый перенос во все области или необходимость точного подражания как результата обучения.
+    actionability: transfer_uncertain
+    confidence: low
+    audience: [individual, educator, clinician, researcher]
+    claim_ids: [pmm:claim:observational-learning-is-not-identical-to-imitation, pmm:claim:observation-performance-selection-is-integrative-hypothesis]
+    source_ids: [pmm:source:bandura-1965-model-consequences, pmm:source:greer-2006-observational-learning]
+    provenance: *provenance
+
+  - id: pmm:application:separate-social-learning-from-visible-performance
+    family_id: social-learning
+    title:
+      en: Do not equate quiet performance with failure to learn
+      ru: Не приравнивайте отсутствие выполнения к отсутствию усвоения
+    practical_question:
+      en: What should be checked when someone watched a demonstration but does not perform the action?
+      ru: Что проверить, если человек наблюдал демонстрацию, но не выполняет действие?
+    action:
+      en: Separately check whether the person noticed the relevant step, can describe or recognize it, has the required motor or verbal skill, expects an adverse consequence, and can reproduce it under a safe prompt or incentive.
+      ru: Отдельно проверьте, заметил ли человек важный шаг, может ли описать или узнать его, обладает ли необходимым двигательным или речевым навыком, ожидает ли неприятных последствий и может ли воспроизвести действие после безопасной подсказки или стимула.
+    expected_change:
+      en: A more precise identification of whether the immediate bottleneck concerns attention, retained information, available skill, motivation, expected consequences, or context.
+      ru: Более точное определение того, связан ли текущий барьер со вниманием, сохранённой информацией, доступным навыком, мотивацией, ожидаемыми последствиями или контекстом.
+    evidence_basis:
+      en: In Bandura's 1965 study, an observer incentive removed spontaneous performance differences between prior model-consequence conditions.
+      ru: В исследовании Бандуры 1965 года стимул для наблюдателя устранил различия в самопроизвольном выполнении между условиями с разными последствиями для модели.
+    applicability:
+      en: Interpretation of low-stakes training and assessment results; each candidate barrier still requires its own valid measurement.
+      ru: Интерпретация результатов низкорискового обучения и оценки; каждый возможный барьер всё равно требует отдельного валидного измерения.
+    not_established:
+      en: A reward is not a universal diagnostic test, can itself alter behavior, and should not be used to pressure unsafe, unwanted, or ethically inappropriate performance.
+      ru: Награда не является универсальным диагностическим тестом, сама может менять поведение и не должна использоваться для давления с целью небезопасного, нежелательного или неэтичного действия.
+    actionability: interpretation_only
+    confidence: moderate
+    audience: [educator, clinician, researcher]
+    claim_ids: [pmm:claim:observed-model-consequence-changes-spontaneous-imitation, pmm:claim:direct-incentive-removes-model-consequence-performance-gap]
+    source_ids: [pmm:source:bandura-1965-model-consequences]
+    provenance: *provenance
