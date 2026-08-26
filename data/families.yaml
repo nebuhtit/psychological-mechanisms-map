@@ -82,3 +82,9 @@ datasets:
       id: visual-perception
       title: Visual perception
       description: Visual perception, contrast sensitivity, grating manipulation, detection response, threshold measurement, and divisive normalization kept distinct.
+  - source: data/evidence-pack-deductive-reasoning-v0.3.yaml
+    output: build/evidence-pack-deductive-reasoning-v0.3.json
+    family:
+      id: deductive-reasoning
+      title: Deductive reasoning
+      description: Deductive construct, syllogism task, validity and believability, judgments, performance, signal detection, and parallel evaluation kept distinct.

@@ -44,6 +44,26 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:belief-and-logic-may-be-evaluated-in-parallel"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which content-based plausibility and argument-structure information are evaluated concurrently and can support compatible or competing responses.",
+      "evidence_count": 3,
+      "family_id": "deductive-reasoning",
+      "family_title": "Deductive reasoning",
+      "id": "pmm:mechanism:parallel-belief-logic-evaluation",
+      "label": "Parallel belief-logic evaluation",
+      "mechanism_kind": "cognitive",
+      "source_count": 3
+    },
+    {
+      "claim_ids": [
         "pmm:claim:extinction-memory-mechanism-hypothesis"
       ],
       "claim_status_counts": {

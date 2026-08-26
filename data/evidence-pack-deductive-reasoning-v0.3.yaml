@@ -1,0 +1,509 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:deductive-reasoning-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for deductive reasoning and belief bias
+  description: Separates deductive reasoning, syllogism tasks, validity-believability manipulation, judgments, accuracy, signal-detection measurement, and a parallel-evaluation mechanism hypothesis.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T19:30:00+03:00'
+    modified_at: '2026-08-26T19:30:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:construct:deductive-reasoning
+    type: Construct
+    label: Deductive reasoning
+    definition: Construction or evaluation of arguments in which a conclusion is assessed as following necessarily from stated premises or hypotheses.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Deductive reasoning is broader than performance on one syllogism task and narrower than thinking or intelligence in general.
+      - Logical validity is a property of an argument; it is not a mental state, observed response, or mechanism.
+    external_mappings:
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a072/
+        external_label: deductive reasoning
+        mapping_relation: close_match
+        mapping_status: provisional
+        rationale: The labels and scope are close, but the Cognitive Atlas concept is marked Unreviewed and PMM does not import its hierarchy as settled.
+        accessed_at: '2026-08-26'
+    provenance: *provenance
+
+  - id: pmm:context:syllogistic-validity-judgment-task
+    type: Context
+    label: Syllogistic validity-judgment task
+    definition: Experimental task in which a participant decides whether a conclusion follows from stated premises while logical validity and conclusion believability can agree or conflict.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      argument_form: categorical or conditional syllogism
+      logical_status: valid or invalid
+      conclusion_believability: believable or unbelievable
+      conflict: validity and believability support the same or different responses
+      response_rule: judge logical validity rather than real-world truth
+    scope: Human laboratory tasks presenting premises and a conclusion with a protocol-defined validity judgment.
+    boundary_notes:
+      - The task samples a restricted form of deductive evaluation; it is not deductive reasoning itself.
+      - Experimenter-defined logical conflict does not guarantee that every participant represents or experiences the same conflict.
+    external_mappings:
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/task/id/trm_4c898b8c2d071/
+        external_label: deductive reasoning task
+        mapping_relation: narrow_match
+        mapping_status: provisional
+        rationale: The PMM context is one narrower syllogistic implementation of the broader unreviewed deductive-reasoning task record.
+        accessed_at: '2026-08-26'
+    provenance: *provenance
+
+  - id: pmm:intervention:syllogism-validity-believability-manipulation
+    type: Intervention
+    label: Syllogism validity-believability manipulation
+    definition: Experimental crossing of whether a conclusion is logically entailed by its premises and whether it is believable from prior world knowledge.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:behavior:syllogism-validity-judgment
+      - pmm:outcome:syllogistic-judgment-performance
+    delivery: Present protocol-defined valid and invalid arguments with believable and unbelievable conclusions, including conflict and no-conflict combinations.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:behavior:syllogism-validity-judgment
+    type: Behavior
+    label: Syllogism validity judgment
+    definition: Observable acceptance or rejection of a conclusion as following logically from the presented premises.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Protocol-defined keypress, rating, or verbal response indicating that the conclusion follows or does not follow.
+    function_note: An endorsement can reflect logical analysis, conclusion believability, response criterion, misunderstanding, or a mixture of processes.
+    provenance: *provenance
+
+  - id: pmm:outcome:syllogistic-judgment-performance
+    type: Outcome
+    label: Syllogistic judgment performance
+    definition: Protocol-scored agreement between a participant's validity judgment and the formal validity classification of the argument.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: performance
+    valence: not_applicable
+    boundary_notes:
+      - Accuracy depends on the selected normative logic, argument interpretation, item content, and response procedure.
+    provenance: *provenance
+
+  - id: pmm:measurement:condition-specific-syllogism-judgments
+    type: Measurement
+    label: Condition-specific syllogism judgments
+    definition: Acceptance rates, rejection rates, accuracy, response time, confidence, or verbal protocols summarized separately by validity and believability condition.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids:
+      - pmm:construct:deductive-reasoning
+      - pmm:behavior:syllogism-validity-judgment
+      - pmm:outcome:syllogistic-judgment-performance
+    method: Record each validity judgment and prespecified process measures, then compare valid, invalid, believable, unbelievable, conflict, and no-conflict conditions.
+    unit_of_analysis: behavior
+    result_type: continuous
+    boundary_notes:
+      - Raw acceptance or accuracy does not by itself separate validity discrimination from a tendency to accept believable conclusions.
+    provenance: *provenance
+
+  - id: pmm:measurement:syllogistic-signal-detection-profile
+    type: Measurement
+    label: Syllogistic signal-detection profile
+    definition: Model-based separation of sensitivity to argument validity from response criteria using endorsement and confidence distributions for valid and invalid syllogisms.
+    ontological_level: type
+    curation_status: provisional
+    measurement_kind: computational_parameter
+    target_ids:
+      - pmm:construct:deductive-reasoning
+      - pmm:behavior:syllogism-validity-judgment
+      - pmm:outcome:syllogistic-judgment-performance
+    method: Fit a declared signal-detection model to participant- and item-level endorsement or confidence data and estimate discriminability and response criteria by condition.
+    unit_of_analysis: behavior
+    result_type: model_parameter
+    boundary_notes:
+      - Discriminability and criterion are model-dependent estimates, not direct observations of reasoning mechanisms.
+      - Aggregating heterogeneous people or items can distort receiver-operating-characteristic interpretations.
+    provenance: *provenance
+
+  - id: pmm:mechanism:parallel-belief-logic-evaluation
+    type: Mechanism
+    label: Parallel belief-logic evaluation
+    definition: Proposed process in which content-based plausibility and argument-structure information are evaluated concurrently and can support compatible or competing responses.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: cognitive
+    role_bindings:
+      - {role: manipulated argument properties, object_id: pmm:intervention:syllogism-validity-believability-manipulation}
+      - {role: observable judgment, object_id: pmm:behavior:syllogism-validity-judgment}
+      - {role: process-sensitive measurement, object_id: pmm:measurement:condition-specific-syllogism-judgments}
+    realization_conditions:
+      - The participant extracts enough content and structural information for both evaluations to influence processing.
+      - Conflict measures distinguish subjective response competition from experimenter-assigned logical conflict.
+    boundary_notes:
+      - Parallel evaluation is a process hypothesis, not another name for a validity-by-believability interaction.
+      - Slower responses, lower confidence, skin conductance, or mutual interference are indirect and non-unique indicators of conflict.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:deductive-reasoning-measured-by-condition-judgments
+    subject_id: pmm:construct:deductive-reasoning
+    predicate: measured_by
+    object_id: pmm:measurement:condition-specific-syllogism-judgments
+    provenance: *provenance
+  - id: pmm:relation:deductive-reasoning-measured-by-sdt
+    subject_id: pmm:construct:deductive-reasoning
+    predicate: measured_by
+    object_id: pmm:measurement:syllogistic-signal-detection-profile
+    provenance: *provenance
+  - id: pmm:relation:validity-judgment-occurs-in-syllogism-task
+    subject_id: pmm:behavior:syllogism-validity-judgment
+    predicate: occurs_in_context
+    object_id: pmm:context:syllogistic-validity-judgment-task
+    provenance: *provenance
+  - id: pmm:relation:parallel-evaluation-occurs-in-syllogism-task
+    subject_id: pmm:mechanism:parallel-belief-logic-evaluation
+    predicate: occurs_in_context
+    object_id: pmm:context:syllogistic-validity-judgment-task
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:deductive-reasoning-evaluates-necessary-conclusions
+    claim_type: definition
+    statement: Deductive reasoning constructs or evaluates arguments intended to show that a conclusion necessarily follows from premises or hypotheses.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: The definition matches standard usage and the linked Cognitive Atlas concept, but that collaborative record is marked Unreviewed.
+    scope:
+      population: Humans constructing or evaluating deductive arguments.
+      species: [human]
+      context_ids: [pmm:context:syllogistic-validity-judgment-task]
+      temporal_scope: Premise representation through conclusion evaluation.
+    defined_object_id: pmm:construct:deductive-reasoning
+    source_ids: [pmm:source:cognitive-atlas-deductive-reasoning-2026]
+    evidence_ids: []
+    limitations:
+      - The definition does not establish that one task validly measures all forms of deduction or that formal correctness identifies one psychological mechanism.
+    provenance: *provenance
+
+  - id: pmm:claim:conclusion-believability-changes-validity-judgments
+    claim_type: causal_effect
+    statement: In the Evans, Barston, and Pollard experiments, manipulated conclusion believability changed syllogism endorsement, with a larger belief bias for invalid than valid arguments.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: Three controlled experiments reproduced the validity-by-believability pattern with several response-bias controls, but the historical samples and task materials limit generalization.
+    scope:
+      population: Human participants in three syllogistic-reasoning experiments reported by Evans, Barston, and Pollard in 1983.
+      species: [human]
+      context_ids: [pmm:context:syllogistic-validity-judgment-task]
+      temporal_scope: Argument presentation through verbal protocol and validity judgment.
+      boundary_conditions:
+        - The reported categorical syllogisms, believable and unbelievable conclusions, logical-validity classifications, instructions, and response procedures.
+    exposure_id: pmm:intervention:syllogism-validity-believability-manipulation
+    outcome_id: pmm:behavior:syllogism-validity-judgment
+    causal_estimand: Within-protocol difference in conclusion endorsement produced by changing conclusion believability across valid and invalid syllogisms.
+    identification_strategy: controlled_contingency
+    temporal_ordering: The experimenter-defined premises and conclusion properties were presented before the participant's judgment.
+    causal_assumptions:
+      consistency: Each condition follows the reported syllogism construction, presentation, instruction, and scoring procedure.
+      exchangeability: Controlled within-experiment item comparisons reduce stable participant confounding, while historical counterbalancing details remain source-specific.
+      positivity: Participants encountered the compared validity and believability combinations.
+      interference: One participant's judgments are assumed not to alter another participant's responses.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:evans-1983-belief-bias]
+    limitations:
+      - The effect concerns endorsement in these tasks and does not prove that participants ignored logic or identify a unique cognitive process.
+    provenance: *provenance
+
+  - id: pmm:claim:believability-does-not-unconditionally-reduce-discriminability
+    claim_type: association
+    statement: In a hierarchical signal-detection meta-analysis of 22 confidence-rating studies, conclusion believability did not unconditionally reduce discrimination between valid and invalid syllogisms.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: The analysis included 993 participants and modeled participant and item heterogeneity, but conclusions depend on the signal-detection specification and available confidence-rating studies.
+    scope:
+      population: 993 participants represented in 22 syllogistic confidence-rating studies reanalyzed by Trippas and colleagues.
+      species: [human]
+      context_ids: [pmm:context:syllogistic-validity-judgment-task]
+      temporal_scope: Confidence-rated validity judgments aggregated across the included studies.
+      boundary_conditions:
+        - Studies with confidence-rating or compatible response data included in the hierarchical signal-detection corpus.
+    exposure_id: pmm:intervention:syllogism-validity-believability-manipulation
+    outcome_id: pmm:measurement:syllogistic-signal-detection-profile
+    estimate:
+      metric: group-level discriminability for believable versus unbelievable syllogisms
+      value_status: qualitative_only
+      direction: 'null'
+      notes: The meta-analysis reported no unconditional effect of believability on discriminability, while allowing conditional effects associated with individual differences.
+    confounding_note: Study designs, item sets, participant heterogeneity, response scales, and model assumptions can change the decomposition of discrimination and criterion effects.
+    evidence_ids: [pmm:evidence:trippas-2018-sdt-meta-analysis]
+    limitations:
+      - This result does not mean that believability never changes judgments; it distinguishes unconditional validity discrimination from response bias and conditional effects.
+    provenance: *provenance
+
+  - id: pmm:claim:belief-and-logic-may-be-evaluated-in-parallel
+    claim_type: mechanism_hypothesis
+    statement: Belief-based and logic-based evaluations may sometimes proceed in parallel and generate response conflict when they favor different judgments.
+    epistemic_status: proposed
+    confidence:
+      level: low
+      rationale: Behavioral interference and autonomic evidence support concurrent conflict in some tasks, but recent experiments show that experimenter-defined logical conflict can mismatch participants' subjective representations.
+    scope:
+      population: Humans evaluating syllogistic arguments in which conclusion believability and experimenter-defined validity agree or conflict.
+      species: [human]
+      context_ids: [pmm:context:syllogistic-validity-judgment-task]
+      temporal_scope: Argument encoding through response selection and confidence judgment.
+      boundary_conditions:
+        - Participants must represent both content-based and structural cues; objective and subjective conflict cannot be assumed equivalent.
+    mechanism_id: pmm:mechanism:parallel-belief-logic-evaluation
+    exposure_id: pmm:intervention:syllogism-validity-believability-manipulation
+    outcome_id: pmm:outcome:syllogistic-judgment-performance
+    temporal_ordering: Content and argument structure are processed after presentation and before the final validity judgment.
+    falsifiable_boundary: The account is weakened when preregistered process measures show no mutual interference or conflict-sensitive change after subjective argument interpretation is measured and plausible single-process alternatives fit held-out responses better.
+    evidence_ids:
+      - pmm:evidence:trippas-2017-parallel-interference
+      - pmm:evidence:de-neys-2010-autonomic-conflict
+      - pmm:evidence:kosourikhina-handley-2025-subjective-conflict
+    limitations:
+      - Conflict effects do not establish two discrete mental systems, and the same response pattern can arise from different representations or strategies.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:evans-1983-belief-bias
+    claim_ids: [pmm:claim:conclusion-believability-changes-validity-judgments]
+    source_id: pmm:source:evans-barston-pollard-1983
+    extraction_locator: Abstract and three experiment reports crossing conclusion believability with logical validity and analyzing verbal protocols.
+    evidence_kind: controlled_experiment
+    design: Three controlled syllogistic-reasoning experiments varying conclusion validity and believability with response-bias controls.
+    population: Human participants in the three reported experiments; one pooled sample size was not extracted.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: conclusion endorsement by validity and believability condition
+      value_status: qualitative_only
+      direction: mixed
+      notes: Believable conclusions were endorsed more often, logical validity also strongly affected judgments, and belief bias was larger for invalid than valid syllogisms.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: mostly_consistent
+      precision: not_reported
+      replication: conceptual_replication
+    summary: Three experiments found that both logical validity and conclusion believability influenced syllogism judgments, with stronger belief bias on invalid arguments.
+    limitations:
+      - Historical experiments lacked preregistration and modern multilevel item analysis, and verbal protocols do not uniquely reveal latent processes.
+    provenance: *provenance
+
+  - id: pmm:evidence:trippas-2018-sdt-meta-analysis
+    claim_ids: [pmm:claim:believability-does-not-unconditionally-reduce-discriminability]
+    source_id: pmm:source:trippas-2018-belief-bias-meta-analysis
+    extraction_locator: PubMed abstract and hierarchical signal-detection reanalysis of 22 confidence-rating studies.
+    evidence_kind: meta_analysis
+    design: Hierarchical Bayesian signal-detection meta-analysis of receiver-operating-characteristic data plus corroborating experimental design.
+    population: 993 participants across 22 confidence-rating studies.
+    species: [human]
+    sample_size: 993
+    inference_support: association
+    support_direction: supports
+    causal_support: none
+    effect:
+      metric: unconditional believable-versus-unbelievable difference in validity discriminability
+      value_status: qualitative_only
+      direction: 'null'
+      notes: Believability did not influence discriminability unconditionally; individual-difference factors could condition the effect.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: mostly_consistent
+      precision: adequate
+      replication: independent_replication
+    summary: A hierarchical meta-analysis separated response criterion from validity discrimination and found no unconditional believability effect on discriminability.
+    limitations:
+      - The corpus and inference depend on included confidence-rating studies and the hierarchical signal-detection model.
+    provenance: *provenance
+
+  - id: pmm:evidence:trippas-2017-parallel-interference
+    claim_ids: [pmm:claim:belief-and-logic-may-be-evaluated-in-parallel]
+    source_id: pmm:source:trippas-thompson-handley-2017
+    extraction_locator: Abstract and general discussion of two experiments comparing validity and believability judgments across argument complexity.
+    evidence_kind: controlled_experiment
+    design: Two experiments manipulating judgment instruction, belief-logic conflict, and argument complexity while measuring accuracy, response time, and confidence.
+    population: Human participants completing deductive arguments under validity-judgment or believability-judgment instructions.
+    species: [human]
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect:
+      metric: mutual interference between logical validity and believability judgments
+      value_status: qualitative_only
+      direction: mixed
+      notes: The direction and size of interference depended on argument complexity, consistent with concurrent belief- and logic-based processing rather than a fixed fast-belief slow-logic sequence.
+    domains:
+      directness: partially_indirect
+      risk_of_bias: some_concerns
+      consistency: mostly_consistent
+      precision: not_reported
+      replication: conceptual_replication
+    summary: Two experiments found complexity-dependent mutual interference between logical and belief judgments, supporting but not proving parallel evaluation.
+    limitations:
+      - Interference patterns are indirect process evidence and depend on task complexity, instructions, and model comparison.
+    provenance: *provenance
+
+  - id: pmm:evidence:de-neys-2010-autonomic-conflict
+    claim_ids: [pmm:claim:belief-and-logic-may-be-evaluated-in-parallel]
+    source_id: pmm:source:de-neys-moyens-vansteenwegen-2010
+    extraction_locator: PubMed abstract and experiment report comparing skin-conductance responses during conflict and no-conflict syllogisms.
+    evidence_kind: controlled_experiment
+    design: Syllogistic-reasoning experiment measuring autonomic arousal when intuitive believability agreed or conflicted with the logically classified response.
+    population: University participants solving conflict and no-conflict syllogisms while skin conductance was recorded.
+    species: [human]
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect:
+      metric: skin-conductance response during conflict versus no-conflict reasoning
+      value_status: qualitative_only
+      direction: positive
+      notes: Conflict problems elicited greater autonomic response, including among participants who ultimately gave belief-biased answers.
+    domains:
+      directness: partially_indirect
+      risk_of_bias: some_concerns
+      consistency: single_source
+      precision: not_reported
+      replication: conceptual_replication
+    summary: Greater skin conductance during belief-logic conflict was consistent with implicit conflict sensitivity even when final judgments were biased.
+    limitations:
+      - Skin conductance is not specific to logical conflict and does not identify parallel evaluation as the only generating process.
+    provenance: *provenance
+
+  - id: pmm:evidence:kosourikhina-handley-2025-subjective-conflict
+    claim_ids: [pmm:claim:belief-and-logic-may-be-evaluated-in-parallel]
+    source_id: pmm:source:kosourikhina-handley-2025
+    extraction_locator: Abstract and analyses from two experiments testing invalid conditional inferences, response time, confidence, and subjective conflict classification.
+    evidence_kind: controlled_experiment
+    design: Two experiments comparing experimenter-defined and subjectively represented conflict in conditional syllogistic inferences.
+    population: 248 human participants across two experiments.
+    species: [human]
+    sample_size: 248
+    inference_support: mechanism
+    support_direction: challenges
+    causal_support: indirect
+    effect:
+      metric: response-time and confidence conflict-detection indices after chosen response was considered
+      value_status: qualitative_only
+      direction: mixed
+      notes: Expected conflict differences were generally absent after believability and chosen response were considered; some apparent conflict was better described as competition between heuristic responses.
+    domains:
+      directness: direct
+      risk_of_bias: some_concerns
+      consistency: mostly_consistent
+      precision: adequate
+      replication: conceptual_replication
+    summary: Two recent experiments showed that objective logical conflict can mismatch subjective conflict and challenged a universal logic-versus-heuristic interpretation.
+    limitations:
+      - The challenge concerns particular invalid conditional inferences and does not rule out belief-logic conflict in every reasoning task.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:cognitive-atlas-deductive-reasoning-2026
+    title: Cognitive Atlas concept — deductive reasoning
+    source_type: ontology_release
+    organization: Cognitive Atlas
+    version: accessed 2026-08-26; record marked Unreviewed
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a072/
+    accessed_at: '2026-08-26'
+    authority_note: Collaborative concept record used only for provisional terminology alignment.
+    provenance: *provenance
+
+  - id: pmm:source:cognitive-atlas-deductive-reasoning-task-2026
+    title: Cognitive Atlas task — deductive reasoning task
+    source_type: ontology_release
+    organization: Cognitive Atlas
+    version: accessed 2026-08-26; record marked Unreviewed
+    url: https://www.cognitiveatlas.org/task/id/trm_4c898b8c2d071/
+    accessed_at: '2026-08-26'
+    authority_note: Collaborative task record used only for provisional task alignment.
+    provenance: *provenance
+
+  - id: pmm:source:evans-barston-pollard-1983
+    title: On the conflict between logic and belief in syllogistic reasoning
+    source_type: peer_reviewed_article
+    authors: [Jonathan St. B. T. Evans, Julie L. Barston, Paul Pollard]
+    year: 1983
+    doi: 10.3758/BF03196976
+    pmid: '6621345'
+    url: https://pubmed.ncbi.nlm.nih.gov/6621345/
+    accessed_at: '2026-08-26'
+    authority_note: Foundational primary report of three controlled validity-by-believability syllogism experiments with verbal protocols.
+    provenance: *provenance
+
+  - id: pmm:source:trippas-2018-belief-bias-meta-analysis
+    title: Characterizing belief bias in syllogistic reasoning — a hierarchical Bayesian meta-analysis of ROC data
+    source_type: peer_reviewed_article
+    authors: [Dries Trippas, David Kellen, Henrik Singmann, Gordon Pennycook, Derek J. Koehler, Jonathan A. Fugelsang, Chad Dube]
+    year: 2018
+    doi: 10.3758/s13423-018-1460-7
+    pmid: '29943172'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6267550/
+    accessed_at: '2026-08-26'
+    authority_note: Hierarchical Bayesian meta-analysis separating response criterion and validity discriminability across 22 confidence-rating studies.
+    provenance: *provenance
+
+  - id: pmm:source:trippas-thompson-handley-2017
+    title: When fast logic meets slow belief — evidence for a parallel-processing model of belief bias
+    source_type: peer_reviewed_article
+    authors: [Dries Trippas, Valerie A. Thompson, Simon J. Handley]
+    year: 2017
+    doi: 10.3758/s13421-016-0680-1
+    pmid: '28028779'
+    url: https://pubmed.ncbi.nlm.nih.gov/28028779/
+    accessed_at: '2026-08-26'
+    authority_note: Primary two-experiment comparison of sequential and parallel-processing accounts across argument complexity.
+    provenance: *provenance
+
+  - id: pmm:source:de-neys-moyens-vansteenwegen-2010
+    title: Feeling we're biased — autonomic arousal and reasoning conflict
+    source_type: peer_reviewed_article
+    authors: [Wim De Neys, Elke Moyens, Debora Vansteenwegen]
+    year: 2010
+    doi: 10.3758/CABN.10.2.208
+    pmid: '20498345'
+    url: https://pubmed.ncbi.nlm.nih.gov/20498345/
+    accessed_at: '2026-08-26'
+    authority_note: Primary psychophysiological study of skin-conductance responses during belief-logic conflict.
+    provenance: *provenance
+
+  - id: pmm:source:kosourikhina-handley-2025
+    title: Conflict detection with invalid inferences — all heuristics, no logic
+    source_type: peer_reviewed_article
+    authors: [Veronika Kosourikhina, Simon J. Handley]
+    year: 2025
+    doi: 10.3758/s13421-025-01709-w
+    pmid: '40244550'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12589286/
+    accessed_at: '2026-08-26'
+    authority_note: Recent two-experiment challenge showing that objective and subjective conflict can diverge in invalid conditional inferences.
+    provenance: *provenance

@@ -60,12 +60,13 @@ The live explorer contains thirteen deliberately heterogeneous mechanism familie
 | Spatial attention | Attention construct, predictive cueing task, cue-validity manipulation, response time, accuracy, and competing sensory and decision hypotheses |
 | Declarative memory | Declarative, episodic, and semantic constructs, encoding-depth manipulation, recognition measurement, developmental dissociation, and proposed elaborative encoding |
 | Visual perception | Visual-perception construct, contrast sensitivity, grating manipulation, detection response, threshold measurement, and proposed divisive normalization |
+| Deductive reasoning | Reasoning construct, syllogism task, validity-believability manipulation, judgment, performance, signal-detection decomposition, and proposed parallel evaluation |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
 ### Coverage goal
 
-PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Fourteen topics currently have at least one evidence-linked pilot; ten remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
+PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Fifteen topics currently have at least one evidence-linked pilot; nine remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
 The website provides three switchable views over the same canonical records:
 
@@ -160,6 +161,8 @@ data/evidence-pack-declarative-memory-v0.3.yaml
                                      Declarative, episodic, semantic, recognition, and encoding boundary pack
 data/evidence-pack-visual-perception-v0.3.yaml
                                      Visual perception, contrast threshold, and normalization boundary pack
+data/evidence-pack-deductive-reasoning-v0.3.yaml
+                                     Deductive reasoning, belief bias, signal detection, and competing-process boundary pack
 data/navigation-views-v0.1.yaml      Validated educational and framework projections over canonical IDs
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/navigation-views.md             Faceted-view semantics and boundaries
@@ -375,9 +378,16 @@ threshold, and contrast-sensitivity measurement. Divisive normalization remains
 a proposed mechanism because cat visual-cortex modeling and cross-system review
 do not directly establish the causal pathway to human psychophysical thresholds.
 
+The deductive-reasoning pack separates the reasoning construct from a syllogism
+task, manipulated validity and believability, observable judgments, raw
+performance, and signal-detection parameters. It preserves the distinction
+between response criterion and validity discrimination, and marks parallel
+belief-logic evaluation as a conditional hypothesis with both supporting and
+challenging evidence.
+
 ## Next steps
 
-1. Add a thinking-and-reasoning pack that separates reasoning constructs, tasks, accuracy, strategy reports, latent ability, and process models.
+1. Add a language pack that separates comprehension and production constructs, linguistic stimuli, behavioral measurements, and proposed lexical or syntactic processes.
 2. Add primary evidence and validated measurements before presenting Temperament or Big Five as covered PMM areas.
 3. Add independent primary-study replications and preregistered null results to the negative-reinforcement pack.
 4. Verify stable external ontology identifiers against pinned RDoC, Cognitive Atlas, MF, NBO, and HiTOP releases before promoting mappings.

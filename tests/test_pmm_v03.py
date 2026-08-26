@@ -662,5 +662,96 @@ class VisualPerceptionEvidencePackTests(unittest.TestCase):
         )
 
 
+class DeductiveReasoningEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-deductive-reasoning-v0.3.yaml"
+        )
+
+    def test_deductive_reasoning_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_construct_task_manipulation_response_outcome_measurement_and_mechanism_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:deductive-reasoning"], "Construct")
+        self.assertEqual(
+            records["pmm:context:syllogistic-validity-judgment-task"], "Context"
+        )
+        self.assertEqual(
+            records["pmm:intervention:syllogism-validity-believability-manipulation"],
+            "Intervention",
+        )
+        self.assertEqual(
+            records["pmm:behavior:syllogism-validity-judgment"], "Behavior"
+        )
+        self.assertEqual(
+            records["pmm:outcome:syllogistic-judgment-performance"], "Outcome"
+        )
+        self.assertEqual(
+            records["pmm:measurement:condition-specific-syllogism-judgments"],
+            "Measurement",
+        )
+        self.assertEqual(
+            records["pmm:mechanism:parallel-belief-logic-evaluation"], "Mechanism"
+        )
+
+    def test_raw_judgments_and_signal_detection_parameters_are_distinct(self) -> None:
+        records = {item["id"]: item for item in self.document["objects"]}
+        raw = records["pmm:measurement:condition-specific-syllogism-judgments"]
+        modeled = records["pmm:measurement:syllogistic-signal-detection-profile"]
+        self.assertEqual(raw["measurement_kind"], "behavioral_task")
+        self.assertEqual(modeled["measurement_kind"], "computational_parameter")
+        self.assertNotEqual(raw["id"], modeled["id"])
+        self.assertIn("not direct observations", modeled["boundary_notes"][0])
+
+    def test_meta_analytic_null_is_association_not_causal_effect(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:believability-does-not-unconditionally-reduce-discriminability"
+        )
+        evidence = next(
+            item for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:trippas-2018-sdt-meta-analysis"
+        )
+        self.assertEqual(claim["claim_type"], "association")
+        self.assertEqual(claim["estimate"]["direction"], "null")
+        self.assertEqual(evidence["causal_support"], "none")
+        self.assertEqual(evidence["sample_size"], 993)
+
+    def test_believability_effect_targets_the_observed_judgment(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:conclusion-believability-changes-validity-judgments"
+        )
+        self.assertEqual(claim["claim_type"], "causal_effect")
+        self.assertEqual(
+            claim["outcome_id"], "pmm:behavior:syllogism-validity-judgment"
+        )
+        self.assertNotEqual(
+            claim["outcome_id"], "pmm:outcome:syllogistic-judgment-performance"
+        )
+
+    def test_parallel_process_remains_low_confidence_and_contested(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:belief-and-logic-may-be-evaluated-in-parallel"
+        )
+        evidence = {
+            item["id"]: item for item in self.document["evidence"]
+            if item["id"] in claim["evidence_ids"]
+        }
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertEqual(claim["confidence"]["level"], "low")
+        self.assertEqual(
+            {item["support_direction"] for item in evidence.values()},
+            {"supports", "challenges"},
+        )
+        challenge = evidence["pmm:evidence:kosourikhina-handley-2025-subjective-conflict"]
+        self.assertEqual(challenge["sample_size"], 248)
+        self.assertEqual(challenge["causal_support"], "indirect")
+
+
 if __name__ == "__main__":
     unittest.main()

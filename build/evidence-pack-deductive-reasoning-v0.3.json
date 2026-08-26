@@ -1,0 +1,929 @@
+{
+  "claims": [
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The definition matches standard usage and the linked Cognitive Atlas concept, but that collaborative record is marked Unreviewed."
+      },
+      "defined_object_id": "pmm:construct:deductive-reasoning",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:deductive-reasoning-evaluates-necessary-conclusions",
+      "limitations": [
+        "The definition does not establish that one task validly measures all forms of deduction or that formal correctness identifies one psychological mechanism."
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:syllogistic-validity-judgment-task"
+        ],
+        "population": "Humans constructing or evaluating deductive arguments.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Premise representation through conclusion evaluation."
+      },
+      "source_ids": [
+        "pmm:source:cognitive-atlas-deductive-reasoning-2026"
+      ],
+      "statement": "Deductive reasoning constructs or evaluates arguments intended to show that a conclusion necessarily follows from premises or hypotheses."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Each condition follows the reported syllogism construction, presentation, instruction, and scoring procedure.",
+        "exchangeability": "Controlled within-experiment item comparisons reduce stable participant confounding, while historical counterbalancing details remain source-specific.",
+        "interference": "One participant's judgments are assumed not to alter another participant's responses.",
+        "positivity": "Participants encountered the compared validity and believability combinations."
+      },
+      "causal_estimand": "Within-protocol difference in conclusion endorsement produced by changing conclusion believability across valid and invalid syllogisms.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Three controlled experiments reproduced the validity-by-believability pattern with several response-bias controls, but the historical samples and task materials limit generalization."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:evans-1983-belief-bias"
+      ],
+      "exposure_id": "pmm:intervention:syllogism-validity-believability-manipulation",
+      "id": "pmm:claim:conclusion-believability-changes-validity-judgments",
+      "identification_strategy": "controlled_contingency",
+      "limitations": [
+        "The effect concerns endorsement in these tasks and does not prove that participants ignored logic or identify a unique cognitive process."
+      ],
+      "outcome_id": "pmm:behavior:syllogism-validity-judgment",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The reported categorical syllogisms, believable and unbelievable conclusions, logical-validity classifications, instructions, and response procedures."
+        ],
+        "context_ids": [
+          "pmm:context:syllogistic-validity-judgment-task"
+        ],
+        "population": "Human participants in three syllogistic-reasoning experiments reported by Evans, Barston, and Pollard in 1983.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Argument presentation through verbal protocol and validity judgment."
+      },
+      "statement": "In the Evans, Barston, and Pollard experiments, manipulated conclusion believability changed syllogism endorsement, with a larger belief bias for invalid than valid arguments.",
+      "temporal_ordering": "The experimenter-defined premises and conclusion properties were presented before the participant's judgment."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The analysis included 993 participants and modeled participant and item heterogeneity, but conclusions depend on the signal-detection specification and available confidence-rating studies."
+      },
+      "confounding_note": "Study designs, item sets, participant heterogeneity, response scales, and model assumptions can change the decomposition of discrimination and criterion effects.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "null",
+        "metric": "group-level discriminability for believable versus unbelievable syllogisms",
+        "notes": "The meta-analysis reported no unconditional effect of believability on discriminability, while allowing conditional effects associated with individual differences.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_ids": [
+        "pmm:evidence:trippas-2018-sdt-meta-analysis"
+      ],
+      "exposure_id": "pmm:intervention:syllogism-validity-believability-manipulation",
+      "id": "pmm:claim:believability-does-not-unconditionally-reduce-discriminability",
+      "limitations": [
+        "This result does not mean that believability never changes judgments; it distinguishes unconditional validity discrimination from response bias and conditional effects."
+      ],
+      "outcome_id": "pmm:measurement:syllogistic-signal-detection-profile",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Studies with confidence-rating or compatible response data included in the hierarchical signal-detection corpus."
+        ],
+        "context_ids": [
+          "pmm:context:syllogistic-validity-judgment-task"
+        ],
+        "population": "993 participants represented in 22 syllogistic confidence-rating studies reanalyzed by Trippas and colleagues.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Confidence-rated validity judgments aggregated across the included studies."
+      },
+      "statement": "In a hierarchical signal-detection meta-analysis of 22 confidence-rating studies, conclusion believability did not unconditionally reduce discrimination between valid and invalid syllogisms."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "low",
+        "rationale": "Behavioral interference and autonomic evidence support concurrent conflict in some tasks, but recent experiments show that experimenter-defined logical conflict can mismatch participants' subjective representations."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:trippas-2017-parallel-interference",
+        "pmm:evidence:de-neys-2010-autonomic-conflict",
+        "pmm:evidence:kosourikhina-handley-2025-subjective-conflict"
+      ],
+      "exposure_id": "pmm:intervention:syllogism-validity-believability-manipulation",
+      "falsifiable_boundary": "The account is weakened when preregistered process measures show no mutual interference or conflict-sensitive change after subjective argument interpretation is measured and plausible single-process alternatives fit held-out responses better.",
+      "id": "pmm:claim:belief-and-logic-may-be-evaluated-in-parallel",
+      "limitations": [
+        "Conflict effects do not establish two discrete mental systems, and the same response pattern can arise from different representations or strategies."
+      ],
+      "mechanism_id": "pmm:mechanism:parallel-belief-logic-evaluation",
+      "outcome_id": "pmm:outcome:syllogistic-judgment-performance",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Participants must represent both content-based and structural cues; objective and subjective conflict cannot be assumed equivalent."
+        ],
+        "context_ids": [
+          "pmm:context:syllogistic-validity-judgment-task"
+        ],
+        "population": "Humans evaluating syllogistic arguments in which conclusion believability and experimenter-defined validity agree or conflict.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Argument encoding through response selection and confidence judgment."
+      },
+      "statement": "Belief-based and logic-based evaluations may sometimes proceed in parallel and generate response conflict when they favor different judgments.",
+      "temporal_ordering": "Content and argument structure are processed after presentation and before the final validity judgment."
+    }
+  ],
+  "dataset_id": "pmm:dataset:deductive-reasoning-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:conclusion-believability-changes-validity-judgments"
+      ],
+      "design": "Three controlled syllogistic-reasoning experiments varying conclusion validity and believability with response-bias controls.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "conclusion endorsement by validity and believability condition",
+        "notes": "Believable conclusions were endorsed more often, logical validity also strongly affected judgments, and belief bias was larger for invalid than valid syllogisms.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Abstract and three experiment reports crossing conclusion believability with logical validity and analyzing verbal protocols.",
+      "id": "pmm:evidence:evans-1983-belief-bias",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Historical experiments lacked preregistration and modern multilevel item analysis, and verbal protocols do not uniquely reveal latent processes."
+      ],
+      "population": "Human participants in the three reported experiments; one pooled sample size was not extracted.",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:evans-barston-pollard-1983",
+      "species": [
+        "human"
+      ],
+      "summary": "Three experiments found that both logical validity and conclusion believability influenced syllogism judgments, with stronger belief bias on invalid arguments.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:believability-does-not-unconditionally-reduce-discriminability"
+      ],
+      "design": "Hierarchical Bayesian signal-detection meta-analysis of receiver-operating-characteristic data plus corroborating experimental design.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "independent_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "null",
+        "metric": "unconditional believable-versus-unbelievable difference in validity discriminability",
+        "notes": "Believability did not influence discriminability unconditionally; individual-difference factors could condition the effect.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "meta_analysis",
+      "extraction_locator": "PubMed abstract and hierarchical signal-detection reanalysis of 22 confidence-rating studies.",
+      "id": "pmm:evidence:trippas-2018-sdt-meta-analysis",
+      "inference_support": "association",
+      "limitations": [
+        "The corpus and inference depend on included confidence-rating studies and the hierarchical signal-detection model."
+      ],
+      "population": "993 participants across 22 confidence-rating studies.",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 993,
+      "source_id": "pmm:source:trippas-2018-belief-bias-meta-analysis",
+      "species": [
+        "human"
+      ],
+      "summary": "A hierarchical meta-analysis separated response criterion from validity discrimination and found no unconditional believability effect on discriminability.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:belief-and-logic-may-be-evaluated-in-parallel"
+      ],
+      "design": "Two experiments manipulating judgment instruction, belief-logic conflict, and argument complexity while measuring accuracy, response time, and confidence.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "mutual interference between logical validity and believability judgments",
+        "notes": "The direction and size of interference depended on argument complexity, consistent with concurrent belief- and logic-based processing rather than a fixed fast-belief slow-logic sequence.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Abstract and general discussion of two experiments comparing validity and believability judgments across argument complexity.",
+      "id": "pmm:evidence:trippas-2017-parallel-interference",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Interference patterns are indirect process evidence and depend on task complexity, instructions, and model comparison."
+      ],
+      "population": "Human participants completing deductive arguments under validity-judgment or believability-judgment instructions.",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:trippas-thompson-handley-2017",
+      "species": [
+        "human"
+      ],
+      "summary": "Two experiments found complexity-dependent mutual interference between logical and belief judgments, supporting but not proving parallel evaluation.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:belief-and-logic-may-be-evaluated-in-parallel"
+      ],
+      "design": "Syllogistic-reasoning experiment measuring autonomic arousal when intuitive believability agreed or conflicted with the logically classified response.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "skin-conductance response during conflict versus no-conflict reasoning",
+        "notes": "Conflict problems elicited greater autonomic response, including among participants who ultimately gave belief-biased answers.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "PubMed abstract and experiment report comparing skin-conductance responses during conflict and no-conflict syllogisms.",
+      "id": "pmm:evidence:de-neys-2010-autonomic-conflict",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Skin conductance is not specific to logical conflict and does not identify parallel evaluation as the only generating process."
+      ],
+      "population": "University participants solving conflict and no-conflict syllogisms while skin conductance was recorded.",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:de-neys-moyens-vansteenwegen-2010",
+      "species": [
+        "human"
+      ],
+      "summary": "Greater skin conductance during belief-logic conflict was consistent with implicit conflict sensitivity even when final judgments were biased.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:belief-and-logic-may-be-evaluated-in-parallel"
+      ],
+      "design": "Two experiments comparing experimenter-defined and subjectively represented conflict in conditional syllogistic inferences.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "response-time and confidence conflict-detection indices after chosen response was considered",
+        "notes": "Expected conflict differences were generally absent after believability and chosen response were considered; some apparent conflict was better described as competition between heuristic responses.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Abstract and analyses from two experiments testing invalid conditional inferences, response time, confidence, and subjective conflict classification.",
+      "id": "pmm:evidence:kosourikhina-handley-2025-subjective-conflict",
+      "inference_support": "mechanism",
+      "limitations": [
+        "The challenge concerns particular invalid conditional inferences and does not rule out belief-logic conflict in every reasoning task."
+      ],
+      "population": "248 human participants across two experiments.",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 248,
+      "source_id": "pmm:source:kosourikhina-handley-2025",
+      "species": [
+        "human"
+      ],
+      "summary": "Two recent experiments showed that objective logical conflict can mismatch subjective conflict and challenged a universal logic-versus-heuristic interpretation.",
+      "support_direction": "challenges"
+    }
+  ],
+  "metadata": {
+    "description": "Separates deductive reasoning, syllogism tasks, validity-believability manipulation, judgments, accuracy, signal-detection measurement, and a parallel-evaluation mechanism hypothesis.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T19:30:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T19:30:00+03:00",
+      "record_version": "0.1.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for deductive reasoning and belief bias"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "boundary_notes": [
+        "Deductive reasoning is broader than performance on one syllogism task and narrower than thinking or intelligence in general.",
+        "Logical validity is a property of an argument; it is not a mental state, observed response, or mechanism."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Construction or evaluation of arguments in which a conclusion is assessed as following necessarily from stated premises or hypotheses.",
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a072/",
+          "external_label": "deductive reasoning",
+          "mapping_relation": "close_match",
+          "mapping_status": "provisional",
+          "rationale": "The labels and scope are close, but the Cognitive Atlas concept is marked Unreviewed and PMM does not import its hierarchy as settled.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:construct:deductive-reasoning",
+      "label": "Deductive reasoning",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "The task samples a restricted form of deductive evaluation; it is not deductive reasoning itself.",
+        "Experimenter-defined logical conflict does not guarantee that every participant represents or experiences the same conflict."
+      ],
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Experimental task in which a participant decides whether a conclusion follows from stated premises while logical validity and conclusion believability can agree or conflict.",
+      "dimensions": {
+        "argument_form": "categorical or conditional syllogism",
+        "conclusion_believability": "believable or unbelievable",
+        "conflict": "validity and believability support the same or different responses",
+        "logical_status": "valid or invalid",
+        "response_rule": "judge logical validity rather than real-world truth"
+      },
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/task/id/trm_4c898b8c2d071/",
+          "external_label": "deductive reasoning task",
+          "mapping_relation": "narrow_match",
+          "mapping_status": "provisional",
+          "rationale": "The PMM context is one narrower syllogistic implementation of the broader unreviewed deductive-reasoning task record.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:context:syllogistic-validity-judgment-task",
+      "label": "Syllogistic validity-judgment task",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Human laboratory tasks presenting premises and a conclusion with a protocol-defined validity judgment.",
+      "type": "Context"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental crossing of whether a conclusion is logically entailed by its premises and whether it is believable from prior world knowledge.",
+      "delivery": "Present protocol-defined valid and invalid arguments with believable and unbelievable conclusions, including conflict and no-conflict combinations.",
+      "id": "pmm:intervention:syllogism-validity-believability-manipulation",
+      "intended_direction": "test",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Syllogism validity-believability manipulation",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:behavior:syllogism-validity-judgment",
+        "pmm:outcome:syllogistic-judgment-performance"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable acceptance or rejection of a conclusion as following logically from the presented premises.",
+      "function_note": "An endorsement can reflect logical analysis, conclusion believability, response criterion, misunderstanding, or a mixture of processes.",
+      "id": "pmm:behavior:syllogism-validity-judgment",
+      "label": "Syllogism validity judgment",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Protocol-defined keypress, rating, or verbal response indicating that the conclusion follows or does not follow.",
+      "type": "Behavior"
+    },
+    {
+      "boundary_notes": [
+        "Accuracy depends on the selected normative logic, argument interpretation, item content, and response procedure."
+      ],
+      "curation_status": "accepted",
+      "definition": "Protocol-scored agreement between a participant's validity judgment and the formal validity classification of the argument.",
+      "id": "pmm:outcome:syllogistic-judgment-performance",
+      "label": "Syllogistic judgment performance",
+      "ontological_level": "type",
+      "outcome_kind": "performance",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "not_applicable"
+    },
+    {
+      "boundary_notes": [
+        "Raw acceptance or accuracy does not by itself separate validity discrimination from a tendency to accept believable conclusions."
+      ],
+      "curation_status": "accepted",
+      "definition": "Acceptance rates, rejection rates, accuracy, response time, confidence, or verbal protocols summarized separately by validity and believability condition.",
+      "id": "pmm:measurement:condition-specific-syllogism-judgments",
+      "label": "Condition-specific syllogism judgments",
+      "measurement_kind": "behavioral_task",
+      "method": "Record each validity judgment and prespecified process measures, then compare valid, invalid, believable, unbelievable, conflict, and no-conflict conditions.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:deductive-reasoning",
+        "pmm:behavior:syllogism-validity-judgment",
+        "pmm:outcome:syllogistic-judgment-performance"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "Discriminability and criterion are model-dependent estimates, not direct observations of reasoning mechanisms.",
+        "Aggregating heterogeneous people or items can distort receiver-operating-characteristic interpretations."
+      ],
+      "curation_status": "provisional",
+      "definition": "Model-based separation of sensitivity to argument validity from response criteria using endorsement and confidence distributions for valid and invalid syllogisms.",
+      "id": "pmm:measurement:syllogistic-signal-detection-profile",
+      "label": "Syllogistic signal-detection profile",
+      "measurement_kind": "computational_parameter",
+      "method": "Fit a declared signal-detection model to participant- and item-level endorsement or confidence data and estimate discriminability and response criteria by condition.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "model_parameter",
+      "target_ids": [
+        "pmm:construct:deductive-reasoning",
+        "pmm:behavior:syllogism-validity-judgment",
+        "pmm:outcome:syllogistic-judgment-performance"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "Parallel evaluation is a process hypothesis, not another name for a validity-by-believability interaction.",
+        "Slower responses, lower confidence, skin conductance, or mutual interference are indirect and non-unique indicators of conflict."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which content-based plausibility and argument-structure information are evaluated concurrently and can support compatible or competing responses.",
+      "id": "pmm:mechanism:parallel-belief-logic-evaluation",
+      "label": "Parallel belief-logic evaluation",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "The participant extracts enough content and structural information for both evaluations to influence processing.",
+        "Conflict measures distinguish subjective response competition from experimenter-assigned logical conflict."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:intervention:syllogism-validity-believability-manipulation",
+          "role": "manipulated argument properties"
+        },
+        {
+          "object_id": "pmm:behavior:syllogism-validity-judgment",
+          "role": "observable judgment"
+        },
+        {
+          "object_id": "pmm:measurement:condition-specific-syllogism-judgments",
+          "role": "process-sensitive measurement"
+        }
+      ],
+      "type": "Mechanism"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:deductive-reasoning-measured-by-condition-judgments",
+      "object_id": "pmm:measurement:condition-specific-syllogism-judgments",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:deductive-reasoning"
+    },
+    {
+      "id": "pmm:relation:deductive-reasoning-measured-by-sdt",
+      "object_id": "pmm:measurement:syllogistic-signal-detection-profile",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:deductive-reasoning"
+    },
+    {
+      "id": "pmm:relation:validity-judgment-occurs-in-syllogism-task",
+      "object_id": "pmm:context:syllogistic-validity-judgment-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:syllogism-validity-judgment"
+    },
+    {
+      "id": "pmm:relation:parallel-evaluation-occurs-in-syllogism-task",
+      "object_id": "pmm:context:syllogistic-validity-judgment-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:mechanism:parallel-belief-logic-evaluation"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Collaborative concept record used only for provisional terminology alignment.",
+      "id": "pmm:source:cognitive-atlas-deductive-reasoning-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas concept — deductive reasoning",
+      "url": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a072/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Collaborative task record used only for provisional task alignment.",
+      "id": "pmm:source:cognitive-atlas-deductive-reasoning-task-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas task — deductive reasoning task",
+      "url": "https://www.cognitiveatlas.org/task/id/trm_4c898b8c2d071/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Foundational primary report of three controlled validity-by-believability syllogism experiments with verbal protocols.",
+      "authors": [
+        "Jonathan St. B. T. Evans",
+        "Julie L. Barston",
+        "Paul Pollard"
+      ],
+      "doi": "10.3758/BF03196976",
+      "id": "pmm:source:evans-barston-pollard-1983",
+      "pmid": "6621345",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "On the conflict between logic and belief in syllogistic reasoning",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6621345/",
+      "year": 1983
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Hierarchical Bayesian meta-analysis separating response criterion and validity discriminability across 22 confidence-rating studies.",
+      "authors": [
+        "Dries Trippas",
+        "David Kellen",
+        "Henrik Singmann",
+        "Gordon Pennycook",
+        "Derek J. Koehler",
+        "Jonathan A. Fugelsang",
+        "Chad Dube"
+      ],
+      "doi": "10.3758/s13423-018-1460-7",
+      "id": "pmm:source:trippas-2018-belief-bias-meta-analysis",
+      "pmid": "29943172",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Characterizing belief bias in syllogistic reasoning — a hierarchical Bayesian meta-analysis of ROC data",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6267550/",
+      "year": 2018
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary two-experiment comparison of sequential and parallel-processing accounts across argument complexity.",
+      "authors": [
+        "Dries Trippas",
+        "Valerie A. Thompson",
+        "Simon J. Handley"
+      ],
+      "doi": "10.3758/s13421-016-0680-1",
+      "id": "pmm:source:trippas-thompson-handley-2017",
+      "pmid": "28028779",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "When fast logic meets slow belief — evidence for a parallel-processing model of belief bias",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28028779/",
+      "year": 2017
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary psychophysiological study of skin-conductance responses during belief-logic conflict.",
+      "authors": [
+        "Wim De Neys",
+        "Elke Moyens",
+        "Debora Vansteenwegen"
+      ],
+      "doi": "10.3758/CABN.10.2.208",
+      "id": "pmm:source:de-neys-moyens-vansteenwegen-2010",
+      "pmid": "20498345",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Feeling we're biased — autonomic arousal and reasoning conflict",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20498345/",
+      "year": 2010
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Recent two-experiment challenge showing that objective and subjective conflict can diverge in invalid conditional inferences.",
+      "authors": [
+        "Veronika Kosourikhina",
+        "Simon J. Handley"
+      ],
+      "doi": "10.3758/s13421-025-01709-w",
+      "id": "pmm:source:kosourikhina-handley-2025",
+      "pmid": "40244550",
+      "provenance": {
+        "created_at": "2026-08-26T19:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T19:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Conflict detection with invalid inferences — all heuristics, no logic",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12589286/",
+      "year": 2025
+    }
+  ]
+}

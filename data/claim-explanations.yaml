@@ -412,3 +412,27 @@ entries:
       A proposed neural explanation is that a visual neuron’s response is scaled down by the combined activity of a larger pool of neurons, preventing responses from growing without limit as contrast increases. This model explains many visual-cortex findings, especially in nonhuman physiology, but it has not been shown here to be the unique cause of the human contrast-sensitivity curve.
     ru: >-
       Одна из нейронных гипотез состоит в том, что ответ зрительного нейрона уменьшается с учётом суммарной активности более широкой группы нейронов. Это не даёт ответу безгранично расти при увеличении контраста. Модель объясняет многие результаты исследований зрительной коры, особенно у животных, но приведённые данные не доказывают, что именно она является единственной причиной функции контрастной чувствительности человека.
+
+  - claim_id: pmm:claim:deductive-reasoning-evaluates-necessary-conclusions
+    en: >-
+      Deductive reasoning asks whether a conclusion must follow if the stated premises are accepted. This defines a kind of reasoning; it does not say that one syllogism score measures all reasoning or identifies how the mind reaches the answer.
+    ru: >-
+      Дедуктивное рассуждение проверяет, должен ли вывод следовать из принятых посылок. Это определение вида рассуждения; оно не означает, что один результат задания измеряет всё мышление или показывает, каким именно способом человек получил ответ.
+
+  - claim_id: pmm:claim:conclusion-believability-changes-validity-judgments
+    en: >-
+      People were more likely to accept a conclusion when it sounded believable, even though they were asked to judge whether it followed logically from the premises. The effect was stronger for invalid arguments. This shows that content changed responses in those tasks, not that participants had no logical information.
+    ru: >-
+      Люди чаще принимали вывод, если он казался правдоподобным, хотя их просили оценивать только то, следует ли он логически из посылок. Эффект был сильнее для невалидных аргументов. Это показывает влияние содержания на ответы в данных заданиях, но не доказывает полное отсутствие логической обработки.
+
+  - claim_id: pmm:claim:believability-does-not-unconditionally-reduce-discriminability
+    en: >-
+      A reanalysis of 22 studies separated two things that raw accuracy can mix: detecting which arguments are valid and being more willing to accept believable conclusions. Believability changed response tendencies, but it did not generally reduce validity discrimination across everyone and every item.
+    ru: >-
+      Повторный анализ 22 исследований разделил два компонента, которые смешивает обычная точность: способность отличать валидные аргументы и склонность чаще принимать правдоподобные выводы. Правдоподобие меняло склонность отвечать определённым образом, но не снижало различение валидности одинаково у всех людей и для всех заданий.
+
+  - claim_id: pmm:claim:belief-and-logic-may-be-evaluated-in-parallel
+    en: >-
+      One proposed explanation is that the mind can begin evaluating both plausibility and logical structure at the same time. When they suggest different answers, processing may become slower, less confident, or more arousing. Recent experiments show that researchers cannot assume every formally invalid argument creates this subjective conflict, so the mechanism remains conditional and proposed.
+    ru: >-
+      Одна из гипотез состоит в том, что человек может одновременно начинать оценивать правдоподобие содержания и логическую структуру. Если они подсказывают разные ответы, решение может стать медленнее, менее уверенным или сопровождаться большим возбуждением. Новые эксперименты показывают, что формальная невалидность не всегда создаёт такой субъективный конфликт, поэтому механизм остаётся условной гипотезой.

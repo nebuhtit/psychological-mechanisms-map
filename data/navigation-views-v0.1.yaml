@@ -3,7 +3,7 @@ status: pilot
 canonical_language: en
 provenance:
   created_at: '2026-08-26T13:00:00+03:00'
-  modified_at: '2026-08-26T17:30:00+03:00'
+  modified_at: '2026-08-26T19:30:00+03:00'
   created_by: [OpenAI Codex]
   review_status: source_checked_editorial
   source_snapshot_date: '2026-08-26'
@@ -121,6 +121,34 @@ sources:
     title: Normalization as a canonical neural computation
     organization: Nature Reviews Neuroscience
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3273486/
+  - id: source:cognitive-atlas-deductive-reasoning
+    title: Cognitive Atlas concept — deductive reasoning
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a072/
+  - id: source:cognitive-atlas-deductive-reasoning-task
+    title: Cognitive Atlas task — deductive reasoning task
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/task/id/trm_4c898b8c2d071/
+  - id: source:evans-belief-bias-1983
+    title: On the conflict between logic and belief in syllogistic reasoning
+    organization: Memory & Cognition
+    url: https://pubmed.ncbi.nlm.nih.gov/6621345/
+  - id: source:trippas-belief-bias-2018
+    title: Characterizing belief bias in syllogistic reasoning
+    organization: Psychonomic Bulletin & Review
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6267550/
+  - id: source:trippas-parallel-2017
+    title: When fast logic meets slow belief
+    organization: Memory & Cognition
+    url: https://pubmed.ncbi.nlm.nih.gov/28028779/
+  - id: source:de-neys-conflict-2010
+    title: Feeling we're biased — autonomic arousal and reasoning conflict
+    organization: Cognitive, Affective, & Behavioral Neuroscience
+    url: https://pubmed.ncbi.nlm.nih.gov/20498345/
+  - id: source:kosourikhina-conflict-2025
+    title: Conflict detection with invalid inferences — all heuristics, no logic
+    organization: Memory & Cognition
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12589286/
 
 general_psychology:
   id: general-psychology
@@ -308,9 +336,20 @@ general_psychology:
       description:
         en: Forming, transforming, and evaluating representations to solve problems, infer relations, and make judgments.
         ru: Формирование, преобразование и оценка представлений для решения задач, выявления отношений и вынесения суждений.
-      coverage: planned
-      source_ids: [source:rdoc-definitions]
-      memberships: []
+      ontological_note:
+        en: PMM currently covers one narrow case — judging whether syllogistic conclusions follow from premises when logical validity and real-world believability agree or conflict. The reasoning construct, task, manipulated content, judgment, performance score, signal-detection parameters, and candidate process remain separate.
+        ru: Сейчас PMM охватывает один узкий случай — оценку того, следует ли вывод силлогизма из посылок, когда логическая валидность и житейская правдоподобность совпадают или конфликтуют. Конструкт рассуждения, задание, изменяемое содержание, ответ, показатель выполнения, параметры обнаружения сигнала и предполагаемый процесс остаются отдельными.
+      coverage: partial
+      source_ids: [source:cognitive-atlas-deductive-reasoning, source:cognitive-atlas-deductive-reasoning-task, source:evans-belief-bias-1983, source:trippas-belief-bias-2018, source:trippas-parallel-2017, source:de-neys-conflict-2010, source:kosourikhina-conflict-2025]
+      memberships:
+        - {family_id: deductive-reasoning, canonical_id: pmm:construct:deductive-reasoning, role: construct_example, expected_type: Construct}
+        - {family_id: deductive-reasoning, canonical_id: pmm:context:syllogistic-validity-judgment-task, role: task_context_example, expected_type: Context}
+        - {family_id: deductive-reasoning, canonical_id: pmm:intervention:syllogism-validity-believability-manipulation, role: intervention_example, expected_type: Intervention}
+        - {family_id: deductive-reasoning, canonical_id: pmm:behavior:syllogism-validity-judgment, role: behavior_example, expected_type: Behavior}
+        - {family_id: deductive-reasoning, canonical_id: pmm:outcome:syllogistic-judgment-performance, role: outcome_example, expected_type: Outcome}
+        - {family_id: deductive-reasoning, canonical_id: pmm:measurement:condition-specific-syllogism-judgments, role: measurement_example, expected_type: Measurement}
+        - {family_id: deductive-reasoning, canonical_id: pmm:measurement:syllogistic-signal-detection-profile, role: measurement_example, expected_type: Measurement}
+        - {family_id: deductive-reasoning, canonical_id: pmm:mechanism:parallel-belief-logic-evaluation, role: mechanism_example, expected_type: Mechanism}
     - id: gp:language
       parent_id: gp:cognitive-processes
       kind: topic
@@ -664,10 +703,10 @@ scientific_systems:
         en: A knowledge base of cognitive concepts and experimental tasks with explicit relationships between them.
         ru: База знаний о когнитивных понятиях и экспериментальных задачах с явными связями между ними.
       limitation:
-        en: Record review status matters. The linked working-memory, N-back, spatial-attention, cueing, memory, visual-perception, and contrast-detection pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
-        ru: Важен статус проверки записи. Связанные страницы рабочей памяти, N-back, пространственного внимания, подсказки, памяти, зрительного восприятия и обнаружения контраста помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
+        en: Record review status matters. The linked memory, attention, perception, deductive-reasoning, and experimental-task pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
+        ru: Важен статус проверки записи. Связанные страницы памяти, внимания, восприятия, дедуктивного рассуждения и экспериментальных заданий помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
       coverage: partial
-      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing, source:cognitive-atlas-episodic-memory, source:cognitive-atlas-semantic-memory, source:cognitive-atlas-recognition-memory, source:cognitive-atlas-visual-perception, source:cognitive-atlas-contrast-detection]
+      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing, source:cognitive-atlas-episodic-memory, source:cognitive-atlas-semantic-memory, source:cognitive-atlas-recognition-memory, source:cognitive-atlas-visual-perception, source:cognitive-atlas-contrast-detection, source:cognitive-atlas-deductive-reasoning, source:cognitive-atlas-deductive-reasoning-task]
       mapped_memberships:
         - family_id: working-memory
           canonical_id: pmm:construct:working-memory-capacity
@@ -687,6 +726,10 @@ scientific_systems:
           canonical_id: pmm:construct:visual-perception
         - family_id: visual-perception
           canonical_id: pmm:context:sine-wave-grating-detection-task
+        - family_id: deductive-reasoning
+          canonical_id: pmm:construct:deductive-reasoning
+        - family_id: deductive-reasoning
+          canonical_id: pmm:context:syllogistic-validity-judgment-task
     - id: system:big-five
       label: {en: Big Five, ru: Большая пятёрка}
       system_kind: trait_taxonomy
