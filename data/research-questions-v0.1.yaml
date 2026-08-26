@@ -369,3 +369,21 @@ questions:
     about_ids: [pmm:mechanism:appraisal-guided-component-coordination, pmm:construct:event-appraisal-profile, pmm:state:subjective-emotional-feeling, pmm:state:emotion-related-physiological-response, pmm:behavior:emotion-related-action]
     source_ids: [pmm:source:yeo-ong-2024-appraisal-meta, pmm:source:scherer-moors-2019-emotion-process, pmm:source:mauss-robinson-2009-emotion-measures]
     provenance: *provenance
+
+  - id: pmm:research-question:temperament-person-environment-causal-transactions
+    family_id: temperament
+    question:
+      en: Which modifiable environmental or regulatory process changes within-person behavior and development, for whom, at which age, and in which context?
+      ru: Какой изменяемый процесс среды или саморегуляции меняет поведение и развитие конкретного человека, для кого, в каком возрасте и контексте?
+    why_open:
+      en: Longitudinal stability and cross-age associations are observational, informants and measures are not interchangeable, and genetic or environmental variance components do not identify a concrete developmental process.
+      ru: Продольная устойчивость и связи между возрастами наблюдательны, информанты и методы не взаимозаменяемы, а доли генетической и средовой дисперсии не выявляют конкретный процесс развития.
+    what_would_help:
+      en: Preregistered repeated multi-informant measurement, age-appropriate measurement-invariance tests, direct behavioral observation, safe sequential or randomized context changes, and out-of-sample replication.
+      ru: Пререгистрированные повторные измерения у нескольких информантов, проверка сопоставимости методик по возрастам, прямое наблюдение поведения, безопасные последовательные или рандомизированные изменения условий и воспроизведение на новых выборках.
+    question_kind: causal
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:developmental-temperament-transaction, pmm:construct:developmental-temperament-dimensions, pmm:state:context-specific-temperamental-reactivity, pmm:behavior:observed-temperament-relevant-response]
+    source_ids: [pmm:source:roberts-delvecchio-2000-stability, pmm:source:ringwald-2026-temperament-personality, pmm:source:briley-tucker-drob-2014-continuity]
+    provenance: *provenance

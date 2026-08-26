@@ -2,7 +2,7 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 23 mechanisms across 20 families.
+**Current inventory:** 24 mechanisms across 21 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|
@@ -11,6 +11,7 @@ This generated index makes mechanisms comparable across public evidence packs. I
 | Cognitive-behavioral formulation | **Reciprocal cognitive-behavioral maintenance cycle**<br>Proposed context-dependent process in which interpretations, emotions, physiology, behavior, consequences, and beliefs reciprocally constrain future responding. | integrative | 1 | 1 | 1 |
 | Declarative memory | **Elaborative semantic encoding**<br>Proposed process in which a new item is analyzed for meaning and related to contextual or existing knowledge, producing a more discriminable later memory representation. | cognitive | 1 | 1 | 1 |
 | Deductive reasoning | **Parallel belief-logic evaluation**<br>Proposed process in which content-based plausibility and argument-structure information are evaluated concurrently and can support compatible or competing responses. | cognitive | 1 | 3 | 3 |
+| Developmental temperament | **Developmental temperament transaction**<br>Proposed process in which biologically influenced reactivity and regulation repeatedly interact with maturation, relationships, learning, roles, and environments, producing both continuity and change in later personality-relevant behavior. | developmental | 1 | 1 | 1 |
 | Emotion components and appraisal | **Appraisal-guided component coordination**<br>Proposed dynamic process in which evaluations of an event's meaning help organize changing action tendencies, physiology, expression, feeling, and action over time. | cognitive | 1 | 1 | 1 |
 | Fear extinction | **Extinction-memory formation and retrieval**<br>Proposed learning process in which aversive-outcome omission supports a new memory that reduces conditioned responding when later retrieved. | learning | 1 | 4 | 3 |
 | HPA feedback | **Glucocorticoid negative feedback on HPA activity**<br>Receptor-linked physiological processes through which glucocorticoid signaling limits or reshapes later HPA secretory activity. | physiological | 2 | 1 | 1 |

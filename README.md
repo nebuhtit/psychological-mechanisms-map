@@ -45,7 +45,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains twenty deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains twenty-one deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -69,14 +69,15 @@ The live explorer contains twenty deliberately heterogeneous evidence families. 
 | Attachment system | Threat and separation context, system activation, support seeking, perceived availability, distress, relationship expectations, and noninterchangeable child and adult measures |
 | Cognitive-behavioral formulation | Situation, interpretation, emotion, physiology, behavior, consequences, beliefs, behavioral experiments, treatment efficacy, statistical mediation, and a proposed reciprocal maintenance network |
 | Social and observational learning | Model exposure, observed consequences, spontaneous matching, incentive-assisted reproduction, acquisition-performance separation, and competing mechanisms |
+| Developmental temperament | Dimensional reactivity and regulation, current state, observed response, caregiver item, scale profile, structured observation, longitudinal stability, later personality, and a proposed developmental transaction |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
 ### Coverage goal
 
-PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Eighteen topics currently have at least one evidence-linked pilot; six remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
+PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Nineteen topics currently have at least one evidence-linked pilot; five remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
-Each of the 20 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
+Each of the 21 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
 
 PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Every current evidence family has at least one bilingual practical interpretation. Every individual Claim also displays either a curated application or a conservative practical inference rule specific to its claim type.
 
@@ -188,6 +189,8 @@ data/evidence-pack-cbt-formulation-v0.3.yaml
                                      CBT formulation, treatment efficacy, mediation, and person-specific mechanism-boundary pack
 data/evidence-pack-social-learning-v0.3.yaml
                                      Model exposure, observed consequences, acquisition-performance, and transfer-boundary pack
+data/evidence-pack-temperament-v0.3.yaml
+                                     Dimensional temperament, measurement, continuity, and developmental-mechanism boundary pack
 schema/research-questions-v0.1.schema.yaml
                                      Separate contract for open-gap annotations
 data/research-questions-v0.1.yaml    Bilingual source-linked questions, one per public family

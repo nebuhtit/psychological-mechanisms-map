@@ -104,6 +104,26 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:temperament-developmental-transaction-is-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which biologically influenced reactivity and regulation repeatedly interact with maturation, relationships, learning, roles, and environments, producing both continuity and change in later personality-relevant behavior.",
+      "evidence_count": 1,
+      "family_id": "temperament",
+      "family_title": "Developmental temperament",
+      "id": "pmm:mechanism:developmental-temperament-transaction",
+      "label": "Developmental temperament transaction",
+      "mechanism_kind": "developmental",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
         "pmm:claim:appraisal-guided-coordination-is-mechanism-hypothesis"
       ],
       "claim_status_counts": {

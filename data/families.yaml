@@ -124,3 +124,9 @@ datasets:
       id: social-learning
       title: Social and observational learning
       description: Model exposure, demonstrated action, observed consequences, spontaneous imitation, prompted reproduction, acquisition, performance, and competing mechanisms kept distinct.
+  - source: data/evidence-pack-temperament-v0.3.yaml
+    output: build/evidence-pack-temperament-v0.3.json
+    family:
+      id: temperament
+      title: Developmental temperament
+      description: Reactivity, regulation, informant response, observation, scale profile, stability, later personality, and developmental hypotheses kept distinct.

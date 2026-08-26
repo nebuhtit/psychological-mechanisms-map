@@ -64,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.17.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.18.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -72,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.17.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.18.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -113,6 +113,11 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(
             bundle["translations"]["Appraisal-guided component coordination"],
             "Координация компонентов через оценку ситуации",
+        )
+        self.assertEqual(bundle["translations"]["Developmental temperament"], "Темперамент в развитии")
+        self.assertEqual(
+            bundle["translations"]["Developmental temperament transaction"],
+            "Развивающее взаимодействие темперамента и среды",
         )
 
     def test_every_claim_has_a_source_checked_bilingual_explanation(self) -> None:
@@ -312,8 +317,16 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(types["pmm:measurement:n-back-performance"], "Measurement")
         self.assertEqual(types["pmm:mechanism:episodic-retrieval-n-back"], "Mechanism")
         self.assertIn("rather than memory itself", memory["ontological_note"]["en"])
-        self.assertEqual(nodes["gp:temperament"]["coverage"], "planned")
-        self.assertEqual(nodes["gp:temperament"]["memberships"], [])
+        self.assertEqual(nodes["gp:temperament"]["coverage"], "partial")
+        temperament_types = {
+            item["canonical_id"]: item["expected_type"]
+            for item in nodes["gp:temperament"]["memberships"]
+        }
+        self.assertEqual(temperament_types["pmm:construct:developmental-temperament-dimensions"], "Construct")
+        self.assertEqual(temperament_types["pmm:state:context-specific-temperamental-reactivity"], "State")
+        self.assertEqual(temperament_types["pmm:behavior:observed-temperament-relevant-response"], "Behavior")
+        self.assertEqual(temperament_types["pmm:measurement:cbq-temperament-profile"], "Measurement")
+        self.assertEqual(temperament_types["pmm:mechanism:developmental-temperament-transaction"], "Mechanism")
         self.assertEqual(nodes["gp:big-five"]["coverage"], "partial")
         self.assertTrue(nodes["gp:big-five"]["memberships"])
 

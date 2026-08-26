@@ -6,9 +6,9 @@ PMM's long-term coverage goal is to provide at least one validated, source-trace
 
 The educational scaffold contains 24 topics across seven broad domains:
 
-- 18 topics have `partial` coverage: at least one canonical PMM record is linked;
-- 6 topics are `planned`: the gap is visible and no placeholder scientific records are invented;
-- 20 public evidence-pack families currently test the data model.
+- 19 topics have `partial` coverage: at least one canonical PMM record is linked;
+- 5 topics are `planned`: the gap is visible and no placeholder scientific records are invented;
+- 21 public evidence-pack families currently test the data model.
 
 `partial` does not mean comprehensive, representative, clinically valid, or expert-approved. A narrow laboratory pilot can make an area partial while leaving most of that area unmodeled.
 
@@ -16,13 +16,14 @@ The educational scaffold contains 24 topics across seven broad domains:
 
 | Priority | Planned topic | First boundary test |
 |---|---|---|
-| 1 | Temperament | Separate developmental dimensions, observations, caregiver reports, stability estimates, and mechanism hypotheses |
-| 2 | Abilities and intelligence | Separate task performance, psychometric latent variables, acquired knowledge, and cognitive mechanisms |
-| 3 | Social cognition | Separate social inference constructs, tasks, responses, measures, and proposed mechanisms |
-| 4 | Volition and intention | Separate intention reports, goal selection, effort allocation, action persistence, and causal intervention effects |
-| 5 | Self-concept and identity | Separate self-representations, self-report scales, autobiographical evidence, social context, and developmental claims |
-| 6 | Mental imagery and imagination | Separate imagery ability, imagery generation tasks, vividness reports, objective measures, and perceptual overlap hypotheses |
-| 7 | Consciousness and awareness | Separate conscious report, metacognitive access, perceptual performance, arousal state, and competing theories |
+| 1 | Abilities and intelligence | Separate task performance, psychometric latent variables, acquired knowledge, and cognitive mechanisms |
+| 2 | Social cognition | Separate social inference constructs, tasks, responses, measures, and proposed mechanisms |
+| 3 | Volition and intention | Separate intention reports, goal selection, effort allocation, action persistence, and causal intervention effects |
+| 4 | Self-concept and identity | Separate self-representations, self-report scales, autobiographical evidence, social context, and developmental claims |
+| 5 | Mental imagery and imagination | Separate imagery ability, imagery generation tasks, vividness reports, objective measures, and perceptual overlap hypotheses |
+| 6 | Consciousness and awareness | Separate conscious report, metacognitive access, perceptual performance, arousal state, and competing theories |
+
+Temperament passed the breadth gate with a dedicated dimensional and developmental pack. The next breadth priority is abilities and intelligence; the next foundational-model depth priority is a stronger self-regulation process network.
 
 ## Quality gate for every topic
 

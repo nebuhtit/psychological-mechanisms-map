@@ -590,3 +590,33 @@ entries:
       One working model says that changing evaluation of an event can reorganize action readiness, bodily response, expression, feeling, and later action over time. The whole loop is not yet one established mechanism. In practice, change one candidate link and check whether the predicted channel changes before accepting the explanation.
     ru: >-
       Согласно одной рабочей модели, изменение оценки события может со временем перестраивать готовность к действию, телесную реакцию, выражение, переживание и последующее действие. Вся петля пока не является единым установленным механизмом. На практике изменяйте одно предполагаемое звено и проверяйте, изменился ли ожидаемый показатель, прежде чем принимать объяснение.
+
+  - claim_id: pmm:claim:temperament-is-dimensional-and-developmental
+    en: >-
+      Modern temperament describes recurring differences on several continua of emotional, motor, and attentional reactivity and self-regulation. It does not sort everyone into four fixed boxes. “Relatively enduring” means a tendency can recur across observations, not that biology fixes a person's destiny or that context cannot change behavior.
+    ru: >-
+      Современная наука описывает темперамент как несколько непрерывных различий в эмоциональной, двигательной и внимательной реактивности и саморегуляции. Она не распределяет всех людей по четырём неизменным типам. «Относительно устойчивый» означает повторяющуюся тенденцию, а не биологически предрешённую судьбу и не независимость поведения от ситуации.
+
+  - claim_id: pmm:claim:cbq-short-forms-estimate-dimensional-profile
+    en: >-
+      In the CBQ, a caregiver rates a child's behavior in specified everyday situations and the responses are combined into temperament scale scores. The short forms were broadly usable in the studied samples, but a score depends on the questionnaire version, age, population, language, and informant; the very short three-factor form had only marginal model fit.
+    ru: >-
+      В CBQ взрослый оценивает поведение ребёнка в конкретно описанных повседневных ситуациях, после чего ответы объединяются в баллы по измерениям темперамента. Короткие формы в целом работали в изученных выборках, но результат зависит от версии опросника, возраста, группы, языка и информанта; соответствие самой короткой формы трёхфакторной модели было лишь пограничным.
+
+  - claim_id: pmm:claim:trait-rank-order-stability-increases-with-age
+    en: >-
+      Across longitudinal studies, people's relative ordering on temperament and personality measures becomes more stable with age, yet remains imperfect. This means group differences can persist on average; it does not mean an individual cannot change, that average levels stay constant, or that the measurements reveal why stability occurs.
+    ru: >-
+      В продольных исследованиях относительное положение людей по показателям темперамента и личности с возрастом становится устойчивее, но совпадение остаётся неполным. Это означает, что различия внутри группы в среднем могут сохраняться; отдельный человек всё равно может меняться, средний уровень тоже может измениться, а само измерение устойчивости не объясняет её причину.
+
+  - claim_id: pmm:claim:adolescent-temperament-associated-with-adult-personality
+    en: >-
+      In one longitudinal cohort of 674 Mexican-origin participants, temperament measured from ages 10–16 was related to Big Five traits measured from ages 14–26, alongside substantial developmental change. The study supports continuity in this cohort, not a universal conversion table or proof that adolescent temperament causes adult personality.
+    ru: >-
+      В одной продольной выборке из 674 участников мексиканского происхождения темперамент, измеренный в 10–16 лет, был связан с чертами Большой пятёрки в 14–26 лет, одновременно с заметными возрастными изменениями. Исследование показывает преемственность в этой выборке, но не даёт универсальной таблицы соответствий и не доказывает, что подростковый темперамент причинно формирует взрослую личность.
+
+  - claim_id: pmm:claim:temperament-developmental-transaction-is-hypothesis
+    en: >-
+      A plausible working model is that reactivity and regulation repeatedly interact with maturation, learning, relationships, roles, and environments, producing both continuity and change. Current longitudinal and behavioral-genetic evidence does not identify that whole person-environment loop as one established mechanism, so each proposed link requires separate measurement and testing.
+    ru: >-
+      Правдоподобная рабочая модель предполагает, что реактивность и саморегуляция многократно взаимодействуют с созреванием, научением, отношениями, ролями и средой, создавая и устойчивость, и изменения. Существующие продольные и поведенческо-генетические данные не устанавливают всю эту петлю «человек–среда» как единый доказанный механизм, поэтому каждое предполагаемое звено нужно измерять и проверять отдельно.

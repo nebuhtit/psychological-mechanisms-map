@@ -41,6 +41,30 @@ sources:
     title: Temperament, Development, and Personality
     organization: Current Directions in Psychological Science
     url: https://doi.org/10.1111/j.1467-8721.2007.00505.x
+  - id: source:shiner-temperament-2012
+    title: What Is Temperament Now? Assessing Progress in Temperament Research on the Twenty-Fifth Anniversary of Goldsmith et al.
+    organization: Child Development Perspectives
+    url: https://doi.org/10.1111/j.1750-8606.2012.00254.x
+  - id: source:gartstein-infant-temperament-2025
+    title: Infant temperament — Assessing progress after three decades
+    organization: Infant Behavior and Development
+    url: https://pubmed.ncbi.nlm.nih.gov/40554909/
+  - id: source:putnam-rothbart-cbq-2006
+    title: Development of short and very short forms of the Children's Behavior Questionnaire
+    organization: Journal of Personality Assessment
+    url: https://pubmed.ncbi.nlm.nih.gov/16856791/
+  - id: source:roberts-delvecchio-stability-2000
+    title: The rank-order consistency of personality traits from childhood to old age — a quantitative review of longitudinal studies
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/10668348/
+  - id: source:ringwald-temperament-personality-2026
+    title: Developmental continuity between child temperament and adult personality
+    organization: Journal of Personality and Social Psychology
+    url: https://pubmed.ncbi.nlm.nih.gov/40965930/
+  - id: source:briley-tucker-drob-continuity-2014
+    title: Genetic and environmental continuity in personality development — a meta-analysis
+    organization: Psychological Bulletin
+    url: https://pubmed.ncbi.nlm.nih.gov/24956122/
   - id: source:big-five-review
     title: An Introduction to the Five-Factor Model and Its Applications
     organization: Journal of Personality
@@ -748,13 +772,16 @@ general_psychology:
         ru: >-
           Сейчас представлены узкие примеры развития из социальной поддержки, устойчивости привязанности и амнезии развития; ни один из них не является полной теорией развития.
       coverage: partial
-      source_ids: [source:vargha-khadem-1997, source:fraley-shaver-attachment-2000]
+      source_ids: [source:vargha-khadem-1997, source:fraley-shaver-attachment-2000, source:roberts-delvecchio-stability-2000, source:ringwald-temperament-personality-2026, source:briley-tucker-drob-continuity-2014]
       memberships:
         - {family_id: social-buffering, canonical_id: pmm:context:early-institutional-care-history, role: task_context_example, expected_type: Context}
         - {family_id: declarative-memory, canonical_id: pmm:context:developmental-amnesia-assessment, role: task_context_example, expected_type: Context}
         - {family_id: declarative-memory, canonical_id: pmm:measurement:episodic-semantic-profile, role: measurement_example, expected_type: Measurement}
         - {family_id: attachment-system, canonical_id: pmm:measurement:strange-situation-classification, role: measurement_example, expected_type: Measurement}
         - {family_id: attachment-system, canonical_id: pmm:construct:relational-availability-expectations, role: construct_example, expected_type: Construct}
+        - {family_id: temperament, canonical_id: pmm:context:longitudinal-temperament-personality-assessment, role: task_context_example, expected_type: Context}
+        - {family_id: temperament, canonical_id: pmm:outcome:later-personality-trait-standing, role: outcome_example, expected_type: Outcome}
+        - {family_id: temperament, canonical_id: pmm:mechanism:developmental-temperament-transaction, role: mechanism_example, expected_type: Mechanism}
 
     - id: gp:personality-individual-differences
       parent_id: gp:mind
@@ -763,8 +790,8 @@ general_psychology:
       description:
         en: Relatively stable patterns and dimensions on which people differ; descriptive structure must not be mistaken for a causal mechanism.
         ru: Относительно устойчивые особенности и измерения, по которым люди различаются; описательную структуру нельзя принимать за причинный механизм.
-      coverage: planned
-      source_ids: [source:rothbart-temperament, source:big-five-review]
+      coverage: partial
+      source_ids: [source:rothbart-temperament, source:big-five-review, source:shiner-temperament-2012, source:roberts-delvecchio-stability-2000]
     - id: gp:temperament
       parent_id: gp:personality-individual-differences
       kind: topic
@@ -775,9 +802,19 @@ general_psychology:
       ontological_note:
         en: Temperament models contain dimensions and developmental hypotheses; “types of temperament” are not interchangeable with modern dimensional models.
         ru: Модели темперамента включают измерения и гипотезы развития; традиционные «типы темперамента» не тождественны современным размерным моделям.
-      coverage: planned
-      source_ids: [source:rothbart-temperament]
-      memberships: []
+      coverage: partial
+      source_ids: [source:rothbart-temperament, source:shiner-temperament-2012, source:gartstein-infant-temperament-2025, source:putnam-rothbart-cbq-2006, source:roberts-delvecchio-stability-2000, source:ringwald-temperament-personality-2026, source:briley-tucker-drob-continuity-2014]
+      memberships:
+        - {family_id: temperament, canonical_id: pmm:construct:developmental-temperament-dimensions, role: construct_example, expected_type: Construct}
+        - {family_id: temperament, canonical_id: pmm:construct:temperamental-negative-affectivity, role: construct_example, expected_type: Construct}
+        - {family_id: temperament, canonical_id: pmm:construct:temperamental-surgency, role: construct_example, expected_type: Construct}
+        - {family_id: temperament, canonical_id: pmm:construct:temperamental-effortful-control, role: construct_example, expected_type: Construct}
+        - {family_id: temperament, canonical_id: pmm:state:context-specific-temperamental-reactivity, role: state_example, expected_type: State}
+        - {family_id: temperament, canonical_id: pmm:behavior:observed-temperament-relevant-response, role: behavior_example, expected_type: Behavior}
+        - {family_id: temperament, canonical_id: pmm:measurement:cbq-temperament-profile, role: measurement_example, expected_type: Measurement}
+        - {family_id: temperament, canonical_id: pmm:measurement:structured-temperament-observation, role: measurement_example, expected_type: Measurement}
+        - {family_id: temperament, canonical_id: pmm:measurement:longitudinal-trait-stability-estimate, role: measurement_example, expected_type: Measurement}
+        - {family_id: temperament, canonical_id: pmm:mechanism:developmental-temperament-transaction, role: mechanism_example, expected_type: Mechanism}
     - id: gp:big-five
       parent_id: gp:personality-individual-differences
       kind: taxonomy
@@ -1031,14 +1068,17 @@ foundational_models:
         - {en: Habits, expectations, and roles, ru: Привычки, ожидания и роли}
         - {en: Relative continuity with possible change, ru: Относительная устойчивость с возможностью изменения}
       practical_focus: {en: Target current environments, roles, relationships, and repeated behaviors rather than trying to replace a personality label., ru: Воздействуйте на текущую среду, роли, отношения и повторяющееся поведение вместо попытки заменить ярлык личности.}
-      established: {en: Trait profiles show relative stability and predictive associations; attachment continuity is moderate., ru: Профили черт относительно устойчивы и имеют прогностические связи; устойчивость привязанности умеренная.}
+      established: {en: Trait and temperament profiles show imperfect relative stability and cross-age associations; attachment continuity is moderate., ru: Профили черт и темперамента показывают неполную относительную устойчивость и связи между возрастами; устойчивость привязанности умеренная.}
       proposed: {en: The causal pathways producing individual developmental change remain incompletely identified., ru: Причинные пути индивидуальных изменений в развитии установлены не полностью.}
       measurements: {en: Longitudinal trait scales, behavior, informant reports, life events, roles, and relationship-specific measures., ru: Продольные шкалы черт, поведение, отчёты других людей, жизненные события, роли и измерения конкретных отношений.}
       limitation: {en: Stability is not immutability, and retrospective stories do not establish developmental causes., ru: Устойчивость не равна неизменности, а ретроспективные истории не устанавливают причины развития.}
-      source_ids: []
+      source_ids: [source:roberts-delvecchio-stability-2000, source:ringwald-temperament-personality-2026, source:briley-tucker-drob-continuity-2014]
       mapped_memberships:
         - {family_id: big-five, canonical_id: pmm:construct:big-five-trait-taxonomy, role: construct_example, expected_type: Construct}
         - {family_id: attachment-system, canonical_id: pmm:construct:relational-availability-expectations, role: construct_example, expected_type: Construct}
+        - {family_id: temperament, canonical_id: pmm:construct:developmental-temperament-dimensions, role: construct_example, expected_type: Construct}
+        - {family_id: temperament, canonical_id: pmm:measurement:longitudinal-trait-stability-estimate, role: measurement_example, expected_type: Measurement}
+        - {family_id: temperament, canonical_id: pmm:mechanism:developmental-temperament-transaction, role: mechanism_example, expected_type: Mechanism}
     - id: model:temperament-traits
       label: {en: Temperament and traits, ru: Темперамент и черты}
       model_kind: individual_differences_framework
@@ -1050,14 +1090,18 @@ foundational_models:
         - {en: Compare contexts and informants, ru: Сравнение контекстов и информантов}
         - {en: Test associations with outcomes, ru: Проверка связей с исходами}
         - {en: Avoid turning dimensions into fixed types, ru: Отказ от превращения измерений в неизменные типы}
-      practical_focus: {en: Use profiles to ask better questions and select observable targets, not to define identity or prescribe treatment automatically., ru: Используйте профили для более точных вопросов и выбора наблюдаемых целей, а не для определения личности или автоматического назначения помощи.}
-      established: {en: Big Five measurement structure is supported; a dedicated modern temperament pack is still missing., ru: Измерительная структура Большой пятёрки поддержана; отдельного современного пакета темперамента пока нет.}
+      practical_focus: {en: Compare repeated patterns across contexts and informants, then test one modifiable demand, support, or regulation skill instead of treating the profile as identity., ru: Сравнивайте повторяющиеся паттерны в разных ситуациях и у разных информантов, затем проверяйте одно изменяемое требование, поддержку или навык регуляции вместо превращения профиля в идентичность.}
+      established: {en: Big Five measurement structure, dimensional temperament measurement, and imperfect longitudinal continuity have bounded evidence., ru: Для измерительной структуры Большой пятёрки, размерного измерения темперамента и неполной продольной устойчивости есть ограниченные доказательства.}
       proposed: {en: Biological and developmental mechanisms behind broad dimensions require separate evidence., ru: Биологические и развивающие механизмы широких измерений требуют отдельных доказательств.}
       measurements: {en: Multi-informant trait scales, behavioral observations, laboratory reactivity, and longitudinal stability., ru: Шкалы черт от нескольких информантов, наблюдение поведения, лабораторная реактивность и продольная устойчивость.}
       limitation: {en: Scores depend on instrument, language, age, informant, and context., ru: Баллы зависят от методики, языка, возраста, информанта и контекста.}
-      source_ids: [source:big-five-review, source:rothbart-temperament]
+      source_ids: [source:big-five-review, source:rothbart-temperament, source:shiner-temperament-2012, source:putnam-rothbart-cbq-2006, source:roberts-delvecchio-stability-2000, source:ringwald-temperament-personality-2026]
       mapped_memberships:
         - {family_id: big-five, canonical_id: pmm:measurement:bfi2-domain-facet-scores, role: measurement_example, expected_type: Measurement}
+        - {family_id: temperament, canonical_id: pmm:construct:developmental-temperament-dimensions, role: construct_example, expected_type: Construct}
+        - {family_id: temperament, canonical_id: pmm:measurement:cbq-temperament-profile, role: measurement_example, expected_type: Measurement}
+        - {family_id: temperament, canonical_id: pmm:measurement:structured-temperament-observation, role: measurement_example, expected_type: Measurement}
+        - {family_id: temperament, canonical_id: pmm:mechanism:developmental-temperament-transaction, role: mechanism_example, expected_type: Mechanism}
     - id: model:stress-coping-defense
       label: {en: Stress, coping, and psychological defense, ru: Стресс, совладание и психологическая защита}
       model_kind: adaptation_framework
@@ -1173,9 +1217,15 @@ scientific_systems:
       limitation:
         en: Multiple models use different dimensions; PMM has not selected one as a universal taxonomy.
         ru: Разные модели используют разные измерения; PMM пока не выбрала одну из них как универсальную классификацию.
-      coverage: planned
-      source_ids: [source:rothbart-temperament]
-      mapped_memberships: []
+      coverage: partial
+      source_ids: [source:rothbart-temperament, source:shiner-temperament-2012, source:gartstein-infant-temperament-2025, source:putnam-rothbart-cbq-2006]
+      mapped_memberships:
+        - {family_id: temperament, canonical_id: pmm:construct:developmental-temperament-dimensions}
+        - {family_id: temperament, canonical_id: pmm:construct:temperamental-negative-affectivity}
+        - {family_id: temperament, canonical_id: pmm:construct:temperamental-surgency}
+        - {family_id: temperament, canonical_id: pmm:construct:temperamental-effortful-control}
+        - {family_id: temperament, canonical_id: pmm:measurement:cbq-temperament-profile}
+        - {family_id: temperament, canonical_id: pmm:measurement:structured-temperament-observation}
     - id: system:hitop
       label: {en: HiTOP, ru: HiTOP}
       system_kind: psychopathology_taxonomy

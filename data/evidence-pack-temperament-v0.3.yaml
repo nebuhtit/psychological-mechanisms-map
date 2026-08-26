@@ -1,0 +1,474 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:temperament-evidence-v0-3
+metadata:
+  title: Evidence pack for dimensional temperament and development
+  description: Separates temperament dimensions, momentary reactivity, effortful control, observed behavior, informant response, scale score, longitudinal stability, later personality, and proposed developmental processes.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T23:55:00+03:00'
+    modified_at: '2026-08-26T23:55:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:construct:developmental-temperament-dimensions
+    type: Construct
+    label: Developmental temperament dimensions
+    definition: Relatively enduring individual differences in emotional, motor, and attentional reactivity and in processes that regulate those reactions, studied as dimensions across development.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Modern temperament models use multiple continuous dimensions rather than assigning every person to one of four classical types.
+      - Relatively enduring does not mean fixed, context-free, purely biological, or immune to development.
+      - Temperament overlaps with but is not identical to adult personality, current emotion, symptoms, diagnosis, or moral character.
+    provenance: *provenance
+
+  - id: pmm:construct:temperamental-negative-affectivity
+    type: Construct
+    label: Temperamental negative affectivity
+    definition: Broad dimensional tendency toward more frequent or intense fear, frustration, sadness, discomfort, or difficulty recovering, as operationalized by a declared temperament model and measure.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - A negative-affectivity score is not a current negative emotion, diagnosis, or proof of future psychopathology.
+    provenance: *provenance
+
+  - id: pmm:construct:temperamental-surgency
+    type: Construct
+    label: Temperamental surgency and approach
+    definition: Broad dimensional tendency involving activity, positive anticipation, high-intensity pleasure, sociability, or approach toward novelty and reward, as defined by a declared model and measure.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Surgency is not identical to adult Extraversion, impulsivity, or observed activity in one situation.
+    provenance: *provenance
+
+  - id: pmm:construct:temperamental-effortful-control
+    type: Construct
+    label: Temperamental effortful control
+    definition: Dimensional capacity to direct attention and inhibit a dominant response or activate a subdominant response when doing so serves a current goal.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Effortful control is not a direct observation, one executive-function score, obedience, willpower, or moral worth.
+      - Age, task demands, motivation, fatigue, instruction, opportunity, and environment can alter observed performance.
+    provenance: *provenance
+
+  - id: pmm:state:context-specific-temperamental-reactivity
+    type: State
+    label: Context-specific reactive state
+    definition: Time-indexed emotional, motor, orienting, or attentional response occurring when a person encounters a declared stimulus or situation.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: affective
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes:
+      - One reactive episode is evidence about behavior in that context, not the temperament dimension itself.
+    provenance: *provenance
+
+  - id: pmm:behavior:observed-temperament-relevant-response
+    type: Behavior
+    label: Observed temperament-relevant response
+    definition: Observable approach, withdrawal, vocalization, motor activity, gaze, delay, inhibition, or attentional shift coded in a declared temperament-eliciting situation.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: response_pattern
+    observability: direct
+    actor_scope: person
+    response_topography: Protocol-defined emotional, motor, or attentional response coded during a structured or naturalistic observation.
+    function_note: Similar behavior can reflect temperament, learning, skill, current state, relationship, task understanding, or situational demand.
+    provenance: *provenance
+
+  - id: pmm:context:cbq-caregiver-report-assessment
+    type: Context
+    label: CBQ caregiver-report assessment
+    definition: Questionnaire context in which a caregiver rates a child's recent behavior in specified everyday situations using a version of the Children's Behavior Questionnaire.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      target_age: 3 to 8 years in the Putnam and Rothbart short-form study
+      respondent: parent or caregiver
+      forms: standard, short, or very short
+      reference: frequency or typicality of described behavior
+    scope: CBQ administration and scoring within populations, languages, ages, and forms for which measurement properties have been evaluated.
+    boundary_notes:
+      - A caregiver report integrates observations across settings but also depends on memory, interpretation, expectations, reference group, and response style.
+    provenance: *provenance
+
+  - id: pmm:behavior:caregiver-temperament-item-rating
+    type: Behavior
+    label: Caregiver temperament item rating
+    definition: Observable selection of a questionnaire response describing how often or how typically a child showed a specified behavior in a specified class of situations.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: verbal_behavior
+    observability: direct
+    actor_scope: group
+    response_topography: Selection of one protocol-defined response option for a CBQ item.
+    function_note: The rating is the informant's response and is not the child's temperament dimension itself.
+    provenance: *provenance
+
+  - id: pmm:measurement:cbq-temperament-profile
+    type: Measurement
+    label: CBQ temperament dimension profile
+    definition: Scored profile derived from caregiver item ratings, estimating fine-grained scales or broad factors such as Negative Affectivity, Surgency or Extraversion, and Effortful Control under a declared CBQ form.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: psychometric_scale
+    target_ids: [pmm:construct:developmental-temperament-dimensions, pmm:construct:temperamental-negative-affectivity, pmm:construct:temperamental-surgency, pmm:construct:temperamental-effortful-control]
+    method: Use the selected CBQ form, scoring key, language, age range, missing-data rules, and informant identity; report scale-level reliability and validity for the relevant population.
+    unit_of_analysis: self_report
+    result_type: continuous
+    boundary_notes:
+      - Scores depend on form, items, informant, age, language, population, and scoring model.
+      - The very short form trades detail for burden and showed only marginal fit to a three-factor model in the cited development study.
+    provenance: *provenance
+
+  - id: pmm:measurement:structured-temperament-observation
+    type: Measurement
+    label: Structured temperament observation
+    definition: Protocol-based coding or task score derived from directly observed responses in situations selected to elicit temperament-relevant variation.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: observation
+    target_ids: [pmm:state:context-specific-temperamental-reactivity, pmm:behavior:observed-temperament-relevant-response]
+    method: Record declared stimuli, setting, coder training, response windows, reliability, and aggregation across tasks and occasions.
+    unit_of_analysis: behavior
+    result_type: continuous
+    boundary_notes:
+      - Observation samples fewer situations than caregiver report and the two methods should not be assumed interchangeable.
+    provenance: *provenance
+
+  - id: pmm:context:longitudinal-temperament-personality-assessment
+    type: Context
+    label: Longitudinal temperament-personality assessment
+    definition: Repeated assessment context in which comparable temperament or personality dimensions are measured across multiple ages to estimate continuity and change.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: developmental
+    dimensions:
+      waves: two or more
+      measures: age-appropriate temperament or personality scales
+      outcomes: rank-order stability, mean-level change, or cross-domain continuity
+    scope: Longitudinal designs represented by the included meta-analyses and cohort study.
+    provenance: *provenance
+
+  - id: pmm:outcome:later-personality-trait-standing
+    type: Outcome
+    label: Later personality trait standing
+    definition: A person's estimated relative position on a later age-appropriate personality dimension in a declared longitudinal analysis.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: performance
+    valence: not_applicable
+    boundary_notes:
+      - Relative standing is sample- and measure-dependent and is not a fixed identity or causal endpoint.
+    provenance: *provenance
+
+  - id: pmm:measurement:longitudinal-trait-stability-estimate
+    type: Measurement
+    label: Longitudinal trait stability estimate
+    definition: Statistical estimate of rank-order continuity or cross-age association between declared temperament or personality measurements.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: computational_parameter
+    target_ids: [pmm:construct:developmental-temperament-dimensions, pmm:outcome:later-personality-trait-standing]
+    method: Estimate age-, interval-, measure-, and sample-specific longitudinal associations while reporting attrition, measurement comparability, and uncertainty.
+    unit_of_analysis: paradigm
+    result_type: model_parameter
+    boundary_notes:
+      - Rank-order stability does not mean no individual changes or that the group mean is unchanged.
+      - A longitudinal association does not by itself identify genetic, maturational, relational, or environmental causes.
+    provenance: *provenance
+
+  - id: pmm:mechanism:developmental-temperament-transaction
+    type: Mechanism
+    label: Developmental temperament transaction
+    definition: Proposed process in which biologically influenced reactivity and regulation repeatedly interact with maturation, relationships, learning, roles, and environments, producing both continuity and change in later personality-relevant behavior.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: developmental
+    role_bindings:
+      - {role: initial individual differences, object_id: pmm:construct:developmental-temperament-dimensions}
+      - {role: current response, object_id: pmm:state:context-specific-temperamental-reactivity}
+      - {role: regulatory capacity, object_id: pmm:construct:temperamental-effortful-control}
+      - {role: repeated developmental context, object_id: pmm:context:longitudinal-temperament-personality-assessment}
+      - {role: later measured profile, object_id: pmm:outcome:later-personality-trait-standing}
+    realization_conditions:
+      - Temperament-relevant responses and environments are measured repeatedly rather than reconstructed from one adult report.
+      - Measurement invariance and age-appropriate construct continuity are evaluated.
+      - Genetic, maturational, learning, relationship, and broader environmental alternatives are compared rather than collapsed.
+    boundary_notes:
+      - Statistical genetic or environmental variance components do not identify a concrete developmental mechanism.
+      - The model permits reciprocal and nonlinear change and does not imply that early temperament determines adult personality.
+    provenance: *provenance
+
+relations:
+  - {id: pmm:relation:caregiver-rating-occurs-in-cbq-context, subject_id: pmm:behavior:caregiver-temperament-item-rating, predicate: occurs_in_context, object_id: pmm:context:cbq-caregiver-report-assessment, provenance: *provenance}
+  - {id: pmm:relation:temperament-dimensions-measured-by-cbq, subject_id: pmm:construct:developmental-temperament-dimensions, predicate: measured_by, object_id: pmm:measurement:cbq-temperament-profile, provenance: *provenance}
+  - {id: pmm:relation:reactive-state-measured-by-observation, subject_id: pmm:state:context-specific-temperamental-reactivity, predicate: measured_by, object_id: pmm:measurement:structured-temperament-observation, provenance: *provenance}
+  - {id: pmm:relation:observed-response-measured-by-observation, subject_id: pmm:behavior:observed-temperament-relevant-response, predicate: measured_by, object_id: pmm:measurement:structured-temperament-observation, provenance: *provenance}
+  - {id: pmm:relation:later-trait-standing-measured-by-stability-estimate, subject_id: pmm:outcome:later-personality-trait-standing, predicate: measured_by, object_id: pmm:measurement:longitudinal-trait-stability-estimate, provenance: *provenance}
+
+claims:
+  - id: pmm:claim:temperament-is-dimensional-and-developmental
+    claim_type: definition
+    statement: Contemporary temperament research describes multiple continuous dimensions of reactivity and self-regulation that show relative continuity while developing through biological and contextual influences; it is not a validated four-type classification of people.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Major integrative reviews converge on dimensional reactivity and regulation, while theories differ in included dimensions, biological emphasis, age coverage, and boundaries with personality.'}
+    scope:
+      population: Humans studied from infancy through adulthood with age-appropriate temperament measures.
+      species: [human]
+      context_ids: [pmm:context:cbq-caregiver-report-assessment, pmm:context:longitudinal-temperament-personality-assessment]
+      temporal_scope: Repeated tendencies and regulation across situations and development rather than one isolated episode.
+    defined_object_id: pmm:construct:developmental-temperament-dimensions
+    source_ids: [pmm:source:shiner-2012-what-is-temperament, pmm:source:gartstein-ramirez-2025-infant-temperament]
+    evidence_ids: []
+    limitations:
+      - The definition does not establish one universally correct taxonomy, instrument, biological basis, or causal pathway.
+    provenance: *provenance
+
+  - id: pmm:claim:cbq-short-forms-estimate-dimensional-profile
+    claim_type: association
+    statement: Putnam and Rothbart's CBQ short and very short forms showed useful internal consistency, criterion validity, longitudinal stability, and cross-informant agreement in the reported samples, with weaker properties for some scales and populations and only marginal three-factor fit for the very short form.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The forms were developed with 468 parent reports and evaluated with 1,189 participants, but performance varied by scale and population and the very short model fit was marginal.'}
+    scope:
+      population: Children aged 3 to 8 years represented in the CBQ short-form development and evaluation samples, predominantly mid- or high-income and White with additional African American and low-income samples.
+      species: [human]
+      context_ids: [pmm:context:cbq-caregiver-report-assessment]
+      temporal_scope: Caregiver questionnaire administration and psychometric evaluation in the reported samples.
+      boundary_conditions:
+        - The reported English-language CBQ forms, age range, caregiver respondents, samples, scoring, and psychometric analyses.
+    exposure_id: pmm:behavior:caregiver-temperament-item-rating
+    outcome_id: pmm:measurement:cbq-temperament-profile
+    estimate: {metric: 'reliability, criterion validity, stability, agreement, and factor-model performance', value_status: qualitative_only, direction: mixed, notes: 'Most properties were satisfactory in mid- or high-income and White samples; some internal consistencies were lower in African American and low-income samples, and very short three-factor fit was marginal.'}
+    confounding_note: Informant expectations, shared method, item selection, language, culture, socioeconomic conditions, age, missingness, and sample composition can influence the observed measurement properties.
+    evidence_ids: [pmm:evidence:putnam-rothbart-2006-cbq-forms]
+    limitations:
+      - Questionnaire reliability and validity do not make the score a direct observation of temperament or prove the proposed three broad factors are universal.
+    provenance: *provenance
+
+  - id: pmm:claim:trait-rank-order-stability-increases-with-age
+    claim_type: association
+    statement: In Roberts and DelVecchio's meta-analysis, rank-order consistency of measured personality and temperament traits was moderate rather than perfect, increased from childhood into adulthood, and decreased across longer retest intervals.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The quantitative review compiled 3,217 coefficients from 152 longitudinal studies, but heterogeneous traits, instruments, cohorts, and historical studies limit a single estimate for modern temperament dimensions.'}
+    scope:
+      population: Participants from childhood through older adulthood represented in 152 longitudinal personality and temperament studies.
+      species: [human]
+      context_ids: [pmm:context:longitudinal-temperament-personality-assessment]
+      temporal_scope: Longitudinal retest intervals analyzed across the lifespan, standardized in reported age comparisons to 6.7 years.
+      boundary_conditions:
+        - The personality and temperament constructs, measures, ages, intervals, and cohorts included in the meta-analysis.
+    exposure_id: pmm:measurement:cbq-temperament-profile
+    outcome_id: pmm:outcome:later-personality-trait-standing
+    estimate: {metric: meta-analytic rank-order test-retest correlation at a 6.7-year interval, value_status: reported, direction: positive, notes: 'Mean estimates increased from .31 in childhood to .54 in college years, .64 around age 30, and about .74 between ages 50 and 70; temperament dimensions were less consistent than adult personality traits.'}
+    confounding_note: Measurement reliability and comparability, age, retest interval, attrition, cohort, construct breadth, informant, and sample restriction affect rank-order estimates.
+    evidence_ids: [pmm:evidence:roberts-delvecchio-2000-rank-order-meta]
+    limitations:
+      - Group-level rank-order consistency does not imply that an individual cannot change, that mean levels are stable, or that childhood measures determine adulthood.
+    provenance: *provenance
+
+  - id: pmm:claim:adolescent-temperament-associated-with-adult-personality
+    claim_type: association
+    statement: In one longitudinal cohort of 674 Mexican-origin youth, measured temperament from ages 10 to 16 showed continuity with conceptually related Big Five personality dimensions through age 26 while also showing mean-level developmental change.
+    epistemic_status: supported
+    confidence: {level: low, rationale: 'Repeated overlapping assessments provide unusually direct cross-age evidence, but one cultural cohort, measurement models, attrition, and observational design limit generalization and causal interpretation.'}
+    scope:
+      population: 674 Mexican-origin youth in the reported longitudinal cohort.
+      species: [human]
+      context_ids: [pmm:context:longitudinal-temperament-personality-assessment]
+      temporal_scope: Temperament assessments at ages 10 to 16 and Big Five personality assessments at ages 14 to 26.
+      boundary_conditions:
+        - The cohort, measures, overlapping ages, latent growth models, retention, and historical context represented in Ringwald et al.
+    exposure_id: pmm:measurement:cbq-temperament-profile
+    outcome_id: pmm:outcome:later-personality-trait-standing
+    estimate: {metric: longitudinal continuity between conceptually related temperament and Big Five dimensions, value_status: qualitative_only, direction: positive, notes: 'The strongest relations occurred between conceptually similar traits; joint traits showed rank-order stability alongside mean-level changes.'}
+    confounding_note: Shared reporter or method, socioeconomic and cultural context, stable environments, measurement overlap, genetic influences, and unmeasured developmental experiences can contribute to continuity.
+    evidence_ids: [pmm:evidence:ringwald-2026-temperament-personality-continuity]
+    limitations:
+      - The cohort does not establish universal pathways, immutable traits, or that effortful control causes broad personality maturation.
+    provenance: *provenance
+
+  - id: pmm:claim:temperament-developmental-transaction-is-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: Continuity and change in temperament and personality may emerge through repeated transactions among biologically influenced reactivity, developing regulation, relationships, learning, and increasingly stable environments.
+    epistemic_status: proposed
+    confidence: {level: low, rationale: 'Behavior-genetic meta-analysis partitions sources of longitudinal covariance and reviews support transactional models, but variance decomposition does not identify concrete causal processes or their direction.'}
+    scope:
+      population: Humans represented in longitudinal temperament, personality, and behavioral-genetic studies.
+      species: [human]
+      context_ids: [pmm:context:longitudinal-temperament-personality-assessment]
+      temporal_scope: Repeated development from infancy through adulthood.
+      boundary_conditions:
+        - Longitudinal designs with age-appropriate repeated measures and explicit genetic, environmental, maturational, relational, or learning variables.
+    mechanism_id: pmm:mechanism:developmental-temperament-transaction
+    exposure_id: pmm:construct:developmental-temperament-dimensions
+    outcome_id: pmm:outcome:later-personality-trait-standing
+    temporal_ordering: Earlier measured dispositions and environments precede later measurements, but reciprocal influence and stable confounding remain possible.
+    falsifiable_boundary: The proposed account is weakened when repeated, independently measured person-environment processes add no explanatory or predictive value beyond measurement stability and when experimentally changed candidate processes do not alter prespecified later behavior.
+    evidence_ids: [pmm:evidence:briley-tucker-drob-2014-genetic-environmental-continuity]
+    limitations:
+      - Heritability, genetic stability, or environmental variance are population statistics and must not be treated as fixed causes within an individual.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:putnam-rothbart-2006-cbq-forms
+    claim_ids: [pmm:claim:cbq-short-forms-estimate-dimensional-profile]
+    source_id: pmm:source:putnam-rothbart-2006-cbq-short
+    extraction_locator: PubMed abstract reporting form development, sample sizes, age range, internal consistency, criterion validity, stability, cross-informant agreement, population differences, and factor fit.
+    evidence_kind: longitudinal_observational
+    design: Multi-sample questionnaire development and evaluation using item analysis, internal consistency, criterion validity, longitudinal stability, cross-informant agreement, and confirmatory factor analysis.
+    population: 468 parents in form development and 1,189 participants in subsequent evaluation of children aged 3 to 8 years.
+    species: [human]
+    inference_support: association
+    support_direction: mixed
+    causal_support: none
+    effect: {metric: psychometric performance of CBQ short and very short forms, value_status: qualitative_only, direction: mixed, notes: 'Broadly satisfactory properties with lower internal consistency for some scales and populations and marginal three-factor fit for the very short form.'}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: mixed, precision: adequate, replication: conceptual_replication}
+    summary: The CBQ short forms reduced burden while retaining useful measurement properties in the reported samples, with explicit scale, model-fit, and population limitations.
+    limitations:
+      - The instrument-development data do not establish cross-cultural invariance, equivalence to direct observation, or one universal temperament taxonomy.
+    provenance: *provenance
+
+  - id: pmm:evidence:roberts-delvecchio-2000-rank-order-meta
+    claim_ids: [pmm:claim:trait-rank-order-stability-increases-with-age]
+    source_id: pmm:source:roberts-delvecchio-2000-stability
+    extraction_locator: PubMed abstract reporting 152 studies, 3,217 coefficients, age-standardized rank-order correlations, interval moderation, and lower consistency for temperament than adult personality traits.
+    evidence_kind: meta_analysis
+    design: Quantitative review of longitudinal test-retest rank-order consistency across childhood, adulthood, and old age.
+    population: Participants in 152 longitudinal personality and temperament studies across the lifespan.
+    species: [human]
+    inference_support: association
+    support_direction: supports
+    causal_support: none
+    effect: {metric: rank-order test-retest correlation standardized to 6.7 years, value_status: reported, direction: positive, notes: 'Estimated consistency rose from .31 in childhood toward .74 at ages 50 to 70 and declined with longer intervals.'}
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: adequate, replication: independent_replication}
+    summary: Trait rank ordering showed increasing but imperfect longitudinal consistency, contradicting both complete instability and immutable childhood typing.
+    limitations:
+      - Historical measures and heterogeneous constructs make the pooled estimates an indirect benchmark for any one contemporary temperament instrument.
+    provenance: *provenance
+
+  - id: pmm:evidence:ringwald-2026-temperament-personality-continuity
+    claim_ids: [pmm:claim:adolescent-temperament-associated-with-adult-personality]
+    source_id: pmm:source:ringwald-2026-temperament-personality
+    extraction_locator: PubMed abstract reporting cohort size, ages, repeated overlapping temperament and Big Five measures, latent growth modeling, continuity, stability, and mean-level change.
+    evidence_kind: longitudinal_observational
+    design: Longitudinal cohort study with Rothbart-model temperament assessments from ages 10 to 16 and Big Five assessments from ages 14 to 26, including overlapping measures and joint latent growth models.
+    population: 674 Mexican-origin youth followed from late childhood or adolescence into adulthood.
+    species: [human]
+    inference_support: association
+    support_direction: supports
+    causal_support: none
+    effect: {metric: longitudinal continuity of conceptually related temperament and personality traits, value_status: qualitative_only, direction: positive, notes: 'Conceptually similar dimensions showed the strongest continuity while joint dimensions also changed in mean level.'}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: adequate, replication: unreplicated}
+    summary: Repeated overlapping measurement supported continuity between adolescent temperament and adult personality without eliminating developmental change.
+    limitations:
+      - One cohort and observational latent models cannot establish universal construct identity or causal maturation pathways.
+    provenance: *provenance
+
+  - id: pmm:evidence:briley-tucker-drob-2014-genetic-environmental-continuity
+    claim_ids: [pmm:claim:temperament-developmental-transaction-is-hypothesis]
+    source_id: pmm:source:briley-tucker-drob-2014-continuity
+    extraction_locator: PubMed abstract reporting 24 longitudinal behavioral-genetic studies, 21,057 sibling pairs, and age trends in genetic and environmental contributions to personality stability.
+    evidence_kind: meta_analysis
+    design: Meta-analysis of longitudinal sibling and twin designs decomposing phenotypic personality stability into genetic and environmental covariance components across age.
+    population: 21,057 sibling pairs from six relationship types spanning infancy to old age in 24 longitudinal studies.
+    species: [human]
+    inference_support: mechanism
+    support_direction: mixed
+    causal_support: indirect
+    domains: {directness: indirect, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: adequate, replication: independent_replication}
+    summary: Both genetic and environmental influences became more stable with age, while increasing environmental continuity contributed substantially to increasing phenotypic stability.
+    limitations:
+      - Variance decomposition depends on behavioral-genetic assumptions and labels broad sources rather than measuring specific relationships, learning histories, roles, or environments.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:shiner-2012-what-is-temperament
+    title: What is temperament now? Assessing progress in temperament research on the twenty-fifth anniversary of Goldsmith et al.
+    source_type: peer_reviewed_article
+    authors: [Rebecca L. Shiner, Kristin A. Buss, Sandee G. McClowry, Samuel P. Putnam, Kimberly J. Saudino, Marcel Zentner]
+    year: 2012
+    doi: 10.1111/j.1750-8606.2012.00254.x
+    url: https://onlinelibrary.wiley.com/doi/10.1111/j.1750-8606.2012.00254.x
+    accessed_at: '2026-08-26'
+    authority_note: Multi-author integrative review used to frame convergence and continuing disagreements among modern temperament approaches.
+    provenance: *provenance
+
+  - id: pmm:source:gartstein-ramirez-2025-infant-temperament
+    title: Temperament development in infancy — what we have learned about the origins of individual differences in the past 25 years
+    source_type: peer_reviewed_article
+    authors: [Maria A. Gartstein, Marco A. Ramirez Gonzalez]
+    year: 2025
+    doi: 10.1016/j.infbeh.2025.102101
+    pmid: '40554909'
+    url: https://pubmed.ncbi.nlm.nih.gov/40554909/
+    accessed_at: '2026-08-26'
+    authority_note: Recent review used for current framing of infant reactivity, self-regulation, measurement diversity, development, context, and remaining reproducibility gaps.
+    provenance: *provenance
+
+  - id: pmm:source:putnam-rothbart-2006-cbq-short
+    title: Development of short and very short forms of the Children's Behavior Questionnaire
+    source_type: peer_reviewed_article
+    authors: [Samuel P. Putnam, Mary K. Rothbart]
+    year: 2006
+    doi: 10.1207/s15327752jpa8701_09
+    pmid: '16856791'
+    url: https://pubmed.ncbi.nlm.nih.gov/16856791/
+    accessed_at: '2026-08-26'
+    authority_note: Primary instrument-development report used for CBQ scope, scoring levels, sample limitations, and measurement properties.
+    provenance: *provenance
+
+  - id: pmm:source:roberts-delvecchio-2000-stability
+    title: The rank-order consistency of personality traits from childhood to old age — a quantitative review of longitudinal studies
+    source_type: peer_reviewed_article
+    authors: [Brent W. Roberts, Wendy F. DelVecchio]
+    year: 2000
+    doi: 10.1037/0033-2909.126.1.3
+    pmid: '10668348'
+    url: https://pubmed.ncbi.nlm.nih.gov/10668348/
+    accessed_at: '2026-08-26'
+    authority_note: Large lifespan meta-analysis used specifically to distinguish relative rank-order stability from immutability.
+    provenance: *provenance
+
+  - id: pmm:source:ringwald-2026-temperament-personality
+    title: Linking temperament and personality traits from late childhood to adulthood by examining continuity, stability, and change
+    source_type: peer_reviewed_article
+    authors: [Whitney R. Ringwald, Katherine M. Lawson, Aleksandra Kaurin, Richard W. Robins]
+    year: 2026
+    doi: 10.1037/pspp0000576
+    pmid: '40965930'
+    url: https://pubmed.ncbi.nlm.nih.gov/40965930/
+    accessed_at: '2026-08-26'
+    authority_note: Recent longitudinal cohort with overlapping temperament and Big Five measurement, used with narrow population and noncausal scope.
+    provenance: *provenance
+
+  - id: pmm:source:briley-tucker-drob-2014-continuity
+    title: Genetic and environmental continuity in personality development — a meta-analysis
+    source_type: peer_reviewed_article
+    authors: [Daniel A. Briley, Elliot M. Tucker-Drob]
+    year: 2014
+    doi: 10.1037/a0037091
+    pmid: '24956122'
+    url: https://pubmed.ncbi.nlm.nih.gov/24956122/
+    accessed_at: '2026-08-26'
+    authority_note: Behavioral-genetic meta-analysis used as indirect evidence constraining, not proving, developmental transaction mechanisms.
+    provenance: *provenance

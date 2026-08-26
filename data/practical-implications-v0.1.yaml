@@ -768,3 +768,38 @@ applications:
     claim_ids: [pmm:claim:reappraisal-reduces-reported-negative-emotion, pmm:claim:meaning-reinterpretation-mechanism-hypothesis]
     source_ids: [pmm:source:gross-1998-emotion-regulation]
     provenance: *provenance
+
+  - id: pmm:application:adjust-context-from-temperament-profile
+    family_id: temperament
+    title:
+      en: Use a temperament profile to adjust demands, not define identity
+      ru: Используйте профиль темперамента для настройки условий, а не для определения личности
+    practical_question:
+      en: How can recurring reactivity or regulation difficulties guide a useful, testable change?
+      ru: Как повторяющиеся трудности реактивности или саморегуляции могут подсказать полезное проверяемое изменение?
+    action:
+      en: >-
+        Observe the same concrete sequence across several occasions and, when possible, informants: situation, immediate reaction, attempted regulation, action, and consequence. Select one modifiable mismatch such as unpredictability, stimulus intensity, transition time, missing choice, skill demand, or recovery support; change only that part and track one observable outcome.
+      ru: >-
+        Наблюдайте одну конкретную последовательность в нескольких случаях и, по возможности, у нескольких информантов: ситуация, немедленная реакция, попытка регуляции, действие и последствие. Выберите одно изменяемое несоответствие, например непредсказуемость, интенсивность стимула, нехватку времени на переход, отсутствие выбора, слишком высокое требование к навыку или недостаток помощи в восстановлении; измените только это звено и отслеживайте один наблюдаемый результат.
+    expected_change:
+      en: Better fit between demands and current regulation, visible as a prespecified change in behavior, recovery, participation, or task completion rather than replacement of a trait.
+      ru: Лучшее соответствие требований текущим возможностям регуляции, заметное по заранее выбранному изменению поведения, восстановления, участия или выполнения задачи, а не по «замене» черты.
+    evidence_basis:
+      en: Questionnaire and longitudinal evidence supports dimensional measurement and imperfect continuity. This pack does not contain direct evidence that the proposed context adjustment will work for a particular person.
+      ru: Опросниковые и продольные данные поддерживают размерное измерение и неполную устойчивость. В этом пакете нет прямого доказательства, что выбранное изменение условий поможет конкретному человеку.
+    applicability:
+      en: Repeated low-risk patterns where the situation and one concrete outcome can be observed, and where environmental adjustment does not remove a necessary safety boundary.
+      ru: Повторяющиеся низкорисковые ситуации, в которых можно наблюдать условия и один конкретный результат, а изменение среды не устраняет необходимую границу безопасности.
+    not_established:
+      en: A temperament score does not diagnose a disorder, prescribe treatment, reveal one cause, or justify assuming that behavior is fixed.
+      ru: Балл темперамента не диагностирует расстройство, не назначает лечение, не выявляет единственную причину и не оправдывает представление о неизменности поведения.
+    safety_note:
+      en: Do not use a temperament label to punish, stigmatize, lower all expectations, withhold accommodations, or overlook medical, developmental, trauma-related, or environmental causes.
+      ru: Не используйте ярлык темперамента для наказания, стигматизации, общего снижения ожиданий, отказа в разумной поддержке или игнорирования медицинских, развивающих, травматических и средовых причин.
+    actionability: interpretation_only
+    confidence: low
+    audience: [individual, educator, clinician, researcher]
+    claim_ids: [pmm:claim:temperament-is-dimensional-and-developmental, pmm:claim:cbq-short-forms-estimate-dimensional-profile, pmm:claim:trait-rank-order-stability-increases-with-age, pmm:claim:adolescent-temperament-associated-with-adult-personality, pmm:claim:temperament-developmental-transaction-is-hypothesis]
+    source_ids: [pmm:source:putnam-rothbart-2006-cbq-short, pmm:source:roberts-delvecchio-2000-stability, pmm:source:ringwald-2026-temperament-personality]
+    provenance: *provenance

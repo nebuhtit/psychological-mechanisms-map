@@ -333,6 +333,53 @@ class EmotionProcessEvidencePackTests(unittest.TestCase):
         self.assertEqual(claim["claim_type"], "definition")
 
 
+class TemperamentEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-temperament-v0.3.yaml"
+        )
+
+    def test_temperament_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_dimension_state_behavior_measurement_and_mechanism_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:developmental-temperament-dimensions"], "Construct")
+        self.assertEqual(records["pmm:state:context-specific-temperamental-reactivity"], "State")
+        self.assertEqual(records["pmm:behavior:observed-temperament-relevant-response"], "Behavior")
+        self.assertEqual(records["pmm:measurement:cbq-temperament-profile"], "Measurement")
+        self.assertEqual(records["pmm:mechanism:developmental-temperament-transaction"], "Mechanism")
+
+    def test_score_and_single_episode_are_not_the_temperament_construct(self) -> None:
+        records = {item["id"]: item for item in self.document["objects"]}
+        self.assertIn("not the child's temperament dimension itself", records["pmm:behavior:caregiver-temperament-item-rating"]["function_note"])
+        self.assertIn("not the temperament dimension itself", records["pmm:state:context-specific-temperamental-reactivity"]["boundary_notes"][0])
+
+    def test_longitudinal_continuity_is_association_not_causation(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        for claim_id in (
+            "pmm:claim:trait-rank-order-stability-increases-with-age",
+            "pmm:claim:adolescent-temperament-associated-with-adult-personality",
+        ):
+            self.assertEqual(claims[claim_id]["claim_type"], "association")
+            self.assertNotIn("causal_estimand", claims[claim_id])
+
+    def test_developmental_transaction_remains_low_confidence_hypothesis(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:temperament-developmental-transaction-is-hypothesis"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertEqual(claim["confidence"]["level"], "low")
+        evidence = next(
+            item for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:briley-tucker-drob-2014-genetic-environmental-continuity"
+        )
+        self.assertEqual(evidence["causal_support"], "indirect")
+
+
 class InferentialModeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
