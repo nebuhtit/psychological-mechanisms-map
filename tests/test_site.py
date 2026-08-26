@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 import unittest
 from pathlib import Path
 
@@ -9,6 +10,8 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from build_ru_translation import displayed_strings  # noqa: E402
 
 
 class SiteBundleTests(unittest.TestCase):
@@ -44,12 +47,20 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn('const DATA_URL = "data/pmm-data.json";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
-    def test_interface_source_is_english_only(self) -> None:
-        interface = "\n".join(
-            (ROOT / "site" / filename).read_text(encoding="utf-8")
-            for filename in ("index.html", "app.js")
-        )
-        self.assertIsNone(re.search(r"[А-Яа-яЁё]", interface))
+    def test_language_toggle_and_russian_bundle_are_present(self) -> None:
+        page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('id="language-toggle"', page)
+        self.assertIn('localStorage.getItem("pmm-language")', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json";', javascript)
+
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
+        self.assertEqual(bundle["canonical_language"], "en")
+        self.assertEqual(bundle["language"], "ru")
+        self.assertEqual(bundle["translation_status"], "machine_translated_pending_review")
+        self.assertEqual(set(bundle["translations"]), displayed_strings(document))
+        self.assertTrue(all(value.strip() for value in bundle["translations"].values()))
 
     def test_reading_guide_is_collapsed_and_explains_visual_encoding(self) -> None:
         page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")

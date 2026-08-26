@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 site-data test export verify clean
+.PHONY: setup validate validate-v02 site-data translate-ru test export verify clean
 
 PYTHON := .venv/bin/python
 
@@ -17,6 +17,9 @@ test:
 
 site-data:
 	$(PYTHON) scripts/build_site_data.py
+
+translate-ru:
+	$(PYTHON) -u scripts/build_ru_translation.py
 
 export:
 	$(PYTHON) scripts/build_registry.py export

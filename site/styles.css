@@ -97,13 +97,26 @@ h1 {
 h1 em { color: var(--forest); font-weight: 500; }
 
 .repo-link {
-  justify-self: end;
   color: var(--ink);
   font-size: 12px;
   font-weight: 700;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
 }
+
+.header-actions { display: flex; align-items: center; justify-self: end; gap: 14px; }
+.language-toggle {
+  min-width: 42px;
+  padding: 7px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.35);
+  font: 700 10px/1 "Manrope", sans-serif;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+.language-toggle:hover { background: var(--paper); }
 
 .control-deck { padding: 24px 0 17px; }
 
@@ -340,7 +353,7 @@ footer p { margin: 0; max-width: 720px; }
 @media (max-width: 900px) {
   .masthead { grid-template-columns: 1fr auto; }
   .masthead-copy { grid-column: 1 / -1; grid-row: 2; }
-  .repo-link { grid-column: 2; grid-row: 1; }
+  .header-actions { grid-column: 2; grid-row: 1; }
   .filter-row { align-items: flex-start; flex-direction: column; }
   .filter-group { justify-content: flex-start; }
   .guide-content { display: block; }

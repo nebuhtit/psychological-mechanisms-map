@@ -1,4 +1,85 @@
 const DATA_URL = "data/pmm-data.json";
+const RU_URL = "data/i18n-ru.json";
+
+const UI_RU = {
+  "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
+  "The mind as a map of": "Психика как карта",
+  "testable mechanisms": "проверяемых механизмов",
+  "Source data ↗": "Исходные данные ↗",
+  "All": "Все",
+  "Causal": "Причинные",
+  "Hypotheses": "Гипотезы",
+  "Contested": "Спорные",
+  "How to read this map": "Как читать эту карту",
+  "Open guide": "Открыть инструкцию",
+  "Reading rule": "Правило чтения",
+  "Follow the records, not the visual distance.": "Следуйте данным записей, а не визуальному расстоянию.",
+  "PMM is an evidence-aware knowledge map. Nearby nodes help navigation only; they do not show a stronger effect, a causal direction, or a scientific consensus.": "PMM — карта знаний с учётом доказательств. Близость узлов помогает только навигации и не означает более сильный эффект, причинное направление или научный консенсус.",
+  "Shapes": "Формы",
+  "Object card": "Карточка объекта",
+  "A construct, mechanism, state, behavior, intervention, measurement, context, event, outcome, contingency, or observation.": "Конструкт, механизм, состояние, поведение, вмешательство, измерение, контекст, событие, исход, зависимость или наблюдение.",
+  "Mechanism pill": "Капсула механизма",
+  "A proposed or established process with specified roles and conditions. It is not automatically proven by appearing on the map.": "Предлагаемый или установленный процесс с заданными ролями и условиями. Само присутствие на карте не доказывает его.",
+  "Claim card": "Карточка утверждения",
+  "A scoped scientific assertion. Open it to see its status, confidence, evidence, limitations, and sources.": "Научное утверждение с заданными границами. Откройте его, чтобы увидеть статус, уверенность, доказательства, ограничения и источники.",
+  "Claim colours": "Цвета утверждений",
+  "Green: supported": "Зелёный: поддерживается",
+  "The mapped evidence supports the stated claim within its declared scope.": "Собранные доказательства поддерживают утверждение в заявленных границах.",
+  "Amber: mixed or unsupported": "Янтарный: смешанные или недостаточные данные",
+  "Results disagree, are null, or do not currently support the claim.": "Результаты расходятся, являются нулевыми или пока не поддерживают утверждение.",
+  "Blue: proposed": "Синий: предложено",
+  "A falsifiable mechanism or causal hypothesis, not an established result.": "Фальсифицируемая гипотеза о механизме или причинности, а не установленный результат.",
+  "Lines and interaction": "Линии и взаимодействие",
+  "Solid line": "Сплошная линия",
+  "A structural or operational relation, such as “measured by” or “occurs in context.”": "Структурная или операциональная связь, например «измеряется с помощью» или «происходит в контексте».",
+  "Dashed arrow": "Пунктирная стрелка",
+  "Connects an object to a Claim. The Claim, not the arrow, carries the empirical or causal interpretation.": "Соединяет объект с утверждением. Эмпирическую или причинную интерпретацию несёт утверждение, а не стрелка.",
+  "Select a node": "Выберите узел",
+  "The right panel reveals the full record. Use filters to show causal claims, hypotheses, or contested results.": "Справа откроется полная запись. Фильтры показывают причинные утверждения, гипотезы и спорные результаты.",
+  "supported": "поддерживается",
+  "mixed": "смешанные данные",
+  "proposed": "предложено",
+  "Select a map node": "Выберите узел карты",
+  "Its definition, scientific status, limitations, evidence, and sources will appear here.": "Здесь появятся определение, научный статус, ограничения, доказательства и источники.",
+  "PMM is not a diagnostic tool. The map distinguishes observations, measurements, hypotheses, and causal inferences.": "PMM не является диагностическим инструментом. Карта различает наблюдения, измерения, гипотезы и причинные выводы.",
+  "Scope": "Границы",
+  "Confidence rationale": "Обоснование уверенности",
+  "Evidence": "Доказательства",
+  "Limitations": "Ограничения",
+  "Sources": "Источники",
+  "Select an object or scientific Claim card on the map.": "Выберите на карте объект или карточку научного утверждения.",
+  "Data failed to load": "Не удалось загрузить данные",
+  "Open the site through a local server or GitHub Pages.": "Откройте сайт через локальный сервер или GitHub Pages.",
+  "Construct": "Конструкт",
+  "Mechanism": "Механизм",
+  "State": "Состояние",
+  "Behavior": "Поведение",
+  "Intervention": "Вмешательство",
+  "Measurement": "Измерение",
+  "Context": "Контекст",
+  "Event": "Событие",
+  "Outcome": "Исход",
+  "Contingency": "Зависимость",
+  "Observation": "Наблюдение",
+  "Claim": "Утверждение",
+  "mixed evidence": "смешанные данные",
+  "unsupported": "не поддерживается",
+  "refuted": "опровергнуто",
+  "not assessed": "не оценено",
+  "high": "высокая",
+  "moderate": "умеренная",
+  "low": "низкая",
+  "very_low": "очень низкая",
+  "supports": "поддерживает",
+  "challenges": "оспаривает",
+  "neutral": "нейтрально",
+  "causal_effect": "причинный эффект",
+  "causal_mechanism": "причинный механизм",
+  "correlation": "корреляция",
+  "prediction": "предсказание",
+  "mediation": "медиация",
+  "moderation": "модерация",
+};
 
 const TYPE_LABELS = {
   Construct: "Construct",
@@ -24,9 +105,35 @@ const STATUS_LABELS = {
   not_assessed: "not assessed",
 };
 
-const state = { data: null, family: null, filter: "all", selectedId: null };
+const state = { data: null, translations: {}, lang: localStorage.getItem("pmm-language") || "en", family: null, filter: "all", selectedId: null };
 const svg = document.getElementById("knowledge-map");
 const inspector = document.getElementById("inspector");
+
+function t(value = "") {
+  if (state.lang !== "ru") return value;
+  return UI_RU[value] || state.translations[value] || value;
+}
+
+function translateStaticDom() {
+  document.documentElement.lang = state.lang;
+  document.querySelectorAll("[data-en]").forEach(element => {
+    element.textContent = state.lang === "ru" ? t(element.dataset.en) : element.dataset.en;
+  });
+}
+
+function prepareStaticDom() {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const node of nodes) {
+    const value = node.textContent.trim();
+    if (!value || node.parentElement?.closest("script, style")) continue;
+    const wrapper = document.createElement("span");
+    wrapper.dataset.en = value;
+    wrapper.textContent = value;
+    node.replaceWith(wrapper);
+  }
+}
 
 function escapeHtml(value = "") {
   return String(value)
@@ -66,8 +173,8 @@ function claimVisible(claim) {
 }
 
 function familyRecords() {
-  const objects = state.family.objects.map(item => ({ ...item, kind: "object" }));
-  const claims = state.family.claims.map(item => ({ ...item, kind: "claim", type: "claim", label: item.statement }));
+  const objects = state.family.objects.map(item => ({ ...item, kind: "object", label: t(item.label) }));
+  const claims = state.family.claims.map(item => ({ ...item, kind: "claim", type: "claim", label: t(item.statement) }));
   return [...objects, ...claims];
 }
 
@@ -188,7 +295,7 @@ function renderMap() {
       transform: `translate(${position.x} ${position.y})`,
       tabindex: "0",
       role: "button",
-      "aria-label": `${TYPE_LABELS[node.type] || node.type}: ${node.label}`,
+      "aria-label": `${t(TYPE_LABELS[node.type] || node.type)}: ${node.label}`,
       "data-id": node.id,
     });
     const isClaim = node.kind === "claim";
@@ -197,7 +304,7 @@ function renderMap() {
       : { x: "-72", y: "-31", width: "144", height: "62", rx: node.type === "Mechanism" ? "31" : "4", class: "node-shape" }));
 
     const typeText = svgElement("text", { x: "0", y: "-10", "text-anchor": "middle", class: "node-type" });
-    typeText.textContent = TYPE_LABELS[node.type] || node.type;
+    typeText.textContent = t(TYPE_LABELS[node.type] || node.type);
     group.append(typeText);
     const lines = wrapLabel(node.label, isClaim ? 20 : 22);
     lines.forEach((line, index) => {
@@ -215,7 +322,7 @@ function renderMap() {
     nodesGroup.append(group);
   }
   svg.append(nodesGroup);
-  document.getElementById("visible-count").textContent = `${nodes.length} nodes · ${edges.length} edges`;
+  document.getElementById("visible-count").textContent = state.lang === "ru" ? `${nodes.length} узлов · ${edges.length} связей` : `${nodes.length} nodes · ${edges.length} edges`;
   if (state.selectedId) emphasizeSelection(state.selectedId);
 }
 
@@ -259,24 +366,24 @@ function listSection(title, items) {
 function renderInspector(record) {
   const sources = relatedSources(record);
   const evidence = evidenceFor(record);
-  const definition = record.kind === "claim" ? record.statement : record.definition;
+  const definition = t(record.kind === "claim" ? record.statement : record.definition);
   const status = record.epistemic_status || record.curation_status;
   const confidence = record.confidence?.level;
   const scope = typeof record.scope === "string" ? record.scope : record.scope?.population;
   inspector.innerHTML = `
-    <p class="inspector-kicker">${escapeHtml(TYPE_LABELS[record.type] || record.type)} · ${escapeHtml(record.id.split(":").at(-1))}</p>
-    <h2>${escapeHtml(record.kind === "claim" ? wrapLabel(record.statement, 48).join(" ") : record.label)}</h2>
+    <p class="inspector-kicker">${escapeHtml(t(TYPE_LABELS[record.type] || record.type))} · ${escapeHtml(record.id.split(":").at(-1))}</p>
+    <h2>${escapeHtml(record.kind === "claim" ? wrapLabel(t(record.statement), 48).join(" ") : t(record.label))}</h2>
     <div class="status-line">
-      ${status ? `<span class="status-chip">${escapeHtml(STATUS_LABELS[status] || status)}</span>` : ""}
-      ${confidence ? `<span class="status-chip">confidence: ${escapeHtml(confidence)}</span>` : ""}
-      ${record.claim_type ? `<span class="status-chip">${escapeHtml(record.claim_type)}</span>` : ""}
+      ${status ? `<span class="status-chip">${escapeHtml(t(STATUS_LABELS[status] || status))}</span>` : ""}
+      ${confidence ? `<span class="status-chip">${state.lang === "ru" ? "уверенность" : "confidence"}: ${escapeHtml(t(confidence))}</span>` : ""}
+      ${record.claim_type ? `<span class="status-chip">${escapeHtml(t(record.claim_type))}</span>` : ""}
     </div>
     <p>${escapeHtml(definition)}</p>
-    ${scope ? `<section class="detail-section"><h3>Scope</h3><p>${escapeHtml(scope)}</p></section>` : ""}
-    ${record.confidence?.rationale ? `<section class="detail-section"><h3>Confidence rationale</h3><p>${escapeHtml(record.confidence.rationale)}</p></section>` : ""}
-    ${evidence.length ? `<section class="detail-section"><h3>Evidence</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(item.support_direction)}</strong> · ${escapeHtml(item.summary)}</li>`).join("")}</ul></section>` : ""}
-    ${listSection("Limitations", record.limitations || record.boundary_notes || record.scope?.boundary_conditions)}
-    ${sources.length ? `<section class="detail-section"><h3>Sources</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.title)}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
+    ${scope ? `<section class="detail-section"><h3>${t("Scope")}</h3><p>${escapeHtml(t(scope))}</p></section>` : ""}
+    ${record.confidence?.rationale ? `<section class="detail-section"><h3>${t("Confidence rationale")}</h3><p>${escapeHtml(t(record.confidence.rationale))}</p></section>` : ""}
+    ${evidence.length ? `<section class="detail-section"><h3>${t("Evidence")}</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(t(item.support_direction))}</strong> · ${escapeHtml(t(item.summary))}</li>`).join("")}</ul></section>` : ""}
+    ${listSection(t("Limitations"), (record.limitations || record.boundary_notes || record.scope?.boundary_conditions)?.map(t))}
+    ${sources.length ? `<section class="detail-section"><h3>${t("Sources")}</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(t(source.title))}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
   `;
 }
 
@@ -310,14 +417,14 @@ function renderFamilies() {
   strip.innerHTML = state.data.families.map((family, index) => `
     <button class="family-button ${family.id === state.family.id ? "is-active" : ""}" type="button" role="tab" aria-selected="${family.id === state.family.id}" data-family="${family.id}">
       <span class="family-number">0${index + 1}</span>
-      <strong>${escapeHtml(family.title)}</strong>
-      <span>${family.objects.length} objects · ${family.claims.length} claims</span>
+      <strong>${escapeHtml(t(family.title))}</strong>
+      <span>${family.objects.length} ${state.lang === "ru" ? "объектов" : "objects"} · ${family.claims.length} ${state.lang === "ru" ? "утверждений" : "claims"}</span>
     </button>
   `).join("");
   strip.querySelectorAll("button").forEach(button => button.addEventListener("click", () => {
     state.family = state.data.families.find(item => item.id === button.dataset.family);
     state.selectedId = null;
-    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">0${state.data.families.indexOf(state.family) + 1}</span><h2>${escapeHtml(state.family.title)}</h2><p>Select an object or scientific Claim card on the map.</p></div>`;
+    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">0${state.data.families.indexOf(state.family) + 1}</span><h2>${escapeHtml(t(state.family.title))}</h2><p>${t("Select an object or scientific Claim card on the map.")}</p></div>`;
     renderFamilies();
     renderFamilyDescription();
     renderMap();
@@ -325,19 +432,34 @@ function renderFamilies() {
 }
 
 function renderFamilyDescription() {
-  document.getElementById("family-description").textContent = state.family.description;
+  document.getElementById("family-description").textContent = t(state.family.description);
+}
+
+function setLanguage(language) {
+  state.lang = language;
+  localStorage.setItem("pmm-language", language);
+  document.getElementById("language-toggle").textContent = language === "ru" ? "EN" : "RU";
+  translateStaticDom();
+  renderFamilies();
+  renderFamilyDescription();
+  renderMap();
+  if (state.selectedId) renderInspector(recordById(state.selectedId));
 }
 
 async function init() {
   try {
-    const response = await fetch(DATA_URL);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    prepareStaticDom();
+    const [response, translationResponse] = await Promise.all([fetch(DATA_URL), fetch(RU_URL)]);
+    if (!response.ok || !translationResponse.ok) throw new Error(`HTTP ${response.status}/${translationResponse.status}`);
     state.data = await response.json();
+    state.translations = (await translationResponse.json()).translations;
     state.family = state.data.families[0];
     document.getElementById("build-version").textContent = `Schema ${state.data.pmm_version} · Interface ${state.data.interface_version}`;
     renderFamilies();
     renderFamilyDescription();
     renderMap();
+    document.getElementById("language-toggle").addEventListener("click", () => setLanguage(state.lang === "ru" ? "en" : "ru"));
+    setLanguage(state.lang);
 
     document.querySelectorAll(".filter-button").forEach(button => button.addEventListener("click", () => {
       state.filter = button.dataset.filter;
@@ -347,7 +469,7 @@ async function init() {
     }));
     new ResizeObserver(() => renderMap()).observe(svg);
   } catch (error) {
-    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">!</span><h2>Data failed to load</h2><p>Open the site through a local server or GitHub Pages. ${escapeHtml(error.message)}</p></div>`;
+    inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">!</span><h2>${t("Data failed to load")}</h2><p>${t("Open the site through a local server or GitHub Pages.")} ${escapeHtml(error.message)}</p></div>`;
   }
 }
 
