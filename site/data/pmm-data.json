@@ -13498,10 +13498,1916 @@
       ],
       "title": "Big Five personality traits",
       "version": "0.3.4"
+    },
+    {
+      "claims": [
+        {
+          "claim_type": "definition",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The definition is stable across foundational and modern attachment reviews, but the system remains a theoretical construct inferred through multiple operations."
+          },
+          "defined_object_id": "pmm:construct:attachment-behavioral-system",
+          "epistemic_status": "supported",
+          "evidence_ids": [],
+          "id": "pmm:claim:attachment-system-organizes-safety-seeking",
+          "limitations": [
+            "The definition does not prove that every support-seeking act is attachment behavior or that one universal response sequence applies across relationships and cultures."
+          ],
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Attachment theory describes what can happen when safety through a particular close person becomes important: threat may increase monitoring, contact, or support seeking, and an available person can become a safe haven or secure base. This is a relationship process, not a permanent personality label.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:attachment-relevant-threat-separation"
+            ],
+            "population": "Humans in child-caregiver or close adult attachment relationships.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Attachment-relevant episodes and their developmental organization."
+          },
+          "source_ids": [
+            "pmm:source:fraley-shaver-2000-attachment"
+          ],
+          "statement": "Attachment theory proposes a relationship-specific behavioral system that organizes proximity seeking, safe-haven use, and secure-base behavior when threat or separation makes safety salient."
+        },
+        {
+          "claim_type": "definition",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "A broad measurement review documents distinct instruments, relationship foci, constructs, administration requirements, and scoring methods."
+          },
+          "defined_object_id": "pmm:measurement:adult-attachment-anxiety-avoidance",
+          "epistemic_status": "supported",
+          "evidence_ids": [],
+          "id": "pmm:claim:adult-attachment-measures-are-not-interchangeable",
+          "limitations": [
+            "Dimensional convergence does not make all questionnaires equivalent or establish fixed adult attachment types."
+          ],
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A questionnaire about anxiety and avoidance in romantic relationships, an interview about the coherence of attachment memories, and observation of a child during reunion do not measure the same thing. Their results should not be merged into one universal attachment type.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:adult-attachment-self-report",
+              "pmm:context:adult-attachment-interview"
+            ],
+            "population": "Adults assessed with attachment interviews or questionnaires.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Current assessment under a declared instrument."
+          },
+          "source_ids": [
+            "pmm:source:ravitz-2010-adult-attachment-measures",
+            "pmm:source:fraley-waller-brennan-2000"
+          ],
+          "statement": "Adult attachment is assessed with multiple noninterchangeable methods; self-report research commonly represents insecurity using continuous anxiety and avoidance dimensions, whereas the AAI codes discourse-based state of mind."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Meta-analytic evidence supports a positive longitudinal and concurrent association, with measurement heterogeneity and residual confounding."
+          },
+          "confounding_note": "Child characteristics, family stress, socioeconomic conditions, shared context, coder dependencies, and unmeasured caregiving processes can contribute to the association.",
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "positive",
+            "metric": "standardized difference in observed caregiver sensitivity for secure versus insecure preschool attachment in longitudinal studies",
+            "notes": "Reported g = 0.46 with 95% CI 0.17 to 0.75 for the unidimensional longitudinal synthesis.",
+            "value": 0.46,
+            "value_status": "reported"
+          },
+          "evidence_ids": [
+            "pmm:evidence:divito-kurkjian-2021-sensitivity-meta"
+          ],
+          "exposure_id": "pmm:state:perceived-attachment-figure-availability",
+          "id": "pmm:claim:caregiver-sensitivity-associated-with-child-security",
+          "limitations": [
+            "The exposure object is a conceptual proxy for responsive availability; the studies measured observed sensitivity using heterogeneous protocols rather than the child's perceived availability directly."
+          ],
+          "outcome_id": "pmm:measurement:strange-situation-classification",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "In the reviewed studies, caregivers of children classified as securely attached tended to respond more sensitively. The relation was meaningful but observational: sensitivity is an important candidate influence, not the sole cause of a child's attachment pattern.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:strange-situation-procedure"
+            ],
+            "population": "Caregiver-preschool child dyads represented in the included observational studies.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Caregiver sensitivity observations and later or concurrent preschool attachment assessment."
+          },
+          "statement": "Across observational studies, higher caregiver sensitivity is associated with greater likelihood of secure child-caregiver attachment, but the association does not establish a single sufficient cause."
+        },
+        {
+          "claim_type": "association",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "A large meta-analysis found medium average stability with substantial moderation by interval, measurement, and risk context."
+          },
+          "confounding_note": "Measures at different ages are not identical, and relationship changes, risk exposure, sample attrition, and method differences affect continuity estimates.",
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "positive",
+            "metric": "meta-analytic stability correlation",
+            "notes": "Overall r = .39; no significant stability was found for intervals longer than 15 years in the reported synthesis.",
+            "value": 0.39,
+            "value_status": "reported"
+          },
+          "evidence_ids": [
+            "pmm:evidence:pinquart-2013-attachment-stability"
+          ],
+          "exposure_id": "pmm:measurement:strange-situation-classification",
+          "id": "pmm:claim:attachment-security-shows-moderate-not-deterministic-stability",
+          "limitations": [
+            "The cross-method exposure and outcome IDs summarize a heterogeneous corpus and must not be read as one direct Strange Situation to ECR transition estimate."
+          ],
+          "outcome_id": "pmm:measurement:adult-attachment-anxiety-avoidance",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Attachment assessments were related across time on average, but the relation weakened over long intervals and varied by method and context. Early attachment can matter without fixing adult relationships permanently.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:strange-situation-procedure",
+              "pmm:context:adult-attachment-self-report",
+              "pmm:context:adult-attachment-interview"
+            ],
+            "population": "Child and young-adult attachment assessments represented in 127 reports.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Repeated assessments spanning infancy to early adulthood."
+          },
+          "statement": "Attachment security shows moderate stability across repeated assessments overall, with lower stability over long intervals and no evidence of irreversible determination from infancy."
+        },
+        {
+          "claim_type": "mechanism_hypothesis",
+          "confidence": {
+            "level": "low",
+            "rationale": "Components are supported by theory and heterogeneous studies, but the complete reciprocal developmental chain is not identified as one causal mechanism."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:fraley-shaver-2000-system-review"
+          ],
+          "exposure_id": "pmm:context:attachment-relevant-threat-separation",
+          "falsifiable_boundary": "The hypothesis is challenged if manipulated attachment-figure availability does not change distress regulation or later expectations beyond alternative social-support, learning, and trait explanations.",
+          "id": "pmm:claim:attachment-regulation-loop-is-integrative-hypothesis",
+          "limitations": [
+            "The model should not be used to infer childhood causes from an adult questionnaire score or to diagnose a partner."
+          ],
+          "mechanism_id": "pmm:mechanism:conditional-attachment-regulation",
+          "outcome_id": "pmm:construct:relational-availability-expectations",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A useful working hypothesis is that threat triggers a search for safety, the other person's response changes current distress, and repeated experiences can update expectations about relationships. The whole sequence has not been established as one universal causal mechanism and must be tested against simpler social-support and learning explanations.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "A specific attachment figure, observable threat or distress, and a declared measure of support response and later expectation."
+            ],
+            "context_ids": [
+              "pmm:context:attachment-relevant-threat-separation"
+            ],
+            "population": "Humans in attachment-relevant child-caregiver or adult close relationships.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Episode-level regulation with learning across repeated interactions."
+          },
+          "statement": "Threat may activate attachment-related safety seeking; perceived availability and support response may reduce or sustain distress and contribute to updating later relational expectations.",
+          "temporal_ordering": "Threat or separation precedes regulatory behavior and response; expectation change, if any, is assessed after repeated or experimentally specified interactions."
+        }
+      ],
+      "dataset_id": "pmm:dataset:attachment-system-evidence-v0-3",
+      "description": "Threat context, attachment activation, support seeking, relational response, distress, expectations, child observation, adult interview, and self-report dimensions kept distinct.",
+      "evidence": [
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:attachment-regulation-loop-is-integrative-hypothesis"
+          ],
+          "design": "Integrative review of theory and adult romantic attachment research.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "partially_indirect",
+            "precision": "not_reported",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "not_assessed"
+          },
+          "evidence_kind": "narrative_review",
+          "extraction_locator": "Review sections describing attachment-system activation, proximity seeking, individual differences, continuity, and unresolved questions.",
+          "id": "pmm:evidence:fraley-shaver-2000-system-review",
+          "inference_support": "mechanism",
+          "limitations": [
+            "Narrative synthesis does not identify the complete causal chain or establish equivalence between child and adult measures."
+          ],
+          "population": "Humans in close relationships across studies reviewed by the authors.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:fraley-shaver-2000-attachment",
+          "species": [
+            "human"
+          ],
+          "summary": "The review supports core attachment-system components while identifying unresolved questions about function, development, continuity, and individual differences.",
+          "support_direction": "mixed"
+        },
+        {
+          "causal_support": "none",
+          "claim_ids": [
+            "pmm:claim:caregiver-sensitivity-associated-with-child-security"
+          ],
+          "design": "Systematic review and meta-analysis of behaviorally coded caregiver sensitivity and preschool attachment.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "partially_indirect",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "interval": {
+              "level": 0.95,
+              "lower": 0.17,
+              "upper": 0.75
+            },
+            "metric": "Hedges g for longitudinal sensitivity difference by secure versus insecure attachment",
+            "value": 0.46,
+            "value_status": "reported"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "Quantitative synthesis table and discussion of longitudinal and concurrent caregiver-sensitivity associations with preschool attachment.",
+          "id": "pmm:evidence:divito-kurkjian-2021-sensitivity-meta",
+          "inference_support": "association",
+          "limitations": [
+            "Observational designs, overlapping samples, variable confound adjustment, and heterogeneous coding limit causal interpretation."
+          ],
+          "population": "Caregiver-preschool child dyads in included observational studies.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:divito-kurkjian-2021-sensitivity",
+          "species": [
+            "human"
+          ],
+          "summary": "Observed caregiver sensitivity was higher among caregivers of children later classified secure than insecure, with moderate pooled association.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "none",
+          "claim_ids": [
+            "pmm:claim:attachment-security-shows-moderate-not-deterministic-stability"
+          ],
+          "design": "Meta-analysis of repeated attachment assessments from infancy to early adulthood.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "partially_indirect",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "positive",
+            "metric": "overall stability correlation",
+            "value": 0.39,
+            "value_status": "reported"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract reporting 127 papers, 21,072 attachments, overall stability, interval moderation, and long-interval null result.",
+          "id": "pmm:evidence:pinquart-2013-attachment-stability",
+          "inference_support": "association",
+          "limitations": [
+            "Measures, relationships, intervals, populations, and attrition varied substantially."
+          ],
+          "population": "21,072 attachment assessments represented across 127 reports.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_id": "pmm:source:pinquart-2013-stability",
+          "species": [
+            "human"
+          ],
+          "summary": "Average attachment stability was moderate, weaker over longer intervals, and not significant beyond 15 years in the reported corpus.",
+          "support_direction": "mixed"
+        }
+      ],
+      "id": "attachment-system",
+      "objects": [
+        {
+          "boundary_notes": [
+            "Attachment is relationship-specific and context-sensitive; it is not a fixed global personality type.",
+            "A theoretical system is not directly observed by one behavior or questionnaire score."
+          ],
+          "construct_kind": "social",
+          "curation_status": "provisional",
+          "definition": "Theoretical system organizing proximity seeking, safe-haven use, and secure-base behavior toward a particular attachment figure, especially under threat, distress, or separation.",
+          "id": "pmm:construct:attachment-behavioral-system",
+          "label": "Attachment behavioral system",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "context_kind": "social",
+          "curation_status": "accepted",
+          "definition": "Situation involving danger, distress, unfamiliarity, separation, or perceived unavailability of a significant attachment figure.",
+          "dimensions": {
+            "attachment_figure": "available uncertain or unavailable",
+            "relationship": "child-caregiver or close adult relationship",
+            "threat": "present or anticipated"
+          },
+          "id": "pmm:context:attachment-relevant-threat-separation",
+          "label": "Attachment-relevant threat or separation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Episodes in which attachment-related regulation may become relevant.",
+          "type": "Context"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "Activation cannot be inferred from distress alone because many nonattachment processes can produce distress."
+          ],
+          "curation_status": "provisional",
+          "definition": "Time-bounded motivational and affective condition in which safety and attachment-figure availability become salient.",
+          "id": "pmm:state:attachment-system-activation",
+          "label": "Attachment-system activation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "motivational",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "response_pattern",
+          "curation_status": "accepted",
+          "definition": "Observable approach, contact, signaling, reassurance seeking, or communication directed toward obtaining safety or support from another person.",
+          "function_note": "Similar behavior can serve affiliation, habit, information seeking, or attachment regulation; function requires context.",
+          "id": "pmm:behavior:proximity-support-seeking",
+          "label": "Proximity or support seeking",
+          "observability": "direct",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "response_topography": "Approaching, calling, signaling, maintaining contact, requesting reassurance, or accepting comfort.",
+          "type": "Behavior"
+        },
+        {
+          "bearer_scope": "person",
+          "curation_status": "provisional",
+          "definition": "Episode-level perception that a significant other is accessible, responsive, and likely to provide effective support.",
+          "id": "pmm:state:perceived-attachment-figure-availability",
+          "label": "Perceived attachment-figure availability",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "social",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "boundary_notes": [
+            "Reduced observable distress is not automatically security; suppression or deactivation can also reduce expression."
+          ],
+          "curation_status": "accepted",
+          "definition": "Intensity or persistence of distress during an attachment-relevant threat, separation, or reunion episode.",
+          "id": "pmm:outcome:attachment-related-distress",
+          "label": "Attachment-related distress intensity",
+          "ontological_level": "type",
+          "outcome_kind": "intensity",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Outcome",
+          "valence": "aversive"
+        },
+        {
+          "aliases": [
+            "Internal working models"
+          ],
+          "boundary_notes": [
+            "Internal working models are theoretical constructs, not memories that can be read directly.",
+            "Earlier relationships may influence later expectations without determining them irreversibly."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "Proposed learned expectations about whether close others will be available and whether seeking support is safe or effective.",
+          "id": "pmm:construct:relational-availability-expectations",
+          "label": "Expectations of relational availability",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "The complete chain is an integrative mechanism hypothesis; individual arrows have different evidence and should not be treated as one proven causal sequence."
+          ],
+          "curation_status": "provisional",
+          "definition": "Proposed process in which threat increases attachment-system activation, support-seeking behavior samples attachment-figure availability, and the response contributes to distress regulation and later relational expectations.",
+          "id": "pmm:mechanism:conditional-attachment-regulation",
+          "label": "Conditional attachment regulation",
+          "mechanism_kind": "developmental",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "realization_conditions": [
+            "The situation is represented as attachment-relevant.",
+            "A particular other functions as an attachment figure in that relationship.",
+            "Support seeking and the other person's response can be observed or validly operationalized."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:context:attachment-relevant-threat-separation",
+              "role": "activation condition"
+            },
+            {
+              "object_id": "pmm:behavior:proximity-support-seeking",
+              "role": "regulatory behavior"
+            },
+            {
+              "object_id": "pmm:state:perceived-attachment-figure-availability",
+              "role": "social feedback"
+            },
+            {
+              "object_id": "pmm:outcome:attachment-related-distress",
+              "role": "regulated outcome"
+            },
+            {
+              "object_id": "pmm:construct:relational-availability-expectations",
+              "role": "learned expectation"
+            }
+          ],
+          "type": "Mechanism"
+        },
+        {
+          "boundary_notes": [
+            "A Strange Situation classification concerns one relationship under one protocol, not the child's entire personality."
+          ],
+          "context_kind": "developmental",
+          "curation_status": "accepted",
+          "definition": "Standardized child-caregiver observation involving unfamiliarity, separations, and reunions used to assess organized attachment behavior.",
+          "dimensions": {
+            "episodes": "exploration separation reunion",
+            "output": "protocol-coded behavior or classification",
+            "participant": "young child and caregiver"
+          },
+          "id": "pmm:context:strange-situation-procedure",
+          "label": "Strange Situation Procedure",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Validated age ranges, trained coding systems, and protocol-specific child-caregiver relationships.",
+          "type": "Context"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Trained observational coding of child behavior across separation and reunion episodes into protocol-defined attachment patterns or continuous security indicators.",
+          "id": "pmm:measurement:strange-situation-classification",
+          "label": "Strange Situation attachment classification",
+          "measurement_kind": "observation",
+          "method": "Standardized episode coding by trained raters using a declared attachment classification or scale.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "nominal",
+          "target_ids": [
+            "pmm:construct:attachment-behavioral-system",
+            "pmm:behavior:proximity-support-seeking"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "behavior"
+        },
+        {
+          "context_kind": "social",
+          "curation_status": "accepted",
+          "definition": "Questionnaire context asking adults about expectations, emotions, and behavior in close or romantic relationships.",
+          "dimensions": {
+            "constructs": "attachment anxiety and avoidance",
+            "relationship_focus": "general or relationship-specific",
+            "respondent": "adult self-report"
+          },
+          "id": "pmm:context:adult-attachment-self-report",
+          "label": "Adult close-relationship attachment self-report",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "The declared relationship focus, population, language, and instrument version.",
+          "type": "Context"
+        },
+        {
+          "boundary_notes": [
+            "Two continuous scores should not be converted into four permanent identities without a separately justified rule."
+          ],
+          "curation_status": "accepted",
+          "definition": "Self-report scale scores estimating concern about rejection or abandonment and discomfort with dependence or closeness in a declared relationship domain.",
+          "id": "pmm:measurement:adult-attachment-anxiety-avoidance",
+          "label": "Adult attachment anxiety and avoidance scores",
+          "measurement_kind": "psychometric_scale",
+          "method": "Score a validated adult attachment questionnaire such as ECR or ECR-R according to its protocol.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:construct:relational-availability-expectations"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "self_report"
+        },
+        {
+          "context_kind": "clinical",
+          "curation_status": "accepted",
+          "definition": "Structured interview concerning attachment-related experiences and the coherence of current discourse about them.",
+          "dimensions": {
+            "method": "trained semistructured interview",
+            "output": "coded discourse classification",
+            "target": "state of mind regarding attachment"
+          },
+          "id": "pmm:context:adult-attachment-interview",
+          "label": "Adult Attachment Interview context",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Administration and coding by appropriately trained raters under the declared AAI protocol.",
+          "type": "Context"
+        },
+        {
+          "boundary_notes": [
+            "AAI state of mind and romantic-attachment self-report scores target related but noninterchangeable constructs and methods."
+          ],
+          "curation_status": "accepted",
+          "definition": "Protocol-coded classification of the coherence and organization of an adult's discourse about attachment experiences.",
+          "id": "pmm:measurement:aai-state-of-mind-classification",
+          "label": "Adult Attachment Interview state-of-mind classification",
+          "measurement_kind": "clinical_rating",
+          "method": "Trained coding of a transcribed Adult Attachment Interview.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "nominal",
+          "target_ids": [
+            "pmm:construct:relational-availability-expectations"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "person"
+        }
+      ],
+      "practical_implications": [
+        {
+          "action": {
+            "en": "Record one concrete episode as trigger, perceived danger, need, support-seeking or distancing action, the other person's response, immediate relief or escalation, and later consequence. Choose one observable change such as a clearer request, agreed response, boundary, or pause and review the result.",
+            "ru": "Запишите один конкретный эпизод как триггер, воспринятую угрозу, потребность, поиск поддержки или дистанцирование, ответ другого, немедленное облегчение или усиление и более позднее последствие. Выберите одно наблюдаемое изменение: более ясную просьбу, согласованный ответ, границу или паузу, затем оцените результат."
+          },
+          "actionability": "interpretation_only",
+          "applicability": {
+            "en": "Low-risk reflection on close relationships, caregiving, or therapy formulation when safety permits direct communication.",
+            "ru": "Низкорисковый разбор близких отношений, ухода или терапевтической формулировки, когда безопасность позволяет прямое общение."
+          },
+          "audience": [
+            "individual",
+            "clinician",
+            "researcher"
+          ],
+          "claim_ids": [
+            "pmm:claim:attachment-system-organizes-safety-seeking",
+            "pmm:claim:adult-attachment-measures-are-not-interchangeable",
+            "pmm:claim:attachment-regulation-loop-is-integrative-hypothesis"
+          ],
+          "confidence": "low",
+          "evidence_basis": {
+            "en": "Attachment research supports relationship-specific patterns and associations with responsive care, while the complete episode-to-expectation mechanism remains proposed.",
+            "ru": "Исследования привязанности поддерживают специфичные для отношений паттерны и связи с отзывчивым уходом, но полный механизм от эпизода до ожиданий остаётся гипотезой."
+          },
+          "expected_change": {
+            "en": "A testable change in communication, distress regulation, or repeated interaction without treating either person as a fixed type.",
+            "ru": "Проверяемое изменение общения, регуляции дистресса или повторяющегося взаимодействия без превращения человека в неизменный тип."
+          },
+          "family_id": "attachment-system",
+          "id": "pmm:application:map-attachment-episode-without-labeling",
+          "not_established": {
+            "en": "The map does not diagnose attachment, prove childhood causation, guarantee that communication will help, or apply where coercion or violence makes direct negotiation unsafe.",
+            "ru": "Схема не диагностирует привязанность, не доказывает причину из детства, не гарантирует пользу общения и не применяется там, где принуждение или насилие делают переговоры небезопасными."
+          },
+          "practical_question": {
+            "en": "What can be changed when a threat to closeness repeatedly leads to distress or conflict?",
+            "ru": "Что можно изменить, когда угроза близости постоянно приводит к дистрессу или конфликту?"
+          },
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "safety_note": {
+            "en": "In coercive, violent, or unsafe relationships, prioritize safety planning and qualified support rather than joint experimentation.",
+            "ru": "При принуждении, насилии или небезопасных отношениях приоритетом являются план безопасности и квалифицированная помощь, а не совместный эксперимент."
+          },
+          "source_ids": [
+            "pmm:source:fraley-shaver-2000-attachment",
+            "pmm:source:ravitz-2010-adult-attachment-measures"
+          ],
+          "title": {
+            "en": "Map the relationship episode instead of assigning a style",
+            "ru": "Разбирайте эпизод отношений вместо присвоения стиля"
+          }
+        },
+        {
+          "action": {
+            "en": "Notice the child's signal, infer the likely need cautiously, respond promptly and proportionately, and observe whether the child can recover or return to exploration; adjust rather than forcing contact.",
+            "ru": "Заметьте сигнал ребёнка, осторожно предположите потребность, ответьте своевременно и соразмерно и наблюдайте, может ли ребёнок успокоиться или вернуться к исследованию; корректируйте ответ, а не навязывайте контакт."
+          },
+          "actionability": "transfer_uncertain",
+          "applicability": {
+            "en": "Ordinary caregiving and professional parent guidance within the child's developmental, sensory, cultural, and safety context.",
+            "ru": "Повседневный уход и профессиональное сопровождение родителей с учётом развития, сенсорных особенностей, культуры и безопасности ребёнка."
+          },
+          "audience": [
+            "individual",
+            "clinician",
+            "educator"
+          ],
+          "claim_ids": [
+            "pmm:claim:caregiver-sensitivity-associated-with-child-security",
+            "pmm:claim:attachment-security-shows-moderate-not-deterministic-stability"
+          ],
+          "confidence": "moderate",
+          "evidence_basis": {
+            "en": "Observed caregiver sensitivity is positively associated with secure preschool attachment, but observational evidence does not establish one sufficient causal recipe.",
+            "ru": "Наблюдаемая чувствительность опекуна положительно связана с безопасной привязанностью дошкольника, но наблюдательные данные не устанавливают единственный достаточный причинный рецепт."
+          },
+          "expected_change": {
+            "en": "More contingent caregiving and better information about what helps this child regulate in this relationship.",
+            "ru": "Более согласованный с сигналами уход и более точная информация о том, что помогает этому ребёнку регулироваться в данных отношениях."
+          },
+          "family_id": "attachment-system",
+          "id": "pmm:application:sensitive-response-without-determinism",
+          "not_established": {
+            "en": "Sensitivity alone does not determine attachment, and this guidance is not a substitute for assessment of developmental, medical, trauma, or safeguarding concerns.",
+            "ru": "Одна чувствительность не определяет привязанность, а рекомендация не заменяет оценку развития, здоровья, травмы или угроз безопасности."
+          },
+          "practical_question": {
+            "en": "What is a reasonable caregiving target suggested by attachment evidence?",
+            "ru": "Какую разумную цель ухода подсказывают данные о привязанности?"
+          },
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_ids": [
+            "pmm:source:divito-kurkjian-2021-sensitivity",
+            "pmm:source:pinquart-2013-stability"
+          ],
+          "title": {
+            "en": "Respond sensitively without treating one interaction as destiny",
+            "ru": "Отвечайте чутко, не считая один эпизод судьбой"
+          }
+        }
+      ],
+      "relations": [
+        {
+          "id": "pmm:relation:attachment-activation-occurs-in-threat",
+          "object_id": "pmm:context:attachment-relevant-threat-separation",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:state:attachment-system-activation"
+        },
+        {
+          "id": "pmm:relation:proximity-seeking-occurs-in-threat",
+          "object_id": "pmm:context:attachment-relevant-threat-separation",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:behavior:proximity-support-seeking"
+        },
+        {
+          "id": "pmm:relation:strange-situation-measures-attachment",
+          "object_id": "pmm:measurement:strange-situation-classification",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:construct:attachment-behavioral-system"
+        },
+        {
+          "id": "pmm:relation:adult-expectations-measured-by-self-report",
+          "object_id": "pmm:measurement:adult-attachment-anxiety-avoidance",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:construct:relational-availability-expectations"
+        },
+        {
+          "id": "pmm:relation:adult-expectations-measured-by-aai",
+          "object_id": "pmm:measurement:aai-state-of-mind-classification",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:construct:relational-availability-expectations"
+        }
+      ],
+      "research_questions": [
+        {
+          "about_ids": [
+            "pmm:mechanism:conditional-attachment-regulation",
+            "pmm:state:perceived-attachment-figure-availability",
+            "pmm:construct:relational-availability-expectations"
+          ],
+          "display_prominence": "peripheral",
+          "family_id": "attachment-system",
+          "id": "pmm:research-question:attachment-within-person-change",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "question": {
+            "en": "Which changes in support response causally alter within-person distress regulation and relationship expectations, for whom and in which contexts?",
+            "ru": "Какие изменения ответа поддержки причинно меняют регуляцию дистресса и ожидания от отношений у конкретного человека, для кого и в каких контекстах?"
+          },
+          "question_kind": "mechanism",
+          "source_ids": [
+            "pmm:source:fraley-shaver-2000-attachment",
+            "pmm:source:pinquart-2013-stability"
+          ],
+          "status": "open",
+          "what_would_help": {
+            "en": "Preregistered longitudinal and experimental dyadic studies with dense within-person measures of threat, behavior, response, distress, and later expectations.",
+            "ru": "Пререгистрированные продольные и экспериментальные исследования пар с частыми внутрииндивидуальными измерениями угрозы, поведения, ответа, дистресса и последующих ожиданий."
+          },
+          "why_open": {
+            "en": "Measurement systems differ, observational sensitivity associations do not identify a complete mechanism, and long-term attachment stability is moderate rather than deterministic.",
+            "ru": "Системы измерения различаются, наблюдательные связи чувствительности не выявляют полный механизм, а долговременная устойчивость привязанности умеренная, а не детерминированная."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Peer-reviewed integrative review used for the attachment-system framework and explicit unresolved questions.",
+          "authors": [
+            "R. Chris Fraley",
+            "Phillip R. Shaver"
+          ],
+          "doi": "10.1037/1089-2680.4.2.132",
+          "id": "pmm:source:fraley-shaver-2000-attachment",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Adult romantic attachment — theoretical developments, emerging controversies, and unanswered questions",
+          "url": "https://doi.org/10.1037/1089-2680.4.2.132",
+          "year": 2000
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Measurement review documenting distinct adult attachment instruments and construct targets.",
+          "authors": [
+            "Paula Ravitz",
+            "Robert Maunder",
+            "Jon Hunter",
+            "Bhadra Sthankiya",
+            "William Lancee"
+          ],
+          "doi": "10.1016/j.jpsychores.2009.08.006",
+          "id": "pmm:source:ravitz-2010-adult-attachment-measures",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Adult attachment measures — a 25-year review",
+          "url": "https://doi.org/10.1016/j.jpsychores.2009.08.006",
+          "year": 2010
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Primary psychometric source for dimensional adult attachment self-report measurement.",
+          "authors": [
+            "R. Chris Fraley",
+            "Niels G. Waller",
+            "Kelly A. Brennan"
+          ],
+          "doi": "10.1037/0022-3514.78.2.350",
+          "id": "pmm:source:fraley-waller-brennan-2000",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "An item response theory analysis of self-report measures of adult attachment",
+          "url": "https://doi.org/10.1037/0022-3514.78.2.350",
+          "year": 2000
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Systematic review and meta-analysis used for the bounded sensitivity-security association.",
+          "authors": [
+            "Jennifer DiVito",
+            "Sarah Kurkjian"
+          ],
+          "doi": "10.1371/journal.pone.0245061",
+          "id": "pmm:source:divito-kurkjian-2021-sensitivity",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "The longitudinal and concurrent relationship between caregiver sensitivity and preschool attachment — a systematic review and meta-analysis",
+          "url": "https://doi.org/10.1371/journal.pone.0245061",
+          "year": 2021
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Large meta-analysis used to prevent deterministic claims about continuity.",
+          "authors": [
+            "Martin Pinquart",
+            "Christina Feussner",
+            "Lieselotte Ahnert"
+          ],
+          "doi": "10.1080/14616734.2013.746257",
+          "id": "pmm:source:pinquart-2013-stability",
+          "pmid": "23210665",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Meta-analytic evidence for stability in attachments from infancy to early adulthood",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23210665/",
+          "year": 2013
+        }
+      ],
+      "title": "Attachment system",
+      "version": "0.3.4"
+    },
+    {
+      "claims": [
+        {
+          "claim_type": "definition",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The formulation matches authoritative CBT descriptions, but a teaching model is not itself proof of every causal arrow."
+          },
+          "defined_object_id": "pmm:construct:cbt-cognitive-model",
+          "epistemic_status": "supported",
+          "evidence_ids": [],
+          "id": "pmm:claim:cbt-model-links-interpretation-and-response",
+          "limitations": [
+            "Not every emotion requires a conscious inference, not every distressing interpretation is inaccurate, and changing a thought does not guarantee emotional change."
+          ],
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Two people can react differently to the same event because they assign it different meanings. In CBT, interpretation is examined together with emotion, bodily response, behavior, and context. The interpretation may be automatic or partly outside awareness; the model does not say that every feeling follows a conscious sentence in the mind.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:personally-significant-situation"
+            ],
+            "population": "People described using a cognitive-behavioral formulation.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Situation-level response and repeated maintenance cycles."
+          },
+          "source_ids": [
+            "pmm:source:beck-institute-cognitive-model",
+            "pmm:source:nice-depression-2022"
+          ],
+          "statement": "The CBT cognitive model treats interpretation of a situation as related to emotional, behavioral, and often physiological responses, while contemporary formulation also considers reciprocal behavioral and contextual feedback."
+        },
+        {
+          "claim_type": "mechanism_hypothesis",
+          "confidence": {
+            "level": "low",
+            "rationale": "The cycle integrates established component relationships and clinical formulation, but its edges and dominant direction must be tested for the particular problem and context."
+          },
+          "epistemic_status": "proposed",
+          "evidence_ids": [
+            "pmm:evidence:moreno-peral-2020-mechanism-limit"
+          ],
+          "exposure_id": "pmm:context:personally-significant-situation",
+          "falsifiable_boundary": "The proposed network is challenged when changing its nominated process does not alter downstream outcomes or when alternative contextual, social, physiological, or learning models explain the pattern better.",
+          "id": "pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis",
+          "limitations": [
+            "A generic cycle should not be presented as the explanation for a person before individualized assessment and competing hypotheses."
+          ],
+          "mechanism_id": "pmm:mechanism:reciprocal-cbt-maintenance-cycle",
+          "outcome_id": "pmm:outcome:cbt-short-long-consequences",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A person's difficulty may be maintained by a loop rather than one cause: an interpretation changes distress, distress and physiology influence action, the action produces short-term relief or another consequence, and that consequence shapes later expectations. Which link matters most must be measured for that person and context.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "A concrete target problem, measurable responses, declared goals, and repeated observations before and after intervention."
+            ],
+            "context_ids": [
+              "pmm:context:personally-significant-situation"
+            ],
+            "population": "Individuals or explicitly defined groups receiving cognitive-behavioral formulation.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Repeated episodes with within-person measurement."
+          },
+          "statement": "For a specified person and context, interpretations, emotional and physiological responses, coping behavior, consequences, and beliefs may form a self-maintaining reciprocal network with multiple possible intervention points.",
+          "temporal_ordering": "Situation, interpretation, response, behavior, and consequences are repeatedly time-indexed; feedback to later expectations is assessed in subsequent episodes."
+        },
+        {
+          "causal_estimand": "Average effect of assignment to protocol-defined CBT versus the declared control condition on post-treatment depressive symptom severity in the included randomized trials.",
+          "claim_type": "causal_effect",
+          "confidence": {
+            "level": "moderate",
+            "rationale": "A very large meta-analysis of randomized comparisons found a moderate-to-large pooled effect versus controls, while heterogeneity and comparator choice limit one universal estimate."
+          },
+          "epistemic_status": "supported",
+          "estimate": {
+            "direction": "negative",
+            "interval": {
+              "level": 0.95,
+              "lower": 0.7,
+              "upper": 0.89
+            },
+            "metric": "Hedges g for CBT versus control conditions",
+            "notes": "Negative direction denotes lower depressive symptom severity; the source reports g = 0.79 in magnitude favoring CBT.",
+            "value": 0.79,
+            "value_status": "reported"
+          },
+          "evidence_ids": [
+            "pmm:evidence:cuijpers-2023-cbt-depression-meta"
+          ],
+          "exposure_id": "pmm:intervention:protocol-defined-cbt",
+          "id": "pmm:claim:cbt-reduces-depression-versus-controls",
+          "identification_strategy": "randomized_intervention",
+          "limitations": [
+            "Treatment efficacy does not identify cognitive change as the unique mediator, prove the full cognitive model, or establish superiority over every other psychotherapy."
+          ],
+          "outcome_id": "pmm:outcome:depressive-symptom-severity",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Across hundreds of randomized depression trials, people assigned to CBT had lower symptoms on average than people in control conditions. The size of benefit depended on the comparison, protocol, and study quality, and the result does not mean CBT is best for every person or superior to every other psychotherapy.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "boundary_conditions": [
+              "Protocol-defined CBT, depression target, trial comparator, treatment format, and risk-of-bias conditions represented in the synthesis."
+            ],
+            "context_ids": [
+              "pmm:context:adult-depression-treatment"
+            ],
+            "population": "Patients represented in randomized CBT trials for depression.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Post-treatment and reported follow-up periods."
+          },
+          "statement": "Across randomized depression trials synthesized by Cuijpers and colleagues, protocol-defined CBT reduced depressive symptoms more than control conditions on average, with effects dependent on comparator and study quality.",
+          "temporal_ordering": "Treatment assignment precedes post-treatment symptom measurement."
+        },
+        {
+          "claim_type": "mediation",
+          "confidence": {
+            "level": "low",
+            "rationale": "Nested randomized studies support cognitive variables as candidate mediators, but many designs do not establish temporal or causal mediation and cognitive measures vary."
+          },
+          "epistemic_status": "mixed",
+          "evidence_ids": [
+            "pmm:evidence:moreno-peral-2020-mediators"
+          ],
+          "exposure_id": "pmm:intervention:protocol-defined-cbt",
+          "id": "pmm:claim:cognitive-change-statistically-mediates-some-prevention-effects",
+          "indirect_effect": {
+            "direction": "positive",
+            "metric": "cross-study evidence for cognitive mediation",
+            "notes": "Cognitive variables were most commonly assessed; negative thinking had the strongest support for adult depression prevention.",
+            "value_status": "qualitative_only"
+          },
+          "limitations": [
+            "Statistical mediation does not prove that changing a particular thought caused symptom improvement or that cognition is the only pathway."
+          ],
+          "mediation_inference": "statistical",
+          "mediator_id": "pmm:construct:negative-thinking-process",
+          "outcome_id": "pmm:outcome:depressive-symptom-severity",
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "Some prevention studies found that improvement in measured negative thinking occurred alongside and statistically accounted for part of later symptom improvement. Because timing, measures, and interventions differed, this is evidence for a candidate pathway, not proof that changing thoughts was the sole cause.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:adult-depression-treatment"
+            ],
+            "population": "Participants in psychological and psychoeducational prevention trials included in the review.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Intervention, candidate mediator assessment, and later symptom outcome as reported in included studies."
+          },
+          "statement": "In a systematic review of prevention trials, measured cognitive change statistically mediated some depression and anxiety outcomes, but constructs, interventions, and mediation methods were heterogeneous.",
+          "temporal_ordering": "Ordering varied across included mediator studies and was not uniformly sufficient for causal mediation."
+        },
+        {
+          "claim_type": "definition",
+          "confidence": {
+            "level": "high",
+            "rationale": "This follows from the distinction between intervention efficacy, component effects, statistical mediation, and causal mechanism identification."
+          },
+          "defined_object_id": "pmm:intervention:protocol-defined-cbt",
+          "epistemic_status": "supported",
+          "evidence_ids": [],
+          "id": "pmm:claim:cbt-efficacy-does-not-validate-unique-mechanism",
+          "limitations": [
+            "Specific well-designed component and mediation experiments may provide stronger mechanism evidence, but must be evaluated separately."
+          ],
+          "plain_language_review_status": "source_checked_editorial",
+          "plain_language_summary": "A treatment package can work even when researchers do not know which component produced the benefit. To establish a mechanism, studies must separately change or measure the proposed process and show that it explains the outcome better than alternatives.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": {
+            "context_ids": [
+              "pmm:context:adult-depression-treatment"
+            ],
+            "population": "Participants in evaluated CBT interventions.",
+            "species": [
+              "human"
+            ],
+            "temporal_scope": "Treatment effect and mechanism interpretation."
+          },
+          "source_ids": [
+            "pmm:source:cuijpers-2023-cbt-depression",
+            "pmm:source:moreno-peral-2020-mediators"
+          ],
+          "statement": "Evidence that a CBT package improves an outcome establishes a treatment effect within scope, not that every component worked or that one cognitive mechanism uniquely produced the benefit."
+        }
+      ],
+      "dataset_id": "pmm:dataset:cbt-formulation-evidence-v0-3",
+      "description": "Situation, interpretation, emotion, physiology, behavior, consequences, beliefs, interventions, treatment effects, and proposed maintenance mechanisms kept distinct.",
+      "evidence": [
+        {
+          "causal_support": "direct",
+          "claim_ids": [
+            "pmm:claim:cbt-reduces-depression-versus-controls"
+          ],
+          "design": "Random-effects meta-analysis of randomized CBT comparisons for depression.",
+          "domains": {
+            "consistency": "mostly_consistent",
+            "directness": "direct",
+            "precision": "adequate",
+            "replication": "independent_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "effect": {
+            "direction": "negative",
+            "interval": {
+              "level": 0.95,
+              "lower": 0.7,
+              "upper": 0.89
+            },
+            "metric": "Hedges g versus control",
+            "notes": "Magnitude favored CBT; sign is represented as lower symptom severity.",
+            "value": 0.79,
+            "value_status": "reported"
+          },
+          "evidence_kind": "meta_analysis",
+          "extraction_locator": "PubMed abstract reporting 409 trials, 52,702 patients, control comparison, follow-up, and sensitivity analyses.",
+          "id": "pmm:evidence:cuijpers-2023-cbt-depression-meta",
+          "inference_support": "causal_effect",
+          "limitations": [
+            "Trials varied in CBT type, control, population, delivery, quality, and follow-up; superiority over other psychotherapies was small and not robust in sensitivity analyses."
+          ],
+          "population": "52,702 patients across 409 trials and 518 comparisons.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 52702,
+          "source_id": "pmm:source:cuijpers-2023-cbt-depression",
+          "species": [
+            "human"
+          ],
+          "summary": "CBT showed moderate-to-large average benefit over control conditions, with significant effects at follow-up and important comparator and sensitivity qualifications.",
+          "support_direction": "supports"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:cognitive-change-statistically-mediates-some-prevention-effects"
+          ],
+          "design": "Systematic review of candidate mediators in psychological and psychoeducational depression and anxiety prevention trials.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "partially_indirect",
+            "precision": "limited",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "evidence_kind": "systematic_review",
+          "extraction_locator": "Systematic-review abstract and results covering 28 mediator studies nested in randomized trials with 7,442 participants.",
+          "id": "pmm:evidence:moreno-peral-2020-mediators",
+          "inference_support": "mediation",
+          "limitations": [
+            "Interventions were broader than CBT alone, mediator timing and constructs varied, and statistical mediation often fell short of causal identification."
+          ],
+          "population": "7,442 participants across 28 nested mediator studies.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 7442,
+          "source_id": "pmm:source:moreno-peral-2020-mediators",
+          "species": [
+            "human"
+          ],
+          "summary": "Cognitive variables, especially negative thinking in adults, showed the strongest mediator support, while mechanism research remained limited and heterogeneous.",
+          "support_direction": "mixed"
+        },
+        {
+          "causal_support": "indirect",
+          "claim_ids": [
+            "pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis"
+          ],
+          "design": "Mechanism-focused interpretation of mediator studies nested in randomized prevention trials.",
+          "domains": {
+            "consistency": "mixed",
+            "directness": "indirect",
+            "precision": "limited",
+            "replication": "conceptual_replication",
+            "risk_of_bias": "some_concerns"
+          },
+          "evidence_kind": "systematic_review",
+          "extraction_locator": "Review conclusions that mechanism research remains limited despite candidate cognitive, behavioral, emotional, and interpersonal mediators.",
+          "id": "pmm:evidence:moreno-peral-2020-mechanism-limit",
+          "inference_support": "mechanism",
+          "limitations": [
+            "The source reviews prevention interventions rather than individualized reciprocal CBT networks and cannot validate every edge in the proposed cycle."
+          ],
+          "population": "7,442 participants across 28 nested mediator studies.",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "sample_size": 7442,
+          "source_id": "pmm:source:moreno-peral-2020-mediators",
+          "species": [
+            "human"
+          ],
+          "summary": "Candidate processes were observed, but the review does not establish one complete or unique cognitive-behavioral maintenance mechanism.",
+          "support_direction": "mixed"
+        }
+      ],
+      "id": "cbt-formulation",
+      "objects": [
+        {
+          "boundary_notes": [
+            "The model does not require every emotion to be preceded by a conscious verbal thought.",
+            "Thoughts, emotions, physiology, behavior, and context can influence one another; a simple one-way diagram is a teaching aid rather than a complete causal model.",
+            "A useful formulation for one person is not automatically a population-level scientific law."
+          ],
+          "construct_kind": "clinical_dimension",
+          "curation_status": "provisional",
+          "definition": "Clinical formulation framework in which a person's interpretation of a situation is related to emotional, physiological, and behavioral responses, while behavior and consequences can feed back into later interpretations and beliefs.",
+          "id": "pmm:construct:cbt-cognitive-model",
+          "label": "CBT cognitive model",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "context_kind": "composite",
+          "curation_status": "accepted",
+          "definition": "External event, internal sensation, memory, image, or anticipation that becomes relevant to a person's current goals, needs, or concerns.",
+          "dimensions": {
+            "personal_relevance": "declared or assessed",
+            "source": "external or internal",
+            "timing": "current remembered or anticipated"
+          },
+          "id": "pmm:context:personally-significant-situation",
+          "label": "Personally significant situation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "A formulation specifies the concrete situation rather than treating all distress as one context.",
+          "type": "Context"
+        },
+        {
+          "aliases": [
+            "Automatic thought",
+            "Appraisal"
+          ],
+          "boundary_notes": [
+            "A reported thought is one measurement of interpretation and may be reconstructed after the emotional episode."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "Verbal, imaginal, or nonverbal meaning assigned to a situation, which may be rapid, automatic, partly conscious, or deliberately considered.",
+          "id": "pmm:construct:situational-interpretation",
+          "label": "Situational interpretation",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "bearer_scope": "person",
+          "curation_status": "accepted",
+          "definition": "Time-indexed subjective emotional experience occurring in relation to the personally significant situation.",
+          "id": "pmm:state:cbt-emotional-response",
+          "label": "Emotional response",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "affective",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "bearer_scope": "person",
+          "boundary_notes": [
+            "Physiology is not interchangeable with subjective emotion or interpretation."
+          ],
+          "curation_status": "accepted",
+          "definition": "Time-indexed autonomic, endocrine, muscular, respiratory, or other bodily response during the episode.",
+          "id": "pmm:state:cbt-physiological-response",
+          "label": "Physiological response",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "state_kind": "physiological",
+          "temporal_scale": "episode",
+          "type": "State"
+        },
+        {
+          "actor_scope": "person",
+          "behavior_kind": "response_pattern",
+          "curation_status": "accepted",
+          "definition": "Observable action, omission, communication, safety behavior, approach, or avoidance occurring during or after the episode.",
+          "function_note": "The same action can have different short- and long-term functions in different contexts.",
+          "id": "pmm:behavior:cbt-coping-response",
+          "label": "Coping or avoidance behavior",
+          "observability": "direct",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "response_topography": "Situation-specific approach, avoidance, reassurance, withdrawal, problem solving, or other observable response.",
+          "type": "Behavior"
+        },
+        {
+          "boundary_notes": [
+            "Immediate relief can coexist with longer-term maintenance of a problem."
+          ],
+          "curation_status": "provisional",
+          "definition": "Immediate and delayed changes in distress, safety, task completion, social response, learning opportunity, or valued functioning following behavior.",
+          "id": "pmm:outcome:cbt-short-long-consequences",
+          "label": "Short- and long-term consequences",
+          "ontological_level": "type",
+          "outcome_kind": "other",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Outcome",
+          "valence": "mixed"
+        },
+        {
+          "boundary_notes": [
+            "A belief is not directly observed and should not be inferred solely because a therapist's formulation seems plausible."
+          ],
+          "construct_kind": "psychological",
+          "curation_status": "provisional",
+          "definition": "More general assumptions, rules, self-representations, and predictions that organize interpretation across situations.",
+          "id": "pmm:construct:cbt-beliefs-expectations",
+          "label": "Beliefs and future expectations",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "Different questionnaires and cognitive constructs are not interchangeable mediators."
+          ],
+          "construct_kind": "clinical_dimension",
+          "curation_status": "provisional",
+          "definition": "Measured pattern of negative interpretations, expectations, or self-referential cognitions studied as a possible mediator of intervention outcomes.",
+          "id": "pmm:construct:negative-thinking-process",
+          "label": "Negative thinking process",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Construct"
+        },
+        {
+          "boundary_notes": [
+            "The complete cycle is a formulation hypothesis, not a single universally established mechanism."
+          ],
+          "curation_status": "provisional",
+          "definition": "Proposed context-dependent process in which interpretations, emotions, physiology, behavior, consequences, and beliefs reciprocally constrain future responding.",
+          "id": "pmm:mechanism:reciprocal-cbt-maintenance-cycle",
+          "label": "Reciprocal cognitive-behavioral maintenance cycle",
+          "mechanism_kind": "integrative",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "realization_conditions": [
+            "The formulation specifies a recurring situation and measurable responses for one person or a declared population.",
+            "At least one feedback path is temporally observed or experimentally manipulated.",
+            "Competing biological, social, learning, and contextual explanations remain testable."
+          ],
+          "role_bindings": [
+            {
+              "object_id": "pmm:context:personally-significant-situation",
+              "role": "situation"
+            },
+            {
+              "object_id": "pmm:construct:situational-interpretation",
+              "role": "interpreted meaning"
+            },
+            {
+              "object_id": "pmm:state:cbt-emotional-response",
+              "role": "emotional state"
+            },
+            {
+              "object_id": "pmm:state:cbt-physiological-response",
+              "role": "bodily state"
+            },
+            {
+              "object_id": "pmm:behavior:cbt-coping-response",
+              "role": "behavior"
+            },
+            {
+              "object_id": "pmm:outcome:cbt-short-long-consequences",
+              "role": "consequence"
+            },
+            {
+              "object_id": "pmm:construct:cbt-beliefs-expectations",
+              "role": "retained expectation"
+            }
+          ],
+          "type": "Mechanism"
+        },
+        {
+          "boundary_notes": [
+            "Valid thoughts may call for problem solving, acceptance, protection, or environmental change rather than disputation."
+          ],
+          "curation_status": "accepted",
+          "definition": "Structured examination of an interpretation or prediction using evidence, alternative explanations, decentering, or Socratic questions.",
+          "delivery": "Guided or self-directed evaluation using a treatment protocol appropriate to the problem.",
+          "id": "pmm:intervention:cognitive-evaluation-practice",
+          "intended_direction": "test",
+          "intervention_kind": "psychological",
+          "label": "Cognitive evaluation practice",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:construct:situational-interpretation",
+            "pmm:construct:cbt-beliefs-expectations"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Planned real-world or simulated action used to test a concrete prediction and collect new observable information.",
+          "delivery": "Specify a prediction, safe action, observable result, and review of what was learned.",
+          "id": "pmm:intervention:behavioral-experiment",
+          "intended_direction": "test",
+          "intervention_kind": "behavioral",
+          "label": "Behavioral experiment",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:construct:cbt-beliefs-expectations",
+            "pmm:behavior:cbt-coping-response"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "boundary_notes": [
+            "CBT is an umbrella family; efficacy estimates depend on target condition, components, comparator, format, provider, and risk of bias."
+          ],
+          "curation_status": "accepted",
+          "definition": "Structured psychological treatment combining cognitive and behavioral methods according to a declared manual, formulation, dose, provider, and target condition.",
+          "delivery": "Qualified guided treatment or declared self-help protocol with specified sessions, components, and comparison condition.",
+          "id": "pmm:intervention:protocol-defined-cbt",
+          "intended_direction": "decrease",
+          "intervention_kind": "psychological",
+          "label": "Protocol-defined cognitive behavior therapy",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "target_ids": [
+            "pmm:construct:cbt-cognitive-model",
+            "pmm:construct:negative-thinking-process",
+            "pmm:behavior:cbt-coping-response"
+          ],
+          "type": "Intervention"
+        },
+        {
+          "context_kind": "clinical",
+          "curation_status": "accepted",
+          "definition": "Clinical or research context in which adults with depressive symptoms or disorders receive CBT or a comparison condition.",
+          "dimensions": {
+            "comparator": "control psychotherapy pharmacotherapy or combined care",
+            "population": "adults with depression",
+            "treatment": "protocol-defined CBT"
+          },
+          "id": "pmm:context:adult-depression-treatment",
+          "label": "Adult depression treatment context",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "scope": "Trials included in the declared depression treatment synthesis.",
+          "type": "Context"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Protocol-defined severity of depressive symptoms after treatment or at follow-up.",
+          "id": "pmm:outcome:depressive-symptom-severity",
+          "label": "Depressive symptom severity",
+          "ontological_level": "type",
+          "outcome_kind": "symptom",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "type": "Outcome",
+          "valence": "aversive"
+        },
+        {
+          "curation_status": "accepted",
+          "definition": "Validated self-report or clinician-rated scale used to quantify depressive symptom severity at declared time points.",
+          "id": "pmm:measurement:depression-symptom-scale",
+          "label": "Depression symptom scale",
+          "measurement_kind": "clinical_rating",
+          "method": "Administer and score a declared validated depression measure according to protocol.",
+          "ontological_level": "type",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "result_type": "continuous",
+          "target_ids": [
+            "pmm:outcome:depressive-symptom-severity"
+          ],
+          "type": "Measurement",
+          "unit_of_analysis": "clinical_record"
+        }
+      ],
+      "practical_implications": [
+        {
+          "action": {
+            "en": "Describe one situation, interpretation, emotion, bodily response, action, and immediate and delayed consequence. Select one low-risk link: check a prediction, change an avoidance behavior, alter the environment, or practice a skill. Define the expected observable result before testing it.",
+            "ru": "Опишите одну ситуацию, интерпретацию, эмоцию, телесную реакцию, действие, немедленное и отсроченное последствие. Выберите одно низкорисковое звено: проверить прогноз, изменить избегающее действие или среду либо потренировать навык. До проверки задайте наблюдаемый ожидаемый результат."
+          },
+          "actionability": "interpretation_only",
+          "applicability": {
+            "en": "Low-risk self-observation, skills training, or qualified CBT and process-based formulation; not emergency or high-risk experimentation.",
+            "ru": "Низкорисковое самонаблюдение, обучение навыкам или квалифицированная КПТ и процессная формулировка; не для экстренных или рискованных экспериментов."
+          },
+          "audience": [
+            "individual",
+            "clinician",
+            "researcher"
+          ],
+          "claim_ids": [
+            "pmm:claim:cbt-model-links-interpretation-and-response",
+            "pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis",
+            "pmm:claim:cognitive-change-statistically-mediates-some-prevention-effects"
+          ],
+          "confidence": "low",
+          "evidence_basis": {
+            "en": "CBT has treatment efficacy in several scoped conditions, and cognitive variables are candidate mediators, but the full maintenance loop is person- and context-specific.",
+            "ru": "КПТ эффективна при ряде конкретных состояний, а когнитивные переменные являются возможными медиаторами, но полная поддерживающая петля зависит от человека и контекста."
+          },
+          "expected_change": {
+            "en": "Better individualized evidence about what maintains the problem and which change improves a personally relevant outcome.",
+            "ru": "Более точные индивидуальные данные о том, что поддерживает проблему и какое изменение улучшает важный для человека результат."
+          },
+          "family_id": "cbt-formulation",
+          "id": "pmm:application:test-one-cbt-loop-link",
+          "not_established": {
+            "en": "A changed thought does not guarantee a changed feeling, and failure of one experiment does not prove the whole CBT model false or the person resistant.",
+            "ru": "Изменение мысли не гарантирует изменение чувства, а неудача одного эксперимента не опровергает всю модель КПТ и не означает сопротивление человека."
+          },
+          "practical_question": {
+            "en": "How can a broad problem be turned into a safe and testable change?",
+            "ru": "Как превратить широкую проблему в безопасное проверяемое изменение?"
+          },
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "safety_note": {
+            "en": "Severe symptoms, suicidality, psychosis, abuse, or medical risk require qualified assessment and an appropriate care plan.",
+            "ru": "Тяжёлые симптомы, суицидальность, психоз, насилие или медицинский риск требуют квалифицированной оценки и подходящего плана помощи."
+          },
+          "source_ids": [
+            "pmm:source:beck-institute-cognitive-model",
+            "pmm:source:moreno-peral-2020-mediators"
+          ],
+          "title": {
+            "en": "Test one link in the cognitive-behavioral loop",
+            "ru": "Проверяйте одно звено когнитивно-поведенческой петли"
+          }
+        },
+        {
+          "action": {
+            "en": "For depression, consider a protocol-defined CBT option with qualified assessment, shared decision-making, progress measurement, and review of fit; identify the actual components delivered rather than assuming all CBT is identical.",
+            "ru": "При депрессии рассматривайте КПТ по определённому протоколу с квалифицированной оценкой, совместным решением, измерением прогресса и проверкой соответствия; фиксируйте реальные компоненты, а не считайте всю КПТ одинаковой."
+          },
+          "actionability": "transfer_uncertain",
+          "applicability": {
+            "en": "Evidence-based depression care selected with a qualified professional and adapted to severity, preference, access, comorbidity, and risk.",
+            "ru": "Доказательная помощь при депрессии, выбранная с квалифицированным специалистом с учётом тяжести, предпочтений, доступности, сопутствующих состояний и риска."
+          },
+          "audience": [
+            "individual",
+            "clinician",
+            "researcher"
+          ],
+          "claim_ids": [
+            "pmm:claim:cbt-reduces-depression-versus-controls",
+            "pmm:claim:cbt-efficacy-does-not-validate-unique-mechanism"
+          ],
+          "confidence": "moderate",
+          "evidence_basis": {
+            "en": "A meta-analysis of 409 randomized trials found a moderate-to-large average effect versus controls, while differences from other psychotherapies were small and not robust in sensitivity analyses.",
+            "ru": "Метаанализ 409 рандомизированных исследований выявил умеренный или крупный средний эффект по сравнению с контролем, тогда как отличия от других психотерапий были малы и неустойчивы в анализах чувствительности."
+          },
+          "expected_change": {
+            "en": "On average, lower depressive symptom severity than control conditions represented in the evidence, with individual response monitored rather than presumed.",
+            "ru": "В среднем более низкая выраженность депрессивных симптомов, чем в представленных контрольных условиях, при обязательном отслеживании индивидуального ответа."
+          },
+          "family_id": "cbt-formulation",
+          "id": "pmm:application:use-cbt-efficacy-within-scope",
+          "not_established": {
+            "en": "The result does not show that CBT is best for everyone, that self-help is equivalent to therapy, or that cognitive restructuring uniquely caused improvement.",
+            "ru": "Результат не показывает, что КПТ лучше для всех, что самопомощь эквивалентна терапии или что улучшение вызвала только когнитивная реструктуризация."
+          },
+          "practical_question": {
+            "en": "What does strong treatment evidence justify in practice?",
+            "ru": "Что сильные данные о лечении позволяют утверждать на практике?"
+          },
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "safety_note": {
+            "en": "Treatment selection and crisis care should follow qualified clinical assessment; this map is not a treatment recommendation for an individual.",
+            "ru": "Выбор лечения и кризисная помощь должны основываться на квалифицированной клинической оценке; карта не назначает лечение конкретному человеку."
+          },
+          "source_ids": [
+            "pmm:source:cuijpers-2023-cbt-depression",
+            "pmm:source:nice-depression-2022"
+          ],
+          "title": {
+            "en": "Use CBT efficacy without claiming one proven mechanism",
+            "ru": "Используйте данные об эффективности КПТ без заявления о единственном механизме"
+          }
+        }
+      ],
+      "relations": [
+        {
+          "id": "pmm:relation:emotion-occurs-in-situation",
+          "object_id": "pmm:context:personally-significant-situation",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:state:cbt-emotional-response"
+        },
+        {
+          "id": "pmm:relation:behavior-occurs-in-situation",
+          "object_id": "pmm:context:personally-significant-situation",
+          "predicate": "occurs_in_context",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:behavior:cbt-coping-response"
+        },
+        {
+          "id": "pmm:relation:depression-measured-by-scale",
+          "object_id": "pmm:measurement:depression-symptom-scale",
+          "predicate": "measured_by",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "subject_id": "pmm:outcome:depressive-symptom-severity"
+        }
+      ],
+      "research_questions": [
+        {
+          "about_ids": [
+            "pmm:mechanism:reciprocal-cbt-maintenance-cycle",
+            "pmm:intervention:behavioral-experiment",
+            "pmm:outcome:cbt-short-long-consequences"
+          ],
+          "display_prominence": "peripheral",
+          "family_id": "cbt-formulation",
+          "id": "pmm:research-question:cbt-person-specific-process-selection",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "question": {
+            "en": "Which measured process should be targeted first for a particular person and goal, and does changing it improve the predicted outcome?",
+            "ru": "На какой измеренный процесс следует воздействовать первым для конкретного человека и цели и улучшает ли его изменение ожидаемый результат?"
+          },
+          "question_kind": "causal",
+          "source_ids": [
+            "pmm:source:moreno-peral-2020-mediators",
+            "pmm:source:cuijpers-2023-cbt-depression"
+          ],
+          "status": "open",
+          "what_would_help": {
+            "en": "High-frequency idiographic measurement, randomized or sequential process interventions, prespecified outcomes, and comparison of competing functional networks.",
+            "ru": "Частые идиографические измерения, рандомизированные или последовательные воздействия на процессы, заранее заданные исходы и сравнение конкурирующих функциональных сетей."
+          },
+          "why_open": {
+            "en": "CBT packages are effective for some conditions, but package efficacy and statistical mediation do not identify the dominant causal process in an individual's maintenance network.",
+            "ru": "Пакеты КПТ эффективны при некоторых состояниях, но эффективность пакета и статистическая медиация не выявляют главный причинный процесс в индивидуальной поддерживающей сети."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Authoritative training organization source used for the intended cognitive-model definition, not as independent efficacy evidence.",
+          "id": "pmm:source:beck-institute-cognitive-model",
+          "organization": "Beck Institute for Cognitive Behavior Therapy",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "official_framework",
+          "title": "Understanding CBT and the cognitive model",
+          "url": "https://beckinstitute.org/about/understanding-cbt/",
+          "year": 2026
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Evidence-based clinical guideline used to bound CBT as a treatment family and describe interactions among thoughts, beliefs, feelings, and behavior.",
+          "id": "pmm:source:nice-depression-2022",
+          "organization": "National Institute for Health and Care Excellence",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "official_framework",
+          "title": "Depression in adults — treatment and management",
+          "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+          "year": 2022
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Comprehensive randomized-trial meta-analysis used for scoped depression treatment efficacy.",
+          "authors": [
+            "Pim Cuijpers",
+            "Clara Miguel",
+            "Mathias Harrer",
+            "Constantin Yves Plessen",
+            "Marketa Ciharova",
+            "David Ebert",
+            "Eirini Karyotaki"
+          ],
+          "doi": "10.1002/wps.21069",
+          "id": "pmm:source:cuijpers-2023-cbt-depression",
+          "pmid": "36640411",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Cognitive behavior therapy versus control conditions, other psychotherapies, pharmacotherapies and combined treatment for depression",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36640411/",
+          "year": 2023
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "authority_note": "Systematic review used to distinguish candidate statistical mediators from established causal mechanisms.",
+          "authors": [
+            "Patricia Moreno-Peral",
+            "Juan Angel Bellon",
+            "Marcus J. H. Huibers",
+            "Jose M. Mestre",
+            "Luis Joaquin Garcia-Lopez",
+            "Svenja Taubner",
+            "Alberto Rodriguez-Morejon",
+            "Felix Bolinski",
+            "Celia M. D. Sales",
+            "Sonia Conejo-Ceron"
+          ],
+          "doi": "10.1016/j.cpr.2020.101813",
+          "id": "pmm:source:moreno-peral-2020-mediators",
+          "pmid": "32045780",
+          "provenance": {
+            "record_version": "0.1.0",
+            "review_status": "machine_validated",
+            "source_snapshot_date": "2026-08-26"
+          },
+          "source_type": "peer_reviewed_article",
+          "title": "Mediators in psychological and psychoeducational interventions for the prevention of depression and anxiety — a systematic review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32045780/",
+          "year": 2020
+        }
+      ],
+      "title": "Cognitive-behavioral formulation",
+      "version": "0.3.4"
     }
   ],
-  "interface_version": "0.14.0",
+  "interface_version": "0.15.0",
   "mechanism_index": [
+    {
+      "claim_ids": [
+        "pmm:claim:attachment-regulation-loop-is-integrative-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which threat increases attachment-system activation, support-seeking behavior samples attachment-figure availability, and the response contributes to distress regulation and later relational expectations.",
+      "evidence_count": 1,
+      "family_id": "attachment-system",
+      "family_title": "Attachment system",
+      "id": "pmm:mechanism:conditional-attachment-regulation",
+      "label": "Conditional attachment regulation",
+      "mechanism_kind": "developmental",
+      "source_count": 1
+    },
     {
       "claim_ids": [
         "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
@@ -13521,6 +15427,26 @@
       "label": "Meaning reinterpretation",
       "mechanism_kind": "cognitive",
       "source_count": 3
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed context-dependent process in which interpretations, emotions, physiology, behavior, consequences, and beliefs reciprocally constrain future responding.",
+      "evidence_count": 1,
+      "family_id": "cbt-formulation",
+      "family_title": "Cognitive-behavioral formulation",
+      "id": "pmm:mechanism:reciprocal-cbt-maintenance-cycle",
+      "label": "Reciprocal cognitive-behavioral maintenance cycle",
+      "mechanism_kind": "integrative",
+      "source_count": 1
     },
     {
       "claim_ids": [
@@ -13876,6 +15802,960 @@
   ],
   "navigation_views": {
     "canonical_language": "en",
+    "foundational_models": {
+      "id": "foundational-models",
+      "models": [
+        {
+          "chain": [
+            {
+              "distress": null,
+              "en": "Threat",
+              "or separation": null,
+              "ru": "Угроза",
+              "дистресс или разлука": null
+            },
+            {
+              "en": "Attachment system becomes relevant",
+              "ru": "Система привязанности становится актуальной"
+            },
+            {
+              "en": "Proximity or support seeking",
+              "ru": "Поиск близости или поддержки"
+            },
+            {
+              "en": "Response and perceived availability",
+              "ru": "Ответ другого и воспринимаемая доступность"
+            },
+            {
+              "en": "Distress changes and expectations may update",
+              "ru": "Дистресс меняется",
+              "а ожидания могут обновляться": null
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "en": "Attachment methods capture relationship-related patterns; caregiver sensitivity and security are associated; continuity is moderate rather than deterministic.",
+            "ru": "Методики привязанности фиксируют связанные с отношениями паттерны; чувствительность опекуна связана с безопасностью; устойчивость умеренная, а не детерминированная."
+          },
+          "id": "model:attachment",
+          "label": {
+            "en": "Attachment system",
+            "ru": "Система привязанности"
+          },
+          "limitation": {
+            "en": "Do not infer childhood causes from an adult quiz or use four styles as fixed diagnoses.",
+            "ru": "Нельзя выводить причины из детства по взрослому онлайн-тесту или использовать четыре стиля как неизменные диагнозы."
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:construct:attachment-behavioral-system",
+              "expected_type": "Construct",
+              "family_id": "attachment-system",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:conditional-attachment-regulation",
+              "expected_type": "Mechanism",
+              "family_id": "attachment-system",
+              "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:measurement:adult-attachment-anxiety-avoidance",
+              "expected_type": "Measurement",
+              "family_id": "attachment-system",
+              "role": "measurement_example"
+            }
+          ],
+          "measurements": {
+            "en": "Strange Situation behavior, Adult Attachment Interview state of mind, and adult anxiety-avoidance self-report are distinct methods.",
+            "ru": "Поведение в Strange Situation, состояние ума по Adult Attachment Interview и самоотчёт тревоги-избегания у взрослых являются разными методами."
+          },
+          "model_kind": "developmental_social_theory",
+          "plain_summary": {
+            "en": "Under threat or separation, a person may seek safety through a significant other; repeated responses can shape expectations without fixing destiny.",
+            "ru": "При угрозе или разлуке человек может искать безопасность через значимого другого; повторяющиеся ответы могут формировать ожидания, но не определяют судьбу."
+          },
+          "practical_focus": {
+            "en": "Identify the concrete trigger, need, support-seeking action, other person's response, and short- versus long-term result; improve clear requests and responsive boundaries rather than assigning a permanent style.",
+            "ru": "Определите конкретный триггер, потребность, способ поиска поддержки, ответ другого и кратко- и долгосрочный результат; улучшайте ясные просьбы и отзывчивые границы вместо присвоения постоянного стиля."
+          },
+          "proposed": {
+            "en": "The complete threat-to-expectation loop and internal working models remain integrative mechanism hypotheses.",
+            "ru": "Полная петля от угрозы до изменения ожиданий и внутренние рабочие модели остаются интегративными гипотезами о механизмах."
+          },
+          "source_ids": [
+            "source:fraley-shaver-attachment-2000",
+            "source:ravitz-attachment-measures-2010"
+          ]
+        },
+        {
+          "chain": [
+            {
+              "en": "Personally significant situation",
+              "ru": "Лично значимая ситуация"
+            },
+            {
+              "en": "Automatic or deliberate interpretation",
+              "ru": "Автоматическая или обдуманная интерпретация"
+            },
+            {
+              "en": "Emotion and bodily response",
+              "ru": "Эмоция и телесная реакция"
+            },
+            {
+              "avoidance": null,
+              "en": "Approach",
+              "or coping behavior": null,
+              "ru": "Приближение",
+              "избегание или совладающее действие": null
+            },
+            {
+              "en": "Consequences feed later expectations",
+              "ru": "Последствия влияют на последующие ожидания"
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "en": "Protocol-defined CBT improves several clinical outcomes including depression within studied comparisons.",
+            "ru": "КПТ по определённым протоколам улучшает ряд клинических исходов, включая депрессию, в изученных сравнениях."
+          },
+          "id": "model:cbt-formulation",
+          "label": {
+            "en": "Cognitive-behavioral formulation",
+            "ru": "Когнитивно-поведенческая формулировка"
+          },
+          "limitation": {
+            "en": "Not every emotion follows a conscious conclusion, and a realistic threat may require protection or problem solving rather than cognitive disputation.",
+            "ru": "Не каждая эмоция следует за осознанным умозаключением, а реальная угроза может требовать защиты или решения проблемы, а не оспаривания мысли."
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:construct:cbt-cognitive-model",
+              "expected_type": "Construct",
+              "family_id": "cbt-formulation",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:reciprocal-cbt-maintenance-cycle",
+              "expected_type": "Mechanism",
+              "family_id": "cbt-formulation",
+              "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:intervention:behavioral-experiment",
+              "expected_type": "Intervention",
+              "family_id": "cbt-formulation",
+              "role": "intervention_example"
+            }
+          ],
+          "measurements": {
+            "en": "Situation records, thought or appraisal reports, emotion ratings, physiology, observed behavior, consequences, and symptom scales.",
+            "ru": "Записи ситуаций, отчёты о мыслях или оценке, рейтинги эмоций, физиология, наблюдаемое поведение, последствия и шкалы симптомов."
+          },
+          "model_kind": "therapeutic_formulation",
+          "plain_summary": {
+            "en": "Meaning, emotion, physiology, behavior, and consequences interact; change can begin at more than one point.",
+            "ru": "Смысл, эмоция, физиология, поведение и последствия взаимодействуют; изменение можно начинать более чем с одной точки."
+          },
+          "practical_focus": {
+            "en": "Test an interpretation, change a behavior, alter the environment, or practice a skill, then measure whether the personally relevant outcome changes.",
+            "ru": "Проверьте интерпретацию, измените поведение или среду либо потренируйте навык, затем измерьте, изменился ли важный для человека результат."
+          },
+          "proposed": {
+            "en": "The dominant maintaining process and direction of influence must be tested; efficacy does not prove one unique cognitive mechanism.",
+            "ru": "Главный поддерживающий процесс и направление влияния нужно проверять; эффективность не доказывает единственный когнитивный механизм."
+          },
+          "source_ids": [
+            "source:beck-cognitive-model",
+            "source:nice-depression-cbt"
+          ]
+        },
+        {
+          "chain": [
+            {
+              "en": "Cue or situation",
+              "ru": "Сигнал или ситуация"
+            },
+            {
+              "en": "Learned expectation and response",
+              "ru": "Выученное ожидание и реакция"
+            },
+            {
+              "en": "Action or omission",
+              "ru": "Действие или бездействие"
+            },
+            {
+              "en": "Outcome occurs or is omitted",
+              "ru": "Исход происходит или не происходит"
+            },
+            {
+              "en": "Future responding changes",
+              "ru": "Будущая реакция меняется"
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "and avoidance effects occur under specified experimental contingencies.": null,
+            "en": "Acquisition",
+            "extinction": null,
+            "reinforcement": null,
+            "ru": "Эффекты научения",
+            "подкрепления и избегания возникают при определённых экспериментальных зависимостях.": null,
+            "угасания": null
+          },
+          "id": "model:conditioning",
+          "label": {
+            "en": "Classical and operant conditioning",
+            "ru": "Классическое и оперантное обусловливание"
+          },
+          "limitation": {
+            "en": "Laboratory contingencies do not automatically explain a person's complex real-world behavior.",
+            "ru": "Лабораторные зависимости не объясняют автоматически сложное поведение человека в жизни."
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:mechanism:extinction-memory-formation",
+              "expected_type": "Mechanism",
+              "family_id": "extinction",
+              "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:negative-reinforcement",
+              "expected_type": "Mechanism",
+              "family_id": "avoidance",
+              "role": "mechanism_example"
+            }
+          ],
+          "measurements": {
+            "and return-of-response tests.": null,
+            "conditioned responses": null,
+            "en": "Trial choices",
+            "expectancy": null,
+            "response rates": null,
+            "ru": "Выборы в пробах",
+            "ожидания": null,
+            "условные реакции и тесты возврата реакции.": null,
+            "частота реакций": null
+          },
+          "model_kind": "learning_framework",
+          "plain_summary": {
+            "and consequences change the future probability of actions.": null,
+            "en": "Cues predict outcomes",
+            "ru": "Сигналы предсказывают исходы",
+            "а последствия меняют будущую вероятность действий.": null
+          },
+          "practical_focus": {
+            "en": "Change cue-outcome or response-outcome contingencies and test behavior",
+            "not just verbal insight.": null,
+            "ru": "Изменяйте зависимости «сигнал–исход» или «действие–исход» и проверяйте поведение",
+            "а не только словесное понимание.": null
+          },
+          "proposed": {
+            "en": "Competing learning and neural mechanisms often explain the same behavioral change.",
+            "ru": "Одно изменение поведения часто объясняется конкурирующими механизмами научения и нейронными механизмами."
+          },
+          "source_ids": []
+        },
+        {
+          "chain": [
+            {
+              "en": "Observe another person or social rule",
+              "ru": "Наблюдение за другим человеком или социальным правилом"
+            },
+            {
+              "en": "Attend and represent the action",
+              "ru": "Внимание и представление действия"
+            },
+            {
+              "en": "Anticipate consequences",
+              "ru": "Ожидание последствий"
+            },
+            {
+              "en": "Attempt or avoid the behavior",
+              "ru": "Попытка или избегание поведения"
+            },
+            {
+              "en": "Social feedback selects future behavior",
+              "ru": "Социальная обратная связь отбирает будущее поведение"
+            }
+          ],
+          "coverage": "planned",
+          "established": {
+            "en": "No dedicated PMM evidence pack yet.",
+            "ru": "Отдельного доказательного пакета PMM пока нет."
+          },
+          "id": "model:social-learning",
+          "label": {
+            "en": "Social learning",
+            "ru": "Социальное научение"
+          },
+          "limitation": {
+            "and learning does not guarantee performance.": null,
+            "en": "Seeing behavior does not prove learning",
+            "ru": "Наблюдение поведения не доказывает научение",
+            "а научение не гарантирует выполнение.": null
+          },
+          "mapped_memberships": [],
+          "measurements": {
+            "and behavior outside training.": null,
+            "delayed reproduction": null,
+            "en": "Model exposure",
+            "expectancy": null,
+            "imitation": null,
+            "ru": "Воздействие модели",
+            "ожидания и поведение вне обучения.": null,
+            "отсроченное воспроизведение": null,
+            "подражание": null
+          },
+          "model_kind": "learning_framework",
+          "plain_summary": {
+            "and social feedback.": null,
+            "consequences": null,
+            "en": "People can acquire behavior and expectations by observing models",
+            "instructions": null,
+            "ru": "Люди могут усваивать поведение и ожидания через наблюдение за моделями",
+            "инструкциями и социальной обратной связью.": null,
+            "последствиями": null
+          },
+          "practical_focus": {
+            "and feedback": null,
+            "en": "Change models",
+            "instructions": null,
+            "opportunities to practice": null,
+            "ru": "Изменяйте модели",
+            "then observe transfer.": null,
+            "возможности практики и обратную связь": null,
+            "затем наблюдайте перенос.": null,
+            "инструкции": null
+          },
+          "proposed": {
+            "and reinforcement may contribute differently.": null,
+            "en": "Attention",
+            "expectancy": null,
+            "identification": null,
+            "imitation": null,
+            "ru": "Внимание",
+            "идентификация": null,
+            "ожидания": null,
+            "подражание и подкрепление могут вносить разный вклад.": null
+          },
+          "source_ids": []
+        },
+        {
+          "chain": [
+            {
+              "en": "Relevant event",
+              "ru": "Значимое событие"
+            },
+            {
+              "en": "Appraisal of meaning",
+              "ru": "Оценка смысла"
+            },
+            {
+              "and action tendency": null,
+              "en": "Experience",
+              "physiology": null,
+              "ru": "Переживание",
+              "физиология и тенденция к действию": null
+            },
+            {
+              "en": "Regulation attempt",
+              "ru": "Попытка регуляции"
+            },
+            {
+              "en": "Channel-specific outcome",
+              "ru": "Результат в отдельных каналах"
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "en": "Reappraisal instructions can change reported emotion in bounded tasks.",
+            "ru": "Инструкции переоценки могут менять сообщаемую эмоцию в ограниченных заданиях."
+          },
+          "id": "model:emotion-appraisal",
+          "label": {
+            "en": "Emotion and appraisal models",
+            "ru": "Модели эмоций и когнитивной оценки"
+          },
+          "limitation": {
+            "and one strategy is not optimal in every context.": null,
+            "en": "Reduced expression is not necessarily reduced feeling",
+            "ru": "Снижение выражения не обязательно означает снижение переживания",
+            "и одна стратегия не оптимальна во всех контекстах.": null
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:construct:situational-meaning-appraisal",
+              "expected_type": "Construct",
+              "family_id": "reappraisal",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:meaning-reinterpretation",
+              "expected_type": "Mechanism",
+              "family_id": "reappraisal",
+              "role": "mechanism_example"
+            }
+          ],
+          "measurements": {
+            "and neural signals.": null,
+            "autonomic channels": null,
+            "en": "Self-report",
+            "expressive behavior": null,
+            "performance": null,
+            "ru": "Самоотчёт",
+            "автономные показатели": null,
+            "выполнение и нейронные сигналы.": null,
+            "выразительное поведение": null
+          },
+          "model_kind": "affective_framework",
+          "plain_summary": {
+            "and action tendencies that need not move together.": null,
+            "bodily change": null,
+            "en": "Emotional episodes involve meaning",
+            "expression": null,
+            "ru": "Эмоциональные эпизоды включают смысл",
+            "subjective experience": null,
+            "выражение и побуждения к действию": null,
+            "которые не обязаны меняться одинаково.": null,
+            "субъективное переживание": null,
+            "телесные изменения": null
+          },
+          "practical_focus": {
+            "en": "Choose a target channel and strategy instead of treating emotion as one score.",
+            "ru": "Выбирайте конкретный канал и стратегию вместо обращения с эмоцией как с одним баллом."
+          },
+          "proposed": {
+            "en": "Reinterpretation and neural mediation remain more specific hypotheses than the observed instruction effect.",
+            "ru": "Переинтерпретация и нейронная медиация остаются более узкими гипотезами",
+            "чем наблюдаемый эффект инструкции.": null
+          },
+          "source_ids": []
+        },
+        {
+          "chain": [
+            {
+              "en": "Need",
+              "goal": null,
+              "or expected outcome": null,
+              "ru": "Потребность",
+              "цель или ожидаемый исход": null
+            },
+            {
+              "en": "Select an action",
+              "ru": "Выбор действия"
+            },
+            {
+              "en": "Outcome differs from expectation",
+              "ru": "Исход отличается от ожидания"
+            },
+            {
+              "en": "Value or policy updates",
+              "ru": "Ценность или правило выбора обновляется"
+            },
+            {
+              "en": "Future choice changes",
+              "ru": "Будущий выбор меняется"
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "en": "Reward and aversive contingencies change behavior in controlled tasks.",
+            "ru": "Вознаграждающие и аверсивные зависимости меняют поведение в контролируемых заданиях."
+          },
+          "id": "model:motivation-reinforcement",
+          "label": {
+            "en": "Motivation and reinforcement",
+            "ru": "Мотивация и подкрепление"
+          },
+          "limitation": {
+            "en": "Reward is person- and context-dependent; external incentives can conflict with values or long-term outcomes.",
+            "ru": "Вознаграждение зависит от человека и контекста; внешние стимулы могут конфликтовать с ценностями или долгосрочными исходами."
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:construct:reward-prediction-error",
+              "expected_type": "Construct",
+              "family_id": "reward-learning",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:temporal-difference-value-update",
+              "expected_type": "Mechanism",
+              "family_id": "reward-learning",
+              "role": "mechanism_example"
+            }
+          ],
+          "measurements": {
+            "and neural activity.": null,
+            "en": "Choice",
+            "experienced outcome": null,
+            "model parameters": null,
+            "response rate": null,
+            "ru": "Выбор",
+            "параметры модели и нейронная активность.": null,
+            "пережитый исход": null,
+            "частота реакции": null
+          },
+          "model_kind": "motivational_framework",
+          "plain_summary": {
+            "and consequences shape which actions are selected and repeated.": null,
+            "current needs": null,
+            "en": "Expected value",
+            "prediction error": null,
+            "ru": "Ожидаемая ценность",
+            "ошибка прогноза": null,
+            "текущие потребности и последствия влияют на выбор и повторение действий.": null
+          },
+          "practical_focus": {
+            "en": "Make valued outcomes and contingencies observable; change one consequence at a time and monitor behavior.",
+            "ru": "Сделайте ценные исходы и зависимости наблюдаемыми; меняйте по одному последствию и отслеживайте поведение."
+          },
+          "proposed": {
+            "en": "Computational prediction errors and dopamine signals are not interchangeable explanations.",
+            "ru": "Вычислительные ошибки прогноза и дофаминовые сигналы не являются взаимозаменяемыми объяснениями."
+          },
+          "source_ids": []
+        },
+        {
+          "chain": [
+            {
+              "en": "Goal or standard",
+              "ru": "Цель или стандарт"
+            },
+            {
+              "en": "Monitor current state",
+              "ru": "Отслеживание текущего состояния"
+            },
+            {
+              "en": "Select or inhibit a response",
+              "ru": "Выбор или торможение реакции"
+            },
+            {
+              "en": "Observe progress and cost",
+              "ru": "Наблюдение прогресса и цены усилия"
+            },
+            {
+              "en": "Adjust strategy or goal",
+              "ru": "Коррекция стратегии или цели"
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "but task convergence is limited.": null,
+            "en": "Goal-directed and habitual control can dissociate under specific tasks",
+            "ru": "Целенаправленный и привычный контроль могут расходиться в отдельных заданиях",
+            "но сходимость заданий ограничена.": null
+          },
+          "id": "model:self-regulation",
+          "label": {
+            "en": "Self-regulation and behavioral control",
+            "ru": "Саморегуляция и контроль поведения"
+          },
+          "limitation": {
+            "en": "Poor performance may reflect knowledge",
+            "environment": null,
+            "fatigue": null,
+            "motivation": null,
+            "or measurement rather than weak willpower.": null,
+            "ru": "Низкий результат может отражать знания",
+            "а не слабую волю.": null,
+            "мотивацию": null,
+            "среду или измерение": null,
+            "усталость": null
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:mechanism:goal-directed-action-control",
+              "expected_type": "Mechanism",
+              "family_id": "habit",
+              "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:habitual-action-control",
+              "expected_type": "Mechanism",
+              "family_id": "habit",
+              "role": "mechanism_example"
+            }
+          ],
+          "measurements": {
+            "and ecological behavior.": null,
+            "en": "Choices after devaluation",
+            "goal progress": null,
+            "latency": null,
+            "persistence": null,
+            "ru": "Выбор после обесценивания",
+            "task errors": null,
+            "время ответа": null,
+            "настойчивость": null,
+            "ошибки": null,
+            "прогресс цели и поведение в жизни.": null
+          },
+          "model_kind": "control_framework",
+          "plain_summary": {
+            "and feedback compete to control action.": null,
+            "attention": null,
+            "current state": null,
+            "en": "Goals",
+            "learned policies": null,
+            "ru": "Цели",
+            "внимание": null,
+            "выученные правила и обратная связь конкурируют за контроль действия.": null,
+            "текущее состояние": null
+          },
+          "practical_focus": {
+            "and test whether the selected strategy changes behavior.": null,
+            "create feedback": null,
+            "en": "Clarify the target",
+            "reduce friction": null,
+            "ru": "Уточните цель",
+            "меняет ли выбранная стратегия поведение.": null,
+            "создайте обратную связь и проверьте": null,
+            "уменьшите трение": null
+          },
+          "proposed": {
+            "en": "A single executive-control capacity rarely explains all failures of self-regulation.",
+            "ru": "Единая способность исполнительного контроля редко объясняет все сбои саморегуляции."
+          },
+          "source_ids": []
+        },
+        {
+          "chain": [
+            {
+              "en": "Temperamental and biological variation",
+              "ru": "Темпераментные и биологические различия"
+            },
+            {
+              "en": "Relationships and environments",
+              "ru": "Отношения и среда"
+            },
+            {
+              "en": "Repeated choices and feedback",
+              "ru": "Повторяющиеся выборы и обратная связь"
+            },
+            {
+              "and roles": null,
+              "en": "Habits",
+              "expectations": null,
+              "ru": "Привычки",
+              "ожидания и роли": null
+            },
+            {
+              "en": "Relative continuity with possible change",
+              "ru": "Относительная устойчивость с возможностью изменения"
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "en": "Trait profiles show relative stability and predictive associations; attachment continuity is moderate.",
+            "ru": "Профили черт относительно устойчивы и имеют прогностические связи; устойчивость привязанности умеренная."
+          },
+          "id": "model:personality-development",
+          "label": {
+            "en": "Personality development",
+            "ru": "Развитие личности"
+          },
+          "limitation": {
+            "and retrospective stories do not establish developmental causes.": null,
+            "en": "Stability is not immutability",
+            "ru": "Устойчивость не равна неизменности",
+            "а ретроспективные истории не устанавливают причины развития.": null
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:construct:big-five-trait-taxonomy",
+              "expected_type": "Construct",
+              "family_id": "big-five",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:construct:relational-availability-expectations",
+              "expected_type": "Construct",
+              "family_id": "attachment-system",
+              "role": "construct_example"
+            }
+          ],
+          "measurements": {
+            "and relationship-specific measures.": null,
+            "behavior": null,
+            "en": "Longitudinal trait scales",
+            "informant reports": null,
+            "life events": null,
+            "roles": null,
+            "ru": "Продольные шкалы черт",
+            "жизненные события": null,
+            "отчёты других людей": null,
+            "поведение": null,
+            "роли и измерения конкретных отношений.": null
+          },
+          "model_kind": "developmental_framework",
+          "plain_summary": {
+            "and repeated person-environment transactions.": null,
+            "en": "Relatively stable patterns emerge through biology",
+            "learning": null,
+            "relationships": null,
+            "roles": null,
+            "ru": "Относительно устойчивые паттерны формируются через биологию",
+            "научение": null,
+            "отношения": null,
+            "роли и повторяющиеся взаимодействия человека со средой.": null
+          },
+          "practical_focus": {
+            "and repeated behaviors rather than trying to replace a personality label.": null,
+            "en": "Target current environments",
+            "relationships": null,
+            "roles": null,
+            "ru": "Воздействуйте на текущую среду",
+            "отношения и повторяющееся поведение вместо попытки заменить ярлык личности.": null,
+            "роли": null
+          },
+          "proposed": {
+            "en": "The causal pathways producing individual developmental change remain incompletely identified.",
+            "ru": "Причинные пути индивидуальных изменений в развитии установлены не полностью."
+          },
+          "source_ids": []
+        },
+        {
+          "chain": [
+            {
+              "en": "Repeated observations or reports",
+              "ru": "Повторяющиеся наблюдения или отчёты"
+            },
+            {
+              "en": "Estimate dimensions",
+              "ru": "Оценка измерений"
+            },
+            {
+              "en": "Compare contexts and informants",
+              "ru": "Сравнение контекстов и информантов"
+            },
+            {
+              "en": "Test associations with outcomes",
+              "ru": "Проверка связей с исходами"
+            },
+            {
+              "en": "Avoid turning dimensions into fixed types",
+              "ru": "Отказ от превращения измерений в неизменные типы"
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "en": "Big Five measurement structure is supported; a dedicated modern temperament pack is still missing.",
+            "ru": "Измерительная структура Большой пятёрки поддержана; отдельного современного пакета темперамента пока нет."
+          },
+          "id": "model:temperament-traits",
+          "label": {
+            "en": "Temperament and traits",
+            "ru": "Темперамент и черты"
+          },
+          "limitation": {
+            "age": null,
+            "and context.": null,
+            "en": "Scores depend on instrument",
+            "informant": null,
+            "language": null,
+            "ru": "Баллы зависят от методики",
+            "возраста": null,
+            "информанта и контекста.": null,
+            "языка": null
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:measurement:bfi2-domain-facet-scores",
+              "expected_type": "Measurement",
+              "family_id": "big-five",
+              "role": "measurement_example"
+            }
+          ],
+          "measurements": {
+            "and longitudinal stability.": null,
+            "behavioral observations": null,
+            "en": "Multi-informant trait scales",
+            "laboratory reactivity": null,
+            "ru": "Шкалы черт от нескольких информантов",
+            "лабораторная реактивность и продольная устойчивость.": null,
+            "наблюдение поведения": null
+          },
+          "model_kind": "individual_differences_framework",
+          "plain_summary": {
+            "and behavior without identifying one cause.": null,
+            "en": "Dimensional descriptions summarize recurring differences in reactivity",
+            "regulation": null,
+            "ru": "Размерные описания обобщают повторяющиеся различия в реактивности",
+            "не выявляя единственную причину.": null,
+            "регуляции и поведении": null
+          },
+          "practical_focus": {
+            "en": "Use profiles to ask better questions and select observable targets",
+            "not to define identity or prescribe treatment automatically.": null,
+            "ru": "Используйте профили для более точных вопросов и выбора наблюдаемых целей",
+            "а не для определения личности или автоматического назначения помощи.": null
+          },
+          "proposed": {
+            "en": "Biological and developmental mechanisms behind broad dimensions require separate evidence.",
+            "ru": "Биологические и развивающие механизмы широких измерений требуют отдельных доказательств."
+          },
+          "source_ids": [
+            "source:big-five-review",
+            "source:rothbart-temperament"
+          ]
+        },
+        {
+          "chain": [
+            {
+              "en": "Demand",
+              "or loss": null,
+              "ru": "Требование",
+              "threat": null,
+              "угроза или потеря": null
+            },
+            {
+              "en": "Appraisal of resources and meaning",
+              "ru": "Оценка ресурсов и смысла"
+            },
+            {
+              "en": "Physiological and emotional response",
+              "ru": "Физиологическая и эмоциональная реакция"
+            },
+            {
+              "avoidance": null,
+              "en": "Coping",
+              "or support seeking": null,
+              "ru": "Совладание",
+              "избегание или поиск поддержки": null
+            },
+            {
+              "en": "Recovery",
+              "or accumulated cost": null,
+              "persistence": null,
+              "ru": "Восстановление",
+              "сохранение реакции или накопленная цена": null
+            }
+          ],
+          "coverage": "partial",
+          "established": {
+            "and avoidance have bounded evidence packs.": null,
+            "en": "Stress physiology",
+            "reappraisal": null,
+            "ru": "Для физиологии стресса",
+            "social buffering": null,
+            "переоценки и избегания существуют ограниченные доказательные пакеты.": null,
+            "социальной поддержки": null
+          },
+          "id": "model:stress-coping-defense",
+          "label": {
+            "and psychological defense": null,
+            "coping": null,
+            "en": "Stress",
+            "ru": "Стресс",
+            "совладание и психологическая защита": null
+          },
+          "limitation": {
+            "en": "A strategy can be adaptive in one context and costly in another; symptom reduction is not the only relevant outcome.",
+            "ru": "Одна стратегия может быть адаптивной в одном контексте и затратной в другом; снижение симптома не является единственным важным исходом."
+          },
+          "mapped_memberships": [
+            {
+              "canonical_id": "pmm:mechanism:glucocorticoid-negative-feedback",
+              "expected_type": "Mechanism",
+              "family_id": "hpa-feedback",
+              "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:social-co-regulation",
+              "expected_type": "Mechanism",
+              "family_id": "social-buffering",
+              "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:intervention:reappraisal-instruction",
+              "expected_type": "Intervention",
+              "family_id": "reappraisal",
+              "role": "intervention_example"
+            }
+          ],
+          "measurements": {
+            "and functioning.": null,
+            "appraisal": null,
+            "autonomic activity": null,
+            "behavior": null,
+            "cortisol": null,
+            "en": "Stressor exposure",
+            "recovery": null,
+            "ru": "Воздействие стрессора",
+            "symptoms": null,
+            "автономная активность": null,
+            "восстановление и функционирование.": null,
+            "кортизол": null,
+            "оценка": null,
+            "поведение": null,
+            "симптомы": null
+          },
+          "model_kind": "adaptation_framework",
+          "plain_summary": {
+            "en": "Demands are appraised relative to resources",
+            "ru": "Требования оцениваются относительно ресурсов и запускают физиологическую и поведенческую регуляцию",
+            "triggering physiological and behavioral regulation that may help now yet carry later costs.": null,
+            "которая может помочь сейчас": null,
+            "но иметь поздние издержки.": null
+          },
+          "practical_focus": {
+            "and harmful avoidance; match the intervention to the function.": null,
+            "emotional regulation": null,
+            "en": "Distinguish controllable problems",
+            "ru": "Разделяйте решаемую проблему",
+            "support needs": null,
+            "потребность в поддержке и вредное избегание; подбирайте воздействие по функции.": null,
+            "регуляцию эмоции": null
+          },
+          "proposed": {
+            "en": "Broad defense labels and one universal coping hierarchy are not established mechanisms.",
+            "ru": "Широкие ярлыки защит и единая универсальная иерархия совладания не являются установленными механизмами."
+          },
+          "source_ids": []
+        }
+      ],
+      "process_based_note": {
+        "en": "Following the orientation of Process-Based Therapy, PMM asks which measurable biopsychosocial process matters for this person, goal, and context; what might change it; and whether the expected outcome actually follows. A named theory is a source of hypotheses, not the final unit of treatment.",
+        "ru": "В духе процесс-ориентированной терапии PMM спрашивает, какой измеримый биопсихосоциальный процесс важен для этого человека, цели и контекста; чем на него можно воздействовать; и возникает ли ожидаемый результат. Названная теория служит источником гипотез, а не окончательной единицей терапии."
+      },
+      "source_ids": [
+        "source:hayes-hofmann-ciarrochi-2020"
+      ],
+      "subtitle": {
+        "en": "Human-readable entry points into recurring psychological processes, connected to evidence rather than treated as complete schools of truth.",
+        "ru": "Понятные точки входа в повторяющиеся психологические процессы, связанные с доказательствами, а не представленные как законченные истинные школы."
+      },
+      "title": {
+        "en": "Foundational psychological models",
+        "ru": "Базовые психологические модели"
+      },
+      "workflow": [
+        {
+          "and current context": null,
+          "en": "Person",
+          "goal": null,
+          "ru": "Человек",
+          "цель и текущий контекст": null
+        },
+        {
+          "en": "Functional network of measurable processes",
+          "ru": "Функциональная сеть измеримых процессов"
+        },
+        {
+          "en": "Select one modifiable process",
+          "ru": "Выбор одного изменяемого процесса"
+        },
+        {
+          "en": "Apply a bounded intervention",
+          "ru": "Ограниченное воздействие"
+        },
+        {
+          "en": "Measure outcome and revise the network",
+          "ru": "Измерение результата и пересмотр сети"
+        }
+      ]
+    },
     "general_psychology": {
       "id": "general-psychology",
       "methodological_note": {
@@ -14492,6 +17372,24 @@
               "expected_type": "Mechanism",
               "family_id": "interoception",
               "role": "appraisal_mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:state:cbt-emotional-response",
+              "expected_type": "State",
+              "family_id": "cbt-formulation",
+              "role": "state_example"
+            },
+            {
+              "canonical_id": "pmm:construct:situational-interpretation",
+              "expected_type": "Construct",
+              "family_id": "cbt-formulation",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:reciprocal-cbt-maintenance-cycle",
+              "expected_type": "Mechanism",
+              "family_id": "cbt-formulation",
+              "role": "mechanism_example"
             }
           ],
           "ontological_note": {
@@ -14586,6 +17484,18 @@
               "expected_type": "Mechanism",
               "family_id": "hpa-feedback",
               "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:behavior:cbt-coping-response",
+              "expected_type": "Behavior",
+              "family_id": "cbt-formulation",
+              "role": "behavior_example"
+            },
+            {
+              "canonical_id": "pmm:intervention:behavioral-experiment",
+              "expected_type": "Intervention",
+              "family_id": "cbt-formulation",
+              "role": "intervention_example"
             }
           ],
           "ontological_note": {
@@ -14761,15 +17671,34 @@
               "expected_type": "Mechanism",
               "family_id": "social-buffering",
               "role": "mechanism_example"
+            },
+            {
+              "canonical_id": "pmm:construct:attachment-behavioral-system",
+              "expected_type": "Construct",
+              "family_id": "attachment-system",
+              "role": "construct_example"
+            },
+            {
+              "canonical_id": "pmm:behavior:proximity-support-seeking",
+              "expected_type": "Behavior",
+              "family_id": "attachment-system",
+              "role": "behavior_example"
+            },
+            {
+              "canonical_id": "pmm:mechanism:conditional-attachment-regulation",
+              "expected_type": "Mechanism",
+              "family_id": "attachment-system",
+              "role": "mechanism_example"
             }
           ],
           "ontological_note": {
-            "en": "The current evidence pack concerns caregiver buffering of child cortisol responses; it does not represent all attachment, support, or group processes.",
-            "ru": "Текущий пакет касается влияния поддержки взрослого на кортизоловую реакцию ребёнка; он не охватывает всю привязанность, поддержку или групповые процессы."
+            "en": "Current records cover a caregiver-buffering experiment and a broader but still provisional attachment-system model; they do not represent all support, intimacy, or group processes.",
+            "ru": "Текущие записи охватывают эксперимент с поддержкой взрослого и более широкую, но пока предварительную модель системы привязанности; они не представляют все процессы поддержки, близости или группового взаимодействия."
           },
           "parent_id": "gp:social-processes",
           "source_ids": [
-            "source:rdoc-definitions"
+            "source:rdoc-definitions",
+            "source:fraley-shaver-attachment-2000"
           ]
         },
         {
@@ -14954,15 +17883,28 @@
               "expected_type": "Measurement",
               "family_id": "declarative-memory",
               "role": "measurement_example"
+            },
+            {
+              "canonical_id": "pmm:measurement:strange-situation-classification",
+              "expected_type": "Measurement",
+              "family_id": "attachment-system",
+              "role": "measurement_example"
+            },
+            {
+              "canonical_id": "pmm:construct:relational-availability-expectations",
+              "expected_type": "Construct",
+              "family_id": "attachment-system",
+              "role": "construct_example"
             }
           ],
           "ontological_note": {
-            "en": "Current records provide only two narrow developmental contexts: early care history in social buffering and early hippocampal pathology in developmental amnesia.",
-            "ru": "Сейчас представлены только два узких контекста развития: ранняя история ухода при социальной поддержке и ранняя патология гиппокампа при амнезии развития."
+            "en": "Current records provide narrow developmental examples in social buffering, attachment continuity, and developmental amnesia; none is a complete theory of development.",
+            "ru": "Сейчас представлены узкие примеры развития из социальной поддержки, устойчивости привязанности и амнезии развития; ни один из них не является полной теорией развития."
           },
           "parent_id": "gp:development",
           "source_ids": [
-            "source:vargha-khadem-1997"
+            "source:vargha-khadem-1997",
+            "source:fraley-shaver-attachment-2000"
           ]
         },
         {
@@ -15652,6 +18594,36 @@
         "organization": "Psychological Bulletin",
         "title": "A meta-analysis of the five-factor model of personality and academic performance",
         "url": "https://pubmed.ncbi.nlm.nih.gov/19254083/"
+      },
+      {
+        "id": "source:hayes-hofmann-ciarrochi-2020",
+        "organization": "Clinical Psychology Review",
+        "title": "A process-based approach to psychological diagnosis and treatment",
+        "url": "https://doi.org/10.1016/j.cpr.2020.101908"
+      },
+      {
+        "id": "source:fraley-shaver-attachment-2000",
+        "organization": "Review of General Psychology",
+        "title": "Adult romantic attachment — theoretical developments, controversies, and questions",
+        "url": "https://doi.org/10.1037/1089-2680.4.2.132"
+      },
+      {
+        "id": "source:ravitz-attachment-measures-2010",
+        "organization": "Journal of Psychosomatic Research",
+        "title": "Adult attachment measures — a 25-year review",
+        "url": "https://doi.org/10.1016/j.jpsychores.2009.08.006"
+      },
+      {
+        "id": "source:beck-cognitive-model",
+        "organization": "Beck Institute for Cognitive Behavior Therapy",
+        "title": "Understanding CBT and the cognitive model",
+        "url": "https://beckinstitute.org/about/understanding-cbt/"
+      },
+      {
+        "id": "source:nice-depression-cbt",
+        "organization": "National Institute for Health and Care Excellence",
+        "title": "Depression in adults — treatment and management",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations"
       }
     ],
     "status": "pilot",

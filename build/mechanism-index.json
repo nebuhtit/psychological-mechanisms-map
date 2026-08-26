@@ -4,6 +4,26 @@
   "mechanisms": [
     {
       "claim_ids": [
+        "pmm:claim:attachment-regulation-loop-is-integrative-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed process in which threat increases attachment-system activation, support-seeking behavior samples attachment-figure availability, and the response contributes to distress regulation and later relational expectations.",
+      "evidence_count": 1,
+      "family_id": "attachment-system",
+      "family_title": "Attachment system",
+      "id": "pmm:mechanism:conditional-attachment-regulation",
+      "label": "Conditional attachment regulation",
+      "mechanism_kind": "developmental",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
         "pmm:claim:meaning-reinterpretation-mechanism-hypothesis"
       ],
       "claim_status_counts": {
@@ -21,6 +41,26 @@
       "label": "Meaning reinterpretation",
       "mechanism_kind": "cognitive",
       "source_count": 3
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed context-dependent process in which interpretations, emotions, physiology, behavior, consequences, and beliefs reciprocally constrain future responding.",
+      "evidence_count": 1,
+      "family_id": "cbt-formulation",
+      "family_title": "Cognitive-behavioral formulation",
+      "id": "pmm:mechanism:reciprocal-cbt-maintenance-cycle",
+      "label": "Reciprocal cognitive-behavioral maintenance cycle",
+      "mechanism_kind": "integrative",
+      "source_count": 1
     },
     {
       "claim_ids": [

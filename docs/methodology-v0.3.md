@@ -4,6 +4,19 @@
 
 PMM models scientific assertions, not a literal complete map of the psyche. A label is assigned to the narrowest defensible record type, and empirical status belongs to a Claim rather than to the object being discussed.
 
+### Process-based architecture
+
+Process-Based Therapy provides the organizing workflow, not another school to rank beside CBT or attachment theory:
+
+1. Declare the person or population, personally relevant goal, current context, and measured baseline.
+2. Build a functional network of candidate biopsychosocial processes, including competing explanations and feedback loops.
+3. Select a process that is both plausibly modifiable and measurable.
+4. Apply a bounded, ethically appropriate intervention without assuming its intended mechanism worked.
+5. Measure the prespecified outcome and relevant process repeatedly.
+6. Retain, revise, or reject the local network according to the observed result.
+
+Named theories and treatment models are hypothesis libraries and navigation facets. PMM decomposes them into typed canonical records; it does not assign evidence to a school as a whole. A treatment package can be effective while its proposed mechanism remains uncertain, and a population-level association need not describe the functional network of one person.
+
 | Record | Role | Common category error |
 |---|---|---|
 | Construct | Theoretical or operational concept organizing observations | Treating it as an event or causal process |

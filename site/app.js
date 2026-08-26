@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.14.0";
-const RU_URL = "data/i18n-ru.json?v=0.14.0";
+const DATA_URL = "data/pmm-data.json?v=0.15.0";
+const RU_URL = "data/i18n-ru.json?v=0.15.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -7,11 +7,13 @@ const UI_RU = {
   "testable mechanisms": "проверяемых механизмов",
   "Source data ↗": "Исходные данные ↗",
   "Choose a way to explore PMM": "Выберите способ изучения PMM",
-  "01 · Familiar navigation": "01 · Знакомая навигация",
+  "01 · Practical foundations": "01 · Практическая база",
+  "Foundational Models": "Базовые модели",
+  "02 · Familiar navigation": "02 · Знакомая навигация",
   "General Psychology": "Общая психология",
-  "02 · Scientific core": "02 · Научное ядро",
+  "03 · Scientific core": "03 · Научное ядро",
   "Mechanisms & Evidence": "Механизмы и доказательства",
-  "03 · Terminology alignment": "03 · Сопоставление терминов",
+  "04 · Terminology alignment": "04 · Сопоставление терминов",
   "Scientific Systems": "Научные системы",
   "All": "Все",
   "Causal": "Причинные",
@@ -147,7 +149,7 @@ const state = {
   data: null,
   translations: {},
   lang: localStorage.getItem("pmm-language") || "en",
-  perspective: localStorage.getItem("pmm-perspective") || "general",
+  perspective: localStorage.getItem("pmm-perspective") || "models",
   family: null,
   filter: "all",
   selectedId: null,
@@ -951,6 +953,22 @@ function systemKindLabel(kind) {
   return ui(en, ru);
 }
 
+function modelKindLabel(kind) {
+  const labels = {
+    developmental_social_theory: ["Developmental-social theory", "Теория социального развития"],
+    therapeutic_formulation: ["Therapeutic formulation", "Терапевтическая формулировка"],
+    learning_framework: ["Learning framework", "Модель научения"],
+    affective_framework: ["Emotion framework", "Модель эмоций"],
+    motivational_framework: ["Motivational framework", "Мотивационная модель"],
+    control_framework: ["Control framework", "Модель контроля"],
+    developmental_framework: ["Developmental framework", "Модель развития"],
+    individual_differences_framework: ["Individual-differences framework", "Модель индивидуальных различий"],
+    adaptation_framework: ["Adaptation framework", "Модель адаптации"],
+  };
+  const [en, ru] = labels[kind] || [kind.replaceAll("_", " "), kind.replaceAll("_", " ")];
+  return ui(en, ru);
+}
+
 function renderViewSources(sourceIds = []) {
   return sourceIds.map(sourceId => navigationSource(sourceId)).filter(Boolean).map(source => `
     <a class="view-source" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">
@@ -985,6 +1003,58 @@ function bindCanonicalLinks(container) {
   container.querySelectorAll("[data-canonical-id]").forEach(button => {
     button.addEventListener("click", () => openCanonicalRecord(button.dataset.familyId, button.dataset.canonicalId));
   });
+}
+
+function renderFoundationalModels() {
+  const view = state.data.navigation_views.foundational_models;
+  const container = document.getElementById("foundational-models-view");
+  container.innerHTML = `
+    <header class="view-hero models-hero">
+      <div>
+        <p class="view-kicker">${ui("Process-based entry · not a school ranking", "Процессный вход · не рейтинг школ")}</p>
+        <h2>${escapeHtml(localText(view.title))}</h2>
+        <p class="view-subtitle">${escapeHtml(localText(view.subtitle))}</p>
+      </div>
+      <aside class="method-note pbt-note">
+        <strong>${ui("PBT architecture rule", "Архитектурное правило PBT")}</strong>
+        <p>${escapeHtml(localText(view.process_based_note))}</p>
+        <div class="pbt-sources">${renderViewSources(view.source_ids)}</div>
+      </aside>
+    </header>
+    <ol class="pbt-workflow" aria-label="${ui("Process-based workflow", "Процессный рабочий цикл")}">
+      ${view.workflow.map((step, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(localText(step))}</strong></li>`).join("")}
+    </ol>
+    <div class="model-grid">
+      ${view.models.map((model, index) => `
+        <article class="model-card coverage-${model.coverage}">
+          <header>
+            <span class="model-index">${String(index + 1).padStart(2, "0")}</span>
+            <div><p>${escapeHtml(modelKindLabel(model.model_kind))}</p><h3>${escapeHtml(localText(model.label))}</h3></div>
+            <span class="coverage-chip">${coverageLabel(model.coverage)}</span>
+          </header>
+          <p class="model-summary">${escapeHtml(localText(model.plain_summary))}</p>
+          <section class="human-chain">
+            <strong>${ui("Plain process chain", "Понятная цепочка процесса")}</strong>
+            <ol>${model.chain.map((step, stepIndex) => `<li><span>${stepIndex + 1}</span><p>${escapeHtml(localText(step))}</p></li>`).join("")}</ol>
+          </section>
+          <section class="leverage-box"><strong>${ui("Where change can be tested", "Где можно проверить изменение")}</strong><p>${escapeHtml(localText(model.practical_focus))}</p></section>
+          <div class="model-evidence-grid">
+            <section><strong>${ui("Empirically established", "Эмпирически установлено")}</strong><p>${escapeHtml(localText(model.established))}</p></section>
+            <section class="proposed"><strong>${ui("Proposed or unresolved", "Предложено или не решено")}</strong><p>${escapeHtml(localText(model.proposed))}</p></section>
+            <section><strong>${ui("How it is measured", "Как это измеряют")}</strong><p>${escapeHtml(localText(model.measurements))}</p></section>
+            <section class="limit"><strong>${ui("Do not overread", "Что нельзя заключать")}</strong><p>${escapeHtml(localText(model.limitation))}</p></section>
+          </div>
+          ${renderMemberships(model.mapped_memberships)}
+          <details class="view-sources"><summary>${ui("Sources for this model", "Источники модели")}</summary>${renderViewSources(model.source_ids)}</details>
+        </article>
+      `).join("")}
+    </div>
+    <p class="scope-footer">${ui(
+      "Model names make the map readable. Canonical records, scoped claims, and repeated outcome checks carry the scientific weight.",
+      "Названия моделей делают карту понятной. Научную нагрузку несут канонические записи, ограниченные утверждения и повторные проверки результатов."
+    )}</p>
+  `;
+  bindCanonicalLinks(container);
 }
 
 function renderGeneralPsychology() {
@@ -1102,8 +1172,8 @@ function renderScientificSystems() {
 }
 
 function setPerspective(perspective, persist = true) {
-  const allowed = new Set(["general", "mechanisms", "systems"]);
-  state.perspective = allowed.has(perspective) ? perspective : "general";
+  const allowed = new Set(["models", "general", "mechanisms", "systems"]);
+  state.perspective = allowed.has(perspective) ? perspective : "models";
   if (persist) localStorage.setItem("pmm-perspective", state.perspective);
   document.querySelectorAll("[data-perspective-panel]").forEach(panel => {
     panel.hidden = panel.dataset.perspectivePanel !== state.perspective;
@@ -1139,6 +1209,7 @@ function setLanguage(language) {
   renderFamilies();
   renderFamilyDescription();
   renderMechanismCatalog();
+  renderFoundationalModels();
   renderGeneralPsychology();
   renderScientificSystems();
   renderMap();
@@ -1158,6 +1229,7 @@ async function init() {
     renderFamilies();
     renderFamilyDescription();
     renderMechanismCatalog();
+    renderFoundationalModels();
     renderGeneralPsychology();
     renderScientificSystems();
     renderMap();

@@ -100,3 +100,15 @@ datasets:
       id: big-five
       title: Big Five personality traits
       description: Trait taxonomy, five domains, questionnaire context, item responses, scale scores, factor parameters, academic performance, and noncausal associations kept distinct.
+  - source: data/evidence-pack-attachment-system-v0.3.yaml
+    output: build/evidence-pack-attachment-system-v0.3.json
+    family:
+      id: attachment-system
+      title: Attachment system
+      description: Threat context, attachment activation, support seeking, relational response, distress, expectations, child observation, adult interview, and self-report dimensions kept distinct.
+  - source: data/evidence-pack-cbt-formulation-v0.3.yaml
+    output: build/evidence-pack-cbt-formulation-v0.3.json
+    family:
+      id: cbt-formulation
+      title: Cognitive-behavioral formulation
+      description: Situation, interpretation, emotion, physiology, behavior, consequences, beliefs, interventions, treatment effects, and proposed maintenance mechanisms kept distinct.

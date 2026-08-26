@@ -1,0 +1,373 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:attachment-system-evidence-v0-3
+metadata:
+  title: Evidence pack for the attachment system
+  description: Separates attachment theory, threat context, activation, proximity seeking, caregiver response, distress, learned expectations, child observation, adult interview, and adult self-report dimensions.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T16:30:00+03:00'
+    modified_at: '2026-08-26T16:30:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:construct:attachment-behavioral-system
+    type: Construct
+    label: Attachment behavioral system
+    definition: Theoretical system organizing proximity seeking, safe-haven use, and secure-base behavior toward a particular attachment figure, especially under threat, distress, or separation.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: social
+    boundary_notes:
+      - Attachment is relationship-specific and context-sensitive; it is not a fixed global personality type.
+      - A theoretical system is not directly observed by one behavior or questionnaire score.
+    provenance: *provenance
+  - id: pmm:context:attachment-relevant-threat-separation
+    type: Context
+    label: Attachment-relevant threat or separation
+    definition: Situation involving danger, distress, unfamiliarity, separation, or perceived unavailability of a significant attachment figure.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: social
+    dimensions: {threat: present or anticipated, attachment_figure: available uncertain or unavailable, relationship: child-caregiver or close adult relationship}
+    scope: Episodes in which attachment-related regulation may become relevant.
+    provenance: *provenance
+  - id: pmm:state:attachment-system-activation
+    type: State
+    label: Attachment-system activation
+    definition: Time-bounded motivational and affective condition in which safety and attachment-figure availability become salient.
+    ontological_level: type
+    curation_status: provisional
+    state_kind: motivational
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes: [Activation cannot be inferred from distress alone because many nonattachment processes can produce distress.]
+    provenance: *provenance
+  - id: pmm:behavior:proximity-support-seeking
+    type: Behavior
+    label: Proximity or support seeking
+    definition: Observable approach, contact, signaling, reassurance seeking, or communication directed toward obtaining safety or support from another person.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: response_pattern
+    observability: direct
+    actor_scope: person
+    response_topography: Approaching, calling, signaling, maintaining contact, requesting reassurance, or accepting comfort.
+    function_note: Similar behavior can serve affiliation, habit, information seeking, or attachment regulation; function requires context.
+    provenance: *provenance
+  - id: pmm:state:perceived-attachment-figure-availability
+    type: State
+    label: Perceived attachment-figure availability
+    definition: Episode-level perception that a significant other is accessible, responsive, and likely to provide effective support.
+    ontological_level: type
+    curation_status: provisional
+    state_kind: social
+    bearer_scope: person
+    temporal_scale: episode
+    provenance: *provenance
+  - id: pmm:outcome:attachment-related-distress
+    type: Outcome
+    label: Attachment-related distress intensity
+    definition: Intensity or persistence of distress during an attachment-relevant threat, separation, or reunion episode.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: intensity
+    valence: aversive
+    boundary_notes: [Reduced observable distress is not automatically security; suppression or deactivation can also reduce expression.]
+    provenance: *provenance
+  - id: pmm:construct:relational-availability-expectations
+    type: Construct
+    label: Expectations of relational availability
+    aliases: [Internal working models]
+    definition: Proposed learned expectations about whether close others will be available and whether seeking support is safe or effective.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - Internal working models are theoretical constructs, not memories that can be read directly.
+      - Earlier relationships may influence later expectations without determining them irreversibly.
+    provenance: *provenance
+  - id: pmm:mechanism:conditional-attachment-regulation
+    type: Mechanism
+    label: Conditional attachment regulation
+    definition: Proposed process in which threat increases attachment-system activation, support-seeking behavior samples attachment-figure availability, and the response contributes to distress regulation and later relational expectations.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: developmental
+    role_bindings:
+      - {role: activation condition, object_id: pmm:context:attachment-relevant-threat-separation}
+      - {role: regulatory behavior, object_id: pmm:behavior:proximity-support-seeking}
+      - {role: social feedback, object_id: pmm:state:perceived-attachment-figure-availability}
+      - {role: regulated outcome, object_id: pmm:outcome:attachment-related-distress}
+      - {role: learned expectation, object_id: pmm:construct:relational-availability-expectations}
+    realization_conditions:
+      - The situation is represented as attachment-relevant.
+      - A particular other functions as an attachment figure in that relationship.
+      - Support seeking and the other person's response can be observed or validly operationalized.
+    boundary_notes: [The complete chain is an integrative mechanism hypothesis; individual arrows have different evidence and should not be treated as one proven causal sequence.]
+    provenance: *provenance
+  - id: pmm:context:strange-situation-procedure
+    type: Context
+    label: Strange Situation Procedure
+    definition: Standardized child-caregiver observation involving unfamiliarity, separations, and reunions used to assess organized attachment behavior.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: developmental
+    dimensions: {participant: young child and caregiver, episodes: exploration separation reunion, output: protocol-coded behavior or classification}
+    scope: Validated age ranges, trained coding systems, and protocol-specific child-caregiver relationships.
+    boundary_notes:
+      - A Strange Situation classification concerns one relationship under one protocol, not the child's entire personality.
+    provenance: *provenance
+  - id: pmm:measurement:strange-situation-classification
+    type: Measurement
+    label: Strange Situation attachment classification
+    definition: Trained observational coding of child behavior across separation and reunion episodes into protocol-defined attachment patterns or continuous security indicators.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: observation
+    target_ids: [pmm:construct:attachment-behavioral-system, pmm:behavior:proximity-support-seeking]
+    method: Standardized episode coding by trained raters using a declared attachment classification or scale.
+    unit_of_analysis: behavior
+    result_type: nominal
+    provenance: *provenance
+  - id: pmm:context:adult-attachment-self-report
+    type: Context
+    label: Adult close-relationship attachment self-report
+    definition: Questionnaire context asking adults about expectations, emotions, and behavior in close or romantic relationships.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: social
+    dimensions: {respondent: adult self-report, relationship_focus: general or relationship-specific, constructs: attachment anxiety and avoidance}
+    scope: The declared relationship focus, population, language, and instrument version.
+    provenance: *provenance
+  - id: pmm:measurement:adult-attachment-anxiety-avoidance
+    type: Measurement
+    label: Adult attachment anxiety and avoidance scores
+    definition: Self-report scale scores estimating concern about rejection or abandonment and discomfort with dependence or closeness in a declared relationship domain.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: psychometric_scale
+    target_ids: [pmm:construct:relational-availability-expectations]
+    method: Score a validated adult attachment questionnaire such as ECR or ECR-R according to its protocol.
+    unit_of_analysis: self_report
+    result_type: continuous
+    boundary_notes: [Two continuous scores should not be converted into four permanent identities without a separately justified rule.]
+    provenance: *provenance
+  - id: pmm:context:adult-attachment-interview
+    type: Context
+    label: Adult Attachment Interview context
+    definition: Structured interview concerning attachment-related experiences and the coherence of current discourse about them.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: clinical
+    dimensions: {method: trained semistructured interview, target: state of mind regarding attachment, output: coded discourse classification}
+    scope: Administration and coding by appropriately trained raters under the declared AAI protocol.
+    provenance: *provenance
+  - id: pmm:measurement:aai-state-of-mind-classification
+    type: Measurement
+    label: Adult Attachment Interview state-of-mind classification
+    definition: Protocol-coded classification of the coherence and organization of an adult's discourse about attachment experiences.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: clinical_rating
+    target_ids: [pmm:construct:relational-availability-expectations]
+    method: Trained coding of a transcribed Adult Attachment Interview.
+    unit_of_analysis: person
+    result_type: nominal
+    boundary_notes: [AAI state of mind and romantic-attachment self-report scores target related but noninterchangeable constructs and methods.]
+    provenance: *provenance
+
+relations:
+  - {id: pmm:relation:attachment-activation-occurs-in-threat, subject_id: pmm:state:attachment-system-activation, predicate: occurs_in_context, object_id: pmm:context:attachment-relevant-threat-separation, provenance: *provenance}
+  - {id: pmm:relation:proximity-seeking-occurs-in-threat, subject_id: pmm:behavior:proximity-support-seeking, predicate: occurs_in_context, object_id: pmm:context:attachment-relevant-threat-separation, provenance: *provenance}
+  - {id: pmm:relation:strange-situation-measures-attachment, subject_id: pmm:construct:attachment-behavioral-system, predicate: measured_by, object_id: pmm:measurement:strange-situation-classification, provenance: *provenance}
+  - {id: pmm:relation:adult-expectations-measured-by-self-report, subject_id: pmm:construct:relational-availability-expectations, predicate: measured_by, object_id: pmm:measurement:adult-attachment-anxiety-avoidance, provenance: *provenance}
+  - {id: pmm:relation:adult-expectations-measured-by-aai, subject_id: pmm:construct:relational-availability-expectations, predicate: measured_by, object_id: pmm:measurement:aai-state-of-mind-classification, provenance: *provenance}
+
+claims:
+  - id: pmm:claim:attachment-system-organizes-safety-seeking
+    claim_type: definition
+    statement: Attachment theory proposes a relationship-specific behavioral system that organizes proximity seeking, safe-haven use, and secure-base behavior when threat or separation makes safety salient.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: "The definition is stable across foundational and modern attachment reviews, but the system remains a theoretical construct inferred through multiple operations."}
+    scope: {population: Humans in child-caregiver or close adult attachment relationships., species: [human], context_ids: [pmm:context:attachment-relevant-threat-separation], temporal_scope: Attachment-relevant episodes and their developmental organization.}
+    defined_object_id: pmm:construct:attachment-behavioral-system
+    source_ids: [pmm:source:fraley-shaver-2000-attachment]
+    evidence_ids: []
+    limitations: [The definition does not prove that every support-seeking act is attachment behavior or that one universal response sequence applies across relationships and cultures.]
+    provenance: *provenance
+  - id: pmm:claim:adult-attachment-measures-are-not-interchangeable
+    claim_type: definition
+    statement: Adult attachment is assessed with multiple noninterchangeable methods; self-report research commonly represents insecurity using continuous anxiety and avoidance dimensions, whereas the AAI codes discourse-based state of mind.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: "A broad measurement review documents distinct instruments, relationship foci, constructs, administration requirements, and scoring methods."}
+    scope: {population: Adults assessed with attachment interviews or questionnaires., species: [human], context_ids: [pmm:context:adult-attachment-self-report, pmm:context:adult-attachment-interview], temporal_scope: Current assessment under a declared instrument.}
+    defined_object_id: pmm:measurement:adult-attachment-anxiety-avoidance
+    source_ids: [pmm:source:ravitz-2010-adult-attachment-measures, pmm:source:fraley-waller-brennan-2000]
+    evidence_ids: []
+    limitations: [Dimensional convergence does not make all questionnaires equivalent or establish fixed adult attachment types.]
+    provenance: *provenance
+  - id: pmm:claim:caregiver-sensitivity-associated-with-child-security
+    claim_type: association
+    statement: Across observational studies, higher caregiver sensitivity is associated with greater likelihood of secure child-caregiver attachment, but the association does not establish a single sufficient cause.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: "Meta-analytic evidence supports a positive longitudinal and concurrent association, with measurement heterogeneity and residual confounding."}
+    scope:
+      population: Caregiver-preschool child dyads represented in the included observational studies.
+      species: [human]
+      context_ids: [pmm:context:strange-situation-procedure]
+      temporal_scope: Caregiver sensitivity observations and later or concurrent preschool attachment assessment.
+    exposure_id: pmm:state:perceived-attachment-figure-availability
+    outcome_id: pmm:measurement:strange-situation-classification
+    estimate: {metric: standardized difference in observed caregiver sensitivity for secure versus insecure preschool attachment in longitudinal studies, value_status: reported, value: 0.46, direction: positive, notes: Reported g = 0.46 with 95% CI 0.17 to 0.75 for the unidimensional longitudinal synthesis.}
+    confounding_note: Child characteristics, family stress, socioeconomic conditions, shared context, coder dependencies, and unmeasured caregiving processes can contribute to the association.
+    evidence_ids: [pmm:evidence:divito-kurkjian-2021-sensitivity-meta]
+    limitations: [The exposure object is a conceptual proxy for responsive availability; the studies measured observed sensitivity using heterogeneous protocols rather than the child's perceived availability directly.]
+    provenance: *provenance
+  - id: pmm:claim:attachment-security-shows-moderate-not-deterministic-stability
+    claim_type: association
+    statement: Attachment security shows moderate stability across repeated assessments overall, with lower stability over long intervals and no evidence of irreversible determination from infancy.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: "A large meta-analysis found medium average stability with substantial moderation by interval, measurement, and risk context."}
+    scope: {population: Child and young-adult attachment assessments represented in 127 reports., species: [human], context_ids: [pmm:context:strange-situation-procedure, pmm:context:adult-attachment-self-report, pmm:context:adult-attachment-interview], temporal_scope: Repeated assessments spanning infancy to early adulthood.}
+    exposure_id: pmm:measurement:strange-situation-classification
+    outcome_id: pmm:measurement:adult-attachment-anxiety-avoidance
+    estimate: {metric: meta-analytic stability correlation, value_status: reported, value: 0.39, direction: positive, notes: Overall r = .39; no significant stability was found for intervals longer than 15 years in the reported synthesis.}
+    confounding_note: Measures at different ages are not identical, and relationship changes, risk exposure, sample attrition, and method differences affect continuity estimates.
+    evidence_ids: [pmm:evidence:pinquart-2013-attachment-stability]
+    limitations: [The cross-method exposure and outcome IDs summarize a heterogeneous corpus and must not be read as one direct Strange Situation to ECR transition estimate.]
+    provenance: *provenance
+  - id: pmm:claim:attachment-regulation-loop-is-integrative-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: Threat may activate attachment-related safety seeking; perceived availability and support response may reduce or sustain distress and contribute to updating later relational expectations.
+    epistemic_status: proposed
+    confidence: {level: low, rationale: "Components are supported by theory and heterogeneous studies, but the complete reciprocal developmental chain is not identified as one causal mechanism."}
+    scope:
+      population: Humans in attachment-relevant child-caregiver or adult close relationships.
+      species: [human]
+      context_ids: [pmm:context:attachment-relevant-threat-separation]
+      temporal_scope: Episode-level regulation with learning across repeated interactions.
+      boundary_conditions:
+        - A specific attachment figure, observable threat or distress, and a declared measure of support response and later expectation.
+    mechanism_id: pmm:mechanism:conditional-attachment-regulation
+    exposure_id: pmm:context:attachment-relevant-threat-separation
+    outcome_id: pmm:construct:relational-availability-expectations
+    temporal_ordering: Threat or separation precedes regulatory behavior and response; expectation change, if any, is assessed after repeated or experimentally specified interactions.
+    falsifiable_boundary: The hypothesis is challenged if manipulated attachment-figure availability does not change distress regulation or later expectations beyond alternative social-support, learning, and trait explanations.
+    evidence_ids: [pmm:evidence:fraley-shaver-2000-system-review]
+    limitations: [The model should not be used to infer childhood causes from an adult questionnaire score or to diagnose a partner.]
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:fraley-shaver-2000-system-review
+    claim_ids: [pmm:claim:attachment-regulation-loop-is-integrative-hypothesis]
+    source_id: pmm:source:fraley-shaver-2000-attachment
+    extraction_locator: Review sections describing attachment-system activation, proximity seeking, individual differences, continuity, and unresolved questions.
+    evidence_kind: narrative_review
+    design: Integrative review of theory and adult romantic attachment research.
+    population: Humans in close relationships across studies reviewed by the authors.
+    species: [human]
+    inference_support: mechanism
+    support_direction: mixed
+    causal_support: indirect
+    domains: {directness: partially_indirect, risk_of_bias: not_assessed, consistency: mixed, precision: not_reported, replication: conceptual_replication}
+    summary: The review supports core attachment-system components while identifying unresolved questions about function, development, continuity, and individual differences.
+    limitations: [Narrative synthesis does not identify the complete causal chain or establish equivalence between child and adult measures.]
+    provenance: *provenance
+  - id: pmm:evidence:divito-kurkjian-2021-sensitivity-meta
+    claim_ids: [pmm:claim:caregiver-sensitivity-associated-with-child-security]
+    source_id: pmm:source:divito-kurkjian-2021-sensitivity
+    extraction_locator: Quantitative synthesis table and discussion of longitudinal and concurrent caregiver-sensitivity associations with preschool attachment.
+    evidence_kind: meta_analysis
+    design: Systematic review and meta-analysis of behaviorally coded caregiver sensitivity and preschool attachment.
+    population: Caregiver-preschool child dyads in included observational studies.
+    species: [human]
+    inference_support: association
+    support_direction: supports
+    causal_support: none
+    effect: {metric: Hedges g for longitudinal sensitivity difference by secure versus insecure attachment, value_status: reported, value: 0.46, direction: positive, interval: {level: 0.95, lower: 0.17, upper: 0.75}}
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: adequate, replication: independent_replication}
+    summary: Observed caregiver sensitivity was higher among caregivers of children later classified secure than insecure, with moderate pooled association.
+    limitations:
+      - Observational designs, overlapping samples, variable confound adjustment, and heterogeneous coding limit causal interpretation.
+    provenance: *provenance
+  - id: pmm:evidence:pinquart-2013-attachment-stability
+    claim_ids: [pmm:claim:attachment-security-shows-moderate-not-deterministic-stability]
+    source_id: pmm:source:pinquart-2013-stability
+    extraction_locator: PubMed abstract reporting 127 papers, 21,072 attachments, overall stability, interval moderation, and long-interval null result.
+    evidence_kind: meta_analysis
+    design: Meta-analysis of repeated attachment assessments from infancy to early adulthood.
+    population: 21,072 attachment assessments represented across 127 reports.
+    species: [human]
+    inference_support: association
+    support_direction: mixed
+    causal_support: none
+    effect: {metric: overall stability correlation, value_status: reported, value: 0.39, direction: positive}
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: mixed, precision: adequate, replication: independent_replication}
+    summary: Average attachment stability was moderate, weaker over longer intervals, and not significant beyond 15 years in the reported corpus.
+    limitations:
+      - Measures, relationships, intervals, populations, and attrition varied substantially.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:fraley-shaver-2000-attachment
+    title: Adult romantic attachment — theoretical developments, emerging controversies, and unanswered questions
+    source_type: peer_reviewed_article
+    authors: [R. Chris Fraley, Phillip R. Shaver]
+    year: 2000
+    doi: 10.1037/1089-2680.4.2.132
+    url: https://doi.org/10.1037/1089-2680.4.2.132
+    accessed_at: '2026-08-26'
+    authority_note: Peer-reviewed integrative review used for the attachment-system framework and explicit unresolved questions.
+    provenance: *provenance
+  - id: pmm:source:ravitz-2010-adult-attachment-measures
+    title: Adult attachment measures — a 25-year review
+    source_type: peer_reviewed_article
+    authors: [Paula Ravitz, Robert Maunder, Jon Hunter, Bhadra Sthankiya, William Lancee]
+    year: 2010
+    doi: 10.1016/j.jpsychores.2009.08.006
+    url: https://doi.org/10.1016/j.jpsychores.2009.08.006
+    accessed_at: '2026-08-26'
+    authority_note: Measurement review documenting distinct adult attachment instruments and construct targets.
+    provenance: *provenance
+  - id: pmm:source:fraley-waller-brennan-2000
+    title: An item response theory analysis of self-report measures of adult attachment
+    source_type: peer_reviewed_article
+    authors: [R. Chris Fraley, Niels G. Waller, Kelly A. Brennan]
+    year: 2000
+    doi: 10.1037/0022-3514.78.2.350
+    url: https://doi.org/10.1037/0022-3514.78.2.350
+    accessed_at: '2026-08-26'
+    authority_note: Primary psychometric source for dimensional adult attachment self-report measurement.
+    provenance: *provenance
+  - id: pmm:source:divito-kurkjian-2021-sensitivity
+    title: The longitudinal and concurrent relationship between caregiver sensitivity and preschool attachment — a systematic review and meta-analysis
+    source_type: peer_reviewed_article
+    authors: [Jennifer DiVito, Sarah Kurkjian]
+    year: 2021
+    doi: 10.1371/journal.pone.0245061
+    url: https://doi.org/10.1371/journal.pone.0245061
+    accessed_at: '2026-08-26'
+    authority_note: Systematic review and meta-analysis used for the bounded sensitivity-security association.
+    provenance: *provenance
+  - id: pmm:source:pinquart-2013-stability
+    title: Meta-analytic evidence for stability in attachments from infancy to early adulthood
+    source_type: peer_reviewed_article
+    authors: [Martin Pinquart, Christina Feussner, Lieselotte Ahnert]
+    year: 2013
+    doi: 10.1080/14616734.2013.746257
+    pmid: '23210665'
+    url: https://pubmed.ncbi.nlm.nih.gov/23210665/
+    accessed_at: '2026-08-26'
+    authority_note: Large meta-analysis used to prevent deterministic claims about continuity.
+    provenance: *provenance

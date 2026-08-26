@@ -189,6 +189,26 @@ sources:
     title: A meta-analysis of the five-factor model of personality and academic performance
     organization: Psychological Bulletin
     url: https://pubmed.ncbi.nlm.nih.gov/19254083/
+  - id: source:hayes-hofmann-ciarrochi-2020
+    title: A process-based approach to psychological diagnosis and treatment
+    organization: Clinical Psychology Review
+    url: https://doi.org/10.1016/j.cpr.2020.101908
+  - id: source:fraley-shaver-attachment-2000
+    title: Adult romantic attachment — theoretical developments, controversies, and questions
+    organization: Review of General Psychology
+    url: https://doi.org/10.1037/1089-2680.4.2.132
+  - id: source:ravitz-attachment-measures-2010
+    title: Adult attachment measures — a 25-year review
+    organization: Journal of Psychosomatic Research
+    url: https://doi.org/10.1016/j.jpsychores.2009.08.006
+  - id: source:beck-cognitive-model
+    title: Understanding CBT and the cognitive model
+    organization: Beck Institute for Cognitive Behavior Therapy
+    url: https://beckinstitute.org/about/understanding-cbt/
+  - id: source:nice-depression-cbt
+    title: Depression in adults — treatment and management
+    organization: National Institute for Health and Care Excellence
+    url: https://www.nice.org.uk/guidance/ng222/chapter/Recommendations
 
 general_psychology:
   id: general-psychology
@@ -466,6 +486,18 @@ general_psychology:
           canonical_id: pmm:mechanism:cardiorespiratory-appraisal
           role: appraisal_mechanism_example
           expected_type: Mechanism
+        - family_id: cbt-formulation
+          canonical_id: pmm:state:cbt-emotional-response
+          role: state_example
+          expected_type: State
+        - family_id: cbt-formulation
+          canonical_id: pmm:construct:situational-interpretation
+          role: construct_example
+          expected_type: Construct
+        - family_id: cbt-formulation
+          canonical_id: pmm:mechanism:reciprocal-cbt-maintenance-cycle
+          role: mechanism_example
+          expected_type: Mechanism
     - id: gp:motivation-reward
       parent_id: gp:emotion-motivation
       kind: topic
@@ -500,6 +532,8 @@ general_psychology:
         - {family_id: reappraisal, canonical_id: pmm:intervention:reappraisal-instruction, role: intervention_example, expected_type: Intervention}
         - {family_id: social-buffering, canonical_id: pmm:mechanism:social-co-regulation, role: mechanism_example, expected_type: Mechanism}
         - {family_id: hpa-feedback, canonical_id: pmm:mechanism:glucocorticoid-negative-feedback, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: cbt-formulation, canonical_id: pmm:behavior:cbt-coping-response, role: behavior_example, expected_type: Behavior}
+        - {family_id: cbt-formulation, canonical_id: pmm:intervention:behavioral-experiment, role: intervention_example, expected_type: Intervention}
 
     - id: gp:action-self-regulation
       parent_id: gp:mind
@@ -568,14 +602,17 @@ general_psychology:
         en: Changes in psychological or physiological responding produced in the presence of or through interaction with another person.
         ru: Изменения психологической или физиологической реакции, возникающие в присутствии другого человека или во взаимодействии с ним.
       ontological_note:
-        en: The current evidence pack concerns caregiver buffering of child cortisol responses; it does not represent all attachment, support, or group processes.
-        ru: Текущий пакет касается влияния поддержки взрослого на кортизоловую реакцию ребёнка; он не охватывает всю привязанность, поддержку или групповые процессы.
+        en: Current records cover a caregiver-buffering experiment and a broader but still provisional attachment-system model; they do not represent all support, intimacy, or group processes.
+        ru: Текущие записи охватывают эксперимент с поддержкой взрослого и более широкую, но пока предварительную модель системы привязанности; они не представляют все процессы поддержки, близости или группового взаимодействия.
       coverage: partial
-      source_ids: [source:rdoc-definitions]
+      source_ids: [source:rdoc-definitions, source:fraley-shaver-attachment-2000]
       memberships:
         - {family_id: social-buffering, canonical_id: pmm:intervention:parent-buffer-condition, role: intervention_example, expected_type: Intervention}
         - {family_id: social-buffering, canonical_id: pmm:state:cortisol-stress-response, role: state_example, expected_type: State}
         - {family_id: social-buffering, canonical_id: pmm:mechanism:social-co-regulation, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: attachment-system, canonical_id: pmm:construct:attachment-behavioral-system, role: construct_example, expected_type: Construct}
+        - {family_id: attachment-system, canonical_id: pmm:behavior:proximity-support-seeking, role: behavior_example, expected_type: Behavior}
+        - {family_id: attachment-system, canonical_id: pmm:mechanism:conditional-attachment-regulation, role: mechanism_example, expected_type: Mechanism}
     - id: gp:social-cognition
       parent_id: gp:social-processes
       kind: topic
@@ -652,15 +689,17 @@ general_psychology:
         ru: Как время опыта, ухода, повреждения и созревания меняет наблюдаемую организацию психики и адаптацию.
       ontological_note:
         en: >-
-          Current records provide only two narrow developmental contexts: early care history in social buffering and early hippocampal pathology in developmental amnesia.
+          Current records provide narrow developmental examples in social buffering, attachment continuity, and developmental amnesia; none is a complete theory of development.
         ru: >-
-          Сейчас представлены только два узких контекста развития: ранняя история ухода при социальной поддержке и ранняя патология гиппокампа при амнезии развития.
+          Сейчас представлены узкие примеры развития из социальной поддержки, устойчивости привязанности и амнезии развития; ни один из них не является полной теорией развития.
       coverage: partial
-      source_ids: [source:vargha-khadem-1997]
+      source_ids: [source:vargha-khadem-1997, source:fraley-shaver-attachment-2000]
       memberships:
         - {family_id: social-buffering, canonical_id: pmm:context:early-institutional-care-history, role: task_context_example, expected_type: Context}
         - {family_id: declarative-memory, canonical_id: pmm:context:developmental-amnesia-assessment, role: task_context_example, expected_type: Context}
         - {family_id: declarative-memory, canonical_id: pmm:measurement:episodic-semantic-profile, role: measurement_example, expected_type: Measurement}
+        - {family_id: attachment-system, canonical_id: pmm:measurement:strange-situation-classification, role: measurement_example, expected_type: Measurement}
+        - {family_id: attachment-system, canonical_id: pmm:construct:relational-availability-expectations, role: construct_example, expected_type: Construct}
 
     - id: gp:personality-individual-differences
       parent_id: gp:mind
@@ -731,6 +770,248 @@ general_psychology:
       coverage: planned
       source_ids: []
       memberships: []
+
+foundational_models:
+  id: foundational-models
+  title: {en: Foundational psychological models, ru: Базовые психологические модели}
+  subtitle:
+    en: Human-readable entry points into recurring psychological processes, connected to evidence rather than treated as complete schools of truth.
+    ru: Понятные точки входа в повторяющиеся психологические процессы, связанные с доказательствами, а не представленные как законченные истинные школы.
+  process_based_note:
+    en: Following the orientation of Process-Based Therapy, PMM asks which measurable biopsychosocial process matters for this person, goal, and context; what might change it; and whether the expected outcome actually follows. A named theory is a source of hypotheses, not the final unit of treatment.
+    ru: В духе процесс-ориентированной терапии PMM спрашивает, какой измеримый биопсихосоциальный процесс важен для этого человека, цели и контекста; чем на него можно воздействовать; и возникает ли ожидаемый результат. Названная теория служит источником гипотез, а не окончательной единицей терапии.
+  workflow:
+    - {en: Person, goal, and current context, ru: Человек, цель и текущий контекст}
+    - {en: Functional network of measurable processes, ru: Функциональная сеть измеримых процессов}
+    - {en: Select one modifiable process, ru: Выбор одного изменяемого процесса}
+    - {en: Apply a bounded intervention, ru: Ограниченное воздействие}
+    - {en: Measure outcome and revise the network, ru: Измерение результата и пересмотр сети}
+  source_ids: [source:hayes-hofmann-ciarrochi-2020]
+  models:
+    - id: model:attachment
+      label: {en: Attachment system, ru: Система привязанности}
+      model_kind: developmental_social_theory
+      coverage: partial
+      plain_summary:
+        en: Under threat or separation, a person may seek safety through a significant other; repeated responses can shape expectations without fixing destiny.
+        ru: При угрозе или разлуке человек может искать безопасность через значимого другого; повторяющиеся ответы могут формировать ожидания, но не определяют судьбу.
+      chain:
+        - {en: Threat, distress, or separation, ru: Угроза, дистресс или разлука}
+        - {en: Attachment system becomes relevant, ru: Система привязанности становится актуальной}
+        - {en: Proximity or support seeking, ru: Поиск близости или поддержки}
+        - {en: Response and perceived availability, ru: Ответ другого и воспринимаемая доступность}
+        - {en: Distress changes and expectations may update, ru: Дистресс меняется, а ожидания могут обновляться}
+      practical_focus:
+        en: Identify the concrete trigger, need, support-seeking action, other person's response, and short- versus long-term result; improve clear requests and responsive boundaries rather than assigning a permanent style.
+        ru: Определите конкретный триггер, потребность, способ поиска поддержки, ответ другого и кратко- и долгосрочный результат; улучшайте ясные просьбы и отзывчивые границы вместо присвоения постоянного стиля.
+      established:
+        en: Attachment methods capture relationship-related patterns; caregiver sensitivity and security are associated; continuity is moderate rather than deterministic.
+        ru: Методики привязанности фиксируют связанные с отношениями паттерны; чувствительность опекуна связана с безопасностью; устойчивость умеренная, а не детерминированная.
+      proposed:
+        en: The complete threat-to-expectation loop and internal working models remain integrative mechanism hypotheses.
+        ru: Полная петля от угрозы до изменения ожиданий и внутренние рабочие модели остаются интегративными гипотезами о механизмах.
+      measurements:
+        en: Strange Situation behavior, Adult Attachment Interview state of mind, and adult anxiety-avoidance self-report are distinct methods.
+        ru: Поведение в Strange Situation, состояние ума по Adult Attachment Interview и самоотчёт тревоги-избегания у взрослых являются разными методами.
+      limitation:
+        en: Do not infer childhood causes from an adult quiz or use four styles as fixed diagnoses.
+        ru: Нельзя выводить причины из детства по взрослому онлайн-тесту или использовать четыре стиля как неизменные диагнозы.
+      source_ids: [source:fraley-shaver-attachment-2000, source:ravitz-attachment-measures-2010]
+      mapped_memberships:
+        - {family_id: attachment-system, canonical_id: pmm:construct:attachment-behavioral-system, role: construct_example, expected_type: Construct}
+        - {family_id: attachment-system, canonical_id: pmm:mechanism:conditional-attachment-regulation, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: attachment-system, canonical_id: pmm:measurement:adult-attachment-anxiety-avoidance, role: measurement_example, expected_type: Measurement}
+    - id: model:cbt-formulation
+      label: {en: Cognitive-behavioral formulation, ru: Когнитивно-поведенческая формулировка}
+      model_kind: therapeutic_formulation
+      coverage: partial
+      plain_summary:
+        en: Meaning, emotion, physiology, behavior, and consequences interact; change can begin at more than one point.
+        ru: Смысл, эмоция, физиология, поведение и последствия взаимодействуют; изменение можно начинать более чем с одной точки.
+      chain:
+        - {en: Personally significant situation, ru: Лично значимая ситуация}
+        - {en: Automatic or deliberate interpretation, ru: Автоматическая или обдуманная интерпретация}
+        - {en: Emotion and bodily response, ru: Эмоция и телесная реакция}
+        - {en: Approach, avoidance, or coping behavior, ru: Приближение, избегание или совладающее действие}
+        - {en: Consequences feed later expectations, ru: Последствия влияют на последующие ожидания}
+      practical_focus:
+        en: Test an interpretation, change a behavior, alter the environment, or practice a skill, then measure whether the personally relevant outcome changes.
+        ru: Проверьте интерпретацию, измените поведение или среду либо потренируйте навык, затем измерьте, изменился ли важный для человека результат.
+      established:
+        en: Protocol-defined CBT improves several clinical outcomes including depression within studied comparisons.
+        ru: КПТ по определённым протоколам улучшает ряд клинических исходов, включая депрессию, в изученных сравнениях.
+      proposed:
+        en: The dominant maintaining process and direction of influence must be tested; efficacy does not prove one unique cognitive mechanism.
+        ru: Главный поддерживающий процесс и направление влияния нужно проверять; эффективность не доказывает единственный когнитивный механизм.
+      measurements:
+        en: Situation records, thought or appraisal reports, emotion ratings, physiology, observed behavior, consequences, and symptom scales.
+        ru: Записи ситуаций, отчёты о мыслях или оценке, рейтинги эмоций, физиология, наблюдаемое поведение, последствия и шкалы симптомов.
+      limitation:
+        en: Not every emotion follows a conscious conclusion, and a realistic threat may require protection or problem solving rather than cognitive disputation.
+        ru: Не каждая эмоция следует за осознанным умозаключением, а реальная угроза может требовать защиты или решения проблемы, а не оспаривания мысли.
+      source_ids: [source:beck-cognitive-model, source:nice-depression-cbt]
+      mapped_memberships:
+        - {family_id: cbt-formulation, canonical_id: pmm:construct:cbt-cognitive-model, role: construct_example, expected_type: Construct}
+        - {family_id: cbt-formulation, canonical_id: pmm:mechanism:reciprocal-cbt-maintenance-cycle, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: cbt-formulation, canonical_id: pmm:intervention:behavioral-experiment, role: intervention_example, expected_type: Intervention}
+    - id: model:conditioning
+      label: {en: Classical and operant conditioning, ru: Классическое и оперантное обусловливание}
+      model_kind: learning_framework
+      coverage: partial
+      plain_summary: {en: Cues predict outcomes, and consequences change the future probability of actions., ru: Сигналы предсказывают исходы, а последствия меняют будущую вероятность действий.}
+      chain:
+        - {en: Cue or situation, ru: Сигнал или ситуация}
+        - {en: Learned expectation and response, ru: Выученное ожидание и реакция}
+        - {en: Action or omission, ru: Действие или бездействие}
+        - {en: Outcome occurs or is omitted, ru: Исход происходит или не происходит}
+        - {en: Future responding changes, ru: Будущая реакция меняется}
+      practical_focus: {en: Change cue-outcome or response-outcome contingencies and test behavior, not just verbal insight., ru: Изменяйте зависимости «сигнал–исход» или «действие–исход» и проверяйте поведение, а не только словесное понимание.}
+      established: {en: Acquisition, extinction, reinforcement, and avoidance effects occur under specified experimental contingencies., ru: Эффекты научения, угасания, подкрепления и избегания возникают при определённых экспериментальных зависимостях.}
+      proposed: {en: Competing learning and neural mechanisms often explain the same behavioral change., ru: Одно изменение поведения часто объясняется конкурирующими механизмами научения и нейронными механизмами.}
+      measurements: {en: Trial choices, response rates, expectancy, conditioned responses, and return-of-response tests., ru: Выборы в пробах, частота реакций, ожидания, условные реакции и тесты возврата реакции.}
+      limitation: {en: Laboratory contingencies do not automatically explain a person's complex real-world behavior., ru: Лабораторные зависимости не объясняют автоматически сложное поведение человека в жизни.}
+      source_ids: []
+      mapped_memberships:
+        - {family_id: extinction, canonical_id: pmm:mechanism:extinction-memory-formation, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: avoidance, canonical_id: pmm:mechanism:negative-reinforcement, role: mechanism_example, expected_type: Mechanism}
+    - id: model:social-learning
+      label: {en: Social learning, ru: Социальное научение}
+      model_kind: learning_framework
+      coverage: planned
+      plain_summary: {en: People can acquire behavior and expectations by observing models, consequences, instructions, and social feedback., ru: Люди могут усваивать поведение и ожидания через наблюдение за моделями, последствиями, инструкциями и социальной обратной связью.}
+      chain:
+        - {en: Observe another person or social rule, ru: Наблюдение за другим человеком или социальным правилом}
+        - {en: Attend and represent the action, ru: Внимание и представление действия}
+        - {en: Anticipate consequences, ru: Ожидание последствий}
+        - {en: Attempt or avoid the behavior, ru: Попытка или избегание поведения}
+        - {en: Social feedback selects future behavior, ru: Социальная обратная связь отбирает будущее поведение}
+      practical_focus: {en: Change models, instructions, opportunities to practice, and feedback, then observe transfer., ru: Изменяйте модели, инструкции, возможности практики и обратную связь, затем наблюдайте перенос.}
+      established: {en: No dedicated PMM evidence pack yet., ru: Отдельного доказательного пакета PMM пока нет.}
+      proposed: {en: Attention, identification, expectancy, imitation, and reinforcement may contribute differently., ru: Внимание, идентификация, ожидания, подражание и подкрепление могут вносить разный вклад.}
+      measurements: {en: Model exposure, imitation, delayed reproduction, expectancy, and behavior outside training., ru: Воздействие модели, подражание, отсроченное воспроизведение, ожидания и поведение вне обучения.}
+      limitation: {en: Seeing behavior does not prove learning, and learning does not guarantee performance., ru: Наблюдение поведения не доказывает научение, а научение не гарантирует выполнение.}
+      source_ids: []
+      mapped_memberships: []
+    - id: model:emotion-appraisal
+      label: {en: Emotion and appraisal models, ru: Модели эмоций и когнитивной оценки}
+      model_kind: affective_framework
+      coverage: partial
+      plain_summary: {en: Emotional episodes involve meaning, subjective experience, bodily change, expression, and action tendencies that need not move together., ru: Эмоциональные эпизоды включают смысл, субъективное переживание, телесные изменения, выражение и побуждения к действию, которые не обязаны меняться одинаково.}
+      chain:
+        - {en: Relevant event, ru: Значимое событие}
+        - {en: Appraisal of meaning, ru: Оценка смысла}
+        - {en: Experience, physiology, and action tendency, ru: Переживание, физиология и тенденция к действию}
+        - {en: Regulation attempt, ru: Попытка регуляции}
+        - {en: Channel-specific outcome, ru: Результат в отдельных каналах}
+      practical_focus: {en: Choose a target channel and strategy instead of treating emotion as one score., ru: Выбирайте конкретный канал и стратегию вместо обращения с эмоцией как с одним баллом.}
+      established: {en: Reappraisal instructions can change reported emotion in bounded tasks., ru: Инструкции переоценки могут менять сообщаемую эмоцию в ограниченных заданиях.}
+      proposed: {en: Reinterpretation and neural mediation remain more specific hypotheses than the observed instruction effect., ru: Переинтерпретация и нейронная медиация остаются более узкими гипотезами, чем наблюдаемый эффект инструкции.}
+      measurements: {en: Self-report, expressive behavior, autonomic channels, performance, and neural signals., ru: Самоотчёт, выразительное поведение, автономные показатели, выполнение и нейронные сигналы.}
+      limitation: {en: Reduced expression is not necessarily reduced feeling, and one strategy is not optimal in every context., ru: Снижение выражения не обязательно означает снижение переживания, и одна стратегия не оптимальна во всех контекстах.}
+      source_ids: []
+      mapped_memberships:
+        - {family_id: reappraisal, canonical_id: pmm:construct:situational-meaning-appraisal, role: construct_example, expected_type: Construct}
+        - {family_id: reappraisal, canonical_id: pmm:mechanism:meaning-reinterpretation, role: mechanism_example, expected_type: Mechanism}
+    - id: model:motivation-reinforcement
+      label: {en: Motivation and reinforcement, ru: Мотивация и подкрепление}
+      model_kind: motivational_framework
+      coverage: partial
+      plain_summary: {en: Expected value, prediction error, current needs, and consequences shape which actions are selected and repeated., ru: Ожидаемая ценность, ошибка прогноза, текущие потребности и последствия влияют на выбор и повторение действий.}
+      chain:
+        - {en: Need, goal, or expected outcome, ru: Потребность, цель или ожидаемый исход}
+        - {en: Select an action, ru: Выбор действия}
+        - {en: Outcome differs from expectation, ru: Исход отличается от ожидания}
+        - {en: Value or policy updates, ru: Ценность или правило выбора обновляется}
+        - {en: Future choice changes, ru: Будущий выбор меняется}
+      practical_focus: {en: Make valued outcomes and contingencies observable; change one consequence at a time and monitor behavior., ru: Сделайте ценные исходы и зависимости наблюдаемыми; меняйте по одному последствию и отслеживайте поведение.}
+      established: {en: Reward and aversive contingencies change behavior in controlled tasks., ru: Вознаграждающие и аверсивные зависимости меняют поведение в контролируемых заданиях.}
+      proposed: {en: Computational prediction errors and dopamine signals are not interchangeable explanations., ru: Вычислительные ошибки прогноза и дофаминовые сигналы не являются взаимозаменяемыми объяснениями.}
+      measurements: {en: Choice, response rate, experienced outcome, model parameters, and neural activity., ru: Выбор, частота реакции, пережитый исход, параметры модели и нейронная активность.}
+      limitation: {en: Reward is person- and context-dependent; external incentives can conflict with values or long-term outcomes., ru: Вознаграждение зависит от человека и контекста; внешние стимулы могут конфликтовать с ценностями или долгосрочными исходами.}
+      source_ids: []
+      mapped_memberships:
+        - {family_id: reward-learning, canonical_id: pmm:construct:reward-prediction-error, role: construct_example, expected_type: Construct}
+        - {family_id: reward-learning, canonical_id: pmm:mechanism:temporal-difference-value-update, role: mechanism_example, expected_type: Mechanism}
+    - id: model:self-regulation
+      label: {en: Self-regulation and behavioral control, ru: Саморегуляция и контроль поведения}
+      model_kind: control_framework
+      coverage: partial
+      plain_summary: {en: Goals, current state, attention, learned policies, and feedback compete to control action., ru: Цели, текущее состояние, внимание, выученные правила и обратная связь конкурируют за контроль действия.}
+      chain:
+        - {en: Goal or standard, ru: Цель или стандарт}
+        - {en: Monitor current state, ru: Отслеживание текущего состояния}
+        - {en: Select or inhibit a response, ru: Выбор или торможение реакции}
+        - {en: Observe progress and cost, ru: Наблюдение прогресса и цены усилия}
+        - {en: Adjust strategy or goal, ru: Коррекция стратегии или цели}
+      practical_focus: {en: Clarify the target, reduce friction, create feedback, and test whether the selected strategy changes behavior., ru: Уточните цель, уменьшите трение, создайте обратную связь и проверьте, меняет ли выбранная стратегия поведение.}
+      established: {en: Goal-directed and habitual control can dissociate under specific tasks, but task convergence is limited., ru: Целенаправленный и привычный контроль могут расходиться в отдельных заданиях, но сходимость заданий ограничена.}
+      proposed: {en: A single executive-control capacity rarely explains all failures of self-regulation., ru: Единая способность исполнительного контроля редко объясняет все сбои саморегуляции.}
+      measurements: {en: Choices after devaluation, task errors, latency, persistence, goal progress, and ecological behavior., ru: Выбор после обесценивания, ошибки, время ответа, настойчивость, прогресс цели и поведение в жизни.}
+      limitation: {en: Poor performance may reflect knowledge, motivation, fatigue, environment, or measurement rather than weak willpower., ru: Низкий результат может отражать знания, мотивацию, усталость, среду или измерение, а не слабую волю.}
+      source_ids: []
+      mapped_memberships:
+        - {family_id: habit, canonical_id: pmm:mechanism:goal-directed-action-control, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: habit, canonical_id: pmm:mechanism:habitual-action-control, role: mechanism_example, expected_type: Mechanism}
+    - id: model:personality-development
+      label: {en: Personality development, ru: Развитие личности}
+      model_kind: developmental_framework
+      coverage: partial
+      plain_summary: {en: Relatively stable patterns emerge through biology, relationships, learning, roles, and repeated person-environment transactions., ru: Относительно устойчивые паттерны формируются через биологию, отношения, научение, роли и повторяющиеся взаимодействия человека со средой.}
+      chain:
+        - {en: Temperamental and biological variation, ru: Темпераментные и биологические различия}
+        - {en: Relationships and environments, ru: Отношения и среда}
+        - {en: Repeated choices and feedback, ru: Повторяющиеся выборы и обратная связь}
+        - {en: Habits, expectations, and roles, ru: Привычки, ожидания и роли}
+        - {en: Relative continuity with possible change, ru: Относительная устойчивость с возможностью изменения}
+      practical_focus: {en: Target current environments, roles, relationships, and repeated behaviors rather than trying to replace a personality label., ru: Воздействуйте на текущую среду, роли, отношения и повторяющееся поведение вместо попытки заменить ярлык личности.}
+      established: {en: Trait profiles show relative stability and predictive associations; attachment continuity is moderate., ru: Профили черт относительно устойчивы и имеют прогностические связи; устойчивость привязанности умеренная.}
+      proposed: {en: The causal pathways producing individual developmental change remain incompletely identified., ru: Причинные пути индивидуальных изменений в развитии установлены не полностью.}
+      measurements: {en: Longitudinal trait scales, behavior, informant reports, life events, roles, and relationship-specific measures., ru: Продольные шкалы черт, поведение, отчёты других людей, жизненные события, роли и измерения конкретных отношений.}
+      limitation: {en: Stability is not immutability, and retrospective stories do not establish developmental causes., ru: Устойчивость не равна неизменности, а ретроспективные истории не устанавливают причины развития.}
+      source_ids: []
+      mapped_memberships:
+        - {family_id: big-five, canonical_id: pmm:construct:big-five-trait-taxonomy, role: construct_example, expected_type: Construct}
+        - {family_id: attachment-system, canonical_id: pmm:construct:relational-availability-expectations, role: construct_example, expected_type: Construct}
+    - id: model:temperament-traits
+      label: {en: Temperament and traits, ru: Темперамент и черты}
+      model_kind: individual_differences_framework
+      coverage: partial
+      plain_summary: {en: Dimensional descriptions summarize recurring differences in reactivity, regulation, and behavior without identifying one cause., ru: Размерные описания обобщают повторяющиеся различия в реактивности, регуляции и поведении, не выявляя единственную причину.}
+      chain:
+        - {en: Repeated observations or reports, ru: Повторяющиеся наблюдения или отчёты}
+        - {en: Estimate dimensions, ru: Оценка измерений}
+        - {en: Compare contexts and informants, ru: Сравнение контекстов и информантов}
+        - {en: Test associations with outcomes, ru: Проверка связей с исходами}
+        - {en: Avoid turning dimensions into fixed types, ru: Отказ от превращения измерений в неизменные типы}
+      practical_focus: {en: Use profiles to ask better questions and select observable targets, not to define identity or prescribe treatment automatically., ru: Используйте профили для более точных вопросов и выбора наблюдаемых целей, а не для определения личности или автоматического назначения помощи.}
+      established: {en: Big Five measurement structure is supported; a dedicated modern temperament pack is still missing., ru: Измерительная структура Большой пятёрки поддержана; отдельного современного пакета темперамента пока нет.}
+      proposed: {en: Biological and developmental mechanisms behind broad dimensions require separate evidence., ru: Биологические и развивающие механизмы широких измерений требуют отдельных доказательств.}
+      measurements: {en: Multi-informant trait scales, behavioral observations, laboratory reactivity, and longitudinal stability., ru: Шкалы черт от нескольких информантов, наблюдение поведения, лабораторная реактивность и продольная устойчивость.}
+      limitation: {en: Scores depend on instrument, language, age, informant, and context., ru: Баллы зависят от методики, языка, возраста, информанта и контекста.}
+      source_ids: [source:big-five-review, source:rothbart-temperament]
+      mapped_memberships:
+        - {family_id: big-five, canonical_id: pmm:measurement:bfi2-domain-facet-scores, role: measurement_example, expected_type: Measurement}
+    - id: model:stress-coping-defense
+      label: {en: Stress, coping, and psychological defense, ru: Стресс, совладание и психологическая защита}
+      model_kind: adaptation_framework
+      coverage: partial
+      plain_summary: {en: Demands are appraised relative to resources, triggering physiological and behavioral regulation that may help now yet carry later costs., ru: Требования оцениваются относительно ресурсов и запускают физиологическую и поведенческую регуляцию, которая может помочь сейчас, но иметь поздние издержки.}
+      chain:
+        - {en: Demand, threat, or loss, ru: Требование, угроза или потеря}
+        - {en: Appraisal of resources and meaning, ru: Оценка ресурсов и смысла}
+        - {en: Physiological and emotional response, ru: Физиологическая и эмоциональная реакция}
+        - {en: Coping, avoidance, or support seeking, ru: Совладание, избегание или поиск поддержки}
+        - {en: Recovery, persistence, or accumulated cost, ru: Восстановление, сохранение реакции или накопленная цена}
+      practical_focus: {en: Distinguish controllable problems, emotional regulation, support needs, and harmful avoidance; match the intervention to the function., ru: Разделяйте решаемую проблему, регуляцию эмоции, потребность в поддержке и вредное избегание; подбирайте воздействие по функции.}
+      established: {en: Stress physiology, social buffering, reappraisal, and avoidance have bounded evidence packs., ru: Для физиологии стресса, социальной поддержки, переоценки и избегания существуют ограниченные доказательные пакеты.}
+      proposed: {en: Broad defense labels and one universal coping hierarchy are not established mechanisms., ru: Широкие ярлыки защит и единая универсальная иерархия совладания не являются установленными механизмами.}
+      measurements: {en: Stressor exposure, appraisal, symptoms, cortisol, autonomic activity, behavior, recovery, and functioning., ru: Воздействие стрессора, оценка, симптомы, кортизол, автономная активность, поведение, восстановление и функционирование.}
+      limitation: {en: A strategy can be adaptive in one context and costly in another; symptom reduction is not the only relevant outcome., ru: Одна стратегия может быть адаптивной в одном контексте и затратной в другом; снижение симптома не является единственным важным исходом.}
+      source_ids: []
+      mapped_memberships:
+        - {family_id: hpa-feedback, canonical_id: pmm:mechanism:glucocorticoid-negative-feedback, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: social-buffering, canonical_id: pmm:mechanism:social-co-regulation, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: reappraisal, canonical_id: pmm:intervention:reappraisal-instruction, role: intervention_example, expected_type: Intervention}
 
 scientific_systems:
   id: scientific-systems

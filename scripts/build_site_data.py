@@ -263,6 +263,28 @@ def load_navigation_views(families: list[dict[str, Any]]) -> dict[str, Any]:
         for membership in node.get("memberships", []):
             validate_membership(node["id"], membership)
 
+    foundational = document["foundational_models"]
+    validate_sources(foundational["id"], foundational.get("source_ids", []))
+    model_ids = [model["id"] for model in foundational["models"]]
+    if len(set(model_ids)) != len(model_ids):
+        raise ValueError("foundational_models: duplicate model IDs")
+    required_model_fields = {
+        "id", "label", "model_kind", "coverage", "plain_summary", "chain",
+        "practical_focus", "established", "proposed", "measurements", "limitation",
+        "source_ids", "mapped_memberships",
+    }
+    for model in foundational["models"]:
+        missing = required_model_fields - set(model)
+        if missing:
+            raise ValueError(f"{model['id']}: missing foundational model fields {sorted(missing)}")
+        if model["coverage"] not in {"partial", "planned", "complete"}:
+            raise ValueError(f"{model['id']}: invalid coverage {model['coverage']}")
+        if len(model["chain"]) < 3:
+            raise ValueError(f"{model['id']}: process chain must have at least three steps")
+        validate_sources(model["id"], model.get("source_ids", []))
+        for membership in model.get("mapped_memberships", []):
+            validate_membership(model["id"], membership)
+
     systems = document["scientific_systems"]["systems"]
     for system in systems:
         validate_sources(system["id"], system.get("source_ids", []))
@@ -282,7 +304,7 @@ def main() -> None:
     applications_version = attach_practical_implications(families)
     payload = {
         "pmm_version": "0.3.4",
-        "interface_version": "0.14.0",
+        "interface_version": "0.15.0",
         "research_questions_version": questions_version,
         "practical_implications_version": applications_version,
         "families": families,

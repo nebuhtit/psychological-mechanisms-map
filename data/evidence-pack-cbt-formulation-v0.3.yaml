@@ -1,0 +1,390 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:cbt-formulation-evidence-v0-3
+metadata:
+  title: Evidence pack for cognitive-behavioral formulation
+  description: Separates situation, interpretation, emotion, physiology, behavior, consequences, beliefs, CBT techniques, treatment effects, and proposed mechanisms of change.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T17:00:00+03:00'
+    modified_at: '2026-08-26T17:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:construct:cbt-cognitive-model
+    type: Construct
+    label: CBT cognitive model
+    definition: Clinical formulation framework in which a person's interpretation of a situation is related to emotional, physiological, and behavioral responses, while behavior and consequences can feed back into later interpretations and beliefs.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: clinical_dimension
+    boundary_notes:
+      - The model does not require every emotion to be preceded by a conscious verbal thought.
+      - Thoughts, emotions, physiology, behavior, and context can influence one another; a simple one-way diagram is a teaching aid rather than a complete causal model.
+      - A useful formulation for one person is not automatically a population-level scientific law.
+    provenance: *provenance
+  - id: pmm:context:personally-significant-situation
+    type: Context
+    label: Personally significant situation
+    definition: External event, internal sensation, memory, image, or anticipation that becomes relevant to a person's current goals, needs, or concerns.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: composite
+    dimensions: {source: external or internal, timing: current remembered or anticipated, personal_relevance: declared or assessed}
+    scope: A formulation specifies the concrete situation rather than treating all distress as one context.
+    provenance: *provenance
+  - id: pmm:construct:situational-interpretation
+    type: Construct
+    label: Situational interpretation
+    aliases: [Automatic thought, Appraisal]
+    definition: Verbal, imaginal, or nonverbal meaning assigned to a situation, which may be rapid, automatic, partly conscious, or deliberately considered.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes: [A reported thought is one measurement of interpretation and may be reconstructed after the emotional episode.]
+    provenance: *provenance
+  - id: pmm:state:cbt-emotional-response
+    type: State
+    label: Emotional response
+    definition: Time-indexed subjective emotional experience occurring in relation to the personally significant situation.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: affective
+    bearer_scope: person
+    temporal_scale: episode
+    provenance: *provenance
+  - id: pmm:state:cbt-physiological-response
+    type: State
+    label: Physiological response
+    definition: Time-indexed autonomic, endocrine, muscular, respiratory, or other bodily response during the episode.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: person
+    temporal_scale: episode
+    boundary_notes: [Physiology is not interchangeable with subjective emotion or interpretation.]
+    provenance: *provenance
+  - id: pmm:behavior:cbt-coping-response
+    type: Behavior
+    label: Coping or avoidance behavior
+    definition: Observable action, omission, communication, safety behavior, approach, or avoidance occurring during or after the episode.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: response_pattern
+    observability: direct
+    actor_scope: person
+    response_topography: Situation-specific approach, avoidance, reassurance, withdrawal, problem solving, or other observable response.
+    function_note: The same action can have different short- and long-term functions in different contexts.
+    provenance: *provenance
+  - id: pmm:outcome:cbt-short-long-consequences
+    type: Outcome
+    label: Short- and long-term consequences
+    definition: Immediate and delayed changes in distress, safety, task completion, social response, learning opportunity, or valued functioning following behavior.
+    ontological_level: type
+    curation_status: provisional
+    outcome_kind: other
+    valence: mixed
+    boundary_notes: [Immediate relief can coexist with longer-term maintenance of a problem.]
+    provenance: *provenance
+  - id: pmm:construct:cbt-beliefs-expectations
+    type: Construct
+    label: Beliefs and future expectations
+    definition: More general assumptions, rules, self-representations, and predictions that organize interpretation across situations.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes: [A belief is not directly observed and should not be inferred solely because a therapist's formulation seems plausible.]
+    provenance: *provenance
+  - id: pmm:construct:negative-thinking-process
+    type: Construct
+    label: Negative thinking process
+    definition: Measured pattern of negative interpretations, expectations, or self-referential cognitions studied as a possible mediator of intervention outcomes.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: clinical_dimension
+    boundary_notes: [Different questionnaires and cognitive constructs are not interchangeable mediators.]
+    provenance: *provenance
+  - id: pmm:mechanism:reciprocal-cbt-maintenance-cycle
+    type: Mechanism
+    label: Reciprocal cognitive-behavioral maintenance cycle
+    definition: Proposed context-dependent process in which interpretations, emotions, physiology, behavior, consequences, and beliefs reciprocally constrain future responding.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: integrative
+    role_bindings:
+      - {role: situation, object_id: pmm:context:personally-significant-situation}
+      - {role: interpreted meaning, object_id: pmm:construct:situational-interpretation}
+      - {role: emotional state, object_id: pmm:state:cbt-emotional-response}
+      - {role: bodily state, object_id: pmm:state:cbt-physiological-response}
+      - {role: behavior, object_id: pmm:behavior:cbt-coping-response}
+      - {role: consequence, object_id: pmm:outcome:cbt-short-long-consequences}
+      - {role: retained expectation, object_id: pmm:construct:cbt-beliefs-expectations}
+    realization_conditions:
+      - The formulation specifies a recurring situation and measurable responses for one person or a declared population.
+      - At least one feedback path is temporally observed or experimentally manipulated.
+      - Competing biological, social, learning, and contextual explanations remain testable.
+    boundary_notes:
+      - The complete cycle is a formulation hypothesis, not a single universally established mechanism.
+    provenance: *provenance
+  - id: pmm:intervention:cognitive-evaluation-practice
+    type: Intervention
+    label: Cognitive evaluation practice
+    definition: Structured examination of an interpretation or prediction using evidence, alternative explanations, decentering, or Socratic questions.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: psychological
+    target_ids: [pmm:construct:situational-interpretation, pmm:construct:cbt-beliefs-expectations]
+    delivery: Guided or self-directed evaluation using a treatment protocol appropriate to the problem.
+    intended_direction: test
+    boundary_notes:
+      - Valid thoughts may call for problem solving, acceptance, protection, or environmental change rather than disputation.
+    provenance: *provenance
+  - id: pmm:intervention:behavioral-experiment
+    type: Intervention
+    label: Behavioral experiment
+    definition: Planned real-world or simulated action used to test a concrete prediction and collect new observable information.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: behavioral
+    target_ids: [pmm:construct:cbt-beliefs-expectations, pmm:behavior:cbt-coping-response]
+    delivery: Specify a prediction, safe action, observable result, and review of what was learned.
+    intended_direction: test
+    provenance: *provenance
+  - id: pmm:intervention:protocol-defined-cbt
+    type: Intervention
+    label: Protocol-defined cognitive behavior therapy
+    definition: Structured psychological treatment combining cognitive and behavioral methods according to a declared manual, formulation, dose, provider, and target condition.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: psychological
+    target_ids: [pmm:construct:cbt-cognitive-model, pmm:construct:negative-thinking-process, pmm:behavior:cbt-coping-response]
+    delivery: Qualified guided treatment or declared self-help protocol with specified sessions, components, and comparison condition.
+    intended_direction: decrease
+    boundary_notes:
+      - CBT is an umbrella family; efficacy estimates depend on target condition, components, comparator, format, provider, and risk of bias.
+    provenance: *provenance
+  - id: pmm:context:adult-depression-treatment
+    type: Context
+    label: Adult depression treatment context
+    definition: Clinical or research context in which adults with depressive symptoms or disorders receive CBT or a comparison condition.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: clinical
+    dimensions: {population: adults with depression, treatment: protocol-defined CBT, comparator: control psychotherapy pharmacotherapy or combined care}
+    scope: Trials included in the declared depression treatment synthesis.
+    provenance: *provenance
+  - id: pmm:outcome:depressive-symptom-severity
+    type: Outcome
+    label: Depressive symptom severity
+    definition: Protocol-defined severity of depressive symptoms after treatment or at follow-up.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: symptom
+    valence: aversive
+    provenance: *provenance
+  - id: pmm:measurement:depression-symptom-scale
+    type: Measurement
+    label: Depression symptom scale
+    definition: Validated self-report or clinician-rated scale used to quantify depressive symptom severity at declared time points.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: clinical_rating
+    target_ids: [pmm:outcome:depressive-symptom-severity]
+    method: Administer and score a declared validated depression measure according to protocol.
+    unit_of_analysis: clinical_record
+    result_type: continuous
+    provenance: *provenance
+
+relations:
+  - {id: pmm:relation:emotion-occurs-in-situation, subject_id: pmm:state:cbt-emotional-response, predicate: occurs_in_context, object_id: pmm:context:personally-significant-situation, provenance: *provenance}
+  - {id: pmm:relation:behavior-occurs-in-situation, subject_id: pmm:behavior:cbt-coping-response, predicate: occurs_in_context, object_id: pmm:context:personally-significant-situation, provenance: *provenance}
+  - {id: pmm:relation:depression-measured-by-scale, subject_id: pmm:outcome:depressive-symptom-severity, predicate: measured_by, object_id: pmm:measurement:depression-symptom-scale, provenance: *provenance}
+
+claims:
+  - id: pmm:claim:cbt-model-links-interpretation-and-response
+    claim_type: definition
+    statement: The CBT cognitive model treats interpretation of a situation as related to emotional, behavioral, and often physiological responses, while contemporary formulation also considers reciprocal behavioral and contextual feedback.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: "The formulation matches authoritative CBT descriptions, but a teaching model is not itself proof of every causal arrow."}
+    scope: {population: People described using a cognitive-behavioral formulation., species: [human], context_ids: [pmm:context:personally-significant-situation], temporal_scope: Situation-level response and repeated maintenance cycles.}
+    defined_object_id: pmm:construct:cbt-cognitive-model
+    source_ids: [pmm:source:beck-institute-cognitive-model, pmm:source:nice-depression-2022]
+    evidence_ids: []
+    limitations:
+      - Not every emotion requires a conscious inference, not every distressing interpretation is inaccurate, and changing a thought does not guarantee emotional change.
+    provenance: *provenance
+  - id: pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis
+    claim_type: mechanism_hypothesis
+    statement: For a specified person and context, interpretations, emotional and physiological responses, coping behavior, consequences, and beliefs may form a self-maintaining reciprocal network with multiple possible intervention points.
+    epistemic_status: proposed
+    confidence: {level: low, rationale: "The cycle integrates established component relationships and clinical formulation, but its edges and dominant direction must be tested for the particular problem and context."}
+    scope:
+      population: Individuals or explicitly defined groups receiving cognitive-behavioral formulation.
+      species: [human]
+      context_ids: [pmm:context:personally-significant-situation]
+      temporal_scope: Repeated episodes with within-person measurement.
+      boundary_conditions:
+        - A concrete target problem, measurable responses, declared goals, and repeated observations before and after intervention.
+    mechanism_id: pmm:mechanism:reciprocal-cbt-maintenance-cycle
+    exposure_id: pmm:context:personally-significant-situation
+    outcome_id: pmm:outcome:cbt-short-long-consequences
+    temporal_ordering: Situation, interpretation, response, behavior, and consequences are repeatedly time-indexed; feedback to later expectations is assessed in subsequent episodes.
+    falsifiable_boundary: The proposed network is challenged when changing its nominated process does not alter downstream outcomes or when alternative contextual, social, physiological, or learning models explain the pattern better.
+    evidence_ids: [pmm:evidence:moreno-peral-2020-mechanism-limit]
+    limitations: [A generic cycle should not be presented as the explanation for a person before individualized assessment and competing hypotheses.]
+    provenance: *provenance
+  - id: pmm:claim:cbt-reduces-depression-versus-controls
+    claim_type: causal_effect
+    statement: Across randomized depression trials synthesized by Cuijpers and colleagues, protocol-defined CBT reduced depressive symptoms more than control conditions on average, with effects dependent on comparator and study quality.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: "A very large meta-analysis of randomized comparisons found a moderate-to-large pooled effect versus controls, while heterogeneity and comparator choice limit one universal estimate."}
+    scope:
+      population: Patients represented in randomized CBT trials for depression.
+      species: [human]
+      context_ids: [pmm:context:adult-depression-treatment]
+      temporal_scope: Post-treatment and reported follow-up periods.
+      boundary_conditions:
+        - Protocol-defined CBT, depression target, trial comparator, treatment format, and risk-of-bias conditions represented in the synthesis.
+    exposure_id: pmm:intervention:protocol-defined-cbt
+    outcome_id: pmm:outcome:depressive-symptom-severity
+    causal_estimand: Average effect of assignment to protocol-defined CBT versus the declared control condition on post-treatment depressive symptom severity in the included randomized trials.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Treatment assignment precedes post-treatment symptom measurement.
+    causal_assumptions: {consistency: CBT and comparator versions differ across trials and require stratified interpretation., exchangeability: Randomization supports baseline exchangeability within trials; attrition and bias can compromise it., positivity: Included trials enrolled participants eligible for compared conditions., interference: Participant-level interference is generally assumed but group and therapist effects may occur., assessment: partly_tested}
+    estimate: {metric: Hedges g for CBT versus control conditions, value_status: reported, value: 0.79, direction: negative, interval: {level: 0.95, lower: 0.70, upper: 0.89}, notes: Negative direction denotes lower depressive symptom severity; the source reports g = 0.79 in magnitude favoring CBT.}
+    evidence_ids: [pmm:evidence:cuijpers-2023-cbt-depression-meta]
+    limitations:
+      - Treatment efficacy does not identify cognitive change as the unique mediator, prove the full cognitive model, or establish superiority over every other psychotherapy.
+    provenance: *provenance
+  - id: pmm:claim:cognitive-change-statistically-mediates-some-prevention-effects
+    claim_type: mediation
+    statement: In a systematic review of prevention trials, measured cognitive change statistically mediated some depression and anxiety outcomes, but constructs, interventions, and mediation methods were heterogeneous.
+    epistemic_status: mixed
+    confidence: {level: low, rationale: "Nested randomized studies support cognitive variables as candidate mediators, but many designs do not establish temporal or causal mediation and cognitive measures vary."}
+    scope: {population: Participants in psychological and psychoeducational prevention trials included in the review., species: [human], context_ids: [pmm:context:adult-depression-treatment], temporal_scope: "Intervention, candidate mediator assessment, and later symptom outcome as reported in included studies."}
+    exposure_id: pmm:intervention:protocol-defined-cbt
+    mediator_id: pmm:construct:negative-thinking-process
+    outcome_id: pmm:outcome:depressive-symptom-severity
+    mediation_inference: statistical
+    indirect_effect: {metric: cross-study evidence for cognitive mediation, value_status: qualitative_only, direction: positive, notes: Cognitive variables were most commonly assessed; negative thinking had the strongest support for adult depression prevention.}
+    temporal_ordering: Ordering varied across included mediator studies and was not uniformly sufficient for causal mediation.
+    evidence_ids: [pmm:evidence:moreno-peral-2020-mediators]
+    limitations: [Statistical mediation does not prove that changing a particular thought caused symptom improvement or that cognition is the only pathway.]
+    provenance: *provenance
+  - id: pmm:claim:cbt-efficacy-does-not-validate-unique-mechanism
+    claim_type: definition
+    statement: Evidence that a CBT package improves an outcome establishes a treatment effect within scope, not that every component worked or that one cognitive mechanism uniquely produced the benefit.
+    epistemic_status: supported
+    confidence: {level: high, rationale: "This follows from the distinction between intervention efficacy, component effects, statistical mediation, and causal mechanism identification."}
+    scope: {population: Participants in evaluated CBT interventions., species: [human], context_ids: [pmm:context:adult-depression-treatment], temporal_scope: Treatment effect and mechanism interpretation.}
+    defined_object_id: pmm:intervention:protocol-defined-cbt
+    source_ids: [pmm:source:cuijpers-2023-cbt-depression, pmm:source:moreno-peral-2020-mediators]
+    evidence_ids: []
+    limitations:
+      - Specific well-designed component and mediation experiments may provide stronger mechanism evidence, but must be evaluated separately.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:cuijpers-2023-cbt-depression-meta
+    claim_ids: [pmm:claim:cbt-reduces-depression-versus-controls]
+    source_id: pmm:source:cuijpers-2023-cbt-depression
+    extraction_locator: PubMed abstract reporting 409 trials, 52,702 patients, control comparison, follow-up, and sensitivity analyses.
+    evidence_kind: meta_analysis
+    design: Random-effects meta-analysis of randomized CBT comparisons for depression.
+    population: 52,702 patients across 409 trials and 518 comparisons.
+    species: [human]
+    sample_size: 52702
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: Hedges g versus control, value_status: reported, value: 0.79, direction: negative, interval: {level: 0.95, lower: 0.70, upper: 0.89}, notes: Magnitude favored CBT; sign is represented as lower symptom severity.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: adequate, replication: independent_replication}
+    summary: CBT showed moderate-to-large average benefit over control conditions, with significant effects at follow-up and important comparator and sensitivity qualifications.
+    limitations:
+      - Trials varied in CBT type, control, population, delivery, quality, and follow-up; superiority over other psychotherapies was small and not robust in sensitivity analyses.
+    provenance: *provenance
+  - id: pmm:evidence:moreno-peral-2020-mediators
+    claim_ids: [pmm:claim:cognitive-change-statistically-mediates-some-prevention-effects]
+    source_id: pmm:source:moreno-peral-2020-mediators
+    extraction_locator: Systematic-review abstract and results covering 28 mediator studies nested in randomized trials with 7,442 participants.
+    evidence_kind: systematic_review
+    design: Systematic review of candidate mediators in psychological and psychoeducational depression and anxiety prevention trials.
+    population: 7,442 participants across 28 nested mediator studies.
+    species: [human]
+    sample_size: 7442
+    inference_support: mediation
+    support_direction: mixed
+    causal_support: indirect
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: mixed, precision: limited, replication: conceptual_replication}
+    summary: Cognitive variables, especially negative thinking in adults, showed the strongest mediator support, while mechanism research remained limited and heterogeneous.
+    limitations:
+      - Interventions were broader than CBT alone, mediator timing and constructs varied, and statistical mediation often fell short of causal identification.
+    provenance: *provenance
+  - id: pmm:evidence:moreno-peral-2020-mechanism-limit
+    claim_ids: [pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis]
+    source_id: pmm:source:moreno-peral-2020-mediators
+    extraction_locator: Review conclusions that mechanism research remains limited despite candidate cognitive, behavioral, emotional, and interpersonal mediators.
+    evidence_kind: systematic_review
+    design: Mechanism-focused interpretation of mediator studies nested in randomized prevention trials.
+    population: 7,442 participants across 28 nested mediator studies.
+    species: [human]
+    sample_size: 7442
+    inference_support: mechanism
+    support_direction: mixed
+    causal_support: indirect
+    domains: {directness: indirect, risk_of_bias: some_concerns, consistency: mixed, precision: limited, replication: conceptual_replication}
+    summary: Candidate processes were observed, but the review does not establish one complete or unique cognitive-behavioral maintenance mechanism.
+    limitations: [The source reviews prevention interventions rather than individualized reciprocal CBT networks and cannot validate every edge in the proposed cycle.]
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:beck-institute-cognitive-model
+    title: Understanding CBT and the cognitive model
+    source_type: official_framework
+    organization: Beck Institute for Cognitive Behavior Therapy
+    year: 2026
+    url: https://beckinstitute.org/about/understanding-cbt/
+    accessed_at: '2026-08-26'
+    authority_note: Authoritative training organization source used for the intended cognitive-model definition, not as independent efficacy evidence.
+    provenance: *provenance
+  - id: pmm:source:nice-depression-2022
+    title: Depression in adults — treatment and management
+    source_type: official_framework
+    organization: National Institute for Health and Care Excellence
+    year: 2022
+    url: https://www.nice.org.uk/guidance/ng222/chapter/Recommendations
+    accessed_at: '2026-08-26'
+    authority_note: Evidence-based clinical guideline used to bound CBT as a treatment family and describe interactions among thoughts, beliefs, feelings, and behavior.
+    provenance: *provenance
+  - id: pmm:source:cuijpers-2023-cbt-depression
+    title: Cognitive behavior therapy versus control conditions, other psychotherapies, pharmacotherapies and combined treatment for depression
+    source_type: peer_reviewed_article
+    authors: [Pim Cuijpers, Clara Miguel, Mathias Harrer, Constantin Yves Plessen, Marketa Ciharova, David Ebert, Eirini Karyotaki]
+    year: 2023
+    doi: 10.1002/wps.21069
+    pmid: '36640411'
+    url: https://pubmed.ncbi.nlm.nih.gov/36640411/
+    accessed_at: '2026-08-26'
+    authority_note: Comprehensive randomized-trial meta-analysis used for scoped depression treatment efficacy.
+    provenance: *provenance
+  - id: pmm:source:moreno-peral-2020-mediators
+    title: Mediators in psychological and psychoeducational interventions for the prevention of depression and anxiety — a systematic review
+    source_type: peer_reviewed_article
+    authors: [Patricia Moreno-Peral, Juan Angel Bellon, Marcus J. H. Huibers, Jose M. Mestre, Luis Joaquin Garcia-Lopez, Svenja Taubner, Alberto Rodriguez-Morejon, Felix Bolinski, Celia M. D. Sales, Sonia Conejo-Ceron]
+    year: 2020
+    doi: 10.1016/j.cpr.2020.101813
+    pmid: '32045780'
+    url: https://pubmed.ncbi.nlm.nih.gov/32045780/
+    accessed_at: '2026-08-26'
+    authority_note: Systematic review used to distinguish candidate statistical mediators from established causal mechanisms.
+    provenance: *provenance

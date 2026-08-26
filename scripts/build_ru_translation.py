@@ -445,6 +445,32 @@ OVERRIDES.update({
     "When fast logic meets slow belief — evidence for a parallel-processing model of belief bias": "Когда быстрая логика встречает медленные убеждения: данные в пользу модели параллельной обработки влияния убеждений",
 })
 
+OVERRIDES.update({
+    "Attachment system": "Система привязанности",
+    "Attachment behavioral system": "Поведенческая система привязанности",
+    "Attachment-system activation": "Активация системы привязанности",
+    "Attachment-relevant threat or separation": "Угроза или разлука, значимая для привязанности",
+    "Proximity or support seeking": "Поиск близости или поддержки",
+    "Perceived attachment-figure availability": "Воспринимаемая доступность фигуры привязанности",
+    "Attachment-related distress intensity": "Интенсивность дистресса, связанного с привязанностью",
+    "Expectations of relational availability": "Ожидания доступности близкого человека",
+    "Conditional attachment regulation": "Контекстно-зависимая регуляция привязанности",
+    "Strange Situation Procedure": "Процедура «Незнакомая ситуация»",
+    "Strange Situation attachment classification": "Классификация привязанности по процедуре «Незнакомая ситуация»",
+    "Adult close-relationship attachment self-report": "Самоотчёт о привязанности в близких отношениях у взрослых",
+    "Adult attachment anxiety and avoidance scores": "Показатели тревоги и избегания в привязанности у взрослых",
+    "Adult Attachment Interview context": "Контекст Интервью о привязанности взрослых (AAI)",
+    "Adult Attachment Interview state-of-mind classification": "Классификация состояния ума по Интервью о привязанности взрослых (AAI)",
+    "Cognitive-behavioral formulation": "Когнитивно-поведенческая формулировка",
+    "Coping or avoidance behavior": "Совладающее или избегающее поведение",
+    "Negative thinking process": "Процесс негативного мышления",
+    "Reciprocal cognitive-behavioral maintenance cycle": "Взаимная когнитивно-поведенческая петля поддержания проблемы",
+    "Cognitive evaluation practice": "Проверка и переоценка интерпретации",
+    "Protocol-defined cognitive behavior therapy": "КПТ по определённому протоколу",
+    "The complete cycle is a formulation hypothesis, not a single universally established mechanism.": "Полная петля является гипотезой формулировки, а не единым доказанным для всех механизмом.",
+    "Threat context, attachment activation, support seeking, relational response, distress, expectations, child observation, adult interview, and self-report dimensions kept distinct.": "Контекст угрозы, активация привязанности, поиск поддержки, ответ близкого человека, дистресс, ожидания, наблюдение ребёнка, интервью взрослого и показатели самоотчёта представлены раздельно.",
+})
+
 
 def displayed_strings(document: dict) -> set[str]:
     strings: set[str] = set()

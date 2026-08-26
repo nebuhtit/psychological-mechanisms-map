@@ -2,11 +2,13 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 19 mechanisms across 16 families.
+**Current inventory:** 21 mechanisms across 18 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|
+| Attachment system | **Conditional attachment regulation**<br>Proposed process in which threat increases attachment-system activation, support-seeking behavior samples attachment-figure availability, and the response contributes to distress regulation and later relational expectations. | developmental | 1 | 1 | 1 |
 | Cognitive reappraisal | **Meaning reinterpretation**<br>Proposed cognitive process that changes the construed meaning of an eliciting situation and thereby changes later emotional responding. | cognitive | 1 | 3 | 3 |
+| Cognitive-behavioral formulation | **Reciprocal cognitive-behavioral maintenance cycle**<br>Proposed context-dependent process in which interpretations, emotions, physiology, behavior, consequences, and beliefs reciprocally constrain future responding. | integrative | 1 | 1 | 1 |
 | Declarative memory | **Elaborative semantic encoding**<br>Proposed process in which a new item is analyzed for meaning and related to contextual or existing knowledge, producing a more discriminable later memory representation. | cognitive | 1 | 1 | 1 |
 | Deductive reasoning | **Parallel belief-logic evaluation**<br>Proposed process in which content-based plausibility and argument-structure information are evaluated concurrently and can support compatible or competing responses. | cognitive | 1 | 3 | 3 |
 | Fear extinction | **Extinction-memory formation and retrieval**<br>Proposed learning process in which aversive-outcome omission supports a new memory that reduces conditioned responding when later retrieved. | learning | 1 | 4 | 3 |

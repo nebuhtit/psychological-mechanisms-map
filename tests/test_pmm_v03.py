@@ -846,5 +846,98 @@ class BigFiveEvidencePackTests(unittest.TestCase):
         self.assertEqual(evidence["causal_support"], "none")
 
 
+class AttachmentEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-attachment-system-v0.3.yaml"
+        )
+
+    def test_attachment_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_system_state_behavior_mechanism_and_measurements_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:attachment-behavioral-system"], "Construct")
+        self.assertEqual(records["pmm:state:attachment-system-activation"], "State")
+        self.assertEqual(records["pmm:behavior:proximity-support-seeking"], "Behavior")
+        self.assertEqual(records["pmm:mechanism:conditional-attachment-regulation"], "Mechanism")
+        self.assertEqual(records["pmm:measurement:strange-situation-classification"], "Measurement")
+        self.assertEqual(records["pmm:measurement:aai-state-of-mind-classification"], "Measurement")
+
+    def test_stability_and_sensitivity_are_associations_not_causes(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        evidence = {item["id"]: item for item in self.document["evidence"]}
+        for claim_id in (
+            "pmm:claim:caregiver-sensitivity-associated-with-child-security",
+            "pmm:claim:attachment-security-shows-moderate-not-deterministic-stability",
+        ):
+            self.assertEqual(claims[claim_id]["claim_type"], "association")
+        self.assertEqual(
+            evidence["pmm:evidence:divito-kurkjian-2021-sensitivity-meta"]["causal_support"],
+            "none",
+        )
+        mechanism = claims["pmm:claim:attachment-regulation-loop-is-integrative-hypothesis"]
+        self.assertEqual(mechanism["epistemic_status"], "proposed")
+        self.assertEqual(mechanism["confidence"]["level"], "low")
+
+    def test_comma_rich_notes_remain_single_sentences(self) -> None:
+        strange = next(
+            item for item in self.document["objects"]
+            if item["id"] == "pmm:context:strange-situation-procedure"
+        )
+        self.assertEqual(len(strange["boundary_notes"]), 1)
+        sensitivity = next(
+            item for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:divito-kurkjian-2021-sensitivity-meta"
+        )
+        self.assertEqual(len(sensitivity["limitations"]), 1)
+        self.assertIn("heterogeneous coding", sensitivity["limitations"][0])
+
+
+class CbtFormulationEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-cbt-formulation-v0.3.yaml"
+        )
+
+    def test_cbt_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_efficacy_mediation_and_mechanism_are_not_collapsed(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        efficacy = claims["pmm:claim:cbt-reduces-depression-versus-controls"]
+        mediation = claims["pmm:claim:cognitive-change-statistically-mediates-some-prevention-effects"]
+        mechanism = claims["pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis"]
+        self.assertEqual(efficacy["claim_type"], "causal_effect")
+        self.assertNotIn("mechanism_id", efficacy)
+        self.assertEqual(mediation["claim_type"], "mediation")
+        self.assertEqual(mediation["mediation_inference"], "statistical")
+        self.assertEqual(mechanism["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(mechanism["epistemic_status"], "proposed")
+
+    def test_thought_emotion_physiology_behavior_and_outcome_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:situational-interpretation"], "Construct")
+        self.assertEqual(records["pmm:state:cbt-emotional-response"], "State")
+        self.assertEqual(records["pmm:state:cbt-physiological-response"], "State")
+        self.assertEqual(records["pmm:behavior:cbt-coping-response"], "Behavior")
+        self.assertEqual(records["pmm:outcome:cbt-short-long-consequences"], "Outcome")
+
+    def test_comma_rich_boundaries_remain_single_sentences(self) -> None:
+        intervention = next(
+            item for item in self.document["objects"]
+            if item["id"] == "pmm:intervention:protocol-defined-cbt"
+        )
+        self.assertEqual(len(intervention["boundary_notes"]), 1)
+        trial_evidence = next(
+            item for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:cuijpers-2023-cbt-depression-meta"
+        )
+        self.assertEqual(len(trial_evidence["limitations"]), 1)
+        self.assertIn("sensitivity analyses", trial_evidence["limitations"][0])
+
+
 if __name__ == "__main__":
     unittest.main()

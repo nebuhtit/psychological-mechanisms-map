@@ -297,3 +297,39 @@ questions:
     about_ids: [pmm:construct:big-five-trait-taxonomy, pmm:measurement:bfi2-domain-facet-scores, pmm:outcome:academic-performance]
     source_ids: [pmm:source:soto-john-2017-bfi2, pmm:source:poropat-2009-academic-performance]
     provenance: *provenance
+
+  - id: pmm:research-question:attachment-within-person-change
+    family_id: attachment-system
+    question:
+      en: Which changes in support response causally alter within-person distress regulation and relationship expectations, for whom and in which contexts?
+      ru: Какие изменения ответа поддержки причинно меняют регуляцию дистресса и ожидания от отношений у конкретного человека, для кого и в каких контекстах?
+    why_open:
+      en: Measurement systems differ, observational sensitivity associations do not identify a complete mechanism, and long-term attachment stability is moderate rather than deterministic.
+      ru: Системы измерения различаются, наблюдательные связи чувствительности не выявляют полный механизм, а долговременная устойчивость привязанности умеренная, а не детерминированная.
+    what_would_help:
+      en: Preregistered longitudinal and experimental dyadic studies with dense within-person measures of threat, behavior, response, distress, and later expectations.
+      ru: Пререгистрированные продольные и экспериментальные исследования пар с частыми внутрииндивидуальными измерениями угрозы, поведения, ответа, дистресса и последующих ожиданий.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:conditional-attachment-regulation, pmm:state:perceived-attachment-figure-availability, pmm:construct:relational-availability-expectations]
+    source_ids: [pmm:source:fraley-shaver-2000-attachment, pmm:source:pinquart-2013-stability]
+    provenance: *provenance
+
+  - id: pmm:research-question:cbt-person-specific-process-selection
+    family_id: cbt-formulation
+    question:
+      en: Which measured process should be targeted first for a particular person and goal, and does changing it improve the predicted outcome?
+      ru: На какой измеренный процесс следует воздействовать первым для конкретного человека и цели и улучшает ли его изменение ожидаемый результат?
+    why_open:
+      en: CBT packages are effective for some conditions, but package efficacy and statistical mediation do not identify the dominant causal process in an individual's maintenance network.
+      ru: Пакеты КПТ эффективны при некоторых состояниях, но эффективность пакета и статистическая медиация не выявляют главный причинный процесс в индивидуальной поддерживающей сети.
+    what_would_help:
+      en: High-frequency idiographic measurement, randomized or sequential process interventions, prespecified outcomes, and comparison of competing functional networks.
+      ru: Частые идиографические измерения, рандомизированные или последовательные воздействия на процессы, заранее заданные исходы и сравнение конкурирующих функциональных сетей.
+    question_kind: causal
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:reciprocal-cbt-maintenance-cycle, pmm:intervention:behavioral-experiment, pmm:outcome:cbt-short-long-consequences]
+    source_ids: [pmm:source:moreno-peral-2020-mediators, pmm:source:cuijpers-2023-cbt-depression]
+    provenance: *provenance

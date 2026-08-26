@@ -1,8 +1,16 @@
 # PMM navigation views v0.1
 
-PMM now exposes three projections over one canonical evidence model.
+PMM now exposes four projections over one canonical evidence model.
 
-## 1. General Psychology
+## 1. Foundational Models
+
+This is the default human-readable entry point, not a second scientific ontology. Ten familiar frameworks are summarized as process chains with practical leverage points, measurement boundaries, established findings, unresolved hypotheses, and links to canonical PMM records.
+
+The organizing rule follows Process-Based Therapy: person, goal, and context → functional network of measurable processes → selected modifiable process → bounded intervention → measured outcome → revised network. PBT is therefore not an eleventh therapy school in the catalog. Attachment theory, CBT, conditioning, trait models, and other frameworks supply candidate processes and competing hypotheses that must be tested in context.
+
+`partial` means that a model has at least one linked evidence pack. `planned` means that the readable summary exists but no dedicated canonical pack has yet passed the promotion gate. A model label never inherits causal support from the records linked beneath it.
+
+## 2. General Psychology
 
 This is an educational navigation facet. It exposes 24 familiar topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. These headings are not added as new PMM object types and do not form one strict ontology.
 
@@ -22,13 +30,15 @@ Every linked card retains its canonical type:
 
 Coverage labels are epistemically important. `partial` means that at least one canonical evidence-linked record exists, not that the area is complete. `planned` means that PMM does not yet contain curated records for the area. Attention is narrowly limited to predictive spatial cueing, declarative memory to encoding, recognition, and one clinical dissociation, perception to grating contrast detection, and reasoning to syllogistic validity judgments under belief conflict. A task score is not treated as the entire psychological function.
 
-## 2. Mechanisms & Evidence
+Attachment records now appear under social regulation and developmental context. CBT records appear under emotional regulation and stress/coping. These are multiple navigation memberships over the same typed records, not duplicated scientific assertions.
+
+## 3. Mechanisms & Evidence
 
 This is the strict scientific core. It separates objects, structural relations, reified Claims, Evidence extractions, and Sources. Causation, association, prediction, mediation, and moderation remain distinct.
 
 Open research questions appear as a faint peripheral annotation layer. They point to source-linked limitations but are not promoted into objects or Claims. Selecting one explains why the gap remains open and what kind of study could reduce the uncertainty.
 
-## 3. Scientific Systems
+## 4. Scientific Systems
 
 This is a crosswalk, not a merged hierarchy:
 
@@ -42,7 +52,7 @@ This is a crosswalk, not a merged hierarchy:
 
 The human-editable projection is [`data/navigation-views-v0.1.yaml`](../data/navigation-views-v0.1.yaml). `scripts/build_site_data.py` rejects unknown family IDs, unresolved canonical IDs, type mismatches, broken parents, and unknown source references. The generated website bundle remains disposable.
 
-The language area now has a deliberately narrow visual-word pilot. It separates broad comprehension, visual lexical access, the lexical-decision task, manipulated prime relation and timing, observable classification, response latency, diffusion-model parameters, and competing automatic and strategic hypotheses. It does not yet cover production, syntax, discourse, pragmatics, or sign language. Big Five is also partial: its taxonomy, five trait constructs, BFI-2 context, item responses, scores, factor parameters, and academic association remain separate, and no mechanism is invented. The next breadth expansion is temperament. The complete queue and promotion gate are documented in [`docs/coverage-roadmap.md`](coverage-roadmap.md).
+The attachment and CBT packs deliberately test common modeling errors. Attachment is not reduced to four permanent personality types, and Strange Situation, adult self-report, and Adult Attachment Interview are not treated as interchangeable. CBT treatment efficacy, statistical cognitive mediation, and the proposed person-specific maintenance loop are separate Claims. The next full evidence-pack expansion should test social learning or temperament rather than add more unsupported catalog prose. The complete queue and promotion gate are documented in [`docs/coverage-roadmap.md`](coverage-roadmap.md).
 
 ## Practical interpretation layer
 

@@ -64,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.14.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.15.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -72,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.14.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.15.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -88,6 +88,15 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(
             bundle["translations"]["Spatial attention may improve performance in some cueing tasks by increasing perceptual sensitivity at the attended location."],
             "В некоторых заданиях с пространственной подсказкой внимание может улучшать результат за счёт повышения перцептивной чувствительности в указанном месте.",
+        )
+        self.assertEqual(bundle["translations"]["Attachment system"], "Система привязанности")
+        self.assertEqual(
+            bundle["translations"]["Conditional attachment regulation"],
+            "Контекстно-зависимая регуляция привязанности",
+        )
+        self.assertEqual(
+            bundle["translations"]["Strange Situation Procedure"],
+            "Процедура «Незнакомая ситуация»",
         )
 
     def test_every_claim_has_a_source_checked_bilingual_explanation(self) -> None:
@@ -256,10 +265,11 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn(".family-overview-card", stylesheet)
         self.assertIn(".family-stats", stylesheet)
 
-    def test_three_validated_navigation_views_are_exposed(self) -> None:
+    def test_four_validated_navigation_views_are_exposed(self) -> None:
         page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        self.assertIn('data-perspective="models"', page)
         self.assertIn('data-perspective="general"', page)
         self.assertIn('data-perspective="mechanisms"', page)
         self.assertIn('data-perspective="systems"', page)
@@ -267,6 +277,14 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn("function openCanonicalRecord(", javascript)
         self.assertIn("navigation_views", document)
         self.assertEqual(document["navigation_views"]["view_version"], "0.1.0")
+        models = document["navigation_views"]["foundational_models"]
+        self.assertEqual(len(models["workflow"]), 5)
+        self.assertEqual(len(models["models"]), 10)
+        self.assertIn("Process-Based Therapy", models["process_based_note"]["en"])
+        coverage = {item["id"]: item["coverage"] for item in models["models"]}
+        self.assertEqual(coverage["model:attachment"], "partial")
+        self.assertEqual(coverage["model:cbt-formulation"], "partial")
+        self.assertEqual(coverage["model:social-learning"], "planned")
 
     def test_navigation_does_not_collapse_tasks_traits_and_mechanisms(self) -> None:
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())

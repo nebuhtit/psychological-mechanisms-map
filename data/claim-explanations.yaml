@@ -484,3 +484,55 @@ entries:
       Students with higher measured Conscientiousness tended to have better academic performance across the studies in the meta-analysis. This does not show that raising a questionnaire score will improve grades or that one score can determine an individual student's outcome.
     ru: >-
       В исследованиях метаанализа учащиеся с более высоким измеренным уровнем добросовестности в среднем показывали более высокую успеваемость. Это не доказывает, что повышение балла опросника улучшит оценки или что по одному баллу можно определить результат конкретного ученика.
+
+  - claim_id: pmm:claim:attachment-system-organizes-safety-seeking
+    en: >-
+      Attachment theory describes what can happen when safety through a particular close person becomes important: threat may increase monitoring, contact, or support seeking, and an available person can become a safe haven or secure base. This is a relationship process, not a permanent personality label.
+    ru: >-
+      Теория привязанности описывает, что может происходить, когда безопасность связывается с конкретным близким человеком: угроза может усиливать поиск контакта или поддержки, а доступный близкий может служить источником успокоения и опорой для исследования мира. Это процесс в отношениях, а не постоянный тип личности.
+  - claim_id: pmm:claim:adult-attachment-measures-are-not-interchangeable
+    en: >-
+      A questionnaire about anxiety and avoidance in romantic relationships, an interview about the coherence of attachment memories, and observation of a child during reunion do not measure the same thing. Their results should not be merged into one universal attachment type.
+    ru: >-
+      Опросник тревоги и избегания в романтических отношениях, интервью о связности рассказа человека и наблюдение за ребёнком при воссоединении измеряют не одно и то же. Их результаты нельзя объединять в один универсальный «тип привязанности».
+  - claim_id: pmm:claim:caregiver-sensitivity-associated-with-child-security
+    en: >-
+      In the reviewed studies, caregivers of children classified as securely attached tended to respond more sensitively. The relation was meaningful but observational: sensitivity is an important candidate influence, not the sole cause of a child's attachment pattern.
+    ru: >-
+      В рассмотренных исследованиях опекуны детей с безопасной привязанностью в среднем реагировали более чутко. Связь была заметной, но наблюдательной: чувствительность является важным возможным фактором, а не единственной причиной паттерна привязанности ребёнка.
+  - claim_id: pmm:claim:attachment-security-shows-moderate-not-deterministic-stability
+    en: >-
+      Attachment assessments were related across time on average, but the relation weakened over long intervals and varied by method and context. Early attachment can matter without fixing adult relationships permanently.
+    ru: >-
+      Результаты оценки привязанности в среднем были связаны во времени, но связь ослабевала при больших интервалах и зависела от методики и контекста. Ранний опыт может иметь значение, не определяя взрослые отношения навсегда.
+  - claim_id: pmm:claim:attachment-regulation-loop-is-integrative-hypothesis
+    en: >-
+      A useful working hypothesis is that threat triggers a search for safety, the other person's response changes current distress, and repeated experiences can update expectations about relationships. The whole sequence has not been established as one universal causal mechanism and must be tested against simpler social-support and learning explanations.
+    ru: >-
+      Полезная рабочая гипотеза состоит в том, что угроза запускает поиск безопасности, ответ другого человека меняет текущий дистресс, а повторяющийся опыт может обновлять ожидания от отношений. Вся последовательность не установлена как единый универсальный причинный механизм и должна сравниваться с более простыми объяснениями через поддержку и научение.
+
+  - claim_id: pmm:claim:cbt-model-links-interpretation-and-response
+    en: >-
+      Two people can react differently to the same event because they assign it different meanings. In CBT, interpretation is examined together with emotion, bodily response, behavior, and context. The interpretation may be automatic or partly outside awareness; the model does not say that every feeling follows a conscious sentence in the mind.
+    ru: >-
+      Два человека могут по-разному реагировать на одно событие, потому что придают ему разный смысл. В КПТ интерпретацию рассматривают вместе с эмоцией, телесной реакцией, поведением и контекстом. Интерпретация может быть автоматической или частично неосознанной; модель не утверждает, что каждому чувству предшествует осознанная фраза в голове.
+  - claim_id: pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis
+    en: >-
+      A person's difficulty may be maintained by a loop rather than one cause: an interpretation changes distress, distress and physiology influence action, the action produces short-term relief or another consequence, and that consequence shapes later expectations. Which link matters most must be measured for that person and context.
+    ru: >-
+      Трудность человека может поддерживаться петлёй, а не одной причиной: интерпретация меняет дистресс, дистресс и физиология влияют на действие, действие приносит краткое облегчение или другое последствие, а оно формирует последующие ожидания. Какое звено важнее, нужно измерять для конкретного человека и контекста.
+  - claim_id: pmm:claim:cbt-reduces-depression-versus-controls
+    en: >-
+      Across hundreds of randomized depression trials, people assigned to CBT had lower symptoms on average than people in control conditions. The size of benefit depended on the comparison, protocol, and study quality, and the result does not mean CBT is best for every person or superior to every other psychotherapy.
+    ru: >-
+      В сотнях рандомизированных исследований депрессии симптомы у получавших КПТ в среднем были ниже, чем в контрольных условиях. Размер пользы зависел от сравнения, протокола и качества исследования; результат не означает, что КПТ лучше для каждого человека или превосходит любую другую психотерапию.
+  - claim_id: pmm:claim:cognitive-change-statistically-mediates-some-prevention-effects
+    en: >-
+      Some prevention studies found that improvement in measured negative thinking occurred alongside and statistically accounted for part of later symptom improvement. Because timing, measures, and interventions differed, this is evidence for a candidate pathway, not proof that changing thoughts was the sole cause.
+    ru: >-
+      В части исследований профилактики улучшение измеряемого негативного мышления сопровождало последующее уменьшение симптомов и статистически объясняло часть эффекта. Из-за различий во времени измерений, методиках и вмешательствах это данные в пользу возможного пути, а не доказательство того, что изменение мыслей было единственной причиной.
+  - claim_id: pmm:claim:cbt-efficacy-does-not-validate-unique-mechanism
+    en: >-
+      A treatment package can work even when researchers do not know which component produced the benefit. To establish a mechanism, studies must separately change or measure the proposed process and show that it explains the outcome better than alternatives.
+    ru: >-
+      Пакет лечения может работать, даже если неизвестно, какой компонент создал пользу. Чтобы установить механизм, исследование должно отдельно изменить или измерить предполагаемый процесс и показать, что он объясняет результат лучше альтернатив.

@@ -506,3 +506,136 @@ applications:
     claim_ids: [pmm:claim:conscientiousness-associated-with-academic-performance]
     source_ids: [pmm:source:poropat-2009-academic-performance]
     provenance: *provenance
+
+  - id: pmm:application:map-attachment-episode-without-labeling
+    family_id: attachment-system
+    title:
+      en: Map the relationship episode instead of assigning a style
+      ru: Разбирайте эпизод отношений вместо присвоения стиля
+    practical_question:
+      en: What can be changed when a threat to closeness repeatedly leads to distress or conflict?
+      ru: Что можно изменить, когда угроза близости постоянно приводит к дистрессу или конфликту?
+    action:
+      en: >-
+        Record one concrete episode as trigger, perceived danger, need, support-seeking or distancing action, the other person's response, immediate relief or escalation, and later consequence. Choose one observable change such as a clearer request, agreed response, boundary, or pause and review the result.
+      ru: >-
+        Запишите один конкретный эпизод как триггер, воспринятую угрозу, потребность, поиск поддержки или дистанцирование, ответ другого, немедленное облегчение или усиление и более позднее последствие. Выберите одно наблюдаемое изменение: более ясную просьбу, согласованный ответ, границу или паузу, затем оцените результат.
+    expected_change:
+      en: A testable change in communication, distress regulation, or repeated interaction without treating either person as a fixed type.
+      ru: Проверяемое изменение общения, регуляции дистресса или повторяющегося взаимодействия без превращения человека в неизменный тип.
+    evidence_basis:
+      en: Attachment research supports relationship-specific patterns and associations with responsive care, while the complete episode-to-expectation mechanism remains proposed.
+      ru: Исследования привязанности поддерживают специфичные для отношений паттерны и связи с отзывчивым уходом, но полный механизм от эпизода до ожиданий остаётся гипотезой.
+    applicability:
+      en: Low-risk reflection on close relationships, caregiving, or therapy formulation when safety permits direct communication.
+      ru: Низкорисковый разбор близких отношений, ухода или терапевтической формулировки, когда безопасность позволяет прямое общение.
+    not_established:
+      en: The map does not diagnose attachment, prove childhood causation, guarantee that communication will help, or apply where coercion or violence makes direct negotiation unsafe.
+      ru: Схема не диагностирует привязанность, не доказывает причину из детства, не гарантирует пользу общения и не применяется там, где принуждение или насилие делают переговоры небезопасными.
+    safety_note:
+      en: In coercive, violent, or unsafe relationships, prioritize safety planning and qualified support rather than joint experimentation.
+      ru: При принуждении, насилии или небезопасных отношениях приоритетом являются план безопасности и квалифицированная помощь, а не совместный эксперимент.
+    actionability: interpretation_only
+    confidence: low
+    audience: [individual, clinician, researcher]
+    claim_ids: [pmm:claim:attachment-system-organizes-safety-seeking, pmm:claim:adult-attachment-measures-are-not-interchangeable, pmm:claim:attachment-regulation-loop-is-integrative-hypothesis]
+    source_ids: [pmm:source:fraley-shaver-2000-attachment, pmm:source:ravitz-2010-adult-attachment-measures]
+    provenance: *provenance
+
+  - id: pmm:application:sensitive-response-without-determinism
+    family_id: attachment-system
+    title:
+      en: Respond sensitively without treating one interaction as destiny
+      ru: Отвечайте чутко, не считая один эпизод судьбой
+    practical_question:
+      en: What is a reasonable caregiving target suggested by attachment evidence?
+      ru: Какую разумную цель ухода подсказывают данные о привязанности?
+    action:
+      en: Notice the child's signal, infer the likely need cautiously, respond promptly and proportionately, and observe whether the child can recover or return to exploration; adjust rather than forcing contact.
+      ru: Заметьте сигнал ребёнка, осторожно предположите потребность, ответьте своевременно и соразмерно и наблюдайте, может ли ребёнок успокоиться или вернуться к исследованию; корректируйте ответ, а не навязывайте контакт.
+    expected_change:
+      en: More contingent caregiving and better information about what helps this child regulate in this relationship.
+      ru: Более согласованный с сигналами уход и более точная информация о том, что помогает этому ребёнку регулироваться в данных отношениях.
+    evidence_basis:
+      en: Observed caregiver sensitivity is positively associated with secure preschool attachment, but observational evidence does not establish one sufficient causal recipe.
+      ru: Наблюдаемая чувствительность опекуна положительно связана с безопасной привязанностью дошкольника, но наблюдательные данные не устанавливают единственный достаточный причинный рецепт.
+    applicability:
+      en: Ordinary caregiving and professional parent guidance within the child's developmental, sensory, cultural, and safety context.
+      ru: Повседневный уход и профессиональное сопровождение родителей с учётом развития, сенсорных особенностей, культуры и безопасности ребёнка.
+    not_established:
+      en: Sensitivity alone does not determine attachment, and this guidance is not a substitute for assessment of developmental, medical, trauma, or safeguarding concerns.
+      ru: Одна чувствительность не определяет привязанность, а рекомендация не заменяет оценку развития, здоровья, травмы или угроз безопасности.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [individual, clinician, educator]
+    claim_ids: [pmm:claim:caregiver-sensitivity-associated-with-child-security, pmm:claim:attachment-security-shows-moderate-not-deterministic-stability]
+    source_ids: [pmm:source:divito-kurkjian-2021-sensitivity, pmm:source:pinquart-2013-stability]
+    provenance: *provenance
+
+  - id: pmm:application:test-one-cbt-loop-link
+    family_id: cbt-formulation
+    title:
+      en: Test one link in the cognitive-behavioral loop
+      ru: Проверяйте одно звено когнитивно-поведенческой петли
+    practical_question:
+      en: How can a broad problem be turned into a safe and testable change?
+      ru: Как превратить широкую проблему в безопасное проверяемое изменение?
+    action:
+      en: >-
+        Describe one situation, interpretation, emotion, bodily response, action, and immediate and delayed consequence. Select one low-risk link: check a prediction, change an avoidance behavior, alter the environment, or practice a skill. Define the expected observable result before testing it.
+      ru: >-
+        Опишите одну ситуацию, интерпретацию, эмоцию, телесную реакцию, действие, немедленное и отсроченное последствие. Выберите одно низкорисковое звено: проверить прогноз, изменить избегающее действие или среду либо потренировать навык. До проверки задайте наблюдаемый ожидаемый результат.
+    expected_change:
+      en: Better individualized evidence about what maintains the problem and which change improves a personally relevant outcome.
+      ru: Более точные индивидуальные данные о том, что поддерживает проблему и какое изменение улучшает важный для человека результат.
+    evidence_basis:
+      en: CBT has treatment efficacy in several scoped conditions, and cognitive variables are candidate mediators, but the full maintenance loop is person- and context-specific.
+      ru: КПТ эффективна при ряде конкретных состояний, а когнитивные переменные являются возможными медиаторами, но полная поддерживающая петля зависит от человека и контекста.
+    applicability:
+      en: Low-risk self-observation, skills training, or qualified CBT and process-based formulation; not emergency or high-risk experimentation.
+      ru: Низкорисковое самонаблюдение, обучение навыкам или квалифицированная КПТ и процессная формулировка; не для экстренных или рискованных экспериментов.
+    not_established:
+      en: A changed thought does not guarantee a changed feeling, and failure of one experiment does not prove the whole CBT model false or the person resistant.
+      ru: Изменение мысли не гарантирует изменение чувства, а неудача одного эксперимента не опровергает всю модель КПТ и не означает сопротивление человека.
+    safety_note:
+      en: Severe symptoms, suicidality, psychosis, abuse, or medical risk require qualified assessment and an appropriate care plan.
+      ru: Тяжёлые симптомы, суицидальность, психоз, насилие или медицинский риск требуют квалифицированной оценки и подходящего плана помощи.
+    actionability: interpretation_only
+    confidence: low
+    audience: [individual, clinician, researcher]
+    claim_ids: [pmm:claim:cbt-model-links-interpretation-and-response, pmm:claim:cbt-cycle-is-person-specific-mechanism-hypothesis, pmm:claim:cognitive-change-statistically-mediates-some-prevention-effects]
+    source_ids: [pmm:source:beck-institute-cognitive-model, pmm:source:moreno-peral-2020-mediators]
+    provenance: *provenance
+
+  - id: pmm:application:use-cbt-efficacy-within-scope
+    family_id: cbt-formulation
+    title:
+      en: Use CBT efficacy without claiming one proven mechanism
+      ru: Используйте данные об эффективности КПТ без заявления о единственном механизме
+    practical_question:
+      en: What does strong treatment evidence justify in practice?
+      ru: Что сильные данные о лечении позволяют утверждать на практике?
+    action:
+      en: For depression, consider a protocol-defined CBT option with qualified assessment, shared decision-making, progress measurement, and review of fit; identify the actual components delivered rather than assuming all CBT is identical.
+      ru: При депрессии рассматривайте КПТ по определённому протоколу с квалифицированной оценкой, совместным решением, измерением прогресса и проверкой соответствия; фиксируйте реальные компоненты, а не считайте всю КПТ одинаковой.
+    expected_change:
+      en: On average, lower depressive symptom severity than control conditions represented in the evidence, with individual response monitored rather than presumed.
+      ru: В среднем более низкая выраженность депрессивных симптомов, чем в представленных контрольных условиях, при обязательном отслеживании индивидуального ответа.
+    evidence_basis:
+      en: A meta-analysis of 409 randomized trials found a moderate-to-large average effect versus controls, while differences from other psychotherapies were small and not robust in sensitivity analyses.
+      ru: Метаанализ 409 рандомизированных исследований выявил умеренный или крупный средний эффект по сравнению с контролем, тогда как отличия от других психотерапий были малы и неустойчивы в анализах чувствительности.
+    applicability:
+      en: Evidence-based depression care selected with a qualified professional and adapted to severity, preference, access, comorbidity, and risk.
+      ru: Доказательная помощь при депрессии, выбранная с квалифицированным специалистом с учётом тяжести, предпочтений, доступности, сопутствующих состояний и риска.
+    not_established:
+      en: The result does not show that CBT is best for everyone, that self-help is equivalent to therapy, or that cognitive restructuring uniquely caused improvement.
+      ru: Результат не показывает, что КПТ лучше для всех, что самопомощь эквивалентна терапии или что улучшение вызвала только когнитивная реструктуризация.
+    safety_note:
+      en: Treatment selection and crisis care should follow qualified clinical assessment; this map is not a treatment recommendation for an individual.
+      ru: Выбор лечения и кризисная помощь должны основываться на квалифицированной клинической оценке; карта не назначает лечение конкретному человеку.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [individual, clinician, researcher]
+    claim_ids: [pmm:claim:cbt-reduces-depression-versus-controls, pmm:claim:cbt-efficacy-does-not-validate-unique-mechanism]
+    source_ids: [pmm:source:cuijpers-2023-cbt-depression, pmm:source:nice-depression-2022]
+    provenance: *provenance

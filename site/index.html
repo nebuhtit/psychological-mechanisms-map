@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,650&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.14.0">
+  <link rel="stylesheet" href="styles.css?v=0.15.0">
 </head>
 <body>
   <div class="page-shell">
@@ -29,21 +29,29 @@
 
     <main>
       <nav class="perspective-switch" id="perspective-switch" aria-label="Choose a way to explore PMM">
-        <button class="perspective-button is-active" type="button" data-perspective="general" aria-pressed="true">
-          <small>01 · Familiar navigation</small>
+        <button class="perspective-button is-active" type="button" data-perspective="models" aria-pressed="true">
+          <small>01 · Practical foundations</small>
+          <strong>Foundational Models</strong>
+        </button>
+        <button class="perspective-button" type="button" data-perspective="general" aria-pressed="false">
+          <small>02 · Familiar navigation</small>
           <strong>General Psychology</strong>
         </button>
         <button class="perspective-button" type="button" data-perspective="mechanisms" aria-pressed="false">
-          <small>02 · Scientific core</small>
+          <small>03 · Scientific core</small>
           <strong>Mechanisms &amp; Evidence</strong>
         </button>
         <button class="perspective-button" type="button" data-perspective="systems" aria-pressed="false">
-          <small>03 · Terminology alignment</small>
+          <small>04 · Terminology alignment</small>
           <strong>Scientific Systems</strong>
         </button>
       </nav>
 
-      <section class="perspective-panel general-panel" id="general-panel" data-perspective-panel="general">
+      <section class="perspective-panel models-panel" id="models-panel" data-perspective-panel="models">
+        <div id="foundational-models-view"></div>
+      </section>
+
+      <section class="perspective-panel general-panel" id="general-panel" data-perspective-panel="general" hidden>
         <div id="general-psychology-view"></div>
       </section>
 
@@ -158,6 +166,6 @@
       <span id="build-version"></span>
     </footer>
   </div>
-  <script src="app.js?v=0.14.0" defer></script>
+  <script src="app.js?v=0.15.0" defer></script>
 </body>
 </html>

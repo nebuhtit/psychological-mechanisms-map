@@ -11,11 +11,13 @@
 
 **[Read the strategy reset](docs/strategy-reset.md)** · **[See the coverage roadmap](docs/coverage-roadmap.md)** · **[Compare all modeled mechanisms](docs/mechanism-index.md)**
 
-PMM is an open, versioned, evidence-aware ontology and knowledge-graph project for psychological mechanisms. It represents psychological constructs, mental states, behaviors, interventions, measurements, contexts, empirical claims, evidence records, and scientific sources without collapsing them into an ambiguous diagram.
+PMM is an open, versioned, evidence-aware ontology and knowledge-graph project for psychological mechanisms. Its organizing rule is inspired by [**Process-Based Therapy (PBT)**](https://doi.org/10.1016/j.cpr.2020.101908): start with a person, a goal, and a context; formulate a functional network of measurable processes; select a modifiable process; apply a bounded intervention; measure the outcome; and revise the network. Named theories and therapy schools are sources of hypotheses and readable entry points, not the final units of explanation or treatment.
+
+PMM represents psychological constructs, momentary states, behaviors, mechanisms, interventions, measurements, contexts, empirical claims, evidence records, and scientific sources without collapsing them into an ambiguous diagram. It can therefore decompose attachment theory, CBT, conditioning, trait models, and other frameworks into shared or competing process hypotheses while preserving what each source actually established.
 
 The canonical scientific data is human-editable YAML validated against JSON Schema and semantic rules. Deterministic JSON, JSON-LD, Turtle/RDF, and the interactive website are generated projections rather than independently maintained sources of truth.
 
-PMM is intended for researchers, ontology engineers, computational psychiatry projects, evidence-synthesis tools, and developers building scientifically traceable mental-health knowledge systems.
+PMM is intended for researchers, clinicians interested in process-based formulation, ontology engineers, computational psychiatry projects, evidence-synthesis tools, educators, and developers building scientifically traceable mental-health knowledge systems.
 
 > [!IMPORTANT]
 > PMM is an early research prototype, not a diagnostic system, clinical decision-support tool, treatment recommendation engine, or claim that psychology already has a complete causal map of the mind. Most records have not received independent domain-expert review.
@@ -43,7 +45,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains sixteen deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains eighteen deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -63,6 +65,8 @@ The live explorer contains sixteen deliberately heterogeneous evidence families.
 | Deductive reasoning | Reasoning construct, syllogism task, validity-believability manipulation, judgment, performance, signal-detection decomposition, and proposed parallel evaluation |
 | Language comprehension | Broad comprehension, visual lexical access, lexical-decision task, semantic relatedness and timing, observable response, latency, diffusion parameters, and competing automatic and strategic processes |
 | Big Five personality traits | Descriptive taxonomy, five trait domains, questionnaire context, item responses, scores, factor parameters, academic performance, and noncausal associations |
+| Attachment system | Threat and separation context, system activation, support seeking, perceived availability, distress, relationship expectations, and noninterchangeable child and adult measures |
+| Cognitive-behavioral formulation | Situation, interpretation, emotion, physiology, behavior, consequences, beliefs, behavioral experiments, treatment efficacy, statistical mediation, and a proposed reciprocal maintenance network |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
@@ -70,15 +74,16 @@ Each family is a small evidence pack, not a textbook chapter. Null findings, inc
 
 PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Seventeen topics currently have at least one evidence-linked pilot; seven remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
-Each of the 16 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
+Each of the 18 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
 
 PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Every current evidence family has at least one bilingual practical interpretation. Every individual Claim also displays either a curated application or a conservative practical inference rule specific to its claim type.
 
-The website provides three switchable views over the same canonical records:
+The website provides four switchable views over the same canonical records:
 
-1. **General Psychology** uses familiar educational areas such as Memory, Emotions, Temperament, and Big Five for navigation. It explicitly preserves the difference between a function family, state, construct, task, measurement, trait taxonomy, and mechanism. Missing areas are marked `planned` rather than populated with invented records.
-2. **Mechanisms & Evidence** is the strict PMM core with typed objects, reified Claims, Evidence, confidence, causal scope, limitations, and Sources.
-3. **Scientific Systems** aligns selected records with RDoC, Cognitive Atlas, Big Five, modern temperament models, and HiTOP without merging these systems or hiding their different purposes.
+1. **Foundational Models** is the default human-readable catalog. Ten familiar model families, including attachment, CBT, conditioning, emotion, motivation, self-regulation, personality development, traits, and coping, are shown as process chains with practical leverage points, measurements, evidence boundaries, and links into canonical PMM records. PBT supplies the workflow; it is not an eleventh school.
+2. **General Psychology** uses familiar educational areas such as Memory, Emotions, Temperament, and Big Five for navigation. It explicitly preserves the difference between a function family, state, construct, task, measurement, trait taxonomy, and mechanism. Missing areas are marked `planned` rather than populated with invented records.
+3. **Mechanisms & Evidence** is the strict PMM core with typed objects, reified Claims, Evidence, confidence, causal scope, limitations, and Sources.
+4. **Scientific Systems** aligns selected records with RDoC, Cognitive Atlas, Big Five, modern temperament models, and HiTOP without merging these systems or hiding their different purposes.
 
 The mechanisms view also provides a collapsed **all-mechanisms index**. It compares every public Mechanism by definition, family, mechanism kind, linked Claims, Evidence records, and Sources, then opens the selected record in its local graph. This is an inventory of modeled traceability, not a ranking of scientific truth. Similar labels are not merged automatically. See [navigation views v0.1](docs/navigation-views.md) for the projection rules.
 
@@ -173,6 +178,10 @@ data/evidence-pack-language-comprehension-v0.3.yaml
                                      Language comprehension, semantic priming, lexical decision, diffusion, and competing-process boundary pack
 data/evidence-pack-big-five-v0.3.yaml
                                      Trait taxonomy, BFI-2 measurement, factor model, and academic-association boundary pack
+data/evidence-pack-attachment-system-v0.3.yaml
+                                     Attachment activation, support seeking, relationship response, stability, and measurement-boundary pack
+data/evidence-pack-cbt-formulation-v0.3.yaml
+                                     CBT formulation, treatment efficacy, mediation, and person-specific mechanism-boundary pack
 schema/research-questions-v0.1.schema.yaml
                                      Separate contract for open-gap annotations
 data/research-questions-v0.1.yaml    Bilingual source-linked questions, one per public family
@@ -180,7 +189,7 @@ schema/practical-implications-v0.1.schema.yaml
                                      Separate contract for bounded practical interpretations
 data/practical-implications-v0.1.yaml
                                      Bilingual action, expected change, transfer limits, and safety boundaries
-data/navigation-views-v0.1.yaml      Validated educational and framework projections over canonical IDs
+data/navigation-views-v0.1.yaml      Validated PBT/model, educational, and scientific-framework projections over canonical IDs
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/navigation-views.md             Faceted-view semantics and boundaries
 docs/coverage-roadmap.md             Major-area breadth target, queue, and per-topic quality gate
