@@ -278,9 +278,10 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(types["pmm:measurement:n-back-performance"], "Measurement")
         self.assertEqual(types["pmm:mechanism:episodic-retrieval-n-back"], "Mechanism")
         self.assertIn("rather than memory itself", memory["ontological_note"]["en"])
-        for node_id in ("gp:temperament", "gp:big-five"):
-            self.assertEqual(nodes[node_id]["coverage"], "planned")
-            self.assertEqual(nodes[node_id]["memberships"], [])
+        self.assertEqual(nodes["gp:temperament"]["coverage"], "planned")
+        self.assertEqual(nodes["gp:temperament"]["memberships"], [])
+        self.assertEqual(nodes["gp:big-five"]["coverage"], "partial")
+        self.assertTrue(nodes["gp:big-five"]["memberships"])
 
         attention = nodes["gp:attention"]
         attention_types = {
