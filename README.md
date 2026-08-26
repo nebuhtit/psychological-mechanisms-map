@@ -57,6 +57,7 @@ The live explorer contains ten deliberately heterogeneous mechanism families. Br
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
 See the generated [coverage and curation report](docs/coverage-report.md) for current object, claim, evidence, confidence, and review-queue counts.
+Read the [critical assessment](docs/critical-assessment.md) for current scientific limitations, failure modes, and quality gates required before broad expansion.
 
 ## What makes PMM different
 

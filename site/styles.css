@@ -358,10 +358,18 @@ h1 em { color: var(--forest); font-weight: 500; }
 .connection-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: var(--forest); font-size: 8px; letter-spacing: .06em; text-transform: uppercase; }
 .connection-role { width: fit-content; padding: 3px 6px; border-radius: 999px; background: #eee7d6; color: var(--ink-soft); font-size: 8px; font-weight: 800; text-transform: uppercase; }
 .connection-card small { color: var(--ink-soft); font-size: 9px; }
-.claim-path { display: flex; align-items: stretch; gap: 5px; overflow-x: auto; padding-bottom: 4px; }
+.claim-diagram { display: grid; gap: 9px; overflow-x: auto; padding: 2px 0 5px; }
+.diagram-main { display: flex; align-items: stretch; gap: 5px; min-width: min-content; }
 .inspector-node-link { min-width: 115px; padding: 9px; border-radius: 7px; background: rgba(255,255,255,.45); font-family: "Manrope", sans-serif; font-size: 10px; font-weight: 700; line-height: 1.3; }
 .inspector-node-link small { display: block; margin-bottom: 4px; color: var(--ink-soft); font-size: 7px; letter-spacing: .08em; text-transform: uppercase; }
-.path-arrow { align-self: center; color: var(--amber); font-size: 18px; }
+.relation-connector { align-self: center; display: grid; justify-items: center; min-width: 70px; max-width: 92px; color: var(--forest); text-align: center; }
+.relation-connector i { font-family: "Newsreader", serif; font-size: 21px; font-style: normal; line-height: 1; }
+.relation-connector small { margin-top: 3px; color: var(--ink-soft); font-size: 7px; font-weight: 750; line-height: 1.2; }
+.relation-association i, .relation-moderation i { color: var(--blue); }
+.relation-prediction i { color: var(--amber); }
+.relation-hypothesis { border-bottom: 1px dashed var(--blue); }
+.moderator-branch { display: grid; grid-template-columns: 1fr minmax(115px, .8fr); align-items: center; gap: 8px; padding: 8px; border: 1px dashed var(--blue); border-radius: 8px; }
+.moderator-branch > span { color: var(--ink-soft); font-size: 9px; line-height: 1.35; }
 .detail-section { padding-top: 15px; margin-top: 15px; border-top: 1px solid var(--line); }
 .detail-section h3 { margin: 0 0 7px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
 .detail-section p { margin: 0; }

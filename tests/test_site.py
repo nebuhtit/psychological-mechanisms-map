@@ -79,13 +79,22 @@ class SiteBundleTests(unittest.TestCase):
     def test_inspector_explains_status_inference_and_element_roles(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         stylesheet = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
-        for function in ("statusExplanation", "inferenceExplanation", "roleFor", "renderConnections"):
+        for function in ("statusExplanation", "inferenceExplanation", "roleFor", "claimDiagram", "renderConnections"):
             self.assertIn(f"function {function}(", javascript)
         self.assertIn('"Degree of evidence", "Степень доказанности"', javascript)
         self.assertIn('"Association only:', javascript)
         self.assertIn(".evidence-summary", stylesheet)
         self.assertIn(".connection-card", stylesheet)
-        self.assertIn(".claim-path", stylesheet)
+        self.assertIn(".claim-diagram", stylesheet)
+        self.assertIn(".moderator-branch", stylesheet)
+
+    def test_inspector_does_not_render_moderator_as_mediator(self) -> None:
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertNotIn("function claimPath(", javascript)
+        self.assertIn('claim.claim_type === "mediation" && claim.mediator_id', javascript)
+        self.assertIn('const moderator = claim.moderator_id', javascript)
+        self.assertIn('"associated; no causal direction"', javascript)
+        self.assertIn('"predicts; does not prove cause"', javascript)
 
 
 if __name__ == "__main__":

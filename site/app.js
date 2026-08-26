@@ -408,11 +408,21 @@ function inferenceExplanation(claim) {
 }
 
 function roleFor(claim, id) {
-  if (claim.exposure_id === id) return claim.claim_type === "causal_effect" ? ui("tested cause", "проверяемая причина") : ui("starting factor", "исходный фактор");
+  if (claim.exposure_id === id) {
+    if (claim.claim_type === "causal_effect") return ui("tested cause", "проверяемая причина");
+    if (claim.claim_type === "prediction") return ui("predictor", "предиктор");
+    if (claim.claim_type === "association") return ui("associated factor", "связанный фактор");
+    return ui("starting factor", "исходный фактор");
+  }
   if (claim.mechanism_id === id) return ui("proposed process", "предполагаемый процесс");
   if (claim.mediator_id === id) return ui("intermediate link", "промежуточное звено");
   if (claim.moderator_id === id) return ui("condition changing the relationship", "условие, изменяющее связь");
-  if (claim.outcome_id === id) return claim.claim_type === "causal_effect" ? ui("tested consequence", "проверяемое следствие") : ui("result", "результат");
+  if (claim.outcome_id === id) {
+    if (claim.claim_type === "causal_effect") return ui("tested consequence", "проверяемое следствие");
+    if (claim.claim_type === "prediction") return ui("predicted result", "прогнозируемый результат");
+    if (claim.claim_type === "association") return ui("associated result", "связанный результат");
+    return ui("result", "результат");
+  }
   if (claim.defined_object_id === id) return ui("defined concept", "определяемое понятие");
   return ui("related element", "связанный элемент");
 }
@@ -424,19 +434,42 @@ function nodeLink(id, role) {
   return `<button class="inspector-node-link" type="button" data-select-id="${escapeHtml(id)}"><small>${escapeHtml(role)}</small>${escapeHtml(t(label))}</button>`;
 }
 
-function claimPath(claim) {
-  const parts = [];
-  for (const [field, role] of [
-    ["exposure_id", ui("starting factor", "исходный фактор")],
-    ["mechanism_id", ui("proposed process", "предполагаемый процесс")],
-    ["mediator_id", ui("intermediate link", "промежуточное звено")],
-    ["moderator_id", ui("condition", "условие")],
-    ["outcome_id", ui("result", "результат")],
-  ]) {
-    if (claim[field]) parts.push(nodeLink(claim[field], role));
+function relationConnector(kind, label) {
+  const symbols = { association: "↔", moderation: "↔", default: "→" };
+  return `<span class="relation-connector relation-${escapeHtml(kind)}"><i aria-hidden="true">${symbols[kind] || symbols.default}</i><small>${escapeHtml(label)}</small></span>`;
+}
+
+function claimDiagram(claim) {
+  if (claim.claim_type === "definition" && claim.defined_object_id) {
+    return `<div class="claim-diagram kind-definition">${nodeLink(claim.defined_object_id, ui("defined concept", "определяемое понятие"))}</div>`;
   }
-  if (!parts.length && claim.defined_object_id) parts.push(nodeLink(claim.defined_object_id, ui("defined concept", "определяемое понятие")));
-  return parts.join('<span class="path-arrow" aria-hidden="true">→</span>');
+
+  const exposure = claim.exposure_id ? nodeLink(claim.exposure_id, roleFor(claim, claim.exposure_id)) : "";
+  const outcome = claim.outcome_id ? nodeLink(claim.outcome_id, roleFor(claim, claim.outcome_id)) : "";
+  if (!exposure && !outcome) return "";
+
+  let main = "";
+  if (claim.claim_type === "mediation" && claim.mediator_id) {
+    const label = claim.mediation_inference === "causal" ? ui("causally through", "причинно через") : ui("statistically through", "статистически через");
+    main = `${exposure}${relationConnector("mediation", label)}${nodeLink(claim.mediator_id, roleFor(claim, claim.mediator_id))}${relationConnector("mediation", label)}${outcome}`;
+  } else if (claim.claim_type === "mechanism_hypothesis" && claim.mechanism_id) {
+    main = `${exposure}${relationConnector("hypothesis", ui("may act through", "может действовать через"))}${nodeLink(claim.mechanism_id, roleFor(claim, claim.mechanism_id))}${relationConnector("hypothesis", ui("may contribute to", "может способствовать"))}${outcome}`;
+  } else {
+    const connectors = {
+      causal_effect: ["causal", ui("causes in this study", "вызывает в этом исследовании")],
+      causal_hypothesis: ["hypothesis", ui("may cause", "может вызывать")],
+      association: ["association", ui("associated; no causal direction", "связаны; причинное направление не установлено")],
+      prediction: ["prediction", ui("predicts; does not prove cause", "предсказывает; не доказывает причину")],
+      moderation: ["moderation", ui("relationship changes", "связь изменяется")],
+    };
+    const [kind, label] = connectors[claim.claim_type] || ["neutral", ui("relates to", "связано с")];
+    main = `${exposure}${relationConnector(kind, label)}${outcome}`;
+  }
+
+  const moderator = claim.moderator_id
+    ? `<div class="moderator-branch"><span>${ui("This condition changes the strength or direction of the relationship", "Это условие изменяет силу или направление связи")}</span>${nodeLink(claim.moderator_id, roleFor(claim, claim.moderator_id))}</div>`
+    : "";
+  return `<div class="claim-diagram kind-${escapeHtml(claim.claim_type)}"><div class="diagram-main">${main}</div>${moderator}</div>`;
 }
 
 function relatedClaims(record) {
@@ -446,8 +479,8 @@ function relatedClaims(record) {
 
 function renderConnections(record) {
   if (record.kind === "claim") {
-    const path = claimPath(record);
-    return path ? `<section class="explain-section"><h3>${ui("How the elements connect", "Как связаны элементы")}</h3><p class="inference-note">${escapeHtml(inferenceExplanation(record))}</p><div class="claim-path">${path}</div></section>` : "";
+    const diagram = claimDiagram(record);
+    return diagram ? `<section class="explain-section"><h3>${ui("How the elements connect", "Как связаны элементы")}</h3><p class="inference-note">${escapeHtml(inferenceExplanation(record))}</p>${diagram}</section>` : "";
   }
   const claims = relatedClaims(record);
   if (!claims.length) return `<section class="explain-section"><h3>${ui("Connections", "Связи")}</h3><p>${ui("No empirical claim currently links this object to another map element.", "Пока нет эмпирического утверждения, связывающего этот объект с другим элементом карты.")}</p></section>`;

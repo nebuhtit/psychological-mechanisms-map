@@ -67,7 +67,7 @@ def build_family(
 def main() -> None:
     payload = {
         "pmm_version": "0.3.4",
-        "interface_version": "0.2.0",
+        "interface_version": "0.3.0",
         "families": [build_family(*family) for family in load_families()],
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
