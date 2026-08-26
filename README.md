@@ -38,6 +38,8 @@ docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
 scripts/build_site_data.py           Deterministic interactive-map data bundle
+scripts/build_registry.py            Validate/export every registered dataset
+data/families.yaml                   Single registry for datasets and public map families
 scripts/new_evidence_pack.py         Schema-valid evidence-pack starter generator
 site/                                Static interactive map v0.1
 graph/pmm-context.jsonld             JSON-LD term and reference mapping
@@ -61,18 +63,13 @@ JSON-LD export preserves that firewall by emitting Claims, Evidence, and Sources
 ```bash
 make setup
 make validate
-make validate-stress
-make validate-pack
-make validate-extinction
-make validate-habit
-make validate-reappraisal
 make test
 make export
 make verify
 python3 -m http.server 8000 --directory site
 ```
 
-`make setup` creates a local `.venv`. Validation applies the complete JSON Schema and additional cross-record constraints. Export produces deterministic JSON in `build/`.
+`make setup` creates a local `.venv`. Validation applies the complete JSON Schema and additional cross-record constraints to every dataset in `data/families.yaml`. Export produces deterministic JSON in `build/` and rebuilds the public families declared by the same registry.
 
 GitHub Actions runs `make verify` on every push and pull request. The command validates all v0.3 datasets, runs the test suite, rebuilds JSON, and fails if generated JSON differs from the committed artifacts.
 

@@ -7,65 +7,21 @@ import json
 from pathlib import Path
 from typing import Any
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "site" / "data" / "pmm-data.json"
-FAMILIES = (
-    (
-        "avoidance",
-        "Threat and avoidance",
-        "build/pilot-anxiety-avoidance-v0.3.json",
-        "How threat, action, omission, relief, and reinforcement remain distinct.",
-    ),
-    (
-        "extinction",
-        "Fear extinction",
-        "build/evidence-pack-fear-extinction-v0.3.json",
-        "Why response reduction is not the same as erasure or extinction memory.",
-    ),
-    (
-        "habit",
-        "Habit control",
-        "build/evidence-pack-habit-control-v0.3.json",
-        "Goal-directed and habitual control with failed devaluation kept visible.",
-    ),
-    (
-        "reappraisal",
-        "Cognitive reappraisal",
-        "build/evidence-pack-cognitive-reappraisal-v0.3.json",
-        "Instruction, proposed reinterpretation, experience, physiology, and BOLD.",
-    ),
-    (
-        "working-memory",
-        "Working-memory control",
-        "build/evidence-pack-working-memory-control-v0.3.json",
-        "N-back performance, construct validity, lure interference, and competing memory mechanisms.",
-    ),
-    (
-        "interoception",
-        "Interoception and anxiety",
-        "build/evidence-pack-interoception-anxiety-v0.3.json",
-        "Bodily physiology, objective performance, self-evaluation, metacognition, and anxiety kept distinct.",
-    ),
-    (
-        "social-buffering",
-        "Social buffering",
-        "build/evidence-pack-social-buffering-v0.3.json",
-        "Randomized support conditions, cortisol trajectories, developmental context, and proposed co-regulation.",
-    ),
-    (
-        "reward-learning",
-        "Reward prediction error",
-        "build/evidence-pack-reward-prediction-error-v0.3.json",
-        "Model-defined error, value updating, dopamine signals, neural manipulation, and learned behavior.",
-    ),
-    (
-        "hpa-feedback",
-        "HPA feedback",
-        "build/evidence-pack-hpa-feedback-v0.3.json",
-        "Cortisol levels, ACTH secretory dynamics, pharmacological probes, and multi-site feedback.",
-    ),
-)
+REGISTRY_PATH = ROOT / "data" / "families.yaml"
+
+
+def load_families() -> list[tuple[str, str, str, str]]:
+    registry = yaml.safe_load(REGISTRY_PATH.read_text(encoding="utf-8"))
+    return [
+        (entry["family"]["id"], entry["family"]["title"], entry["output"], entry["family"]["description"])
+        for entry in registry["datasets"]
+        if "family" in entry
+    ]
 
 
 def compact_provenance(record: dict[str, Any]) -> dict[str, Any]:
@@ -112,7 +68,7 @@ def main() -> None:
     payload = {
         "pmm_version": "0.3.4",
         "interface_version": "0.2.0",
-        "families": [build_family(*family) for family in FAMILIES],
+        "families": [build_family(*family) for family in load_families()],
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(

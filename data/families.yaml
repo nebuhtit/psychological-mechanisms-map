@@ -1,0 +1,60 @@
+registry_version: 1
+datasets:
+  - source: data/pilot-anxiety-avoidance-v0.3.yaml
+    output: build/pilot-anxiety-avoidance-v0.3.json
+    family:
+      id: avoidance
+      title: Threat and avoidance
+      description: How threat, action, omission, relief, and reinforcement remain distinct.
+  - source: data/stress-test-mechanisms-v0.3.yaml
+    output: build/stress-test-mechanisms-v0.3.json
+  - source: data/evidence-pack-negative-reinforcement-v0.3.yaml
+    output: build/evidence-pack-negative-reinforcement-v0.3.json
+  - source: data/evidence-pack-fear-extinction-v0.3.yaml
+    output: build/evidence-pack-fear-extinction-v0.3.json
+    family:
+      id: extinction
+      title: Fear extinction
+      description: Why response reduction is not the same as erasure or extinction memory.
+  - source: data/evidence-pack-habit-control-v0.3.yaml
+    output: build/evidence-pack-habit-control-v0.3.json
+    family:
+      id: habit
+      title: Habit control
+      description: Goal-directed and habitual control with failed devaluation kept visible.
+  - source: data/evidence-pack-cognitive-reappraisal-v0.3.yaml
+    output: build/evidence-pack-cognitive-reappraisal-v0.3.json
+    family:
+      id: reappraisal
+      title: Cognitive reappraisal
+      description: Instruction, proposed reinterpretation, experience, physiology, and BOLD.
+  - source: data/evidence-pack-working-memory-control-v0.3.yaml
+    output: build/evidence-pack-working-memory-control-v0.3.json
+    family:
+      id: working-memory
+      title: Working-memory control
+      description: N-back performance, construct validity, lure interference, and competing memory mechanisms.
+  - source: data/evidence-pack-interoception-anxiety-v0.3.yaml
+    output: build/evidence-pack-interoception-anxiety-v0.3.json
+    family:
+      id: interoception
+      title: Interoception and anxiety
+      description: Bodily physiology, objective performance, self-evaluation, metacognition, and anxiety kept distinct.
+  - source: data/evidence-pack-social-buffering-v0.3.yaml
+    output: build/evidence-pack-social-buffering-v0.3.json
+    family:
+      id: social-buffering
+      title: Social buffering
+      description: Randomized support conditions, cortisol trajectories, developmental context, and proposed co-regulation.
+  - source: data/evidence-pack-reward-prediction-error-v0.3.yaml
+    output: build/evidence-pack-reward-prediction-error-v0.3.json
+    family:
+      id: reward-learning
+      title: Reward prediction error
+      description: Model-defined error, value updating, dopamine signals, neural manipulation, and learned behavior.
+  - source: data/evidence-pack-hpa-feedback-v0.3.yaml
+    output: build/evidence-pack-hpa-feedback-v0.3.json
+    family:
+      id: hpa-feedback
+      title: HPA feedback
+      description: Cortisol levels, ACTH secretory dynamics, pharmacological probes, and multi-site feedback.

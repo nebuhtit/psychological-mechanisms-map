@@ -5,6 +5,8 @@ import re
 import unittest
 from pathlib import Path
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -12,9 +14,11 @@ ROOT = Path(__file__).resolve().parents[1]
 class SiteBundleTests(unittest.TestCase):
     def test_site_bundle_contains_expected_families(self) -> None:
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        registry = yaml.safe_load((ROOT / "data" / "families.yaml").read_text())
+        expected = [entry["family"]["id"] for entry in registry["datasets"] if "family" in entry]
         self.assertEqual(
             [item["id"] for item in document["families"]],
-            ["avoidance", "extinction", "habit", "reappraisal", "working-memory", "interoception", "social-buffering", "reward-learning", "hpa-feedback"],
+            expected,
         )
         self.assertTrue(
             all(item["version"] == document["pmm_version"] for item in document["families"])

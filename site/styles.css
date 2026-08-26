@@ -108,8 +108,9 @@ h1 em { color: var(--forest); font-weight: 500; }
 .control-deck { padding: 24px 0 17px; }
 
 .family-strip {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -117,6 +118,7 @@ h1 em { color: var(--forest); font-weight: 500; }
 .family-button {
   position: relative;
   min-height: 70px;
+  flex: 0 0 190px;
   padding: 13px 16px 14px 44px;
   border: 0;
   border-right: 1px solid var(--line);
@@ -339,10 +341,6 @@ footer p { margin: 0; max-width: 720px; }
   .masthead { grid-template-columns: 1fr auto; }
   .masthead-copy { grid-column: 1 / -1; grid-row: 2; }
   .repo-link { grid-column: 2; grid-row: 1; }
-  .family-strip { grid-template-columns: repeat(2, 1fr); }
-  .family-button { border-bottom: 1px solid var(--line); }
-  .family-button:nth-child(even) { border-right: 0; }
-  .family-button:last-child { border-bottom: 0; }
   .filter-row { align-items: flex-start; flex-direction: column; }
   .filter-group { justify-content: flex-start; }
   .guide-content { display: block; }

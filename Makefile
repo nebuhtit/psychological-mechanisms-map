@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory validate-interoception validate-social-buffering validate-reward-learning validate-hpa-feedback site-data test export verify clean
+.PHONY: setup validate validate-v02 site-data test export verify clean
 
 PYTHON := .venv/bin/python
 
@@ -7,40 +7,10 @@ setup:
 	$(PYTHON) -m pip install -r requirements.txt
 
 validate:
-	$(PYTHON) scripts/pmm_v03.py validate data/pilot-anxiety-avoidance-v0.3.yaml
+	$(PYTHON) scripts/build_registry.py validate
 
 validate-v02:
 	$(PYTHON) scripts/pmm.py validate data/pilot-anxiety-avoidance.yaml
-
-validate-stress:
-	$(PYTHON) scripts/pmm_v03.py validate data/stress-test-mechanisms-v0.3.yaml
-
-validate-pack:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-negative-reinforcement-v0.3.yaml
-
-validate-extinction:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-fear-extinction-v0.3.yaml
-
-validate-habit:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-habit-control-v0.3.yaml
-
-validate-reappraisal:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-cognitive-reappraisal-v0.3.yaml
-
-validate-working-memory:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-working-memory-control-v0.3.yaml
-
-validate-interoception:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-interoception-anxiety-v0.3.yaml
-
-validate-social-buffering:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-social-buffering-v0.3.yaml
-
-validate-reward-learning:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-reward-prediction-error-v0.3.yaml
-
-validate-hpa-feedback:
-	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-hpa-feedback-v0.3.yaml
 
 test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
@@ -49,22 +19,9 @@ site-data:
 	$(PYTHON) scripts/build_site_data.py
 
 export:
-	$(PYTHON) scripts/pmm_v03.py export data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/stress-test-mechanisms-v0.3.yaml build/stress-test-mechanisms-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-negative-reinforcement-v0.3.yaml build/evidence-pack-negative-reinforcement-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-fear-extinction-v0.3.yaml build/evidence-pack-fear-extinction-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-habit-control-v0.3.yaml build/evidence-pack-habit-control-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-cognitive-reappraisal-v0.3.yaml build/evidence-pack-cognitive-reappraisal-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-working-memory-control-v0.3.yaml build/evidence-pack-working-memory-control-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-interoception-anxiety-v0.3.yaml build/evidence-pack-interoception-anxiety-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-social-buffering-v0.3.yaml build/evidence-pack-social-buffering-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-reward-prediction-error-v0.3.yaml build/evidence-pack-reward-prediction-error-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-hpa-feedback-v0.3.yaml build/evidence-pack-hpa-feedback-v0.3.json
-	$(PYTHON) scripts/pmm_v03.py export-jsonld data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.jsonld
-	$(PYTHON) scripts/pmm_v03.py export-turtle data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.ttl
-	$(PYTHON) scripts/build_site_data.py
+	$(PYTHON) scripts/build_registry.py export
 
-verify: validate validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory validate-interoception validate-social-buffering validate-reward-learning validate-hpa-feedback test export
+verify: validate test export
 	git diff --exit-code -- build site/data/pmm-data.json
 
 clean:
