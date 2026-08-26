@@ -554,7 +554,46 @@ function selectNode(id) {
 }
 
 function renderEmptyInspector() {
-  inspector.innerHTML = `<div class="inspector-empty"><span class="empty-index">0${state.data.families.indexOf(state.family) + 1}</span><h2>${escapeHtml(t(state.family.title))}</h2><p>${t("Select an object or scientific Claim card on the map.")}</p></div>`;
+  const familyNumber = String(state.data.families.indexOf(state.family) + 1).padStart(2, "0");
+  const sources = state.family.sources || [];
+  const sourceLinks = sources.map(source => {
+    const metadata = [source.year, source.doi || source.pmid].filter(Boolean).join(" · ") || ui("Open source", "Открыть источник");
+    return `
+      <a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">
+        ${escapeHtml(t(source.title))}
+        <span class="source-meta">${escapeHtml(metadata)}</span>
+      </a>
+    `;
+  }).join("");
+
+  inspector.innerHTML = `
+    <div class="inspector-empty family-overview">
+      <span class="empty-index">${familyNumber}</span>
+      <h2>${escapeHtml(t(state.family.title))}</h2>
+      <section class="family-overview-card">
+        <span class="section-eyebrow">${ui("What this section studies", "Что изучает этот раздел")}</span>
+        <p>${escapeHtml(t(state.family.description))}</p>
+      </section>
+      <div class="family-stats" aria-label="${ui("Section contents", "Состав раздела")}">
+        <div><strong>${state.family.objects.length}</strong><span>${ui("objects", "объектов")}</span></div>
+        <div><strong>${state.family.claims.length}</strong><span>${ui("claims", "утверждений")}</span></div>
+        <div><strong>${state.family.evidence.length}</strong><span>${ui("evidence records", "записей доказательств")}</span></div>
+        <div><strong>${sources.length}</strong><span>${ui("sources", "источников")}</span></div>
+      </div>
+      <section class="detail-section family-sources">
+        <h3>${ui("Sources included in this section", "Источники этого раздела")}</h3>
+        <p class="family-source-note">${ui(
+          "There is no single defining source. This is a curated evidence pack assembled from the publications below, not a diagnosis or an exhaustive systematic review.",
+          "У раздела нет одного определяющего источника. Это отобранный пакет доказательств из публикаций ниже, а не диагноз и не исчерпывающий систематический обзор."
+        )}</p>
+        <div class="source-list">${sourceLinks}</div>
+      </section>
+      <p class="family-select-hint">${ui(
+        "Select a map element to see its plain-language meaning, evidence status, causal role, limitations, and linked sources.",
+        "Выберите элемент карты, чтобы увидеть простое объяснение, степень доказанности, причинную роль, ограничения и связанные источники."
+      )}</p>
+    </div>
+  `;
 }
 
 function clearSelection() {
@@ -570,7 +609,7 @@ function renderFamilies() {
   const strip = document.getElementById("family-strip");
   strip.innerHTML = state.data.families.map((family, index) => `
     <button class="family-button ${family.id === state.family.id ? "is-active" : ""}" type="button" role="tab" aria-selected="${family.id === state.family.id}" data-family="${family.id}">
-      <span class="family-number">0${index + 1}</span>
+      <span class="family-number">${String(index + 1).padStart(2, "0")}</span>
       <strong>${escapeHtml(t(family.title))}</strong>
       <span>${family.objects.length} ${state.lang === "ru" ? "объектов" : "objects"} · ${family.claims.length} ${state.lang === "ru" ? "утверждений" : "claims"}</span>
     </button>
@@ -598,6 +637,7 @@ function setLanguage(language) {
   renderFamilyDescription();
   renderMap();
   if (state.selectedId) renderInspector(recordById(state.selectedId));
+  else renderEmptyInspector();
 }
 
 async function init() {
@@ -626,6 +666,7 @@ async function init() {
       state.selectedId = null;
       document.querySelectorAll(".filter-button").forEach(item => item.classList.toggle("is-active", item === button));
       renderMap();
+      renderEmptyInspector();
     }));
     new ResizeObserver(() => renderMap()).observe(svg);
   } catch (error) {

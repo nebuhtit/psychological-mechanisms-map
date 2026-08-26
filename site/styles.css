@@ -334,6 +334,17 @@ h1 em { color: var(--forest); font-weight: 500; }
 
 .inspector-empty { padding-top: 72px; }
 .empty-index { color: var(--amber); font-family: "Newsreader", serif; font-size: 64px; line-height: 1; }
+.inspector-empty.family-overview { padding-top: 4px; }
+.family-overview .empty-index { font-size: 48px; }
+.family-overview-card { padding: 13px 14px; margin-top: 16px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.42); }
+.family-overview-card p { margin: 0; color: var(--ink); font-size: 12px; line-height: 1.55; }
+.family-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin-top: 9px; }
+.family-stats div { min-width: 0; padding: 9px 10px; border-radius: 8px; background: #eee7d6; }
+.family-stats strong { display: block; color: var(--forest); font-family: "Newsreader", serif; font-size: 23px; font-weight: 600; line-height: 1; }
+.family-stats span { display: block; margin-top: 4px; color: var(--ink-soft); font-size: 8px; font-weight: 750; line-height: 1.25; text-transform: uppercase; }
+.family-source-note { margin-bottom: 10px !important; font-size: 10px !important; }
+.family-sources .source-list { max-height: 245px; overflow-y: auto; padding-right: 5px; }
+.family-select-hint { padding: 11px 12px; margin: 14px 0 0; border-left: 3px solid var(--blue); background: rgba(39,113,148,.07); color: var(--ink) !important; font-size: 10px !important; }
 .inspector h2 { margin: 8px 0 10px; font-family: "Newsreader", serif; font-size: 32px; font-weight: 500; line-height: 1; }
 .inspector p { color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
 .inspector-kicker { margin: 0 0 7px; color: var(--forest); font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }

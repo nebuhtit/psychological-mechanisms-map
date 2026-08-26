@@ -96,6 +96,20 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn('"associated; no causal direction"', javascript)
         self.assertIn('"predicts; does not prove cause"', javascript)
 
+    def test_family_overview_explains_scope_and_links_sources(self) -> None:
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        stylesheet = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("state.family.description", javascript)
+        self.assertIn("state.family.sources || []", javascript)
+        self.assertIn('class="source-link" href="${escapeHtml(source.url)}"', javascript)
+        self.assertIn('"What this section studies", "Что изучает этот раздел"', javascript)
+        self.assertIn("There is no single defining source.", javascript)
+        self.assertIn("not a diagnosis or an exhaustive systematic review", javascript)
+        self.assertIn('String(index + 1).padStart(2, "0")', javascript)
+        self.assertIn("else renderEmptyInspector();", javascript)
+        self.assertIn(".family-overview-card", stylesheet)
+        self.assertIn(".family-stats", stylesheet)
+
 
 if __name__ == "__main__":
     unittest.main()
