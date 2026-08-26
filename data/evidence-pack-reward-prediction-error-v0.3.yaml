@@ -1,0 +1,340 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:reward-prediction-error-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for reward prediction error and learning
+  description: Separates model-defined prediction errors, value updating, dopamine activity, neural manipulation, recordings, and learned behavior.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T13:30:00+03:00'
+    modified_at: '2026-08-26T13:30:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:context:reinforcement-learning-task
+    type: Context
+    label: Reinforcement-learning task
+    definition: Sequential task context in which cues, actions, outcomes, and later behavior permit model-based learning analyses.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions: {feedback: reward, temporal_structure: trialwise}
+    scope: Source-specific blocking, extinction, conditioning, and stochastic-reward procedures.
+    provenance: *provenance
+
+  - id: pmm:construct:reward-prediction-error
+    type: Construct
+    label: Reward prediction error
+    definition: Model-defined discrepancy between obtained and expected reward, optionally including discounted next-state value under temporal-difference formulations.
+    ontological_level: type
+    curation_status: accepted
+    construct_kind: computational
+    boundary_notes:
+      - A computational variable is not identical to dopamine-neuron activity.
+      - Scalar, distributional, feature-specific, and belief-state errors require explicit model definitions.
+    provenance: *provenance
+
+  - id: pmm:construct:distributional-reward-value
+    type: Construct
+    label: Distributional reward value
+    definition: Model representation of a distribution of possible future returns rather than only their scalar mean.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: computational
+    provenance: *provenance
+
+  - id: pmm:state:expected-reward-value
+    type: State
+    label: Expected reward value
+    definition: Time-indexed model-derived estimate of expected future reward before outcome observation.
+    ontological_level: type
+    curation_status: provisional
+    state_kind: cognitive
+    bearer_scope: organism
+    temporal_scale: episode
+    provenance: *provenance
+
+  - id: pmm:state:phasic-dopamine-neuron-activity
+    type: State
+    label: Phasic dopamine-neuron activity
+    definition: Time-indexed transient increase or decrease in identified dopamine-neuron firing or a validated dopamine-related signal.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: organism
+    temporal_scale: momentary
+    boundary_notes: [Measurement modality and anatomical population must be specified.]
+    provenance: *provenance
+
+  - id: pmm:outcome:received-reward
+    type: Outcome
+    label: Received reward
+    definition: Appetitive consequence delivered or omitted on a learning trial.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: event_occurrence
+    valence: appetitive
+    provenance: *provenance
+
+  - id: pmm:behavior:cue-elicited-reward-seeking
+    type: Behavior
+    label: Cue-elicited reward seeking
+    definition: Approach or reward-port behavior elicited by a previously trained cue.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: response_pattern
+    observability: direct
+    actor_scope: organism
+    response_topography: Reward-port entry, time in the reward port, or response latency during cue presentation.
+    function_note: Reward-seeking function is inferred only within the declared training and test contingency.
+    provenance: *provenance
+
+  - id: pmm:intervention:timed-dopamine-neuron-stimulation
+    type: Intervention
+    label: Timed dopamine-neuron stimulation
+    definition: Optogenetic activation of identified dopamine neurons delivered at a protocol-defined learning event.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids: [pmm:state:phasic-dopamine-neuron-activity]
+    delivery: Temporally paired optogenetic stimulation under the source-specific protocol.
+    intended_direction: increase
+    provenance: *provenance
+
+  - id: pmm:mechanism:temporal-difference-value-update
+    type: Mechanism
+    label: Temporal-difference value updating
+    definition: Computational process that updates a value estimate using a prediction-error term and learning-rate parameter.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: computational
+    role_bindings:
+      - {role: prior estimate, object_id: pmm:state:expected-reward-value}
+      - {role: observed outcome, object_id: pmm:outcome:received-reward}
+      - {role: update term, object_id: pmm:construct:reward-prediction-error}
+    realization_conditions:
+      - A specified update equation links current outcome information to later value estimates.
+      - State representation and learning parameters are defined or estimated.
+    provenance: *provenance
+
+  - id: pmm:measurement:fitted-trialwise-rpe
+    type: Measurement
+    label: Fitted trial-wise reward prediction error
+    definition: Latent trial-wise error value computed from a fitted reinforcement-learning model.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: computational_parameter
+    target_ids: [pmm:construct:reward-prediction-error, pmm:state:expected-reward-value]
+    method: Fit a declared learning model to behavior and outcomes, then calculate its trial-wise latent variables.
+    unit_of_analysis: paradigm
+    result_type: model_parameter
+    provenance: *provenance
+
+  - id: pmm:measurement:dopamine-single-unit-recording
+    type: Measurement
+    label: Dopamine-neuron single-unit recording
+    definition: Electrophysiological recording and identification procedure yielding trial-aligned dopamine-neuron firing estimates.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: physiology
+    target_ids: [pmm:state:phasic-dopamine-neuron-activity]
+    method: Record identified neurons and align firing responses to cues, predictions, and outcomes.
+    unit_of_analysis: cells
+    result_type: continuous
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:rpe-measured-by-fitted-model
+    subject_id: pmm:construct:reward-prediction-error
+    predicate: measured_by
+    object_id: pmm:measurement:fitted-trialwise-rpe
+    provenance: *provenance
+  - id: pmm:relation:dopamine-state-measured-by-single-units
+    subject_id: pmm:state:phasic-dopamine-neuron-activity
+    predicate: measured_by
+    object_id: pmm:measurement:dopamine-single-unit-recording
+    provenance: *provenance
+  - id: pmm:relation:value-update-has-rpe-participant
+    subject_id: pmm:mechanism:temporal-difference-value-update
+    predicate: has_participant
+    object_id: pmm:construct:reward-prediction-error
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:rpe-is-model-defined-discrepancy
+    claim_type: definition
+    statement: Reward prediction error is a model-defined discrepancy term used in updating expected reward or return.
+    epistemic_status: supported
+    confidence: {level: high, rationale: 'The computational role is well defined, while alternative model families differ in the represented prediction and error.'}
+    scope:
+      population: Computational and neurobehavioral reinforcement-learning models.
+      species: [mixed]
+      context_ids: [pmm:context:reinforcement-learning-task]
+      temporal_scope: Trial-wise learning.
+    defined_object_id: pmm:construct:reward-prediction-error
+    source_ids: [pmm:source:gershman-2024-dopamine-beyond]
+    evidence_ids: []
+    provenance: *provenance
+
+  - id: pmm:claim:timed-dopamine-stimulation-increases-learned-seeking
+    claim_type: causal_effect
+    statement: In the reported rat procedures, dopamine-neuron stimulation timed to reward delivery caused persistent increases in later cue-elicited reward-seeking relative to control stimulation conditions.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Temporally controlled optogenetic comparisons support a causal protocol effect, but do not prove that the manipulation instantiated only a scalar RPE.'}
+    scope:
+      population: Transgenic and control rats in the Steinberg et al. blocking and extinction procedures.
+      species: [rodent]
+      context_ids: [pmm:context:reinforcement-learning-task]
+      temporal_scope: Stimulation during learning followed by later cue-response tests.
+      boundary_conditions: [Restricted to the tested dopamine population, timing, stimulation parameters, and behavioral procedures.]
+    exposure_id: pmm:intervention:timed-dopamine-neuron-stimulation
+    outcome_id: pmm:behavior:cue-elicited-reward-seeking
+    causal_estimand: Difference in later cue-elicited reward seeking under event-paired dopamine-neuron stimulation versus source-specific controls.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Stimulation during training preceded subsequent cue-response tests.
+    causal_assumptions:
+      consistency: Optical stimulation and control conditions follow the reported protocol.
+      exchangeability: Supported by experimental control groups, subject to group allocation and implementation details.
+      positivity: Paired and control stimulation conditions were represented.
+      interference: Cross-animal interference is assumed absent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:steinberg-2013-opto-learning]
+    limitations: [The intervention can have effects beyond a mathematically pure prediction-error signal.]
+    provenance: *provenance
+
+  - id: pmm:claim:dopamine-population-is-heterogeneous-under-distributional-model
+    claim_type: association
+    statement: In mouse VTA recordings, heterogeneous dopamine-neuron response asymmetries were associated with predictions of a distributional reinforcement-learning model.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The study tested model-derived neural predictions with single-unit data, but model correspondence is not unique process identity.'}
+    scope:
+      population: Mice and recorded ventral tegmental area neurons in stochastic-reward tasks.
+      species: [rodent]
+      context_ids: [pmm:context:reinforcement-learning-task]
+      temporal_scope: Trial-aligned neural responses during reward learning.
+      boundary_conditions: [Does not imply that every dopamine neuron or dopamine function implements distributional RPE.]
+    exposure_id: pmm:construct:distributional-reward-value
+    outcome_id: pmm:state:phasic-dopamine-neuron-activity
+    estimate: {metric: correspondence between distributional-model predictions and neural response heterogeneity, value_status: qualitative_only, direction: positive, notes: The indexed abstract reports strong evidence for a neural realization of distributional reinforcement learning.}
+    confounding_note: Model flexibility, neuron identification, task design, and alternative coding accounts can influence correspondence.
+    evidence_ids: [pmm:evidence:dabney-2020-distributional-code]
+    provenance: *provenance
+
+  - id: pmm:claim:rpe-may-drive-temporal-difference-updating
+    claim_type: mechanism_hypothesis
+    statement: A reward prediction-error term may drive temporal-difference updating of later value estimates, while dopamine activity provides one non-identical candidate biological implementation.
+    epistemic_status: proposed
+    confidence: {level: moderate, rationale: 'Formal update rules and causal dopamine-learning experiments support the account, but simple one-to-one dopamine-RPE identity claims face empirical limits.'}
+    scope:
+      population: Agents and organisms adequately described by the declared temporal-difference model.
+      species: [mixed]
+      context_ids: [pmm:context:reinforcement-learning-task]
+      temporal_scope: Across successive feedback trials.
+      boundary_conditions: [Applies only when the specified model predicts held-out behavioral updating better than declared alternatives.]
+    mechanism_id: pmm:mechanism:temporal-difference-value-update
+    exposure_id: pmm:outcome:received-reward
+    outcome_id: pmm:state:expected-reward-value
+    temporal_ordering: Outcome and computed error at trial t precede the value estimate used on a later trial.
+    falsifiable_boundary: The account is weakened when preregistered alternative learning models outperform the temporal-difference model on held-out choices and neural responses.
+    evidence_ids: [pmm:evidence:gershman-2024-model-boundaries]
+    limitations: [Mechanism plausibility is not a universal biological identity claim.]
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:steinberg-2013-opto-learning
+    claim_ids: [pmm:claim:timed-dopamine-stimulation-increases-learned-seeking]
+    source_id: pmm:source:steinberg-2013-causal-link
+    extraction_locator: PubMed abstract and Figure 2 caption.
+    evidence_kind: randomized_experiment
+    design: Event-paired optogenetic dopamine-neuron activation with genotype and timing controls in rat blocking and extinction procedures.
+    population: Rats in controlled associative-learning experiments.
+    species: [rodent]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: later cue-elicited reward-seeking contrast, value_status: qualitative_only, direction: positive, notes: Paired stimulation increased later cue responding relative to controls.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: not_reported, replication: conceptual_replication}
+    summary: Temporally precise activation was sufficient to alter subsequent cue-reward learning in the tested procedures.
+    limitations: [Numerical standardized effect and complete allocation details were not extracted.]
+    provenance: *provenance
+
+  - id: pmm:evidence:dabney-2020-distributional-code
+    claim_ids: [pmm:claim:dopamine-population-is-heterogeneous-under-distributional-model]
+    source_id: pmm:source:dabney-2020-distributional-code
+    extraction_locator: PubMed abstract, model predictions and mouse VTA single-unit tests.
+    evidence_kind: controlled_experiment
+    design: Distributional reinforcement-learning predictions tested against single-unit recordings from mouse VTA.
+    population: Mice and recorded VTA neurons in stochastic reward tasks.
+    species: [rodent]
+    inference_support: association
+    support_direction: supports
+    causal_support: none
+    effect: {metric: model-neural correspondence, value_status: qualitative_only, direction: positive, notes: Neural heterogeneity matched key distributional-code predictions.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: not_reported, replication: unreplicated}
+    summary: Population heterogeneity is better represented than a single uniform scalar dopamine signal in the tested setting.
+    limitations: [Model fit does not establish unique biological implementation.]
+    provenance: *provenance
+
+  - id: pmm:evidence:gershman-2024-model-boundaries
+    claim_ids: [pmm:claim:rpe-may-drive-temporal-difference-updating]
+    source_id: pmm:source:gershman-2024-dopamine-beyond
+    extraction_locator: PubMed abstract and conceptual synthesis.
+    evidence_kind: narrative_review
+    design: Perspective integrating computational prediction-error accounts and heterogeneous dopamine findings.
+    population: Human and nonhuman reinforcement-learning literature.
+    species: [mixed]
+    inference_support: mechanism
+    support_direction: mixed
+    causal_support: indirect
+    effect: {metric: explanatory scope of RPE accounts, value_status: qualitative_only, direction: mixed, notes: RPE explains important findings but does not exhaust dopamine functions or implementations.}
+    domains: {directness: partially_indirect, risk_of_bias: not_assessed, consistency: mostly_consistent, precision: not_reported, replication: conceptual_replication}
+    summary: Prediction-error models remain useful while a simple dopamine-equals-RPE identity is too strong.
+    limitations: [Narrative synthesis is not a source-specific causal estimate.]
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:steinberg-2013-causal-link
+    title: A causal link between prediction errors, dopamine neurons and learning
+    source_type: peer_reviewed_article
+    authors: [Elizabeth E. Steinberg, Ronald Keiflin, Josiah R. Boivin, Ilana B. Witten, Karl Deisseroth, Patricia H. Janak]
+    year: 2013
+    doi: 10.1038/nn.3413
+    pmid: '23708143'
+    url: https://pubmed.ncbi.nlm.nih.gov/23708143/
+    accessed_at: '2026-08-26'
+    authority_note: Controlled optogenetic study supporting a causal role for timed dopamine-neuron signaling in cue-reward learning.
+    provenance: *provenance
+
+  - id: pmm:source:dabney-2020-distributional-code
+    title: A distributional code for value in dopamine-based reinforcement learning
+    source_type: peer_reviewed_article
+    authors: [Will Dabney, Zeb Kurth-Nelson, Naoshige Uchida, Clara Kwon Starkweather, Demis Hassabis, Remi Munos, Matthew Botvinick]
+    year: 2020
+    doi: 10.1038/s41586-019-1924-6
+    pmid: '31942076'
+    url: https://pubmed.ncbi.nlm.nih.gov/31942076/
+    accessed_at: '2026-08-26'
+    authority_note: Primary computational-neuroscience study testing distributional reinforcement-learning predictions in mouse dopamine neurons.
+    provenance: *provenance
+
+  - id: pmm:source:gershman-2024-dopamine-beyond
+    title: Explaining dopamine through prediction errors and beyond
+    source_type: peer_reviewed_article
+    authors: [Samuel J. Gershman et al.]
+    year: 2024
+    doi: 10.1038/s41593-024-01705-4
+    pmid: '39054370'
+    url: https://pubmed.ncbi.nlm.nih.gov/39054370/
+    accessed_at: '2026-08-26'
+    authority_note: Current perspective preserving RPE's explanatory value while rejecting an overly simple dopamine identity claim.
+    provenance: *provenance

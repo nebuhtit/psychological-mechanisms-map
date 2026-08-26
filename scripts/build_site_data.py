@@ -53,6 +53,12 @@ FAMILIES = (
         "build/evidence-pack-social-buffering-v0.3.json",
         "Randomized support conditions, cortisol trajectories, developmental context, and proposed co-regulation.",
     ),
+    (
+        "reward-learning",
+        "Reward prediction error",
+        "build/evidence-pack-reward-prediction-error-v0.3.json",
+        "Model-defined error, value updating, dopamine signals, neural manipulation, and learned behavior.",
+    ),
 )
 
 

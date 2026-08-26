@@ -30,6 +30,8 @@ data/evidence-pack-interoception-anxiety-v0.3.yaml
                                      Interoception measurement and anxiety boundary pack
 data/evidence-pack-social-buffering-v0.3.yaml
                                      Social context, cortisol, moderation, and causal-contrast pack
+data/evidence-pack-reward-prediction-error-v0.3.yaml
+                                     Computational error, dopamine, and learning boundary pack
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
@@ -140,6 +142,10 @@ marks cardiorespiratory appraisal as an integrative hypothesis rather than media
 The social-buffering pack separates randomized support-condition effects from
 condition-by-time and developmental-context moderation. Social co-regulation
 remains a proposed mechanism because cortisol contrasts do not identify mediation.
+
+The reward-learning pack separates a model-defined prediction error, temporal-
+difference updating, phasic dopamine activity, optogenetic manipulation, and
+learned behavior. Dopamine evidence is not represented as an identity assertion.
 
 ## Next steps
 

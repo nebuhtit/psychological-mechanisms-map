@@ -395,5 +395,42 @@ class SocialBufferingEvidencePackTests(unittest.TestCase):
         self.assertNotIn("mediator_id", claim)
 
 
+class RewardPredictionErrorEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-reward-prediction-error-v0.3.yaml"
+        )
+
+    def test_reward_prediction_error_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_computational_error_and_dopamine_state_remain_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:reward-prediction-error"], "Construct")
+        self.assertEqual(records["pmm:state:phasic-dopamine-neuron-activity"], "State")
+        self.assertEqual(records["pmm:measurement:fitted-trialwise-rpe"], "Measurement")
+        self.assertEqual(records["pmm:mechanism:temporal-difference-value-update"], "Mechanism")
+
+    def test_optogenetic_claim_targets_behavior_not_rpe_identity(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:timed-dopamine-stimulation-increases-learned-seeking"
+        )
+        self.assertEqual(claim["claim_type"], "causal_effect")
+        self.assertEqual(claim["outcome_id"], "pmm:behavior:cue-elicited-reward-seeking")
+        self.assertNotEqual(claim["outcome_id"], "pmm:construct:reward-prediction-error")
+
+    def test_td_update_remains_proposed(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:rpe-may-drive-temporal-difference-updating"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+
+
 if __name__ == "__main__":
     unittest.main()

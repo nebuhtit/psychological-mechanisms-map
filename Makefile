@@ -1,4 +1,4 @@
-.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory validate-interoception validate-social-buffering site-data test export verify clean
+.PHONY: setup validate validate-v02 validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory validate-interoception validate-social-buffering validate-reward-learning site-data test export verify clean
 
 PYTHON := .venv/bin/python
 
@@ -36,6 +36,9 @@ validate-interoception:
 validate-social-buffering:
 	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-social-buffering-v0.3.yaml
 
+validate-reward-learning:
+	$(PYTHON) scripts/pmm_v03.py validate data/evidence-pack-reward-prediction-error-v0.3.yaml
+
 test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
 
@@ -52,11 +55,12 @@ export:
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-working-memory-control-v0.3.yaml build/evidence-pack-working-memory-control-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-interoception-anxiety-v0.3.yaml build/evidence-pack-interoception-anxiety-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-social-buffering-v0.3.yaml build/evidence-pack-social-buffering-v0.3.json
+	$(PYTHON) scripts/pmm_v03.py export data/evidence-pack-reward-prediction-error-v0.3.yaml build/evidence-pack-reward-prediction-error-v0.3.json
 	$(PYTHON) scripts/pmm_v03.py export-jsonld data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.jsonld
 	$(PYTHON) scripts/pmm_v03.py export-turtle data/pilot-anxiety-avoidance-v0.3.yaml build/pilot-anxiety-avoidance-v0.3.ttl
 	$(PYTHON) scripts/build_site_data.py
 
-verify: validate validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory validate-interoception validate-social-buffering test export
+verify: validate validate-stress validate-pack validate-extinction validate-habit validate-reappraisal validate-working-memory validate-interoception validate-social-buffering validate-reward-learning test export
 	git diff --exit-code -- build site/data/pmm-data.json
 
 clean:
