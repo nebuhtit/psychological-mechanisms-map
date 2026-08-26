@@ -38,6 +38,7 @@ class DatasetRegistryTests(unittest.TestCase):
         self.assertEqual(report["totals"]["claims"], sum(item["claims"] for item in report["families"]))
         self.assertGreater(report["claim_types"].get("causal_effect", 0), 0)
         self.assertGreater(report["claim_types"].get("mechanism_hypothesis", 0), 0)
+        self.assertGreater(report["claim_types"].get("prediction", 0), 0)
         self.assertTrue(any("proposed claim" in item["reasons"] for item in report["review_queue"]))
 
 

@@ -90,25 +90,29 @@
       "temporal_ordering": "Stimulation during training preceded subsequent cue-response tests."
     },
     {
-      "claim_type": "association",
+      "claim_type": "prediction",
       "confidence": {
         "level": "moderate",
-        "rationale": "The study tested model-derived neural predictions with single-unit data, but model correspondence is not unique process identity."
+        "rationale": "Internal trial splitting demonstrated out-of-sample stability, but the same dataset and task supplied both partitions and external validation remains absent."
       },
-      "confounding_note": "Model flexibility, neuron identification, task design, and alternative coding accounts can influence correspondence.",
+      "data_separation_note": "Trial halves were disjoint for the reported stability analysis, but both came from the same neurons, task, and study dataset.",
       "epistemic_status": "supported",
-      "estimate": {
-        "direction": "positive",
-        "metric": "correspondence between distributional-model predictions and neural response heterogeneity",
-        "notes": "The indexed abstract reports strong evidence for a neural realization of distributional reinforcement learning.",
-        "value_status": "qualitative_only"
-      },
       "evidence_ids": [
         "pmm:evidence:dabney-2020-distributional-code"
       ],
       "exposure_id": "pmm:construct:distributional-reward-value",
-      "id": "pmm:claim:dopamine-population-is-heterogeneous-under-distributional-model",
+      "id": "pmm:claim:distributional-model-predicts-held-out-reversal-point",
+      "limitations": [
+        "The split-half analysis validates stability of the neural feature more directly than the full distributional model against independent alternatives."
+      ],
       "outcome_id": "pmm:state:phasic-dopamine-neuron-activity",
+      "predictive_metric": {
+        "direction": "positive",
+        "metric": "correlation of reversal-point estimates across random trial halves",
+        "notes": "Reported p = 1.8 x 10^-5.",
+        "value": 0.58,
+        "value_status": "reported"
+      },
       "provenance": {
         "created_at": "2026-08-26T13:30:00+03:00",
         "created_by": [
@@ -121,7 +125,7 @@
       },
       "scope": {
         "boundary_conditions": [
-          "Does not imply that every dopamine neuron or dopamine function implements distributional RPE."
+          "Internal held-out performance does not establish external transport or unique biological implementation of distributional reinforcement learning."
         ],
         "context_ids": [
           "pmm:context:reinforcement-learning-task"
@@ -130,9 +134,11 @@
         "species": [
           "rodent"
         ],
-        "temporal_scope": "Trial-aligned neural responses during reward learning."
+        "temporal_scope": "Trial-aligned neural responses in the variable-magnitude reward task."
       },
-      "statement": "In mouse VTA recordings, heterogeneous dopamine-neuron response asymmetries were associated with predictions of a distributional reinforcement-learning model."
+      "statement": "In mouse VTA recordings, a dopamine neuron's reversal point estimated from one random half of trials predicted its reversal point in the held-out half, as expected under a stable heterogeneous distributional code.",
+      "validation_design": "internal_resampling",
+      "validation_strategy": "Estimate each neuron's reversal point on one random half of trials and evaluate correspondence with the estimate from the held-out half."
     },
     {
       "claim_type": "mechanism_hypothesis",
@@ -229,7 +235,7 @@
     {
       "causal_support": "none",
       "claim_ids": [
-        "pmm:claim:dopamine-population-is-heterogeneous-under-distributional-model"
+        "pmm:claim:distributional-model-predicts-held-out-reversal-point"
       ],
       "design": "Distributional reinforcement-learning predictions tested against single-unit recordings from mouse VTA.",
       "domains": {
@@ -241,16 +247,17 @@
       },
       "effect": {
         "direction": "positive",
-        "metric": "model-neural correspondence",
-        "notes": "Neural heterogeneity matched key distributional-code predictions.",
-        "value_status": "qualitative_only"
+        "metric": "held-out split-half reversal-point correlation",
+        "notes": "Reported p = 1.8 x 10^-5; other distributional-code predictions were also tested.",
+        "value": 0.58,
+        "value_status": "reported"
       },
       "evidence_kind": "controlled_experiment",
       "extraction_locator": "PubMed abstract, model predictions and mouse VTA single-unit tests.",
       "id": "pmm:evidence:dabney-2020-distributional-code",
-      "inference_support": "association",
+      "inference_support": "prediction",
       "limitations": [
-        "Model fit does not establish unique biological implementation."
+        "Internal resampling does not establish external validity or unique biological implementation."
       ],
       "population": "Mice and recorded VTA neurons in stochastic reward tasks.",
       "provenance": {
@@ -267,7 +274,7 @@
       "species": [
         "rodent"
       ],
-      "summary": "Population heterogeneity is better represented than a single uniform scalar dopamine signal in the tested setting.",
+      "summary": "Reversal-point estimates generalized across disjoint trial halves within the same recorded neurons and task.",
       "support_direction": "supports"
     },
     {
