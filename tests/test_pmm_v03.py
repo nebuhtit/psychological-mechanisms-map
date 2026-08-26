@@ -432,5 +432,41 @@ class RewardPredictionErrorEvidencePackTests(unittest.TestCase):
         self.assertEqual(claim["epistemic_status"], "proposed")
 
 
+class HpaFeedbackEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-hpa-feedback-v0.3.yaml"
+        )
+
+    def test_hpa_feedback_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_hormone_states_mechanism_probe_and_measurement_remain_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:state:circulating-cortisol-level"], "State")
+        self.assertEqual(records["pmm:state:acth-secretory-drive"], "State")
+        self.assertEqual(records["pmm:mechanism:glucocorticoid-negative-feedback"], "Mechanism")
+        self.assertEqual(records["pmm:intervention:dexamethasone-challenge"], "Intervention")
+        self.assertEqual(records["pmm:measurement:serial-acth-assay"], "Measurement")
+
+    def test_opposite_direction_perturbations_are_separate_causal_claims(self) -> None:
+        claims = {item["id"]: item for item in self.document["claims"]}
+        replacement = claims["pmm:claim:cortisol-replacement-suppresses-acth-after-delay"]
+        blockade = claims["pmm:claim:metyrapone-increases-continuous-and-pulsatile-acth"]
+        self.assertEqual(replacement["claim_type"], "causal_effect")
+        self.assertEqual(blockade["claim_type"], "causal_effect")
+        self.assertNotEqual(replacement["exposure_id"], blockade["exposure_id"])
+
+    def test_generic_feedback_remains_scoped_hypothesis(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:cortisol-signaling-may-limit-later-hpa-drive"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -59,6 +59,12 @@ FAMILIES = (
         "build/evidence-pack-reward-prediction-error-v0.3.json",
         "Model-defined error, value updating, dopamine signals, neural manipulation, and learned behavior.",
     ),
+    (
+        "hpa-feedback",
+        "HPA feedback",
+        "build/evidence-pack-hpa-feedback-v0.3.json",
+        "Cortisol levels, ACTH secretory dynamics, pharmacological probes, and multi-site feedback.",
+    ),
 )
 
 

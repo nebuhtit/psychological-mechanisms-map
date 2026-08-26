@@ -32,6 +32,8 @@ data/evidence-pack-social-buffering-v0.3.yaml
                                      Social context, cortisol, moderation, and causal-contrast pack
 data/evidence-pack-reward-prediction-error-v0.3.yaml
                                      Computational error, dopamine, and learning boundary pack
+data/evidence-pack-hpa-feedback-v0.3.yaml
+                                     Cortisol, ACTH dynamics, probes, and feedback boundary pack
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/methodology-v0.3.md             Scientific semantics and known limits
 scripts/pmm_v03.py                   Schema + semantic validation and JSON export
@@ -146,6 +148,10 @@ remains a proposed mechanism because cortisol contrasts do not identify mediatio
 The reward-learning pack separates a model-defined prediction error, temporal-
 difference updating, phasic dopamine activity, optogenetic manipulation, and
 learned behavior. Dopamine evidence is not represented as an identity assertion.
+
+The HPA-feedback pack separates circulating cortisol, ACTH secretory drive,
+serial assays, pharmacological perturbations, and multi-site feedback. A
+dexamethasone challenge is represented as a probe, not as the mechanism itself.
 
 ## Next steps
 

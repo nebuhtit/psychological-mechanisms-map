@@ -1,0 +1,331 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:hpa-feedback-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for HPA-axis glucocorticoid feedback
+  description: Separates circulating hormone levels, ACTH secretory drive, feedback mechanisms, pharmacological probes, and serial measurements.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T15:00:00+03:00'
+    modified_at: '2026-08-26T15:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:context:hpa-regulation
+    type: Context
+    label: HPA-axis regulatory context
+    definition: Physiological context covering basal or stimulated hypothalamic-pituitary-adrenal activity and glucocorticoid feedback.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: physical
+    dimensions: {system: hypothalamic-pituitary-adrenal axis, regime: basal or experimentally perturbed}
+    scope: Mammalian physiology with timing, receptor, tissue, and stress regime declared by each claim.
+    provenance: *provenance
+
+  - id: pmm:state:circulating-cortisol-level
+    type: State
+    label: Circulating cortisol level
+    definition: Time-indexed concentration of cortisol in a specified biological matrix.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: organism
+    temporal_scale: episode
+    provenance: *provenance
+
+  - id: pmm:state:acth-secretory-drive
+    type: State
+    label: ACTH secretory drive
+    definition: Time-indexed basal, continuous, or pulsatile secretion of adrenocorticotropic hormone.
+    ontological_level: type
+    curation_status: accepted
+    state_kind: physiological
+    bearer_scope: organism
+    temporal_scale: episode
+    boundary_notes: [Observed plasma ACTH concentration is an indicator, not the secretory process itself.]
+    provenance: *provenance
+
+  - id: pmm:mechanism:glucocorticoid-negative-feedback
+    type: Mechanism
+    label: Glucocorticoid negative feedback on HPA activity
+    definition: Receptor-linked physiological processes through which glucocorticoid signaling limits or reshapes later HPA secretory activity.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: physiological
+    role_bindings:
+      - {role: feedback signal, object_id: pmm:state:circulating-cortisol-level}
+      - {role: regulated activity, object_id: pmm:state:acth-secretory-drive}
+    realization_conditions:
+      - Relevant glucocorticoid or mineralocorticoid receptor signaling is available.
+      - Tissue location and temporal regime are specified.
+    boundary_notes: [Pituitary, hypothalamic, receptor-genomic, rapid, and intra-adrenal contributions must not be collapsed without evidence.]
+    provenance: *provenance
+
+  - id: pmm:intervention:metyrapone-cortisol-synthesis-blockade
+    type: Intervention
+    label: Metyrapone cortisol-synthesis blockade
+    definition: Pharmacological inhibition of cortisol synthesis used to reduce endogenous feedback input.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: pharmacological
+    target_ids: [pmm:state:circulating-cortisol-level, pmm:mechanism:glucocorticoid-negative-feedback]
+    delivery: Source-specific oral metyrapone protocol followed by frequent endocrine sampling.
+    intended_direction: decrease
+    provenance: *provenance
+
+  - id: pmm:intervention:cortisol-replacement-infusion
+    type: Intervention
+    label: Cortisol replacement infusion
+    definition: Controlled exogenous cortisol administration after endogenous synthesis blockade.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: pharmacological
+    target_ids: [pmm:state:circulating-cortisol-level]
+    delivery: Protocol-defined intravenous cortisol input following metyrapone pretreatment.
+    intended_direction: increase
+    provenance: *provenance
+
+  - id: pmm:intervention:dexamethasone-challenge
+    type: Intervention
+    label: Dexamethasone challenge
+    definition: Synthetic glucocorticoid administration used as a probe of downstream endocrine suppression under a specified protocol.
+    ontological_level: type
+    curation_status: provisional
+    intervention_kind: pharmacological
+    target_ids: [pmm:mechanism:glucocorticoid-negative-feedback, pmm:state:acth-secretory-drive]
+    delivery: Timed dexamethasone dose followed by protocol-defined ACTH or cortisol sampling.
+    intended_direction: test
+    boundary_notes: [A suppression-test result is an operational response, not a direct observation of the complete feedback mechanism.]
+    provenance: *provenance
+
+  - id: pmm:measurement:serial-cortisol-assay
+    type: Measurement
+    label: Serial cortisol assay
+    definition: Repeated cortisol concentration measurements used to characterize hormone input or trajectory.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: physiology
+    target_ids: [pmm:state:circulating-cortisol-level]
+    method: Assay time-stamped plasma or serum samples under a declared protocol.
+    unit_of_analysis: physiology
+    result_type: continuous
+    provenance: *provenance
+
+  - id: pmm:measurement:serial-acth-assay
+    type: Measurement
+    label: Serial ACTH assay
+    definition: Repeated plasma ACTH measurements used directly or in deconvolution analysis of secretory dynamics.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: physiology
+    target_ids: [pmm:state:acth-secretory-drive]
+    method: Assay frequent time-stamped plasma samples and apply declared concentration or secretion-model analysis.
+    unit_of_analysis: physiology
+    result_type: continuous
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:cortisol-level-measured-by-serial-assay
+    subject_id: pmm:state:circulating-cortisol-level
+    predicate: measured_by
+    object_id: pmm:measurement:serial-cortisol-assay
+    provenance: *provenance
+  - id: pmm:relation:acth-drive-measured-by-serial-assay
+    subject_id: pmm:state:acth-secretory-drive
+    predicate: measured_by
+    object_id: pmm:measurement:serial-acth-assay
+    provenance: *provenance
+  - id: pmm:relation:hpa-feedback-occurs-in-regulation-context
+    subject_id: pmm:mechanism:glucocorticoid-negative-feedback
+    predicate: occurs_in_context
+    object_id: pmm:context:hpa-regulation
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:hpa-feedback-is-multiple-receptor-linked-processes
+    claim_type: definition
+    statement: Glucocorticoid negative feedback comprises multiple receptor-linked processes regulating later HPA activity and pulsatile dynamics.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'The physiological synthesis supports multiple sites and receptor contributions rather than one context-free feedback arrow.'}
+    scope:
+      population: Mammalian HPA-axis physiology.
+      species: [mixed]
+      context_ids: [pmm:context:hpa-regulation]
+      temporal_scope: Basal ultradian and stress-response regulation.
+    defined_object_id: pmm:mechanism:glucocorticoid-negative-feedback
+    source_ids: [pmm:source:gjerstad-2018-hpa-feedback]
+    evidence_ids: []
+    provenance: *provenance
+
+  - id: pmm:claim:cortisol-replacement-suppresses-acth-after-delay
+    claim_type: causal_effect
+    statement: In metyrapone-pretreated healthy volunteers, controlled cortisol administration suppressed plasma ACTH after an approximately 30-minute delay, with later inhibition related to cortisol input.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Randomized cortisol input protocols support a causal acute effect, while the study was small and used nonstress conditions.'}
+    scope:
+      population: 24 healthy volunteers aged 21 to 43 years in the Won et al. protocol.
+      species: [human]
+      context_ids: [pmm:context:hpa-regulation]
+      temporal_scope: First 75 minutes after cortisol administration following midnight metyrapone.
+      boundary_conditions: [Restricted to the tested doses, timing, pretreatment, and nonstress-induced ACTH secretion.]
+    exposure_id: pmm:intervention:cortisol-replacement-infusion
+    outcome_id: pmm:state:acth-secretory-drive
+    causal_estimand: Acute ACTH suppression under protocol-defined cortisol input after metyrapone relative to lower or absent cortisol input protocols.
+    identification_strategy: randomized_intervention
+    temporal_ordering: Metyrapone pretreatment preceded cortisol administration, which preceded serial ACTH measurement.
+    causal_assumptions:
+      consistency: Cortisol input follows the assigned source-specific infusion protocol.
+      exchangeability: Supported by randomized group assignment, subject to small groups and protocol implementation.
+      positivity: Multiple cortisol input profiles were represented.
+      interference: Cross-participant interference is assumed absent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:won-1986-cortisol-feedback]
+    limitations: [Plasma ACTH is not a direct localization of pituitary versus hypothalamic feedback.]
+    provenance: *provenance
+
+  - id: pmm:claim:metyrapone-increases-continuous-and-pulsatile-acth
+    claim_type: causal_effect
+    statement: In healthy subjects, metyrapone suppression of endogenous cortisol increased continuous and pulsatile ACTH secretion parameters relative to placebo conditions.
+    epistemic_status: supported
+    confidence: {level: moderate, rationale: 'Within-subject controlled study days and frequent sampling support the protocol effect, but N=11 and deconvolution assumptions limit precision.'}
+    scope:
+      population: 11 healthy human subjects in the Dorin et al. study.
+      species: [human]
+      context_ids: [pmm:context:hpa-regulation]
+      temporal_scope: Frequent sampling during three evening experimental study days.
+      boundary_conditions: [Restricted to metyrapone, CRH, naloxone, sampling, and deconvolution procedures used in the study.]
+    exposure_id: pmm:intervention:metyrapone-cortisol-synthesis-blockade
+    outcome_id: pmm:state:acth-secretory-drive
+    causal_estimand: Within-protocol difference in continuous and pulsatile ACTH secretion under metyrapone-induced cortisol suppression versus placebo pretreatment.
+    identification_strategy: controlled_contingency
+    temporal_ordering: Metyrapone or placebo pretreatment preceded CRH or naloxone stimulation and serial ACTH sampling.
+    causal_assumptions:
+      consistency: Study-day treatments and stimulation follow the reported protocol.
+      exchangeability: Repeated study days reduce stable person confounding; order and carryover require control.
+      positivity: Each subject contributed under the declared study conditions.
+      interference: Cross-participant interference is assumed absent.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:dorin-1996-metyrapone-acth]
+    limitations: [Metyrapone may have effects beyond removal of cortisol feedback and secretory deconvolution is model-dependent.]
+    provenance: *provenance
+
+  - id: pmm:claim:cortisol-signaling-may-limit-later-hpa-drive
+    claim_type: mechanism_hypothesis
+    statement: Cortisol signaling may limit and shape later ACTH secretory drive through temporally and anatomically heterogeneous negative-feedback processes.
+    epistemic_status: proposed
+    confidence: {level: moderate, rationale: 'Opposite-direction cortisol replacement and synthesis-blockade effects support feedback, while this generic record does not identify one receptor, site, or timescale.'}
+    scope:
+      population: Mammalian HPA systems, with human perturbation evidence in healthy volunteers.
+      species: [mixed]
+      context_ids: [pmm:context:hpa-regulation]
+      temporal_scope: Minutes to hours, conditional on physiological regime.
+      boundary_conditions: [Every empirical use must specify receptor, tissue, timing, basal or stress regime, and measurement procedure.]
+    mechanism_id: pmm:mechanism:glucocorticoid-negative-feedback
+    exposure_id: pmm:state:circulating-cortisol-level
+    outcome_id: pmm:state:acth-secretory-drive
+    temporal_ordering: Cortisol signaling precedes the regulated later ACTH activity.
+    falsifiable_boundary: A scoped mechanism is challenged if selective interruption of its specified receptor pathway leaves the preregistered downstream ACTH response unchanged.
+    evidence_ids: [pmm:evidence:gjerstad-2018-feedback-synthesis]
+    limitations: [Generic mechanism plausibility is not a site-specific mediation or causal estimand.]
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:won-1986-cortisol-feedback
+    claim_ids: [pmm:claim:cortisol-replacement-suppresses-acth-after-delay]
+    source_id: pmm:source:won-1986-feedback-phases
+    extraction_locator: PubMed abstract, randomized cortisol input and ACTH suppression results.
+    evidence_kind: randomized_experiment
+    design: Randomized cortisol-administration protocols after metyrapone pretreatment with serial ACTH and cortisol sampling.
+    population: 24 healthy adult volunteers.
+    species: [human]
+    sample_size: 24
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: delayed ACTH suppression, value_status: reported, direction: negative, notes: 'Suppression began at about 30 minutes; ACTH inhibition at 75 minutes correlated with cortisol concentration (r=0.97) and dose (r=0.99).' }
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: Controlled cortisol replacement produced delayed, input-related ACTH suppression under the tested protocol.
+    limitations: [Small randomized groups and historical reporting standards.]
+    provenance: *provenance
+
+  - id: pmm:evidence:dorin-1996-metyrapone-acth
+    claim_ids: [pmm:claim:metyrapone-increases-continuous-and-pulsatile-acth]
+    source_id: pmm:source:dorin-1996-acth-dynamics
+    extraction_locator: PubMed abstract, three study-day design and deconvolution results.
+    evidence_kind: controlled_experiment
+    design: Placebo, metyrapone plus stimulation, and metyrapone-only study days with 10-minute ACTH and cortisol sampling.
+    population: 11 healthy human subjects.
+    species: [human]
+    sample_size: 11
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect: {metric: continuous and pulsatile ACTH secretion parameters, value_status: qualitative_only, direction: positive, notes: Metyrapone significantly increased basal and stimulated ACTH burst measures.}
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: single_source, precision: limited, replication: unreplicated}
+    summary: Reducing endogenous cortisol increased multiple ACTH secretory parameters in the controlled protocol.
+    limitations: [Small sample and model-dependent secretion estimates.]
+    provenance: *provenance
+
+  - id: pmm:evidence:gjerstad-2018-feedback-synthesis
+    claim_ids: [pmm:claim:cortisol-signaling-may-limit-later-hpa-drive]
+    source_id: pmm:source:gjerstad-2018-hpa-feedback
+    extraction_locator: PubMed abstract and review sections on receptor, pituitary, hypothalamic, and intra-adrenal processes.
+    evidence_kind: narrative_review
+    design: Physiological synthesis of human, animal, receptor, and dynamic-model evidence.
+    population: Mammalian HPA-axis studies.
+    species: [mixed]
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect: {metric: mechanistic scope, value_status: qualitative_only, direction: negative, notes: Multiple negative-feedback processes contribute to HPA regulation and pulsatility.}
+    domains: {directness: partially_indirect, risk_of_bias: not_assessed, consistency: mostly_consistent, precision: not_reported, replication: conceptual_replication}
+    summary: Feedback is a family of temporally and anatomically distinct processes rather than one simple loop.
+    limitations: [Review synthesis does not supply one generic causal effect size.]
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:won-1986-feedback-phases
+    title: Evidence for a delayed, integral, and proportional phase of glucocorticoid feedback on ACTH secretion in normal human volunteers
+    source_type: peer_reviewed_article
+    authors: [J. G. Won, T. S. Jap, S. C. Chang, K. N. Ching]
+    year: 1986
+    doi: 10.1016/0026-0495(86)90210-6
+    pmid: '3005801'
+    url: https://pubmed.ncbi.nlm.nih.gov/3005801/
+    accessed_at: '2026-08-26'
+    authority_note: Randomized cortisol-input experiment supporting delayed feedback on ACTH in healthy volunteers.
+    provenance: *provenance
+
+  - id: pmm:source:dorin-1996-acth-dynamics
+    title: Assessment of stimulated and spontaneous adrenocorticotropin secretory dynamics identifies distinct components of cortisol feedback inhibition in healthy humans
+    source_type: peer_reviewed_article
+    authors: [Richard I. Dorin, Laura M. Ferries, Brian Roberts, Clifford R. Qualls, J. D. Veldhuis, E. J. Lisansky]
+    year: 1996
+    doi: 10.1210/jcem.81.11.8923833
+    pmid: '8923833'
+    url: https://pubmed.ncbi.nlm.nih.gov/8923833/
+    accessed_at: '2026-08-26'
+    authority_note: Controlled frequent-sampling study separating continuous and pulsatile ACTH responses to cortisol synthesis blockade.
+    provenance: *provenance
+
+  - id: pmm:source:gjerstad-2018-hpa-feedback
+    title: Role of glucocorticoid negative feedback in the regulation of HPA axis pulsatility
+    source_type: peer_reviewed_article
+    authors: [Julia K. Gjerstad, Stafford L. Lightman, Francesca Spiga]
+    year: 2018
+    doi: 10.1080/10253890.2018.1470238
+    pmid: '29764284'
+    url: https://pubmed.ncbi.nlm.nih.gov/29764284/
+    accessed_at: '2026-08-26'
+    authority_note: Mechanistic review distinguishing receptor-linked, pituitary, hypothalamic, and intra-adrenal feedback contributions.
+    provenance: *provenance
