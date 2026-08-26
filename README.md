@@ -43,7 +43,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains twelve deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains thirteen deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -59,12 +59,13 @@ The live explorer contains twelve deliberately heterogeneous mechanism families.
 | Placebo analgesia | Treatment expectation, pain report, naloxone challenge, dopamine null result, and statistical neural mediation |
 | Spatial attention | Attention construct, predictive cueing task, cue-validity manipulation, response time, accuracy, and competing sensory and decision hypotheses |
 | Declarative memory | Declarative, episodic, and semantic constructs, encoding-depth manipulation, recognition measurement, developmental dissociation, and proposed elaborative encoding |
+| Visual perception | Visual-perception construct, contrast sensitivity, grating manipulation, detection response, threshold measurement, and proposed divisive normalization |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
 ### Coverage goal
 
-PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Thirteen topics currently have at least one evidence-linked pilot; eleven remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
+PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Fourteen topics currently have at least one evidence-linked pilot; ten remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
 The website provides three switchable views over the same canonical records:
 
@@ -157,6 +158,8 @@ data/evidence-pack-spatial-attention-v0.3.yaml
                                      Attention, cueing-task, measurement, and competing-mechanism boundary pack
 data/evidence-pack-declarative-memory-v0.3.yaml
                                      Declarative, episodic, semantic, recognition, and encoding boundary pack
+data/evidence-pack-visual-perception-v0.3.yaml
+                                     Visual perception, contrast threshold, and normalization boundary pack
 data/navigation-views-v0.1.yaml      Validated educational and framework projections over canonical IDs
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/navigation-views.md             Faceted-view semantics and boundaries
@@ -366,9 +369,15 @@ The HPA-feedback pack separates circulating cortisol, ACTH secretory drive,
 serial assays, pharmacological perturbations, and multi-site feedback. A
 dexamethasone challenge is represented as a probe, not as the mechanism itself.
 
+The visual-perception pack separates a broad perceptual construct from a narrow
+grating-detection task, stimulus manipulation, observable response, contrast
+threshold, and contrast-sensitivity measurement. Divisive normalization remains
+a proposed mechanism because cat visual-cortex modeling and cross-system review
+do not directly establish the causal pathway to human psychophysical thresholds.
+
 ## Next steps
 
-1. Stress-test the General Psychology projection with attention/perception, episodic memory, and personality/temperament records without adding duplicate objects.
+1. Add a thinking-and-reasoning pack that separates reasoning constructs, tasks, accuracy, strategy reports, latent ability, and process models.
 2. Add primary evidence and validated measurements before presenting Temperament or Big Five as covered PMM areas.
 3. Add independent primary-study replications and preregistered null results to the negative-reinforcement pack.
 4. Verify stable external ontology identifiers against pinned RDoC, Cognitive Atlas, MF, NBO, and HiTOP releases before promoting mappings.
@@ -402,7 +411,7 @@ Before proposing a large expansion, open an issue describing the mechanism famil
 
 ## Search terms
 
-Psychological ontology, psychology knowledge graph, mental mechanisms, cognitive ontology, computational psychiatry, evidence graph, causal knowledge graph, behavioral science ontology, RDoC, Cognitive Atlas, HiTOP, negative reinforcement, fear extinction, habit learning, cognitive reappraisal, working memory, interoception, social buffering, reward prediction error, dopamine learning, HPA-axis feedback, placebo analgesia, treatment expectation, and endogenous opioid modulation.
+Psychological ontology, psychology knowledge graph, mental mechanisms, cognitive ontology, computational psychiatry, evidence graph, causal knowledge graph, behavioral science ontology, RDoC, Cognitive Atlas, HiTOP, negative reinforcement, fear extinction, habit learning, cognitive reappraisal, working memory, visual perception, contrast sensitivity, divisive normalization, interoception, social buffering, reward prediction error, dopamine learning, HPA-axis feedback, placebo analgesia, treatment expectation, and endogenous opioid modulation.
 
 ## License and reuse
 

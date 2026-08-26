@@ -388,3 +388,27 @@ entries:
       One proposed explanation is that analyzing a word’s meaning connects it with context and existing knowledge, leaving a more distinctive representation for later recognition. The experiments are compatible with this explanation, but elaboration was inferred rather than isolated as the only process.
     ru: >-
       Возможное объяснение состоит в том, что анализ значения слова связывает его с контекстом и имеющимися знаниями, формируя более различимое представление для последующего узнавания. Эксперименты согласуются с этим объяснением, но проработка была выведена косвенно и не выделена как единственный процесс.
+
+  - claim_id: pmm:claim:rdoc-perception-computes-over-sensory-data
+    en: >-
+      RDoC uses “perception” for processes that turn sensory input into useful representations of the outside world. The visual-perception pilot examines only one small part of this broad function, so detecting a striped pattern is not treated as a complete model of seeing.
+    ru: >-
+      В RDoC «восприятие» — это процессы, которые преобразуют сенсорные сигналы в полезные представления о внешнем мире. Пилот зрительного восприятия рассматривает лишь небольшую часть этой широкой функции, поэтому обнаружение полосатого изображения не считается полной моделью зрения.
+
+  - claim_id: pmm:claim:contrast-sensitivity-is-reciprocal-threshold
+    en: >-
+      Researchers gradually reduce a pattern’s contrast until it can only just be detected reliably. A lower required contrast means greater sensitivity, so sensitivity is calculated as one divided by that threshold. Repeating this at several stripe widths produces a contrast sensitivity function; the curve is a measurement, not perception itself.
+    ru: >-
+      Исследователи постепенно уменьшают контраст изображения до уровня, при котором человек ещё может надёжно его обнаружить. Чем меньше требуемый контраст, тем выше чувствительность, поэтому её рассчитывают как единицу, делённую на порог. Повторение измерения для полос разной ширины даёт функцию контрастной чувствительности; эта кривая является измерением, а не самим восприятием.
+
+  - claim_id: pmm:claim:grating-properties-change-detection-threshold
+    en: >-
+      In the classic experiments, the researchers changed how wide the light and dark stripes were and measured how much contrast people needed to see them. The required contrast changed systematically with stripe spacing and waveform. This establishes an effect of the tested image properties on detection in that procedure, but it does not reveal one unique brain mechanism.
+    ru: >-
+      В классических экспериментах исследователи меняли ширину светлых и тёмных полос и измеряли, какой контраст нужен человеку, чтобы их увидеть. Требуемый контраст закономерно менялся в зависимости от частоты и формы полос. Это подтверждает влияние свойств изображения на обнаружение в данном протоколе, но не выявляет единственный механизм мозга.
+
+  - claim_id: pmm:claim:divisive-normalization-may-shape-visual-gain
+    en: >-
+      A proposed neural explanation is that a visual neuron’s response is scaled down by the combined activity of a larger pool of neurons, preventing responses from growing without limit as contrast increases. This model explains many visual-cortex findings, especially in nonhuman physiology, but it has not been shown here to be the unique cause of the human contrast-sensitivity curve.
+    ru: >-
+      Одна из нейронных гипотез состоит в том, что ответ зрительного нейрона уменьшается с учётом суммарной активности более широкой группы нейронов. Это не даёт ответу безгранично расти при увеличении контраста. Модель объясняет многие результаты исследований зрительной коры, особенно у животных, но приведённые данные не доказывают, что именно она является единственной причиной функции контрастной чувствительности человека.

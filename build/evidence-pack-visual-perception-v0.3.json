@@ -1,0 +1,842 @@
+{
+  "claims": [
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "high",
+        "rationale": "This is the current official RDoC parent-construct definition; it is used for terminology alignment rather than as a complete theory of vision."
+      },
+      "defined_object_id": "pmm:construct:visual-perception",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:rdoc-perception-computes-over-sensory-data",
+      "limitations": [
+        "The visual-perception matrix lists many paradigms and units of analysis; no single paradigm or signal is equivalent to the construct."
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:sine-wave-grating-detection-task"
+        ],
+        "population": "Research framework spanning normal-to-abnormal human functioning.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Current NIMH RDoC framework as accessed on 2026-08-26."
+      },
+      "source_ids": [
+        "pmm:source:nimh-rdoc-perception-2026",
+        "pmm:source:nimh-rdoc-visual-perception-2026"
+      ],
+      "statement": "RDoC defines Perception as processes that compute over sensory data to construct and transform representations of the external environment, acquire information, make predictions, and guide action."
+    },
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "high",
+        "rationale": "The measurement definition is explicit in a peer-reviewed methods review and is standard for grating contrast psychophysics."
+      },
+      "defined_object_id": "pmm:measurement:contrast-sensitivity-function",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:contrast-sensitivity-is-reciprocal-threshold",
+      "limitations": [
+        "Reciprocal threshold is an operational measurement and does not identify a unique sensory or neural mechanism."
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Contrast definition, threshold criterion, spatial frequency, stimulus, and viewing conditions must be stated."
+        ],
+        "context_ids": [
+          "pmm:context:sine-wave-grating-detection-task"
+        ],
+        "population": "Observers completing protocol-defined contrast detection or identification tasks.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Threshold estimation across trials at prespecified spatial frequencies."
+      },
+      "source_ids": [
+        "pmm:source:pelli-bex-2013-contrast-sensitivity"
+      ],
+      "statement": "In contrast psychophysics, sensitivity is the reciprocal of the contrast threshold, and a contrast sensitivity function records that quantity across spatial frequencies."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Each condition follows the reported grating generation, viewing, and threshold procedure.",
+        "exchangeability": "Repeated controlled stimulus comparisons reduce stable observer confounding, while order and historical implementation details remain source-specific.",
+        "interference": "One observer's responses are assumed not to alter another observer's visual thresholds.",
+        "positivity": "The tested observers contributed responses across the compared grating conditions."
+      },
+      "causal_estimand": "Within-protocol change in contrast-detection threshold produced by changing grating spatial frequency or waveform while following the reported psychophysical procedure.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The source reports repeated controlled psychophysical comparisons across frequencies and waveforms, but it is a historical study with limited modern reporting and protocol-specific generalizability."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:campbell-robson-1968-grating-thresholds"
+      ],
+      "exposure_id": "pmm:intervention:grating-spatial-frequency-and-contrast-manipulation",
+      "id": "pmm:claim:grating-properties-change-detection-threshold",
+      "identification_strategy": "controlled_contingency",
+      "limitations": [
+        "The experiment identifies effects of stimulus properties on task thresholds, not a unique neural channel, normalization process, or complete account of visual perception."
+      ],
+      "outcome_id": "pmm:outcome:contrast-detection-threshold",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Periodic gratings, the reported spatial-frequency range, waveform comparisons, adaptation, luminance, viewing geometry, and threshold procedure."
+        ],
+        "context_ids": [
+          "pmm:context:sine-wave-grating-detection-task"
+        ],
+        "population": "Human observers tested in the Campbell and Robson 1968 grating experiments.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Stimulus presentation through the observer's detection response and threshold estimate."
+      },
+      "statement": "In the Campbell and Robson experiments, controlled changes in grating spatial frequency and waveform produced systematic differences in contrast-detection thresholds.",
+      "temporal_ordering": "The experimenter set grating properties before each detection response and threshold estimate."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The model explains a broad set of visual-cortex response properties and is supported by physiological literature, but the cited evidence does not uniquely identify its biological implementation or directly establish the human psychophysical pathway."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:heeger-1992-normalization-model",
+        "pmm:evidence:carandini-heeger-2012-normalization-review"
+      ],
+      "exposure_id": "pmm:intervention:grating-spatial-frequency-and-contrast-manipulation",
+      "falsifiable_boundary": "The account is weakened if preregistered comparisons show that normalization models fail to predict held-out neural and psychophysical contrast responses better than plausible non-normalizing alternatives.",
+      "id": "pmm:claim:divisive-normalization-may-shape-visual-gain",
+      "limitations": [
+        "Model fit is not proof of a unique causal circuit, and nonhuman cortical physiology is indirect evidence for human contrast-detection behavior."
+      ],
+      "mechanism_id": "pmm:mechanism:divisive-visual-normalization",
+      "outcome_id": "pmm:outcome:contrast-detection-threshold",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "A specified normalization pool and model must predict contrast-response or threshold data beyond simpler alternatives."
+        ],
+        "context_ids": [
+          "pmm:context:sine-wave-grating-detection-task"
+        ],
+        "population": "Visual systems studied with contrast-varying stimuli, including cat visual cortex and human psychophysics.",
+        "species": [
+          "human",
+          "other",
+          "mixed"
+        ],
+        "temporal_scope": "Stimulus-driven neural response through contrast-dependent behavioral detection."
+      },
+      "statement": "Divisive normalization may shape visual response gain and thereby contribute to contrast-dependent neural and behavioral sensitivity.",
+      "temporal_ordering": "Visual stimulation precedes pooled gain regulation, neural response, and any later behavioral threshold estimate."
+    }
+  ],
+  "dataset_id": "pmm:dataset:visual-perception-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:grating-properties-change-detection-threshold"
+      ],
+      "design": "Human psychophysical experiments varying grating spatial frequency, waveform, and contrast while estimating detection and discrimination thresholds.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "contrast-detection threshold across grating conditions",
+        "notes": "Thresholds varied systematically with spatial frequency, and near threshold the fundamental Fourier component accounted for visibility across tested waveforms.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Abstract points 1-5 and full report of contrast thresholds across spatial frequencies and sine, square, rectangular, and saw-tooth gratings.",
+      "id": "pmm:evidence:campbell-robson-1968-grating-thresholds",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Historical methods and reporting do not meet current preregistration and open-data standards, and the result is tied to the tested stimuli and viewing conditions."
+      ],
+      "population": "Human observers in the reported laboratory experiments; a pooled participant count was not extracted from the article.",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:campbell-robson-1968-gratings",
+      "species": [
+        "human"
+      ],
+      "summary": "Controlled changes to spatial frequency and waveform changed the contrast required for human observers to detect gratings.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:divisive-normalization-may-shape-visual-gain"
+      ],
+      "design": "Computational normalization model evaluated against a reviewed body of physiological measurements from cat striate cortex.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "not_assessed"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "breadth of striate-cell response properties explained by the modified model",
+        "notes": "Adding mutual inhibition or response normalization explained more physiological findings than the unnormalized linear-energy account.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "computational_model",
+      "extraction_locator": "PubMed abstract describing the modified linear-energy model and its account of published cat striate-cortex response properties.",
+      "id": "pmm:evidence:heeger-1992-normalization-model",
+      "inference_support": "mechanism",
+      "limitations": [
+        "This is model-based nonhuman neural evidence, not a randomized perturbation of normalization and not direct evidence about human detection thresholds."
+      ],
+      "population": "Neurons and physiological datasets from cat striate cortex reviewed and modeled in the article.",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:heeger-1992-cat-normalization",
+      "species": [
+        "other"
+      ],
+      "summary": "A normalization model accounted for a broader set of cat visual-cortex response properties than an unnormalized linear-energy model.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:divisive-normalization-may-shape-visual-gain"
+      ],
+      "design": "Narrative synthesis of computational and physiological normalization findings across neural systems and species.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "not_assessed"
+      },
+      "effect": {
+        "direction": "positive",
+        "metric": "cross-system explanatory applicability of normalization models",
+        "notes": "The review presents normalization as a promising canonical computation while noting multiple model variants and unresolved biological implementations.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "narrative_review",
+      "extraction_locator": "Abstract and Box 1 defining the normalization equation, its normalization pool, fitted parameters, and applications across visual and other neural systems.",
+      "id": "pmm:evidence:carandini-heeger-2012-normalization-review",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Narrative synthesis and broad cross-system fit do not establish one implementation or a direct causal path to the human contrast sensitivity function."
+      ],
+      "population": "Neural systems and experimental preparations across multiple species, with emphasis on visual-system evidence.",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:carandini-heeger-2012-normalization",
+      "species": [
+        "mixed"
+      ],
+      "summary": "A cross-system review supports normalization as a widely useful candidate neural computation, not as one uniquely established circuit.",
+      "support_direction": "supports"
+    }
+  ],
+  "metadata": {
+    "description": "Separates visual perception, spatial contrast sensitivity, grating manipulation, detection behavior, threshold measurement, and a divisive-normalization mechanism hypothesis.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T18:30:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T18:30:00+03:00",
+      "record_version": "0.1.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for visual perception and contrast sensitivity"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "boundary_notes": [
+        "Visual perception is broader than detecting one grating or estimating one contrast threshold.",
+        "A visual stimulus, a detection response, a psychophysical score, and a neural model are not the visual-perception construct itself."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Processes that compute over visual sensory data to construct and transform representations of the external environment and use them to acquire information, predict, and guide action.",
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/visual-perception",
+          "external_label": "Visual Perception",
+          "mapping_relation": "exact_match",
+          "mapping_status": "identifier_verified",
+          "rationale": "PMM uses the official RDoC visual-perception subconstruct and its parent Perception definition while keeping individual paradigms and measures separate.",
+          "system": "RDoC"
+        },
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b4b5/",
+          "external_label": "visual perception",
+          "mapping_relation": "close_match",
+          "mapping_status": "provisional",
+          "rationale": "The labels overlap, but the Cognitive Atlas record is marked Unreviewed and PMM does not import its asserted hierarchy as settled.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:construct:visual-perception",
+      "label": "Visual perception",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "Spatial contrast sensitivity is one restricted aspect of visual functioning, not a complete model of visual perception.",
+        "The capacity is operationalized by threshold measurements; it is not identical to one observed threshold or fitted curve."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Capacity to detect luminance variation in a visual pattern as a function of the pattern's spatial frequency under specified viewing conditions.",
+      "id": "pmm:construct:spatial-contrast-sensitivity",
+      "label": "Spatial contrast sensitivity",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "This task operationalizes a narrow detection problem; it is not visual perception itself.",
+        "Detection threshold depends on the stimulus, display, adaptation, task rule, and response criterion."
+      ],
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Psychophysical task in which an observer reports the presence or location of a luminance grating while contrast and spatial frequency are controlled.",
+      "dimensions": {
+        "manipulated_dimensions": "contrast and spatial frequency",
+        "modality": "visual",
+        "response": "detection or forced-choice localization",
+        "stimulus": "periodic luminance grating",
+        "viewing_conditions": "protocol-specific luminance, distance, field size, duration, and adaptation"
+      },
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/task/id/trm_502be67697201/",
+          "external_label": "contrast detection task",
+          "mapping_relation": "narrow_match",
+          "mapping_status": "provisional",
+          "rationale": "PMM specifies the grating implementation more narrowly; the external task record is marked Unreviewed.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:context:sine-wave-grating-detection-task",
+      "label": "Sine-wave grating detection task",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Human laboratory measurements of grating visibility under declared viewing and response conditions.",
+      "type": "Context"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental variation of the spacing and luminance contrast of a periodic visual pattern across trials or conditions.",
+      "delivery": "Present protocol-defined gratings at multiple spatial frequencies and adjust contrast to estimate reliable detection thresholds.",
+      "id": "pmm:intervention:grating-spatial-frequency-and-contrast-manipulation",
+      "intended_direction": "test",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Grating spatial-frequency and contrast manipulation",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:behavior:grating-detection-response",
+        "pmm:outcome:contrast-detection-threshold"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable report indicating whether or where the protocol-defined grating was detected.",
+      "function_note": "The response contributes to threshold estimation but is not itself contrast sensitivity or visual perception.",
+      "id": "pmm:behavior:grating-detection-response",
+      "label": "Grating detection response",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Protocol-defined verbal, keypress, or forced-choice response on each presentation.",
+      "type": "Behavior"
+    },
+    {
+      "boundary_notes": [
+        "A threshold is conditional on the task, psychometric criterion, stimulus, observer, and viewing conditions."
+      ],
+      "curation_status": "accepted",
+      "definition": "Lowest protocol-defined target contrast that supports a prespecified level of reliable detection at a given spatial frequency.",
+      "id": "pmm:outcome:contrast-detection-threshold",
+      "label": "Contrast detection threshold",
+      "ontological_level": "type",
+      "outcome_kind": "performance",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "not_applicable"
+    },
+    {
+      "boundary_notes": [
+        "The contrast sensitivity function is a measurement profile, not visual perception as a whole.",
+        "Different stimuli, threshold procedures, response alternatives, and viewing conditions can yield different profiles."
+      ],
+      "curation_status": "accepted",
+      "definition": "Psychophysical measurement that expresses sensitivity, the reciprocal of contrast threshold, across spatial frequencies.",
+      "id": "pmm:measurement:contrast-sensitivity-function",
+      "label": "Contrast sensitivity function",
+      "measurement_kind": "behavioral_task",
+      "method": "Estimate a detection threshold at each prespecified spatial frequency, convert each threshold to reciprocal sensitivity, and describe or fit sensitivity as a function of spatial frequency.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:spatial-contrast-sensitivity",
+        "pmm:behavior:grating-detection-response",
+        "pmm:outcome:contrast-detection-threshold"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "Divisive normalization is a computational description with multiple possible biological implementations.",
+        "Evidence that the model explains cat visual-cortex responses does not by itself establish that it causes human contrast thresholds."
+      ],
+      "curation_status": "provisional",
+      "definition": "Candidate neural computation in which a neuron's stimulus-driven response is divided by a factor that includes pooled activity from other neurons, regulating response gain and saturation.",
+      "id": "pmm:mechanism:divisive-visual-normalization",
+      "label": "Divisive visual normalization",
+      "mechanism_kind": "physiological",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "The relevant neural population receives stimulus drive and pooled suppressive input.",
+        "The normalization equation and its parameters predict held-out neural or behavioral responses better than declared alternatives."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:intervention:grating-spatial-frequency-and-contrast-manipulation",
+          "role": "visual stimulus manipulation"
+        },
+        {
+          "object_id": "pmm:measurement:contrast-sensitivity-function",
+          "role": "measured visibility profile"
+        },
+        {
+          "object_id": "pmm:outcome:contrast-detection-threshold",
+          "role": "behavioral threshold"
+        }
+      ],
+      "type": "Mechanism"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:spatial-contrast-sensitivity-part-of-visual-perception",
+      "object_id": "pmm:construct:visual-perception",
+      "predicate": "part_of",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:spatial-contrast-sensitivity"
+    },
+    {
+      "id": "pmm:relation:spatial-contrast-sensitivity-measured-by-csf",
+      "object_id": "pmm:measurement:contrast-sensitivity-function",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:spatial-contrast-sensitivity"
+    },
+    {
+      "id": "pmm:relation:grating-detection-occurs-in-task",
+      "object_id": "pmm:context:sine-wave-grating-detection-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:grating-detection-response"
+    },
+    {
+      "id": "pmm:relation:divisive-normalization-occurs-in-grating-task",
+      "object_id": "pmm:context:sine-wave-grating-detection-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:mechanism:divisive-visual-normalization"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Current official RDoC parent-construct definition used for scope and terminology alignment.",
+      "id": "pmm:source:nimh-rdoc-perception-2026",
+      "organization": "National Institute of Mental Health",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "official_framework",
+      "title": "Perception — NIMH RDoC",
+      "url": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/perception",
+      "version": "accessed 2026-08-26"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Official RDoC matrix page identifying contrast sensitivity as one visual-perception paradigm among many units and paradigms.",
+      "id": "pmm:source:nimh-rdoc-visual-perception-2026",
+      "organization": "National Institute of Mental Health",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "official_framework",
+      "title": "Visual Perception — NIMH RDoC",
+      "url": "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/visual-perception",
+      "version": "accessed 2026-08-26"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Collaborative concept record used only for provisional terminology alignment.",
+      "id": "pmm:source:cognitive-atlas-visual-perception-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas concept — visual perception",
+      "url": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b4b5/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Collaborative task record used only for provisional task alignment.",
+      "id": "pmm:source:cognitive-atlas-contrast-detection-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas task — contrast detection task",
+      "url": "https://www.cognitiveatlas.org/task/id/trm_502be67697201/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Foundational primary psychophysical report measuring grating contrast thresholds across spatial frequencies and waveforms.",
+      "authors": [
+        "Fergus W. Campbell",
+        "John G. Robson"
+      ],
+      "doi": "10.1113/jphysiol.1968.sp008574",
+      "id": "pmm:source:campbell-robson-1968-gratings",
+      "pmid": "5666169",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Application of Fourier analysis to the visibility of gratings",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1351748/",
+      "year": 1968
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Peer-reviewed methods review defining threshold, sensitivity, contrast conventions, forced-choice measurement, and the contrast sensitivity function.",
+      "authors": [
+        "Denis G. Pelli",
+        "Peter Bex"
+      ],
+      "doi": "10.1016/j.visres.2013.04.015",
+      "id": "pmm:source:pelli-bex-2013-contrast-sensitivity",
+      "pmid": "23643905",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Measuring contrast sensitivity",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3744596/",
+      "year": 2013
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Foundational computational account of contrast normalization applied to physiological response properties in cat striate cortex.",
+      "authors": [
+        "David J. Heeger"
+      ],
+      "doi": "10.1017/S0952523800009640",
+      "id": "pmm:source:heeger-1992-cat-normalization",
+      "pmid": "1504027",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Normalization of cell responses in cat striate cortex",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1504027/",
+      "year": 1992
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Influential narrative review defining the normalization computation and summarizing its applications and unresolved implementations.",
+      "authors": [
+        "Matteo Carandini",
+        "David J. Heeger"
+      ],
+      "doi": "10.1038/nrn3136",
+      "id": "pmm:source:carandini-heeger-2012-normalization",
+      "pmid": "22108672",
+      "provenance": {
+        "created_at": "2026-08-26T18:30:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T18:30:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Normalization as a canonical neural computation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3273486/",
+      "year": 2012
+    }
+  ]
+}

@@ -76,3 +76,9 @@ datasets:
       id: declarative-memory
       title: Declarative memory
       description: Declarative, episodic, and semantic constructs, encoding manipulation, recognition measurement, dissociation evidence, and elaborative encoding kept distinct.
+  - source: data/evidence-pack-visual-perception-v0.3.yaml
+    output: build/evidence-pack-visual-perception-v0.3.json
+    family:
+      id: visual-perception
+      title: Visual perception
+      description: Visual perception, contrast sensitivity, grating manipulation, detection response, threshold measurement, and divisive normalization kept distinct.

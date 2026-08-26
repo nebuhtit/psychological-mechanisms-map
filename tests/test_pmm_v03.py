@@ -602,5 +602,65 @@ class DeclarativeMemoryEvidencePackTests(unittest.TestCase):
         self.assertEqual(claim["epistemic_status"], "proposed")
 
 
+class VisualPerceptionEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-visual-perception-v0.3.yaml"
+        )
+
+    def test_visual_perception_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_construct_task_stimulus_response_measurement_and_mechanism_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:visual-perception"], "Construct")
+        self.assertEqual(records["pmm:construct:spatial-contrast-sensitivity"], "Construct")
+        self.assertEqual(records["pmm:context:sine-wave-grating-detection-task"], "Context")
+        self.assertEqual(
+            records["pmm:intervention:grating-spatial-frequency-and-contrast-manipulation"],
+            "Intervention",
+        )
+        self.assertEqual(records["pmm:behavior:grating-detection-response"], "Behavior")
+        self.assertEqual(records["pmm:outcome:contrast-detection-threshold"], "Outcome")
+        self.assertEqual(
+            records["pmm:measurement:contrast-sensitivity-function"], "Measurement"
+        )
+        self.assertEqual(
+            records["pmm:mechanism:divisive-visual-normalization"], "Mechanism"
+        )
+
+    def test_contrast_sensitivity_function_is_not_visual_perception(self) -> None:
+        records = {item["id"]: item for item in self.document["objects"]}
+        construct = records["pmm:construct:visual-perception"]
+        measurement = records["pmm:measurement:contrast-sensitivity-function"]
+        self.assertNotEqual(construct["id"], measurement["id"])
+        self.assertIn("not visual perception as a whole", measurement["boundary_notes"][0])
+
+    def test_normalization_remains_proposed_and_indirect(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:divisive-normalization-may-shape-visual-gain"
+        )
+        evidence = {item["id"]: item for item in self.document["evidence"]}
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertTrue(
+            all(evidence[item]["causal_support"] == "indirect" for item in claim["evidence_ids"])
+        )
+        self.assertEqual(evidence["pmm:evidence:heeger-1992-normalization-model"]["species"], ["other"])
+
+    def test_human_psychophysical_effect_is_not_the_normalization_claim(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:grating-properties-change-detection-threshold"
+        )
+        self.assertEqual(claim["claim_type"], "causal_effect")
+        self.assertNotIn("mechanism_id", claim)
+        self.assertEqual(
+            claim["outcome_id"], "pmm:outcome:contrast-detection-threshold"
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -2,7 +2,7 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 15 mechanisms across 12 families.
+**Current inventory:** 16 mechanisms across 13 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|
@@ -19,6 +19,7 @@ This generated index makes mechanisms comparable across public evidence packs. I
 | Spatial attention | **Sensory evidence enhancement at an attended location**<br>Proposed process in which allocating attention increases the quality or discriminability of sensory evidence at the attended location. | cognitive | 1 | 2 | 2 |
 | Spatial attention | **Spatial weighting of evidence for decision**<br>Proposed process in which cue information changes the relative decision weight or criterion assigned to evidence from different locations or intervals. | cognitive | 1 | 2 | 2 |
 | Threat and avoidance | **Negative reinforcement learning**<br>Instrumental learning process in which a response-contingent removal, reduction, or prevention of an aversive consequence increases later probability or rate of the response under relevant conditions. | learning | 1 | 2 | 2 |
+| Visual perception | **Divisive visual normalization**<br>Candidate neural computation in which a neuron's stimulus-driven response is divided by a factor that includes pooled activity from other neurons, regulating response gain and saturation. | physiological | 1 | 2 | 2 |
 | Working-memory control | **Control over familiarity-based responding**<br>Proposed process that uses task position information to override a familiar but currently incorrect target response. | cognitive | 0 | 0 | 0 |
 | Working-memory control | **Episodic retrieval supporting N-back performance**<br>Proposed process in which retrieval from episodic memory supplies prior-item information used for the current N-back judgment. | cognitive | 1 | 1 | 1 |
 

@@ -89,6 +89,38 @@ sources:
     title: Differential effects of early hippocampal pathology on episodic and semantic memory
     organization: Science
     url: https://pubmed.ncbi.nlm.nih.gov/9219696/
+  - id: source:rdoc-perception
+    title: Perception — NIMH RDoC
+    organization: National Institute of Mental Health
+    url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/perception
+  - id: source:rdoc-visual-perception
+    title: Visual Perception — NIMH RDoC
+    organization: National Institute of Mental Health
+    url: https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/constructs/visual-perception
+  - id: source:cognitive-atlas-visual-perception
+    title: Cognitive Atlas concept — visual perception
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b4b5/
+  - id: source:cognitive-atlas-contrast-detection
+    title: Cognitive Atlas task — contrast detection task
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/task/id/trm_502be67697201/
+  - id: source:campbell-robson-1968
+    title: Application of Fourier analysis to the visibility of gratings
+    organization: The Journal of Physiology
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC1351748/
+  - id: source:pelli-bex-2013
+    title: Measuring contrast sensitivity
+    organization: Vision Research
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3744596/
+  - id: source:heeger-1992
+    title: Normalization of cell responses in cat striate cortex
+    organization: Visual Neuroscience
+    url: https://pubmed.ncbi.nlm.nih.gov/1504027/
+  - id: source:carandini-heeger-2012
+    title: Normalization as a canonical neural computation
+    organization: Nature Reviews Neuroscience
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3273486/
 
 general_psychology:
   id: general-psychology
@@ -223,11 +255,18 @@ general_psychology:
         en: Processes that compute over sensory data to construct and transform representations of the external environment and guide action.
         ru: Процессы обработки сенсорных данных, которые создают и преобразуют представления о внешней среде и направляют действие.
       ontological_note:
-        en: The spatial-attention pilot uses visual stimuli, but that does not make it a validated model of visual perception. Perception remains a separate planned area.
-        ru: Пилот пространственного внимания использует зрительные стимулы, но это не превращает его в проверенную модель зрительного восприятия. Восприятие остаётся отдельной запланированной областью.
-      coverage: planned
-      source_ids: [source:rdoc-definitions]
-      memberships: []
+        en: PMM now covers one narrow psychophysical case — detecting periodic luminance patterns. Visual perception, contrast sensitivity, the grating task, stimulus manipulation, detection response, threshold measurement, and divisive-normalization hypothesis remain separate records.
+        ru: Сейчас PMM охватывает один узкий психофизический случай — обнаружение периодических изменений яркости. Зрительное восприятие, контрастная чувствительность, задание с решётками, изменение стимула, ответ об обнаружении, измерение порога и гипотеза дивизивной нормализации остаются отдельными записями.
+      coverage: partial
+      source_ids: [source:rdoc-definitions, source:rdoc-perception, source:rdoc-visual-perception, source:cognitive-atlas-visual-perception, source:cognitive-atlas-contrast-detection, source:campbell-robson-1968, source:pelli-bex-2013, source:heeger-1992, source:carandini-heeger-2012]
+      memberships:
+        - {family_id: visual-perception, canonical_id: pmm:construct:visual-perception, role: construct_example, expected_type: Construct}
+        - {family_id: visual-perception, canonical_id: pmm:construct:spatial-contrast-sensitivity, role: construct_example, expected_type: Construct}
+        - {family_id: visual-perception, canonical_id: pmm:context:sine-wave-grating-detection-task, role: task_context_example, expected_type: Context}
+        - {family_id: visual-perception, canonical_id: pmm:intervention:grating-spatial-frequency-and-contrast-manipulation, role: intervention_example, expected_type: Intervention}
+        - {family_id: visual-perception, canonical_id: pmm:behavior:grating-detection-response, role: behavior_example, expected_type: Behavior}
+        - {family_id: visual-perception, canonical_id: pmm:measurement:contrast-sensitivity-function, role: measurement_example, expected_type: Measurement}
+        - {family_id: visual-perception, canonical_id: pmm:mechanism:divisive-visual-normalization, role: mechanism_example, expected_type: Mechanism}
     - id: gp:sensation-interoception
       parent_id: gp:cognitive-processes
       kind: topic
@@ -606,7 +645,7 @@ scientific_systems:
         en: It is not a diagnostic manual, a complete ontology, or a fixed final taxonomy.
         ru: Это не диагностическое руководство, не полная онтология и не окончательная неизменная классификация.
       coverage: partial
-      source_ids: [source:rdoc-about, source:rdoc-definitions, source:rdoc-declarative-memory]
+      source_ids: [source:rdoc-about, source:rdoc-definitions, source:rdoc-declarative-memory, source:rdoc-perception, source:rdoc-visual-perception]
       mapped_memberships:
         - family_id: avoidance
           canonical_id: pmm:construct:rdoc-potential-threat-anxiety
@@ -616,6 +655,8 @@ scientific_systems:
           canonical_id: pmm:construct:spatial-selective-attention
         - family_id: declarative-memory
           canonical_id: pmm:construct:declarative-memory
+        - family_id: visual-perception
+          canonical_id: pmm:construct:visual-perception
     - id: system:cognitive-atlas
       label: {en: Cognitive Atlas, ru: Cognitive Atlas}
       system_kind: collaborative_knowledge_base
@@ -623,10 +664,10 @@ scientific_systems:
         en: A knowledge base of cognitive concepts and experimental tasks with explicit relationships between them.
         ru: База знаний о когнитивных понятиях и экспериментальных задачах с явными связями между ними.
       limitation:
-        en: Record review status matters. The linked working-memory, N-back, spatial-attention, cueing, episodic-memory, semantic-memory, and recognition-task pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
-        ru: Важен статус проверки записи. Связанные страницы рабочей памяти, N-back, пространственного внимания, подсказки, эпизодической и семантической памяти и задания узнавания помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
+        en: Record review status matters. The linked working-memory, N-back, spatial-attention, cueing, memory, visual-perception, and contrast-detection pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
+        ru: Важен статус проверки записи. Связанные страницы рабочей памяти, N-back, пространственного внимания, подсказки, памяти, зрительного восприятия и обнаружения контраста помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
       coverage: partial
-      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing, source:cognitive-atlas-episodic-memory, source:cognitive-atlas-semantic-memory, source:cognitive-atlas-recognition-memory]
+      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing, source:cognitive-atlas-episodic-memory, source:cognitive-atlas-semantic-memory, source:cognitive-atlas-recognition-memory, source:cognitive-atlas-visual-perception, source:cognitive-atlas-contrast-detection]
       mapped_memberships:
         - family_id: working-memory
           canonical_id: pmm:construct:working-memory-capacity
@@ -642,6 +683,10 @@ scientific_systems:
           canonical_id: pmm:construct:semantic-memory
         - family_id: declarative-memory
           canonical_id: pmm:context:incidental-word-encoding-recognition
+        - family_id: visual-perception
+          canonical_id: pmm:construct:visual-perception
+        - family_id: visual-perception
+          canonical_id: pmm:context:sine-wave-grating-detection-task
     - id: system:big-five
       label: {en: Big Five, ru: Большая пятёрка}
       system_kind: trait_taxonomy

@@ -260,6 +260,26 @@
       "source_count": 2
     },
     {
+      "claim_ids": [
+        "pmm:claim:divisive-normalization-may-shape-visual-gain"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Candidate neural computation in which a neuron's stimulus-driven response is divided by a factor that includes pooled activity from other neurons, regulating response gain and saturation.",
+      "evidence_count": 2,
+      "family_id": "visual-perception",
+      "family_title": "Visual perception",
+      "id": "pmm:mechanism:divisive-visual-normalization",
+      "label": "Divisive visual normalization",
+      "mechanism_kind": "physiological",
+      "source_count": 2
+    },
+    {
       "claim_ids": [],
       "claim_status_counts": {},
       "claim_types": [],

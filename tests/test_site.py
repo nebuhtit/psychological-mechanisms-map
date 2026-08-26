@@ -63,7 +63,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.7.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.8.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -71,7 +71,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.7.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.8.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -223,8 +223,31 @@ class SiteBundleTests(unittest.TestCase):
         self.assertEqual(
             attention_types["pmm:mechanism:spatial-decision-weighting"], "Mechanism"
         )
-        self.assertEqual(nodes["gp:perception"]["coverage"], "planned")
-        self.assertEqual(nodes["gp:perception"]["memberships"], [])
+        perception = nodes["gp:perception"]
+        perception_types = {
+            item["canonical_id"]: item["expected_type"]
+            for item in perception["memberships"]
+        }
+        self.assertEqual(perception["coverage"], "partial")
+        self.assertEqual(perception_types["pmm:construct:visual-perception"], "Construct")
+        self.assertEqual(
+            perception_types["pmm:context:sine-wave-grating-detection-task"], "Context"
+        )
+        self.assertEqual(
+            perception_types["pmm:intervention:grating-spatial-frequency-and-contrast-manipulation"],
+            "Intervention",
+        )
+        self.assertEqual(
+            perception_types["pmm:behavior:grating-detection-response"], "Behavior"
+        )
+        self.assertEqual(
+            perception_types["pmm:measurement:contrast-sensitivity-function"],
+            "Measurement",
+        )
+        self.assertEqual(
+            perception_types["pmm:mechanism:divisive-visual-normalization"],
+            "Mechanism",
+        )
 
         self.assertEqual(types["pmm:construct:declarative-memory"], "Construct")
         self.assertEqual(types["pmm:construct:episodic-memory"], "Construct")
@@ -329,6 +352,17 @@ class SiteBundleTests(unittest.TestCase):
         mappings = {item["system"]: item for item in declarative_memory["external_mappings"]}
         self.assertEqual(mappings["RDoC"]["mapping_relation"], "exact_match")
         self.assertEqual(mappings["RDoC"]["mapping_status"], "identifier_verified")
+
+        visual_perception = next(
+            item
+            for family in document["families"] if family["id"] == "visual-perception"
+            for item in family["objects"]
+            if item["id"] == "pmm:construct:visual-perception"
+        )
+        mappings = {item["system"]: item for item in visual_perception["external_mappings"]}
+        self.assertEqual(mappings["RDoC"]["mapping_relation"], "exact_match")
+        self.assertEqual(mappings["RDoC"]["mapping_status"], "identifier_verified")
+        self.assertEqual(mappings["CognitiveAtlas"]["mapping_status"], "provisional")
 
 
 if __name__ == "__main__":
