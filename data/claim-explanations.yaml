@@ -436,3 +436,33 @@ entries:
       One proposed explanation is that the mind can begin evaluating both plausibility and logical structure at the same time. When they suggest different answers, processing may become slower, less confident, or more arousing. Recent experiments show that researchers cannot assume every formally invalid argument creates this subjective conflict, so the mechanism remains conditional and proposed.
     ru: >-
       Одна из гипотез состоит в том, что человек может одновременно начинать оценивать правдоподобие содержания и логическую структуру. Если они подсказывают разные ответы, решение может стать медленнее, менее уверенным или сопровождаться большим возбуждением. Новые эксперименты показывают, что формальная невалидность не всегда создаёт такой субъективный конфликт, поэтому механизм остаётся условной гипотезой.
+
+  - claim_id: pmm:claim:language-comprehension-extracts-communicative-meaning
+    en: >-
+      Language comprehension is the broad ability to understand meaningful communication in speech, writing, or sign. Deciding whether one letter string is a word tests only a small part of this ability and should not be presented as a complete model of language.
+    ru: >-
+      Понимание языка — это широкая способность понимать осмысленное сообщение в речи, письме или жестовом языке. Решение о том, является ли одна последовательность букв словом, проверяет лишь небольшую часть этой способности и не является полной моделью языка.
+
+  - claim_id: pmm:claim:semantic-relatedness-changes-lexical-decision-latency
+    en: >-
+      People usually classified a target word faster when a meaning-related word appeared before it or beside it than when the context word was unrelated or neutral. Because the researchers controlled the word relation, this supports a causal effect on response time in those tasks, but it does not reveal which internal process produced the advantage.
+    ru: >-
+      Люди обычно быстрее определяли, что последовательность букв является словом, если связанное по смыслу слово показывали перед ней или рядом с ней, а не использовали несвязанное или нейтральное слово. Поскольку исследователи сами задавали связь между словами, это подтверждает её влияние на время ответа в данных заданиях, но не показывает, какой внутренний процесс создал ускорение.
+
+  - claim_id: pmm:claim:diffusion-model-decomposes-lexical-decisions
+    en: >-
+      The diffusion model describes a decision as noisy evidence accumulating until a word or nonword boundary is reached, while also estimating response caution and time spent outside the decision itself. These parameters can explain accuracy and response-time distributions together, but they are model estimates rather than directly observed mental components.
+    ru: >-
+      Диффузионная модель описывает решение как постепенное накопление неточной информации до границы ответа «слово» или «не слово» и отдельно оценивает осторожность ответа и время процессов вне самого решения. Эти параметры помогают совместно объяснить точность и распределение времени ответа, но являются оценками модели, а не непосредственно наблюдаемыми частями психики.
+
+  - claim_id: pmm:claim:automatic-preactivation-may-contribute-to-priming
+    en: >-
+      One hypothesis is that seeing a word rapidly makes related word information easier to process before a deliberate strategy is possible. Short or weakly visible primes are compatible with this explanation, but a faster response alone cannot show that automatic spreading activation occurred.
+    ru: >-
+      Одна из гипотез состоит в том, что увиденное слово быстро облегчает обработку связанных с ним слов ещё до осознанной стратегии. Результаты с коротко показанными или плохо различимыми праймами согласуются с этим объяснением, но одно лишь ускорение ответа не доказывает автоматическое распространение активации.
+
+  - claim_id: pmm:claim:strategic-matching-may-contribute-to-priming
+    en: >-
+      When the prime is visible long enough, a person may predict likely next words or notice after recognizing the target that the two words are related and use that relation to answer “word.” This can also speed responses, so it competes with a purely automatic explanation.
+    ru: >-
+      Если предыдущее слово видно достаточно долго, человек может ожидать вероятные следующие слова или уже после распознавания заметить смысловую связь между словами и использовать её для ответа «слово». Это тоже способно ускорить ответ, поэтому такое объяснение конкурирует с чисто автоматическим механизмом.

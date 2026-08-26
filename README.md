@@ -43,7 +43,7 @@ PMM asks a narrow but demanding question:
 
 ## What is currently mapped
 
-The live explorer contains thirteen deliberately heterogeneous mechanism families. Breadth is used to test the ontology, not to imply comprehensive coverage.
+The live explorer contains fifteen deliberately heterogeneous evidence families. Breadth is used to test the ontology, not to imply comprehensive coverage.
 
 | Family | Scientific boundary tested |
 |---|---|
@@ -61,14 +61,17 @@ The live explorer contains thirteen deliberately heterogeneous mechanism familie
 | Declarative memory | Declarative, episodic, and semantic constructs, encoding-depth manipulation, recognition measurement, developmental dissociation, and proposed elaborative encoding |
 | Visual perception | Visual-perception construct, contrast sensitivity, grating manipulation, detection response, threshold measurement, and proposed divisive normalization |
 | Deductive reasoning | Reasoning construct, syllogism task, validity-believability manipulation, judgment, performance, signal-detection decomposition, and proposed parallel evaluation |
+| Language comprehension | Broad comprehension, visual lexical access, lexical-decision task, semantic relatedness and timing, observable response, latency, diffusion parameters, and competing automatic and strategic processes |
 
 Each family is a small evidence pack, not a textbook chapter. Null findings, incompatible operationalizations, alternative explanations, narrow populations, and untested mechanism hypotheses remain visible.
 
 ### Coverage goal
 
-PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Fifteen topics currently have at least one evidence-linked pilot; nine remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
+PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Sixteen topics currently have at least one evidence-linked pilot; eight remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
-Each of the 14 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
+Each of the 15 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
+
+PMM also has a separate pilot **practical implications layer**. It translates selected evidence into a possible action, expected change, applicable setting, actionability level, and an explicit “not established” boundary. This layer never upgrades an association or mechanism hypothesis into advice. Version 0.1 starts with four examples: semantic elaboration for memory, separating validity from believability, semantic context for immediate word recognition, and recognizing a possible short-term-relief avoidance loop.
 
 The website provides three switchable views over the same canonical records:
 
@@ -165,9 +168,15 @@ data/evidence-pack-visual-perception-v0.3.yaml
                                      Visual perception, contrast threshold, and normalization boundary pack
 data/evidence-pack-deductive-reasoning-v0.3.yaml
                                      Deductive reasoning, belief bias, signal detection, and competing-process boundary pack
+data/evidence-pack-language-comprehension-v0.3.yaml
+                                     Language comprehension, semantic priming, lexical decision, diffusion, and competing-process boundary pack
 schema/research-questions-v0.1.schema.yaml
                                      Separate contract for open-gap annotations
 data/research-questions-v0.1.yaml    Bilingual source-linked questions, one per public family
+schema/practical-implications-v0.1.schema.yaml
+                                     Separate contract for bounded practical interpretations
+data/practical-implications-v0.1.yaml
+                                     Bilingual action, expected change, transfer limits, and safety boundaries
 data/navigation-views-v0.1.yaml      Validated educational and framework projections over canonical IDs
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/navigation-views.md             Faceted-view semantics and boundaries

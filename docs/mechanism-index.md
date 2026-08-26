@@ -2,7 +2,7 @@
 
 This generated index makes mechanisms comparable across public evidence packs. It does **not** assert that similarly named mechanisms are identical, that every mechanism is established, or that families are causally connected.
 
-**Current inventory:** 17 mechanisms across 14 families.
+**Current inventory:** 19 mechanisms across 15 families.
 
 | Family | Mechanism | Kind | Linked claims | Evidence | Sources |
 |---|---|---:|---:|---:|---:|
@@ -14,6 +14,8 @@ This generated index makes mechanisms comparable across public evidence packs. I
 | Habit control | **Goal-directed action control**<br>Proposed action-selection process that uses action-outcome knowledge and current outcome value to guide responding. | learning | 0 | 0 | 0 |
 | Habit control | **Habitual action control**<br>Proposed cue-linked action-selection process whose momentary expression is relatively insensitive to the current value of the action outcome. | learning | 1 | 2 | 2 |
 | Interoception and anxiety | **Appraisal of cardiorespiratory sensation**<br>Proposed process by which perceived cardiorespiratory changes are evaluated in a way that can contribute to anxiety experience. | integrative | 1 | 1 | 1 |
+| Language comprehension | **Automatic semantic preactivation**<br>Proposed rapid process by which processing a prime makes related target information more available before the target decision without requiring deliberate prediction. | cognitive | 1 | 1 | 1 |
+| Language comprehension | **Strategic expectancy or post-lexical matching**<br>Proposed task-sensitive process in which participants predict likely targets or use the detected prime-target relation to influence a decision after target information becomes available. | cognitive | 1 | 2 | 2 |
 | Placebo analgesia | **Endogenous opioid pain modulation**<br>Proposed process in which treatment expectation recruits endogenous opioid signaling that changes pain responding. | physiological | 1 | 3 | 3 |
 | Reward prediction error | **Temporal-difference value updating**<br>Computational process that updates a value estimate using a prediction-error term and learning-rate parameter. | computational | 1 | 1 | 1 |
 | Social buffering | **Social co-regulation of stress responding**<br>Proposed process through which interaction with a familiar support figure changes stress appraisal or regulatory activity and thereby alters physiological responding. | social | 1 | 1 | 1 |

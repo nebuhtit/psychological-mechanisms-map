@@ -161,6 +161,46 @@
     },
     {
       "claim_ids": [
+        "pmm:claim:automatic-preactivation-may-contribute-to-priming"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed rapid process by which processing a prime makes related target information more available before the target decision without requiring deliberate prediction.",
+      "evidence_count": 1,
+      "family_id": "language-comprehension",
+      "family_title": "Language comprehension",
+      "id": "pmm:mechanism:automatic-semantic-preactivation",
+      "label": "Automatic semantic preactivation",
+      "mechanism_kind": "cognitive",
+      "source_count": 1
+    },
+    {
+      "claim_ids": [
+        "pmm:claim:strategic-matching-may-contribute-to-priming"
+      ],
+      "claim_status_counts": {
+        "proposed": 1
+      },
+      "claim_types": [
+        "mechanism_hypothesis"
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed task-sensitive process in which participants predict likely targets or use the detected prime-target relation to influence a decision after target information becomes available.",
+      "evidence_count": 2,
+      "family_id": "language-comprehension",
+      "family_title": "Language comprehension",
+      "id": "pmm:mechanism:strategic-postlexical-matching",
+      "label": "Strategic expectancy or post-lexical matching",
+      "mechanism_kind": "cognitive",
+      "source_count": 2
+    },
+    {
+      "claim_ids": [
         "pmm:claim:expectation-opioid-mechanism-hypothesis"
       ],
       "claim_status_counts": {

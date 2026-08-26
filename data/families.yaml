@@ -88,3 +88,9 @@ datasets:
       id: deductive-reasoning
       title: Deductive reasoning
       description: Deductive construct, syllogism task, validity and believability, judgments, performance, signal detection, and parallel evaluation kept distinct.
+  - source: data/evidence-pack-language-comprehension-v0.3.yaml
+    output: build/evidence-pack-language-comprehension-v0.3.json
+    family:
+      id: language-comprehension
+      title: Language comprehension
+      description: Broad comprehension, visual lexical access, semantic priming, word decisions, latency, model parameters, and competing automatic and strategic processes kept distinct.

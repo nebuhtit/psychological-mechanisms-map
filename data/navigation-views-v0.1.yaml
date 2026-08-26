@@ -3,7 +3,7 @@ status: pilot
 canonical_language: en
 provenance:
   created_at: '2026-08-26T13:00:00+03:00'
-  modified_at: '2026-08-26T19:30:00+03:00'
+  modified_at: '2026-08-26T21:00:00+03:00'
   created_by: [OpenAI Codex]
   review_status: source_checked_editorial
   source_snapshot_date: '2026-08-26'
@@ -149,6 +149,34 @@ sources:
     title: Conflict detection with invalid inferences — all heuristics, no logic
     organization: Memory & Cognition
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12589286/
+  - id: source:cognitive-atlas-language-comprehension
+    title: Cognitive Atlas concept — language comprehension
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a775/
+  - id: source:cognitive-atlas-lexical-access
+    title: Cognitive Atlas concept — lexical access
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b80f/
+  - id: source:cognitive-atlas-lexical-decision
+    title: Cognitive Atlas task — lexical decision task
+    organization: Cognitive Atlas
+    url: https://www.cognitiveatlas.org/task/id/tsk_4a57abb949b38/
+  - id: source:meyer-schvaneveldt-1971
+    title: Facilitation in recognizing pairs of words
+    organization: Journal of Experimental Psychology
+    url: https://pubmed.ncbi.nlm.nih.gov/5134329/
+  - id: source:neely-1976
+    title: Semantic priming and retrieval from lexical memory
+    organization: Memory & Cognition
+    url: https://pubmed.ncbi.nlm.nih.gov/21286993/
+  - id: source:ratcliff-lexical-decision-2004
+    title: A diffusion model account of the lexical decision task
+    organization: Psychological Review
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC1403837/
+  - id: source:mangat-semantic-priming-2026
+    title: The influence of prime characteristics in semantic priming
+    organization: Frontiers in Psychology
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12996092/
 
 general_psychology:
   id: general-psychology
@@ -357,9 +385,23 @@ general_psychology:
       description:
         en: Processes supporting comprehension, production, and meaningful symbolic communication.
         ru: Процессы понимания, порождения и осмысленного символического общения.
-      coverage: planned
-      source_ids: [source:rdoc-definitions]
-      memberships: []
+      ontological_note:
+        en: PMM currently covers only a narrow visual-word pilot. Broad comprehension, visual lexical access, the lexical-decision task, prime manipulation, observable response, latency, model parameters, and competing automatic and strategic explanations remain distinct; production, syntax, discourse, pragmatics, and sign language remain unmapped.
+        ru: Сейчас PMM охватывает только узкий пилот распознавания письменных слов. Широкое понимание языка, зрительный доступ к словарю, задание лексического решения, изменение прайма, наблюдаемый ответ, время реакции, параметры модели и конкурирующие автоматические и стратегические объяснения разделены; порождение речи, синтаксис, дискурс, прагматика и жестовые языки пока не представлены.
+      coverage: partial
+      source_ids: [source:cognitive-atlas-language-comprehension, source:cognitive-atlas-lexical-access, source:cognitive-atlas-lexical-decision, source:meyer-schvaneveldt-1971, source:neely-1976, source:ratcliff-lexical-decision-2004, source:mangat-semantic-priming-2026]
+      memberships:
+        - {family_id: language-comprehension, canonical_id: pmm:construct:language-comprehension, role: construct_example, expected_type: Construct}
+        - {family_id: language-comprehension, canonical_id: pmm:construct:visual-lexical-access, role: construct_example, expected_type: Construct}
+        - {family_id: language-comprehension, canonical_id: pmm:context:semantic-priming-lexical-decision-task, role: task_context_example, expected_type: Context}
+        - {family_id: language-comprehension, canonical_id: pmm:context:paired-word-classification-task, role: task_context_example, expected_type: Context}
+        - {family_id: language-comprehension, canonical_id: pmm:intervention:semantic-relatedness-timing-manipulation, role: intervention_example, expected_type: Intervention}
+        - {family_id: language-comprehension, canonical_id: pmm:behavior:word-nonword-classification, role: behavior_example, expected_type: Behavior}
+        - {family_id: language-comprehension, canonical_id: pmm:outcome:lexical-decision-response-latency, role: outcome_example, expected_type: Outcome}
+        - {family_id: language-comprehension, canonical_id: pmm:measurement:condition-specific-lexical-decision-performance, role: measurement_example, expected_type: Measurement}
+        - {family_id: language-comprehension, canonical_id: pmm:measurement:lexical-decision-diffusion-profile, role: measurement_example, expected_type: Measurement}
+        - {family_id: language-comprehension, canonical_id: pmm:mechanism:automatic-semantic-preactivation, role: mechanism_example, expected_type: Mechanism}
+        - {family_id: language-comprehension, canonical_id: pmm:mechanism:strategic-postlexical-matching, role: mechanism_example, expected_type: Mechanism}
     - id: gp:imagery-imagination
       parent_id: gp:cognitive-processes
       kind: topic
@@ -703,10 +745,10 @@ scientific_systems:
         en: A knowledge base of cognitive concepts and experimental tasks with explicit relationships between them.
         ru: База знаний о когнитивных понятиях и экспериментальных задачах с явными связями между ними.
       limitation:
-        en: Record review status matters. The linked memory, attention, perception, deductive-reasoning, and experimental-task pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
-        ru: Важен статус проверки записи. Связанные страницы памяти, внимания, восприятия, дедуктивного рассуждения и экспериментальных заданий помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
+        en: Record review status matters. The linked memory, attention, perception, reasoning, language, lexical-access, and experimental-task pages are marked “Unreviewed,” so PMM treats these alignments as provisional.
+        ru: Важен статус проверки записи. Связанные страницы памяти, внимания, восприятия, рассуждения, языка, лексического доступа и экспериментальных заданий помечены как «Unreviewed», поэтому PMM считает эти сопоставления предварительными.
       coverage: partial
-      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing, source:cognitive-atlas-episodic-memory, source:cognitive-atlas-semantic-memory, source:cognitive-atlas-recognition-memory, source:cognitive-atlas-visual-perception, source:cognitive-atlas-contrast-detection, source:cognitive-atlas-deductive-reasoning, source:cognitive-atlas-deductive-reasoning-task]
+      source_ids: [source:cognitive-atlas, source:cognitive-atlas-working-memory, source:cognitive-atlas-n-back, source:cognitive-atlas-spatial-attention, source:cognitive-atlas-visuospatial-cueing, source:cognitive-atlas-episodic-memory, source:cognitive-atlas-semantic-memory, source:cognitive-atlas-recognition-memory, source:cognitive-atlas-visual-perception, source:cognitive-atlas-contrast-detection, source:cognitive-atlas-deductive-reasoning, source:cognitive-atlas-deductive-reasoning-task, source:cognitive-atlas-language-comprehension, source:cognitive-atlas-lexical-access, source:cognitive-atlas-lexical-decision]
       mapped_memberships:
         - family_id: working-memory
           canonical_id: pmm:construct:working-memory-capacity
@@ -730,6 +772,12 @@ scientific_systems:
           canonical_id: pmm:construct:deductive-reasoning
         - family_id: deductive-reasoning
           canonical_id: pmm:context:syllogistic-validity-judgment-task
+        - family_id: language-comprehension
+          canonical_id: pmm:construct:language-comprehension
+        - family_id: language-comprehension
+          canonical_id: pmm:construct:visual-lexical-access
+        - family_id: language-comprehension
+          canonical_id: pmm:context:semantic-priming-lexical-decision-task
     - id: system:big-five
       label: {en: Big Five, ru: Большая пятёрка}
       system_kind: trait_taxonomy

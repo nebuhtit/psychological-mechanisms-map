@@ -64,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.10.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.12.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -72,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.10.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.12.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -159,6 +159,32 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn(".node.question { opacity: .48; }", stylesheet)
         self.assertIn(".node.question .node-shape", stylesheet)
         self.assertIn(".edge.question-edge", stylesheet)
+
+    def test_practical_implications_are_separate_bounded_annotations(self) -> None:
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        self.assertEqual(document["practical_implications_version"], "0.1.0")
+        applications = [
+            application
+            for family in document["families"]
+            for application in family["practical_implications"]
+        ]
+        self.assertEqual(len(applications), 4)
+        self.assertTrue(all(application["id"].startswith("pmm:application:") for application in applications))
+        self.assertTrue(all(application["actionability"] in {"direct_within_tested_scope", "transfer_uncertain", "interpretation_only"} for application in applications))
+        self.assertTrue(all(application["not_established"]["en"] for application in applications))
+
+        memory = next(item for item in applications if item["family_id"] == "declarative-memory")
+        reasoning = next(item for item in applications if item["family_id"] == "deductive-reasoning")
+        avoidance = next(item for item in applications if item["family_id"] == "avoidance")
+        self.assertEqual(memory["actionability"], "transfer_uncertain")
+        self.assertEqual(reasoning["actionability"], "interpretation_only")
+        self.assertIn("not directly test", reasoning["evidence_basis"]["en"])
+        self.assertIn("safety_note", avoidance)
+
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("What can be done with this?", javascript)
+        self.assertIn("Not automatic advice", javascript)
+        self.assertIn("What is not established", javascript)
 
     def test_cross_family_mechanism_catalog_is_collapsed_and_navigable(self) -> None:
         page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
@@ -446,6 +472,26 @@ class SiteBundleTests(unittest.TestCase):
             expected_types["pmm:mechanism:parallel-belief-logic-evaluation"],
             "Mechanism",
         )
+
+    def test_language_is_partial_and_preserves_task_measurement_boundaries(self) -> None:
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        nodes = {
+            node["id"]: node
+            for node in document["navigation_views"]["general_psychology"]["nodes"]
+        }
+        language = nodes["gp:language"]
+        self.assertEqual(language["coverage"], "partial")
+        expected_types = {
+            membership["canonical_id"]: membership["expected_type"]
+            for membership in language["memberships"]
+        }
+        self.assertEqual(expected_types["pmm:construct:language-comprehension"], "Construct")
+        self.assertEqual(expected_types["pmm:context:semantic-priming-lexical-decision-task"], "Context")
+        self.assertEqual(expected_types["pmm:context:paired-word-classification-task"], "Context")
+        self.assertEqual(expected_types["pmm:behavior:word-nonword-classification"], "Behavior")
+        self.assertEqual(expected_types["pmm:outcome:lexical-decision-response-latency"], "Outcome")
+        self.assertEqual(expected_types["pmm:measurement:lexical-decision-diffusion-profile"], "Measurement")
+        self.assertIn("remain unmapped", language["ontological_note"]["en"])
 
 if __name__ == "__main__":
     unittest.main()

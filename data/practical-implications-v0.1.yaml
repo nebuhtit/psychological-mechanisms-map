@@ -1,0 +1,126 @@
+applications_version: 0.1.0
+status: pilot
+canonical_language: en
+provenance: &provenance
+  record_version: 0.1.0
+  created_at: '2026-08-26T22:00:00+03:00'
+  modified_at: '2026-08-26T22:00:00+03:00'
+  created_by: [OpenAI Codex]
+  review_status: machine_validated
+  source_snapshot_date: '2026-08-26'
+
+applications:
+  - id: pmm:application:semantic-elaboration-for-word-retention
+    family_id: declarative-memory
+    title: {en: Process meaning to improve retention, ru: Обрабатывайте смысл для лучшего запоминания}
+    practical_question:
+      en: What can be changed during study to improve later memory for verbal material?
+      ru: Что можно изменить во время учёбы, чтобы лучше запоминать словесный материал?
+    action:
+      en: Explain the meaning in your own words, connect it with prior knowledge, or answer a meaningful question about it instead of attending only to appearance or sound.
+      ru: Объясните смысл своими словами, свяжите материал с уже известным или ответьте на содержательный вопрос о нём вместо внимания только к виду или звучанию.
+    expected_change:
+      en: Better later recognition of similar verbal material than after shallow visual or sound-based processing.
+      ru: Более точное последующее узнавание сходного словесного материала по сравнению с поверхностной обработкой вида или звучания.
+    evidence_basis:
+      en: Controlled encoding experiments directly changed the questions asked about words and measured later recognition.
+      ru: В контролируемых экспериментах исследователи изменяли вопросы о словах и затем измеряли их узнавание.
+    applicability:
+      en: Low-risk study design for verbal learning; closest to intentional semantic elaboration of concepts and terms.
+      ru: Низкорисковый приём для изучения словесного материала, наиболее близкий к осмысленной проработке понятий и терминов.
+    not_established:
+      en: The mapped evidence does not guarantee long-term retention, transfer to every subject, or that elaboration is the only mechanism.
+      ru: Представленные данные не гарантируют долговременное сохранение, перенос на любой предмет или то, что проработка является единственным механизмом.
+    actionability: transfer_uncertain
+    confidence: moderate
+    audience: [individual, educator]
+    claim_ids: [pmm:claim:semantic-encoding-questions-improve-later-word-recognition, pmm:claim:elaborative-semantic-encoding-may-support-retention]
+    source_ids: [pmm:source:craik-tulving-1975-depth-processing]
+    provenance: *provenance
+
+  - id: pmm:application:separate-validity-from-believability
+    family_id: deductive-reasoning
+    title: {en: Separate logical validity from plausibility, ru: Отделяйте логическую валидность от правдоподобия}
+    practical_question:
+      en: How might a person reduce the influence of a believable conclusion when checking an argument?
+      ru: Как можно уменьшить влияние правдоподобного вывода при проверке аргумента?
+    action:
+      en: First ask whether the conclusion must follow if the premises are accepted; only afterward evaluate whether the premises and conclusion are realistic. Restating the structure with neutral symbols is a candidate aid.
+      ru: Сначала спросите, обязан ли вывод следовать из принятых посылок, и только затем оценивайте реалистичность посылок и вывода. Перезапись структуры нейтральными символами может помочь, но пока это лишь кандидатный приём.
+    expected_change:
+      en: The intended change is less contamination of validity judgments by conclusion believability.
+      ru: Предполагаемый результат — меньшее влияние правдоподобия вывода на оценку логической валидности.
+    evidence_basis:
+      en: Experiments show that manipulated believability changes validity judgments, but the mapped pack does not directly test this debiasing procedure.
+      ru: Эксперименты показывают, что изменение правдоподобия влияет на оценку валидности, но представленный пакет напрямую не проверяет эту процедуру снижения ошибки.
+    applicability:
+      en: Candidate checklist for education, analysis, and review of short deductive arguments.
+      ru: Кандидатный чек-лист для обучения, анализа и проверки коротких дедуктивных аргументов.
+    not_established:
+      en: It is not established here that the checklist reliably reduces bias, generalizes to real decisions, or changes an underlying reasoning mechanism.
+      ru: Здесь не доказано, что чек-лист надёжно снижает ошибку, переносится на реальные решения или изменяет внутренний механизм рассуждения.
+    actionability: interpretation_only
+    confidence: low
+    audience: [individual, educator, researcher]
+    claim_ids: [pmm:claim:conclusion-believability-changes-validity-judgments, pmm:claim:believability-does-not-unconditionally-reduce-discriminability]
+    source_ids: [pmm:source:evans-barston-pollard-1983, pmm:source:trippas-2018-belief-bias-meta-analysis]
+    provenance: *provenance
+
+  - id: pmm:application:semantic-context-for-immediate-word-recognition
+    family_id: language-comprehension
+    title: {en: Use semantic context to ease immediate word recognition, ru: Используйте смысловой контекст для облегчения распознавания слова}
+    practical_question:
+      en: Can related context make a word easier to process immediately?
+      ru: Может ли связанный контекст облегчить немедленную обработку слова?
+    action:
+      en: Present an unfamiliar or important term near a short, meaning-related cue or sentence when immediate recognition matters.
+      ru: Показывайте незнакомый или важный термин рядом с короткой смысловой подсказкой или предложением, если важно немедленное распознавание.
+    expected_change:
+      en: Faster immediate classification or recognition under conditions similar to semantic-priming tasks.
+      ru: Более быстрое немедленное распознавание в условиях, близких к заданиям семантического прайминга.
+    evidence_basis:
+      en: Controlled experiments changed semantic relation and observed response-time differences; they tested immediate processing, not learning.
+      ru: В контролируемых экспериментах изменяли смысловую связь и наблюдали различия времени ответа; проверялась немедленная обработка, а не обучение.
+    applicability:
+      en: Candidate design principle for labels, glossaries, instructions, and educational interfaces.
+      ru: Кандидатный принцип для подписей, словарей, инструкций и образовательных интерфейсов.
+    not_established:
+      en: The evidence does not show durable vocabulary learning, comprehension of complex text, or that semantic context always helps.
+      ru: Данные не показывают долговременное усвоение слов, понимание сложного текста или пользу смыслового контекста во всех случаях.
+    actionability: transfer_uncertain
+    confidence: low
+    audience: [educator, designer, researcher]
+    claim_ids: [pmm:claim:semantic-relatedness-changes-lexical-decision-latency]
+    source_ids: [pmm:source:meyer-schvaneveldt-1971, pmm:source:neely-1976]
+    provenance: *provenance
+
+  - id: pmm:application:recognize-short-term-relief-avoidance-loop
+    family_id: avoidance
+    title: {en: Distinguish immediate relief from long-term improvement, ru: Отличайте немедленное облегчение от долгосрочного улучшения}
+    practical_question:
+      en: Why can an action that reduces anxiety now still maintain avoidance later?
+      ru: Почему действие, которое сейчас уменьшает тревогу, может поддерживать избегание в будущем?
+    action:
+      en: When reviewing an avoidance episode, record the trigger, the action, the immediate relief or omitted harm, and whether the same action became more likely next time.
+      ru: При разборе эпизода избегания отмечайте триггер, действие, немедленное облегчение или непроизошедший вред и стало ли такое действие вероятнее в следующий раз.
+    expected_change:
+      en: Better identification of a possible reinforcement loop; this is an observation aid rather than a demonstrated treatment.
+      ru: Более ясное распознавание возможной петли подкрепления; это средство наблюдения, а не доказанное лечение.
+    evidence_basis:
+      en: Laboratory contingencies support response-dependent changes in later choice, while the clinical maintenance loop remains a scoped hypothesis.
+      ru: Лабораторные зависимости поддерживают изменение последующего выбора в зависимости от ответа, но клиническая петля поддержания остаётся ограниченной гипотезой.
+    applicability:
+      en: Psychoeducation and structured self-observation; clinical interpretation should consider safety, context, and alternative functions of avoidance.
+      ru: Психообразование и структурированное самонаблюдение; клиническая интерпретация должна учитывать безопасность, контекст и другие функции избегания.
+    not_established:
+      en: Repeated avoidance does not by itself prove negative reinforcement, and the map does not prescribe exposure or treatment decisions.
+      ru: Повторяющееся избегание само по себе не доказывает отрицательное подкрепление, а карта не назначает экспозицию или лечение.
+    safety_note:
+      en: Do not deliberately confront danger or stop clinically indicated safety behavior based on this card; seek qualified help for severe anxiety or trauma.
+      ru: Не подвергайте себя опасности и не прекращайте необходимое защитное поведение на основании этой карточки; при тяжёлой тревоге или травме обратитесь к квалифицированному специалисту.
+    actionability: interpretation_only
+    confidence: low
+    audience: [individual, clinician, educator]
+    claim_ids: [pmm:claim:assigned-loss-probability-changes-choice, pmm:claim:negative-reinforcement-mechanism-hypothesis, pmm:claim:clinical-maintenance-loop-hypothesis]
+    source_ids: [pmm:source:kim-2006-avoidance, pmm:source:hofmann-hay-2018]
+    provenance: *provenance

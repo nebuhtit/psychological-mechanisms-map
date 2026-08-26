@@ -6,9 +6,9 @@ PMM's long-term coverage goal is to provide at least one validated, source-trace
 
 The educational scaffold contains 24 topics across seven broad domains:
 
-- 15 topics have `partial` coverage: at least one canonical PMM record is linked;
-- 9 topics are `planned`: the gap is visible and no placeholder scientific records are invented;
-- 14 public evidence-pack families currently test the data model.
+- 16 topics have `partial` coverage: at least one canonical PMM record is linked;
+- 8 topics are `planned`: the gap is visible and no placeholder scientific records are invented;
+- 15 public evidence-pack families currently test the data model.
 
 `partial` does not mean comprehensive, representative, clinically valid, or expert-approved. A narrow laboratory pilot can make an area partial while leaving most of that area unmodeled.
 
@@ -16,15 +16,14 @@ The educational scaffold contains 24 topics across seven broad domains:
 
 | Priority | Planned topic | First boundary test |
 |---|---|---|
-| 1 | Language | Separate comprehension/production constructs, linguistic stimuli, behavioral measures, and proposed lexical or syntactic processes |
-| 2 | Big Five | Separate descriptive trait taxonomy, questionnaire items, scale scores, latent factors, predictive claims, and causal mechanisms |
-| 3 | Temperament | Separate developmental dimensions, observations, caregiver reports, stability estimates, and mechanism hypotheses |
-| 4 | Abilities and intelligence | Separate task performance, psychometric latent variables, acquired knowledge, and cognitive mechanisms |
-| 5 | Social cognition | Separate social inference constructs, tasks, responses, measures, and proposed mechanisms |
-| 6 | Volition and intention | Separate intention reports, goal selection, effort allocation, action persistence, and causal intervention effects |
-| 7 | Self-concept and identity | Separate self-representations, self-report scales, autobiographical evidence, social context, and developmental claims |
-| 8 | Mental imagery and imagination | Separate imagery ability, imagery generation tasks, vividness reports, objective measures, and perceptual overlap hypotheses |
-| 9 | Consciousness and awareness | Separate conscious report, metacognitive access, perceptual performance, arousal state, and competing theories |
+| 1 | Big Five | Separate descriptive trait taxonomy, questionnaire items, scale scores, latent factors, predictive claims, and causal mechanisms |
+| 2 | Temperament | Separate developmental dimensions, observations, caregiver reports, stability estimates, and mechanism hypotheses |
+| 3 | Abilities and intelligence | Separate task performance, psychometric latent variables, acquired knowledge, and cognitive mechanisms |
+| 4 | Social cognition | Separate social inference constructs, tasks, responses, measures, and proposed mechanisms |
+| 5 | Volition and intention | Separate intention reports, goal selection, effort allocation, action persistence, and causal intervention effects |
+| 6 | Self-concept and identity | Separate self-representations, self-report scales, autobiographical evidence, social context, and developmental claims |
+| 7 | Mental imagery and imagination | Separate imagery ability, imagery generation tasks, vividness reports, objective measures, and perceptual overlap hypotheses |
+| 8 | Consciousness and awareness | Separate conscious report, metacognitive access, perceptual performance, arousal state, and competing theories |
 
 ## Quality gate for every topic
 

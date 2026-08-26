@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.10.0";
-const RU_URL = "data/i18n-ru.json?v=0.10.0";
+const DATA_URL = "data/pmm-data.json?v=0.12.0";
+const RU_URL = "data/i18n-ru.json?v=0.12.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -567,6 +567,48 @@ function bindInspectorLinks() {
   });
 }
 
+function actionabilityLabel(value) {
+  const labels = {
+    direct_within_tested_scope: ["Direct only in tested conditions", "Прямо подтверждено только в проверенных условиях"],
+    transfer_uncertain: ["Promising transfer; not directly established", "Перенос выглядит возможным, но прямо не доказан"],
+    interpretation_only: ["Interpretation or candidate action", "Интерпретация или кандидатное действие"],
+  };
+  const [en, ru] = labels[value] || [value, value];
+  return ui(en, ru);
+}
+
+function practicalFor(record) {
+  const applications = state.family.practical_implications || [];
+  if (record.kind !== "claim") return [];
+  return applications.filter(item => item.claim_ids.includes(record.id));
+}
+
+function renderPracticalImplications(applications, compact = false) {
+  if (!applications.length) return "";
+  return `<section class="practical-section ${compact ? "is-compact" : ""}">
+    <div class="practical-heading">
+      <div><span class="section-eyebrow">${ui("From evidence to possible use", "От данных к возможному применению")}</span><h3>${ui("What can be done with this?", "Что с этим можно делать?")}</h3></div>
+      <span>${ui("Not automatic advice", "Не автоматический совет")}</span>
+    </div>
+    <p class="practical-rule">${ui(
+      "Applications are curated separately from scientific claims. A plausible use is not presented as proven transfer.",
+      "Применение курируется отдельно от научных утверждений. Правдоподобная польза не выдаётся за доказанный перенос."
+    )}</p>
+    <div class="practical-list">${applications.map(item => `
+      <article class="practical-card action-${escapeHtml(item.actionability)}">
+        <div class="practical-card-top"><strong>${escapeHtml(localText(item.title))}</strong><span>${escapeHtml(actionabilityLabel(item.actionability))} · ${escapeHtml(t(item.confidence))}</span></div>
+        <p class="practical-question">${escapeHtml(localText(item.practical_question))}</p>
+        <dl>
+          <div><dt>${ui("Possible action", "Возможное действие")}</dt><dd>${escapeHtml(localText(item.action))}</dd></div>
+          <div><dt>${ui("Expected change", "Ожидаемое изменение")}</dt><dd>${escapeHtml(localText(item.expected_change))}</dd></div>
+          ${compact ? "" : `<div><dt>${ui("Why this follows from the evidence", "Почему это следует из данных")}</dt><dd>${escapeHtml(localText(item.evidence_basis))}</dd></div>`}
+          <div><dt>${ui("What is not established", "Что не доказано")}</dt><dd>${escapeHtml(localText(item.not_established))}</dd></div>
+          ${item.safety_note ? `<div class="practical-safety"><dt>${ui("Safety boundary", "Граница безопасности")}</dt><dd>${escapeHtml(localText(item.safety_note))}</dd></div>` : ""}
+        </dl>
+      </article>`).join("")}</div>
+  </section>`;
+}
+
 function renderInspector(record) {
   if (record.kind === "question") {
     renderResearchQuestionInspector(record);
@@ -579,6 +621,7 @@ function renderInspector(record) {
   const status = record.epistemic_status || record.curation_status;
   const confidence = record.confidence?.level;
   const scope = typeof record.scope === "string" ? record.scope : record.scope?.population;
+  const applications = practicalFor(record);
   inspector.innerHTML = `
     <p class="inspector-kicker">${escapeHtml(t(TYPE_LABELS[record.type] || record.type))} · ${escapeHtml(record.id.split(":").at(-1))}</p>
     <h2 class="${record.kind === "claim" ? "claim-heading" : ""}">${escapeHtml(heading)}</h2>
@@ -597,6 +640,7 @@ function renderInspector(record) {
       <p>${escapeHtml(statusExplanation(record))}</p>
     </div>
     ${renderConnections(record)}
+    ${renderPracticalImplications(applications)}
     ${scope ? `<section class="detail-section"><h3>${t("Scope")}</h3><p>${escapeHtml(t(scope))}</p></section>` : ""}
     ${record.confidence?.rationale ? `<section class="detail-section"><h3>${t("Confidence rationale")}</h3><p>${escapeHtml(t(record.confidence.rationale))}</p></section>` : ""}
     ${evidence.length ? `<section class="detail-section"><h3>${t("Evidence")}</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(t(item.support_direction))}</strong> · ${escapeHtml(t(item.summary))}</li>`).join("")}</ul></section>` : ""}
@@ -660,6 +704,7 @@ function selectNode(id) {
 function renderEmptyInspector() {
   const familyNumber = String(state.data.families.indexOf(state.family) + 1).padStart(2, "0");
   const sources = state.family.sources || [];
+  const applications = state.family.practical_implications || [];
   const sourceLinks = sources.map(source => {
     const metadata = [source.year, source.doi || source.pmid].filter(Boolean).join(" · ") || ui("Open source", "Открыть источник");
     return `
@@ -683,8 +728,10 @@ function renderEmptyInspector() {
         <div><strong>${state.family.claims.length}</strong><span>${ui("claims", "утверждений")}</span></div>
         <div><strong>${state.family.evidence.length}</strong><span>${ui("evidence records", "записей доказательств")}</span></div>
         <div class="question-stat"><strong>${state.family.research_questions?.length || 0}</strong><span>${ui("open questions", "открытых вопросов")}</span></div>
+        <div class="application-stat"><strong>${applications.length}</strong><span>${ui("practical interpretations", "практических интерпретаций")}</span></div>
         <div><strong>${sources.length}</strong><span>${ui("sources", "источников")}</span></div>
       </div>
+      ${renderPracticalImplications(applications, true)}
       <section class="detail-section family-sources">
         <h3>${ui("Sources included in this section", "Источники этого раздела")}</h3>
         <p class="family-source-note">${ui(

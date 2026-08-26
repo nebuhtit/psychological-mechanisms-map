@@ -19,6 +19,8 @@ REGISTRY_PATH = ROOT / "data" / "families.yaml"
 VIEWS_PATH = ROOT / "data" / "navigation-views-v0.1.yaml"
 QUESTIONS_PATH = ROOT / "data" / "research-questions-v0.1.yaml"
 QUESTIONS_SCHEMA_PATH = ROOT / "schema" / "research-questions-v0.1.schema.yaml"
+APPLICATIONS_PATH = ROOT / "data" / "practical-implications-v0.1.yaml"
+APPLICATIONS_SCHEMA_PATH = ROOT / "schema" / "practical-implications-v0.1.schema.yaml"
 
 
 def load_families() -> list[tuple[str, str, str, str]]:
@@ -179,6 +181,43 @@ def attach_research_questions(families: list[dict[str, Any]]) -> str:
     return document["questions_version"]
 
 
+def attach_practical_implications(families: list[dict[str, Any]]) -> str:
+    """Validate practical translations without promoting them to scientific Claims."""
+    document = yaml.safe_load(APPLICATIONS_PATH.read_text(encoding="utf-8"))
+    schema = yaml.safe_load(APPLICATIONS_SCHEMA_PATH.read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors = sorted(validator.iter_errors(document), key=lambda error: list(error.path))
+    if errors:
+        messages = [f"{'.'.join(map(str, error.path))}: {error.message}" for error in errors]
+        raise ValueError("invalid practical implications:\n" + "\n".join(messages))
+
+    family_by_id = {family["id"]: family for family in families}
+    application_ids: set[str] = set()
+    for family in families:
+        family["practical_implications"] = []
+
+    for application in document["applications"]:
+        application_id = application["id"]
+        if application_id in application_ids:
+            raise ValueError(f"duplicate practical implication ID: {application_id}")
+        application_ids.add(application_id)
+        family_id = application["family_id"]
+        if family_id not in family_by_id:
+            raise ValueError(f"{application_id}: unknown family {family_id}")
+        family = family_by_id[family_id]
+        claim_ids = {item["id"] for item in family["claims"]}
+        unknown_claims = set(application["claim_ids"]) - claim_ids
+        if unknown_claims:
+            raise ValueError(f"{application_id}: unknown claim_ids {sorted(unknown_claims)}")
+        source_ids = {item["id"] for item in family["sources"]}
+        unknown_sources = set(application["source_ids"]) - source_ids
+        if unknown_sources:
+            raise ValueError(f"{application_id}: unknown source_ids {sorted(unknown_sources)}")
+        family["practical_implications"].append(compact_record(application))
+
+    return document["applications_version"]
+
+
 def load_navigation_views(families: list[dict[str, Any]]) -> dict[str, Any]:
     """Validate faceted navigation against canonical PMM records."""
     document = yaml.safe_load(VIEWS_PATH.read_text(encoding="utf-8"))
@@ -240,10 +279,12 @@ def main() -> None:
     explanations = load_annotations()
     families = [build_family(*family, explanations) for family in load_families()]
     questions_version = attach_research_questions(families)
+    applications_version = attach_practical_implications(families)
     payload = {
         "pmm_version": "0.3.4",
-        "interface_version": "0.10.0",
+        "interface_version": "0.12.0",
         "research_questions_version": questions_version,
+        "practical_implications_version": applications_version,
         "families": families,
         "mechanism_index": build_mechanism_index(families),
         "navigation_views": load_navigation_views(families),

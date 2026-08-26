@@ -753,5 +753,72 @@ class DeductiveReasoningEvidencePackTests(unittest.TestCase):
         self.assertEqual(challenge["causal_support"], "indirect")
 
 
+class LanguageComprehensionEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-language-comprehension-v0.3.yaml"
+        )
+
+    def test_language_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_construct_task_response_outcome_measurement_and_mechanisms_are_distinct(self) -> None:
+        records = {item["id"]: item["type"] for item in self.document["objects"]}
+        self.assertEqual(records["pmm:construct:language-comprehension"], "Construct")
+        self.assertEqual(records["pmm:construct:visual-lexical-access"], "Construct")
+        self.assertEqual(records["pmm:context:semantic-priming-lexical-decision-task"], "Context")
+        self.assertEqual(records["pmm:context:paired-word-classification-task"], "Context")
+        self.assertEqual(records["pmm:intervention:semantic-relatedness-timing-manipulation"], "Intervention")
+        self.assertEqual(records["pmm:behavior:word-nonword-classification"], "Behavior")
+        self.assertEqual(records["pmm:outcome:lexical-decision-response-latency"], "Outcome")
+        self.assertEqual(records["pmm:measurement:lexical-decision-diffusion-profile"], "Measurement")
+        self.assertEqual(records["pmm:mechanism:automatic-semantic-preactivation"], "Mechanism")
+        self.assertEqual(records["pmm:mechanism:strategic-postlexical-matching"], "Mechanism")
+
+    def test_priming_effect_is_causal_only_for_observed_latency(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:semantic-relatedness-changes-lexical-decision-latency"
+        )
+        self.assertEqual(claim["claim_type"], "causal_effect")
+        self.assertEqual(claim["outcome_id"], "pmm:outcome:lexical-decision-response-latency")
+        self.assertNotIn("mechanism_id", claim)
+
+    def test_diffusion_parameters_are_modeled_not_causal(self) -> None:
+        claim = next(
+            item for item in self.document["claims"]
+            if item["id"] == "pmm:claim:diffusion-model-decomposes-lexical-decisions"
+        )
+        evidence = next(
+            item for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:ratcliff-2004-diffusion-model"
+        )
+        self.assertEqual(claim["claim_type"], "association")
+        self.assertEqual(evidence["evidence_kind"], "computational_model")
+        self.assertEqual(evidence["causal_support"], "none")
+
+    def test_competing_processes_remain_proposed(self) -> None:
+        claims = {
+            item["mechanism_id"]: item
+            for item in self.document["claims"]
+            if item["claim_type"] == "mechanism_hypothesis"
+        }
+        self.assertEqual(
+            set(claims),
+            {
+                "pmm:mechanism:automatic-semantic-preactivation",
+                "pmm:mechanism:strategic-postlexical-matching",
+            },
+        )
+        self.assertTrue(all(item["epistemic_status"] == "proposed" for item in claims.values()))
+        review = next(
+            item for item in self.document["evidence"]
+            if item["id"] == "pmm:evidence:mangat-2026-automatic-strategic-review"
+        )
+        self.assertEqual(review["support_direction"], "mixed")
+        self.assertEqual(review["causal_support"], "indirect")
+
+
 if __name__ == "__main__":
     unittest.main()

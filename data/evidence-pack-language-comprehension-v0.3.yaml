@@ -1,0 +1,556 @@
+pmm_version: 0.3.4
+document_type: pmm_dataset
+dataset_id: pmm:dataset:language-comprehension-primary-evidence-v0-3
+metadata:
+  title: Primary evidence pack for visual word recognition and semantic priming
+  description: Separates broad language comprehension, visual lexical access, a lexical-decision task, prime-target manipulations, observable responses, performance measures, model parameters, and competing process hypotheses.
+  status: pilot
+  language: en
+  license: CC-BY-4.0
+  schema_path: schema/pmm-v0.3.schema.yaml
+  provenance: &provenance
+    record_version: 0.1.0
+    created_at: '2026-08-26T21:00:00+03:00'
+    modified_at: '2026-08-26T21:00:00+03:00'
+    created_by: [OpenAI Codex]
+    review_status: machine_validated
+    source_snapshot_date: '2026-08-26'
+namespaces:
+  pmm: https://pmm.local/id/
+  doi: https://doi.org/
+  pmid: https://pubmed.ncbi.nlm.nih.gov/
+
+objects:
+  - id: pmm:construct:language-comprehension
+    type: Construct
+    label: Language comprehension
+    definition: Capacity to derive communicative meaning from linguistic or other conventional symbolic signals, including spoken, written, or signed forms.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - This broad construct includes more than recognizing isolated written words; sentence, discourse, pragmatic, and sign-language comprehension are not modeled in this pilot.
+      - Comprehension is not identical to language production, a lexical-decision response, or response time.
+    external_mappings:
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a775/
+        external_label: language comprehension
+        mapping_relation: close_match
+        mapping_status: provisional
+        rationale: Scope is close, but the Cognitive Atlas record is marked Unreviewed and PMM does not import its hierarchy as settled.
+        accessed_at: '2026-08-26'
+    provenance: *provenance
+
+  - id: pmm:construct:visual-lexical-access
+    type: Construct
+    label: Visual lexical access
+    definition: Access to stored lexical information sufficient to distinguish a familiar written word form from a nonword and make task-relevant information available.
+    ontological_level: type
+    curation_status: provisional
+    construct_kind: psychological
+    boundary_notes:
+      - This restricted construct concerns written word forms and does not assume that lexical access is one indivisible stage.
+      - A lexical-decision response can also depend on orthography, semantics, decision criteria, motor execution, and task strategy.
+    external_mappings:
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b80f/
+        external_label: lexical access
+        mapping_relation: related_match
+        mapping_status: provisional
+        rationale: The linked unreviewed Cognitive Atlas definition is framed around spoken input, whereas this PMM construct is deliberately restricted to visual word recognition.
+        accessed_at: '2026-08-26'
+    provenance: *provenance
+
+  - id: pmm:context:semantic-priming-lexical-decision-task
+    type: Context
+    label: Semantic-priming lexical-decision task
+    definition: Experimental task in which a prime precedes a target letter string and the participant classifies the target as a word or nonword while prime-target relation and timing can be varied.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      prime_visibility: masked or unmasked
+      prime_target_relation: semantically related, unrelated, or neutral
+      stimulus_onset_asynchrony: protocol-defined interval between prime and target onset
+      target_lexical_status: word or nonword
+      response_rule: classify the target string as a word or nonword
+    scope: Human laboratory visual lexical-decision protocols with an experimentally presented prime and target.
+    boundary_notes:
+      - The task is not language comprehension itself and does not isolate one stage of word recognition.
+      - Naming and semantic-categorization tasks can produce different priming patterns because they require different decisions.
+    external_mappings:
+      - system: CognitiveAtlas
+        external_iri: https://www.cognitiveatlas.org/task/id/tsk_4a57abb949b38/
+        external_label: lexical decision task
+        mapping_relation: narrow_match
+        mapping_status: provisional
+        rationale: The PMM context is a semantic-priming implementation of the broader unreviewed Cognitive Atlas lexical-decision task record.
+        accessed_at: '2026-08-26'
+    provenance: *provenance
+
+  - id: pmm:context:paired-word-classification-task
+    type: Context
+    label: Simultaneous paired-word classification task
+    definition: Experimental task in which two letter strings are presented together and the participant rapidly classifies whether both are words or whether their lexical status is the same.
+    ontological_level: type
+    curation_status: accepted
+    context_kind: experimental
+    dimensions:
+      presentation: simultaneous pair
+      pair_relation: semantically related or unrelated
+      lexical_composition: two words or a protocol-defined pair containing a nonword
+      response_rule: classify the lexical status of the pair
+    scope: The simultaneous paired-string procedures reported by Meyer and Schvaneveldt in 1971.
+    boundary_notes:
+      - This historical paired procedure is not interchangeable with a sequential prime-target lexical-decision task.
+      - Faster paired classification does not reveal which member was recognized first or identify one retrieval mechanism.
+    provenance: *provenance
+
+  - id: pmm:intervention:semantic-relatedness-timing-manipulation
+    type: Intervention
+    label: Prime-target relatedness and timing manipulation
+    definition: Experimental variation of the semantic relation between prime and target and the interval or visibility conditions under which the prime can influence target processing.
+    ontological_level: type
+    curation_status: accepted
+    intervention_kind: experimental_manipulation
+    target_ids:
+      - pmm:behavior:word-nonword-classification
+      - pmm:outcome:lexical-decision-response-latency
+    delivery: Present related, unrelated, or neutral primes before target words or nonwords at protocol-defined durations and stimulus-onset asynchronies.
+    intended_direction: test
+    provenance: *provenance
+
+  - id: pmm:behavior:word-nonword-classification
+    type: Behavior
+    label: Word-nonword classification response
+    definition: Observable response classifying a target letter string as an existing word or a nonword under the task instructions.
+    ontological_level: type
+    curation_status: accepted
+    behavior_kind: action
+    observability: direct
+    actor_scope: person
+    response_topography: Protocol-defined keypress or verbal response indicating word or nonword.
+    function_note: The same response can reflect lexical evidence, semantic relatedness, response bias, speed-accuracy setting, and motor execution.
+    provenance: *provenance
+
+  - id: pmm:outcome:lexical-decision-response-latency
+    type: Outcome
+    label: Lexical-decision response latency
+    definition: Elapsed time from protocol-defined target onset to the participant's word or nonword response, usually analyzed for correct trials.
+    ontological_level: type
+    curation_status: accepted
+    outcome_kind: performance
+    valence: not_applicable
+    boundary_notes:
+      - A faster response is not a direct observation of comprehension, lexical access, or spreading activation.
+      - Latency interpretation depends on accuracy, exclusions, response deadline, device, and distributional analysis.
+    provenance: *provenance
+
+  - id: pmm:measurement:condition-specific-lexical-decision-performance
+    type: Measurement
+    label: Condition-specific lexical-decision performance
+    definition: Accuracy and response-latency distributions summarized separately for prime relation, timing, visibility, target lexical status, and other prespecified conditions.
+    ontological_level: type
+    curation_status: accepted
+    measurement_kind: behavioral_task
+    target_ids:
+      - pmm:construct:visual-lexical-access
+      - pmm:behavior:word-nonword-classification
+      - pmm:outcome:lexical-decision-response-latency
+    method: Record trial-level responses and latency, apply declared exclusions, and estimate related-minus-unrelated or neutral contrasts jointly with accuracy.
+    unit_of_analysis: behavior
+    result_type: continuous
+    boundary_notes:
+      - Mean correct-trial response time can hide speed-accuracy tradeoffs and distributional differences.
+    provenance: *provenance
+
+  - id: pmm:measurement:lexical-decision-diffusion-profile
+    type: Measurement
+    label: Lexical-decision diffusion profile
+    definition: Model-based estimates separating evidence accumulation, response threshold, starting bias, and nondecision time from lexical-decision choices and response-time distributions.
+    ontological_level: type
+    curation_status: provisional
+    measurement_kind: computational_parameter
+    target_ids:
+      - pmm:behavior:word-nonword-classification
+      - pmm:outcome:lexical-decision-response-latency
+    method: Fit a declared diffusion model jointly to correct and error response-time distributions and response proportions across conditions.
+    unit_of_analysis: behavior
+    result_type: model_parameter
+    boundary_notes:
+      - Drift rate and nondecision time are model-dependent parameters, not direct observations of lexical access or unique biological mechanisms.
+      - Adequate fit does not prove that the fitted decomposition is the only psychologically valid account.
+    provenance: *provenance
+
+  - id: pmm:mechanism:automatic-semantic-preactivation
+    type: Mechanism
+    label: Automatic semantic preactivation
+    definition: Proposed rapid process by which processing a prime makes related target information more available before the target decision without requiring deliberate prediction.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: cognitive
+    role_bindings:
+      - {role: processed prime, object_id: pmm:intervention:semantic-relatedness-timing-manipulation}
+      - {role: target response, object_id: pmm:behavior:word-nonword-classification}
+      - {role: timing-sensitive observation, object_id: pmm:measurement:condition-specific-lexical-decision-performance}
+    realization_conditions:
+      - Prime information is processed early enough to affect target processing.
+      - Strategic expectancy and post-lexical matching are constrained or measured rather than assumed absent.
+    boundary_notes:
+      - A semantic-priming effect does not uniquely identify spreading activation, a localist network, or an automatic process.
+    provenance: *provenance
+
+  - id: pmm:mechanism:strategic-postlexical-matching
+    type: Mechanism
+    label: Strategic expectancy or post-lexical matching
+    definition: Proposed task-sensitive process in which participants predict likely targets or use the detected prime-target relation to influence a decision after target information becomes available.
+    ontological_level: type
+    curation_status: provisional
+    mechanism_kind: cognitive
+    role_bindings:
+      - {role: prime-target relation, object_id: pmm:intervention:semantic-relatedness-timing-manipulation}
+      - {role: lexical decision, object_id: pmm:behavior:word-nonword-classification}
+      - {role: condition-sensitive observation, object_id: pmm:measurement:condition-specific-lexical-decision-performance}
+    realization_conditions:
+      - The protocol provides enough time, prime visibility, or relatedness structure for strategic use of prime information.
+      - The response task permits semantic relation to bias the required decision.
+    boundary_notes:
+      - Expectancy before target identification and retrospective matching after lexical access are related but distinguishable candidate processes grouped here only for this pilot comparison.
+    provenance: *provenance
+
+relations:
+  - id: pmm:relation:visual-lexical-access-measured-by-performance
+    subject_id: pmm:construct:visual-lexical-access
+    predicate: measured_by
+    object_id: pmm:measurement:condition-specific-lexical-decision-performance
+    provenance: *provenance
+  - id: pmm:relation:classification-occurs-in-lexical-decision
+    subject_id: pmm:behavior:word-nonword-classification
+    predicate: occurs_in_context
+    object_id: pmm:context:semantic-priming-lexical-decision-task
+    provenance: *provenance
+  - id: pmm:relation:classification-occurs-in-paired-word-task
+    subject_id: pmm:behavior:word-nonword-classification
+    predicate: occurs_in_context
+    object_id: pmm:context:paired-word-classification-task
+    provenance: *provenance
+  - id: pmm:relation:automatic-preactivation-occurs-in-lexical-decision
+    subject_id: pmm:mechanism:automatic-semantic-preactivation
+    predicate: occurs_in_context
+    object_id: pmm:context:semantic-priming-lexical-decision-task
+    provenance: *provenance
+  - id: pmm:relation:strategic-matching-occurs-in-lexical-decision
+    subject_id: pmm:mechanism:strategic-postlexical-matching
+    predicate: occurs_in_context
+    object_id: pmm:context:semantic-priming-lexical-decision-task
+    provenance: *provenance
+
+claims:
+  - id: pmm:claim:language-comprehension-extracts-communicative-meaning
+    claim_type: definition
+    statement: Language comprehension includes deriving communicative meaning from signals such as speech, written text, or sign, while isolated written-word recognition is only one narrow component.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: The scope follows common usage and the linked Cognitive Atlas entry, but that collaborative record is marked Unreviewed and does not settle a complete language ontology.
+    scope:
+      population: Humans receiving conventional linguistic or symbolic communication.
+      species: [human]
+      context_ids: [pmm:context:semantic-priming-lexical-decision-task, pmm:context:paired-word-classification-task]
+      temporal_scope: Signal reception through availability of task-relevant meaning.
+    defined_object_id: pmm:construct:language-comprehension
+    source_ids: [pmm:source:cognitive-atlas-language-comprehension-2026]
+    evidence_ids: []
+    limitations:
+      - The definition does not establish that lexical decision measures broad comprehension or specify a unique mechanism.
+    provenance: *provenance
+
+  - id: pmm:claim:semantic-relatedness-changes-lexical-decision-latency
+    claim_type: causal_effect
+    statement: In controlled semantic-priming protocols, changing a preceding prime from unrelated or neutral to semantically related changed target word-classification latency under the tested timing and task conditions.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: Foundational controlled experiments show robust within-protocol priming contrasts, but protocol variants and task-dependent processes constrain generalization.
+    scope:
+      population: Human participants in the Meyer and Schvaneveldt and Neely laboratory word-classification experiments.
+      species: [human]
+      context_ids: [pmm:context:semantic-priming-lexical-decision-task]
+      temporal_scope: Prime presentation through target word or nonword response.
+      boundary_conditions:
+        - The reported visual word materials, prime-target relations, timing conditions, instructions, and speeded classification procedures.
+    exposure_id: pmm:intervention:semantic-relatedness-timing-manipulation
+    outcome_id: pmm:outcome:lexical-decision-response-latency
+    causal_estimand: Within-protocol difference in target-classification latency produced by experimentally changing prime-target semantic relation.
+    identification_strategy: controlled_contingency
+    temporal_ordering: The experimenter-defined prime relation and timing preceded the target response.
+    causal_assumptions:
+      consistency: Each condition follows the reported stimulus construction, timing, instruction, and latency-scoring procedure.
+      exchangeability: Controlled condition assignment and counterbalancing reduce stable participant and item confounding within each reported experiment.
+      positivity: Participants or counterbalanced item sets represented the compared related, unrelated, or neutral conditions.
+      interference: One participant's trial responses are assumed not to alter another participant's responses.
+      assessment: partly_tested
+    evidence_ids: [pmm:evidence:meyer-schvaneveldt-1971-priming, pmm:evidence:neely-1976-priming]
+    limitations:
+      - The causal effect is on response latency in these tasks, not direct proof of one lexical or semantic mechanism.
+      - Meyer and Schvaneveldt used simultaneous word pairs, whereas later semantic-priming protocols often use a sequential prime and target.
+    provenance: *provenance
+
+  - id: pmm:claim:diffusion-model-decomposes-lexical-decisions
+    claim_type: association
+    statement: In Ratcliff, Gomez, and McKoon's lexical-decision experiments, a diffusion model jointly accounted for accuracy and correct and error response-time distributions using separable evidence-accumulation and decision components.
+    epistemic_status: supported
+    confidence:
+      level: moderate
+      rationale: The model explained multiple experimental manipulations and distributional outcomes, but parameter interpretation remains conditional on model specification and comparison.
+    scope:
+      population: Human participants completing lexical-decision experiments varying word frequency, list composition, and nonword type.
+      species: [human]
+      context_ids: [pmm:context:semantic-priming-lexical-decision-task]
+      temporal_scope: Target presentation through word or nonword response.
+      boundary_conditions:
+        - The lexical-decision datasets and diffusion-model specification reported by Ratcliff, Gomez, and McKoon.
+    exposure_id: pmm:behavior:word-nonword-classification
+    outcome_id: pmm:measurement:lexical-decision-diffusion-profile
+    estimate:
+      metric: joint model account of response proportions and correct and error response-time distributions
+      value_status: qualitative_only
+      direction: mixed
+      notes: Word frequency, list composition, and nonword properties were represented primarily through changes in drift rate under the fitted model.
+    confounding_note: Model parameters can trade off, depend on preprocessing and architecture, and need not map one-to-one onto psychological or neural processes.
+    evidence_ids: [pmm:evidence:ratcliff-2004-diffusion-model]
+    limitations:
+      - Model fit is not a causal intervention on evidence accumulation and does not validate the diffusion profile as a unique measure of lexical access.
+    provenance: *provenance
+
+  - id: pmm:claim:automatic-preactivation-may-contribute-to-priming
+    claim_type: mechanism_hypothesis
+    statement: Rapid automatic preactivation of related target information may contribute to semantic priming, especially when timing and task conditions constrain deliberate strategies.
+    epistemic_status: proposed
+    confidence:
+      level: low
+      rationale: Short-latency and limited-awareness findings are compatible with automatic contribution, but prime identification, task requirements, and alternative distributed or post-lexical processes prevent unique identification.
+    scope:
+      population: Humans completing semantic-priming tasks with brief or short-interval primes.
+      species: [human]
+      context_ids: [pmm:context:semantic-priming-lexical-decision-task]
+      temporal_scope: Prime processing before and during early target processing.
+      boundary_conditions:
+        - Prime visibility, stimulus-onset asynchrony, relatedness proportion, target properties, and task demands are measured or controlled.
+    mechanism_id: pmm:mechanism:automatic-semantic-preactivation
+    exposure_id: pmm:intervention:semantic-relatedness-timing-manipulation
+    outcome_id: pmm:outcome:lexical-decision-response-latency
+    temporal_ordering: Prime processing must alter target availability before the task decision is completed.
+    falsifiable_boundary: The account is weakened if priming disappears whenever expectancy and response matching are controlled, or if competing models predict held-out trial distributions better without preactivation.
+    evidence_ids: [pmm:evidence:mangat-2026-automatic-strategic-review]
+    limitations:
+      - Automatic spreading activation, distributed feature overlap, and other early processes are not distinguished by the observed latency contrast alone.
+    provenance: *provenance
+
+  - id: pmm:claim:strategic-matching-may-contribute-to-priming
+    claim_type: mechanism_hypothesis
+    statement: Strategic expectancy or retrospective prime-target matching may contribute to semantic priming when timing, prime visibility, list structure, and the required response make the relation useful.
+    epistemic_status: proposed
+    confidence:
+      level: moderate
+      rationale: Timing-dependent facilitation and inhibition plus task-sensitive review evidence support strategic contribution, but expectancy and post-lexical matching are not always separately identified.
+    scope:
+      population: Humans completing visible-prime semantic-priming tasks, especially at longer prime-target intervals or high relatedness proportions.
+      species: [human]
+      context_ids: [pmm:context:semantic-priming-lexical-decision-task]
+      temporal_scope: Prime identification through target decision and response selection.
+      boundary_conditions:
+        - The protocol allows conscious prime processing or makes prime-target relation informative for the required decision.
+    mechanism_id: pmm:mechanism:strategic-postlexical-matching
+    exposure_id: pmm:intervention:semantic-relatedness-timing-manipulation
+    outcome_id: pmm:outcome:lexical-decision-response-latency
+    temporal_ordering: Expectancy can develop before the target, while retrospective matching occurs after target information is available but before the response.
+    falsifiable_boundary: The account is weakened when priming persists under conditions that reliably prevent prime identification and relation-based response bias and when strategic models fail held-out predictions.
+    evidence_ids: [pmm:evidence:neely-1976-process-timing, pmm:evidence:mangat-2026-automatic-strategic-review]
+    limitations:
+      - Grouping expectancy and retrospective matching is provisional; future packs should represent and test them separately.
+    provenance: *provenance
+
+evidence:
+  - id: pmm:evidence:meyer-schvaneveldt-1971-priming
+    claim_ids: [pmm:claim:semantic-relatedness-changes-lexical-decision-latency]
+    source_id: pmm:source:meyer-schvaneveldt-1971
+    extraction_locator: PubMed abstract and report of two experiments comparing responses to semantically related and unrelated simultaneously presented string pairs.
+    evidence_kind: controlled_experiment
+    design: Two speeded classification experiments manipulating semantic relation within simultaneously presented word pairs.
+    population: Human participants in the two foundational paired-word experiments; sample size not extracted from the accessible bibliographic record in this pilot.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: correct affirmative classification latency for related versus unrelated word pairs
+      value_status: qualitative_only
+      direction: negative
+      notes: Related pairs were classified faster than unrelated pairs in the reported procedures.
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: not_reported, replication: conceptual_replication}
+    summary: Semantically related word pairs produced faster correct classifications than unrelated pairs in two foundational experiments.
+    limitations:
+      - Small historical sample, no preregistration, and simultaneous paired presentation differ from many later sequential priming tasks.
+    provenance: *provenance
+
+  - id: pmm:evidence:neely-1976-priming
+    claim_ids: [pmm:claim:semantic-relatedness-changes-lexical-decision-latency]
+    source_id: pmm:source:neely-1976
+    extraction_locator: PubMed abstract and experiment report varying prime-target relation and prime duration before a speeded word-nonword decision.
+    evidence_kind: controlled_experiment
+    design: Sequential semantic-priming lexical-decision experiment with related, unrelated, and neutral primes at several prime durations.
+    population: Human participants completing speeded word-nonword decisions; sample size not extracted in this pilot.
+    species: [human]
+    inference_support: causal_effect
+    support_direction: supports
+    causal_support: direct
+    effect:
+      metric: target word-classification latency by prime relation and duration
+      value_status: qualitative_only
+      direction: mixed
+      notes: Related primes facilitated and unrelated primes inhibited responses relative to a neutral condition, with timing-dependent patterns.
+    domains: {directness: direct, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: not_reported, replication: conceptual_replication}
+    summary: Manipulated prime relation changed target response latency and duration influenced the pattern of facilitation and inhibition.
+    limitations:
+      - The effect does not uniquely distinguish automatic activation, expectancy, and decision-related matching.
+    provenance: *provenance
+
+  - id: pmm:evidence:ratcliff-2004-diffusion-model
+    claim_ids: [pmm:claim:diffusion-model-decomposes-lexical-decisions]
+    source_id: pmm:source:ratcliff-gomez-mckoon-2004
+    extraction_locator: PubMed abstract and open full-text model analyses across lexical-decision experiments.
+    evidence_kind: computational_model
+    design: Diffusion-model fit to response proportions and correct and error response-time distributions under word-frequency, list-composition, and nonword manipulations.
+    population: Human participants in lexical-decision experiments reported and modeled in the article.
+    species: [human]
+    inference_support: association
+    support_direction: supports
+    causal_support: none
+    effect:
+      metric: diffusion-model account of behavioral distributions and experimental effects
+      value_status: qualitative_only
+      direction: mixed
+      notes: The fitted model represented major lexical manipulations through drift-rate differences while jointly accounting for accuracy and latency distributions.
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: mostly_consistent, precision: adequate, replication: conceptual_replication}
+    summary: A diffusion model provided a joint quantitative account of lexical-decision choices and response-time distributions across several manipulations.
+    limitations:
+      - Model adequacy does not establish a unique cognitive architecture or direct measure of lexical access.
+    provenance: *provenance
+
+  - id: pmm:evidence:neely-1976-process-timing
+    claim_ids: [pmm:claim:strategic-matching-may-contribute-to-priming]
+    source_id: pmm:source:neely-1976
+    extraction_locator: Interpretation of prime-duration-dependent facilitation and inhibition in the article abstract and experiment report.
+    evidence_kind: controlled_experiment
+    design: Sequential priming experiment using prime duration to test facilitatory and inhibitory retrieval processes.
+    population: Human participants completing speeded word-nonword decisions; sample size not extracted in this pilot.
+    species: [human]
+    inference_support: mechanism
+    support_direction: supports
+    causal_support: indirect
+    effect:
+      metric: change in facilitation and inhibition pattern across prime durations
+      value_status: qualitative_only
+      direction: mixed
+      notes: Duration-dependent effects were interpreted as evidence that more than one process contributes to semantic priming.
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: single_source, precision: not_reported, replication: conceptual_replication}
+    summary: Timing changed the priming pattern in a way compatible with a slower strategic contribution in addition to rapid facilitation.
+    limitations:
+      - Timing interactions are indirect process evidence and do not separately identify expectancy from retrospective matching.
+    provenance: *provenance
+
+  - id: pmm:evidence:mangat-2026-automatic-strategic-review
+    claim_ids: [pmm:claim:automatic-preactivation-may-contribute-to-priming, pmm:claim:strategic-matching-may-contribute-to-priming]
+    source_id: pmm:source:mangat-taikh-gagne-spalding-2026
+    extraction_locator: Abstract and sections reviewing automatic processing, expectancy generation, post-lexical integration, timing, task, and proposed integrated accounts.
+    evidence_kind: narrative_review
+    design: Integrative narrative review drawing on reviews, meta-analyses, and original experiments concerning prime and task characteristics.
+    population: Human semantic-priming studies across lexical decision, naming, semantic categorization, and related tasks.
+    species: [human]
+    inference_support: mechanism
+    support_direction: mixed
+    causal_support: indirect
+    effect:
+      metric: boundary conditions for automatic and strategic contributions to semantic priming
+      value_status: qualitative_only
+      direction: mixed
+      notes: Prime properties, relation, modality, visibility, timing, relatedness proportion, and task can alter the balance of candidate processes.
+    domains: {directness: partially_indirect, risk_of_bias: some_concerns, consistency: mixed, precision: not_reported, replication: conceptual_replication}
+    summary: The review concludes that both automatic and strategic processes can contribute and that a priming effect alone does not identify one mechanism.
+    limitations:
+      - Narrative integration is not a preregistered systematic review and combines heterogeneous paradigms and operational definitions.
+    provenance: *provenance
+
+sources:
+  - id: pmm:source:cognitive-atlas-language-comprehension-2026
+    title: Cognitive Atlas concept — language comprehension
+    source_type: ontology_release
+    organization: Cognitive Atlas
+    version: accessed 2026-08-26; record marked Unreviewed
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a775/
+    accessed_at: '2026-08-26'
+    authority_note: Collaborative concept record used only for provisional broad terminology alignment.
+    provenance: *provenance
+  - id: pmm:source:cognitive-atlas-lexical-access-2026
+    title: Cognitive Atlas concept — lexical access
+    source_type: ontology_release
+    organization: Cognitive Atlas
+    version: accessed 2026-08-26; record marked Unreviewed
+    url: https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b80f/
+    accessed_at: '2026-08-26'
+    authority_note: Speech-oriented collaborative concept record used only as a provisional related alignment for the narrower visual construct.
+    provenance: *provenance
+  - id: pmm:source:cognitive-atlas-lexical-decision-2026
+    title: Cognitive Atlas task — lexical decision task
+    source_type: ontology_release
+    organization: Cognitive Atlas
+    version: accessed 2026-08-26; record marked Unreviewed
+    url: https://www.cognitiveatlas.org/task/id/tsk_4a57abb949b38/
+    accessed_at: '2026-08-26'
+    authority_note: Collaborative task record used only for provisional terminology alignment.
+    provenance: *provenance
+  - id: pmm:source:meyer-schvaneveldt-1971
+    title: Facilitation in recognizing pairs of words — evidence of a dependence between retrieval operations
+    source_type: peer_reviewed_article
+    authors: [David E. Meyer, Roger W. Schvaneveldt]
+    year: 1971
+    doi: 10.1037/h0031564
+    pmid: '5134329'
+    url: https://pubmed.ncbi.nlm.nih.gov/5134329/
+    accessed_at: '2026-08-26'
+    authority_note: Foundational primary report of semantic relatedness effects in speeded word-pair classification.
+    provenance: *provenance
+  - id: pmm:source:neely-1976
+    title: Semantic priming and retrieval from lexical memory — evidence for facilitatory and inhibitory processes
+    source_type: peer_reviewed_article
+    authors: [James H. Neely]
+    year: 1976
+    doi: 10.3758/BF03213230
+    pmid: '21286993'
+    url: https://pubmed.ncbi.nlm.nih.gov/21286993/
+    accessed_at: '2026-08-26'
+    authority_note: Primary sequential semantic-priming experiment varying prime duration and relation before lexical decisions.
+    provenance: *provenance
+  - id: pmm:source:ratcliff-gomez-mckoon-2004
+    title: A diffusion model account of the lexical decision task
+    source_type: peer_reviewed_article
+    authors: [Roger Ratcliff, Pablo Gomez, Gail McKoon]
+    year: 2004
+    doi: 10.1037/0033-295X.111.1.159
+    pmid: '14756592'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC1403837/
+    accessed_at: '2026-08-26'
+    authority_note: Primary computational account jointly modeling lexical-decision accuracy and response-time distributions.
+    provenance: *provenance
+  - id: pmm:source:mangat-taikh-gagne-spalding-2026
+    title: The influence of prime characteristics in semantic priming
+    source_type: peer_reviewed_article
+    authors: [Ajay Mangat, Alexander Taikh, Christina Gagne, Thomas L. Spalding]
+    year: 2026
+    doi: 10.3389/fpsyg.2026.1680365
+    pmid: '41858445'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12996092/
+    accessed_at: '2026-08-26'
+    authority_note: Current integrative review of automatic and strategic accounts and their timing, stimulus, relation, and task boundary conditions.
+    provenance: *provenance

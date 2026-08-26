@@ -1,0 +1,1082 @@
+{
+  "claims": [
+    {
+      "claim_type": "definition",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The scope follows common usage and the linked Cognitive Atlas entry, but that collaborative record is marked Unreviewed and does not settle a complete language ontology."
+      },
+      "defined_object_id": "pmm:construct:language-comprehension",
+      "epistemic_status": "supported",
+      "evidence_ids": [],
+      "id": "pmm:claim:language-comprehension-extracts-communicative-meaning",
+      "limitations": [
+        "The definition does not establish that lexical decision measures broad comprehension or specify a unique mechanism."
+      ],
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "context_ids": [
+          "pmm:context:semantic-priming-lexical-decision-task",
+          "pmm:context:paired-word-classification-task"
+        ],
+        "population": "Humans receiving conventional linguistic or symbolic communication.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Signal reception through availability of task-relevant meaning."
+      },
+      "source_ids": [
+        "pmm:source:cognitive-atlas-language-comprehension-2026"
+      ],
+      "statement": "Language comprehension includes deriving communicative meaning from signals such as speech, written text, or sign, while isolated written-word recognition is only one narrow component."
+    },
+    {
+      "causal_assumptions": {
+        "assessment": "partly_tested",
+        "consistency": "Each condition follows the reported stimulus construction, timing, instruction, and latency-scoring procedure.",
+        "exchangeability": "Controlled condition assignment and counterbalancing reduce stable participant and item confounding within each reported experiment.",
+        "interference": "One participant's trial responses are assumed not to alter another participant's responses.",
+        "positivity": "Participants or counterbalanced item sets represented the compared related, unrelated, or neutral conditions."
+      },
+      "causal_estimand": "Within-protocol difference in target-classification latency produced by experimentally changing prime-target semantic relation.",
+      "claim_type": "causal_effect",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Foundational controlled experiments show robust within-protocol priming contrasts, but protocol variants and task-dependent processes constrain generalization."
+      },
+      "epistemic_status": "supported",
+      "evidence_ids": [
+        "pmm:evidence:meyer-schvaneveldt-1971-priming",
+        "pmm:evidence:neely-1976-priming"
+      ],
+      "exposure_id": "pmm:intervention:semantic-relatedness-timing-manipulation",
+      "id": "pmm:claim:semantic-relatedness-changes-lexical-decision-latency",
+      "identification_strategy": "controlled_contingency",
+      "limitations": [
+        "The causal effect is on response latency in these tasks, not direct proof of one lexical or semantic mechanism.",
+        "Meyer and Schvaneveldt used simultaneous word pairs, whereas later semantic-priming protocols often use a sequential prime and target."
+      ],
+      "outcome_id": "pmm:outcome:lexical-decision-response-latency",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The reported visual word materials, prime-target relations, timing conditions, instructions, and speeded classification procedures."
+        ],
+        "context_ids": [
+          "pmm:context:semantic-priming-lexical-decision-task"
+        ],
+        "population": "Human participants in the Meyer and Schvaneveldt and Neely laboratory word-classification experiments.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Prime presentation through target word or nonword response."
+      },
+      "statement": "In controlled semantic-priming protocols, changing a preceding prime from unrelated or neutral to semantically related changed target word-classification latency under the tested timing and task conditions.",
+      "temporal_ordering": "The experimenter-defined prime relation and timing preceded the target response."
+    },
+    {
+      "claim_type": "association",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "The model explained multiple experimental manipulations and distributional outcomes, but parameter interpretation remains conditional on model specification and comparison."
+      },
+      "confounding_note": "Model parameters can trade off, depend on preprocessing and architecture, and need not map one-to-one onto psychological or neural processes.",
+      "epistemic_status": "supported",
+      "estimate": {
+        "direction": "mixed",
+        "metric": "joint model account of response proportions and correct and error response-time distributions",
+        "notes": "Word frequency, list composition, and nonword properties were represented primarily through changes in drift rate under the fitted model.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_ids": [
+        "pmm:evidence:ratcliff-2004-diffusion-model"
+      ],
+      "exposure_id": "pmm:behavior:word-nonword-classification",
+      "id": "pmm:claim:diffusion-model-decomposes-lexical-decisions",
+      "limitations": [
+        "Model fit is not a causal intervention on evidence accumulation and does not validate the diffusion profile as a unique measure of lexical access."
+      ],
+      "outcome_id": "pmm:measurement:lexical-decision-diffusion-profile",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The lexical-decision datasets and diffusion-model specification reported by Ratcliff, Gomez, and McKoon."
+        ],
+        "context_ids": [
+          "pmm:context:semantic-priming-lexical-decision-task"
+        ],
+        "population": "Human participants completing lexical-decision experiments varying word frequency, list composition, and nonword type.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Target presentation through word or nonword response."
+      },
+      "statement": "In Ratcliff, Gomez, and McKoon's lexical-decision experiments, a diffusion model jointly accounted for accuracy and correct and error response-time distributions using separable evidence-accumulation and decision components."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "low",
+        "rationale": "Short-latency and limited-awareness findings are compatible with automatic contribution, but prime identification, task requirements, and alternative distributed or post-lexical processes prevent unique identification."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:mangat-2026-automatic-strategic-review"
+      ],
+      "exposure_id": "pmm:intervention:semantic-relatedness-timing-manipulation",
+      "falsifiable_boundary": "The account is weakened if priming disappears whenever expectancy and response matching are controlled, or if competing models predict held-out trial distributions better without preactivation.",
+      "id": "pmm:claim:automatic-preactivation-may-contribute-to-priming",
+      "limitations": [
+        "Automatic spreading activation, distributed feature overlap, and other early processes are not distinguished by the observed latency contrast alone."
+      ],
+      "mechanism_id": "pmm:mechanism:automatic-semantic-preactivation",
+      "outcome_id": "pmm:outcome:lexical-decision-response-latency",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "Prime visibility, stimulus-onset asynchrony, relatedness proportion, target properties, and task demands are measured or controlled."
+        ],
+        "context_ids": [
+          "pmm:context:semantic-priming-lexical-decision-task"
+        ],
+        "population": "Humans completing semantic-priming tasks with brief or short-interval primes.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Prime processing before and during early target processing."
+      },
+      "statement": "Rapid automatic preactivation of related target information may contribute to semantic priming, especially when timing and task conditions constrain deliberate strategies.",
+      "temporal_ordering": "Prime processing must alter target availability before the task decision is completed."
+    },
+    {
+      "claim_type": "mechanism_hypothesis",
+      "confidence": {
+        "level": "moderate",
+        "rationale": "Timing-dependent facilitation and inhibition plus task-sensitive review evidence support strategic contribution, but expectancy and post-lexical matching are not always separately identified."
+      },
+      "epistemic_status": "proposed",
+      "evidence_ids": [
+        "pmm:evidence:neely-1976-process-timing",
+        "pmm:evidence:mangat-2026-automatic-strategic-review"
+      ],
+      "exposure_id": "pmm:intervention:semantic-relatedness-timing-manipulation",
+      "falsifiable_boundary": "The account is weakened when priming persists under conditions that reliably prevent prime identification and relation-based response bias and when strategic models fail held-out predictions.",
+      "id": "pmm:claim:strategic-matching-may-contribute-to-priming",
+      "limitations": [
+        "Grouping expectancy and retrospective matching is provisional; future packs should represent and test them separately."
+      ],
+      "mechanism_id": "pmm:mechanism:strategic-postlexical-matching",
+      "outcome_id": "pmm:outcome:lexical-decision-response-latency",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": {
+        "boundary_conditions": [
+          "The protocol allows conscious prime processing or makes prime-target relation informative for the required decision."
+        ],
+        "context_ids": [
+          "pmm:context:semantic-priming-lexical-decision-task"
+        ],
+        "population": "Humans completing visible-prime semantic-priming tasks, especially at longer prime-target intervals or high relatedness proportions.",
+        "species": [
+          "human"
+        ],
+        "temporal_scope": "Prime identification through target decision and response selection."
+      },
+      "statement": "Strategic expectancy or retrospective prime-target matching may contribute to semantic priming when timing, prime visibility, list structure, and the required response make the relation useful.",
+      "temporal_ordering": "Expectancy can develop before the target, while retrospective matching occurs after target information is available but before the response."
+    }
+  ],
+  "dataset_id": "pmm:dataset:language-comprehension-primary-evidence-v0-3",
+  "document_type": "pmm_dataset",
+  "evidence": [
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:semantic-relatedness-changes-lexical-decision-latency"
+      ],
+      "design": "Two speeded classification experiments manipulating semantic relation within simultaneously presented word pairs.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "correct affirmative classification latency for related versus unrelated word pairs",
+        "notes": "Related pairs were classified faster than unrelated pairs in the reported procedures.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "PubMed abstract and report of two experiments comparing responses to semantically related and unrelated simultaneously presented string pairs.",
+      "id": "pmm:evidence:meyer-schvaneveldt-1971-priming",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "Small historical sample, no preregistration, and simultaneous paired presentation differ from many later sequential priming tasks."
+      ],
+      "population": "Human participants in the two foundational paired-word experiments; sample size not extracted from the accessible bibliographic record in this pilot.",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:meyer-schvaneveldt-1971",
+      "species": [
+        "human"
+      ],
+      "summary": "Semantically related word pairs produced faster correct classifications than unrelated pairs in two foundational experiments.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "direct",
+      "claim_ids": [
+        "pmm:claim:semantic-relatedness-changes-lexical-decision-latency"
+      ],
+      "design": "Sequential semantic-priming lexical-decision experiment with related, unrelated, and neutral primes at several prime durations.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "direct",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "target word-classification latency by prime relation and duration",
+        "notes": "Related primes facilitated and unrelated primes inhibited responses relative to a neutral condition, with timing-dependent patterns.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "PubMed abstract and experiment report varying prime-target relation and prime duration before a speeded word-nonword decision.",
+      "id": "pmm:evidence:neely-1976-priming",
+      "inference_support": "causal_effect",
+      "limitations": [
+        "The effect does not uniquely distinguish automatic activation, expectancy, and decision-related matching."
+      ],
+      "population": "Human participants completing speeded word-nonword decisions; sample size not extracted in this pilot.",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:neely-1976",
+      "species": [
+        "human"
+      ],
+      "summary": "Manipulated prime relation changed target response latency and duration influenced the pattern of facilitation and inhibition.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "none",
+      "claim_ids": [
+        "pmm:claim:diffusion-model-decomposes-lexical-decisions"
+      ],
+      "design": "Diffusion-model fit to response proportions and correct and error response-time distributions under word-frequency, list-composition, and nonword manipulations.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "partially_indirect",
+        "precision": "adequate",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "diffusion-model account of behavioral distributions and experimental effects",
+        "notes": "The fitted model represented major lexical manipulations through drift-rate differences while jointly accounting for accuracy and latency distributions.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "computational_model",
+      "extraction_locator": "PubMed abstract and open full-text model analyses across lexical-decision experiments.",
+      "id": "pmm:evidence:ratcliff-2004-diffusion-model",
+      "inference_support": "association",
+      "limitations": [
+        "Model adequacy does not establish a unique cognitive architecture or direct measure of lexical access."
+      ],
+      "population": "Human participants in lexical-decision experiments reported and modeled in the article.",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:ratcliff-gomez-mckoon-2004",
+      "species": [
+        "human"
+      ],
+      "summary": "A diffusion model provided a joint quantitative account of lexical-decision choices and response-time distributions across several manipulations.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:strategic-matching-may-contribute-to-priming"
+      ],
+      "design": "Sequential priming experiment using prime duration to test facilitatory and inhibitory retrieval processes.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "change in facilitation and inhibition pattern across prime durations",
+        "notes": "Duration-dependent effects were interpreted as evidence that more than one process contributes to semantic priming.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "Interpretation of prime-duration-dependent facilitation and inhibition in the article abstract and experiment report.",
+      "id": "pmm:evidence:neely-1976-process-timing",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Timing interactions are indirect process evidence and do not separately identify expectancy from retrospective matching."
+      ],
+      "population": "Human participants completing speeded word-nonword decisions; sample size not extracted in this pilot.",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:neely-1976",
+      "species": [
+        "human"
+      ],
+      "summary": "Timing changed the priming pattern in a way compatible with a slower strategic contribution in addition to rapid facilitation.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:automatic-preactivation-may-contribute-to-priming",
+        "pmm:claim:strategic-matching-may-contribute-to-priming"
+      ],
+      "design": "Integrative narrative review drawing on reviews, meta-analyses, and original experiments concerning prime and task characteristics.",
+      "domains": {
+        "consistency": "mixed",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "mixed",
+        "metric": "boundary conditions for automatic and strategic contributions to semantic priming",
+        "notes": "Prime properties, relation, modality, visibility, timing, relatedness proportion, and task can alter the balance of candidate processes.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "narrative_review",
+      "extraction_locator": "Abstract and sections reviewing automatic processing, expectancy generation, post-lexical integration, timing, task, and proposed integrated accounts.",
+      "id": "pmm:evidence:mangat-2026-automatic-strategic-review",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Narrative integration is not a preregistered systematic review and combines heterogeneous paradigms and operational definitions."
+      ],
+      "population": "Human semantic-priming studies across lexical decision, naming, semantic categorization, and related tasks.",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:mangat-taikh-gagne-spalding-2026",
+      "species": [
+        "human"
+      ],
+      "summary": "The review concludes that both automatic and strategic processes can contribute and that a priming effect alone does not identify one mechanism.",
+      "support_direction": "mixed"
+    }
+  ],
+  "metadata": {
+    "description": "Separates broad language comprehension, visual lexical access, a lexical-decision task, prime-target manipulations, observable responses, performance measures, model parameters, and competing process hypotheses.",
+    "language": "en",
+    "license": "CC-BY-4.0",
+    "provenance": {
+      "created_at": "2026-08-26T21:00:00+03:00",
+      "created_by": [
+        "OpenAI Codex"
+      ],
+      "modified_at": "2026-08-26T21:00:00+03:00",
+      "record_version": "0.1.0",
+      "review_status": "machine_validated",
+      "source_snapshot_date": "2026-08-26"
+    },
+    "schema_path": "schema/pmm-v0.3.schema.yaml",
+    "status": "pilot",
+    "title": "Primary evidence pack for visual word recognition and semantic priming"
+  },
+  "namespaces": {
+    "doi": "https://doi.org/",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/",
+    "pmm": "https://pmm.local/id/"
+  },
+  "objects": [
+    {
+      "boundary_notes": [
+        "This broad construct includes more than recognizing isolated written words; sentence, discourse, pragmatic, and sign-language comprehension are not modeled in this pilot.",
+        "Comprehension is not identical to language production, a lexical-decision response, or response time."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Capacity to derive communicative meaning from linguistic or other conventional symbolic signals, including spoken, written, or signed forms.",
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a775/",
+          "external_label": "language comprehension",
+          "mapping_relation": "close_match",
+          "mapping_status": "provisional",
+          "rationale": "Scope is close, but the Cognitive Atlas record is marked Unreviewed and PMM does not import its hierarchy as settled.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:construct:language-comprehension",
+      "label": "Language comprehension",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "This restricted construct concerns written word forms and does not assume that lexical access is one indivisible stage.",
+        "A lexical-decision response can also depend on orthography, semantics, decision criteria, motor execution, and task strategy."
+      ],
+      "construct_kind": "psychological",
+      "curation_status": "provisional",
+      "definition": "Access to stored lexical information sufficient to distinguish a familiar written word form from a nonword and make task-relevant information available.",
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b80f/",
+          "external_label": "lexical access",
+          "mapping_relation": "related_match",
+          "mapping_status": "provisional",
+          "rationale": "The linked unreviewed Cognitive Atlas definition is framed around spoken input, whereas this PMM construct is deliberately restricted to visual word recognition.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:construct:visual-lexical-access",
+      "label": "Visual lexical access",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Construct"
+    },
+    {
+      "boundary_notes": [
+        "The task is not language comprehension itself and does not isolate one stage of word recognition.",
+        "Naming and semantic-categorization tasks can produce different priming patterns because they require different decisions."
+      ],
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Experimental task in which a prime precedes a target letter string and the participant classifies the target as a word or nonword while prime-target relation and timing can be varied.",
+      "dimensions": {
+        "prime_target_relation": "semantically related, unrelated, or neutral",
+        "prime_visibility": "masked or unmasked",
+        "response_rule": "classify the target string as a word or nonword",
+        "stimulus_onset_asynchrony": "protocol-defined interval between prime and target onset",
+        "target_lexical_status": "word or nonword"
+      },
+      "external_mappings": [
+        {
+          "accessed_at": "2026-08-26",
+          "external_iri": "https://www.cognitiveatlas.org/task/id/tsk_4a57abb949b38/",
+          "external_label": "lexical decision task",
+          "mapping_relation": "narrow_match",
+          "mapping_status": "provisional",
+          "rationale": "The PMM context is a semantic-priming implementation of the broader unreviewed Cognitive Atlas lexical-decision task record.",
+          "system": "CognitiveAtlas"
+        }
+      ],
+      "id": "pmm:context:semantic-priming-lexical-decision-task",
+      "label": "Semantic-priming lexical-decision task",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "Human laboratory visual lexical-decision protocols with an experimentally presented prime and target.",
+      "type": "Context"
+    },
+    {
+      "boundary_notes": [
+        "This historical paired procedure is not interchangeable with a sequential prime-target lexical-decision task.",
+        "Faster paired classification does not reveal which member was recognized first or identify one retrieval mechanism."
+      ],
+      "context_kind": "experimental",
+      "curation_status": "accepted",
+      "definition": "Experimental task in which two letter strings are presented together and the participant rapidly classifies whether both are words or whether their lexical status is the same.",
+      "dimensions": {
+        "lexical_composition": "two words or a protocol-defined pair containing a nonword",
+        "pair_relation": "semantically related or unrelated",
+        "presentation": "simultaneous pair",
+        "response_rule": "classify the lexical status of the pair"
+      },
+      "id": "pmm:context:paired-word-classification-task",
+      "label": "Simultaneous paired-word classification task",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "scope": "The simultaneous paired-string procedures reported by Meyer and Schvaneveldt in 1971.",
+      "type": "Context"
+    },
+    {
+      "curation_status": "accepted",
+      "definition": "Experimental variation of the semantic relation between prime and target and the interval or visibility conditions under which the prime can influence target processing.",
+      "delivery": "Present related, unrelated, or neutral primes before target words or nonwords at protocol-defined durations and stimulus-onset asynchronies.",
+      "id": "pmm:intervention:semantic-relatedness-timing-manipulation",
+      "intended_direction": "test",
+      "intervention_kind": "experimental_manipulation",
+      "label": "Prime-target relatedness and timing manipulation",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "target_ids": [
+        "pmm:behavior:word-nonword-classification",
+        "pmm:outcome:lexical-decision-response-latency"
+      ],
+      "type": "Intervention"
+    },
+    {
+      "actor_scope": "person",
+      "behavior_kind": "action",
+      "curation_status": "accepted",
+      "definition": "Observable response classifying a target letter string as an existing word or a nonword under the task instructions.",
+      "function_note": "The same response can reflect lexical evidence, semantic relatedness, response bias, speed-accuracy setting, and motor execution.",
+      "id": "pmm:behavior:word-nonword-classification",
+      "label": "Word-nonword classification response",
+      "observability": "direct",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "response_topography": "Protocol-defined keypress or verbal response indicating word or nonword.",
+      "type": "Behavior"
+    },
+    {
+      "boundary_notes": [
+        "A faster response is not a direct observation of comprehension, lexical access, or spreading activation.",
+        "Latency interpretation depends on accuracy, exclusions, response deadline, device, and distributional analysis."
+      ],
+      "curation_status": "accepted",
+      "definition": "Elapsed time from protocol-defined target onset to the participant's word or nonword response, usually analyzed for correct trials.",
+      "id": "pmm:outcome:lexical-decision-response-latency",
+      "label": "Lexical-decision response latency",
+      "ontological_level": "type",
+      "outcome_kind": "performance",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "type": "Outcome",
+      "valence": "not_applicable"
+    },
+    {
+      "boundary_notes": [
+        "Mean correct-trial response time can hide speed-accuracy tradeoffs and distributional differences."
+      ],
+      "curation_status": "accepted",
+      "definition": "Accuracy and response-latency distributions summarized separately for prime relation, timing, visibility, target lexical status, and other prespecified conditions.",
+      "id": "pmm:measurement:condition-specific-lexical-decision-performance",
+      "label": "Condition-specific lexical-decision performance",
+      "measurement_kind": "behavioral_task",
+      "method": "Record trial-level responses and latency, apply declared exclusions, and estimate related-minus-unrelated or neutral contrasts jointly with accuracy.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "continuous",
+      "target_ids": [
+        "pmm:construct:visual-lexical-access",
+        "pmm:behavior:word-nonword-classification",
+        "pmm:outcome:lexical-decision-response-latency"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "Drift rate and nondecision time are model-dependent parameters, not direct observations of lexical access or unique biological mechanisms.",
+        "Adequate fit does not prove that the fitted decomposition is the only psychologically valid account."
+      ],
+      "curation_status": "provisional",
+      "definition": "Model-based estimates separating evidence accumulation, response threshold, starting bias, and nondecision time from lexical-decision choices and response-time distributions.",
+      "id": "pmm:measurement:lexical-decision-diffusion-profile",
+      "label": "Lexical-decision diffusion profile",
+      "measurement_kind": "computational_parameter",
+      "method": "Fit a declared diffusion model jointly to correct and error response-time distributions and response proportions across conditions.",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "result_type": "model_parameter",
+      "target_ids": [
+        "pmm:behavior:word-nonword-classification",
+        "pmm:outcome:lexical-decision-response-latency"
+      ],
+      "type": "Measurement",
+      "unit_of_analysis": "behavior"
+    },
+    {
+      "boundary_notes": [
+        "A semantic-priming effect does not uniquely identify spreading activation, a localist network, or an automatic process."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed rapid process by which processing a prime makes related target information more available before the target decision without requiring deliberate prediction.",
+      "id": "pmm:mechanism:automatic-semantic-preactivation",
+      "label": "Automatic semantic preactivation",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "Prime information is processed early enough to affect target processing.",
+        "Strategic expectancy and post-lexical matching are constrained or measured rather than assumed absent."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:intervention:semantic-relatedness-timing-manipulation",
+          "role": "processed prime"
+        },
+        {
+          "object_id": "pmm:behavior:word-nonword-classification",
+          "role": "target response"
+        },
+        {
+          "object_id": "pmm:measurement:condition-specific-lexical-decision-performance",
+          "role": "timing-sensitive observation"
+        }
+      ],
+      "type": "Mechanism"
+    },
+    {
+      "boundary_notes": [
+        "Expectancy before target identification and retrospective matching after lexical access are related but distinguishable candidate processes grouped here only for this pilot comparison."
+      ],
+      "curation_status": "provisional",
+      "definition": "Proposed task-sensitive process in which participants predict likely targets or use the detected prime-target relation to influence a decision after target information becomes available.",
+      "id": "pmm:mechanism:strategic-postlexical-matching",
+      "label": "Strategic expectancy or post-lexical matching",
+      "mechanism_kind": "cognitive",
+      "ontological_level": "type",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "realization_conditions": [
+        "The protocol provides enough time, prime visibility, or relatedness structure for strategic use of prime information.",
+        "The response task permits semantic relation to bias the required decision."
+      ],
+      "role_bindings": [
+        {
+          "object_id": "pmm:intervention:semantic-relatedness-timing-manipulation",
+          "role": "prime-target relation"
+        },
+        {
+          "object_id": "pmm:behavior:word-nonword-classification",
+          "role": "lexical decision"
+        },
+        {
+          "object_id": "pmm:measurement:condition-specific-lexical-decision-performance",
+          "role": "condition-sensitive observation"
+        }
+      ],
+      "type": "Mechanism"
+    }
+  ],
+  "pmm_version": "0.3.4",
+  "relations": [
+    {
+      "id": "pmm:relation:visual-lexical-access-measured-by-performance",
+      "object_id": "pmm:measurement:condition-specific-lexical-decision-performance",
+      "predicate": "measured_by",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:construct:visual-lexical-access"
+    },
+    {
+      "id": "pmm:relation:classification-occurs-in-lexical-decision",
+      "object_id": "pmm:context:semantic-priming-lexical-decision-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:word-nonword-classification"
+    },
+    {
+      "id": "pmm:relation:classification-occurs-in-paired-word-task",
+      "object_id": "pmm:context:paired-word-classification-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:behavior:word-nonword-classification"
+    },
+    {
+      "id": "pmm:relation:automatic-preactivation-occurs-in-lexical-decision",
+      "object_id": "pmm:context:semantic-priming-lexical-decision-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:mechanism:automatic-semantic-preactivation"
+    },
+    {
+      "id": "pmm:relation:strategic-matching-occurs-in-lexical-decision",
+      "object_id": "pmm:context:semantic-priming-lexical-decision-task",
+      "predicate": "occurs_in_context",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "subject_id": "pmm:mechanism:strategic-postlexical-matching"
+    }
+  ],
+  "sources": [
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Collaborative concept record used only for provisional broad terminology alignment.",
+      "id": "pmm:source:cognitive-atlas-language-comprehension-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas concept — language comprehension",
+      "url": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a775/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Speech-oriented collaborative concept record used only as a provisional related alignment for the narrower visual construct.",
+      "id": "pmm:source:cognitive-atlas-lexical-access-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas concept — lexical access",
+      "url": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b80f/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Collaborative task record used only for provisional terminology alignment.",
+      "id": "pmm:source:cognitive-atlas-lexical-decision-2026",
+      "organization": "Cognitive Atlas",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "ontology_release",
+      "title": "Cognitive Atlas task — lexical decision task",
+      "url": "https://www.cognitiveatlas.org/task/id/tsk_4a57abb949b38/",
+      "version": "accessed 2026-08-26; record marked Unreviewed"
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Foundational primary report of semantic relatedness effects in speeded word-pair classification.",
+      "authors": [
+        "David E. Meyer",
+        "Roger W. Schvaneveldt"
+      ],
+      "doi": "10.1037/h0031564",
+      "id": "pmm:source:meyer-schvaneveldt-1971",
+      "pmid": "5134329",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Facilitation in recognizing pairs of words — evidence of a dependence between retrieval operations",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5134329/",
+      "year": 1971
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary sequential semantic-priming experiment varying prime duration and relation before lexical decisions.",
+      "authors": [
+        "James H. Neely"
+      ],
+      "doi": "10.3758/BF03213230",
+      "id": "pmm:source:neely-1976",
+      "pmid": "21286993",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Semantic priming and retrieval from lexical memory — evidence for facilitatory and inhibitory processes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21286993/",
+      "year": 1976
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Primary computational account jointly modeling lexical-decision accuracy and response-time distributions.",
+      "authors": [
+        "Roger Ratcliff",
+        "Pablo Gomez",
+        "Gail McKoon"
+      ],
+      "doi": "10.1037/0033-295X.111.1.159",
+      "id": "pmm:source:ratcliff-gomez-mckoon-2004",
+      "pmid": "14756592",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "A diffusion model account of the lexical decision task",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1403837/",
+      "year": 2004
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Current integrative review of automatic and strategic accounts and their timing, stimulus, relation, and task boundary conditions.",
+      "authors": [
+        "Ajay Mangat",
+        "Alexander Taikh",
+        "Christina Gagne",
+        "Thomas L. Spalding"
+      ],
+      "doi": "10.3389/fpsyg.2026.1680365",
+      "id": "pmm:source:mangat-taikh-gagne-spalding-2026",
+      "pmid": "41858445",
+      "provenance": {
+        "created_at": "2026-08-26T21:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T21:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "The influence of prime characteristics in semantic priming",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12996092/",
+      "year": 2026
+    }
+  ]
+}

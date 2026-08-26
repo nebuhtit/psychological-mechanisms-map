@@ -1,38 +1,38 @@
 {
   "causal_support": {
-    "direct": 28,
-    "indirect": 27,
-    "none": 8
+    "direct": 30,
+    "indirect": 29,
+    "none": 9
   },
   "claim_types": {
-    "association": 8,
-    "causal_effect": 21,
+    "association": 9,
+    "causal_effect": 22,
     "causal_hypothesis": 1,
-    "definition": 9,
-    "mechanism_hypothesis": 15,
+    "definition": 10,
+    "mechanism_hypothesis": 17,
     "mediation": 2,
     "moderation": 2,
     "prediction": 1
   },
   "confidence_levels": {
     "high": 7,
-    "low": 11,
-    "moderate": 39,
+    "low": 12,
+    "moderate": 43,
     "not_applicable": 2
   },
   "epistemic_statuses": {
     "mixed": 2,
     "not_assessed": 2,
-    "proposed": 16,
-    "supported": 36,
+    "proposed": 18,
+    "supported": 39,
     "unsupported": 3
   },
   "evidence_kinds": {
-    "computational_model": 2,
-    "controlled_experiment": 25,
+    "computational_model": 3,
+    "controlled_experiment": 28,
     "cross_sectional_observational": 4,
     "meta_analysis": 4,
-    "narrative_review": 8,
+    "narrative_review": 9,
     "randomized_experiment": 20
   },
   "families": [
@@ -161,19 +161,28 @@
       "source": "data/evidence-pack-deductive-reasoning-v0.3.yaml",
       "sources": 7,
       "title": "Deductive reasoning"
+    },
+    {
+      "claims": 5,
+      "evidence": 5,
+      "id": "language-comprehension",
+      "objects": 11,
+      "source": "data/evidence-pack-language-comprehension-v0.3.yaml",
+      "sources": 7,
+      "title": "Language comprehension"
     }
   ],
-  "family_count": 14,
+  "family_count": 15,
   "object_types": {
-    "Behavior": 12,
-    "Construct": 18,
-    "Context": 23,
+    "Behavior": 13,
+    "Construct": 20,
+    "Context": 25,
     "Contingency": 3,
     "Event": 4,
-    "Intervention": 21,
-    "Measurement": 31,
-    "Mechanism": 17,
-    "Outcome": 11,
+    "Intervention": 22,
+    "Measurement": 33,
+    "Mechanism": 19,
+    "Outcome": 12,
     "State": 15
   },
   "report_version": 1,
@@ -483,18 +492,33 @@
         "proposed claim",
         "low confidence"
       ]
+    },
+    {
+      "claim_id": "pmm:claim:automatic-preactivation-may-contribute-to-priming",
+      "family_id": "language-comprehension",
+      "reasons": [
+        "proposed claim",
+        "low confidence"
+      ]
+    },
+    {
+      "claim_id": "pmm:claim:strategic-matching-may-contribute-to-priming",
+      "family_id": "language-comprehension",
+      "reasons": [
+        "proposed claim"
+      ]
     }
   ],
   "scope": "public_families",
   "support_directions": {
     "challenges": 9,
-    "mixed": 4,
-    "supports": 50
+    "mixed": 5,
+    "supports": 54
   },
   "totals": {
-    "claims": 59,
-    "evidence": 63,
-    "objects": 155,
-    "sources": 62
+    "claims": 64,
+    "evidence": 68,
+    "objects": 166,
+    "sources": 69
   }
 }
