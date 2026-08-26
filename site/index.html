@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,650&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.21.0">
+  <link rel="stylesheet" href="styles.css?v=0.22.0">
 </head>
 <body>
   <div class="page-shell">
@@ -46,6 +46,13 @@
           <strong>Scientific Systems</strong>
         </button>
       </nav>
+
+      <div class="navigation-tools">
+        <button class="history-back" id="history-back" type="button" disabled>
+          <span aria-hidden="true">←</span><strong>Back</strong>
+        </button>
+        <p>Use Back to return to the exact view from which you opened an evidence record.</p>
+      </div>
 
       <section class="perspective-panel models-panel" id="models-panel" data-perspective-panel="models">
         <div id="foundational-models-view"></div>
@@ -166,6 +173,6 @@
       <span id="build-version"></span>
     </footer>
   </div>
-  <script src="app.js?v=0.21.0" defer></script>
+  <script src="app.js?v=0.22.0" defer></script>
 </body>
 </html>

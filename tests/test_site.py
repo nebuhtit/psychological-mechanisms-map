@@ -64,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.21.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.22.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -72,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.21.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.22.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -320,6 +320,13 @@ class SiteBundleTests(unittest.TestCase):
         self.assertIn('data-perspective="systems"', page)
         self.assertIn('localStorage.getItem("pmm-perspective")', javascript)
         self.assertIn("function openCanonicalRecord(", javascript)
+        self.assertIn('id="history-back"', page)
+        for function in ("rememberNavigationState", "goBack", "recordPlacements", "renderRecordLocations", "focusViewLocation"):
+            self.assertIn(f"function {function}(", javascript)
+        self.assertIn('data-view-location="models:', javascript)
+        self.assertIn('data-view-location="general:', javascript)
+        self.assertIn('data-view-location="systems:', javascript)
+        self.assertIn('"Not mapped in this view", "Не сопоставлено в этом представлении"', javascript)
         self.assertIn("navigation_views", document)
         self.assertEqual(document["navigation_views"]["view_version"], "0.1.0")
         models = document["navigation_views"]["foundational_models"]

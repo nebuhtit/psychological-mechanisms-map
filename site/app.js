@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.21.0";
-const RU_URL = "data/i18n-ru.json?v=0.21.0";
+const DATA_URL = "data/pmm-data.json?v=0.22.0";
+const RU_URL = "data/i18n-ru.json?v=0.22.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -15,6 +15,8 @@ const UI_RU = {
   "Mechanisms & Evidence": "Механизмы и доказательства",
   "04 · Terminology alignment": "04 · Сопоставление терминов",
   "Scientific Systems": "Научные системы",
+  "Back": "Назад",
+  "Use Back to return to the exact view from which you opened an evidence record.": "Кнопка «Назад» возвращает в тот раздел, из которого была открыта запись с доказательствами.",
   "All": "Все",
   "Causal": "Причинные",
   "Hypotheses": "Гипотезы",
@@ -154,6 +156,8 @@ const state = {
   filter: "all",
   selectedId: null,
   mechanismQuery: "",
+  navigationHistory: [],
+  restoringHistory: false,
 };
 const svg = document.getElementById("knowledge-map");
 const inspector = document.getElementById("inspector");
@@ -681,6 +685,7 @@ function renderInspector(record) {
   const confidence = record.confidence?.level;
   const scope = typeof record.scope === "string" ? record.scope : record.scope?.population;
   inspector.innerHTML = `
+    ${renderInspectorNavigation(record)}
     <p class="inspector-kicker">${escapeHtml(t(TYPE_LABELS[record.type] || record.type))} · ${escapeHtml(record.id.split(":").at(-1))}</p>
     <h2 class="${record.kind === "claim" ? "claim-heading" : ""}">${escapeHtml(heading)}</h2>
     <section class="meaning-card">
@@ -701,16 +706,19 @@ function renderInspector(record) {
     ${record.kind === "claim" ? renderClaimPractical(record) : ""}
     ${scope ? `<section class="detail-section"><h3>${t("Scope")}</h3><p>${escapeHtml(t(scope))}</p></section>` : ""}
     ${record.confidence?.rationale ? `<section class="detail-section"><h3>${t("Confidence rationale")}</h3><p>${escapeHtml(t(record.confidence.rationale))}</p></section>` : ""}
+    ${renderRecordLocations(record)}
     ${evidence.length ? `<section class="detail-section"><h3>${t("Evidence")}</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(t(item.support_direction))}</strong> · ${escapeHtml(t(item.summary))}</li>`).join("")}</ul></section>` : ""}
     ${listSection(t("Limitations"), (record.limitations || record.boundary_notes || record.scope?.boundary_conditions)?.map(t))}
     ${sources.length ? `<section class="detail-section"><h3>${t("Sources")}</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(t(source.title))}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
   `;
   bindInspectorLinks();
+  bindInspectorNavigation();
 }
 
 function renderResearchQuestionInspector(record) {
   const sources = relatedSources(record);
   inspector.innerHTML = `
+    ${renderInspectorNavigation(record)}
     <p class="inspector-kicker">${ui("Open research question", "Открытый исследовательский вопрос")} · ${escapeHtml(record.id.split(":").at(-1))}</p>
     <h2 class="question-heading">${escapeHtml(localText(record.question))}</h2>
     <section class="research-question-note">
@@ -729,9 +737,79 @@ function renderResearchQuestionInspector(record) {
       <h3>${ui("Related map elements", "Связанные элементы карты")}</h3>
       <div class="connection-list">${record.about_ids.map(id => nodeLink(id, ui("question concerns", "вопрос относится к"))).join("")}</div>
     </section>
+    ${renderRecordLocations(record)}
     ${sources.length ? `<section class="detail-section"><h3>${t("Sources")}</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(t(source.title))}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
   `;
   bindInspectorLinks();
+  bindInspectorNavigation();
+}
+
+function familyForRecord(recordId) {
+  return state.data.families.find(family => [...family.objects, ...family.claims, ...(family.research_questions || [])].some(record => record.id === recordId));
+}
+
+function membershipForRecord(items, recordId, membershipKey = "mapped_memberships") {
+  for (const item of items) {
+    const membership = (item[membershipKey] || []).find(entry => entry.canonical_id === recordId);
+    if (membership) return { item, membership };
+  }
+  return null;
+}
+
+function recordPlacements(record) {
+  const navigation = state.data.navigation_views;
+  const model = membershipForRecord(navigation.foundational_models.models, record.id);
+  const general = membershipForRecord(navigation.general_psychology.nodes.filter(node => ["topic", "taxonomy"].includes(node.kind)), record.id, "memberships");
+  const system = membershipForRecord(navigation.scientific_systems.systems, record.id);
+  const family = familyForRecord(record.id) || state.family;
+  return [
+    { perspective: "models", label: ui("Foundational Models", "Базовые модели"), match: model, location: model && localText(model.item.label), key: model && `models:${model.item.id}` },
+    { perspective: "general", label: ui("General Psychology", "Общая психология"), match: general, location: general && localText(general.item.label), key: general && `general:${general.item.id}` },
+    { perspective: "mechanisms", label: ui("Mechanisms & Evidence", "Механизмы и доказательства"), match: { item: family }, location: t(family.title), familyId: family.id, canonicalId: record.id },
+    { perspective: "systems", label: ui("Scientific Systems", "Научные системы"), match: system, location: system && localText(system.item.label), key: system && `systems:${system.item.id}` },
+  ];
+}
+
+function renderInspectorNavigation(record) {
+  return `<div class="inspector-toolbar">
+    <button class="inspector-back" type="button" data-history-back ${state.navigationHistory.length ? "" : "disabled"}><span aria-hidden="true">←</span> ${ui("Back", "Назад")}</button>
+    <span>${ui("Scientific record", "Научная запись")} · ${escapeHtml(t((familyForRecord(record.id) || state.family).title))}</span>
+  </div>`;
+}
+
+function renderRecordLocations(record) {
+  return `<section class="record-locations">
+    <span class="section-eyebrow">${ui("Where this record appears", "Где находится эта запись")}</span>
+    <h3>${ui("The same record in four views", "Одна запись в четырёх представлениях")}</h3>
+    <p>${ui("These are navigation placements, not four different scientific entities.", "Это места навигации, а не четыре разных научных объекта.")}</p>
+    <div class="location-grid">${recordPlacements(record).map(placement => placement.match ? `
+      <button class="location-card" type="button" data-location-perspective="${placement.perspective}" data-location-key="${escapeHtml(placement.key || "")}" data-location-family="${escapeHtml(placement.familyId || "")}" data-location-record="${escapeHtml(placement.canonicalId || "")}">
+        <span>${escapeHtml(placement.label)}</span><strong>${escapeHtml(placement.location)}</strong><small>${ui("Open placement", "Показать место")} →</small>
+      </button>` : `
+      <div class="location-card is-unmapped"><span>${escapeHtml(placement.label)}</span><strong>${ui("Not mapped in this view", "Не сопоставлено в этом представлении")}</strong></div>`).join("")}</div>
+  </section>`;
+}
+
+function focusViewLocation(key) {
+  const target = [...document.querySelectorAll("[data-view-location]")].find(item => item.dataset.viewLocation === key);
+  if (!target) return;
+  target.classList.add("is-location-target");
+  target.scrollIntoView({ behavior: "smooth", block: "center" });
+  window.setTimeout(() => target.classList.remove("is-location-target"), 2200);
+}
+
+function bindInspectorNavigation() {
+  inspector.querySelectorAll("[data-history-back]").forEach(button => button.addEventListener("click", goBack));
+  inspector.querySelectorAll("[data-location-perspective]").forEach(button => button.addEventListener("click", () => {
+    const perspective = button.dataset.locationPerspective;
+    if (perspective === "mechanisms") {
+      openCanonicalRecord(button.dataset.locationFamily, button.dataset.locationRecord);
+      return;
+    }
+    rememberNavigationState();
+    setPerspective(perspective);
+    requestAnimationFrame(() => focusViewLocation(button.dataset.locationKey));
+  }));
 }
 
 function emphasizeSelection(id) {
@@ -750,9 +828,10 @@ function emphasizeSelection(id) {
   });
 }
 
-function selectNode(id) {
+function selectNode(id, remember = true) {
   const record = recordById(id);
   if (!record) return;
+  if (remember && state.selectedId !== id) rememberNavigationState();
   state.selectedId = id;
   emphasizeSelection(id);
   renderInspector(record);
@@ -808,6 +887,7 @@ function renderEmptyInspector() {
 
 function clearSelection() {
   if (!state.selectedId) return;
+  rememberNavigationState();
   state.selectedId = null;
   svg.querySelectorAll(".is-selected, .is-dimmed").forEach(element => {
     element.classList.remove("is-selected", "is-dimmed");
@@ -825,6 +905,7 @@ function renderFamilies() {
     </button>
   `).join("");
   strip.querySelectorAll("button").forEach(button => button.addEventListener("click", () => {
+    rememberNavigationState();
     state.family = state.data.families.find(item => item.id === button.dataset.family);
     state.selectedId = null;
     renderEmptyInspector();
@@ -902,6 +983,52 @@ function canonicalRecord(familyId, canonicalId) {
   if (!family) return null;
   const record = [...family.objects, ...family.claims].find(item => item.id === canonicalId);
   return record ? { family, record } : null;
+}
+
+function currentNavigationState() {
+  return { perspective: state.perspective, familyId: state.family?.id || null, selectedId: state.selectedId, scrollY: window.scrollY };
+}
+
+function sameNavigationState(left, right) {
+  return left.perspective === right.perspective && left.familyId === right.familyId && left.selectedId === right.selectedId;
+}
+
+function updateBackButtons() {
+  document.querySelectorAll("[data-history-back], #history-back").forEach(button => {
+    button.disabled = state.navigationHistory.length === 0;
+  });
+}
+
+function rememberNavigationState() {
+  if (!state.data || state.restoringHistory) return;
+  const snapshot = currentNavigationState();
+  if (!state.navigationHistory.at(-1) || !sameNavigationState(state.navigationHistory.at(-1), snapshot)) state.navigationHistory.push(snapshot);
+  if (state.navigationHistory.length > 40) state.navigationHistory.shift();
+  updateBackButtons();
+}
+
+function restoreNavigationState(snapshot) {
+  state.restoringHistory = true;
+  state.family = state.data.families.find(family => family.id === snapshot.familyId) || state.data.families[0];
+  state.selectedId = null;
+  renderFamilies();
+  renderFamilyDescription();
+  setPerspective(snapshot.perspective);
+  requestAnimationFrame(() => {
+    if (snapshot.perspective === "mechanisms") {
+      renderMap();
+      if (snapshot.selectedId) selectNode(snapshot.selectedId, false);
+      else renderEmptyInspector();
+    }
+    window.scrollTo({ top: snapshot.scrollY || 0, behavior: "smooth" });
+    state.restoringHistory = false;
+    updateBackButtons();
+  });
+}
+
+function goBack() {
+  const snapshot = state.navigationHistory.pop();
+  if (snapshot) restoreNavigationState(snapshot);
 }
 
 function coverageLabel(coverage) {
@@ -1026,7 +1153,7 @@ function renderFoundationalModels() {
     </ol>
     <div class="model-grid">
       ${view.models.map((model, index) => `
-        <article class="model-card coverage-${model.coverage}">
+        <article class="model-card coverage-${model.coverage}" data-view-location="models:${escapeHtml(model.id)}">
           <header>
             <span class="model-index">${String(index + 1).padStart(2, "0")}</span>
             <div><p>${escapeHtml(modelKindLabel(model.model_kind))}</p><h3>${escapeHtml(localText(model.label))}</h3></div>
@@ -1107,7 +1234,7 @@ function renderGeneralPsychology() {
             <p class="domain-description">${escapeHtml(localText(domain.description))}</p>
             <div class="topic-list">
               ${topics.map(topic => `
-                <section class="topic-card coverage-${topic.coverage}">
+                <section class="topic-card coverage-${topic.coverage}" data-view-location="general:${escapeHtml(topic.id)}">
                   <div class="topic-heading">
                     <div>
                       <span>${escapeHtml(nodeKindLabel(topic.kind))}</span>
@@ -1154,7 +1281,7 @@ function renderScientificSystems() {
     </header>
     <div class="systems-grid">
       ${view.systems.map((system, index) => `
-        <article class="system-card coverage-${system.coverage}">
+        <article class="system-card coverage-${system.coverage}" data-view-location="systems:${escapeHtml(system.id)}">
           <header>
             <span>${String(index + 1).padStart(2, "0")}</span>
             <div><p>${escapeHtml(systemKindLabel(system.system_kind))}</p><h3>${escapeHtml(localText(system.label))}</h3></div>
@@ -1187,6 +1314,7 @@ function setPerspective(perspective, persist = true) {
 }
 
 function openCanonicalRecord(familyId, canonicalId) {
+  rememberNavigationState();
   state.family = state.data.families.find(family => family.id === familyId);
   state.filter = "all";
   state.selectedId = null;
@@ -1196,7 +1324,7 @@ function openCanonicalRecord(familyId, canonicalId) {
   setPerspective("mechanisms");
   requestAnimationFrame(() => {
     renderMap();
-    selectNode(canonicalId);
+    selectNode(canonicalId, false);
     document.querySelector(".map-layout").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
@@ -1234,13 +1362,18 @@ async function init() {
     renderScientificSystems();
     renderMap();
     document.getElementById("language-toggle").addEventListener("click", () => setLanguage(state.lang === "ru" ? "en" : "ru"));
+    document.getElementById("history-back").addEventListener("click", goBack);
     document.getElementById("mechanism-search").addEventListener("input", event => {
       state.mechanismQuery = event.target.value;
       renderMechanismCatalog();
       document.getElementById("mechanism-search").focus();
     });
     document.querySelectorAll("[data-perspective]").forEach(button => {
-      button.addEventListener("click", () => setPerspective(button.dataset.perspective));
+      button.addEventListener("click", () => {
+        if (button.dataset.perspective === state.perspective) return;
+        rememberNavigationState();
+        setPerspective(button.dataset.perspective);
+      });
     });
     svg.addEventListener("click", event => {
       if (!event.target.closest(".node")) clearSelection();
