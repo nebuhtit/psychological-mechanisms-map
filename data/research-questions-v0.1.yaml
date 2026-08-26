@@ -1,0 +1,263 @@
+questions_version: 0.1.0
+status: pilot
+canonical_language: en
+provenance: &provenance
+  record_version: 0.1.0
+  created_at: '2026-08-26T20:15:00+03:00'
+  modified_at: '2026-08-26T20:15:00+03:00'
+  created_by: [OpenAI Codex]
+  review_status: machine_validated
+  source_snapshot_date: '2026-08-26'
+
+questions:
+  - id: pmm:research-question:real-world-avoidance-reinforcement
+    family_id: avoidance
+    question:
+      en: When does immediate relief actually strengthen later avoidance in everyday life?
+      ru: Когда немедленное облегчение действительно усиливает последующее избегание в обычной жизни?
+    why_open:
+      en: Laboratory contingencies support negative reinforcement, but relief, omitted harm, and repeated real-world avoidance are rarely isolated together.
+      ru: Лабораторные зависимости поддерживают отрицательное подкрепление, но облегчение, непроизошедший вред и повторное избегание в реальной жизни редко разделяются в одном исследовании.
+    what_would_help:
+      en: Longitudinal experiments or intensive repeated-measure studies that manipulate response-contingent relief and measure later avoidance outside the training task.
+      ru: Продольные эксперименты или интенсивные исследования с повторными измерениями, где изменяют зависящее от ответа облегчение и измеряют последующее избегание вне обучающего задания.
+    question_kind: generalization
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:negative-reinforcement]
+    source_ids: [pmm:source:kim-2006-avoidance, pmm:source:hofmann-hay-2018]
+    provenance: *provenance
+
+  - id: pmm:research-question:extinction-relapse-prediction
+    family_id: extinction
+    question:
+      en: Which measurements can predict when extinguished fear will return in a new context?
+      ru: Какие измерения могут предсказать, когда угасшая реакция страха вернётся в новом контексте?
+    why_open:
+      en: Reduced responding during extinction does not show that the original learning was erased or identify who will later relapse.
+      ru: Снижение реакции во время угасания не показывает, что исходное научение стёрто, и не выявляет, у кого страх впоследствии вернётся.
+    what_would_help:
+      en: Preregistered multi-context studies comparing behavioral, autonomic, and startle measures against later renewal and reinstatement.
+      ru: Пререгистрированные исследования в нескольких контекстах, сравнивающие поведенческие, автономные и стартл-показатели с последующим возобновлением страха.
+    question_kind: prediction
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:extinction-memory-formation]
+    source_ids: [pmm:source:coelho-dunsmoor-phelps-2015, pmm:source:chalkia-2020-registered-replication]
+    provenance: *provenance
+
+  - id: pmm:research-question:habit-identification
+    family_id: habit
+    question:
+      en: Which combination of tests identifies habitual control without confusing it with task misunderstanding or failed outcome updating?
+      ru: Какое сочетание тестов выявляет привычный контроль, не смешивая его с непониманием задания или неудачным обновлением ценности результата?
+    why_open:
+      en: Persistent responding after devaluation has several possible causes, and different habit tasks often show weak convergence.
+      ru: Сохранение ответа после обесценивания может иметь несколько причин, а разные задания на привычки часто слабо согласуются между собой.
+    what_would_help:
+      en: Multimethod studies with manipulation checks, convergent tasks, computational models, and preregistered diagnostic criteria.
+      ru: Мультиметодные исследования с проверками понимания манипуляции, согласующимися заданиями, вычислительными моделями и заранее заданными диагностическими критериями.
+    question_kind: measurement
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:construct:habit-measurement-convergence, pmm:mechanism:habitual-action-control]
+    source_ids: [pmm:source:pool-2022-multilaboratory, pmm:source:nebe-2024-characterizing-habits]
+    provenance: *provenance
+
+  - id: pmm:research-question:reappraisal-mediation
+    family_id: reappraisal
+    question:
+      en: Does meaning reinterpretation causally mediate changes in experience, physiology, and behavior during reappraisal?
+      ru: Является ли переосмысление значения причинным посредником изменений переживания, физиологии и поведения при переоценке?
+    why_open:
+      en: Reappraisal instructions change several outcomes, but correlations or statistical mediation do not isolate reinterpretation as the causal process.
+      ru: Инструкции по переоценке меняют несколько результатов, но корреляции и статистическая медиация не выделяют переосмысление как причинный процесс.
+    what_would_help:
+      en: Experiments that independently perturb reinterpretation, measure the mediator before outcomes, and test alternative pathways across modalities.
+      ru: Эксперименты, независимо изменяющие переосмысление, измеряющие посредник до результатов и проверяющие альтернативные пути по нескольким модальностям.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:meaning-reinterpretation]
+    source_ids: [pmm:source:wager-2008-neural-pathways, pmm:source:hamza-2024-reappraisal-stress]
+    provenance: *provenance
+
+  - id: pmm:research-question:working-memory-shared-processes
+    family_id: working-memory
+    question:
+      en: Which processes explain what N-back, complex-span, and backward-recall tasks share, and what remains task-specific?
+      ru: Какие процессы объясняют общую часть результатов N-back, сложного объёма памяти и обратного воспроизведения, а что остаётся специфичным для задания?
+    why_open:
+      en: Task scores correlate imperfectly, and a fitted process can explain one paradigm without establishing the general construct.
+      ru: Показатели заданий согласуются не полностью, а процесс, объясняющий одну парадигму, ещё не устанавливает общий конструкт.
+    what_would_help:
+      en: Large preregistered latent-variable and process-model comparisons using multiple tasks, reliability correction, and held-out prediction.
+      ru: Крупные пререгистрированные сравнения латентных переменных и моделей процессов с несколькими заданиями, поправкой на надёжность и прогнозом на отложенных данных.
+    question_kind: measurement
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:construct:working-memory-capacity, pmm:construct:n-back-specific-variance]
+    source_ids: [pmm:source:byrne-2024-n-back-factors, pmm:source:beukers-2024-working-not-memory]
+    provenance: *provenance
+
+  - id: pmm:research-question:interoception-anxiety-pathway
+    family_id: interoception
+    question:
+      en: When does cardiac signal accuracy affect anxiety through appraisal or metacognitive awareness?
+      ru: Когда точность восприятия сердечных сигналов влияет на тревогу через оценку ощущений или метакогнитивную осведомлённость?
+    why_open:
+      en: Objective task accuracy, self-reported sensibility, metacognition, physiology, and anxiety are distinct and often show different associations.
+      ru: Объективная точность задания, самооценка чувствительности, метакогниция, физиология и тревога различны и часто показывают разные связи.
+    what_would_help:
+      en: Longitudinal or experimental mediation studies with validated cardiac tasks, physiological ground truth, appraisal measures, and anxiety outcomes.
+      ru: Продольные или экспериментальные исследования медиации с валидированными сердечными заданиями, физиологическим эталоном, оценкой интерпретации ощущений и тревоги.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:cardiorespiratory-appraisal, pmm:construct:cardiac-interoceptive-accuracy]
+    source_ids: [pmm:source:adams-2022-anxiety-accuracy, pmm:source:khalsa-2016-panic-lesions]
+    provenance: *provenance
+
+  - id: pmm:research-question:social-buffering-mediator
+    family_id: social-buffering
+    question:
+      en: Which process mediates social support effects on HPA activity, and how do age and early adversity change it?
+      ru: Какой процесс опосредует влияние социальной поддержки на активность HPA-оси и как его меняют возраст и ранний неблагоприятный опыт?
+    why_open:
+      en: Randomized support conditions can alter cortisol trajectories, but the measured contrasts do not identify co-regulation as the mediator.
+      ru: Рандомизированные условия поддержки могут менять динамику кортизола, но измеренные различия не выявляют совместную регуляцию как посредник.
+    what_would_help:
+      en: Developmentally stratified experiments measuring candidate social and regulatory mediators before repeated endocrine outcomes.
+      ru: Эксперименты с разделением по возрасту, измеряющие предполагаемые социальные и регуляторные посредники до повторных эндокринных показателей.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:social-co-regulation]
+    source_ids: [pmm:source:donzella-2026-social-buffering, pmm:source:hostinar-2015-early-deprivation]
+    provenance: *provenance
+
+  - id: pmm:research-question:dopamine-rpe-specificity
+    family_id: reward-learning
+    question:
+      en: When do dopamine prediction-error signals causally update reward value rather than reflect salience, movement, or another computation?
+      ru: Когда дофаминовые сигналы ошибки предсказания причинно обновляют ценность награды, а не отражают значимость, движение или другое вычисление?
+    why_open:
+      en: Dopamine activity can resemble model-derived prediction errors, but identity with one computation is not established across cells, tasks, and behavior.
+      ru: Дофаминовая активность может быть похожа на вычисленную моделью ошибку предсказания, но её тождество одному вычислению не установлено для разных клеток, заданий и поведения.
+    what_would_help:
+      en: Cell-resolved perturbation studies with competing computational models and out-of-sample behavioral predictions.
+      ru: Исследования с воздействием на определённые клетки, конкурирующими вычислительными моделями и прогнозами поведения на новых данных.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:temporal-difference-value-update, pmm:construct:reward-prediction-error]
+    source_ids: [pmm:source:steinberg-2013-causal-link, pmm:source:gershman-2024-dopamine-beyond]
+    provenance: *provenance
+
+  - id: pmm:research-question:hpa-feedback-sites
+    family_id: hpa-feedback
+    question:
+      en: Where and when does cortisol feedback act in humans to shape later ACTH pulses?
+      ru: Где и когда обратная связь кортизола действует у человека, формируя последующие импульсы АКТГ?
+    why_open:
+      en: Pharmacological perturbations support feedback but do not uniquely locate its pituitary, hypothalamic, and higher-brain contributions.
+      ru: Фармакологические воздействия поддерживают наличие обратной связи, но не разделяют однозначно вклад гипофиза, гипоталамуса и вышележащих отделов мозга.
+    what_would_help:
+      en: Time-resolved human perturbation studies combining hormone deconvolution, receptor-selective probes, and mechanistic model comparison.
+      ru: Временные исследования вмешательств у людей, сочетающие деконволюцию гормональных импульсов, селективные рецепторные пробы и сравнение механистических моделей.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:glucocorticoid-negative-feedback]
+    source_ids: [pmm:source:dorin-1996-acth-dynamics, pmm:source:gjerstad-2018-hpa-feedback]
+    provenance: *provenance
+
+  - id: pmm:research-question:placebo-analgesia-heterogeneity
+    family_id: placebo-analgesia
+    question:
+      en: Which causal pathways explain why placebo analgesia is strong in some people and absent in others?
+      ru: Какие причинные пути объясняют, почему плацебо-анальгезия выражена у одних людей и отсутствует у других?
+    why_open:
+      en: Expectation, endogenous opioids, pain reports, and neural measures vary across protocols, while group averages can hide responder heterogeneity.
+      ru: Ожидания, эндогенные опиоиды, отчёты о боли и нейронные показатели различаются между протоколами, а средние по группе могут скрывать неоднородность ответов.
+    what_would_help:
+      en: Preregistered factorial perturbation studies with individual-level repeated outcomes and prospectively tested mediator models.
+      ru: Пререгистрированные факторные исследования вмешательств с повторными индивидуальными результатами и заранее проверяемыми моделями посредников.
+    question_kind: causal
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:endogenous-opioid-modulation, pmm:construct:positive-treatment-expectation]
+    source_ids: [pmm:source:amanzio-1999-neuropharmacological-dissection, pmm:source:spisak-2026-neural-correlates]
+    provenance: *provenance
+
+  - id: pmm:research-question:attention-sensory-decision-boundary
+    family_id: spatial-attention
+    question:
+      en: Under which task conditions does spatial cueing change sensory sensitivity rather than only decision weighting?
+      ru: В каких условиях пространственная подсказка меняет сенсорную чувствительность, а не только вес информации при принятии решения?
+    why_open:
+      en: Faster or more accurate responses can arise from sensory enhancement, decision criteria, or both, depending on task structure.
+      ru: Более быстрые или точные ответы могут возникать из-за сенсорного усиления, критерия решения или обоих процессов в зависимости от устройства задания.
+    what_would_help:
+      en: Within-participant comparisons of detection and discrimination tasks using preregistered signal-detection and decision models.
+      ru: Внутрииндивидуальные сравнения заданий на обнаружение и различение с пререгистрированными моделями обнаружения сигнала и принятия решения.
+    question_kind: boundary_condition
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:sensory-evidence-enhancement, pmm:mechanism:spatial-decision-weighting]
+    source_ids: [pmm:source:johnson-2020-decision-model, pmm:source:banerjee-2019-sensory-decisional]
+    provenance: *provenance
+
+  - id: pmm:research-question:semantic-learning-with-episodic-impairment
+    family_id: declarative-memory
+    question:
+      en: Which learning mechanisms support semantic knowledge when episodic memory is severely impaired?
+      ru: Какие механизмы научения поддерживают семантические знания при тяжёлом нарушении эпизодической памяти?
+    why_open:
+      en: Rare developmental cases support a dissociation, but they do not isolate the compensatory learning pathway or its developmental limits.
+      ru: Редкие случаи нарушений развития поддерживают различие, но не выделяют компенсаторный путь научения и границы его развития.
+    what_would_help:
+      en: Longitudinal multimethod studies of rare cases with matched controls, repeated learning tasks, and mechanistic neural measures.
+      ru: Продольные мультиметодные исследования редких случаев с сопоставленной контрольной группой, повторными заданиями на научение и механистическими нейронными измерениями.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:construct:episodic-memory, pmm:construct:semantic-memory]
+    source_ids: [pmm:source:vargha-khadem-1997-developmental-amnesia]
+    provenance: *provenance
+
+  - id: pmm:research-question:human-visual-normalization
+    family_id: visual-perception
+    question:
+      en: Which biological implementation of normalization causally shapes human contrast-sensitivity thresholds?
+      ru: Какая биологическая реализация нормализации причинно формирует пороги контрастной чувствительности человека?
+    why_open:
+      en: Normalization models explain many neural responses, but model fit and nonhuman physiology do not identify a unique human causal circuit.
+      ru: Модели нормализации объясняют многие нейронные ответы, но соответствие модели данным и физиология животных не выявляют единственную причинную цепь у человека.
+    what_would_help:
+      en: Human perturbation and imaging studies comparing prespecified normalization models against simpler alternatives and psychophysical thresholds.
+      ru: Исследования вмешательств и нейровизуализации у людей, сравнивающие заранее заданные модели нормализации с более простыми альтернативами и психофизическими порогами.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:divisive-visual-normalization, pmm:measurement:contrast-sensitivity-function]
+    source_ids: [pmm:source:heeger-1992-cat-normalization, pmm:source:carandini-heeger-2012-normalization]
+    provenance: *provenance
+
+  - id: pmm:research-question:subjective-reasoning-conflict
+    family_id: deductive-reasoning
+    question:
+      en: When do people actually represent a conflict between logic and believability, and which process model predicts it?
+      ru: Когда человек действительно воспринимает конфликт между логикой и правдоподобием и какая модель процесса его предсказывает?
+    why_open:
+      en: Experimenter-defined invalidity can differ from subjective conflict, and response time, confidence, or arousal do not uniquely identify parallel processing.
+      ru: Заданная исследователем невалидность может не совпадать с субъективным конфликтом, а время ответа, уверенность и возбуждение не выявляют однозначно параллельную обработку.
+    what_would_help:
+      en: Preregistered experiments measuring participants' argument representations and comparing competing process models on held-out person- and item-level data.
+      ru: Пререгистрированные эксперименты, измеряющие представление аргумента участником и сравнивающие конкурирующие модели процесса на отложенных данных по людям и заданиям.
+    question_kind: mechanism
+    status: open
+    display_prominence: peripheral
+    about_ids: [pmm:mechanism:parallel-belief-logic-evaluation, pmm:measurement:syllogistic-signal-detection-profile]
+    source_ids: [pmm:source:trippas-thompson-handley-2017, pmm:source:kosourikhina-handley-2025]
+    provenance: *provenance

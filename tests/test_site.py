@@ -7,6 +7,7 @@ import unittest
 from pathlib import Path
 
 import yaml
+from jsonschema import Draft202012Validator, FormatChecker
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -63,7 +64,7 @@ class SiteBundleTests(unittest.TestCase):
 
     def test_site_has_no_inline_scientific_dataset(self) -> None:
         javascript = (ROOT / "site" / "app.js").read_text()
-        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.9.0";', javascript)
+        self.assertIn('const DATA_URL = "data/pmm-data.json?v=0.10.0";', javascript)
         self.assertNotIn("pmm:evidence:", javascript)
 
     def test_language_toggle_and_russian_bundle_are_present(self) -> None:
@@ -71,7 +72,7 @@ class SiteBundleTests(unittest.TestCase):
         javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn('id="language-toggle"', page)
         self.assertIn('localStorage.getItem("pmm-language")', javascript)
-        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.9.0";', javascript)
+        self.assertIn('const RU_URL = "data/i18n-ru.json?v=0.10.0";', javascript)
 
         document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
         bundle = json.loads((ROOT / "site" / "data" / "i18n-ru.json").read_text())
@@ -113,8 +114,51 @@ class SiteBundleTests(unittest.TestCase):
         page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<details class="map-guide">', page)
         self.assertNotIn('<details class="map-guide" open>', page)
-        for phrase in ("How to read this map", "Claim colours", "Lines and interaction"):
+        for phrase in ("How to read this map", "Claim colours", "Lines and interaction", "Research question"):
             self.assertIn(phrase, page)
+
+    def test_research_questions_are_valid_peripheral_annotations(self) -> None:
+        source = yaml.safe_load(
+            (ROOT / "data" / "research-questions-v0.1.yaml").read_text(encoding="utf-8")
+        )
+        schema = yaml.safe_load(
+            (ROOT / "schema" / "research-questions-v0.1.schema.yaml").read_text(encoding="utf-8")
+        )
+        errors = list(
+            Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(source)
+        )
+        self.assertEqual(errors, [])
+
+        document = json.loads((ROOT / "site" / "data" / "pmm-data.json").read_text())
+        self.assertEqual(document["research_questions_version"], "0.1.0")
+        self.assertEqual(len(source["questions"]), len(document["families"]))
+        for family in document["families"]:
+            self.assertEqual(len(family["research_questions"]), 1)
+            question = family["research_questions"][0]
+            self.assertEqual(question["status"], "open")
+            self.assertEqual(question["display_prominence"], "peripheral")
+            self.assertTrue(question["question"]["en"])
+            self.assertTrue(question["question"]["ru"])
+            object_and_claim_ids = {
+                item["id"] for section in ("objects", "claims") for item in family[section]
+            }
+            self.assertTrue(set(question["about_ids"]).issubset(object_and_claim_ids))
+            self.assertNotIn(question["id"], object_and_claim_ids)
+            self.assertTrue(
+                set(question["source_ids"]).issubset(
+                    {source["id"] for source in family["sources"]}
+                )
+            )
+
+    def test_research_questions_are_visually_subordinate_and_explained(self) -> None:
+        javascript = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        stylesheet = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('kind: "question"', javascript)
+        self.assertIn("function renderResearchQuestionInspector(", javascript)
+        self.assertIn("not a scientific finding", javascript)
+        self.assertIn(".node.question { opacity: .48; }", stylesheet)
+        self.assertIn(".node.question .node-shape", stylesheet)
+        self.assertIn(".edge.question-edge", stylesheet)
 
     def test_cross_family_mechanism_catalog_is_collapsed_and_navigable(self) -> None:
         page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")

@@ -1,5 +1,5 @@
-const DATA_URL = "data/pmm-data.json?v=0.9.0";
-const RU_URL = "data/i18n-ru.json?v=0.9.0";
+const DATA_URL = "data/pmm-data.json?v=0.10.0";
+const RU_URL = "data/i18n-ru.json?v=0.10.0";
 
 const UI_RU = {
   "Evidence-aware knowledge map": "Карта знаний с учётом доказательств",
@@ -48,6 +48,8 @@ const UI_RU = {
   "A proposed or established process with specified roles and conditions. It is not automatically proven by appearing on the map.": "Предлагаемый или установленный процесс с заданными ролями и условиями. Само присутствие на карте не доказывает его.",
   "Claim card": "Карточка утверждения",
   "A scoped scientific assertion. Open it to see its status, confidence, evidence, limitations, and sources.": "Научное утверждение с заданными границами. Откройте его, чтобы увидеть статус, уверенность, доказательства, ограничения и источники.",
+  "Research question": "Исследовательский вопрос",
+  "A faint dashed card marks an important gap suggested by mapped limitations. It is a question, not a finding or evidence rating.": "Бледная пунктирная карточка отмечает важный пробел, следующий из ограничений карты. Это вопрос, а не результат исследования и не оценка доказанности.",
   "Claim colours": "Цвета утверждений",
   "Green: supported": "Зелёный: поддерживается",
   "The mapped evidence supports the stated claim within its declared scope.": "Собранные доказательства поддерживают утверждение в заявленных границах.",
@@ -76,7 +78,7 @@ const UI_RU = {
   "Select an object or scientific Claim card on the map.": "Выберите на карте объект или карточку научного утверждения.",
   "Data failed to load": "Не удалось загрузить данные",
   "Open the site through a local server or GitHub Pages.": "Откройте сайт через локальный сервер или GitHub Pages.",
-  "Select a node. Click empty space or press Escape to show the full map. Solid lines are structural relations; dashed arrows pass through scientific Claim cards.": "Выберите узел. Нажмите на пустое место или клавишу Escape, чтобы снова показать всю карту. Сплошные линии обозначают структурные связи; пунктирные стрелки проходят через карточки научных утверждений.",
+  "Select a node. Click empty space or press Escape to show the full map. Solid lines are structural relations; dashed arrows pass through scientific Claim cards. Faint dotted links lead to open research questions.": "Выберите узел. Нажмите на пустое место или клавишу Escape, чтобы снова показать всю карту. Сплошные линии обозначают структурные связи; пунктирные стрелки проходят через карточки научных утверждений. Бледные точечные линии ведут к открытым исследовательским вопросам.",
   "Construct": "Конструкт",
   "Mechanism": "Механизм",
   "State": "Состояние",
@@ -89,6 +91,8 @@ const UI_RU = {
   "Contingency": "Зависимость",
   "Observation": "Наблюдение",
   "Claim": "Утверждение",
+  "Open question": "Открытый вопрос",
+  "open question": "открытый вопрос",
   "mixed evidence": "смешанные данные",
   "unsupported": "не поддерживается",
   "refuted": "опровергнуто",
@@ -127,6 +131,7 @@ const TYPE_LABELS = {
   Contingency: "Contingency",
   Observation: "Observation",
   claim: "Claim",
+  research_question: "Open question",
 };
 
 const STATUS_LABELS = {
@@ -222,7 +227,13 @@ function claimVisible(claim) {
 function familyRecords() {
   const objects = state.family.objects.map(item => ({ ...item, kind: "object", label: t(item.label) }));
   const claims = state.family.claims.map(item => ({ ...item, kind: "claim", type: "claim", label: t(item.statement) }));
-  return [...objects, ...claims];
+  const questions = (state.family.research_questions || []).map(item => ({
+    ...item,
+    kind: "question",
+    type: "research_question",
+    label: localText(item.question),
+  }));
+  return [...objects, ...claims, ...questions];
 }
 
 function linkedObjectIds(claim) {
@@ -237,7 +248,11 @@ function graphModel() {
     ? objectIds
     : new Set(visibleClaims.flatMap(linkedObjectIds));
 
-  const nodes = familyRecords().filter(item => item.kind === "object" ? relevantObjects.has(item.id) : visibleClaimIds.has(item.id));
+  const nodes = familyRecords().filter(item => {
+    if (item.kind === "object") return relevantObjects.has(item.id);
+    if (item.kind === "claim") return visibleClaimIds.has(item.id);
+    return state.filter === "all";
+  });
   const nodeIds = new Set(nodes.map(item => item.id));
   const edges = [];
 
@@ -255,6 +270,12 @@ function graphModel() {
       edges.push({ source: claim.id, target: claim.outcome_id, type: "claim", label: claim.claim_type });
     }
   }
+  for (const question of state.family.research_questions || []) {
+    const anchorId = question.about_ids[0];
+    if (nodeIds.has(anchorId) && nodeIds.has(question.id)) {
+      edges.push({ source: anchorId, target: question.id, type: "question", label: "open question" });
+    }
+  }
   return { nodes, edges };
 }
 
@@ -263,6 +284,7 @@ function layoutNodes(nodes, width, height, compact) {
     Context: 0, Intervention: 1, Event: 2, Contingency: 3,
     Construct: 4, Mechanism: 5, claim: 6, State: 7,
     Behavior: 8, Outcome: 9, Measurement: 10, Observation: 11,
+    research_question: 12,
   };
   const columnCount = compact ? 3 : 5;
   const ordered = [...nodes].sort((first, second) => {
@@ -325,7 +347,7 @@ function renderMap() {
     const curve = Math.max(30, Math.abs(dx) * 0.44);
     const path = svgElement("path", {
       d: `M ${source.x} ${source.y} C ${source.x + Math.sign(dx || 1) * curve} ${source.y}, ${target.x - Math.sign(dx || 1) * curve} ${target.y}, ${target.x} ${target.y}`,
-      class: `edge ${edge.type === "claim" ? "claim-edge" : ""}`,
+      class: `edge ${edge.type === "claim" ? "claim-edge" : edge.type === "question" ? "question-edge" : ""}`,
       "data-source": edge.source,
       "data-target": edge.target,
       "marker-end": edge.type === "claim" ? "url(#arrow)" : "",
@@ -346,14 +368,18 @@ function renderMap() {
       "data-id": node.id,
     });
     const isClaim = node.kind === "claim";
-    group.append(svgElement("rect", isClaim
+    const isQuestion = node.kind === "question";
+    const shape = isClaim
       ? { x: "-86", y: "-38", width: "172", height: "76", rx: "12", class: "node-shape" }
-      : { x: "-72", y: "-31", width: "144", height: "62", rx: node.type === "Mechanism" ? "31" : "4", class: "node-shape" }));
+      : isQuestion
+        ? { x: "-76", y: "-28", width: "152", height: "56", rx: "7", class: "node-shape" }
+        : { x: "-72", y: "-31", width: "144", height: "62", rx: node.type === "Mechanism" ? "31" : "4", class: "node-shape" };
+    group.append(svgElement("rect", shape));
 
     const typeText = svgElement("text", { x: "0", y: "-10", "text-anchor": "middle", class: "node-type" });
     typeText.textContent = t(TYPE_LABELS[node.type] || node.type);
     group.append(typeText);
-    const lines = wrapLabel(node.label, isClaim ? 20 : 22);
+    const lines = wrapLabel(node.label, isClaim ? 20 : isQuestion ? 23 : 22);
     lines.forEach((line, index) => {
       const text = svgElement("text", { x: "0", y: `${4 + index * 12}`, "text-anchor": "middle" });
       text.textContent = line.length > 26 ? `${line.slice(0, 24)}…` : line;
@@ -380,7 +406,9 @@ function recordById(id) {
 function relatedSources(record) {
   const evidenceById = new Map(state.family.evidence.map(item => [item.id, item]));
   const sourceIds = new Set();
-  if (record.kind === "claim") {
+  if (record.kind === "question") {
+    for (const sourceId of record.source_ids || []) sourceIds.add(sourceId);
+  } else if (record.kind === "claim") {
     for (const evidenceId of record.evidence_ids || []) {
       const evidence = evidenceById.get(evidenceId);
       if (evidence?.source_id) sourceIds.add(evidence.source_id);
@@ -540,6 +568,10 @@ function bindInspectorLinks() {
 }
 
 function renderInspector(record) {
+  if (record.kind === "question") {
+    renderResearchQuestionInspector(record);
+    return;
+  }
   const sources = relatedSources(record);
   const evidence = evidenceFor(record);
   const definition = t(record.kind === "claim" ? record.statement : record.definition);
@@ -569,6 +601,32 @@ function renderInspector(record) {
     ${record.confidence?.rationale ? `<section class="detail-section"><h3>${t("Confidence rationale")}</h3><p>${escapeHtml(t(record.confidence.rationale))}</p></section>` : ""}
     ${evidence.length ? `<section class="detail-section"><h3>${t("Evidence")}</h3><ul class="detail-list">${evidence.map(item => `<li><strong>${escapeHtml(t(item.support_direction))}</strong> · ${escapeHtml(t(item.summary))}</li>`).join("")}</ul></section>` : ""}
     ${listSection(t("Limitations"), (record.limitations || record.boundary_notes || record.scope?.boundary_conditions)?.map(t))}
+    ${sources.length ? `<section class="detail-section"><h3>${t("Sources")}</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(t(source.title))}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
+  `;
+  bindInspectorLinks();
+}
+
+function renderResearchQuestionInspector(record) {
+  const sources = relatedSources(record);
+  inspector.innerHTML = `
+    <p class="inspector-kicker">${ui("Open research question", "Открытый исследовательский вопрос")} · ${escapeHtml(record.id.split(":").at(-1))}</p>
+    <h2 class="question-heading">${escapeHtml(localText(record.question))}</h2>
+    <section class="research-question-note">
+      <span class="section-eyebrow">${ui("How to read this card", "Как читать эту карточку")}</span>
+      <p>${ui("This is a mapped knowledge gap, not a scientific finding, hypothesis score, or claim that no research exists.", "Это отмеченный пробел в знаниях, а не научный результат, оценка гипотезы или утверждение, что исследований вообще нет.")}</p>
+    </section>
+    <section class="detail-section">
+      <h3>${ui("Why it remains open", "Почему вопрос остаётся открытым")}</h3>
+      <p>${escapeHtml(localText(record.why_open))}</p>
+    </section>
+    <section class="detail-section">
+      <h3>${ui("What evidence would help", "Какие данные помогли бы")}</h3>
+      <p>${escapeHtml(localText(record.what_would_help))}</p>
+    </section>
+    <section class="detail-section">
+      <h3>${ui("Related map elements", "Связанные элементы карты")}</h3>
+      <div class="connection-list">${record.about_ids.map(id => nodeLink(id, ui("question concerns", "вопрос относится к"))).join("")}</div>
+    </section>
     ${sources.length ? `<section class="detail-section"><h3>${t("Sources")}</h3><div class="source-list">${sources.map(source => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(t(source.title))}<span class="source-meta">${escapeHtml(source.year)} · ${escapeHtml(source.doi || source.pmid || "")}</span></a>`).join("")}</div></section>` : ""}
   `;
   bindInspectorLinks();
@@ -624,6 +682,7 @@ function renderEmptyInspector() {
         <div><strong>${state.family.objects.length}</strong><span>${ui("objects", "объектов")}</span></div>
         <div><strong>${state.family.claims.length}</strong><span>${ui("claims", "утверждений")}</span></div>
         <div><strong>${state.family.evidence.length}</strong><span>${ui("evidence records", "записей доказательств")}</span></div>
+        <div class="question-stat"><strong>${state.family.research_questions?.length || 0}</strong><span>${ui("open questions", "открытых вопросов")}</span></div>
         <div><strong>${sources.length}</strong><span>${ui("sources", "источников")}</span></div>
       </div>
       <section class="detail-section family-sources">

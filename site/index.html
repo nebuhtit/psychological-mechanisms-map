@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,650&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.9.0">
+  <link rel="stylesheet" href="styles.css?v=0.10.0">
 </head>
 <body>
   <div class="page-shell">
@@ -75,6 +75,7 @@
               <div class="guide-item"><i class="guide-shape object" aria-hidden="true"></i><p><strong>Object card</strong><span>A construct, mechanism, state, behavior, intervention, measurement, context, event, outcome, contingency, or observation.</span></p></div>
               <div class="guide-item"><i class="guide-shape mechanism" aria-hidden="true"></i><p><strong>Mechanism pill</strong><span>A proposed or established process with specified roles and conditions. It is not automatically proven by appearing on the map.</span></p></div>
               <div class="guide-item"><i class="guide-shape claim" aria-hidden="true"></i><p><strong>Claim card</strong><span>A scoped scientific assertion. Open it to see its status, confidence, evidence, limitations, and sources.</span></p></div>
+              <div class="guide-item"><i class="guide-shape question" aria-hidden="true"></i><p><strong>Research question</strong><span>A faint dashed card marks an important gap suggested by mapped limitations. It is a question, not a finding or evidence rating.</span></p></div>
             </div>
           </section>
           <section class="guide-section">
@@ -128,12 +129,13 @@
             <span class="legend-item"><i class="legend-dot supported"></i>supported</span>
             <span class="legend-item"><i class="legend-dot mixed"></i>mixed</span>
             <span class="legend-item"><i class="legend-dot proposed"></i>proposed</span>
+            <span class="legend-item research"><i class="legend-dot question"></i>open question</span>
           </div>
           <svg id="knowledge-map" role="img" aria-labelledby="map-title map-description">
             <title id="map-title">Psychological mechanisms map</title>
             <desc id="map-description">Interactive graph of objects and scientific claims. Select a node for details.</desc>
           </svg>
-          <p class="map-hint">Select a node. Click empty space or press Escape to show the full map. Solid lines are structural relations; dashed arrows pass through scientific Claim cards.</p>
+          <p class="map-hint">Select a node. Click empty space or press Escape to show the full map. Solid lines are structural relations; dashed arrows pass through scientific Claim cards. Faint dotted links lead to open research questions.</p>
         </div>
 
         <aside class="inspector" id="inspector" aria-live="polite">
@@ -156,6 +158,6 @@
       <span id="build-version"></span>
     </footer>
   </div>
-  <script src="app.js?v=0.9.0" defer></script>
+  <script src="app.js?v=0.10.0" defer></script>
 </body>
 </html>

@@ -84,6 +84,20 @@ External systems are aligned by role, not copied wholesale.
 
 `exact_match` requires a verified stable external identifier. A verified webpage label without a stable term IRI remains `close_match` or provisional.
 
+## Open research questions
+
+Research questions are a separate annotation layer over canonical PMM records. They are not `Entity`, `Claim`, or `Evidence` records and therefore do not inherit confidence or evidence-status colours.
+
+Every public question must:
+
+- state a concrete unresolved empirical issue in English and Russian;
+- link to at least one object or Claim in exactly one evidence family;
+- link to sources that establish the limitation, disagreement, or boundary motivating the question;
+- explain why the issue remains open and what evidence would materially reduce the uncertainty;
+- use `display_prominence: peripheral` so the visual map keeps established records primary.
+
+`open` does not mean that no relevant studies exist. It means the current mapped evidence does not resolve the stated question within its scope. If later evidence answers a question, curators should update its status and add or revise the relevant Claim and Evidence records rather than silently turning the question into a fact.
+
 ## Serialization
 
 YAML is canonical. Deterministic JSON and JSON-LD are generated only after validation. The JSON-LD graph keeps ontology objects, Relations, Claims, Evidence, and Sources as separate identified nodes. Reference-valued fields expand as IRIs through the checked-in context. SHACL mirrors the critical cross-record inferential constraints. OWL may later encode stable taxonomic commitments, but uncertain empirical Claims and Evidence must remain reified resources rather than becoming unconditional class axioms.
@@ -92,9 +106,9 @@ The pilot graph is independently parsed by RDFLib, validated with pySHACL, round
 
 ## Known limits
 
-- Primary-study extraction currently covers one focused negative-reinforcement pack; the other mechanism families still rely mainly on reviews.
+- Evidence packs are targeted selections rather than systematic reviews, and most families do not yet have reproducible search and independent-screening logs.
 - Confidence ratings are curator judgments, not a calibrated evidence-grading system.
 - External ontology releases and stable IDs are not yet pinned locally.
 - Claim scope is textual rather than a fully compositional population/intervention/comparator/outcome model.
-- Causal mediation and effect modification are structurally representable, but no current pilot record claims either; dedicated proposed-hypothesis subtypes remain future work.
+- Statistical mediation and moderation are represented in current pilots, but causal mediation remains rare and must not be inferred from statistical decomposition alone.
 - No expert review has been completed; `machine_validated` means structural and semantic checks passed, not scientific endorsement.

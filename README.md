@@ -68,6 +68,8 @@ Each family is a small evidence pack, not a textbook chapter. Null findings, inc
 
 PMM now exposes a scaffold of 24 major General Psychology topics across cognitive processes, emotion and motivation, action and self-regulation, social processes, body and consciousness, development, and individual differences. Fifteen topics currently have at least one evidence-linked pilot; nine remain explicit gaps. The goal is to move every major topic from `planned` to `partial` under the same validation and evidence rules, then deepen each area through systematic search and independent review. See the [major-area coverage roadmap](docs/coverage-roadmap.md).
 
+Each of the 14 public evidence families also carries one deliberately low-prominence **open research question**. These questions are derived from mapped limitations or conflicting results and link back to the relevant records and sources. They are not Claims, Evidence, truth scores, or assertions that no research exists. Their purpose is to make important uncertainty visible without giving it the same visual or ontological weight as established records.
+
 The website provides three switchable views over the same canonical records:
 
 1. **General Psychology** uses familiar educational areas such as Memory, Emotions, Temperament, and Big Five for navigation. It explicitly preserves the difference between a function family, state, construct, task, measurement, trait taxonomy, and mechanism. Missing areas are marked `planned` rather than populated with invented records.
@@ -163,6 +165,9 @@ data/evidence-pack-visual-perception-v0.3.yaml
                                      Visual perception, contrast threshold, and normalization boundary pack
 data/evidence-pack-deductive-reasoning-v0.3.yaml
                                      Deductive reasoning, belief bias, signal detection, and competing-process boundary pack
+schema/research-questions-v0.1.schema.yaml
+                                     Separate contract for open-gap annotations
+data/research-questions-v0.1.yaml    Bilingual source-linked questions, one per public family
 data/navigation-views-v0.1.yaml      Validated educational and framework projections over canonical IDs
 docs/cognitive-reappraisal-preview.md Provisional reappraisal diagram
 docs/navigation-views.md             Faceted-view semantics and boundaries

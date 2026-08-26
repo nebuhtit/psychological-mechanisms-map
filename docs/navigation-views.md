@@ -26,6 +26,8 @@ Coverage labels are epistemically important. `partial` means that at least one c
 
 This is the strict scientific core. It separates objects, structural relations, reified Claims, Evidence extractions, and Sources. Causation, association, prediction, mediation, and moderation remain distinct.
 
+Open research questions appear as a faint peripheral annotation layer. They point to source-linked limitations but are not promoted into objects or Claims. Selecting one explains why the gap remains open and what kind of study could reduce the uncertainty.
+
 ## 3. Scientific Systems
 
 This is a crosswalk, not a merged hierarchy:

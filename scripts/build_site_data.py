@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from jsonschema import Draft202012Validator, FormatChecker
 
 from claim_explanations import load_annotations, validate as validate_explanations
 
@@ -16,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "site" / "data" / "pmm-data.json"
 REGISTRY_PATH = ROOT / "data" / "families.yaml"
 VIEWS_PATH = ROOT / "data" / "navigation-views-v0.1.yaml"
+QUESTIONS_PATH = ROOT / "data" / "research-questions-v0.1.yaml"
+QUESTIONS_SCHEMA_PATH = ROOT / "schema" / "research-questions-v0.1.schema.yaml"
 
 
 def load_families() -> list[tuple[str, str, str, str]]:
@@ -134,6 +137,48 @@ def build_mechanism_index(families: list[dict[str, Any]]) -> list[dict[str, Any]
     return sorted(index, key=lambda item: (item["family_title"], item["label"]))
 
 
+def attach_research_questions(families: list[dict[str, Any]]) -> str:
+    """Validate open questions as annotations, then attach them to families."""
+    document = yaml.safe_load(QUESTIONS_PATH.read_text(encoding="utf-8"))
+    schema = yaml.safe_load(QUESTIONS_SCHEMA_PATH.read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors = sorted(validator.iter_errors(document), key=lambda error: list(error.path))
+    if errors:
+        messages = [f"{'.'.join(map(str, error.path))}: {error.message}" for error in errors]
+        raise ValueError("invalid research questions:\n" + "\n".join(messages))
+
+    family_by_id = {family["id"]: family for family in families}
+    question_ids: set[str] = set()
+    for family in families:
+        family["research_questions"] = []
+
+    for question in document["questions"]:
+        question_id = question["id"]
+        if question_id in question_ids:
+            raise ValueError(f"duplicate research question ID: {question_id}")
+        question_ids.add(question_id)
+
+        family_id = question["family_id"]
+        if family_id not in family_by_id:
+            raise ValueError(f"{question_id}: unknown family {family_id}")
+        family = family_by_id[family_id]
+        record_ids = {
+            item["id"]
+            for section in ("objects", "claims")
+            for item in family[section]
+        }
+        unknown_records = set(question["about_ids"]) - record_ids
+        if unknown_records:
+            raise ValueError(f"{question_id}: unknown about_ids {sorted(unknown_records)}")
+        source_ids = {item["id"] for item in family["sources"]}
+        unknown_sources = set(question["source_ids"]) - source_ids
+        if unknown_sources:
+            raise ValueError(f"{question_id}: unknown source_ids {sorted(unknown_sources)}")
+        family["research_questions"].append(compact_record(question))
+
+    return document["questions_version"]
+
+
 def load_navigation_views(families: list[dict[str, Any]]) -> dict[str, Any]:
     """Validate faceted navigation against canonical PMM records."""
     document = yaml.safe_load(VIEWS_PATH.read_text(encoding="utf-8"))
@@ -194,9 +239,11 @@ def main() -> None:
         raise ValueError("invalid Claim explanations:\n" + "\n".join(explanation_errors))
     explanations = load_annotations()
     families = [build_family(*family, explanations) for family in load_families()]
+    questions_version = attach_research_questions(families)
     payload = {
         "pmm_version": "0.3.4",
-        "interface_version": "0.9.0",
+        "interface_version": "0.10.0",
+        "research_questions_version": questions_version,
         "families": families,
         "mechanism_index": build_mechanism_index(families),
         "navigation_views": load_navigation_views(families),

@@ -1,0 +1,100 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://pmm.local/schema/research-questions-v0.1.schema.json
+title: PMM Research Questions v0.1
+description: >-
+  Open empirical questions derived from mapped limitations. Research questions
+  are annotations over PMM records, not Entities, Claims, or Evidence.
+type: object
+additionalProperties: false
+required: [questions_version, status, canonical_language, provenance, questions]
+properties:
+  questions_version:
+    const: 0.1.0
+  status:
+    enum: [pilot, reviewed, deprecated]
+  canonical_language:
+    const: en
+  provenance:
+    $ref: '#/$defs/provenance'
+  questions:
+    type: array
+    minItems: 1
+    items:
+      $ref: '#/$defs/researchQuestion'
+
+$defs:
+  localizedText:
+    type: object
+    additionalProperties: false
+    required: [en, ru]
+    properties:
+      en: {type: string, minLength: 1}
+      ru: {type: string, minLength: 1}
+  provenance:
+    type: object
+    additionalProperties: false
+    required: [record_version, created_at, modified_at, created_by, review_status]
+    properties:
+      record_version:
+        type: string
+        pattern: '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'
+      created_at: {type: string, format: date-time}
+      modified_at: {type: string, format: date-time}
+      created_by:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items: {type: string, minLength: 1}
+      review_status:
+        enum: [unreviewed, machine_validated, expert_reviewed, deprecated]
+      source_snapshot_date: {type: string, format: date}
+  researchQuestion:
+    type: object
+    additionalProperties: false
+    required:
+      - id
+      - family_id
+      - question
+      - why_open
+      - what_would_help
+      - question_kind
+      - status
+      - display_prominence
+      - about_ids
+      - source_ids
+      - provenance
+    properties:
+      id:
+        type: string
+        pattern: '^pmm:research-question:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      family_id:
+        type: string
+        pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+      question:
+        $ref: '#/$defs/localizedText'
+      why_open:
+        $ref: '#/$defs/localizedText'
+      what_would_help:
+        $ref: '#/$defs/localizedText'
+      question_kind:
+        enum: [causal, mechanism, measurement, prediction, boundary_condition, generalization]
+      status:
+        enum: [open, partly_answered, resolved, retired]
+      display_prominence:
+        const: peripheral
+      about_ids:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items:
+          type: string
+          pattern: '^pmm:(construct|mechanism|state|behavior|intervention|measurement|context|event|outcome|contingency|observation|claim):[a-z0-9]+(?:-[a-z0-9]+)*$'
+      source_ids:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items:
+          type: string
+          pattern: '^pmm:source:[a-z0-9]+(?:-[a-z0-9]+)*$'
+      provenance:
+        $ref: '#/$defs/provenance'
