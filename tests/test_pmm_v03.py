@@ -482,5 +482,27 @@ class HpaFeedbackEvidencePackTests(unittest.TestCase):
         self.assertEqual(claim["epistemic_status"], "proposed")
 
 
+class PlaceboAnalgesiaEvidencePackTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = pmm_v03.load_yaml(
+            ROOT / "data" / "evidence-pack-placebo-analgesia-v0.3.yaml"
+        )
+
+    def test_placebo_analgesia_pack_is_valid(self) -> None:
+        self.assertEqual(pmm_v03.validate(copy.deepcopy(self.document)), [])
+
+    def test_multiple_antagonist_sources_do_not_promote_mechanism_to_fact(self) -> None:
+        claim = next(
+            item
+            for item in self.document["claims"]
+            if item["id"] == "pmm:claim:expectation-opioid-mechanism-hypothesis"
+        )
+        self.assertEqual(claim["claim_type"], "mechanism_hypothesis")
+        self.assertEqual(claim["epistemic_status"], "proposed")
+        self.assertEqual(len(claim["evidence_ids"]), 3)
+        self.assertIn("pmm:evidence:sauro-2005-opioid-meta-analysis", claim["evidence_ids"])
+
+
 if __name__ == "__main__":
     unittest.main()

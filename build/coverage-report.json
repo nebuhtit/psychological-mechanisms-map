@@ -1,7 +1,7 @@
 {
   "causal_support": {
     "direct": 23,
-    "indirect": 15,
+    "indirect": 17,
     "none": 6
   },
   "claim_types": {
@@ -29,9 +29,9 @@
   },
   "evidence_kinds": {
     "computational_model": 1,
-    "controlled_experiment": 11,
+    "controlled_experiment": 12,
     "cross_sectional_observational": 3,
-    "meta_analysis": 2,
+    "meta_analysis": 3,
     "narrative_review": 7,
     "randomized_experiment": 20
   },
@@ -119,11 +119,11 @@
     },
     {
       "claims": 4,
-      "evidence": 4,
+      "evidence": 6,
       "id": "placebo-analgesia",
       "objects": 8,
       "source": "data/evidence-pack-placebo-analgesia-v0.3.yaml",
-      "sources": 3,
+      "sources": 5,
       "title": "Placebo analgesia"
     }
   ],
@@ -390,7 +390,6 @@
       "family_id": "placebo-analgesia",
       "reasons": [
         "proposed claim",
-        "single-source support",
         "limited precision"
       ]
     }
@@ -399,12 +398,12 @@
   "support_directions": {
     "challenges": 7,
     "mixed": 4,
-    "supports": 33
+    "supports": 35
   },
   "totals": {
     "claims": 42,
-    "evidence": 44,
+    "evidence": 46,
     "objects": 118,
-    "sources": 36
+    "sources": 38
   }
 }

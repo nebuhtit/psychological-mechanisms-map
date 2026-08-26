@@ -159,11 +159,13 @@
       "claim_type": "mechanism_hypothesis",
       "confidence": {
         "level": "moderate",
-        "rationale": "Naloxone blockade supports opioid involvement, while protocol heterogeneity and nonopioid conditioned effects argue against a universal pathway."
+        "rationale": "Controlled antagonist studies and a 12-study meta-analysis support opioid involvement, while protocol heterogeneity, responder selection, and nonopioid conditioned effects argue against a universal pathway."
       },
       "epistemic_status": "proposed",
       "evidence_ids": [
-        "pmm:evidence:amanzio-1999-mechanism"
+        "pmm:evidence:amanzio-1999-mechanism",
+        "pmm:evidence:sauro-2005-opioid-meta-analysis",
+        "pmm:evidence:benedetti-2023-open-label-blockade"
       ],
       "exposure_id": "pmm:construct:positive-treatment-expectation",
       "falsifiable_boundary": "The hypothesis is weakened if adequately powered receptor blockade repeatedly leaves expectation-induced placebo analgesia unchanged under matched protocols.",
@@ -185,12 +187,13 @@
       },
       "scope": {
         "boundary_conditions": [
-          "Conditioning with nonopioid drugs can produce naloxone-insensitive placebo responses."
+          "Conditioning with nonopioid drugs can produce naloxone-insensitive placebo responses.",
+          "Open-label and deceptive placebo procedures need not recruit identical processes in every participant."
         ],
         "context_ids": [
           "pmm:context:placebo-analgesia-protocol"
         ],
-        "population": "Humans in experimental placebo analgesia paradigms represented by the included pharmacological study.",
+        "population": "Humans in experimental and postoperative placebo analgesia paradigms represented by the included antagonist studies and meta-analysis.",
         "species": [
           "human"
         ],
@@ -384,6 +387,99 @@
         "human"
       ],
       "summary": "Conditioning added analgesia and distinct neural associations, with reported statistical mediation across pooled participant data.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:expectation-opioid-mechanism-hypothesis"
+      ],
+      "design": "Meta-analysis of placebo and naloxone effects on self-reported pain across 12 studies.",
+      "domains": {
+        "consistency": "mostly_consistent",
+        "directness": "partially_indirect",
+        "precision": "not_reported",
+        "replication": "conceptual_replication",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "pooled reversal of placebo-induced analgesia by hidden or blind naloxone",
+        "notes": "The abstract reports reversal but does not provide the pooled numerical estimate.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "meta_analysis",
+      "extraction_locator": "PubMed abstract, methods and naloxone synthesis result.",
+      "id": "pmm:evidence:sauro-2005-opioid-meta-analysis",
+      "inference_support": "mechanism",
+      "limitations": [
+        "The review predates current reporting standards",
+        "pooled heterogeneous pain settings",
+        "and provides no abstract-level risk-of-bias assessment or numerical pooled estimate."
+      ],
+      "population": "1183 participants contributing 45 effect sizes across experimental and postoperative or clinical pain studies.",
+      "provenance": {
+        "created_at": "2026-08-26T14:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T14:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "sample_size": 1183,
+      "source_id": "pmm:source:sauro-2005-endogenous-opiates",
+      "species": [
+        "human"
+      ],
+      "summary": "Across 12 studies, hidden or blind naloxone administration reversed placebo-associated pain reduction on average.",
+      "support_direction": "supports"
+    },
+    {
+      "causal_support": "indirect",
+      "claim_ids": [
+        "pmm:claim:expectation-opioid-mechanism-hypothesis"
+      ],
+      "design": "Experimental ischemic arm-pain study with open-label placebo, natural-history controls, and hidden naloxone-versus-saline challenge among placebo responders.",
+      "domains": {
+        "consistency": "single_source",
+        "directness": "direct",
+        "precision": "limited",
+        "replication": "unreplicated",
+        "risk_of_bias": "some_concerns"
+      },
+      "effect": {
+        "direction": "negative",
+        "metric": "hidden naloxone-versus-saline effect on open-label placebo analgesia among responders",
+        "notes": "Ten milligrams naloxone reversed analgesia; two control groups indicated that naloxone was not independently hyperalgesic.",
+        "value_status": "qualitative_only"
+      },
+      "evidence_kind": "controlled_experiment",
+      "extraction_locator": "PubMed abstract, responder definition and hidden naloxone-versus-saline comparison.",
+      "id": "pmm:evidence:benedetti-2023-open-label-blockade",
+      "inference_support": "mechanism",
+      "limitations": [
+        "Responder selection was based on post-placebo pain and the abstract does not provide total sample size",
+        "allocation details",
+        "or a standardized effect."
+      ],
+      "population": "Human experimental-pain participants; 40.6% met the study responder criterion, while total sample size was not extracted from the abstract.",
+      "provenance": {
+        "created_at": "2026-08-26T14:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T14:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_id": "pmm:source:benedetti-2023-open-label-naloxone",
+      "species": [
+        "human"
+      ],
+      "summary": "Hidden naloxone reversed open-label placebo analgesia in the selected responder subgroup relative to hidden saline.",
       "support_direction": "supports"
     }
   ],
@@ -725,6 +821,58 @@
       "title": "Meta-analytic evidence for distinct neural correlates of conditioned versus verbally induced placebo analgesia",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42469238/",
       "year": 2026
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Quantitative synthesis of 45 effect sizes and 1183 participants from 12 placebo and naloxone studies; reporting predates current systematic-review standards.",
+      "authors": [
+        "Marie D. Sauro",
+        "Roger P. Greenberg"
+      ],
+      "doi": "10.1016/j.jpsychores.2004.07.001",
+      "id": "pmm:source:sauro-2005-endogenous-opiates",
+      "pmid": "15820838",
+      "provenance": {
+        "created_at": "2026-08-26T14:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T14:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Endogenous opiates and the placebo effect: a meta-analytic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15820838/",
+      "year": 2005
+    },
+    {
+      "accessed_at": "2026-08-26",
+      "authority_note": "Controlled antagonist challenge extending naloxone-sensitive placebo analgesia to an open-label responder subgroup.",
+      "authors": [
+        "Fabrizio Benedetti",
+        "Aziz Shaibani",
+        "Claudia Arduino",
+        "Wilma Thoen"
+      ],
+      "doi": "10.1097/j.pain.0000000000002791",
+      "id": "pmm:source:benedetti-2023-open-label-naloxone",
+      "pmid": "36165878",
+      "provenance": {
+        "created_at": "2026-08-26T14:00:00+03:00",
+        "created_by": [
+          "OpenAI Codex"
+        ],
+        "modified_at": "2026-08-26T14:00:00+03:00",
+        "record_version": "0.1.0",
+        "review_status": "machine_validated",
+        "source_snapshot_date": "2026-08-26"
+      },
+      "source_type": "peer_reviewed_article",
+      "title": "Open-label nondeceptive placebo analgesia is blocked by the opioid antagonist naloxone",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36165878/",
+      "year": 2023
     }
   ]
 }
