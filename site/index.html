@@ -38,6 +38,41 @@
         </div>
       </section>
 
+      <details class="map-guide">
+        <summary>How to read this map <span>Open guide</span></summary>
+        <div class="guide-content">
+          <section class="guide-intro">
+            <p class="guide-kicker">Reading rule</p>
+            <h2>Follow the records, not the visual distance.</h2>
+            <p>PMM is an evidence-aware knowledge map. Nearby nodes help navigation only; they do not show a stronger effect, a causal direction, or a scientific consensus.</p>
+          </section>
+          <section class="guide-section">
+            <h3>Shapes</h3>
+            <div class="guide-grid">
+              <div class="guide-item"><i class="guide-shape object" aria-hidden="true"></i><p><strong>Object card</strong><span>A construct, mechanism, state, behavior, intervention, measurement, context, event, outcome, contingency, or observation.</span></p></div>
+              <div class="guide-item"><i class="guide-shape mechanism" aria-hidden="true"></i><p><strong>Mechanism pill</strong><span>A proposed or established process with specified roles and conditions. It is not automatically proven by appearing on the map.</span></p></div>
+              <div class="guide-item"><i class="guide-shape claim" aria-hidden="true"></i><p><strong>Claim card</strong><span>A scoped scientific assertion. Open it to see its status, confidence, evidence, limitations, and sources.</span></p></div>
+            </div>
+          </section>
+          <section class="guide-section">
+            <h3>Claim colours</h3>
+            <div class="guide-grid compact">
+              <div class="guide-item"><i class="guide-swatch supported" aria-hidden="true"></i><p><strong>Green: supported</strong><span>The mapped evidence supports the stated claim within its declared scope.</span></p></div>
+              <div class="guide-item"><i class="guide-swatch mixed" aria-hidden="true"></i><p><strong>Amber: mixed or unsupported</strong><span>Results disagree, are null, or do not currently support the claim.</span></p></div>
+              <div class="guide-item"><i class="guide-swatch proposed" aria-hidden="true"></i><p><strong>Blue: proposed</strong><span>A falsifiable mechanism or causal hypothesis, not an established result.</span></p></div>
+            </div>
+          </section>
+          <section class="guide-section">
+            <h3>Lines and interaction</h3>
+            <div class="guide-grid compact">
+              <div class="guide-item"><i class="guide-line structural" aria-hidden="true"></i><p><strong>Solid line</strong><span>A structural or operational relation, such as “measured by” or “occurs in context.”</span></p></div>
+              <div class="guide-item"><i class="guide-line scientific" aria-hidden="true"></i><p><strong>Dashed arrow</strong><span>Connects an object to a Claim. The Claim, not the arrow, carries the empirical or causal interpretation.</span></p></div>
+              <div class="guide-item"><i class="guide-cursor" aria-hidden="true">↗</i><p><strong>Select a node</strong><span>The right panel reveals the full record. Use filters to show causal claims, hypotheses, or contested results.</span></p></div>
+            </div>
+          </section>
+        </div>
+      </details>
+
       <section class="map-layout">
         <div class="map-stage">
           <div class="map-meta" aria-live="polite">

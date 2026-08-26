@@ -47,6 +47,13 @@ class SiteBundleTests(unittest.TestCase):
         )
         self.assertIsNone(re.search(r"[А-Яа-яЁё]", interface))
 
+    def test_reading_guide_is_collapsed_and_explains_visual_encoding(self) -> None:
+        page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<details class="map-guide">', page)
+        self.assertNotIn('<details class="map-guide" open>', page)
+        for phrase in ("How to read this map", "Claim colours", "Lines and interaction"):
+            self.assertIn(phrase, page)
+
 
 if __name__ == "__main__":
     unittest.main()
